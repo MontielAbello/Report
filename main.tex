@@ -1,0 +1,72 @@
+  
+  %--------------------------------------------------------------
+%Preamble
+\documentclass[a4paper, twoside, 11pt]{book}
+
+\usepackage[pdftex, final]{graphicx}
+\graphicspath{{./pics/}}
+
+\usepackage[parfill]{parskip}
+\usepackage{amssymb}
+\usepackage{tensor}
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+
+\setcounter{tocdepth}{6}
+\setcounter{secnumdepth}{6}
+%\setcounter{chapter}{1}
+%\usepackage{enumitem}
+%\setlist{nosep} % or \setlist{noitemsep} to leave space around whole list
+
+%filepath for figures
+\graphicspath{{./figures/}}
+
+
+%tikz
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\usetikzlibrary{arrows,positioning} 
+\tikzset{
+    %Define standard arrow tip
+    >=stealth',
+    %Define style for boxes
+    punkt/.style={
+           rectangle,
+           rounded corners,
+           draw=black, very thick,
+           text width=6.5em,
+           minimum height=2em,
+           text centered},
+    % Define arrow style
+    pil/.style={
+           ->,
+           thick,
+           shorten <=2pt,
+           shorten >=2pt,}
+}
+
+%--------------------------------------------------------------
+\begin{document}
+
+\title{Project Report - Part 1\\ Something}
+\author{Montiel Abello}
+%\date{\vspace{-5ex}}
+\date{}  % Toggle commenting to test
+\maketitle
+
+\input{introduction}
+\input{literature}
+\input{background}
+\input{problem}
+\input{theory}
+\input{simulation}
+\input{experiment}
+\input{conclusion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,references}
+
+\end{document}     
