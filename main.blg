@@ -1,6 +1,5 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
-I found no \citation commands---while reading file main.aux
 Database file #1: IEEEabrv.bib
 Database file #2: references.bib
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
@@ -8,4 +7,3 @@ Database file #2: references.bib
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-(There was 1 error message)

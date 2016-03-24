@@ -1,1 +1,27 @@
-\chapter{Problem Statement}
+\section{Problem Statement}
+
+\textbf{context:}
+Advances in hardware and manufacturing have made autonomous and semi-autonomous robots more available. Use in industry and even general public has increased. Full autonomous robots are still limited to structured environments and tasks such as in factories and warehouses.
+Before robots can operate autonomously in unstructured environments, new sensor models are required to more effectively observe and represent complex environment states. \textbf{TODO:} \textit{Why are new sensor models required? Check if this is covered in literature review. If not, need to expand on this.}
+
+\textbf{problem/lacking:}
+One method of estimating the state of the environment is to use a state observer. The majority of observer implementations do not take into account the natural symmetries of the dynamics of the state. Doing so has shown to be beneficial in both the design of observers, and improved convergence properties.
+However, these invariant observer methods are still limited to finite dimensional systems. In many implementations involving infinite-dimensional systems, the system is discretised to a finite dimensional one prior to observer design.  \textbf{TODO:} \textit{How does this influence performance?}\\
+What is needed is a theory of infinite dimensional, symmetry preserving observers, + design principles.
+
+\textbf{what will this theory provide?:}
+This theory will simplify invariant observer design for infinite dimensional systems. Only discretising after observer design will maximise the potential of dense sensors. This will allow for more accurate and fast estimation of complex environments,
+
+\textbf{approach:}
+This project aims to develop some of this theory. The approach taken will be to design an invariant observer for a specific infinite dimensional system, before generalising the results.
+
+\textbf{estimation problem - cube pose \& size:}
+The environment the robot is moving throughout consists of a room (rectangular prism) + cube; each of unknown size and pose.
+Attached to the robot is a 2D laser rangefinder. Using depth measurements from this sensor, the observer must estimate the size and pose of the cube. It is assumed that the room is stationary and the cube has constant angular and linear acceleration.\\
+\textbf{TODO:} \textit{Diagram}\\
+\textbf{TODO:} \textit{Precise mathematical description of problem}
+
+\textbf{deliverables:} 
+The primary deliverable of this project is the observer design and simulation. Will later try to develop some general theory from this specific case. Will validate simulation with experiment using Hokuyo UBG 04-LX sensor, ??? robot arms and cubes of various sizes and materials.
+\textbf{TODO:} \textit{More detail, + be careful about what you promise}\\
+
