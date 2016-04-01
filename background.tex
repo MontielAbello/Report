@@ -1,17 +1,89 @@
 \section{Theoretical Background}
 
 \subsection{Rigid Body Dynamics}
-	\subsubsection{Lie Groups: SE(3)}
-	\subsubsection{orientation representation}
-		-quaternions
-		-axis angle
+	\subsubsection{Lie Groups: $\textbf{SE}(3)$}		
+		\textbf{Lie groups}\\
+		A Lie group $G$ is a group that also happens to be a differentiable manifold.
+		
+		Lie algebra
+		
+		matrix lie groups
+		
+		exponential map - Lie group generators
+		
+		actions
+		
+		adjoint map \& adjoint representation
+		
+		\textbf{3D space - $\mathbb{R}^3$}\\
+		In practice, robot, sensor, environment exist in 3D Euclidean space - $\mathbb{R}^3$.\\
+		An arbitrary function that maps a pose *(or point?) in $\mathbb{R}^3$ to another can be defined as:
+		\begin{equation}
+		f: \mathbb{R}^3 \rightarrow \mathbb{R}^3
+		\end{equation}
+		To represent rigid bodies, require mappings corresponding to rotation and translation. Translation can be modelled as a vector space ie $\mathbb{R}^3$ but the set of all rotations in $\mathbb{R}^3$ forms a Lie group.
+		
+		\textbf{Rotations}\\
+		A rotation represents the motion of a rigid body about a fixed point. In $\mathbb{R}^3$ this is an isometry (a transformation that preserves distances between any pair of points) that has a determinant of +1 (proper isometries). The set of all proper orthogonal transformations is known as the \textit{special orthogonal group} $\textbf{SO}(3)$.
+		
+		A rotation about a point in $\mathbb{R}^3$ can be represented by: \textbf{TODO:} \textit{go into more detail on below}
+		
+		rotation matrix:\\
+		$3\times3$ matrix where magnitude of each column is 1, columns are orthogonal, determinant is +1.
+		
+		scaled axis angle:\\
+		3-vector where direction represents axis of rotation and magnitude represents angle of rotation.		
+		
+		quaternions:\\
+		4-vector, same information as axis angle, but different form.\\
+		
+		\textbf{Translations}\\
+		A one-to-one transformation that shifts each point by a constant vector ie. shifts origin *(haven't discussed coordinate frames yet) 
+
+		\textbf{homogeneous representation}\\
+		$4\times4$ screw matrix - represent rotation and translation with a single matrix of form:\\
+		\begin{equation}
+				\begin{bmatrix}
+				  R		&	t \\
+				  0		& 	1 
+				\end{bmatrix}
+		\end{equation}
+		*show that 0 is 1x3\\
+		OR\\
+		*how to do nested matrices?
+		\begin{equation}
+		\begin{bmatrix}
+		  0		&	0 	& 	0 	& 	0\\
+		  0		& 	0  	& 	0 	& 	0\\
+		  0		& 	0  	& 	0 	& 	0\\
+		  0		& 	0 	& 	0 	& 	0
+		\end{bmatrix}
+		\end{equation}
+		
+		To apply a rigid transformation to a point $p = (x,y,z) $ in $\mathbb{R}^3$, represent with homogeneous coordinates. ie
+		\begin{equation}
+		p = 
+		\begin{bmatrix}
+				  x	\\
+				  y	\\
+				  z	\\
+				  1	
+		\end{bmatrix}
+		\end{equation}
+	
+		\textbf{ $\textbf{SE}(3)$}\\
+		
+		
+	\subsubsection{Reference Frames}
+		-mathematical definitions\\
+		-notation, diagrams
 	\subsubsection{robot state representation}	
 		-screw, twist, wrench matrices
 	\subsubsection{robot dynamic model}
-		-ODEs
-		-update methods
+		-ODEs\\
+		-update methods (euler, runge-kutta etc)
 	\subsubsection{sensor dynamic model}
-		-ODEs
+		-ODEs (same as robot + scanning)\\
 		-parameters ie FOV, steps
 \subsection{Symmetry Preserving Observers}
 	\subsubsection{definitions?}

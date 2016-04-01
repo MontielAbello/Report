@@ -48,6 +48,8 @@
            shorten >=2pt,}
 }
 
+%\includeonly{problem}
+
 %--------------------------------------------------------------
 \begin{document}
 
@@ -57,16 +59,26 @@
 \date{}  % Toggle commenting to test
 \maketitle
 
-\input{introduction}
-\input{literature}
-\input{background}
-\input{problem}
-\input{theory}
-\input{simulation}
-\input{experiment}
-\input{conclusion}
+\include{introduction}
+\include{literature}
+\include{background}
+\include{problem}
+\include{theory}
+\include{simulation}
+\include{experiment}
+\include{conclusion} 
+
+%\input{introduction}
+%\input{literature}
+%\input{background}
+%\input{problem}
+%\input{theory}
+%\input{simulation}
+%\input{experiment}
+%\input{conclusion} 
 
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,references}
+
 
 \end{document}     
