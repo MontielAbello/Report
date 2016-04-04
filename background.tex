@@ -3,9 +3,13 @@
 \subsection{Rigid Body Dynamics}
 	\subsubsection{Lie Groups: $\textbf{SE}(3)$}		
 		\textbf{Lie groups}\\
+		Lie groups important because ...\\
 		A Lie group $G$ is a group that also happens to be a differentiable manifold.
+		Group: closure, identity, inverse.
+		Differentiable manifold: in neighbourhood of identity, approximates euclidean space.
 		
 		Lie algebra
+		Tangent space of Lie group with origin at identity is called Lie algebra of the group.
 		
 		matrix lie groups
 		
@@ -42,24 +46,15 @@
 
 		\textbf{homogeneous representation}\\
 		$4\times4$ screw matrix - represent rotation and translation with a single matrix of form:\\
+		
 		\begin{equation}
 				\begin{bmatrix}
 				  R		&	t \\
-				  0		& 	1 
+				  0_{1\times3}		& 	1 
 				\end{bmatrix}
 		\end{equation}
-		*show that 0 is 1x3\\
-		OR\\
-		*how to do nested matrices?
-		\begin{equation}
-		\begin{bmatrix}
-		  0		&	0 	& 	0 	& 	0\\
-		  0		& 	0  	& 	0 	& 	0\\
-		  0		& 	0  	& 	0 	& 	0\\
-		  0		& 	0 	& 	0 	& 	0
-		\end{bmatrix}
-		\end{equation}
-		
+		\textbf{TODO:} align the R and 0!!!!
+
 		To apply a rigid transformation to a point $p = (x,y,z) $ in $\mathbb{R}^3$, represent with homogeneous coordinates. ie
 		\begin{equation}
 		p = 
@@ -72,15 +67,65 @@
 		\end{equation}
 	
 		\textbf{ $\textbf{SE}(3)$}\\
-		
+		-elements of group\\
+		-lie algebra\\
+		-actions\\
+		-adjoint map \& adjoint representation
 		
 	\subsubsection{Reference Frames}
+		-$^{A}_{B}X^{}_{C}$ defines transformation of C w.r.t. B defined in A
 		-mathematical definitions\\
 		-notation, diagrams
-	\subsubsection{robot state representation}	
-		-screw, twist, wrench matrices
+	\subsubsection{robot state representation}
+		-inertial frame A, sensor/robot frame  B
+		-p,v,a,R,omega,alpha - define, state reference frames\\	
+		position $^{A}_{A}p^{}_{B}$\\
+		velocity $^{B}_{A}v^{}_{B}$\\
+		acceleration $^{B}_{A}a^{}_{B}$\\
+		orientation $^{A}_{A}R^{}_{B}$ - rotation matrix\\
+		angular velocity $^{B}_{A}\omega^{}_{B}$ - scaled axis representation\\
+		angular acceleration $^{B}_{A}\alpha^{}_{B}$ - scaled axis representation\\
+		
+		pose of robot w.r.t. inertial frame, defined in inertial frame ie. screw matrix:
+		\begin{equation}
+				S(t) = 
+				\begin{bmatrix}
+						  ^{A}_{A}R(t)^{}_{B} 	& 	^{A}_{A}p(t)^{}_{B}\\
+						  0_{1\times3} & 1						  
+				\end{bmatrix}
+		\end{equation}
+		
+		velocity (linear and angular) w.r.t. inertial frame, defined in body frame ie. twist matrix:
+		\begin{equation}
+				T(t) = 
+				\begin{bmatrix}
+		  ^{B}_{A}{[\omega(t)]_\times}^{}_{B} 	& 	^{B}_{A}v(t)^{}_{B}\\
+		  0_{1\times3} & 0						  
+				\end{bmatrix}
+		\end{equation}
+				
+		acceleration (linear and angular) w.r.t. inertial frame, defined in body frame ie. wrench matrix
+		\begin{equation}
+				W(t) = 
+				\begin{bmatrix}
+				  ^{B}_{A}{[\alpha(t)]_\times}^{}_{B} 	& 	^{B}_{A}a(t)^{}_{B}\\
+				  0_{1\times3} & 0						  
+				\end{bmatrix}
+		\end{equation}
+		
+				
 	\subsubsection{robot dynamic model}
-		-ODEs\\
+		screw matrix:\\
+		$ \dfrac{\textnormal{d}}{\textnormal{d}t}S(t)=S(t)T(t)$\\
+		numerically: $S(t+\delta t) = S(t)e^{\delta tT(t)}$
+		
+		twist matrix:\\
+		$ \dfrac{\textnormal{d}}{\textnormal{d}t}T(t)=W(t)$\\
+		numerically: $T(t+\delta t) = T(t) + \delta tW(t)$
+		
+		wrench matrix:\\
+		$ \dfrac{\textnormal{d}}{\textnormal{d}t}W(t)=0$\\
+		numerically: $W(t+\delta t) = W(t)$\\
 		-update methods (euler, runge-kutta etc)
 	\subsubsection{sensor dynamic model}
 		-ODEs (same as robot + scanning)\\

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  1 APR 2016 20:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  5 APR 2016 00:40
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -515,67 +515,68 @@ Chapter 1.
 
 
 
-] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\background.tex"
-Underfull \hbox (badness 10000) in paragraph at lines 37--39
-
- []
-
-[5
+] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\background.tex" [5
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 43--45
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
+Underfull \hbox (badness 10000) in paragraph at lines 47--49
 
  []
 
-[6]) [7] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\problem.tex
-"
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--88
+
+ []
+
+[6]) [7] [8]
+("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\problem.tex"
 Underfull \hbox (badness 10000) in paragraph at lines 24--27
 
  []
 
-) [8
-
-
-
-] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\theory.tex"
-Chapter 2.
 ) [9
 
 
 
-] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.tex" [1
-0
+] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\theory.tex"
+[10
 
 
 
 ]
-Chapter 3.
-) [11] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.te
+Chapter 2.
+) [11] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.te
 x" [12
 
 
 
 ]
-Chapter 4.
-) [13] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.te
+Chapter 3.
+) [13] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.te
 x" [14
 
 
 
 ]
+Chapter 4.
+) [15] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.te
+x" [16
+
+
+
+]
 Chapter 5.
-) [15] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.bbl"
-[16
+) [17] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.bbl"
+[18
 
 
-]) [17] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux" ("
+]) [19] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux" ("
 C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\literature.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\background.aux")
@@ -587,7 +588,7 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 Here is how much of TeX's memory you used:
  12857 strings out of 493921
  258196 string characters out of 3147261
- 281048 words of memory out of 3000000
+ 282047 words of memory out of 3000000
  15861 multiletter control sequences out of 15000+200000
  13884 words of font info for 51 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -597,16 +598,18 @@ C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Progr
 am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (17 pages, 164677 bytes).
+s/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (19 pages, 187658 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
+ 123 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
