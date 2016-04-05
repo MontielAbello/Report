@@ -1,31 +1,33 @@
 \section{Theoretical Background}
 
 \subsection{Rigid Body Dynamics}
-	\subsubsection{Lie Groups: $\textbf{SE}(3)$}		
+	\subsubsection{Lie Groups}		
 		\textbf{Lie groups}\\
-		Lie groups important because ...\\
-		A Lie group $G$ is a group that also happens to be a differentiable manifold.
-		Group: closure, identity, inverse.
-		Differentiable manifold: in neighbourhood of identity, approximates euclidean space.
+		The theory of Lie groups is required in the modelling of rigid bodies.
+		A Lie group $\mathbf{G}$ is a group that is also a differentiable manifold.
+		As a group, G satisfies the 4 group axioms: closure, associativity, identity, inverse. 
+		Because G is a differentiable manifold, in a neighbourhood of the identity it approximates euclidean space and allows ...?
 		
-		Lie algebra
-		Tangent space of Lie group with origin at identity is called Lie algebra of the group.
+		\textbf{Matrix Lie groups}
+		This work will be limited to matrix Lie groups, whose members  are $n \times n$ matrices.
 		
-		matrix lie groups
+		\textbf{Lie algebra}\\
+		Tangent space of Lie group with origin at identity is called Lie algebra $\mathfrak{g} $ of the group. It is called the Lie \textit{algebra} because it has a binary operation, known as the Lie bracket $[X,Y]$. For matrix Lie groups, $[A,B] \buildrel\triangle\over = AB-BA$. Relationship to group operation, commutative \& non-commutative, Baker-Campbell-Hausdorff formula...
 		
+		\textbf{Exponential map}\\		
 		exponential map - Lie group generators
-		
-		actions
-		
+			
+		\textbf{Adjoint map}\\			
 		adjoint map \& adjoint representation
 		
+	\subsubsection{\textbf{SE}(3)}		
 		\textbf{3D space - $\mathbb{R}^3$}\\
 		In practice, robot, sensor, environment exist in 3D Euclidean space - $\mathbb{R}^3$.\\
 		An arbitrary function that maps a pose *(or point?) in $\mathbb{R}^3$ to another can be defined as:
 		\begin{equation}
 		f: \mathbb{R}^3 \rightarrow \mathbb{R}^3
 		\end{equation}
-		To represent rigid bodies, require mappings corresponding to rotation and translation. Translation can be modelled as a vector space ie $\mathbb{R}^3$ but the set of all rotations in $\mathbb{R}^3$ forms a Lie group.
+		To represent rigid bodies, require mappings corresponding to rotation and translation. Translation can be modelled as a function on a vector space $\mathbb{R}^3$ but the set of all rotations in $\mathbb{R}^3$ forms a Lie group.
 		
 		\textbf{Rotations}\\
 		A rotation represents the motion of a rigid body about a fixed point. In $\mathbb{R}^3$ this is an isometry (a transformation that preserves distances between any pair of points) that has a determinant of +1 (proper isometries). The set of all proper orthogonal transformations is known as the \textit{special orthogonal group} $\textbf{SO}(3)$.
@@ -33,7 +35,7 @@
 		A rotation about a point in $\mathbb{R}^3$ can be represented by: \textbf{TODO:} \textit{go into more detail on below}
 		
 		rotation matrix:\\
-		$3\times3$ matrix where magnitude of each column is 1, columns are orthogonal, determinant is +1.
+		$3 \times 3$ matrix where magnitude of each column is 1, columns are orthogonal, determinant is +1.
 		
 		scaled axis angle:\\
 		3-vector where direction represents axis of rotation and magnitude represents angle of rotation.		
@@ -45,19 +47,19 @@
 		A one-to-one transformation that shifts each point by a constant vector ie. shifts origin *(haven't discussed coordinate frames yet) 
 
 		\textbf{homogeneous representation}\\
-		$4\times4$ screw matrix - represent rotation and translation with a single matrix of form:\\
+		$4 \times 4$ screw matrix - represent rotation and translation with a single matrix of form:\\
 		
 		\begin{equation}
 				\begin{bmatrix}
-				  R		&	t \\
-				  0_{1\times3}		& 	1 
+				  \mathbf{R}	&	\mathbf{t} \\
+				  \textbf{0}_{1 \times 3}		& 	1 
 				\end{bmatrix}
 		\end{equation}
 		\textbf{TODO:} align the R and 0!!!!
 
-		To apply a rigid transformation to a point $p = (x,y,z) $ in $\mathbb{R}^3$, represent with homogeneous coordinates. ie
+		To apply a rigid transformation to a point $\textbf{p} = (x,y,z) $ in $\mathbb{R}^3$, represent with homogeneous coordinates. ie
 		\begin{equation}
-		p = 
+		\mathbf{p} = 
 		\begin{bmatrix}
 				  x	\\
 				  y	\\
@@ -68,64 +70,76 @@
 	
 		\textbf{ $\textbf{SE}(3)$}\\
 		-elements of group\\
+		\begin{equation}
+			\begin{bmatrix}
+				\mathbf{R}	&	\mathbf{t} \\
+			  	\textbf{0}_{1 \times 3}		& 	1 
+			\end{bmatrix}
+		\end{equation}
 		-lie algebra\\
+		\begin{equation}
+			\begin{bmatrix}
+				  [\mathbf{\omega}]_\times	&  \mathbf{v}\\
+				  \textbf{0}_{1 \times 3} & 0						  
+			\end{bmatrix}
+		\end{equation}
 		-actions\\
 		-adjoint map \& adjoint representation
 		
 	\subsubsection{Reference Frames}
-		-$^{A}_{B}X^{}_{C}$ defines transformation of C w.r.t. B defined in A
+		-$^{A}_{B}\mathbf{X}^{}_{C}$ defines transformation of C w.r.t. B defined in A
 		-mathematical definitions\\
 		-notation, diagrams
 	\subsubsection{robot state representation}
 		-inertial frame A, sensor/robot frame  B
 		-p,v,a,R,omega,alpha - define, state reference frames\\	
-		position $^{A}_{A}p^{}_{B}$\\
-		velocity $^{B}_{A}v^{}_{B}$\\
-		acceleration $^{B}_{A}a^{}_{B}$\\
-		orientation $^{A}_{A}R^{}_{B}$ - rotation matrix\\
-		angular velocity $^{B}_{A}\omega^{}_{B}$ - scaled axis representation\\
-		angular acceleration $^{B}_{A}\alpha^{}_{B}$ - scaled axis representation\\
+		position $^{A}_{A}\mathbf{p}^{}_{B}$\\
+		velocity $^{B}_{A}\mathbf{v}^{}_{B}$\\
+		acceleration $^{B}_{A}\mathbf{a}^{}_{B}$\\
+		orientation $^{A}_{A}\mathbf{R}^{}_{B}$ - rotation matrix\\
+		angular velocity $^{B}_{A}\mathbf{\omega}^{}_{B}$ - scaled axis representation\\
+		angular acceleration $^{B}_{A}\mathbf{\alpha}^{}_{B}$ - scaled axis representation\\
 		
 		pose of robot w.r.t. inertial frame, defined in inertial frame ie. screw matrix:
 		\begin{equation}
-				S(t) = 
+				\mathbf{S}(t) = 
 				\begin{bmatrix}
-						  ^{A}_{A}R(t)^{}_{B} 	& 	^{A}_{A}p(t)^{}_{B}\\
-						  0_{1\times3} & 1						  
+						  ^{A}_{A}\mathbf{R}(t)^{}_{B} 	& 	^{A}_{A}\mathbf{p}(t)^{}_{B}\\
+						  \textbf{0}_{1 \times 3} & 1						  
 				\end{bmatrix}
 		\end{equation}
 		
 		velocity (linear and angular) w.r.t. inertial frame, defined in body frame ie. twist matrix:
 		\begin{equation}
-				T(t) = 
+				\mathbf{T}(t) = 
 				\begin{bmatrix}
-		  ^{B}_{A}{[\omega(t)]_\times}^{}_{B} 	& 	^{B}_{A}v(t)^{}_{B}\\
-		  0_{1\times3} & 0						  
+		  ^{B}_{A}{[\mathbf{\omega}(t)]_\times}^{}_{B} 	& 	^{B}_{A}\mathbf{v}(t)^{}_{B}\\
+		  \textbf{0}_{1 \times 3} & 0						  
 				\end{bmatrix}
 		\end{equation}
 				
 		acceleration (linear and angular) w.r.t. inertial frame, defined in body frame ie. wrench matrix
 		\begin{equation}
-				W(t) = 
+				\mathbf{W}(t) = 
 				\begin{bmatrix}
-				  ^{B}_{A}{[\alpha(t)]_\times}^{}_{B} 	& 	^{B}_{A}a(t)^{}_{B}\\
-				  0_{1\times3} & 0						  
+				  ^{B}_{A}{[\mathbf{\alpha}(t)]_\times}^{}_{B} 	& 	^{B}_{A}\mathbf{a}(t)^{}_{B}\\
+				  \textbf{0}_{1 \times 3} & 0						  
 				\end{bmatrix}
 		\end{equation}
 		
 				
 	\subsubsection{robot dynamic model}
 		screw matrix:\\
-		$ \dfrac{\textnormal{d}}{\textnormal{d}t}S(t)=S(t)T(t)$\\
-		numerically: $S(t+\delta t) = S(t)e^{\delta tT(t)}$
+		$ \dfrac{\textnormal{d}}{\textnormal{d}t}\mathbf{S}(t)=\mathbf{S}(t)\mathbf{T}(t)$\\
+		numerically: $\mathbf{S}(t+\delta t) = \mathbf{S}(t)e^{\delta t\mathbf{T}(t)}$
 		
 		twist matrix:\\
-		$ \dfrac{\textnormal{d}}{\textnormal{d}t}T(t)=W(t)$\\
-		numerically: $T(t+\delta t) = T(t) + \delta tW(t)$
+		$ \dfrac{\textnormal{d}}{\textnormal{d}t}\mathbf{T}(t)=\mathbf{W}(t)$\\
+		numerically: $\mathbf{T}(t+\delta t) = \mathbf{T}(t) + \delta t\mathbf{W}(t)$
 		
 		wrench matrix:\\
-		$ \dfrac{\textnormal{d}}{\textnormal{d}t}W(t)=0$\\
-		numerically: $W(t+\delta t) = W(t)$\\
+		$ \dfrac{\textnormal{d}}{\textnormal{d}t}\mathbf{W}(t)=0$\\
+		numerically: $\mathbf{W}(t+\delta t) = \mathbf{W}(t)$\\
 		-update methods (euler, runge-kutta etc)
 	\subsubsection{sensor dynamic model}
 		-ODEs (same as robot + scanning)\\
