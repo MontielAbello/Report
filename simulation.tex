@@ -1,7 +1,14 @@
 \chapter{Simulation}
 \section{Implementation}
 \subsection{Sensor modelling}
+screw: ${^{A}_{A}\mathbf{S}^{}_{B}}(t+\delta t) = {^{A}_{A}\mathbf{S}^{}_{B}(t)}e^{\delta t {^{B}_{A}\mathbf{T}^{}_{B}(t)}}$
+			
+twist: ${^{B}_{A}\mathbf{T}^{}_{B}}(t+\delta t) = {^{B}_{A}\mathbf{T}^{}_{B}(t)} + \delta t {^{B}_{A}\mathbf{W}^{}_{B}(t)}$
+
+wrench: ${^{B}_{A}\mathbf{W}^{}_{B}}(t+\delta t) = {^{B}_{A}\mathbf{W}^{}_{B}(t)}$
+
 \subsection{Environment modelling}
 \subsection{Measurement modelling}
+-triangle ray intersection
 \subsection{Observer implementation}
 \section{Results}

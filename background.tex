@@ -2,17 +2,22 @@
 
 \subsection{Rigid Body Dynamics}
 	\subsubsection{Lie Groups}		
-		\textbf{Lie groups}\\
+		\textbf{Definition: Lie group}\\
 		The theory of Lie groups is required in the modelling of rigid bodies.
 		A Lie group $\mathbf{G}$ is a group that is also a differentiable manifold.
-		As a group, G satisfies the 4 group axioms: closure, associativity, identity, inverse. 
+		As a group, G is a set of elements plus a group operation (denoted $AB$ for $A,B \in \mathbf{G}$) that satisfies the 4 group axioms: \\
+		closure: $\mathbf{G} \times \mathbf{G} \mapsto \mathbf{G}$ 
+		ie $\forall A,B \in \mathbf{G}$, $AB \in \mathbf{G}$\\
+		associativity: $\forall A,B,C \in \mathbf{G}$, $(AB)C=A(BC)$\\
+		identity: $\exists I \in \mathbf{G}$ such that $IA = AI = A$, $\forall A \in \mathbf{G}$ \\
+		inverse: $\forall A \in \mathbf{G}, \exists A^{-1}$ such that $AA^{-1}=A^{-1}A=I$\\
 		Because G is a differentiable manifold, in a neighbourhood of the identity it approximates euclidean space and allows ...?
 		
 		\textbf{Matrix Lie groups}
 		This work will be limited to matrix Lie groups, whose members  are $n \times n$ matrices.
 		
 		\textbf{Lie algebra}\\
-		Tangent space of Lie group with origin at identity is called Lie algebra $\mathfrak{g} $ of the group. It is called the Lie \textit{algebra} because it has a binary operation, known as the Lie bracket $[X,Y]$. For matrix Lie groups, $[A,B] \buildrel\triangle\over = AB-BA$. Relationship to group operation, commutative \& non-commutative, Baker-Campbell-Hausdorff formula...
+		Tangent space of Lie group with origin at identity is called Lie algebra $\mathfrak{g} $ of the group. It is called the Lie \textit{algebra} because it has a binary operation, known as the Lie bracket $[X,Y]$. For matrix Lie groups, $[A,B] \stackrel{\Delta}{=} AB-BA$. Relationship to group operation, commutative \& non-commutative, Baker-Campbell-Hausdorff formula...
 		
 		\textbf{Exponential map}\\		
 		exponential map - Lie group generators
@@ -20,20 +25,25 @@
 		\textbf{Adjoint map}\\			
 		adjoint map \& adjoint representation
 		
-		\textbf{Actions}
+		\textbf{Actions}\\
+		Group element acting on manifold.
+		left action
+		
 		
 	\subsubsection{\textbf{SO}(3)}
-		\textbf{Group elements}
+		\textbf{Group elements}\\
+		Subgroup of GL(3), $3 \times 3$ invertible matrices.
+		A rotation represents the motion of a rigid body about a fixed point. In $\mathbb{R}^3$ this is an isometry (a transformation that preserves distances between any pair of points) that has a determinant of +1 (proper isometries). The set of all proper orthogonal transformations is known as the \textit{special orthogonal group} $\textbf{SO}(3)$.
 		
-		\textbf{Lie algebra}
+		\textbf{Lie algebra}\\
+		Lie algebra $\mathfrak{so}(3)$ is vector space of $3 \times 3$ skew-symmetric matrices $\hat{\omega}$.
 		
-		\textbf{Actions}
+		\textbf{Actions}\\
+		Group action rotates point in $\mathbb{R}^3$.
 		
 		\textbf{Adjoint map}
 		
-		\textbf{Rotation representation}\\
-		A rotation represents the motion of a rigid body about a fixed point. In $\mathbb{R}^3$ this is an isometry (a transformation that preserves distances between any pair of points) that has a determinant of +1 (proper isometries). The set of all proper orthogonal transformations is known as the \textit{special orthogonal group} $\textbf{SO}(3)$.
-		
+		\textbf{Rotation representation}\\		
 		A rotation about a point in $\mathbb{R}^3$ can be represented by: \textbf{TODO:} \textit{go into more detail on below}
 		
 		rotation matrix:\\
@@ -42,8 +52,8 @@
 		scaled axis angle:\\
 		3-vector where direction represents axis of rotation and magnitude represents angle of rotation.		
 		
-		quaternions:
-		4-vector, same information as axis angle, but different form.\\
+		quaternions:\\
+		4-vector, same information as axis angle, but different form.
 		
 	\subsubsection{\textbf{SE}(3)}		
 		\textbf{3D space - $\mathbb{R}^3$}\\
@@ -55,7 +65,7 @@
 		To represent rigid bodies, require mappings corresponding to rotation and translation. Translation can be modelled as a function on a vector space $\mathbb{R}^3$ but the set of all rotations in $\mathbb{R}^3$ forms a Lie group. 
 
 		\textbf{homogeneous representation}\\
-		$4 \times 4$ screw matrix - represent rotation and translation with a single matrix of form:\\
+		$4 \times 4$ screw matrix - represent rotation and translation with a single matrix of form:
 		
 		\begin{equation}
 				\begin{bmatrix}
@@ -76,22 +86,26 @@
 		\end{bmatrix}
 		\end{equation}
 	
-		\textbf{ $\textbf{SE}(3)$}\\
-		-elements of group\\
+		\textbf{Elements of $\textbf{SE}(3)$}
 		\begin{equation}
 			\begin{bmatrix}
 				\mathbf{R}	&	\mathbf{t} \\
 			  	\textbf{0}_{1 \times 3}		& 	1 
 			\end{bmatrix}
 		\end{equation}
-		-lie algebra\\
+		
+		\textbf{Lie algebra}
 		\begin{equation}
 			\begin{bmatrix}
 				  [\mathbf{\omega}]_\times	&  \mathbf{v}\\
 				  \textbf{0}_{1 \times 3} & 0						  
 			\end{bmatrix}
 		\end{equation}
-		-actions\\
+		
+		\textbf{Actions}\\
+		group element acts on $\mathbb{R}^3$ - point in homogeneous coordinates
+		
+		\textbf{Adjoint Map}\\
 		-adjoint map \& adjoint representation
 		
 	\subsubsection{Reference Frames}
@@ -122,19 +136,19 @@
 		\end{equation}
 
 	
-	\subsubsection{Robot State Representation}
-		-inertial frame A, sensor/robot frame  B
+	\subsubsection{Sensor State Representation}
+		-inertial frame A, sensor/robot frame  B\\
 		-p,v,a,R,omega,alpha - define, state reference frames\\	
 		position $^{A}_{A}\mathbf{p}^{}_{B}$\\
 		velocity $^{B}_{A}\mathbf{v}^{}_{B}$\\
 		acceleration $^{B}_{A}\mathbf{a}^{}_{B}$\\
 		orientation $^{A}_{A}\mathbf{R}^{}_{B}$ - rotation matrix\\
 		angular velocity $^{B}_{A}\mathbf{\omega}^{}_{B}$ - scaled axis representation\\
-		angular acceleration $^{B}_{A}\mathbf{\alpha}^{}_{B}$ - scaled axis representation\\
+		angular acceleration $^{B}_{A}\mathbf{\alpha}^{}_{B}$ - scaled axis representation
 		
 		pose of robot w.r.t. inertial frame, defined in inertial frame ie. screw matrix:
 		\begin{equation}
-				^{A}_{A}\mathbf{S}^{}_{B}(t) = 
+				{^{A}_{A}\mathbf{S}^{}_{B}(t)} = 
 				\begin{bmatrix}
 						  ^{A}_{A}\mathbf{R}^{}_{B}(t) 	& 	^{A}_{A}\mathbf{p}^{}_{B}(t)\\
 						  \textbf{0}_{1 \times 3} & 1						  
@@ -143,7 +157,7 @@
 		
 		velocity (linear and angular) w.r.t. inertial frame, defined in body frame ie. twist matrix:
 		\begin{equation}
-				^{B}_{A}\mathbf{T}^{}_{B}(t) = 
+				{^{B}_{A}\mathbf{T}^{}_{B}(t)} = 
 				\begin{bmatrix}
 		  {[^{B}_{A}\mathbf{\omega}^{}_{B}(t)]_\times} 	& 	^{B}_{A}\mathbf{v}^{}_{B}(t)\\
 		  \textbf{0}_{1 \times 3} & 0						  
@@ -152,33 +166,40 @@
 				
 		acceleration (linear and angular) w.r.t. inertial frame, defined in body frame ie. wrench matrix
 		\begin{equation}
-				^{B}_{A}\mathbf{W}^{}_{B}(t) = 
+				{^{B}_{A}\mathbf{W}^{}_{B}(t)} = 
 				\begin{bmatrix}
 				  {[^{B}_{A}\mathbf{\alpha}^{}_{B}(t)]_\times} 	& 	^{B}_{A}\mathbf{a}^{}_{B}(t)\\
 				  \textbf{0}_{1 \times 3} & 0						  
 				\end{bmatrix}
 		\end{equation}
 		
+		other parameters ie FOV, steps
 				
-	\subsubsection{Robot Dynamic Model}
-		screw matrix:\\
-		$ \dfrac{\textnormal{d}}{\textnormal{d}t}\mathbf{S}(t)=\mathbf{S}(t)\mathbf{T}(t)$\\
-		numerically: $\mathbf{S}(t+\delta t) = \mathbf{S}(t)e^{\delta t\mathbf{T}(t)}$
+	\subsubsection{Sensor Dynamic Model}
+		screw matrix:
+		\begin{equation}
+			{\frac{\textnormal{d}}{\textnormal{d}t}} {^{A}_{A}\mathbf{S}^{}_{B}(t)} ={^{A}_{A}\mathbf{S}^{}_{B}(t)} {^{B}_{A}\mathbf{T}^{}_{B}(t)}
+		\end{equation}		
 		
-		twist matrix:\\
-		$ \dfrac{\textnormal{d}}{\textnormal{d}t}\mathbf{T}(t)=\mathbf{W}(t)$\\
-		numerically: $\mathbf{T}(t+\delta t) = \mathbf{T}(t) + \delta t\mathbf{W}(t)$
+		twist matrix:
+		\begin{equation}
+			{\frac{\textnormal{d}}{\textnormal{d}t}} {^{B}_{A}\mathbf{T}^{}_{B}(t)} = {^{B}_{A}\mathbf{W}^{}_{B}(t)}
+		\end{equation}		
 		
-		wrench matrix:\\
-		$ \dfrac{\textnormal{d}}{\textnormal{d}t}\mathbf{W}(t)=0$\\
-		numerically: $\mathbf{W}(t+\delta t) = \mathbf{W}(t)$\\
+		wrench matrix:
+		\begin{equation}
+			{\frac{\textnormal{d}}{\textnormal{d}t}} {^{B}_{A}\mathbf{W}^{}_{B}(t)}=0			
+		\end{equation}
+		
+		-something for scanning dynamics
+		
 		-update methods (euler, runge-kutta etc)
 		
-	\subsubsection{Sensor State Representation}
-		
-	\subsubsection{Sensor Dynamic Model}
-		-ODEs (same as robot + scanning)\\
-		-parameters ie FOV, steps
+	\subsubsection{Object State Representation}
+		-frame fixed to object - $B$
+		-same as sensor + size $s$
+	\subsubsection{Object Dynamic Model}
+		-ODEs (same as sensor)
 		
 \subsection{Symmetry Preserving Observers}
 	\subsubsection{definitions?}
