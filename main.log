@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  6 APR 2016 00:37
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  6 APR 2016 16:03
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -519,54 +519,73 @@ Chapter 1.
 LaTeX Font Info:    Try loading font information for U+euf on input line 15.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [5
+)
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--34
+
+ []
+
+[5
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 43--45
+Underfull \hbox (badness 10000) in paragraph at lines 46--48
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--51
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 71--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
+Underfull \hbox (badness 10000) in paragraph at lines 58--60
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 94--102
+Underfull \hbox (badness 10000) in paragraph at lines 80--82
 
  []
 
-[7]) [8] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\problem.tex
-"
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--135
+
+ []
+
+[7] [8]) [9]
+("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\problem.tex"
 Underfull \hbox (badness 10000) in paragraph at lines 24--27
 
  []
 
-) [9
+) [10
 
 
 
 ] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\theory.tex"
-[10
-
-
-
-]
 Chapter 2.
-) [11] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.te
-x" [12
+) [11
+
+
+
+] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.tex" [1
+2
 
 
 
@@ -602,7 +621,7 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 Here is how much of TeX's memory you used:
  12869 strings out of 493921
  258430 string characters out of 3147261
- 282047 words of memory out of 3000000
+ 282052 words of memory out of 3000000
  15868 multiletter control sequences out of 15000+200000
  14592 words of font info for 54 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -623,7 +642,7 @@ am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files
 /type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (19 pages, 199787 bytes).
+Output written on main.pdf (19 pages, 201007 bytes).
 PDF statistics:
  131 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

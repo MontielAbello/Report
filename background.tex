@@ -20,16 +20,19 @@
 		\textbf{Adjoint map}\\			
 		adjoint map \& adjoint representation
 		
-	\subsubsection{\textbf{SE}(3)}		
-		\textbf{3D space - $\mathbb{R}^3$}\\
-		In practice, robot, sensor, environment exist in 3D Euclidean space - $\mathbb{R}^3$.\\
-		An arbitrary function that maps a pose *(or point?) in $\mathbb{R}^3$ to another can be defined as:
-		\begin{equation}
-		f: \mathbb{R}^3 \rightarrow \mathbb{R}^3
-		\end{equation}
-		To represent rigid bodies, require mappings corresponding to rotation and translation. Translation can be modelled as a function on a vector space $\mathbb{R}^3$ but the set of all rotations in $\mathbb{R}^3$ forms a Lie group.
+		\textbf{Actions}
 		
-		\textbf{Rotations}\\
+	\subsubsection{\textbf{SO}(3)}	
+	
+		\textbf{Group elements}\\
+		
+		\textbf{Lie algebra}\\
+		
+		\textbf{Actions}\\
+		
+		\textbf{Adjoint map}\\
+		
+		\textbf{Rotation representation}\\
 		A rotation represents the motion of a rigid body about a fixed point. In $\mathbb{R}^3$ this is an isometry (a transformation that preserves distances between any pair of points) that has a determinant of +1 (proper isometries). The set of all proper orthogonal transformations is known as the \textit{special orthogonal group} $\textbf{SO}(3)$.
 		
 		A rotation about a point in $\mathbb{R}^3$ can be represented by: \textbf{TODO:} \textit{go into more detail on below}
@@ -43,8 +46,14 @@
 		quaternions:\\
 		4-vector, same information as axis angle, but different form.\\
 		
-		\textbf{Translations}\\
-		A one-to-one transformation that shifts each point by a constant vector ie. shifts origin *(haven't discussed coordinate frames yet) 
+	\subsubsection{\textbf{SE}(3)}		
+		\textbf{3D space - $\mathbb{R}^3$}\\
+		In practice, robot, sensor, environment exist in 3D Euclidean space - $\mathbb{R}^3$.\\
+		An arbitrary function that maps a pose *(or point?) in $\mathbb{R}^3$ to another can be defined as:
+		\begin{equation}
+		f: \mathbb{R}^3 \rightarrow \mathbb{R}^3
+		\end{equation}
+		To represent rigid bodies, require mappings corresponding to rotation and translation. Translation can be modelled as a function on a vector space $\mathbb{R}^3$ but the set of all rotations in $\mathbb{R}^3$ forms a Lie group. 
 
 		\textbf{homogeneous representation}\\
 		$4 \times 4$ screw matrix - represent rotation and translation with a single matrix of form:\\
@@ -87,10 +96,34 @@
 		-adjoint map \& adjoint representation
 		
 	\subsubsection{Reference Frames}
-		-$^{A}_{B}\mathbf{X}^{}_{C}$ defines transformation of C w.r.t. B defined in A
-		-mathematical definitions\\
-		-notation, diagrams
-	\subsubsection{robot state representation}
+		A reference frame is a system used to define a point on a manifold, on this case the Euclidean space $\mathbb{R}^3$. A reference frame is represented by an element of \textbf{SE}(3).\\
+		$^{A}_{B}\mathbf{X}^{}_{C}$ defines transformation of C w.r.t. B defined in A
+		
+		Definition: Pose
+			
+		Definition: point
+		-homogeneous coordinates		
+		
+		Inverse
+		\begin{equation}
+			({^{A}_{B}\mathbf{X}^{}_{C}})^{-1} = {^{A}_{C}\mathbf{X}^{}_{B}}
+		\end{equation}
+		
+		Transform point from one reference frame to another:
+		\begin{equation}
+			{^{A}_{A}\mathbf{p}^{}_{B}} = {^{A}_{A}\mathbf{X}^{}_{B}}{^{B}_{A}\mathbf{p}^{}_{B}}
+		\end{equation}
+		\begin{equation}
+			{^{B}_{A}\mathbf{p}^{}_{B}} = {^{B}_{B}\mathbf{X}^{}_{A}}{^{A}_{A}\mathbf{p}^{}_{B}}
+		\end{equation}
+		Transform pose from one reference frame to another	
+		-change of basis
+		\begin{equation}
+			{^{B}_{C}\mathbf{X}^{}_{D}} = ({^{B}_{B}\mathbf{X}^{}_{A}}){^{A}_{C}\mathbf{X}^{}_{D}}({^{B}_{B}\mathbf{X}^{}_{A}})^{-1}
+		\end{equation}
+
+	
+	\subsubsection{Robot State Representation}
 		-inertial frame A, sensor/robot frame  B
 		-p,v,a,R,omega,alpha - define, state reference frames\\	
 		position $^{A}_{A}\mathbf{p}^{}_{B}$\\
@@ -102,33 +135,33 @@
 		
 		pose of robot w.r.t. inertial frame, defined in inertial frame ie. screw matrix:
 		\begin{equation}
-				\mathbf{S}(t) = 
+				^{A}_{A}\mathbf{S}^{}_{B}(t) = 
 				\begin{bmatrix}
-						  ^{A}_{A}\mathbf{R}(t)^{}_{B} 	& 	^{A}_{A}\mathbf{p}(t)^{}_{B}\\
+						  ^{A}_{A}\mathbf{R}^{}_{B}(t) 	& 	^{A}_{A}\mathbf{p}^{}_{B}(t)\\
 						  \textbf{0}_{1 \times 3} & 1						  
 				\end{bmatrix}
 		\end{equation}
 		
 		velocity (linear and angular) w.r.t. inertial frame, defined in body frame ie. twist matrix:
 		\begin{equation}
-				\mathbf{T}(t) = 
+				^{B}_{A}\mathbf{T}^{}_{B}(t) = 
 				\begin{bmatrix}
-		  ^{B}_{A}{[\mathbf{\omega}(t)]_\times}^{}_{B} 	& 	^{B}_{A}\mathbf{v}(t)^{}_{B}\\
+		  {[^{B}_{A}\mathbf{\omega}^{}_{B}(t)]_\times} 	& 	^{B}_{A}\mathbf{v}^{}_{B}(t)\\
 		  \textbf{0}_{1 \times 3} & 0						  
 				\end{bmatrix}
 		\end{equation}
 				
 		acceleration (linear and angular) w.r.t. inertial frame, defined in body frame ie. wrench matrix
 		\begin{equation}
-				\mathbf{W}(t) = 
+				^{B}_{A}\mathbf{W}^{}_{B}(t) = 
 				\begin{bmatrix}
-				  ^{B}_{A}{[\mathbf{\alpha}(t)]_\times}^{}_{B} 	& 	^{B}_{A}\mathbf{a}(t)^{}_{B}\\
+				  {[^{B}_{A}\mathbf{\alpha}^{}_{B}(t)]_\times} 	& 	^{B}_{A}\mathbf{a}^{}_{B}(t)\\
 				  \textbf{0}_{1 \times 3} & 0						  
 				\end{bmatrix}
 		\end{equation}
 		
 				
-	\subsubsection{robot dynamic model}
+	\subsubsection{Robot Dynamic Model}
 		screw matrix:\\
 		$ \dfrac{\textnormal{d}}{\textnormal{d}t}\mathbf{S}(t)=\mathbf{S}(t)\mathbf{T}(t)$\\
 		numerically: $\mathbf{S}(t+\delta t) = \mathbf{S}(t)e^{\delta t\mathbf{T}(t)}$
@@ -141,9 +174,13 @@
 		$ \dfrac{\textnormal{d}}{\textnormal{d}t}\mathbf{W}(t)=0$\\
 		numerically: $\mathbf{W}(t+\delta t) = \mathbf{W}(t)$\\
 		-update methods (euler, runge-kutta etc)
-	\subsubsection{sensor dynamic model}
+		
+	\subsubsection{Sensor State Representation}
+		
+	\subsubsection{Sensor Dynamic Model}
 		-ODEs (same as robot + scanning)\\
 		-parameters ie FOV, steps
+		
 \subsection{Symmetry Preserving Observers}
 	\subsubsection{definitions?}
 	\subsubsection{construction, ie moving frame method etc}
