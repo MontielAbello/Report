@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  6 APR 2016 16:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  6 APR 2016 16:23
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -458,24 +458,22 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux"
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\literature.aux")
-("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\background.aux")
-("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\problem.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\theory.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.aux"))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -491,12 +489,12 @@ LaTeX Font Info:    ... okay on input line 56.
 \makeMPintoPDFobject=\count125
 \everyMPtoPDFconversion=\toks42
 ) ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 62.
+LaTeX Font Info:    Try loading font information for U+msa on input line 60.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 62.
+LaTeX Font Info:    Try loading font information for U+msb on input line 60.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -519,97 +517,130 @@ Chapter 1.
 LaTeX Font Info:    Try loading font information for U+euf on input line 15.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--32
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
-
- []
-
-[5
+) [5
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 46--48
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--60
+Underfull \hbox (badness 10000) in paragraph at lines 57--59
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--81
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 80--82
+Underfull \hbox (badness 10000) in paragraph at lines 86--88
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--89
+Underfull \hbox (badness 10000) in paragraph at lines 126--134
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--135
-
- []
-
-[7] [8]) [9]
+[7]) [8] [9]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\problem.tex"
-Underfull \hbox (badness 10000) in paragraph at lines 24--27
+Underfull \hbox (badness 10000) in paragraph at lines 25--28
 
  []
 
-) [10
+[10
 
 
 
-] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\theory.tex"
-Chapter 2.
-) [11
-
-
-
-] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.tex" [1
-2
+]) [11] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\theory.tex" 
+[12
 
 
 
 ]
-Chapter 3.
-) [13] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.te
+Chapter 2.
+) [13] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.te
 x" [14
 
 
 
 ]
-Chapter 4.
-) [15] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.te
+Chapter 3.
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \subsection
+               {Environment modelling}\\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \subsection
+               {Measurement modelling}\\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \subsection
+               {Observer}\\
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \section
+            {Results}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+) [15] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.te
 x" [16
 
 
 
 ]
+Chapter 4.
+) [17] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.te
+x" [18
+
+
+
+]
 Chapter 5.
-) [17] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.bbl"
-[18
+) [19] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.bbl"
+[20
 
 
-]) [19] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux" ("
+]) [21] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux" ("
 C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\literature.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\background.aux")
@@ -619,10 +650,10 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.aux")) ) 
 Here is how much of TeX's memory you used:
- 12869 strings out of 493921
- 258430 string characters out of 3147261
- 282052 words of memory out of 3000000
- 15868 multiletter control sequences out of 15000+200000
+ 12863 strings out of 493921
+ 258129 string characters out of 3147261
+ 281506 words of memory out of 3000000
+ 15866 multiletter control sequences out of 15000+200000
  14592 words of font info for 54 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,9n,54p,480b,183s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -642,9 +673,9 @@ am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files
 /type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (19 pages, 201007 bytes).
+Output written on main.pdf (21 pages, 202449 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
+ 137 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
