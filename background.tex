@@ -20,31 +20,92 @@
 		
 		Because the Lie group $\mathbf{G}$ is a differentiable manifold, it is locally Euclidean. This means that the neighbourhood around every element of $\mathbf{G}$ can be approximated with a tangent plane. This property allows calculus to be performed on elements of $\mathbf{G}$.
 		
-		\textbf{Matrix Lie groups}
-		A matrix Lie group is made up of group elements which are $n \times n$ matrices.
-		This work will be focus on matrix Lie groups because ... 
+		\textbf{Matrix Lie groups}\\
+			A matrix Lie group is made up of group elements which are $n \times n$ matrices.
+			This work will be focus on matrix Lie groups because the exponential map and Lie bracket functions given below only apply to such Lie groups.
 		
 		\textbf{Lie algebra}\\
-		Tangent space of Lie group with origin at identity is called Lie algebra $\mathfrak{g} $ of the group. It is called the Lie \textit{algebra} because it has a binary operation, known as the Lie bracket $[X,Y]$. For matrix Lie groups, $[A,B] \stackrel{\Delta}{=} AB-BA$. Relationship to group operation, commutative \& non-commutative, Baker-Campbell-Hausdorff formula...
-		
-		\textbf{Exponential map}\\		
-		exponential map - Lie group generators
+			The tangent space at the identity element of a Lie group is called the Lie algebra $\mathfrak{g}$. It is called the Lie \textit{algebra} because it has a binary operation, known as the Lie bracket $[X,Y]$. For matrix Lie groups the Lie bracket is
+			\begin{equation}
+				[A,B] \stackrel{\Delta}{=} AB-BA
+			\end{equation}
 			
-		\textbf{Adjoint map}\\			
-		adjoint map \& adjoint representation
+		\textbf{The exponential map and logarithm map}\\		
+			The mapping from the Lie algebra $\mathfrak{g}$ to the Lie group $\mathbf{G}$ is called the exponential map:
+			\begin{equation}
+				\exp: \mathfrak{g} \rightarrow \mathbf{G}
+			\end{equation}			
+			Similarly, the logarithm map maps elements from $\mathbf{G}$ to $\mathfrak{g}$:
+			\begin{equation}
+				\log: \mathbf{G} \rightarrow \mathfrak{g}
+			\end{equation}
+						
+		\textbf{sub-heading?}\\
+			For an \textit{n}-dimensional matrix Lie group, the Lie algebra $\mathfrak{g}$ is a vector space isomorphic to $\mathbb{R}^n$. The hat operator $\hat{\:}$ maps vectors $x \in \mathbb{R}^3$ to elements of $\mathfrak{g}$.				
+			\begin{equation}
+				\hat{\:}: x \in \mathbb{R}^n \rightarrow \hat{x} \in \mathfrak{g}
+			\end{equation}		
+			For a matrix Lie group $\mathbf{G}$ whose elements are $\textit{n} \times \textit{n}$ matrices, the elements of $\mathfrak{g}$ will also be $\textit{n} \times \textit{n}$ matrices. The hat operator is defined
+			\begin{equation}
+				\hat{x} = \sum\limits_{i=1}^n x_iG^i 
+			\end{equation}
+			where $G^i$ are $\textit{n} \times \textit{n}$ matrices known as the infinitesimal generators of $\mathbf{G}$.
+						
+		\textbf{Lie bracket and group operation}\\					
+			For Lie groups endowned with the commutative property ($\forall A,B \mathbf{G}, AB = BA$), vector addition in the Lie algebra maps to a group operation in the Lie group. For $C = A + B$ where $A,B,C \in \mathfrak{g}$,
+			\begin{equation}
+				e^C = e^{A+B} = e^Ae^B
+			\end{equation}
+			For non-commutative Lie groups, the relationship between the Lie bracket and group operation does not hold. Instead, for $C = \log{e^Ae^B}$, $C$ is calculated with the Baker-Campbell-Hausdorff formula:
+			\begin{equation}
+				C = A + B + \frac{1}{2}[A,B] + \frac{1}{12}[A-B,[A,B]] + \frac{1}{24}[B,[A,[A,B]]] + \dots
+			\end{equation}	
 		
 		\textbf{Actions}\\
-		Group element acting on manifold.
-		left action
-		
+			When a group action for a Lie group G acting on a manifold $M$ is a differentiable map, this is known as a Lie group action. For example, 3D rotations act on 3D points so the Lie group $\mathbf{SO}(3)$ acts on $\mathbb{R}^3$. A left action of $\mathbf{G}$ on $M$ is defined as a differentiable map
+			\begin{equation}
+				\Phi: \mathbf{G} \times M \mapsto M
+			\end{equation}
+			where
+			\begin{itemize}
+			\item the identity element $I$ maps M onto itself *(is that the right wording?)
+				\begin{equation}
+					\Phi(I,m) = m \textnormal{, } \forall m \in M
+				\end{equation}
+			\item Group actions compose according to
+				\begin{equation}
+					\Phi(m,\Phi(n,o)) = \Phi(mn,o)
+				\end{equation}
+			\end{itemize}
+			
+		\textbf{Adjoint map}\\		
+		EXPLANATION - Sometimes before a function B can be applied on manifold acted on by a group action A, it is necessary to apply the conjugate of A to B????\\
+		For $A \in \mathbf{G}$ define a function $\Psi$, known as the adjoint map of $\mathbf{G}$:
+		\begin{equation}
+			\Psi_A: \mathbf{G} \rightarrow \mathbf{G} \textnormal{, }
+			\Psi_A(B) \stackrel{\Delta}{=} ABA^{-1}
+		\end{equation}
+		Taking the derivative:
+		\begin{equation}
+			\frac{\partial}{\partial t} \Psi_A(B(t))|_{t=0} = AVA^{-1} \textnormal{, }
+			V \stackrel{\Delta}{=} 	\frac{\partial}{\partial t}B(t)|_{t=0}
+		\end{equation}
+		The adjoint	representation of $\mathbf{G}$ is given by the mapping
+		\begin{equation}
+			\textbf{Adj}_A: \mathfrak{g} \rightarrow \mathfrak{g} \textnormal{, }
+			\textbf{Adj}_A(V) \stackrel{\Delta}{=} AVA^{-1}
+		\end{equation}
+	
 		
 	\subsubsection{\textbf{SO}(3)}
+		An important matrix Lie group for the study of ...\\
 		\textbf{Group elements}\\
 		Subgroup of GL(3), $3 \times 3$ invertible matrices.
 		A rotation represents the motion of a rigid body about a fixed point. In $\mathbb{R}^3$ this is an isometry (a transformation that preserves distances between any pair of points) that has a determinant of +1 (proper isometries). The set of all proper orthogonal transformations is known as the \textit{special orthogonal group} $\textbf{SO}(3)$.
 		
 		\textbf{Lie algebra}\\
 		Lie algebra $\mathfrak{so}(3)$ is vector space of $3 \times 3$ skew-symmetric matrices $\hat{\omega}$.
+		exponential map		
 		
 		\textbf{Actions}\\
 		Group action rotates point in $\mathbb{R}^3$.
@@ -109,12 +170,15 @@
 				  \textbf{0}_{1 \times 3} & 0						  
 			\end{bmatrix}
 		\end{equation}
+		exponential map
 		
 		\textbf{Actions}\\
 		group element acts on $\mathbb{R}^3$ - point in homogeneous coordinates
+		performs rigid transformation
 		
 		\textbf{Adjoint Map}\\
 		-adjoint map \& adjoint representation
+		-adjoint map changes frame that pose is defined in???
 		
 	\subsubsection{Reference Frames}
 		A reference frame is a system used to define a point on a manifold, on this case the Euclidean space $\mathbb{R}^3$. A reference frame is represented by an element of \textbf{SE}(3).\\
