@@ -97,16 +97,30 @@
 		\end{equation}
 	
 		
-	\subsubsection{\textbf{SO}(3)}
-		An important matrix Lie group for the study of ...\\
-		\textbf{Group elements}\\
-		Subgroup of GL(3), $3 \times 3$ invertible matrices.
-		A rotation represents the motion of a rigid body about a fixed point. In $\mathbb{R}^3$ this is an isometry (a transformation that preserves distances between any pair of points) that has a determinant of +1 (proper isometries). The set of all proper orthogonal transformations is known as the \textit{special orthogonal group} $\textbf{SO}(3)$.
+	\subsubsection{\textbf{SO}(3)}	
+		A rotation represents the motion of a point about the origin of a Euclidean space. In $\mathbb{R}^3$ this is a proper isometry: a transformation that preserves distances between any pair of points and has a determinant of +1. The set of all rotations about the origin of $\mathbb{R}^3$ is known as the \textit{special orthogonal group} $\textbf{SO}(3)$.
+		This matrix Lie group is a subgroup of the general linear group $\textbf{GL}(3)$, so its group elements are $3 \times 3$ invertible matrices. These group elements are orthogonal matrices so their columns and rows are orthogonal unit vectors. 
 		
 		\textbf{Lie algebra}\\
-		Lie algebra $\mathfrak{so}(3)$ is vector space of $3 \times 3$ skew-symmetric matrices $\hat{\omega}$.
-		exponential map		
+		Lie algebra $\mathfrak{so}(3)$ is vector space of $3 \times 3$ skew-symmetric matrices $\hat{\omega}$, where $\omega$ is a 3-vector representing an angular velocity. The direction of $\omega$ indicates the axis of rotation while its magnitude gives the angular velocity. 
+		Elements of $\mathfrak{so}(3)$ are mapped to $\textbf{SO}(3)$ according to the exponential map:
+		\begin{equation}
+			\begin{split}
+				\exp: \mathfrak{so}(3) \rightarrow \mathbf{SO}(3)\\
+				[\omega]_\times \rightarrow \mathbf{R}_{3x3}
+			\end{split}		
+		\end{equation}		
+		i.e. $\forall \omega \in \mathfrak{so}(3) \textnormal{, } \exp([\omega]_\times) \in  \mathbf{SO}(3)$
 		
+		Conversely, the logarithm map maps $3 \times 3$ rotation matrices of $\mathbf{SO}(3)$ to elements of $\mathfrak{so}(3)$:
+		\begin{equation}
+			\begin{split}
+				\log: \mathbf{SO}(3) \rightarrow \mathfrak{so}(3)\\
+				 \mathbf{R}_{3x3} \rightarrow [\omega]_\times
+			\end{split}		
+		\end{equation}		
+		i.e. $\forall \mathbf{R} \in \mathbf{SO}(3)  \textnormal{, } \log(\mathbf{R}) \in  \mathfrak{so}(3)$
+				
 		\textbf{Actions}\\
 		Group action rotates point in $\mathbb{R}^3$.
 		
