@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  6 APR 2016 18:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  7 APR 2016 15:22
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -516,21 +516,28 @@ Chapter 1.
 
 
 ] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\background.tex"
-LaTeX Font Info:    Try loading font information for U+euf on input line 20.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
+LaTeX Font Info:    Try loading font information for U+euf on input line 28.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [5
 
 
 
-] [6] [7]
-[8]) [9] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\problem.tex
-" [10
+] [6] [7] [8])
+[9] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\problem.tex"
+[10
 
 
 
-]) [11]
-("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\theory.tex" [12
+]) [11] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\theory.tex" 
+[12
 
 
 
@@ -571,10 +578,10 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.aux")) ) 
 Here is how much of TeX's memory you used:
- 12869 strings out of 493921
- 258430 string characters out of 3147261
+ 12886 strings out of 493921
+ 258721 string characters out of 3147261
  283052 words of memory out of 3000000
- 15868 multiletter control sequences out of 15000+200000
+ 15882 multiletter control sequences out of 15000+200000
  14592 words of font info for 54 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,9n,54p,475b,183s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -595,7 +602,7 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2
 blic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb>
-Output written on main.pdf (21 pages, 213149 bytes).
+Output written on main.pdf (21 pages, 213754 bytes).
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

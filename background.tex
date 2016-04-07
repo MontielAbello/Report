@@ -2,19 +2,27 @@
 
 \subsection{Rigid Body Dynamics}
 	\subsubsection{Lie Groups}		
-		\textbf{Definition: Lie group}\\
-		The theory of Lie groups is required in the modelling of rigid bodies.
 		A Lie group $\mathbf{G}$ is a group that is also a differentiable manifold.
-		As a group, G is a set of elements plus a group operation (denoted $AB$ for $A,B \in \mathbf{G}$) that satisfies the 4 group axioms: \\
-		closure: $\mathbf{G} \times \mathbf{G} \mapsto \mathbf{G}$ 
-		ie $\forall A,B \in \mathbf{G}$, $AB \in \mathbf{G}$\\
-		associativity: $\forall A,B,C \in \mathbf{G}$, $(AB)C=A(BC)$\\
-		identity: $\exists I \in \mathbf{G}$ such that $IA = AI = A$, $\forall A \in \mathbf{G}$ \\
-		inverse: $\forall A \in \mathbf{G}, \exists A^{-1}$ such that $AA^{-1}=A^{-1}A=I$\\
-		Because G is a differentiable manifold, in a neighbourhood of the identity it approximates euclidean space and allows ...?
+		As a group, $\mathbf{G}$ is a set of elements and a group operation (denoted by multiplication, i.e. $AB$ for $A,B \in \mathbf{G}$) that satisfies the 4 group axioms:
+		
+		\begin{itemize}
+		\item \textbf{Closure:} 
+			The group operation
+			$\mathbf{G} \times \mathbf{G} \mapsto \mathbf{G}$ 
+			is a function that maps elements of $\mathbf{G}$ onto itself;
+			$\forall A,B \in \mathbf{G}$, $AB \in \mathbf{G}$.
+		\item \textbf{Associativity:} Elements of G are associative under the group operation;
+			$\forall A,B,C \in \mathbf{G}$, $(AB)C=A(BC)$.
+		\item \textbf{Identity:} There exists an identity element $I \in \mathbf{G}$  such that
+			$\forall A \in \mathbf{G}$, $IA = AI = A$.
+		\item \textbf{Inverse:} For all $A \in \mathbf{G}$ there exists an inverse element $A^{-1} \in \mathbf{G}$ such that $AA^{-1}=A^{-1}A=I$. 
+		\end{itemize}
+		
+		Because the Lie group $\mathbf{G}$ is a differentiable manifold, it is locally Euclidean. This means that the neighbourhood around every element of $\mathbf{G}$ can be approximated with a tangent plane. This property allows calculus to be performed on elements of $\mathbf{G}$.
 		
 		\textbf{Matrix Lie groups}
-		This work will be limited to matrix Lie groups, whose members  are $n \times n$ matrices.
+		A matrix Lie group is made up of group elements which are $n \times n$ matrices.
+		This work will be focus on matrix Lie groups because ... 
 		
 		\textbf{Lie algebra}\\
 		Tangent space of Lie group with origin at identity is called Lie algebra $\mathfrak{g} $ of the group. It is called the Lie \textit{algebra} because it has a binary operation, known as the Lie bracket $[X,Y]$. For matrix Lie groups, $[A,B] \stackrel{\Delta}{=} AB-BA$. Relationship to group operation, commutative \& non-commutative, Baker-Campbell-Hausdorff formula...
