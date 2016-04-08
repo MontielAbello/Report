@@ -1,6 +1,9 @@
 \section{Theoretical Background}
 
 \subsection{Rigid Body Dynamics}
+	In practice, robot, sensor, environment exist in 3D Euclidean space - $\mathbb{R}^3$.
+	To model the pose of a rigid body... (something about why Lie groups are necessary to represent pose)
+			
 	\subsubsection{Lie Groups}		
 		A Lie group $\mathbf{G}$ is a group that is also a differentiable manifold.
 		As a group, $\mathbf{G}$ is a set of elements and a group operation (denoted by multiplication, i.e. $AB$ for $A,B \in \mathbf{G}$) that satisfies the 4 group axioms:
@@ -151,8 +154,8 @@
 		$3 \times 3$ matrix where magnitude of each column is 1, columns are orthogonal, determinant is +1. Group operation matrix is multiplication. Left action is left multiplication of point. 
 		
 		\textbf{Scaled axis}\\
-		3-vector where direction represents axis of rotation and magnitude represents angle of rotation. Group operation - vector addition? Left action - rodrigues' rotation formula 
-		
+		3-vector where direction represents axis of rotation and magnitude represents angle of rotation. Group operation - vector addition? Left action - rodrigues' rotation formula converts scaled axis to rotation matrix which is used to rotate point.
+				
 		\textbf{Quaternion}\\
 		4-vector, same information as axis angle, but different form. Given axis of rotation $\mathbf{r}$ and angle of rotation $\theta$:
 		\begin{equation}
@@ -194,14 +197,6 @@
 		As with rotation matrices, quaternion multiplication is associative but not commutative.
 		
 	\subsubsection{\textbf{SE}(3)}		
-		\textbf{3D space - $\mathbb{R}^3$}\\
-		In practice, robot, sensor, environment exist in 3D Euclidean space - $\mathbb{R}^3$.\\
-		An arbitrary function that maps a pose *(or point?) in $\mathbb{R}^3$ to another can be defined as:
-		\begin{equation}
-		f: \mathbb{R}^3 \rightarrow \mathbb{R}^3
-		\end{equation}
-		To represent rigid bodies, require mappings corresponding to rotation and translation. Translation can be modelled as a function on a vector space $\mathbb{R}^3$ but the set of all rotations in $\mathbb{R}^3$ forms a Lie group. 
-
 		\textbf{homogeneous representation}\\
 		$4 \times 4$ screw matrix - represent rotation and translation with a single matrix of form:
 		
