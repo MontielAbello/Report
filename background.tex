@@ -122,21 +122,76 @@
 		i.e. $\forall \mathbf{R} \in \mathbf{SO}(3)  \textnormal{, } \log(\mathbf{R}) \in  \mathfrak{so}(3)$
 				
 		\textbf{Actions}\\
-		Group action rotates point in $\mathbb{R}^3$.
+		By the group action, elements of $\mathbf{SO}(3)$ rotate points in $\mathbb{R}^3$ about the origin. 
+		\begin{equation}
+			\Phi: \mathbf{SO}(3) \times \mathbf{R}^3 \mapsto \mathbf{R}^3
+		\end{equation}
 		
 		\textbf{Adjoint map}
+		\begin{equation}
+			\Psi_R: \mathbf{SO}(3) \rightarrow \mathbf{SO}(3) \textnormal{, }
+			\Psi_R(A) \stackrel{\Delta}{=} RAR^{-1}
+		\end{equation}
+		Taking the derivative:
+		\begin{equation}
+			\frac{\partial}{\partial t} \Psi_R(A(t))|_{t=0} = RBR^{-1} \textnormal{, }
+			B \stackrel{\Delta}{=} 	\frac{\partial}{\partial t}A(t)|_{t=0}
+		\end{equation}
+		The adjoint	representation of $\mathbf{G}$ is given by the mapping
+		\begin{equation}
+			\textbf{Adj}_R: \mathfrak{so}(3) \rightarrow \mathfrak{so}(3) \textnormal{, }
+			\textbf{Adj}_R(B) \stackrel{\Delta}{=} RBR^{-1}
+		\end{equation}
+		???? Hard to explain practical application without discussing reference frames: ie if position defined in body fixed frame but some other transformation defined in inertial frame. First undo rotation to get pose in inertial frame, apply transformation, then re-apply rotation
 		
 		\textbf{Rotation representation}\\		
-		A rotation about a point in $\mathbb{R}^3$ can be represented by: \textbf{TODO:} \textit{go into more detail on below}
+		There are many conventions by which elements of $\mathbf{SO}(3)$ can be represented. Those  A rotation about a point in $\mathbb{R}^3$ can be represented by: \textbf{TODO:} \textit{go into more detail on below}
 		
-		rotation matrix:\\
-		$3 \times 3$ matrix where magnitude of each column is 1, columns are orthogonal, determinant is +1.
+		\textbf{Rotation matrix}\\
+		$3 \times 3$ matrix where magnitude of each column is 1, columns are orthogonal, determinant is +1. Group operation matrix is multiplication. Left action is left multiplication of point. 
 		
-		scaled axis angle:\\
-		3-vector where direction represents axis of rotation and magnitude represents angle of rotation.		
+		\textbf{Scaled axis}\\
+		3-vector where direction represents axis of rotation and magnitude represents angle of rotation. Group operation - vector addition? Left action - rodrigues' rotation formula 
 		
-		quaternions:\\
-		4-vector, same information as axis angle, but different form.
+		\textbf{Quaternion}\\
+		4-vector, same information as axis angle, but different form. Given axis of rotation $\mathbf{r}$ and angle of rotation $\theta$:
+		\begin{equation}
+			\mathbf{q} = 
+			\begin{bmatrix}
+				w \\
+				x \\
+				y \\
+				z
+			\end{bmatrix}
+			 = 
+			 \begin{bmatrix}
+ 				w \\
+ 				\mathbf{v}
+			 \end{bmatrix}
+			 =
+			 \begin{bmatrix}
+			 	\cos(\theta/2) \\
+			 	\sin(\theta/2)\mathbf{r}
+			 \end{bmatrix}
+		\end{equation}
+		Group operation - quaternion multiplication defined as:
+		\begin{equation}
+			\mathbf{q1}\mathbf{q2} =
+			\begin{bmatrix}
+			 	w_1 \\
+			 	\mathbf{v}_1
+			\end{bmatrix} 
+			\begin{bmatrix}
+			 	w_2 \\
+			 	\mathbf{v}_2
+			\end{bmatrix} 
+			=
+			\begin{bmatrix}
+			 	w_1w_2 - \mathbf{v}_1 \cdot \mathbf{v}_2 \\
+			 	w_1\mathbf{v}_2 + w_2\mathbf{v}_1 + \mathbf{v}_1 \times \mathbf{v}_2
+			\end{bmatrix} 
+		\end{equation} 
+		As with rotation matrices, quaternion multiplication is associative but not commutative.
 		
 	\subsubsection{\textbf{SE}(3)}		
 		\textbf{3D space - $\mathbb{R}^3$}\\
