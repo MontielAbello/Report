@@ -181,7 +181,7 @@
 		\end{equation}
 		Group operation - quaternion multiplication defined as:
 		\begin{equation}
-			\mathbf{q1}\mathbf{q2} =
+			\mathbf{q}_1\mathbf{q}_2 =
 			\begin{bmatrix}
 			 	w_1 \\
 			 	\mathbf{v}_1
@@ -336,7 +336,7 @@
 		TODO: DIAGRAM HERE
 		
 		\textbf{Point:}\\
-		To represent the position of a point in $\mathbb{R}^3$, the convention used will be to first define a reference frame with origin located as this point. The position of a point at the origin of \{C\} with respect to another point \{B\}, defined in reference frame \{A\} is a 4-vector in homogeneous coordinates:
+		To represent the position of a point in $\mathbb{R}^3$, the convention used will be to first define a reference frame with origin located as this point. The position of a point at the origin of \{C\} with respect to another point \{B\}, defined in terms of the reference frame \{A\} is a 4-vector in homogeneous coordinates:
 		\begin{equation}
 			{^{A}_{B}\mathbf{p'}^{}_{C}} = 
 			\begin{bmatrix}
@@ -352,21 +352,20 @@
 		\end{equation}
 		TODO: DIAGRAM HERE
 		
-		\textbf{Defining a point in another reference frame:}\\
+		\textbf{Defining a point in terms of another reference frame:}\\
+		Consider a point in $\mathbb{R}^3$ defined as the position of the frame \{B\} with respect to the frame \{A\}, defined in terms of the frame \{B\}. To redefine the point in terms of \{A\}, the left action of ${^{A}_{A}\mathbf{S}^{}_{B}} \in \mathbf{SE}(3)$ is used:
 		\begin{equation}
-			{^{A}_{A}\mathbf{p}^{}_{B}} = {^{A}_{A}\mathbf{X}^{}_{B}}{^{B}_{A}\mathbf{p}^{}_{B}}
-		\end{equation}
-		\begin{equation}
-			{^{B}_{A}\mathbf{p}^{}_{B}} = {^{B}_{B}\mathbf{X}^{}_{A}}{^{A}_{A}\mathbf{p}^{}_{B}}
+			{^{A}_{A}\mathbf{p'}^{}_{B}} = {^{A}_{A}\mathbf{S}^{}_{B}}{^{B}_{A}\mathbf{p'}^{}_{B}}
 		\end{equation}
 		
-		\textbf{Defining a pose in another reference frame:}\\
-		-change of basis
+		\textbf{Defining a pose in terms of another reference frame:}\\
+		To define a pose transformation matrix in terms of a different reference frame, a matrix conjugation is used:
 		\begin{equation}
 			{^{B}_{C}\mathbf{X}^{}_{D}} = ({^{B}_{B}\mathbf{X}^{}_{A}}){^{A}_{C}\mathbf{X}^{}_{D}}({^{B}_{B}\mathbf{X}^{}_{A}})^{-1}
 		\end{equation}
 
-		Inverse
+		\textbf{Inverse:}\\
+		Taking the inverse of a pose transformation matrix has the effect of reversing the transformation, but does not alter the frame that the transformation is defined in terms of.
 		\begin{equation}
 			({^{A}_{B}\mathbf{X}^{}_{C}})^{-1} = {^{A}_{C}\mathbf{X}^{}_{B}}
 		\end{equation}
