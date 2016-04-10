@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  10 APR 2016 23:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  11 APR 2016 01:56
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -593,10 +593,10 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.aux")) ) 
 Here is how much of TeX's memory you used:
- 12969 strings out of 493921
- 259627 string characters out of 3147261
- 286301 words of memory out of 3000000
- 15954 multiletter control sequences out of 15000+200000
+ 12970 strings out of 493921
+ 259638 string characters out of 3147261
+ 286315 words of memory out of 3000000
+ 15955 multiletter control sequences out of 15000+200000
  17747 words of font info for 64 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,23n,54p,435b,235s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -617,7 +617,7 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2
 blic/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb>
-Output written on main.pdf (25 pages, 236364 bytes).
+Output written on main.pdf (25 pages, 238734 bytes).
 PDF statistics:
  154 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

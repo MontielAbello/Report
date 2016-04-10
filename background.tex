@@ -203,14 +203,14 @@
 		\begin{equation}
 			\textbf{X} = 
 			\begin{bmatrix}
-				  \mathbf{R}	&	\mathbf{t} \\
+				  \mathbf{R}	&	\mathbf{p} \\
 				  \textbf{0}_{1 \times 3}		& 	1 
 			\end{bmatrix}
 		\end{equation}
 		where $\mathbf{R} \in \mathbf{SO}(3)$ and 
-		$\mathbf{t} = 
+		$\mathbf{p} = 
 		\begin{bmatrix}
-			t_x	& t_y & t_z				
+			p_x	& p_y & p_z				
 		\end{bmatrix}
 		^\top \in \mathbb{R}^3$.
 		
@@ -233,7 +233,7 @@
 		\begin{bmatrix}
 			v_x & v_y & v_z				
 		\end{bmatrix}
-		^\top \in \mathbb{R}^3$, representing a linear velocity vector.
+		^\top \in T_{\mathbf{p}}\mathbb{R}^3$, representing a linear velocity vector.
 		
 		Elements of $\mathfrak{se}(3)$ are mapped to $\textbf{SE}(3)$ according to the exponential map:
 			\begin{equation}
@@ -245,7 +245,7 @@
 					\end{bmatrix}
 					\rightarrow 
 					\begin{bmatrix}
-						  \mathbf{R}	&	\mathbf{t} \\
+						  \mathbf{R}	&	\mathbf{p} \\
 						  \textbf{0}_{1 \times 3}		& 	1 
 					\end{bmatrix}
 				\end{split}		
@@ -257,7 +257,7 @@
 				\begin{split}
 					\log: \mathbf{SE}(3) \rightarrow \mathfrak{se}(3)\\
 					\begin{bmatrix}
-						\mathbf{R}	&	\mathbf{t} \\
+						\mathbf{R}	&	\mathbf{p} \\
 						\textbf{0}_{1 \times 3}		& 	1 					 				  
 					\end{bmatrix}
 					\rightarrow 
@@ -289,7 +289,16 @@
 		\begin{equation}
 			\mathbf{p'}_1 = \mathbf{S}\mathbf{p'}_0 = 
 			\begin{bmatrix}
-				\mathbf{R}\mathbf{p}_0 + \mathbf{t}\\
+				\mathbf{R}	&	\mathbf{p} \\
+				\textbf{0}_{1 \times 3}		& 	1 					 				  
+			\end{bmatrix}
+			\begin{bmatrix}
+				\mathbf{p}_0 \\
+				1	
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				\mathbf{R}\mathbf{p}_0 + \mathbf{p}\\
 				1	
 			\end{bmatrix}
 		\end{equation}
@@ -370,17 +379,11 @@
 			({^{A}_{B}\mathbf{X}^{}_{C}})^{-1} = {^{A}_{C}\mathbf{X}^{}_{B}}
 		\end{equation}
 	
-	\subsubsection{Sensor State Representation}
-		-inertial frame A, sensor/robot frame  B\\
-		-p,v,a,R,omega,alpha - define, state reference frames\\	
-		position $^{A}_{A}\mathbf{p}^{}_{B}$\\
-		velocity $^{B}_{A}\mathbf{v}^{}_{B}$\\
-		acceleration $^{B}_{A}\mathbf{a}^{}_{B}$\\
-		orientation $^{A}_{A}\mathbf{R}^{}_{B}$ - rotation matrix\\
-		angular velocity $^{B}_{A}\mathbf{\omega}^{}_{B}$ - scaled axis representation\\
-		angular acceleration $^{B}_{A}\mathbf{\alpha}^{}_{B}$ - scaled axis representation
+	\subsubsection{Rigid Body State Representation} \label{state rep}
+		The state of a rigid body moving through 3D space can be represented by its linear and angular position, velocity and acceleration. Higher derivatives could be taken but will be ignored for simplicity.
+		The inertial frame is denoted \{A\} and a frame \{B\} is fixed to the pose of the moving body.
 		
-		pose of robot w.r.t. inertial frame, defined in inertial frame ie. screw matrix:
+		The pose of the body with respect to the inertial frame at time $t$, defined in the inertial frame is represented by the screw matrix ${^{A}_{A}\mathbf{S}^{}_{B}(t)} \in \mathbf{SE}(3)$,
 		\begin{equation}
 				{^{A}_{A}\mathbf{S}^{}_{B}(t)} = 
 				\begin{bmatrix}
@@ -388,8 +391,9 @@
 						  \textbf{0}_{1 \times 3} & 1						  
 				\end{bmatrix}
 		\end{equation}
+		where $^{A}_{A}\mathbf{R}^{}_{B}(t) \in \mathbf{SO}(3)$ is a rotation matrix, and the position $^{A}_{A}\mathbf{p}^{}_{B}(t) \in \mathbb{R}^3$.
 		
-		velocity (linear and angular) w.r.t. inertial frame, defined in body frame ie. twist matrix:
+		The linear and angular velocity of the body at time $t$ with respect to the inertial frame, defined in the body-fixed frame, is represented by the twist matrix ${^{B}_{A}\mathbf{T}^{}_{B}(t)} \in \mathfrak{se}(3)$,
 		\begin{equation}
 				{^{B}_{A}\mathbf{T}^{}_{B}(t)} = 
 				\begin{bmatrix}
@@ -397,8 +401,9 @@
 		  \textbf{0}_{1 \times 3} & 0						  
 				\end{bmatrix}
 		\end{equation}
+		where $^{B}_{A}\mathbf{\omega}^{}_{B}(t) \in \mathfrak{so}(3)$ is an angular velocity in the scaled-axis representation, and the linear velocity is $^{B}_{A}\mathbf{v}^{}_{B}(t) \in T_\mathbf{p}\mathbb{R}^3$.
 				
-		acceleration (linear and angular) w.r.t. inertial frame, defined in body frame ie. wrench matrix
+		The linear and angular acceleration of the body at time $t$ with respect to the inertial frame, defined in the body-fixed frame, is represented by the wrench matrix,
 		\begin{equation}
 				{^{B}_{A}\mathbf{W}^{}_{B}(t)} = 
 				\begin{bmatrix}
@@ -406,35 +411,27 @@
 				  \textbf{0}_{1 \times 3} & 0						  
 				\end{bmatrix}
 		\end{equation}
-		
-		other parameters ie FOV, steps
-				
-	\subsubsection{Sensor Dynamic Model}
-		screw matrix:
+		where $^{B}_{A}\mathbf{\alpha}^{}_{B}(t) \in ???$ is an angular acceleration in the scaled-axis representation, and the linear acceleration is $^{B}_{A}\mathbf{a}^{}_{B}(t) \in T_\mathbf{v}\mathbb{R}^3$.
+						
+	\subsubsection{Rigid Body Dynamic Model}
+		The dynamics of the screw, twist and wrench matrices as they are defined in \ref{state rep} is governed by the following ODEs,
 		\begin{equation}
 			{\frac{\textnormal{d}}{\textnormal{d}t}} {^{A}_{A}\mathbf{S}^{}_{B}(t)} ={^{A}_{A}\mathbf{S}^{}_{B}(t)} {^{B}_{A}\mathbf{T}^{}_{B}(t)}
 		\end{equation}		
-		
-		twist matrix:
 		\begin{equation}
 			{\frac{\textnormal{d}}{\textnormal{d}t}} {^{B}_{A}\mathbf{T}^{}_{B}(t)} = {^{B}_{A}\mathbf{W}^{}_{B}(t)}
 		\end{equation}		
-		
-		wrench matrix:
 		\begin{equation}
-			{\frac{\textnormal{d}}{\textnormal{d}t}} {^{B}_{A}\mathbf{W}^{}_{B}(t)}=0			
+			{\frac{\textnormal{d}}{\textnormal{d}t}} {^{B}_{A}\mathbf{W}^{}_{B}(t)}=\mathbf{f}(t)			
 		\end{equation}
+		where the function $\mathbf{f}(t)$ is known.
 		
-		-something for scanning dynamics
+	\subsubsection{Scanning Laser Rangefinder Dynamic Model}
+		A scanning laser rangefinder fixed to a moving rigid body. State is same as moving rigid body defined above (S,T,W)\\+\\
+		Unit vector defined in the body fixed frame  - ${^{B}_{B}\mathbf{n}^{}_{?}(t)}$??? $\in T_\mathbf{p}\mathbb{R}^3$.\\+\\
+		Range $r(t) \in \mathbb{R}^{0+}$, defining range from $^{A}_{A}\mathbf{p}^{}_{B}(t)$ to nearest object in environment in direction $^{A}_{A}\mathbf{R}^{}_{B}(t)\mathbf{n?}$
 		
-		-update methods (euler, runge-kutta etc)
-		
-	\subsubsection{Object State Representation}
-		-frame fixed to object - $B$
-		-same as sensor + size $s$
-	\subsubsection{Object Dynamic Model}
-		-ODEs (same as sensor)
-		
+
 \subsection{Symmetry Preserving Observers}
 	\subsubsection{definitions?}
 	\subsubsection{construction, ie moving frame method etc}
