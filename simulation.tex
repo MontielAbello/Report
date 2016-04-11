@@ -1,14 +1,55 @@
 \chapter{Simulation}
 \section{Implementation}
 \subsection{Sensor modelling}
-screw: ${^{A}_{A}\mathbf{S}^{}_{B}}(t+\delta t) = {^{A}_{A}\mathbf{S}^{}_{B}(t)}e^{\delta t {^{B}_{A}\mathbf{T}^{}_{B}(t)}}$
+\textbf{motion:}\\
+Frame \{B\} aligned with moving rigid body, + inertial frame \{A\}.\\
+screw matrix: ${^{A}_{A}\mathbf{S}^{}_{B}}(t+\delta t) = {^{A}_{A}\mathbf{S}^{}_{B}(t)}e^{\delta t {^{B}_{A}\mathbf{T}^{}_{B}(t)}}$
 			
-twist: ${^{B}_{A}\mathbf{T}^{}_{B}}(t+\delta t) = {^{B}_{A}\mathbf{T}^{}_{B}(t)} + \delta t {^{B}_{A}\mathbf{W}^{}_{B}(t)}$
+twist matrix: ${^{B}_{A}\mathbf{T}^{}_{B}}(t+\delta t) = {^{B}_{A}\mathbf{T}^{}_{B}(t)} + \delta t {^{B}_{A}\mathbf{W}^{}_{B}(t)}$
 
-wrench: ${^{B}_{A}\mathbf{W}^{}_{B}}(t+\delta t) = {^{B}_{A}\mathbf{W}^{}_{B}(t)}$
+wrench matrix: ${^{B}_{A}\mathbf{W}^{}_{B}}(t+\delta t) = {^{B}_{A}\mathbf{W}^{}_{B}(t)}$
 
-\subsection{Environment modelling}
-\subsection{Measurement modelling}
--triangle ray intersection
+\textbf{scanning:}
+sensor parameters:
+\begin{itemize}
+\item field of view
+\item angular resolution
+\item time per scan
+\item measurement resolution
+\end{itemize}
+From these parameters, create vector $\mathbf{n}(t)$. At each time, n is either a unit vector in direction of scan, in body fixed frame, or returns no value for when sensor is not returning a measurement (outside FOV)
+
+scan direction: ${^{B}_{B}\mathbf{n}^{}_{?}}(t)$
+
+\subsection{Environment Modelling}
+Environment composed of one or more rectangular prisms. These objects are modelled as an ordered set of 8 points in the inertial reference frame, and 12 triangles. Each triangle is a set of 3 integers, indicating the index of the three points that make up its vertexes.
+The position of each of these points at each time is determined using the screw matrix and side lengths of the object.
+
+DIAGRAM HERE
+
+\subsection{Measurement Modelling}
+	\subsubsection{Range Computation}
+	Given the screw matrix (in the inertial frame) and scan direction (in the body fixed frame) of the sensor, the position and scan direction in the inertial frame are determined.
+	The distance to the nearest environment object from this point, along the scan direction is determined with a triangle-ray intersection formula.
+	
+	inputs:
+	\begin{itemize}
+	\item sensor position: ${^{A}_{A}\mathbf{p}^{}_{B}}(t)$
+	\item scan direction: ${^{A}_{A}\mathbf{n}^{}_{?}}(t)$
+	\item object points: ${^{A}_{A}\mathbf{E}^{}_{?}}(t)$
+	\item triangle indexes:	$Tri$
+	\end{itemize}
+	
+	how to describe computation? pseudocode?\\
+	
+	
+	
+	\subsubsection{Noise Modelling}
+	Different noise models for different sensors
+	\begin{equation}
+		\hat{r}(t) = f_s(r(t),\theta(t),\phi(k))
+	\end{equation}
+	where $\theta(t)$ is incidence angle of measurement, $\phi$ is surface properties of object $k$ that was measured, $f$ is some function for noise model of particular sensor.
+	
 \subsection{Observer implementation}
 \section{Results}
