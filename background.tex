@@ -327,11 +327,14 @@
 		Such a reference frame is represented by an element of \textbf{SE}(3).
 		
 		Consider three different reference frames, denoted \{A\},\{B\} and \{C\}.
-		The notation $^{A}_{B}\mathbf{X}^{}_{C}$ defines the difference in $\mathbf{X}$ of the reference frame \{C\} with respect to the frame \{B\}, defined in the frame \{A\}.
+		The notation $^{A}_{B}\mathbf{X}^{}_{C}$ defines the transformation in $\mathbf{X}$ of the reference frame \{C\} with respect to the frame \{B\}, defined in the frame \{A\}.
 		
 		For example, $^{A}_{B}\mathbf{R}^{}_{C}$ defines the rotation of \{C\} with respect to \{B\}, defined in \{A\}.
 		
 		The notion of an inertial reference frame is introduced here. This will be defined as a reference frame that is stationary for the purpose of the problem being described. 
+		
+		Figure \ref{fig:frames} shows...
+		\input{Figures/referenceframes}
 		
 		\textbf{Pose:}\\
 		The pose of a rigid body in a given reference frame is defined by its relative position and orientation with respect to the given reference frame and is represented by an element of \textbf{SE}(3). If a rigid body has orientation aligned with a reference frame \{C\} and position at the origin of \{C\}, then the pose of the rigid body with respect to \{B\} and defined in \{A\} is:
@@ -342,7 +345,6 @@
 				\textbf{0}_{1 \times 3} & 1						  
 			\end{bmatrix}
 		\end{equation}		
-		TODO: DIAGRAM HERE
 		
 		\textbf{Point:}\\
 		To represent the position of a point in $\mathbb{R}^3$, the convention used will be to first define a reference frame with origin located as this point. The position of a point at the origin of \{C\} with respect to another point \{B\}, defined in terms of the reference frame \{A\} is a 4-vector in homogeneous coordinates:
@@ -364,13 +366,18 @@
 		\textbf{Defining a point in terms of another reference frame:}\\
 		Consider a point in $\mathbb{R}^3$ defined as the position of the frame \{B\} with respect to the frame \{A\}, defined in terms of the frame \{B\}. To redefine the point in terms of \{A\}, the left action of ${^{A}_{A}\mathbf{S}^{}_{B}} \in \mathbf{SE}(3)$ is used:
 		\begin{equation}
-			{^{A}_{A}\mathbf{p'}^{}_{B}} = {^{A}_{A}\mathbf{S}^{}_{B}}{^{B}_{A}\mathbf{p'}^{}_{B}}
+			{^{A}_{A}\mathbf{p'}^{}_{B}} = {^{A}_{A}\mathbf{S}^{}_{B}}\:{^{B}_{A}\mathbf{p'}^{}_{B}}
+		\end{equation}
+		
+		\textbf{Concatenating poses:}\\
+		\begin{equation}
+			{^{A}_{A}\mathbf{X}^{}_{C}} = {^{A}_{A}\mathbf{X}^{}_{B}}\:{^{A}_{B}\mathbf{X}^{}_{C}}
 		\end{equation}
 		
 		\textbf{Defining a pose in terms of another reference frame:}\\
 		To define a pose transformation matrix in terms of a different reference frame, a matrix conjugation is used:
 		\begin{equation}
-			{^{B}_{C}\mathbf{X}^{}_{D}} = ({^{B}_{B}\mathbf{X}^{}_{A}}){^{A}_{C}\mathbf{X}^{}_{D}}({^{B}_{B}\mathbf{X}^{}_{A}})^{-1}
+			{^{B}_{C}\mathbf{X}^{}_{D}} = ({^{B}_{B}\mathbf{X}^{}_{A}})\:{^{A}_{C}\mathbf{X}^{}_{D}}\:({^{B}_{B}\mathbf{X}^{}_{A}})^{-1}
 		\end{equation}
 
 		\textbf{Inverse:}\\
@@ -413,16 +420,18 @@
 		\end{equation}
 		where $^{B}_{A}\mathbf{\alpha}^{}_{B}(t) \in ???$ is an angular acceleration in the scaled-axis representation, and the linear acceleration is $^{B}_{A}\mathbf{a}^{}_{B}(t) \in T_\mathbf{v}\mathbb{R}^3$.
 						
+		*From now on, will not show frames in notation. This is how S,T,W will be defined unless explicitly stated otherwise.
+						
 	\subsubsection{Rigid Body Dynamic Model}
 		The dynamics of the screw, twist and wrench matrices as they are defined in \ref{state rep} is governed by the following ODEs,
 		\begin{equation}
-			{\frac{\textnormal{d}}{\textnormal{d}t}} {^{A}_{A}\mathbf{S}^{}_{B}(t)} ={^{A}_{A}\mathbf{S}^{}_{B}(t)} {^{B}_{A}\mathbf{T}^{}_{B}(t)}
+			{\frac{\textnormal{d}}{\textnormal{d}t}} \mathbf{S}(t) =\mathbf{S}(t)\mathbf{T}(t)
 		\end{equation}		
 		\begin{equation}
-			{\frac{\textnormal{d}}{\textnormal{d}t}} {^{B}_{A}\mathbf{T}^{}_{B}(t)} = {^{B}_{A}\mathbf{W}^{}_{B}(t)}
+			{\frac{\textnormal{d}}{\textnormal{d}t}} \mathbf{T}(t) = \mathbf{W}(t)
 		\end{equation}		
 		\begin{equation}
-			{\frac{\textnormal{d}}{\textnormal{d}t}} {^{B}_{A}\mathbf{W}^{}_{B}(t)}=\mathbf{f}(t)			
+			{\frac{\textnormal{d}}{\textnormal{d}t}} \mathbf{W}(t)=\mathbf{f}(t)			
 		\end{equation}
 		where the function $\mathbf{f}(t)$ is known.
 		

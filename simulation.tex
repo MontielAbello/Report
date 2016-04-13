@@ -3,11 +3,11 @@
 \subsection{Sensor modelling}
 \textbf{motion:}\\
 Frame \{B\} aligned with moving rigid body, + inertial frame \{A\}.\\
-screw matrix: ${^{A}_{A}\mathbf{S}^{}_{B}}(t+\delta t) = {^{A}_{A}\mathbf{S}^{}_{B}(t)}e^{\delta t {^{B}_{A}\mathbf{T}^{}_{B}(t)}}$
+screw matrix: $\mathbf{S}(t+\delta t) = \mathbf{S}(t)e^{\delta t {\mathbf{T}(t)}}$
 			
-twist matrix: ${^{B}_{A}\mathbf{T}^{}_{B}}(t+\delta t) = {^{B}_{A}\mathbf{T}^{}_{B}(t)} + \delta t {^{B}_{A}\mathbf{W}^{}_{B}(t)}$
+twist matrix: $\mathbf{T}(t+\delta t) = \mathbf{T}(t) + \delta t \mathbf{W}(t)$
 
-wrench matrix: ${^{B}_{A}\mathbf{W}^{}_{B}}(t+\delta t) = {^{B}_{A}\mathbf{W}^{}_{B}(t)}$
+wrench matrix: $\mathbf{W}(t+\delta t) =\mathbf{W}(t)$
 
 \textbf{scanning:}
 sensor parameters:
@@ -41,8 +41,6 @@ DIAGRAM HERE
 	\end{itemize}
 	
 	how to describe computation? pseudocode?\\
-	
-	
 	
 	\subsubsection{Noise Modelling}
 	Different noise models for different sensors
