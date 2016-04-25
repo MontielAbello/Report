@@ -102,7 +102,7 @@
 		
 	\subsubsection{\textbf{SO}(3)}	
 		A rotation represents the motion of a point about the origin of a Euclidean space. In $\mathbb{R}^3$ this is a proper isometry: a transformation that preserves distances between any pair of points and has a determinant of +1. The set of all rotations about the origin of $\mathbb{R}^3$ is known as the \textit{special orthogonal group} $\textbf{SO}(3)$.
-		This matrix Lie group is a subgroup of the general linear group $\textbf{GL}(3)$, so its group elements are $3 \times 3$ invertible matrices. These group elements are orthogonal matrices so their columns and rows are orthogonal unit vectors. 
+		This matrix Lie group is a subgroup of the general linear group $\textbf{GL}(3)$, so its group elements are rotations in $\mathbb{R}^3$, and can be represented with $3 \times 3$ invertible matrices. These group elements are orthogonal matrices so their columns and rows are orthogonal unit vectors. 
 		
 		\textbf{Lie algebra}\\
 		The Lie algebra $\mathfrak{so}(3)$ is vector space of $3 \times 3$ skew-symmetric matrices $\hat{\omega}$, where $\omega$ is a 3-vector representing an angular velocity. The direction of $\omega$ indicates the axis of rotation while its magnitude gives the angular velocity. 
@@ -199,7 +199,7 @@
 		As with rotation matrices, quaternion multiplication is associative but not commutative.
 		
 	\subsubsection{\textbf{SE}(3)}	
-		The special Euclidean group $\textbf{SE}(3)$ represents rigid transformation in $\mathbb{R}^3$. This is a matrix Lie group whose elements are (or should it be ``can be represented by''?) $4 \times 4$ matrices of the form
+		The special Euclidean group $\textbf{SE}(3)$ represents rigid transformation in $\mathbb{R}^3$. This is a matrix Lie group whose elements are the set of all rigid transformations in $\mathbb{R}^3$ and can be represented with $4 \times 4$ matrices of the form
 		\begin{equation}
 			\textbf{X} = 
 			\begin{bmatrix}
@@ -334,7 +334,7 @@
 		The notion of an inertial reference frame is introduced here. This will be defined as a reference frame that is stationary for the purpose of the problem being described. 
 		
 		Figure \ref{fig:frames} shows...
-		\input{Figures/referenceframes}
+		\input{Figures/fig_referenceframes}
 		
 		\textbf{Pose:}\\
 		The pose of a rigid body in a given reference frame is defined by its relative position and orientation with respect to the given reference frame and is represented by an element of \textbf{SE}(3). If a rigid body has orientation aligned with a reference frame \{C\} and position at the origin of \{C\}, then the pose of the rigid body with respect to \{B\} and defined in \{A\} is:
