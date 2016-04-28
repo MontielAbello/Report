@@ -20,39 +20,64 @@ This project aims to develop some of this theory. The approach taken will be to 
 
 \textbf{estimation problem - cube pose \& size:}\\
 This report will solve a particular estimation problem before generalising the results to a wider class of systems. The problem chosen is shown in Figure~\ref{fig:cubeproblem}.
-The system consists of a robot moving through an environment consisting of a target object of known shape, in this case a rigid cube, as well as an unknown background which may consist of one or more rigid bodies. Pose is defined as twist, screw and wrench of the rigid body with respect to the inertial frame - see section~\ref{state rep}. The pose of the sensor is known, but the poses of the cube and background environment is unknown. Attached to the robot is a 2D laser rangefinder. The sensor provides measurements of the range $r$ to the nearest object (either the cube or background) in the direction $\mathbf{n}$. The aim is to design an observer which concurrently estimates the pose and size of the cube from the pose of the sensor, as well as $\mathbf{n}$ and $r$. 
-The direction of measurement $\mathbf{n}(t)$ ... (describe scanning motion). For simplification, the motion of the sensor will be limited to rotation about ... (describe scanning motion).
-The range measurements do not indicate whether the object detected was the cube or a background object. Though the pose of the cube and environment are unknown, for simplification, it is assumed that the cube is within X from the sensor, walls are at least X away + the rigid objects do not touch or overlap, and have continuous shape.
-
 \input{Figures/fig_cubeproblem}
+The system consists of a 2D laser rangefinder moving through an environment consisting of a target object of known shape, in this case a rigid cube, as well as an unknown background which may consist of one or more rigid bodies. The state of the sensor is known, but the states of the cube and background environment are unknown.
 Frames used are
 \begin{itemize}
 \item $\{F\}$ - Inertial (fixed) frame
-\item $\{A\}$ - frame fixed to sensor, defined w.r.t. $\{F\}$ by screw matrix of sensor
-\item $\{B\}$ - frame fixed to cube, defined w.r.t. $\{F\}$ by screw matrix of cube
+\item $\{A\}$ - frame fixed to sensor. The transformation from $\{F\}$ to $\{A\}$, is defined by the screw matrix of the sensor $\mathbf{S}_{s}(t)$.
+\item $\{B\}$ - frame fixed to cube. The transformation from $\{F\}$ to $\{B\}$, is defined by the screw matrix of the cube $\mathbf{S}_{c}(t)$.
 \end{itemize} 
 
-State of the sensor is defined as:
+The sensor provides measurements of the range $r$ to the nearest object (either the cube or the background) in the direction $\mathbf{n}(t)$. 
+The state of the sensor $\mathbf{X}_{s}(t)$ is defined as:
 \begin{equation}
-	\mathbf{X}_{sensor} = 
+	\mathbf{X}_{s}(t) = 
 	\{{^{F}_{F}\mathbf{S}^{}_{A}(t)},{^{A}_{F}\mathbf{T}^{}_{A}(t)},{^{A}_{F}\mathbf{W}^{}_{A}(t)},
 	\mathbf{n}(t)\}
 \end{equation}
-*should n be defined as discrete here? ie n(k) where $k = \{1\delta t,2\delta t,3\delta t...\}$\\
-*should n also be a function of S? - depends on whether n is defined w.r.t. \{F\} or \{A\}. what is notation in either case?
-
-State of cube is defined as 
+will write as 
 \begin{equation}
-	\mathbf{X}_{cube} = 
+	\mathbf{X}_{s}(t) = 
+	\{\mathbf{S}_{s}(t),\mathbf{T}_{s}(t),\mathbf{W}_{s}(t),\mathbf{n}(t)\}
+\end{equation}
+*should n be defined as discrete here? ie n(k) where $k = \{1\delta t,2\delta t,3\delta t...\}$\\
+*should n also be a function of S? - depends on whether n is defined w.r.t. \{F\} or \{A\}. what is notation in either case?\\
+The direction of measurement $\mathbf{n}(t)$ varies as a rotation about the z-axis of \{A\}. This 2D scanning motion is described in more detail in ADD REFERENCE. For simplification, the motion of the sensor will be limited to rotation about the y axis of \{A\}.
+
+The state of cube $\mathbf{X}_{c}(t)$ is defined as 
+\begin{equation}
+	\mathbf{X}_{c}(t) = 
 	\{{^{F}_{F}\mathbf{S}^{}_{B}(t)},{^{B}_{F}\mathbf{T}^{}_{B}(t)},{^{B}_{F}\mathbf{W}^{}_{B}(t)},
 	s\}
 \end{equation}
-
-Goal is to design observer:
+For simplicity, will be denoted:
 \begin{equation}
-	\hat{\mathbf{X}}_{cube} = f(\mathbf{X}_{sensor},r(t)-\hat{r}(t))
+	\mathbf{X}_{c}(t) = 
+	\{\mathbf{S}_{c}(t),\mathbf{T}_{c}(t),\mathbf{W}_{c}(t),s\}
+\end{equation}
+The range measurements do not indicate whether the object detected is the cube or a background object. Though the pose of the cube and environment are unknown, for simplification, it is assumed that either:
+\begin{itemize}
+\item the cube is within Xm from the sensor, walls are at least Xm away
+\item these rigid objects do not touch or overlap, and have continuous shape
+\end{itemize}
+For simulated data, only first assumption necessary. For experimental data sets environment more complex, rigid objects in close proximity to cube, need second assumption. 
+
+The aim is to design an observer which estimates the state of the cube from the pose of the sensor, as well as $\mathbf{n}$ and $r$. ie observer function $f$ such that:
+\begin{equation}
+	\hat{\mathbf{X}}_{c} = f(\mathbf{X}_{s},r(t)-\hat{r}(t))
 \end{equation}
 *should r be defined as discrete here???
+
+so state estimate of cube converges... how to quantify this?
+
+
+
+
+
+
+
+
 
 \textbf{deliverables:} \\
 The primary deliverable of this project is the observer design and simulation. Will later try to develop some general theory from this specific case. Will validate simulation with experiment using Hokuyo UBG 04-LX sensor, ??? robot arms and cubes of various sizes and materials.
