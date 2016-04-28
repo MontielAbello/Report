@@ -1,5 +1,6 @@
 \section{Problem Statement}
-
+\textbf{context etc here...}
+\begin{comment}
 \textbf{context:}
 Advances in hardware and manufacturing have made autonomous and semi-autonomous robots more available. Use in industry and even general public has increased. Full autonomous robots are still limited to structured environments and tasks such as in factories and warehouses.
 Before robots can operate autonomously in unstructured environments, new sensor models are required to more effectively observe and represent complex environment states. \textbf{TODO:} \textit{Why are new sensor models required? Check if this is covered in literature review. If not, need to expand on this.}
@@ -15,15 +16,15 @@ This theory will simplify invariant observer design for infinite dimensional sys
 
 \textbf{approach:}
 This project aims to develop some of this theory. The approach taken will be to design an invariant observer for a specific infinite dimensional system, before generalising the results.
+\end{comment}
 
 \textbf{estimation problem - cube pose \& size:}\\
-Figure~\ref{fig:cubeproblem} shows the ...
+This report will solve a particular estimation problem before generalising the results to a wider class of systems. The problem chosen is shown in Figure~\ref{fig:cubeproblem}.
 The system consists of a robot moving through an environment consisting of a target object of known shape, in this case a rigid cube, as well as an unknown background which may consist of one or more rigid bodies. Pose is defined as twist, screw and wrench of the rigid body with respect to the inertial frame - see section~\ref{state rep}. The pose of the sensor is known, but the poses of the cube and background environment is unknown. Attached to the robot is a 2D laser rangefinder. The sensor provides measurements of the range $r$ to the nearest object (either the cube or background) in the direction $\mathbf{n}$. The aim is to design an observer which concurrently estimates the pose and size of the cube from the pose of the sensor, as well as $\mathbf{n}$ and $r$. 
 The direction of measurement $\mathbf{n}(t)$ ... (describe scanning motion). For simplification, the motion of the sensor will be limited to rotation about ... (describe scanning motion).
 The range measurements do not indicate whether the object detected was the cube or a background object. Though the pose of the cube and environment are unknown, for simplification, it is assumed that the cube is within X from the sensor, walls are at least X away + the rigid objects do not touch or overlap, and have continuous shape.
 
 \input{Figures/fig_cubeproblem}
-\textbf{TODO:} \textit{Precise mathematical description of problem}\\
 Frames used are
 \begin{itemize}
 \item $\{F\}$ - Inertial (fixed) frame
