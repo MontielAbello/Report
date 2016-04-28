@@ -370,8 +370,9 @@
 		\end{equation}
 		
 		\textbf{Concatenating poses:}\\
+		Multiply relative poses.
 		\begin{equation}
-			{^{A}_{A}\mathbf{X}^{}_{C}} = {^{A}_{A}\mathbf{X}^{}_{B}}\:{^{A}_{B}\mathbf{X}^{}_{C}}
+			{^{A}_{A}\mathbf{X}^{}_{C}} = {^{A}_{A}\mathbf{X}^{}_{B}}\:{^{B}_{B}\mathbf{X}^{}_{C}}
 		\end{equation}
 		
 		\textbf{Defining a pose in terms of another reference frame:}\\
@@ -408,9 +409,9 @@
 		  \textbf{0}_{1 \times 3} & 0						  
 				\end{bmatrix}
 		\end{equation}
-		where $^{B}_{A}\mathbf{\omega}^{}_{B}(t) \in \mathfrak{so}(3)$ is an angular velocity in the scaled-axis representation, and the linear velocity is $^{B}_{A}\mathbf{v}^{}_{B}(t) \in T_\mathbf{p}\mathbb{R}^3$.
+		where $^{B}_{A}\mathbf{\omega}^{}_{B}(t) \in \mathfrak{so}(3)$ is an angular velocity in the scaled-axis representation, and the linear velocity is $^{B}_{A}\mathbf{v}^{}_{B}(t) \in T\mathbb{R}^3$.
 				
-		The linear and angular acceleration of the body at time $t$ with respect to the inertial frame, defined in the body-fixed frame, is represented by the wrench matrix,
+		The linear and angular acceleration of the body at time $t$ with respect to the inertial frame, defined in the body-fixed frame, is represented by the wrench matrix ${^{B}_{A}\mathbf{W}^{}_{B}(t)} \in T\mathfrak{se}(3)$,
 		\begin{equation}
 				{^{B}_{A}\mathbf{W}^{}_{B}(t)} = 
 				\begin{bmatrix}
@@ -418,7 +419,7 @@
 				  \textbf{0}_{1 \times 3} & 0						  
 				\end{bmatrix}
 		\end{equation}
-		where $^{B}_{A}\mathbf{\alpha}^{}_{B}(t) \in ???$ is an angular acceleration in the scaled-axis representation, and the linear acceleration is $^{B}_{A}\mathbf{a}^{}_{B}(t) \in T_\mathbf{v}\mathbb{R}^3$.
+		where $^{B}_{A}\mathbf{\alpha}^{}_{B}(t) \in  T\mathfrak{so}(3)$ is an angular acceleration in the scaled-axis representation, and the linear acceleration is $^{B}_{A}\mathbf{a}^{}_{B}(t) \in T^2\mathbb{R}^3$.
 						
 		*From now on, will not show frames in notation. This is how S,T,W will be defined unless explicitly stated otherwise.
 						
