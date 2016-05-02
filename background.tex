@@ -149,11 +149,13 @@
 		
 		TODO: more explanation needed here!
 		
-		\textbf{Rotation representation}\\		
-		There are many conventions by which elements of $\mathbf{SO}(3)$ can be represented. Those  A rotation about a point in $\mathbb{R}^3$ can be represented by: \textbf{TODO:} \textit{go into more detail on below}
+		\textbf{Rotation representations}\\		
+		There are many conventions by which elements of $\mathbf{SO}(3)$ can be represented. Common representations are: \textbf{TODO:} \textit{go into more detail on below}
 		
 		\textbf{Rotation matrix}\\
 		$3 \times 3$ matrix where magnitude of each column is 1, columns are orthogonal, determinant is +1. Group operation matrix is multiplication. Left action is left multiplication of point. 
+		GROUP OPERATION - matrix multiplication - concatenates rotation\\
+		GROUP ACTION - left multiplication with vector - rotates point
 		
 		\textbf{Scaled axis}\\
 		3-vector where direction represents axis of rotation and magnitude represents angle of rotation. Group operation - vector addition? Left action - rodrigues' rotation formula converts scaled axis to rotation matrix which is used to rotate point.
@@ -197,6 +199,7 @@
 			\end{bmatrix} 
 		\end{equation} 
 		As with rotation matrices, quaternion multiplication is associative but not commutative.
+		GROUP ACTION: formula for rotating vector: q*v'*qINV
 		
 	\subsubsection{\textbf{SE}(3)}	
 		The special Euclidean group $\textbf{SE}(3)$ represents rigid transformation in $\mathbb{R}^3$. This is a matrix Lie group whose elements are the set of all rigid transformations in $\mathbb{R}^3$ and can be represented with $4 \times 4$ matrices of the form

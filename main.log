@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  1 MAY 2016 19:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  3 MAY 2016 00:22
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -540,7 +540,13 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 
 
 ] [6] [7] [8]
-Overfull \hbox (13.54283pt too wide) in paragraph at lines 238--239
+Overfull \hbox (15.62883pt too wide) in paragraph at lines 200--203
+\OT1/cmr/m/n/10.95 com-mu-ta-tive. GROUP AC-TION: for-mula for ro-tat-ing vec-t
+or: q*v'*qINV 
+ []
+
+
+Overfull \hbox (13.54283pt too wide) in paragraph at lines 241--242
 []\OT1/cmr/m/n/10.95 Elements of $[](3)$ are mapped to $[](3)$ ac-cord-ing to t
 he ex-po-nen-tial map: 
  []
@@ -554,8 +560,13 @@ lem.tex") [15
 
 
 
-] [16]) [17]
-("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\theory.tex" [18
+] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 85--88
+
+ []
+
+) [17] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\theory.tex"
+[18
 
 
 
@@ -628,7 +639,7 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 Here is how much of TeX's memory you used:
  13139 strings out of 493921
  263483 string characters out of 3147261
- 286338 words of memory out of 3000000
+ 286336 words of memory out of 3000000
  16116 multiletter control sequences out of 15000+200000
  17747 words of font info for 64 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -649,7 +660,7 @@ am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files
 /type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (29 pages, 241088 bytes).
+Output written on main.pdf (29 pages, 240918 bytes).
 PDF statistics:
  162 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
