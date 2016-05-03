@@ -1,13 +1,16 @@
 \chapter{Simulation}
 \section{Implementation}
+\subsection{Rigid Body Motion}
+The pose of a rigid body is described by its corresponding frame \{X\}. The screw, twist and wrench matrices of the body are determined iteratively:
+screw matrix: $\mathbf{S}_X(t+\delta t) = \mathbf{S}_X(t)\exp({\delta t {\mathbf{T}_X(t)}})$
+			
+twist matrix: $\mathbf{T}_X(t+\delta t) = \mathbf{T}_X(t) + \delta t \mathbf{W}_X(t)$
+
+wrench matrix: $\mathbf{W}_X(t+\delta t) =\mathbf{W}_X(t)$
+
 \subsection{Sensor modelling}
 \textbf{motion:}\\
-Frame \{B\} aligned with moving rigid body, + inertial frame \{A\}.\\
-screw matrix: $\mathbf{S}(t+\delta t) = \mathbf{S}(t)e^{\delta t {\mathbf{T}(t)}}$
-			
-twist matrix: $\mathbf{T}(t+\delta t) = \mathbf{T}(t) + \delta t \mathbf{W}(t)$
-
-wrench matrix: $\mathbf{W}(t+\delta t) =\mathbf{W}(t)$
+rigid body motion
 
 \textbf{scanning:}
 sensor parameters:
@@ -19,44 +22,116 @@ sensor parameters:
 \end{itemize}
 From these parameters, create vector $\mathbf{n}(t)$. At each time, n is either a unit vector in direction of scan, in body fixed frame, or returns no value for when sensor is not returning a measurement (outside FOV)
 
-scan direction: ${^{B}_{B}\mathbf{n}^{}_{?}}(t)$
+scan direction: $^{A}\mathbf{n}(t)$
+\begin{equation}
+^{A}\mathbf{n}(t) =
+	\begin{cases} 
+	      \hfill \begin{bmatrix}
+	      		\cos(\theta_0 + 2\pi t') \\
+	      		\sin(\theta_0 + 2\pi t') \\
+	      		0
+	      	\end{bmatrix}    \hfill & \text{ if $t' \leq X$} \\
+	      \hfill \mathbf{0} \hfill & \text{ if $t' > X$} \\
+	\end{cases} 
+\end{equation}
+where
+\begin{equation}
+t' = \mod(t,1/d\theta)\:d\theta
+\end{equation}
+
+*$\theta_0$ is start of FOV, $t'=X$ at end of FOV
 
 \subsection{Environment Modelling}
-Environment composed of one or more rectangular prisms. These objects are modelled as an ordered set of 8 points in the inertial reference frame, and 12 triangles. Each triangle is a set of 3 integers, indicating the index of the three points that make up its vertexes.
+Environment composed of rectangular prisms. These objects are modelled as an ordered set of 8 points in the inertial reference frame, and 12 triangles. Each triangle is a set of 3 integers, indicating the index of the three points that make up its vertexes.
 The position of each of these points at each time is determined using the screw matrix and side lengths of the object.
+
+points in body frame:
+initialPoints = s*0.5*[];
+\begin{equation}
+	P = \frac{1}{2}s
+	\begin{bmatrix}
+		-1  &  -1  &  -1  &  -1  &   1  &   1  &   1  &  1 \\
+		-1  &  -1  &   1  &   1  &  -1  &  -1  &   1  &  1 \\
+		-1  &   1  &  -1  &   1  &  -1  &   1  &  -1  &  1 
+	\end{bmatrix}
+\end{equation}
+triangles:
+\begin{equation}
+	Tri = 
+	\begin{bmatrix}
+	2 & 4 & 3 \\
+    4 & 3 & 7 \\
+    4 & 8 & 7 \\
+    5 & 6 & 7 \\
+    8 & 6 & 7 \\
+    2 & 6 & 5 \\
+    2 & 1 & 5 \\
+    2 & 6 & 8 \\
+    2 & 4 & 8 \\
+    1 & 5 & 7 \\
+    1 & 3 & 7
+	\end{bmatrix}
+\end{equation}
 
 DIAGRAM HERE
 
 \subsection{Measurement Modelling}
 	\subsubsection{Range Computation}
 	Given the screw matrix (in the inertial frame) and scan direction (in the body fixed frame) of the sensor, the position and scan direction in the inertial frame are determined.
-	The distance to the nearest environment object from this point, along the scan direction is determined with a triangle-ray intersection formula.
-	
-	inputs:
-	\begin{itemize}
-	\item sensor position: ${^{A}_{A}\mathbf{p}^{}_{B}}(t)$
-	\item scan direction: ${^{A}_{A}\mathbf{n}^{}_{?}}(t)$
-	\item object points: ${^{A}_{A}\mathbf{E}^{}_{?}}(t)$
-	\item triangle indexes:	$Tri$
-	\end{itemize}
-	
-	how to describe computation? pseudocode?\\
-	
+	The distance to the nearest environment object from this point, along the scan direction is determined with the M{\"o}ller-Trumbore ray-triangle intersection algorithm.
+
+	\begin{algorithm}[H]
+	\SetAlgoLined
+	\KwIn{(O,D,pts,tri), where O and D are origin and direction of ray, pts are points in $\mathbb{R}^3$, tri are indexes of points making up vertexes of triangles}
+	\KwOut{(intersect, range, angle, closest), where intersect is binary - collision or none. range is distance to intersection point, angle is incidence angle with surface hit, closest in index of triangle hit}	
+	\caption{M{\"o}ller-Trumbore ray-triangle intersection algorithm}
+	\end{algorithm}
+
 	\subsubsection{Noise Modelling}
-	Different noise models for different sensors
+	Noise model depends on sensor used.
 	\begin{equation}
 		\hat{r}(t) = f_s(r(t),\theta(t),\phi(k))
 	\end{equation}
 	where $\theta(t)$ is incidence angle of measurement, $\phi$ is surface properties of object $k$ that was measured, $f$ is some function for noise model of particular sensor.
 	
+	For Hokuyo UBG-04LX-F01 used, noise model was measured experimentally:
+	\begin{equation}
+		f_{UBG} = 
+	\end{equation}
+	
 \subsection{Observer implementation}
 	\subsubsection{Estimate: internal model}
 	\subsubsection{Identifying object/background}
-		-range\\
-		-continuity\\
+		The variable \textit{observingObject} indicates whether the range measurement is of the target object or the background. It is assumed that initially the sensor will be observing background, so $\textit{observingObject}_0 = FALSE$
+
+		\textbf{Range assumption:}
+		Assuming that the object is within X, background outside
+		PSEUDOCODE
+		if range $\leq$ X
+			observingObject = 1
+		else
+			observingObject = 0
+		end
+		
+		\textbf{Continuity assumption:}
+		if $abs(range_{i+1}-range_i) > X$
+			observingObject = mod(observingObject+1,2)
+		end
 	\subsubsection{Update}
-		-orientation update\\
-		-position update\\
-		-size update\\
-		-S,T,W\\
+		\textbf{Orientation update:}\\
+			at least 3 points, find planes and normal, rotate about cross of normals\\
+			-> gives rotation axis
+			
+		\textbf{Position update:}\\
+			find mean of intersection points of predicted, measured, vector subtraction
+			-> translation vector
+			
+		\textbf{Size update:}\\
+			if different pattern, delta s = dot(translation vector, scan direction)\\
+			if same pattern, delta s = vector(mean measured points - mean predicted points)
+			
+		\textbf{Update scheme:}\\
+			Can update S,T,W of state (or perhaps some combination)\\
+			Scale rotation axis, translation vector, delta s depending on if update is via S,T,W
+			
 \section{Results}
