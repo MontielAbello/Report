@@ -4,12 +4,14 @@ addpath(genpath('C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Simulation\Ob
 %%
 
 %axes and cube
-axes = [0 1 0 0; 0 0 1 0; 0 0 0 1];
-cube = 0.5*[-1    -1    -1    -1     1     1     1     1
+axes = 2*[0 1 0 0; 0 0 1 0; 0 0 0 1];
+cube = 1*[-1    -1    -1    -1     1     1     1     1
             -1    -1     1     1    -1    -1     1     1
             -1     1    -1     1    -1     1    -1     1];
-R = rot(pi/2*[-0.5 1 1]');
+R = rot(pi/2*[0 0 0]');
 
-a = (R*axes + repmat([8 2 0]',1,4))'
-%(R*cube + repmat([2 4 0]',1,8))'
+axis = pi/8*[0 0 0]';
+
+a = (R*axes + repmat(axis,1,4))'
+(R*cube + repmat(axis,1,8))'
 

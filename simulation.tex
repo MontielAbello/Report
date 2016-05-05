@@ -1,24 +1,41 @@
 \chapter{Simulation}
 \section{Implementation}
 \subsection{Rigid Body Motion}
-The pose of a rigid body is described by its corresponding frame \{X\}. The screw, twist and wrench matrices of the body are determined iteratively:
-screw matrix: $\mathbf{S}_X(t+\delta t) = \mathbf{S}_X(t)\exp({\delta t {\mathbf{T}_X(t)}})$
-			
-twist matrix: $\mathbf{T}_X(t+\delta t) = \mathbf{T}_X(t) + \delta t \mathbf{W}_X(t)$
+The motion of a rigid body can be described by its the screw, twist and wrench matrices. The time evolution of these variables is determined iteratively from initial conditions by numerically integrating the ODEs in section \ref{kinematics}. For a rigid body with an associated reference frame \{X\}:
 
-wrench matrix: $\mathbf{W}_X(t+\delta t) =\mathbf{W}_X(t)$
+\begin{equation}
+	\mathbf{S}_X(t+\delta t) = \mathbf{S}_X(t)\exp({\delta t {\mathbf{T}_X(t)}})
+\end{equation}
+
+\begin{equation}
+	\mathbf{T}_X(t+\delta t) = \mathbf{T}_X(t) + \delta t \mathbf{W}_X(t)
+\end{equation}
+
+\begin{equation}
+	\mathbf{W}_X(t+\delta t) =\mathbf{W}_X(t)
+\end{equation}
+
+*will add runge-kutta method to simulation. allow choice of numerical method in config.\\
+*add equations for RK4 
 
 \subsection{Sensor modelling}
-\textbf{motion:}\\
-rigid body motion
+The state of the sensor 
+$\mathbf{X}_{s}(t) = 
+	\{{^{F}_{F}\mathbf{S}^{}_{A}(t)},{^{A}_{F}\mathbf{T}^{}_{A}(t)},{^{A}_{F}\mathbf{W}^{}_{A}(t)},
+	\mathbf{n}(t)\}$
+consists of terms corresponding to its motion and scanning operation. 
 
-\textbf{scanning:}
+\textbf{motion:}\\
+The motion of the sensor is restricted to rotation about the y-axis of the inertial reference frame. It rotates at a constant velocity, back and forth, from $-\phi$ to $\phi$ radians about the y-axis.  As its angular velocity is constant and linear velocity is zero, there is no need to determine the twist and wrench matrices to compute the pose over time. Instead, the pose over time is determined by interpolating between the initial and final pose. This significantly reduces the computation required to determine the sensor's trajectory. The motion from an orientation of $-\phi$ to $\phi$ about the y-axis is reversed, and this trajectory is repeated to produce the back and forth motion that allows for multiple scans.
+
+\textbf{scanning:}\\
 sensor parameters:
 \begin{itemize}
-\item field of view
-\item angular resolution
-\item time per scan
-\item measurement resolution
+\item field of view ($-\theta$ to $\theta$, about -z-axis of sensor frame ie anticlockwise about z-axis)
+\item angular resolution $d\theta$ (no. steps in 1 rev - 1024, $d\theta = 2\pi/1024$)
+\item time per revolution (1/24s = 24Hz)
+\item measurement resolution (range measurements to closest mm)
+\item measurement range (from 10cm to 4m)
 \end{itemize}
 From these parameters, create vector $\mathbf{n}(t)$. At each time, n is either a unit vector in direction of scan, in body fixed frame, or returns no value for when sensor is not returning a measurement (outside FOV)
 
@@ -27,11 +44,11 @@ scan direction: $^{A}\mathbf{n}(t)$
 ^{A}\mathbf{n}(t) =
 	\begin{cases} 
 	      \hfill \begin{bmatrix}
-	      		\cos(\theta_0 + 2\pi t') \\
-	      		\sin(\theta_0 + 2\pi t') \\
+	      		\cos(-\theta + 2\pi t') \\
+	      		-\sin(-\theta + 2\pi t') \\
 	      		0
-	      	\end{bmatrix}    \hfill & \text{ if $t' \leq X$} \\
-	      \hfill \mathbf{0} \hfill & \text{ if $t' > X$} \\
+	      	\end{bmatrix}    \hfill & \text{ if $t' \leq \theta/pi$} \\
+	      \hfill \mathbf{0} \hfill & \text{ if $t' > \theta/pi$} \\
 	\end{cases} 
 \end{equation}
 where
@@ -42,8 +59,13 @@ t' = \mod(t,1/d\theta)\:d\theta
 *$\theta_0$ is start of FOV, $t'=X$ at end of FOV
 
 \subsection{Environment Modelling}
+
+\textbf{rigid objects:}\\
 Environment composed of rectangular prisms. These objects are modelled as an ordered set of 8 points in the inertial reference frame, and 12 triangles. Each triangle is a set of 3 integers, indicating the index of the three points that make up its vertexes.
 The position of each of these points at each time is determined using the screw matrix and side lengths of the object.
+
+Figure ~\ref{fig:cubeproblem}
+\input{Figures/fig_triangles}
 
 points in body frame:
 initialPoints = s*0.5*[];
@@ -75,6 +97,11 @@ triangles:
 
 DIAGRAM HERE
 
+\textbf{motion:}\\
+Each object modelled with S. from initial conditions, numerically integrate S,T,W. If constant velocity motion, faster to use waypoints like sensor.
+From pose of object at each time, compute pose of all points that make up object.
+
+
 \subsection{Measurement Modelling}
 	\subsubsection{Range Computation}
 	Given the screw matrix (in the inertial frame) and scan direction (in the body fixed frame) of the sensor, the position and scan direction in the inertial frame are determined.
@@ -84,6 +111,16 @@ DIAGRAM HERE
 	\SetAlgoLined
 	\KwIn{(O,D,pts,tri), where O and D are origin and direction of ray, pts are points in $\mathbb{R}^3$, tri are indexes of points making up vertexes of triangles}
 	\KwOut{(intersect, range, angle, closest), where intersect is binary - collision or none. range is distance to intersection point, angle is incidence angle with surface hit, closest in index of triangle hit}	
+	
+	-initialise outputs\\
+	-triangle vertexes\\
+	-triangle edges\\
+	-determinant\\
+	-barycentric coords\\
+	-intersection vector\\
+	-if any intersection - minimum range\\
+		-min range, angle, triangle ID
+	
 	\caption{M{\"o}ller-Trumbore ray-triangle intersection algorithm}
 	\end{algorithm}
 

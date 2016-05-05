@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  4 MAY 2016 03:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  5 MAY 2016 23:30
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -438,11 +438,24 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 librarytopaths.code.tex"
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
 )))
+("C:\Program Files\MiKTeX 2.9\tex\latex\tikz-3dplot\tikz-3dplot.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
 librarycalc.code.tex"
 File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.0 (rcs-revision 1.9)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+library3d.code.tex"
+File: tikzlibrary3d.code.tex 2013/07/17 v3.0.0 (rcs-revision 1.2)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+libraryarrows.code.tex"
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryarrows.code.t
+ex"
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.0 (rcs-revision 1.16)
+\arrowsize=\dimen162
+))) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks34
 \verbatim@line=\toks35
@@ -459,12 +472,12 @@ Package: amstext 2000/06/29 v2.01
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks36
-\ex@=\dimen162
+\ex@=\dimen163
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 LaTeX Info: Redefining \boldsymbol on input line 39.
-\pmbraise@=\dimen163
+\pmbraise@=\dimen164
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
@@ -481,7 +494,7 @@ LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box46
 \strutbox@=\box47
-\big@size=\dimen164
+\big@size=\dimen165
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count117
@@ -494,12 +507,12 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \column@=\count122
 \maxfields@=\count123
 \andhelp@=\toks38
-\eqnshift@=\dimen165
-\alignsep@=\dimen166
-\tagshift@=\dimen167
-\tagwidth@=\dimen168
-\totwidth@=\dimen169
-\lineht@=\dimen170
+\eqnshift@=\dimen166
+\alignsep@=\dimen167
+\tagshift@=\dimen168
+\tagwidth@=\dimen169
+\totwidth@=\dimen170
+\lineht@=\dimen171
 \@envbody=\toks39
 \multlinegap=\skip64
 \multlinetaggap=\skip65
@@ -507,15 +520,6 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
-libraryarrows.code.tex"
-File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryarrows.code.t
-ex"
-File: pgflibraryarrows.code.tex 2013/09/23 v3.0.0 (rcs-revision 1.16)
-\arrowsize=\dimen171
-))
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
 librarypositioning.code.tex"
 File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
@@ -529,18 +533,18 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.aux"))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -556,12 +560,12 @@ LaTeX Font Info:    ... okay on input line 53.
 \makeMPintoPDFobject=\count129
 \everyMPtoPDFconversion=\toks42
 ) ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 59.
+LaTeX Font Info:    Try loading font information for U+msa on input line 60.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 59.
+LaTeX Font Info:    Try loading font information for U+msb on input line 60.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -629,7 +633,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--88
 ]
 Chapter 2.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 2--65
+Underfull \hbox (badness 10000) in paragraph at lines 2--66
 
  []
 
@@ -640,28 +644,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--65
 
 ]
 Chapter 3.
-[21] [22]
-Overfull \hbox (30.0pt too wide) in paragraph at lines 83--88
+[21]
+("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_triangle
+s.tex" [22]) [23]
+Overfull \hbox (30.0pt too wide) in paragraph at lines 110--125
 $[]$ 
  []
 
-[23] [24]) [25
+
+Underfull \vbox (badness 1715) has occurred while \output is active []
+
+ [24]
+[25]) [26
 
 ]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.tex"
-[26
-
-
-
-]
 Chapter 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2--8
 
  []
 
-) [27] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.te
-x" [28
+) [27
+
+
+
+] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.tex" [2
+8
 
 
 
@@ -685,13 +694,13 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 14109 strings out of 493921
- 278834 string characters out of 3147261
- 314565 words of memory out of 3000000
- 17068 multiletter control sequences out of 15000+200000
+ 14390 strings out of 493921
+ 283675 string characters out of 3147261
+ 322317 words of memory out of 3000000
+ 17339 multiletter control sequences out of 15000+200000
  19544 words of font info for 71 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 55i,23n,54p,536b,11818s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,23n,58p,758b,11957s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
 x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Progr
@@ -707,7 +716,7 @@ ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/f
 onts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (31 pages, 247813 bytes).
+Output written on main.pdf (31 pages, 250973 bytes).
 PDF statistics:
  169 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
