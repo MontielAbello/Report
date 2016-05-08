@@ -1,13 +1,12 @@
 \section{Theoretical Background}
 
-\subsection{Rigid Body Dynamics}
-	In practice, robot, sensor, environment exist in 3D Euclidean space - $\mathbb{R}^3$.
-	To model the pose of a rigid body... (something about why Lie groups are necessary to represent pose)
+\subsection{Rigid Body Kinematics}
+	A rigid body is a model of a solid object whose deformation is assumed to be negligible. The distance between every pair of points on the body remains constant. Because such a body does not deform, knowledge of the orientation and position of a single point constitutes knowledge of the position and orientation of all points. The position of the rigid body is thus defined as the position of a single point in the body, most commonly its centre of mass. The orientation can be defined using a set of coordinate axes fixed to the body.
+	The theory of Lie groups will be used to describe the kinematics of rigid bodies on this report.
 			
 	\subsubsection{Lie Groups}		
 		A Lie group $\mathbf{G}$ is a group that is also a differentiable manifold.
-		As a group, $\mathbf{G}$ is a set of elements and a group operation (denoted by multiplication, i.e. $AB$ for $A,B \in \mathbf{G}$) that satisfies the 4 group axioms:
-		
+		As a group, $\mathbf{G}$ is a set of elements and a group operation. This group operation is a binary operation that combines two elements and is denoted by multiplication: $AB$ for $A,B \in \mathbf{G}$. Because it is a group, $\mathbf{G}$ satisfies the 4 group axioms:
 		\begin{itemize}
 		\item \textbf{Closure:} 
 			The group operation
@@ -102,7 +101,7 @@
 		
 	\subsubsection{\textbf{SO}(3)}	
 		A rotation represents the motion of a point about the origin of a Euclidean space. In $\mathbb{R}^3$ this is a proper isometry: a transformation that preserves distances between any pair of points and has a determinant of +1. The set of all rotations about the origin of $\mathbb{R}^3$ is known as the \textit{special orthogonal group} $\textbf{SO}(3)$.
-		This matrix Lie group is a subgroup of the general linear group $\textbf{GL}(3)$, so its group elements are rotations in $\mathbb{R}^3$, and can be represented with $3 \times 3$ invertible matrices. These group elements are orthogonal matrices so their columns and rows are orthogonal unit vectors. 
+		Group elements of $\textbf{SO}(3)$ can be represented using a special subset of $3 \times 3$ invertible matrices and in this case, forms a matrix Lie group. Several rotation representations are described in REF, but the theory presented below only applies to matrix Lie groups which rely on the rotation matrix representation for group elements.
 		
 		\textbf{Lie algebra}\\
 		The Lie algebra $\mathfrak{so}(3)$ is vector space of $3 \times 3$ skew-symmetric matrices $\hat{\omega}$, where $\omega$ is a 3-vector representing an angular velocity. The direction of $\omega$ indicates the axis of rotation while its magnitude gives the angular velocity. 
@@ -153,7 +152,8 @@
 		There are many conventions by which elements of $\mathbf{SO}(3)$ can be represented. Common representations are: \textbf{TODO:} \textit{go into more detail on below}
 		
 		\textbf{Rotation matrix}\\
-		$3 \times 3$ matrix where magnitude of each column is 1, columns are orthogonal, determinant is +1. Group operation matrix is multiplication. Left action is left multiplication of point. 
+		$3 \times 3$ matrix where magnitude of each column is 1, columns are orthogonal, determinant is +1. These group elements are orthogonal matrices so their columns and rows are orthogonal unit vectors. 
+		Group operation matrix is multiplication. Left action is left multiplication of point. 
 		GROUP OPERATION - matrix multiplication - concatenates rotation\\
 		GROUP ACTION - left multiplication with vector - rotates point
 		

@@ -138,6 +138,8 @@ From pose of object at each time, compute pose of all points that make up object
 	
 \subsection{Observer implementation}
 	\subsubsection{Estimate: internal model}
+		rigid body motion - numerical integration of ODEs
+	
 	\subsubsection{Identifying object/background}
 		The variable \textit{observingObject} indicates whether the range measurement is of the target object or the background. It is assumed that initially the sensor will be observing background, so $\textit{observingObject}_0 = FALSE$
 
