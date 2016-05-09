@@ -47,8 +47,8 @@ scan direction: $^{A}\mathbf{n}(t)$
 	      		\cos(-\theta + 2\pi t') \\
 	      		-\sin(-\theta + 2\pi t') \\
 	      		0
-	      	\end{bmatrix}    \hfill & \text{ if $t' \leq \theta/pi$} \\
-	      \hfill \mathbf{0} \hfill & \text{ if $t' > \theta/pi$} \\
+	      	\end{bmatrix}    \hfill & \text{ if $t' \leq \theta/pi$, $t' = k\delta\tau$ where $k \in \mathbb{N}$} \\
+	      \hfill \mathbf{0} \hfill & \text{ if $t' > \theta/pi$, $t' \neq k\delta\tau$ where $k \in \mathbb{N}$} \\
 	\end{cases} 
 \end{equation}
 where
@@ -57,6 +57,11 @@ t' = \mod(t,1/d\theta)\:d\theta
 \end{equation}
 
 *$\theta_0$ is start of FOV, $t'=X$ at end of FOV
+
+Scan direction in inertial frame required for measurement simulation:
+\begin{equation}
+	{^{F}\mathbf{n'}(t)} = \mathbf{X}_s(t)\:{^{A}\mathbf{n'}(t)}
+\end{equation}
 
 \subsection{Environment Modelling}
 

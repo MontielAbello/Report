@@ -1,4 +1,4 @@
- \section{Problem Statement}
+   \section{Problem Statement}
 \textbf{context etc here...}
 \begin{comment}
 \textbf{context:}
@@ -23,31 +23,32 @@ This project aims to develop some of this theory. The approach taken will be to 
 This report will solve a particular estimation problem before generalising the results to a wider class of systems. A situation in which an infinite dimensional observer would be useful is in the estimation of the pose of an object of size moving in an environment of unknown state.
 For example, consider an autonomous robot deployed in an agricultural survey, which must determine the position and size of a certain crop.
 
-The problem to be ... is shown in Figure~\ref{fig:cubeproblem}. A 2D scanning range sensor moves through an environment consisting of a target object of known shape, in this case a rigid cube, and an unknown background which may consist of one or more rigid bodies. The state of the sensor is known, but the states of the cube and background environment are unknown. The goal is to use the state of the sensor and the range measurements it provides estimate the state of the target object.
+The problem to be investigated is shown in Figure~\ref{fig:cubeproblem}. A 2D scanning range sensor moves through an environment consisting of a target object of known shape, in this case a rigid cube, and an unknown background which may consist of one or more rigid bodies. The state of the sensor is known, but the states of the cube and background environment are unknown. The goal is to use the state of the sensor and the range measurements it provides to estimate the state of the cube.
 
 The frames used to describe the motion of the rigid bodies in this problem are:
 \begin{itemize}
 \item $\{F\}$ - the inertial (fixed) frame. For the purposes of this problem, the inertial frame is a frame whose motion is negligible. For the practical experiment this frame will be fixed to the ground.
-\item $\{A\}$ - the frame fixed to the sensor. The origin of this frame is the centre of rotation of the sensor's scan direction. The $x-$axis frame $\{A\}$ coincides with the sensor's scan direction $\mathbf{n}$ when $\mathbf{n}$ is at the centre of the field of view of the sensor. The transformation from $\{F\}$ to $\{A\}$ at time $t$ is defined by the screw matrix of the sensor $\mathbf{S}_{s}(t)$.
+\item $\{A\}$ - the frame fixed to the sensor. The origin of this frame is the centre of rotation of the sensor's scan direction. The axes of $\{A\}$ are fixed to the sensor according to figure \textbf{TODO: FIGURE}. The transformation from $\{F\}$ to $\{A\}$ at time $t$ is defined by the screw matrix of the sensor $\mathbf{S}_{s}(t)$.
 \item $\{B\}$ - the frame fixed to the cube. The origin of $\{B\}$ coincides with the centre of the cube and is aligned so that each axis intersects with the centre of a face of the cube. The transformation from $\{F\}$ to $\{B\}$ at time $t$ is defined by the screw matrix of the cube $\mathbf{S}_{c}(t)$.
 \end{itemize} 
 
-The sensor provides measurements of the range $r$ to the nearest object to the sensor (either the cube or the background) in the direction $\mathbf{n}(t)$. 
+The sensor provides measurements of the range $r$ to the nearest object from the sensor (either the cube or the background) in the direction $\mathbf{n}(t)$. 
 The state of the sensor $\mathbf{X}_{s}(t)$ is defined as:
 \begin{equation}
 	\mathbf{X}_{s}(t) = 
 	\{{^{F}_{F}\mathbf{S}^{}_{A}(t)},{^{A}_{F}\mathbf{T}^{}_{A}(t)},{^{A}_{F}\mathbf{W}^{}_{A}(t)},
-	\mathbf{n}(t)\}
+	{^{A}\mathbf{n}(t)}\}
 \end{equation}
+The screw matrix represents the transformation from $\{A\}$ to $\{F\}$, defined in $\{F\}$. The twist and wrench matrices, as well as the scan direction $\mathbf{n}(t)$ are defined in terms of$\{A\}$.
 For simplicity, this will be denoted 
 \begin{equation}
 	\mathbf{X}_{s}(t) = 
-	\{\mathbf{S}_{s}(t),\mathbf{T}_{s}(t),\mathbf{W}_{s}(t),\mathbf{n}(t)\}
+	\{\mathbf{S}_{s}(t),\mathbf{T}_{s}(t),\mathbf{W}_{s}(t),{^{A}\mathbf{n}(t)}\}
 \end{equation}
-*should n be defined as discrete here? ie n(k) where $k = \{1\delta t,2\delta t,3\delta t...\}$\\
-*n not written as a function of S since it is defined w.r.t. \{A\}. what is notation for this?
 
-The direction of measurement $\mathbf{n}(t)$ varies as a rotation about the z-axis of \{A\}. This 2D scanning motion depends on the model of the sensor used and is described in more detail in ADD REFERENCE. For simplification, the motion of the sensor itself with respect to the frame \{F\} will be limited to rotation of \{A\} about its $y$ axis.
+The direction of measurement ${^{A}\mathbf{n}(t)}$ varies as a rotation about the z-axis of $\{A\}$. This 2D scanning motion depends on the model of the sensor used and is described in more detail in ADD REFERENCE. For simplification, the motion of the sensor itself with respect to $\{F\}$ will be limited to rotation about the $y$-axis of $\{F\}$.
+
+\textbf{TODO: DIAGRAM SHOWING RESTRICTED MOTION}
 
 The state of cube $\mathbf{X}_{c}(t)$ is defined as 
 \begin{equation}
@@ -62,8 +63,8 @@ For simplicity, this will be denoted
 \end{equation}
 The range measurements do not indicate whether the object detected is the cube or a background object. Though the pose of the cube and environment remain unknown, for simplification, it is assumed that either:
 \begin{itemize}
-\item the cube is within Xm from the sensor and background objects are at least Xm away
-\item these rigid objects do not touch or overlap, and have continuous shape
+\item the cube is within a distance $d$ from the sensor and background objects are at least a distance $d$ away
+\item these target and background objects do not touch or overlap and their surfaces are continuous functions on $\mathbb{R}^3$
 \end{itemize}
 For simulated data, only the first assumption is necessary. For experimental data sets the environment is more complex so the second assumption is required to identify range measurements corresponding to the cube. 
 
@@ -71,8 +72,8 @@ The aim is to design an observer which estimates the state of the cube from the 
 \begin{equation}
 	\hat{\mathbf{X}}_{c} = f(\mathbf{X}_{s},r(t)-\hat{r}(t))
 \end{equation}
-*should r be defined as discrete here???\\
-*convergence - how to quantify performance... how to quantify this?
+
+*convergence - how to quantify performance?
 
 
 
