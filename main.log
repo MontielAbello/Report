@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  8 MAY 2016 23:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  9 MAY 2016 21:10
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -600,45 +600,44 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 
 
 ] [6] [7] [8]
-Overfull \hbox (15.62883pt too wide) in paragraph at lines 200--203
+Overfull \hbox (15.62883pt too wide) in paragraph at lines 210--213
 \OT1/cmr/m/n/10.95 com-mu-ta-tive. GROUP AC-TION: for-mula for ro-tat-ing vec-t
 or: q*v'*qINV 
  []
 
-
-Overfull \hbox (13.54283pt too wide) in paragraph at lines 241--242
+[9]
+Overfull \hbox (13.54283pt too wide) in paragraph at lines 251--252
 []\OT1/cmr/m/n/10.95 Elements of $[](3)$ are mapped to $[](3)$ ac-cord-ing to t
 he ex-po-nen-tial map: 
  []
 
-[9] [10]
+[10]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_referenc
-eframes.tex") [11] [12] [13]) [14]
+eframes.tex") [11] [12] [13]) [14] [15]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\problem.tex"
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_cubeprob
-lem.tex") [15
+lem.tex") [16
 
 
 
-] [16]
+] [17]
 Underfull \hbox (badness 10000) in paragraph at lines 85--88
 
  []
 
-) [17] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\theory.tex"
-[18
-
-
-
-]
+) [18] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\theory.tex"
 Chapter 2.
 )
 Underfull \hbox (badness 10000) in paragraph at lines 2--66
 
  []
 
-[19] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.tex"
-[20
+[19
+
+
+
+] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.tex" [2
+0
 
 
 
@@ -707,18 +706,20 @@ x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (31 pages, 251629 bytes).
+/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cmextra/cmmib8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (31 pages, 268009 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
+ 177 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

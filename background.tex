@@ -1,4 +1,4 @@
-\section{Theoretical Background}
+  \section{Theoretical Background}
 
 \subsection{Rigid Body Kinematics}
 	A rigid body is a model of a solid object whose deformation is assumed to be negligible. The distance between every pair of points on the body remains constant. Because such a body does not deform, knowledge of the orientation and position of a single point constitutes knowledge of the position and orientation of all points. The position of the rigid body is thus defined as the position of a single point in the body, most commonly its centre of mass. The orientation can be defined using a set of coordinate axes fixed to the body.
@@ -23,8 +23,8 @@
 		Because the Lie group $\mathbf{G}$ is a differentiable manifold, it is locally Euclidean. This means that the neighbourhood around every element of $\mathbf{G}$ can be approximated with a tangent plane. This property allows calculus to be performed on elements of $\mathbf{G}$.
 		
 		\textbf{Matrix Lie groups}\\
-			A matrix Lie group is made up of group elements which are $n \times n$ matrices.
-			This work will be focus on matrix Lie groups because the exponential map and Lie bracket functions given below only apply to such Lie groups.
+			A matrix Lie group $\mathbf{G} \in \mathbf{GL}(n)$ is made up of group elements which are $n \times n$ matrices.
+			This work will focus on matrix Lie groups because the exponential map and Lie bracket functions given below only apply to such Lie groups.
 		
 		\textbf{Lie algebra}\\
 			The tangent space at the identity element of a Lie group is called the Lie algebra $\mathfrak{g}$. It is called the Lie \textit{algebra} because it has a binary operation, known as the Lie bracket $[X,Y]$. For matrix Lie groups the Lie bracket is
@@ -41,8 +41,9 @@
 			\begin{equation}
 				\log: \mathbf{G} \rightarrow \mathfrak{g}
 			\end{equation}
+			For matrix Lie groups, the exponential map and logarithm map correspond to matrix exponential and matrix logarithm respectively.
 						
-		\textbf{sub-heading?}\\
+		\textbf{Infinitesimal generators}\\
 			For an \textit{n}-dimensional matrix Lie group, the Lie algebra $\mathfrak{g}$ is a vector space isomorphic to $\mathbb{R}^n$. The hat operator $\hat{\:}$ maps vectors $x \in \mathbb{R}^3$ to elements of $\mathfrak{g}$.				
 			\begin{equation}
 				\hat{\:}: x \in \mathbb{R}^n \rightarrow \hat{x} \in \mathfrak{g}
@@ -54,7 +55,7 @@
 			where $G^i$ are $\textit{n} \times \textit{n}$ matrices known as the infinitesimal generators of $\mathbf{G}$.
 						
 		\textbf{Lie bracket and group operation}\\					
-			For Lie groups endowned with the commutative property ($\forall A,B \mathbf{G}, AB = BA$), vector addition in the Lie algebra maps to a group operation in the Lie group. For $C = A + B$ where $A,B,C \in \mathfrak{g}$,
+			For Lie groups endowned with the commutative property ($\forall A,B \in \mathbf{G}, AB = BA$), vector addition in the Lie algebra maps to a group operation in the Lie group. For $C = A + B$ where $A,B,C \in \mathfrak{g}$,
 			\begin{equation}
 				e^C = e^{A+B} = e^Ae^B
 			\end{equation}
@@ -81,8 +82,8 @@
 			\end{itemize}
 			
 		\textbf{Adjoint map}\\		
-		EXPLANATION - Sometimes before a function B can be applied on manifold acted on by a group action A, it is necessary to apply the conjugate of A to B????\\
-		For $A \in \mathbf{G}$ define a function $\Psi$, known as the adjoint map of $\mathbf{G}$:
+		EXPLANATION???\\
+		For $A \in \mathbf{G}$ and $B \in ?$ define a function $\Psi$, known as the adjoint map of $\mathbf{G}$:
 		\begin{equation}
 			\Psi_A: \mathbf{G} \rightarrow \mathbf{G} \textnormal{, }
 			\Psi_A(B) \stackrel{\Delta}{=} ABA^{-1}
@@ -129,7 +130,8 @@
 			\Phi: \mathbf{SO}(3) \times \mathbf{R}^3 \mapsto \mathbf{R}^3
 		\end{equation}
 		
-		\textbf{Adjoint map}
+		\textbf{Adjoint map}\\
+		EXPLANATION???? Hard to explain practical application without discussing reference frames: ie if position defined in body fixed frame but some other transformation defined in inertial frame. First undo rotation to get pose in inertial frame, apply transformation, then re-apply rotation.
 		\begin{equation}
 			\Psi_R: \mathbf{SO}(3) \rightarrow \mathbf{SO}(3) \textnormal{, }
 			\Psi_R(A) \stackrel{\Delta}{=} RAR^{-1}
@@ -144,22 +146,30 @@
 			\textbf{Adj}_R: \mathfrak{so}(3) \rightarrow \mathfrak{so}(3) \textnormal{, }
 			\textbf{Adj}_R(B) \stackrel{\Delta}{=} RBR^{-1}
 		\end{equation}
-		???? Hard to explain practical application without discussing reference frames: ie if position defined in body fixed frame but some other transformation defined in inertial frame. First undo rotation to get pose in inertial frame, apply transformation, then re-apply rotation
-		
-		TODO: more explanation needed here!
 		
 		\textbf{Rotation representations}\\		
-		There are many conventions by which elements of $\mathbf{SO}(3)$ can be represented. Common representations are: \textbf{TODO:} \textit{go into more detail on below}
+		There are many conventions by which elements of $\mathbf{SO}(3)$ can be represented. The representations that will be used in this report are described below.
 		
 		\textbf{Rotation matrix}\\
-		$3 \times 3$ matrix where magnitude of each column is 1, columns are orthogonal, determinant is +1. These group elements are orthogonal matrices so their columns and rows are orthogonal unit vectors. 
-		Group operation matrix is multiplication. Left action is left multiplication of point. 
-		GROUP OPERATION - matrix multiplication - concatenates rotation\\
-		GROUP ACTION - left multiplication with vector - rotates point
+		A 3D rotation matrix $\mathbf{R}$ is an orthogonal $3 \times 3$ matrix with a determinant of +1. Since $\mathbf{R}$ is orthogonal, its columns and rows are respectively sets of orthogonal unit vectors and
+		\begin{equation}
+			\mathbf{R}^{-1} = \mathbf{R}^{T}
+		\end{equation}		
+		The group operation using rotation matrices is simply a matrix multiplication which concatenates the two rotations. The product of two rotation matrices $\mathbf{R}_3 = \mathbf{R}_2\mathbf{R}_1$ is a rotation matrix corresponding to left multiplication by $\mathbf{R}_1$ followed by $\mathbf{R}_2$.
 		
-		\textbf{Scaled axis}\\
-		3-vector where direction represents axis of rotation and magnitude represents angle of rotation. Group operation - vector addition? Left action - rodrigues' rotation formula converts scaled axis to rotation matrix which is used to rotate point.
-				
+		The left action of a rotation matrix $\mathbf{R}$ on a point $\mathbf{p} \in \mathbb{R}^3$ is a left matrix multiplication that rotates $\mathbf{p}$ about the origin.
+		
+		\textbf{Scaled-axis}\\
+		An orientation in $\mathbf{R}^3$ can also be represented by a 3-vector $\bm{\theta}$ whose direction $\mathbf{e}$ represents the axis of rotation and magnitude $\theta$ represents the angle of rotation.
+		\begin{equation}
+			\bm{\theta} = \theta\mathbf{e}
+		\end{equation}
+		
+		Though scaled-axis vectors are not used to perform rotations, Rodrigues' rotation formula efficiently converts scaled-axis vectors to rotation matrices:
+		\begin{equation}
+			\mathbf{R}_{\bm{\theta}} = \mathbf{I} + [\mathbf{e}]_{\times}\sin{\theta} + ([\mathbf{e}]_{\times})^2(1-\cos{\theta})
+		\end{equation}
+					
 		\textbf{Quaternion}\\
 		4-vector, same information as axis angle, but different form. Given axis of rotation $\mathbf{r}$ and angle of rotation $\theta$:
 		\begin{equation}
@@ -181,7 +191,7 @@
 			 	\sin(\theta/2)\mathbf{r}
 			 \end{bmatrix}
 		\end{equation}
-		Group operation - quaternion multiplication defined as:
+		GROUP OPERATION - quaternion multiplication defined as:
 		\begin{equation}
 			\mathbf{q}_1\mathbf{q}_2 =
 			\begin{bmatrix}
