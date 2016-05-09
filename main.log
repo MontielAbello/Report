@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  9 MAY 2016 23:55
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  10 MAY 2016 02:11
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -638,18 +638,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--66
 
 ]
 Chapter 3.
+
+Overfull \hbox (33.91658pt too wide) in paragraph at lines 3--4
+\OT1/cmr/m/n/10.95 Intro. Main as-pects of sim-u-la-tion: rigid body mo-tion, o
+b-jects, sen-sor/measurement,
+ []
+
 [21] [22]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_triangle
 s.tex") [23]
-Overfull \hbox (30.0pt too wide) in paragraph at lines 115--130
+Overfull \hbox (30.0pt too wide) in paragraph at lines 122--137
 $[]$ 
  []
 
-
-Underfull \vbox (badness 1715) has occurred while \output is active []
-
- [24]
-[25]) [26
+[24] [25]) [26
 
 ]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.tex"
@@ -690,7 +692,7 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 Here is how much of TeX's memory you used:
  14390 strings out of 493921
  283675 string characters out of 3147261
- 322318 words of memory out of 3000000
+ 322317 words of memory out of 3000000
  17339 multiletter control sequences out of 15000+200000
  19544 words of font info for 71 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -712,7 +714,7 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (31 pages, 271295 bytes).
+Output written on main.pdf (31 pages, 271915 bytes).
 PDF statistics:
  177 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

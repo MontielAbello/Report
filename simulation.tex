@@ -1,6 +1,14 @@
 \chapter{Simulation}
 \section{Implementation}
+Intro. Main aspects of simulation: rigid body motion, objects, sensor/measurement, noise, observer
+
 \subsection{Rigid Body Motion}
+Moving bodies: sensor, environment\\
+Kinds of motion: stationary, constant vel, var vel
+Solving for trajectory:
+	-numerical integration\\
+	-interpolation
+	
 The motion of a rigid body can be described by its the screw, twist and wrench matrices. The time evolution of these variables is determined iteratively from initial conditions by numerically integrating the ODEs in section \ref{kinematics}. For a rigid body with an associated reference frame \{X\}:
 
 \begin{equation}
@@ -65,6 +73,10 @@ Scan direction in inertial frame required for measurement simulation:
 
 \subsection{Environment Modelling}
 
+\textbf{motion:}\\
+Each object modelled with S. from initial conditions, numerically integrate S,T,W. If constant velocity motion, faster to use waypoints like sensor.
+From pose of object at each time, compute pose of all points that make up object.
+
 \textbf{rigid objects:}\\
 Environment composed of rectangular prisms. These objects are modelled as an ordered set of 8 points in the inertial reference frame, and 12 triangles. Each triangle is a set of 3 integers, indicating the index of the three points that make up its vertexes.
 The position of each of these points at each time is determined using the screw matrix and side lengths of the object.
@@ -101,11 +113,6 @@ triangles:
 \end{equation}
 
 DIAGRAM HERE
-
-\textbf{motion:}\\
-Each object modelled with S. from initial conditions, numerically integrate S,T,W. If constant velocity motion, faster to use waypoints like sensor.
-From pose of object at each time, compute pose of all points that make up object.
-
 
 \subsection{Measurement Modelling}
 	\subsubsection{Range Computation}
@@ -179,3 +186,5 @@ From pose of object at each time, compute pose of all points that make up object
 			Scale rotation axis, translation vector, delta s depending on if update is via S,T,W
 			
 \section{Results}
+plots for different initial conditions \& kinds of motion
+	
