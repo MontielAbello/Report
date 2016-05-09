@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  9 MAY 2016 21:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  9 MAY 2016 22:10
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -600,20 +600,15 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 
 
 ] [6] [7] [8]
-Overfull \hbox (15.62883pt too wide) in paragraph at lines 210--213
-\OT1/cmr/m/n/10.95 com-mu-ta-tive. GROUP AC-TION: for-mula for ro-tat-ing vec-t
-or: q*v'*qINV 
- []
-
 [9]
-Overfull \hbox (13.54283pt too wide) in paragraph at lines 251--252
+Overfull \hbox (13.54283pt too wide) in paragraph at lines 294--295
 []\OT1/cmr/m/n/10.95 Elements of $[](3)$ are mapped to $[](3)$ ac-cord-ing to t
 he ex-po-nen-tial map: 
  []
 
-[10]
+[10] [11]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_referenc
-eframes.tex") [11] [12] [13]) [14] [15]
+eframes.tex") [12] [13] [14]) [15]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\problem.tex"
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_cubeprob
 lem.tex") [16
@@ -717,7 +712,7 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (31 pages, 268009 bytes).
+Output written on main.pdf (31 pages, 269880 bytes).
 PDF statistics:
  177 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
