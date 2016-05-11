@@ -236,8 +236,14 @@ DIAGRAM HERE
 	\DontPrintSemicolon
 	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 
-	\Input{(O,D,pts,tri), where O and D are origin and direction of ray, pts are points in $\mathbb{R}^3$, tri are indexes of points making up vertexes of triangles}
-	\Output{(intersect, range, angle, closest), where intersect is binary - collision or none. range is distance to intersection point, angle is incidence angle with surface hit, closest in index of triangle hit}
+	\Input{o - ray origin\\
+		   d - ray direction vector\\
+		   Pts - points\\
+		   Tri - triangle matrix}
+	\Output{intersect - True/False - whether object measured\\
+			range - distance to object in m\\
+			angle - incidence angle in rad\\
+			closest - index of triangle hit}
 	\Begin{
 		-initialise outputs\\
 		-triangle vertexes\\
@@ -254,7 +260,10 @@ DIAGRAM HERE
 	\caption{M{\"o}ller-Trumbore ray-triangle intersection algorithm\label{MTalg}}
 	\end{algorithm}
 	
-	\subsubsection{Noise Modelling}
+	\subsubsection{Object Surface}
+	random walk
+	
+	\subsubsection{Sensor Noise}
 	Noise model depends on sensor used.
 	\begin{equation}
 		\hat{r}(t) = f_s(r(t),\theta(t),\phi(k))
@@ -265,6 +274,7 @@ DIAGRAM HERE
 	\begin{equation}
 		f_{UBG} = 
 	\end{equation}
+	
 	
 \subsection{Observer implementation}
 	\subsubsection{Estimate: internal model}
@@ -286,6 +296,35 @@ DIAGRAM HERE
 		if $abs(range_{i+1}-range_i) > X$
 			observingObject = mod(observingObject+1,2)
 		end
+		
+		\IncMargin{2em}
+		\begin{algorithm}
+		\DontPrintSemicolon
+		\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	
+		\Input{rangeAssumption - true/false\\
+			   continuityAssumption - true/false\\
+			   rangeLimit\\
+			   continuityLimit\\
+			   observingObject - true/false\\
+			   range\_{i+1} - distance to object in m at time i+1\\
+			   range\_{i} - distance to object in m at time i}
+		\Output{observingObject - true/false}
+		\Begin{				
+			\If{continuityAssumption}{
+				\If{abs(range\_{i+1}-range\_{i}) > continuityLimit}{
+					observingObject = mod(observingObject + 1,2)
+				}
+			}
+			\If{rangeAssumption}{
+				\If{range\_{i+1} $>$ rangeLimit}{
+					observingObject = 0
+				}
+			}
+		}
+		\caption{Target/background object separation}
+		\end{algorithm}
+		
 	\subsubsection{Update}
 		\textbf{Orientation update:}\\
 			at least 3 points, find planes and normal, rotate about cross of normals\\
