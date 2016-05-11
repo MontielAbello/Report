@@ -1,25 +1,58 @@
 \chapter{Simulation}
 \section{Implementation}
-Intro. Main aspects of simulation: rigid body motion, objects, sensor/measurement, noise, observer
-Include details like: matlab, mex, parallel?
+A ... was implemented to simulate range measurements of rigid bodies. 
+Main aspects of simulation: rigid body motion, objects, sensor/measurement, noise, observer
+Time: 1 step for every sensor measurement
+Data: sensor state, environment state - compute every step
 
 \subsection{Rigid Body Motion}
-In order to simulate range measurements with the sensor, the pose of the sensor and the objects comprising the environment must be computed at each time step. The computations required to do so can be reduced by taking into account the kinds of motion that must be simulated.
+To simulate range measurements the pose of the sensor and the objects comprising the environment must be computed at each time step. The computations required to do so can be reduced by taking into account the kinds of motion that must be simulated.
 
-*something to do with relative position - Only requirement of sensor motion is that large field of view acquired - measure entire target object - limiting motion to constant velocity rotation about $y$-axis of inertial frame.
+The observer actually computes the \textit{relative} position between the sensor and cube and simply uses knowledge of the sensor pose to determine the pose of the cube in the inertial frame. There is no need to simulate complex sensor motions because the motion of the cube can be adjusted to achieve the same result. The only requirement of the sensor motion is that a large field of view is acquired so that the entire target object can be viewed. The scanning behaviour of the sensor is to rotate back and forth about the $z$-axis of the body fixed frame $\{A\}$. To provide a rectangular field of view, the motion of the sensor is therefore limited to constant velocity rotation about $y$-axis of inertial frame $\{F\}$.
 
-For environment, background is modelled with single rectangular prism - stationary.
-Different target object motions are simulated: stationary, rotation, translation ... Can be classed as either zero wrench/nonzero wrench.
+The environment is modelled with two rigid bodies: a cube to be observed as the target object, and a stationary rectangular prism enclosing the sensor and cube acting as the background. The various cube motions that will be simulated to test the observer's performance can be classed as either
+\begin{enumerate}
+\item ${\textbf{W}_c} = \textbf{0}$
+\item ${\textbf{W}_c} \neq \textbf{0}$
+\end{enumerate}
 
-For case with no acceleration, wrench and screw constant and don't need to be computed after initial value, most efficient to represent pose with position and orientation with quaternion and compute trajectory by interpolating between initial and final pose
-
-For case with acceleration, need to integrate screw, twist, wrench numerically to compute over time 
+For case 1. the wrench and screw are constant so only the initial value is required. It is more efficient to represent the pose of a rigid body with just position and orientation in this case. The pose can be quickly computed by interpolating between an initial and final pose. For case 2. the screw, twist and wrench must be integrated numerically.
 
 \subsubsection{Interpolation}
+To compute a trajectory of $k$ poses between $\{\mathbf{p}_i,\mathbf{q}_i\}$ and $\{\mathbf{p}_f,\mathbf{q}_f\}$:\\
+
+Poses for each time $\mathbf{t} =
+					\begin{bmatrix}
+						t_1 & t_2 & t_3 & \dots & t_k
+					\end{bmatrix}$
+
+Linear interpolation for position $\mathbf{p}= \begin{bmatrix}
+													\mathbf{p}_1 & \mathbf{p}_2 & \mathbf{p}_3 & \dots & \mathbf{p}_k
+												\end{bmatrix}$:
+\begin{equation}
+	\mathbf{p} = 
+	{\mathbf{p}_1}_{REP} + (\mathbf{p}_k - \mathbf{p}_1)\frac{\mathbf{t}-{\mathbf{t}_1}_{REP}}{t_k - t_1}
+\end{equation}
+
+Spherical linear interpolation for orientation quaternion $\mathbf{q}= \begin{bmatrix}
+													\mathbf{q}_1 & \mathbf{q}_2 & \mathbf{q}_3 & \dots & \mathbf{q}_k
+												\end{bmatrix}$:
+
+\begin{equation}
+	\mathbf{q} = \frac{\mathbf{q}_1\sin((\mathbf{1}_{REP}-\mathbf{t})\theta) + \mathbf{q}_k\sin(\mathbf{t}\theta)}{\sin(\theta)}
+\end{equation}
+where
+\begin{equation}
+	\theta = \cos^{-1}(\mathbf{q}_1 \cdot \mathbf{q}_k)
+\end{equation}
+
+*MAKE THESE CLEARER
+
+
 pose = \{position wrt F, orientation quaternion wrt F\}
 equations: linear interpolation, slerp
 
-\subsubsection{Scanning}
+SCANNING:\\
 Require multiple views of target object,reverse trajectory, concatenate and replicate
 
 \subsubsection{Numerical Integration}
