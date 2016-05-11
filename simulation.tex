@@ -1,15 +1,30 @@
 \chapter{Simulation}
 \section{Implementation}
 Intro. Main aspects of simulation: rigid body motion, objects, sensor/measurement, noise, observer
+Include details like: matlab, mex, parallel?
 
 \subsection{Rigid Body Motion}
-Moving bodies: sensor, environment\\
-Kinds of motion: stationary, constant vel, var vel
-Solving for trajectory:
-	-numerical integration\\
-	-interpolation
+In order to simulate range measurements with the sensor, the pose of the sensor and the objects comprising the environment must be computed at each time step. The computations required to do so can be reduced by taking into account the kinds of motion that must be simulated.
+
+*something to do with relative position - Only requirement of sensor motion is that large field of view acquired - measure entire target object - limiting motion to constant velocity rotation about $y$-axis of inertial frame.
+
+For environment, background is modelled with single rectangular prism - stationary.
+Different target object motions are simulated: stationary, rotation, translation ... Can be classed as either zero wrench/nonzero wrench.
+
+For case with no acceleration, wrench and screw constant and don't need to be computed after initial value, most efficient to represent pose with position and orientation with quaternion and compute trajectory by interpolating between initial and final pose
+
+For case with acceleration, need to integrate screw, twist, wrench numerically to compute over time 
+
+\subsubsection{Interpolation}
+pose = \{position wrt F, orientation quaternion wrt F\}
+equations: linear interpolation, slerp
+
+\subsubsection{Scanning}
+Require multiple views of target object,reverse trajectory, concatenate and replicate
+
+\subsubsection{Numerical Integration}
 	
-The motion of a rigid body can be described by its the screw, twist and wrench matrices. The time evolution of these variables is determined iteratively from initial conditions by numerically integrating the ODEs in section \ref{kinematics}. For a rigid body with an associated reference frame \{X\}:
+The motion of a rigid body can be described by its the screw, twist and wrench matrices. The time evolution of these variables is determined iteratively from initial conditions by numerically integrating the ODEs in section \ref{kinematics}. For a rigid body with an associated reference frame $\{X\}$:
 
 \begin{equation}
 	\mathbf{S}_X(t+\delta t) = \mathbf{S}_X(t)\exp({\delta t {\mathbf{T}_X(t)}})
@@ -25,12 +40,13 @@ The motion of a rigid body can be described by its the screw, twist and wrench m
 
 *will add runge-kutta method to simulation. allow choice of numerical method in config.\\
 *add equations for RK4 
+*not essential - ground truth is ground truth, experimental data won't be nearly as smooth anyway
 
 \subsection{Sensor modelling}
 The state of the sensor 
 $\mathbf{X}_{s}(t) = 
 	\{{^{F}_{F}\mathbf{S}^{}_{A}(t)},{^{A}_{F}\mathbf{T}^{}_{A}(t)},{^{A}_{F}\mathbf{W}^{}_{A}(t)},
-	\mathbf{n}(t)\}$
+	{^{A}\mathbf{n}(t)}\}$
 consists of terms corresponding to its motion and scanning operation. 
 
 \textbf{motion:}\\
