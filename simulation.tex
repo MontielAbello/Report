@@ -231,23 +231,29 @@ DIAGRAM HERE
 	Given the screw matrix (in the inertial frame) and scan direction (in the body fixed frame) of the sensor, the position and scan direction in the inertial frame are determined.
 	The distance to the nearest environment object from this point, along the scan direction is determined with the M{\"o}ller-Trumbore ray-triangle intersection algorithm.
 
-	\begin{algorithm}[H]
-	\SetAlgoLined
-	\KwIn{(O,D,pts,tri), where O and D are origin and direction of ray, pts are points in $\mathbb{R}^3$, tri are indexes of points making up vertexes of triangles}
-	\KwOut{(intersect, range, angle, closest), where intersect is binary - collision or none. range is distance to intersection point, angle is incidence angle with surface hit, closest in index of triangle hit}	
-	
-	-initialise outputs\\
-	-triangle vertexes\\
-	-triangle edges\\
-	-determinant\\
-	-barycentric coords\\
-	-intersection vector\\
-	-if any intersection - minimum range\\
-		-min range, angle, triangle ID
-	
-	\caption{M{\"o}ller-Trumbore ray-triangle intersection algorithm}
-	\end{algorithm}
+	\IncMargin{2em}
+	\begin{algorithm}
+	\DontPrintSemicolon
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 
+	\Input{(O,D,pts,tri), where O and D are origin and direction of ray, pts are points in $\mathbb{R}^3$, tri are indexes of points making up vertexes of triangles}
+	\Output{(intersect, range, angle, closest), where intersect is binary - collision or none. range is distance to intersection point, angle is incidence angle with surface hit, closest in index of triangle hit}
+	\Begin{
+		-initialise outputs\\
+		-triangle vertexes\\
+		-triangle edges\\
+		-determinant\\
+		-barycentric coords\\
+		-intersection vector\\
+		-if any intersection - minimum range\\
+			
+		\If{any intersection}{
+			min range, angle, triangle ID
+		}
+	}
+	\caption{M{\"o}ller-Trumbore ray-triangle intersection algorithm\label{MTalg}}
+	\end{algorithm}
+	
 	\subsubsection{Noise Modelling}
 	Noise model depends on sensor used.
 	\begin{equation}
