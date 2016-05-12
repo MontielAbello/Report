@@ -10,7 +10,7 @@ To simulate range measurements the pose of the sensor and the objects comprising
 
 The observer actually computes the \textit{relative} position between the sensor and cube and simply uses knowledge of the sensor pose to determine the pose of the cube in the inertial frame. There is no need to simulate complex sensor motions because the motion of the cube can be adjusted to achieve the same result. The only requirement of the sensor motion is that a large field of view is acquired so that the entire target object can be viewed. The scanning behaviour of the sensor is to rotate back and forth about the $z$-axis of the body fixed frame $\{A\}$. To provide a rectangular field of view, the motion of the sensor is therefore limited to constant velocity rotation about $y$-axis of inertial frame $\{F\}$.
 
-The environment is modelled with two rigid bodies: a cube to be observed as the target object, and a stationary rectangular prism enclosing the sensor and cube acting as the background. The various cube motions that will be simulated to test the observer's performance can be classed as either
+The environment is modelled with two rigid bodies: a cube to be observed as the target object, and a stationary rectangular prism enclosing the sensor and cube acting as the background. The various cube motions that will be simulated to test the observer's performance can be classed in terms of the wrench matrix of the cube as either
 \begin{enumerate}
 \item ${\textbf{W}_c} = \textbf{0}$
 \item ${\textbf{W}_c} \neq \textbf{0}$
@@ -344,12 +344,14 @@ See figure~\ref{fig:cubeproblem}
 			$\rightarrow$ translation vector\\
 			EQUATIONS\\
 			DIAGRAM\\
+			\input{Figures/fig_positionupdate}
 			
 		\textbf{Size update:}\\
 			if different pattern, delta s = dot(translation vector, scan direction)\\
 			if same pattern, delta s = vector(mean measured points - mean predicted points)\\
 			EQUATIONS\\
 			DIAGRAM\\
+			\input{Figures/fig_sizeupdate}
 			
 		\textbf{Update scheme:}\\
 			Can update S,T,W of state (or perhaps some combination)\\
