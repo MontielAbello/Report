@@ -1,9 +1,31 @@
 \chapter{Simulation}
 \section{Implementation}
-A ... was implemented to simulate range measurements of rigid bodies. 
-Main aspects of simulation: rigid body motion, objects, sensor/measurement, noise, observer
-Time: 1 step for every sensor measurement
-Data: sensor state, environment state - compute every step
+A simulate toolbox was implemented in Matlab to model measurements of rigid bodies with a scanning laser range-finder and test observer schemes. The main components of the simulation are:
+\begin{itemize}
+\item rigid body trajectory computation
+\item solid object modelling
+\item sensor \& range measurement simulation
+\item noise modelling
+\item observer implementation
+\end{itemize}
+Time steps determined by sensor operation. Every time measurement is made, pose of rigid bodies updated.
+
+*HIGH LEVEL PSEUDOCODE - ie main
+\IncMargin{2em}
+	\begin{algorithm}
+	\DontPrintSemicolon
+	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+
+	\Input{?}
+	\Output{?}
+	\Begin{
+		\tcc{initialise sensor, environment, observer}
+		\tcc{simulate range measurements - parallel for loop}
+		\tcc{add noise}
+		\tcc{observer simulation - for loop}
+	}
+	\caption{???}
+	\end{algorithm}
 
 \subsection{Rigid Body Motion}
 To simulate range measurements the pose of the sensor and the objects comprising the environment must be computed at each time step. The computations required to do so can be reduced by taking into account the kinds of motion that must be simulated.
@@ -19,7 +41,7 @@ The environment is modelled with two rigid bodies: a cube to be observed as the 
 For case 1. the wrench and screw are constant so only the initial value is required. It is more efficient to represent the pose of a rigid body with just position and orientation in this case. The pose can be quickly computed by interpolating between an initial and final pose. For case 2. the screw, twist and wrench must be integrated numerically.
 
 \subsubsection{Interpolation}
-To compute a trajectory of $k$ poses beginning at $\{\mathbf{p}_i,\mathbf{q}_i\}$ and ending at $\{\mathbf{p}_f,\mathbf{q}_f\}$:\\
+To compute a trajectory of $k$ poses beginning at $\{\mathbf{p}_i,\mathbf{q}_i\}$ and ending at $\{\mathbf{p}_f,\mathbf{q}_f\}$:
 
 Poses for each time $\mathbf{t} =
 					\begin{bmatrix}
@@ -337,6 +359,7 @@ See figure~\ref{fig:cubeproblem}
 			$\rightarrow$ gives rotation axis\\
 			EQUATIONS\\
 			DIAGRAM\\
+			figure~\ref{fig:orientation}
 			\input{Figures/fig_orientationupdate}
 			
 		\textbf{Position update:}\\
@@ -344,6 +367,7 @@ See figure~\ref{fig:cubeproblem}
 			$\rightarrow$ translation vector\\
 			EQUATIONS\\
 			DIAGRAM\\
+			figure~\ref{fig:position}
 			\input{Figures/fig_positionupdate}
 			
 		\textbf{Size update:}\\
@@ -351,6 +375,7 @@ See figure~\ref{fig:cubeproblem}
 			if same pattern, delta s = vector(mean measured points - mean predicted points)\\
 			EQUATIONS\\
 			DIAGRAM\\
+			figure~\ref{fig:size}
 			\input{Figures/fig_sizeupdate}
 			
 		\textbf{Update scheme:}\\
