@@ -146,15 +146,14 @@ Rotating from $-\phi$ to $\phi$ about $y$-axis of inertial frame ie interpolate 
 \end{equation}
 
 \textbf{scanning:}\\
-Scanning behaviour determines ${^{A}\mathbf{n}(t)}$.
+*THIS SECTION IS NOT CLEAR AT ALL
 
-sensor parameters:
+The scanning behaviour of the sensor is determined by the vector ${^{A}\mathbf{n}(t)}$.
+To simulate a 2D scanning sensor the following parameters are used:
 \begin{itemize}
-\item field of view ($-\theta$ to $\theta$, about -z-axis of sensor frame ie anticlockwise about z-axis)
+\item field of view ($-\theta$ to $\theta$, about -z-axis of sensor frame ie anticlockwise about z-axis). in practice, this is represented by start angle, scan direction and field of view angle
 \item angular resolution $d\theta$ (no. steps in 1 rev - 1024, $d\theta = 2\pi/1024$)
-\item time per revolution (1/24s = 24Hz)
-\item measurement resolution (range measurements to closest mm)
-\item measurement range (from 10cm to 4m)
+\item time per revolution (1/24s = 24Hz). @nsteps/rev, this gives each time step as dtau = dt/nsteps
 \end{itemize}
 From these parameters, create vector $\mathbf{n}(t)$. At each time, n is either a unit vector in direction of scan, in body fixed frame, or returns no value for when sensor is not returning a measurement (outside FOV)
 
@@ -185,20 +184,18 @@ Scan direction in inertial frame required for measurement simulation:
 \subsection{Environment Modelling}
 
 \textbf{motion:}\\
+Pose of object is actually pose of centre of mass of object.
 Each object modelled with S. from initial conditions, numerically integrate S,T,W. If constant velocity motion, faster to use waypoints like sensor.
 From pose of object at each time, compute pose of all points that make up object.
 
 \textbf{rigid objects:}\\
 Environment composed of rectangular prisms. These objects are modelled as an ordered set of 8 points in the inertial reference frame, and 12 triangles. Each triangle is a set of 3 integers, indicating the index of the three points that make up its vertexes.
-The position of each of these points at each time is determined using the screw matrix and side lengths of the object.
-
-Figure ~\ref{fig:cubeproblem}
-\input{Figures/fig_triangles}
+The position (in the inertial frame) of each of these points at each time is determined using the screw matrix and position in body frame (side lengths of the object \& default cube points).
 
 points in body frame:
 initialPoints = s*0.5*[];
 \begin{equation}
-	P = \frac{1}{2}s
+	Pts = \frac{1}{2}s
 	\begin{bmatrix}
 		-1  &  -1  &  -1  &  -1  &   1  &   1  &   1  &  1 \\
 		-1  &  -1  &   1  &   1  &  -1  &  -1  &   1  &  1 \\
@@ -224,7 +221,8 @@ triangles:
 	\end{bmatrix}
 \end{equation}
 
-DIAGRAM HERE
+See figure~\ref{fig:cubeproblem}
+\input{Figures/fig_triangles}
 
 \subsection{Measurement Modelling}
 	\subsubsection{Range Computation}
@@ -236,23 +234,31 @@ DIAGRAM HERE
 	\DontPrintSemicolon
 	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 
-	\Input{o - ray origin\\
-		   d - ray direction vector\\
-		   Pts - points\\
-		   Tri - triangle matrix}
-	\Output{intersect - True/False - whether object measured\\
-			range - distance to object in m\\
-			angle - incidence angle in rad\\
-			closest - index of triangle hit}
+	\Input{$o$ - ray origin\\
+		   $d$ - ray direction vector\\
+		   $Pts$ - points\\
+		   $Tri$ - triangle matrix}
+	\Output{$intersect$ - True/False - whether object measured\\
+			$range$ - distance to object in m\\
+			$angle$ - incidence angle in rad\\
+			$closest$ - index of triangle hit}
 	\Begin{
-		-initialise outputs\\
-		-triangle vertexes\\
-		-triangle edges\\
-		-determinant\\
-		-barycentric coords\\
-		-intersection vector\\
-		-if any intersection - minimum range\\
-			
+		\tcc{initialise outputs}
+		$intersect \longleftarrow 0$\\
+		$range \longleftarrow NaN$\\
+		$angle \longleftarrow NaN$\\
+		$closest \longleftarrow NaN$\\
+		\tcc{initialise other variables???}
+		\tcc{triangle vertexes and edges}
+		$V1 \longleftarrow Pts[Tri[:,1]]$\\
+		$V2 \longleftarrow Pts[Tri[:,2]]$\\
+		$V3 \longleftarrow Pts[Tri[:,3]]$\\
+		$E1 \longleftarrow V2 - V1$\\
+		$E2 \longleftarrow V3 - V1$\\
+		\tcc{determinant}
+		$T \longleftarrow $\\
+		\tcc{barycentric coordinates}
+		\tcc{intersection vector}			
 		\If{any intersection}{
 			min range, angle, triangle ID
 		}
@@ -328,19 +334,27 @@ DIAGRAM HERE
 	\subsubsection{Update}
 		\textbf{Orientation update:}\\
 			at least 3 points, find planes and normal, rotate about cross of normals\\
-			-> gives rotation axis
+			$\rightarrow$ gives rotation axis\\
+			EQUATIONS\\
+			DIAGRAM\\
 			
 		\textbf{Position update:}\\
 			find mean of intersection points of predicted, measured, vector subtraction
-			-> translation vector
+			$\rightarrow$ translation vector\\
+			EQUATIONS\\
+			DIAGRAM\\
 			
 		\textbf{Size update:}\\
 			if different pattern, delta s = dot(translation vector, scan direction)\\
-			if same pattern, delta s = vector(mean measured points - mean predicted points)
+			if same pattern, delta s = vector(mean measured points - mean predicted points)\\
+			EQUATIONS\\
+			DIAGRAM\\
 			
 		\textbf{Update scheme:}\\
 			Can update S,T,W of state (or perhaps some combination)\\
-			Scale rotation axis, translation vector, delta s depending on if update is via S,T,W
+			Scale rotation axis, translation vector, delta s depending on if update is via S,T,W\\
+			EQUATIONS\\
+			
 			
 \section{Results}
 plots for different initial conditions \& kinds of motion
