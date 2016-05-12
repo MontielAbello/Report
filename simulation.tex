@@ -250,9 +250,9 @@ See figure~\ref{fig:cubeproblem}
 		$closest \longleftarrow NaN$\\
 		\tcc{initialise other variables???}
 		\tcc{triangle vertexes and edges}
-		$v1 \longleftarrow Pts[Tri[:,1]]$\\
-		$v2 \longleftarrow Pts[Tri[:,2]]$\\
-		$v3 \longleftarrow Pts[Tri[:,3]]$\\
+		$\mathbf{v}_1 \longleftarrow Pts[Tri[:,1]]$\\
+		$\mathbf{v}_2 \longleftarrow Pts[Tri[:,2]]$\\
+		$\mathbf{v}_3 \longleftarrow Pts[Tri[:,3]]$\\
 		$e1 \longleftarrow e2 - e1$\\
 		$e2 \longleftarrow e3 - e1$\\
 		\tcc{determinant}
@@ -337,6 +337,7 @@ See figure~\ref{fig:cubeproblem}
 			$\rightarrow$ gives rotation axis\\
 			EQUATIONS\\
 			DIAGRAM\\
+			\input{Figures/fig_orientationupdate}
 			
 		\textbf{Position update:}\\
 			find mean of intersection points of predicted, measured, vector subtraction

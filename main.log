@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  12 MAY 2016 18:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  12 MAY 2016 20:05
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -696,51 +696,49 @@ s.tex") [25] [26]
 Underfull \vbox (badness 1460) has occurred while \output is active []
 
  [27]
-Underfull \hbox (badness 10000) in paragraph at lines 335--340
-
- []
-
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 341--346
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 347--352
+("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_orientat
+ionupdate.tex" [28])
+Underfull \hbox (badness 10000) in paragraph at lines 342--347
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--357
+Underfull \hbox (badness 10000) in paragraph at lines 348--353
 
  []
 
-[29]) [30
+
+Underfull \hbox (badness 10000) in paragraph at lines 354--358
+
+ []
+
+[29] [30]) [31
 
 ]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.tex"
+[32
+
+
+
+]
 Chapter 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2--8
 
  []
 
-) [31
-
-
-
-] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.tex" [3
-2
+) [33] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.te
+x" [34
 
 
 
 ]
 Chapter 5.
-) [33] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.bbl"
-[34
+) [35] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.bbl"
+[36
 
 
-]) [35] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux" ("
+]) [37] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux" ("
 C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\literature.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\background.aux")
@@ -754,13 +752,13 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 14953 strings out of 493921
- 293575 string characters out of 3147261
- 340931 words of memory out of 3000000
- 17891 multiletter control sequences out of 15000+200000
+ 15084 strings out of 493921
+ 296406 string characters out of 3147261
+ 342245 words of memory out of 3000000
+ 18019 multiletter control sequences out of 15000+200000
  19712 words of font info for 72 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 55i,23n,58p,776b,11281s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,23n,58p,776b,11473s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
 x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Progr
@@ -779,9 +777,9 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.
 type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (35 pages, 299163 bytes).
+Output written on main.pdf (37 pages, 302332 bytes).
 PDF statistics:
- 193 PDF objects out of 1000 (max. 8388607)
+ 202 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
