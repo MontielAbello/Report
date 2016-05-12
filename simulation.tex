@@ -196,11 +196,11 @@ points in body frame:
 initialPoints = s*0.5*[];
 \begin{equation}
 	Pts = \frac{1}{2}s
-	\begin{bmatrix}
+	\begin{bmatrix*}[r]
 		-1  &  -1  &  -1  &  -1  &   1  &   1  &   1  &  1 \\
 		-1  &  -1  &   1  &   1  &  -1  &  -1  &   1  &  1 \\
 		-1  &   1  &  -1  &   1  &  -1  &   1  &  -1  &  1 
-	\end{bmatrix}
+	\end{bmatrix*}
 \end{equation}
 triangles:
 \begin{equation}
@@ -250,11 +250,11 @@ See figure~\ref{fig:cubeproblem}
 		$closest \longleftarrow NaN$\\
 		\tcc{initialise other variables???}
 		\tcc{triangle vertexes and edges}
-		$V1 \longleftarrow Pts[Tri[:,1]]$\\
-		$V2 \longleftarrow Pts[Tri[:,2]]$\\
-		$V3 \longleftarrow Pts[Tri[:,3]]$\\
-		$E1 \longleftarrow V2 - V1$\\
-		$E2 \longleftarrow V3 - V1$\\
+		$v1 \longleftarrow Pts[Tri[:,1]]$\\
+		$v2 \longleftarrow Pts[Tri[:,2]]$\\
+		$v3 \longleftarrow Pts[Tri[:,3]]$\\
+		$e1 \longleftarrow e2 - e1$\\
+		$e2 \longleftarrow e3 - e1$\\
 		\tcc{determinant}
 		$T \longleftarrow $\\
 		\tcc{barycentric coordinates}
