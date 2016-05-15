@@ -9,14 +9,20 @@ A simulation toolbox was implemented in Matlab to model scanning laser range-fin
 \item observer implementation.
 \end{itemize}
 
-Algorithm \ref{main} provides a high level description of the simulation.
+Algorithm \ref{main} provides a high level description of the simulation.\\
+DESCRIPTION HERE\\
+Load settings - load data if required\\
+initialising sensor determines time $\mathbf{t} 
+= \begin{bmatrix} \delta t & 2\delta t  & 3\delta t & \dots & simulationLength\:\delta t \end{bmatrix}$
 
-\IncMargin{2em}
+
+\IncMargin{2em}	
 	\begin{algorithm}
 	\DontPrintSemicolon
 	%\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 	%\Input{?}
 	%\Output{?}
+	INCLUDE DESCRIPTION OF VARIABLES\\
 	\Begin{
 		Load settings\\
 		Compute sensor pose trajectory\\
@@ -119,7 +125,7 @@ replicate:
 
 
 
-\subsubsection{Numerical Integration}
+\subsubsection{Numerical Integration} \label{integration}
 The time evolution of the screw, twist and wrench is computed iteratively from initial conditions by numerically integrating the ODEs in section \ref{kinematics}. For a rigid body with an associated reference frame $\{X\}$:
 
 \begin{equation}
@@ -322,7 +328,7 @@ See figure~\ref{fig:cubeproblem}
 	
 \subsection{Observer implementation}
 	\subsubsection{Estimate: internal model}
-		rigid body motion - numerical integration of ODEs
+		The state of the cube is estimated at each time $t \in \mathbf{t}$ using the numerical integration method described in section \ref{integration}.
 	
 	\subsubsection{Identifying object/background}
 		The variable \textit{observingObject} indicates whether the range measurement is of the target object or the background. It is assumed that initially the sensor will be observing background, so $\textit{observingObject}_0 = FALSE$
@@ -346,23 +352,23 @@ See figure~\ref{fig:cubeproblem}
 		\DontPrintSemicolon
 		\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 	
-		\Input{rangeAssumption - true/false\\
-			   continuityAssumption - true/false\\
-			   rangeLimit\\
-			   continuityLimit\\
-			   observingObject - true/false\\
-			   range\_{i+1} - distance to object in m at time i+1\\
-			   range\_{i} - distance to object in m at time i}
-		\Output{observingObject - true/false}
+		\Input{$rangeAssumption$ - true/false\\
+			   $continuityAssumption$ - true/false\\
+			   $rangeLimit$\\
+			   $continuityLimit$\\
+			   $observingObject$ - true/false\\
+			   $range_{i+1}$ - distance to object in m at $t = i+1$\\
+			   $range_{i}$ - distance to object in m at $t = i$}
+		\Output{$observingObject$ - true/false}
 		\Begin{				
-			\If{continuityAssumption}{
-				\If{abs(range\_{i+1}-range\_{i}) > continuityLimit}{
-					observingObject = mod(observingObject + 1,2)
+			\If{$continuityAssumption$}{
+				\If{$|range_{i+1}-range_{i}| > continuityLimit$}{
+					$observingObject = \mod(observingObject + 1,2)$
 				}
 			}
-			\If{rangeAssumption}{
-				\If{range\_{i+1} $>$ rangeLimit}{
-					observingObject = 0
+			\If{$rangeAssumption$}{
+				\If{$range_{i+1} > rangeLimit$}{
+					$observingObject = 0$
 				}
 			}
 		}
@@ -370,6 +376,9 @@ See figure~\ref{fig:cubeproblem}
 		\end{algorithm}
 		
 	\subsubsection{Update}
+		\textbf{Input ranges:}\\
+		use time ii, ii-1, ii-nSteps, ii-1-nSteps
+	
 		\textbf{Orientation update:}\\
 			at least 3 points, find planes and normal, rotate about cross of normals\\
 			$\rightarrow$ gives rotation axis\\

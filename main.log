@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  15 MAY 2016 20:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  16 MAY 2016 01:56
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -652,23 +652,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--89
 ) [18] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.te
 x"
 Chapter 2.
+
+Overfull \hbox (54.33478pt too wide) in paragraph at lines 12--17
+\OT1/cmr/m/n/10.95 initialising sen-sor de-ter-mines time $\OT1/cmr/bx/n/10.95 
+t \OT1/cmr/m/n/10.95 = []$ 
+ []
+
 [19
 
 
 
 ] [20]
-Overfull \hbox (67.27264pt too wide) in paragraph at lines 81--84
+Overfull \hbox (67.27264pt too wide) in paragraph at lines 87--90
 []\OT1/cmr/m/n/10.95 Spherical lin-ear in-ter-po-la-tion for ori-en-ta-tion qua
 ter-nion $\OT1/cmr/bx/n/10.95 q \OT1/cmr/m/n/10.95 = []$: 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--98
+Underfull \hbox (badness 10000) in paragraph at lines 101--104
 
  []
 
 [21]
-Overfull \hbox (2.23257pt too wide) in paragraph at lines 123--124
+Overfull \hbox (2.23257pt too wide) in paragraph at lines 129--130
 \OT1/cmr/m/n/10.95 from ini-tial con-di-tions by nu-mer-i-cally in-te-grat-ing 
 the ODEs in sec-tion 1.2.1.6[].
  []
@@ -679,14 +685,14 @@ s.tex") [24] [25] [26]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_orientat
 ionupdate.tex")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_position
-update.tex")
+update.tex" [27] [28] [29])
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
-te.tex" [27] [28] [29] [30])
-Underfull \hbox (badness 10000) in paragraph at lines 397--401
+te.tex")
+Underfull \hbox (badness 10000) in paragraph at lines 406--410
 
  []
 
-[31] [32]) [33
+[30] [31] [32]) [33
 
 ]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.tex"
@@ -726,8 +732,8 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ### bottom level 
 Here is how much of TeX's memory you used:
  15086 strings out of 493921
- 296408 string characters out of 3147261
- 338902 words of memory out of 3000000
+ 296403 string characters out of 3147261
+ 339016 words of memory out of 3000000
  18022 multiletter control sequences out of 15000+200000
  19712 words of font info for 72 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -750,7 +756,7 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.
 type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (39 pages, 307507 bytes).
+Output written on main.pdf (39 pages, 306913 bytes).
 PDF statistics:
  208 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
