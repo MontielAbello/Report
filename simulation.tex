@@ -1,30 +1,46 @@
 \chapter{Simulation}
 \section{Implementation}
-A simulate toolbox was implemented in Matlab to model measurements of rigid bodies with a scanning laser range-finder and test observer schemes. The main components of the simulation are:
+A simulation toolbox was implemented in Matlab to model scanning laser range-finder measurements and test observer schemes. The main components of the simulation are:
 \begin{itemize}
-\item rigid body trajectory computation
-\item solid object modelling
-\item sensor \& range measurement simulation
-\item noise modelling
-\item observer implementation
+\item rigid body trajectory computation;
+\item solid object modelling;
+\item range measurement simulation;
+\item noise modelling;
+\item observer implementation.
 \end{itemize}
-Time steps determined by sensor operation. Every time measurement is made, pose of rigid bodies updated.
 
-*HIGH LEVEL PSEUDOCODE - ie main
+Algorithm \ref{main} provides a high level description of the simulation.
+
 \IncMargin{2em}
 	\begin{algorithm}
 	\DontPrintSemicolon
-	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-
-	\Input{?}
-	\Output{?}
+	%\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	%\Input{?}
+	%\Output{?}
 	\Begin{
-		\tcc{initialise sensor, environment, observer}
-		\tcc{simulate range measurements - parallel for loop}
-		\tcc{add noise}
-		\tcc{observer simulation - for loop}
+		Load settings\\
+		Compute sensor pose trajectory\\
+		Compute environment object point trajectories\\
+		Initialise observer\\
+		\For{$ii \leftarrow 1$ \KwTo $simulationLength$}{
+			\If{within FOV}{
+				$[rangesTrue[ii],angles[ii],triangleIndex[ii]] \leftarrow computerange(sensorState[ii],environmentState[ii])$
+			}
+		}
+		$rangesMeasured = addNoise(rangesTrue,settings)$\\
+
+		\For{$ii \leftarrow 1$ \KwTo $simulationLength$}{
+			$stateEstimate[ii+1] \leftarrow estimate(stateEstimate[ii])$
+			\If{within FOV}{
+				$rangesPredicted[ii] \leftarrow computerange(sensorState[ii],stateEstimate[ii])$
+				$observingObject \leftarrow identifyObject(observingObject,rangesMeasured)$\\
+				\If{$observingObject$}{
+					$stateEstimate[ii+1] \leftarrow update(stateEstimate[ii+1])$
+				}
+			}
+		}
 	}
-	\caption{???}
+	\caption{Range measurement and state observer simulation} \label{main}
 	\end{algorithm}
 
 \subsection{Rigid Body Motion}
