@@ -16,7 +16,7 @@ Initialise environment, creates environment class instance - points in body fram
 Initialise observer - creates observer class instance\\
 For each time step, get state of sensor and environment \& compute range - this is done with a parallel for loop\\
 Add noise to ranges\\
-Observer simulation: each time step, update estimate based on estimated state (kinematics - numerical integration), predict range measurement, check if observing object, if yes update estimate  based on measured and predicted range measurement.
+Observer simulation: each time step, update estimate based on estimated state (kinematics - numerical integration), predict range measurement, check if observing object, if yes update estimate  based on measured and predicted range.
 
 \IncMargin{2em}	
 	\begin{algorithm}
@@ -44,7 +44,7 @@ Observer simulation: each time step, update estimate based on estimated state (k
 	$rangesMeasured$ - ground truth + noise\\
 	$rangesPredicted$ - expected range from state estimate\\
 	$scanAngles$ - scan angle in sensor frame\\
-	$fieldOfView$ - set of scan angles corresponding to range measurement\\
+	$fieldOfView$ - set of scan angles that give range measurement\\
 	\Begin{
 		$settings = $\loadsettings\\
 		$sensorState \leftarrow \initialisesensor(settings)$\\
@@ -214,14 +214,14 @@ Rotating from $-\phi$ to $\phi$ about $y$-axis of inertial frame ie interpolate 
 \textbf{scanning:}\\
 *THIS SECTION IS NOT CLEAR AT ALL
 
-The scanning behaviour of the sensor is determined by the vector ${^{A}\mathbf{n}(t)}$.
+The scanning behaviour of the sensor is modelled with the vector ${^{A}\mathbf{n}(t)}$.
 To simulate a 2D scanning sensor the following parameters are used:
 \begin{itemize}
-\item field of view ($-\theta$ to $\theta$, about -z-axis of sensor frame ie anticlockwise about z-axis). in practice, this is represented by start angle, scan direction and field of view angle
-\item angular resolution $d\theta$ (no. steps in 1 rev - 1024, $d\theta = 2\pi/1024$)
-\item time per revolution (1/24s = 24Hz). @nsteps/rev, this gives each time step as dtau = dt/nsteps
+\item field of view $[-\theta,\theta]$: rotation about -z-axis of sensor frame ie anticlockwise about z-axis. in practice, this is represented by start angle, scan direction and field of view angle
+\item number of steps $n_{steps}$: number of steps in 1 rev. Gives angular resolution $d\theta = \dfrac{2\pi}{n_{steps}}$
+\item revolutions per second $\Omega$: This gives each time step as $d\tau = \dfrac{1}{n_{steps}\Omega}$
 \end{itemize}
-From these parameters, create vector $\mathbf{n}(t)$. At each time, n is either a unit vector in direction of scan, in body fixed frame, or returns no value for when sensor is not returning a measurement (outside FOV)
+From these parameters, create vector ${^{A}\mathbf{n}(t)}$. At each time $t$, ${^{A}\mathbf{n}(t)}$ is either a unit vector indicating the direction of measurement in the sensor frame, or has $\mathbf{0}$ magnitude the when sensor is not returning a measurement (outside FOV)
 
 scan direction: $^{A}\mathbf{n}(t)$
 \begin{equation}
@@ -379,8 +379,8 @@ See figure~\ref{fig:cubeproblem}
 			   $rangeLimit$\\
 			   $continuityLimit$\\
 			   $observingObject$ - true/false\\
-			   $range_{i+1}$ - distance to object in m at $t = i+1$\\
-			   $range_{i}$ - distance to object in m at $t = i$}
+			   $range_{i+1}$ - distance to object at $t = i+1$\\
+			   $range_{i}$ - distance to object at $t = i$}
 		\Output{$observingObject$ - true/false}
 		\Begin{				
 			\If{$continuityAssumption$}{
