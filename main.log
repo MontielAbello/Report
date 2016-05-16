@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  16 MAY 2016 16:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  16 MAY 2016 17:09
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -653,46 +653,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--89
 x"
 Chapter 2.
 
-Overfull \hbox (54.33478pt too wide) in paragraph at lines 12--17
-\OT1/cmr/m/n/10.95 initialising sen-sor de-ter-mines time $\OT1/cmr/bx/n/10.95 
-t \OT1/cmr/m/n/10.95 = []$ 
+Overfull \hbox (12.4412pt too wide) in paragraph at lines 71--71
+[]|[]$\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 rangesTrue\OT1/cmr/m/n/10.95 [\OM
+L/cmm/m/it/10.95 ii\OT1/cmr/m/n/10.95 ]\OML/cmm/m/it/10.95 ; incidenceAngles\OT
+1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 ii\OT1/cmr/m/n/10.95 ]\OML/cmm/m/it/10.95 
+; triangleIndexes\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 ii\OT1/cmr/m/n/10.95 ]
+] \OMS/cmsy/m/n/10.95  $ 
+ []
+
+
+Overfull \hbox (21.11269pt too wide) in paragraph at lines 71--71
+$[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 rangesTrue; incidenceAngles; triangl
+eIndexes; settings\OT1/cmr/m/n/10.95 )$  
  []
 
 [19
 
 
 
-] [20]
-Overfull \hbox (67.27264pt too wide) in paragraph at lines 95--98
+] [20] [21]
+Overfull \hbox (67.27264pt too wide) in paragraph at lines 109--112
 []\OT1/cmr/m/n/10.95 Spherical lin-ear in-ter-po-la-tion for ori-en-ta-tion qua
 ter-nion $\OT1/cmr/bx/n/10.95 q \OT1/cmr/m/n/10.95 = []$: 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--112
+Underfull \hbox (badness 10000) in paragraph at lines 123--126
 
  []
 
-[21]
-Overfull \hbox (2.23257pt too wide) in paragraph at lines 137--138
+
+Overfull \hbox (2.23257pt too wide) in paragraph at lines 151--152
 \OT1/cmr/m/n/10.95 from ini-tial con-di-tions by nu-mer-i-cally in-te-grat-ing 
 the ODEs in sec-tion 1.2.1.6[].
  []
 
 [22] [23]
+Underfull \vbox (badness 2717) has occurred while \output is active []
+
+ [24]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_triangle
-s.tex") [24] [25] [26]
+s.tex")
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [25]
+Underfull \vbox (badness 2103) has occurred while \output is active []
+
+ [26]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_orientat
-ionupdate.tex")
+ionupdate.tex" [27] [28])
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_position
-update.tex" [27] [28] [29])
+update.tex")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
 te.tex")
-Underfull \hbox (badness 10000) in paragraph at lines 414--418
+Underfull \hbox (badness 10000) in paragraph at lines 428--432
 
  []
 
-[30] [31] [32]) [33
+[29] [30] [31] [32]) [33
 
 ]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.tex"
@@ -731,11 +749,11 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15086 strings out of 493921
- 296403 string characters out of 3147261
- 339017 words of memory out of 3000000
- 18022 multiletter control sequences out of 15000+200000
- 19712 words of font info for 72 fonts, out of 3000000 for 9000
+ 15107 strings out of 493921
+ 296695 string characters out of 3147261
+ 338837 words of memory out of 3000000
+ 18042 multiletter control sequences out of 15000+200000
+ 20048 words of font info for 74 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,23n,58p,776b,11477s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
@@ -756,7 +774,7 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.
 type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (39 pages, 307231 bytes).
+Output written on main.pdf (39 pages, 307441 bytes).
 PDF statistics:
  208 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

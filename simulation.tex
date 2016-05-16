@@ -10,46 +10,60 @@ A simulation toolbox was implemented in Matlab to model scanning laser range-fin
 \end{itemize}
 
 Algorithm \ref{main} provides a high level description of the simulation.\\
-DESCRIPTION HERE\\
-Load settings - load data if required\\
-initialising sensor determines time $\mathbf{t} 
-= \begin{bmatrix} \delta t & 2\delta t  & 3\delta t & \dots & simulationLength\:\delta t \end{bmatrix}$
-
+Load settings - saved data can be loaded here\\
+Initialise sensor, computes pose of sensor, scan directions over time + creates sensor class instance with sensor settings for noise generation\\
+Initialise environment, creates environment class instance - points in body frame, triangles, computes position of points over time\\
+Initialise observer - creates observer class instance\\
+For each time step, get state of sensor and environment \& compute range - this is done with a parallel for loop\\
+Add noise to ranges\\
+Observer simulation: each time step, update estimate based on estimated state (kinematics - numerical integration), predict range measurement, check if observing object, if yes update estimate  based on measured and predicted range measurement.
 
 \IncMargin{2em}	
 	\begin{algorithm}
 	\DontPrintSemicolon
 	%\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+	\SetKwFunction{loadsettings}{loadsettings}
+	\SetKwFunction{initialisesensor}{initialisesensor}
+	\SetKwFunction{initialiseenvironment}{initialiseenvironment}
+	\SetKwFunction{initialiseobserver}{initialiseobserver}
+	\SetKwFunction{computerange}{computerange}
+	\SetKwFunction{addnoise}{addnoise}
+	\SetKwFunction{estimatestate}{estimatestate}
+	\SetKwFunction{updatestate}{updatestate}
+	\SetKwFunction{identifyobject}{identifyobject}	
 	%\Input{?}
 	%\Output{?}
-	INCLUDE DESCRIPTION OF VARIABLES\\
 	$simulationLength$ - no. steps in simulation\\
 	$sensorState$ - pose and scan direction\\
 	$environmentState$ - points for cube and background, triangles\\
 	$stateEstimate$ - estimate of pose and size of cube\\
 	$observingObject$ - true/false, current range measurement of cube\\
 	$rangesTrue$ - geometric range\\
+	$incidenceAngles$ - angle of incidence for each measurement\\
+	$triangleIndexes$ - index of triangle measured\\
 	$rangesMeasured$ - ground truth + noise\\
 	$rangesPredicted$ - expected range from state estimate\\
+	$scanAngles$ - scan angle in sensor frame\\
+	$fieldOfView$ - set of scan angles corresponding to range measurement\\
 	\Begin{
-		Load settings\\
-		Compute sensor pose trajectory\\
-		Compute environment object point trajectories\\
-		Initialise observer\\
+		$settings = $\loadsettings\\
+		$sensorState \leftarrow \initialisesensor(settings)$\\
+		$environmentState  \leftarrow \initialiseenvironment(settings)$\\
+		\initialiseobserver\\
 		\For{$ii \leftarrow 1$ \KwTo $simulationLength$}{
-			\If{within FOV}{
-				$[rangesTrue[ii],angles[ii],triangleIndex[ii]] \leftarrow computerange(sensorState[ii],environmentState[ii])$
+			\If{$scanAngles[ii] \in fieldOfView$}{
+				$[rangesTrue[ii],incidenceAngles[ii],triangleIndexes[ii]] \leftarrow \computerange(sensorState[ii],environmentState[ii])$
 			}
 		}
-		$rangesMeasured = addNoise(rangesTrue,settings)$\\
+		$rangesMeasured = \addnoise(rangesTrue,incidenceAngles,triangleIndexes,settings)$\\
 
 		\For{$ii \leftarrow 1$ \KwTo $simulationLength$}{
-			$stateEstimate[ii+1] \leftarrow estimate(stateEstimate[ii])$
-			\If{within FOV}{
-				$rangesPredicted[ii] \leftarrow computerange(sensorState[ii],stateEstimate[ii])$
-				$observingObject \leftarrow identifyObject(observingObject,rangesMeasured)$\\
+			$stateEstimate[ii+1] \leftarrow \estimatestate(stateEstimate[ii])$
+			\If{$scanAngles[ii] \in fieldOfView$}{
+				$rangesPredicted[ii] \leftarrow \computerange(sensorState[ii],stateEstimate[ii])$
+				$observingObject \leftarrow \identifyobject(observingObject,rangesMeasured)$\\
 				\If{$observingObject$}{
-					$stateEstimate[ii+1] \leftarrow update(stateEstimate[ii+1])$
+					$stateEstimate[ii+1] \leftarrow \updatestate(stateEstimate[ii+1])$
 				}
 			}
 		}
