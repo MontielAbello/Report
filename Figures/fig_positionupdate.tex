@@ -51,11 +51,11 @@
 		\draw [dashed,red,->] (0,0,0)--(-1.5*\linescale,6.5*\linescale,1.5*\linescale);
 		
 		%intersection points
-		\def \truescale {1}
-		\node [draw,circle,inner sep=1pt,fill] at (-0.5*\truescale,6.5*\truescale,0.5*\truescale) {};
-		%\node [draw,circle,inner sep=1pt,fill] at (-1.5*\truescale,6.5*\truescale,0.5*\truescale) {};
-		%\node [draw,circle,inner sep=1pt,fill] at (-0.5*\truescale,6.5*\truescale,1.5*\truescale) {};
-		%\node [draw,circle,inner sep=1pt,fill] at (-1.5*\truescale,6.5*\truescale,1.5*\truescale) {};
+		\def \measscale {1}
+		\node [draw,circle,inner sep=1pt,fill] at (-0.5*\measscale,6.5*\measscale,0.5*\measscale) {};
+		%\node [draw,circle,inner sep=1pt,fill] at (-1.5*\measscale,6.5*\measscale,0.5*\measscale) {};
+		%\node [draw,circle,inner sep=1pt,fill] at (-0.5*\measscale,6.5*\measscale,1.5*\measscale) {};
+		%\node [draw,circle,inner sep=1pt,fill] at (-1.5*\measscale,6.5*\measscale,1.5*\measscale) {};
 		\def \predscale {7.75/7.5}
 		\node [draw,blue,circle,inner sep=1pt,fill] at (-0.5*\predscale,6.5*\predscale,0.5*\predscale) {};
 		\node [draw,blue,circle,inner sep=1pt,fill] at (-1.5*\predscale,6.5*\predscale,0.5*\predscale) {};
@@ -64,10 +64,12 @@
 		
 		%update vector
 		\node [draw,blue,circle,inner sep=2pt,fill] at (-1*\predscale,6.5*\predscale,1*\predscale) {};
-		\node [draw,circle,inner sep=2pt,fill] at (-0.5*\truescale,6.5*\truescale,0.5*\truescale) {};
-		\draw [green,->] (-1*\predscale,6.5*\predscale,1*\predscale)--(-0.5*\truescale,6.5*\truescale,0.5*\truescale);
-				
-				
+		\node [draw,circle,inner sep=2pt,fill] at (-0.5*\measscale,6.5*\measscale,0.5*\measscale) {};
+		\draw [green,->] (-1*\predscale,6.5*\predscale,1*\predscale)--(-0.5*\measscale,6.5*\measscale,0.5*\measscale);
+		\node [blue] at (-0.7,6.5*\predscale,1.05) {$\bar{\mathbf{p}}_{predicted}$};
+		\node [black] at (-0.15,6.5*\measscale,0.4) {$\bar{\mathbf{p}}_{measured}$};
+		\node [green] at (-0.45,7,0.55) {$\bar{\mathbf{p}}_{update}$};		
+			
 	\end{tikzpicture}
 	  \caption{caption}
 	  \label{fig:position}
