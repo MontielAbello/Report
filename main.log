@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  16 MAY 2016 19:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  16 MAY 2016 20:23
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -699,28 +699,41 @@ ionupdate.tex" [27] [28])
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_position
 update.tex")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
-te.tex")
-Underfull \hbox (badness 10000) in paragraph at lines 425--429
+te1.tex"
+
+LaTeX Warning: Float too large for page by 14.07349pt on input line 84.
+
+)
+("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
+te2.tex"
+Overfull \hbox (4.85919pt too wide) in paragraph at lines 81--82
+[][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 9.00426pt on input line 84.
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 428--432
 
  []
 
-[29] [30] [31] [32]) [33
+[29] [30] [31] [32] [33]) [34
 
 ]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.tex"
-[34
-
-
-
-]
 Chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2--8
 
  []
 
-) [35] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.te
-x" [36
+) [35
+
+
+
+] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.tex" [3
+6
 
 
 
@@ -743,10 +756,10 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15143 strings out of 493921
- 297393 string characters out of 3147261
- 347307 words of memory out of 3000000
- 18078 multiletter control sequences out of 15000+200000
+ 15168 strings out of 493921
+ 297998 string characters out of 3147261
+ 372414 words of memory out of 3000000
+ 18100 multiletter control sequences out of 15000+200000
  20048 words of font info for 74 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,23n,58p,776b,11485s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -768,7 +781,7 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.
 type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (39 pages, 310763 bytes).
+Output written on main.pdf (39 pages, 315130 bytes).
 PDF statistics:
  208 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

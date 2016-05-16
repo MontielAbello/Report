@@ -1,6 +1,7 @@
+
+
 \begin{figure}
-	\tdplotsetmaincoords {60}{-10}
-	%\tdplotsetmaincoords {0}{0}
+	\tdplotsetmaincoords{60}{-10}
 	\begin{tikzpicture} [scale = 3,tdplot_main_coords] %fix main coords!!!
 
 		%Frame {F}
@@ -25,23 +26,24 @@
 		\draw [tdplot_rotated_coords] ( 1,-1,-1)--( 1, 1,-1);   %5-7 
 		\draw [tdplot_rotated_coords] ( 1,-1, 1)--( 1, 1, 1);   %6-8 
 		\draw [tdplot_rotated_coords] ( 1, 1,-1)--( 1, 1, 1);   %7-8 
-		
+				
 		%ground truth cube lines
 		\tdplotsetrotatedcoords{0}{0}{0}
-		\coordinate (Shift) at (-1,7.75,1);
+		\coordinate (Shift) at (-0.5,8,0.5);
 		\tdplotsetrotatedcoordsorigin{(Shift)}
-		\draw [blue,tdplot_rotated_coords] (-1,-1,-1)--(-1,-1, 1);   %1-2
-		\draw [blue,tdplot_rotated_coords] (-1,-1,-1)--(-1, 1,-1);   %1-3
-		\draw [blue,tdplot_rotated_coords] (-1,-1,-1)--( 1,-1,-1);   %1-5
-		\draw [blue,tdplot_rotated_coords] (-1,-1, 1)--(-1, 1, 1);   %2-4
-		\draw [blue,tdplot_rotated_coords] (-1,-1, 1)--( 1,-1, 1);   %2-6	
-		\draw [blue,tdplot_rotated_coords] (-1, 1,-1)--(-1, 1, 1);   %3-4 	 
-		\draw [blue,tdplot_rotated_coords] (-1, 1,-1)--( 1, 1,-1);   %3-7	
-		\draw [blue,tdplot_rotated_coords] (-1, 1, 1)--( 1, 1, 1);   %4-8 
-		\draw [blue,tdplot_rotated_coords] ( 1,-1,-1)--( 1,-1, 1);   %5-6	
-		\draw [blue,tdplot_rotated_coords] ( 1,-1,-1)--( 1, 1,-1);   %5-7 
-		\draw [blue,tdplot_rotated_coords] ( 1,-1, 1)--( 1, 1, 1);   %6-8 
-		\draw [blue,tdplot_rotated_coords] ( 1, 1,-1)--( 1, 1, 1);   %7-8 
+		\def \size {1.5}
+		\draw [blue,tdplot_rotated_coords] (-1*\size,-1*\size,-1*\size)--(-1*\size,-1*\size, 1*\size);   %1-2
+		\draw [blue,tdplot_rotated_coords] (-1*\size,-1*\size,-1*\size)--(-1*\size, 1*\size,-1*\size);   %1-3
+		\draw [blue,tdplot_rotated_coords] (-1*\size,-1*\size,-1*\size)--( 1*\size,-1*\size,-1*\size);   %1-5
+		\draw [blue,tdplot_rotated_coords] (-1*\size,-1*\size, 1*\size)--(-1*\size, 1*\size, 1*\size);   %2-4
+		\draw [blue,tdplot_rotated_coords] (-1*\size,-1*\size, 1*\size)--( 1*\size,-1*\size, 1*\size);   %2-6	
+		\draw [blue,tdplot_rotated_coords] (-1*\size, 1*\size,-1*\size)--(-1*\size, 1*\size, 1*\size);   %3-4 	 
+		\draw [blue,tdplot_rotated_coords] (-1*\size, 1*\size,-1*\size)--( 1*\size, 1*\size,-1*\size);   %3-7	
+		\draw [blue,tdplot_rotated_coords] (-1*\size, 1*\size, 1*\size)--( 1*\size, 1*\size, 1*\size);   %4-8 
+		\draw [blue,tdplot_rotated_coords] ( 1*\size,-1*\size,-1*\size)--( 1*\size,-1*\size, 1*\size);   %5-6	
+		\draw [blue,tdplot_rotated_coords] ( 1*\size,-1*\size,-1*\size)--( 1*\size, 1*\size,-1*\size);   %5-7 
+		\draw [blue,tdplot_rotated_coords] ( 1*\size,-1*\size, 1*\size)--( 1*\size, 1*\size, 1*\size);   %6-8 
+		\draw [blue,tdplot_rotated_coords] ( 1*\size, 1*\size,-1*\size)--( 1*\size, 1*\size, 1*\size);   %7-8 
 
 		%measurement lines
 		\def \linescale {1.25}
@@ -56,7 +58,7 @@
 		%\node [draw,circle,inner sep=1pt,fill] at (-1.5*\measscale,6.5*\measscale,0.5*\measscale) {};
 		%\node [draw,circle,inner sep=1pt,fill] at (-0.5*\measscale,6.5*\measscale,1.5*\measscale) {};
 		%\node [draw,circle,inner sep=1pt,fill] at (-1.5*\measscale,6.5*\measscale,1.5*\measscale) {};
-		\def \predscale {7.75/7.5}
+		\def \predscale {1}
 		\node [draw,blue,circle,inner sep=1pt,fill] at (-0.5*\predscale,6.5*\predscale,0.5*\predscale) {};
 		\node [draw,blue,circle,inner sep=1pt,fill] at (-1.5*\predscale,6.5*\predscale,0.5*\predscale) {};
 		\node [draw,blue,circle,inner sep=1pt,fill] at (-0.5*\predscale,6.5*\predscale,1.5*\predscale) {};
@@ -69,16 +71,16 @@
 		\node [blue] at (-0.7,6.5*\predscale,1.05) {$\bar{\mathbf{p}}_{predicted}$};
 		\node [black] at (-0.15,6.5*\measscale,0.4) {$\bar{\mathbf{p}}_{measured}$};
 		\node [green] at (-0.45,7,0.55) {$\bar{\mathbf{p}}_{update}$};		
-			
+
 		%labels
 		\node [red] at (-0.4,9.25,0.1) {${^{A}\mathbf{n}(ii)}$};
 		\node [red] at (-1.6,9.25,0.1) {${^{A}\mathbf{n}(ii-1)}$};
 		\node [red] at (-0.2,9.25,1.3) {${^{A}\mathbf{n}(ii-n_{steps})}$};	
 		\node [red] at (-1.3,9.25,1.3) {${^{A}\mathbf{n}(ii-1-n_{steps})}$};
-			
+		
 	\end{tikzpicture}
 	  \caption{caption}
-	  \label{fig:position}
+	  \label{fig:size1}
 \end{figure}
 
 
