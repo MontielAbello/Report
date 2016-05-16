@@ -23,6 +23,14 @@ initialising sensor determines time $\mathbf{t}
 	%\Input{?}
 	%\Output{?}
 	INCLUDE DESCRIPTION OF VARIABLES\\
+	$simulationLength$ - no. steps in simulation\\
+	$sensorState$ - pose and scan direction\\
+	$environmentState$ - points for cube and background, triangles\\
+	$stateEstimate$ - estimate of pose and size of cube\\
+	$observingObject$ - true/false, current range measurement of cube\\
+	$rangesTrue$ - geometric range\\
+	$rangesMeasured$ - ground truth + noise\\
+	$rangesPredicted$ - expected range from state estimate\\
 	\Begin{
 		Load settings\\
 		Compute sensor pose trajectory\\

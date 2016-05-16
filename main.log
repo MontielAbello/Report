@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  16 MAY 2016 01:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  16 MAY 2016 16:38
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -663,18 +663,18 @@ t \OT1/cmr/m/n/10.95 = []$
 
 
 ] [20]
-Overfull \hbox (67.27264pt too wide) in paragraph at lines 87--90
+Overfull \hbox (67.27264pt too wide) in paragraph at lines 95--98
 []\OT1/cmr/m/n/10.95 Spherical lin-ear in-ter-po-la-tion for ori-en-ta-tion qua
 ter-nion $\OT1/cmr/bx/n/10.95 q \OT1/cmr/m/n/10.95 = []$: 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--104
+Underfull \hbox (badness 10000) in paragraph at lines 109--112
 
  []
 
 [21]
-Overfull \hbox (2.23257pt too wide) in paragraph at lines 129--130
+Overfull \hbox (2.23257pt too wide) in paragraph at lines 137--138
 \OT1/cmr/m/n/10.95 from ini-tial con-di-tions by nu-mer-i-cally in-te-grat-ing 
 the ODEs in sec-tion 1.2.1.6[].
  []
@@ -688,7 +688,7 @@ ionupdate.tex")
 update.tex" [27] [28] [29])
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
 te.tex")
-Underfull \hbox (badness 10000) in paragraph at lines 406--410
+Underfull \hbox (badness 10000) in paragraph at lines 414--418
 
  []
 
@@ -733,7 +733,7 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 Here is how much of TeX's memory you used:
  15086 strings out of 493921
  296403 string characters out of 3147261
- 339016 words of memory out of 3000000
+ 339017 words of memory out of 3000000
  18022 multiletter control sequences out of 15000+200000
  19712 words of font info for 72 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -756,7 +756,7 @@ MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.
 type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
 amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (39 pages, 306913 bytes).
+Output written on main.pdf (39 pages, 307231 bytes).
 PDF statistics:
  208 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
