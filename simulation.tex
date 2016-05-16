@@ -68,7 +68,7 @@ Observer simulation: each time step, update estimate based on estimated state (k
 			}
 		}
 	}
-	\caption{Range measurement and state observer simulation} \label{main}
+	\caption{Scanning range-finder and state observer simulation} \label{main}
 	\end{algorithm}
 
 \subsection{Rigid Body Motion}
@@ -170,7 +170,7 @@ Assuming constant acceleration
 \subsection{Sensor modelling}
 The state of the sensor $\mathbf{X}_{s}(t)$ consists of terms corresponding to its motion and scanning operation. 
 
-\textbf{motion:}\\
+\subsubsection{Motion}
 Since motion restricted, state of sensor actually implemented as 
 \begin{equation}
 	\mathbf{X}_{s}(t) = \{\mathbf{p}_s(t),\mathbf{q}_s(t),{^{A}\mathbf{n}(t)}\}
@@ -211,9 +211,7 @@ Rotating from $-\phi$ to $\phi$ about $y$-axis of inertial frame ie interpolate 
 				   \end{bmatrix}
 \end{equation}
 
-\textbf{scanning:}\\
-*THIS SECTION IS NOT CLEAR AT ALL
-
+\subsubsection{Scanning}
 The scanning behaviour of the sensor is modelled with the vector ${^{A}\mathbf{n}(t)}$.
 To simulate a 2D scanning sensor the following parameters are used:
 \begin{itemize}
@@ -248,13 +246,12 @@ Scan direction in inertial frame required for measurement simulation:
 \end{equation}
 
 \subsection{Environment Modelling}
-
-\textbf{motion:}\\
+\subsubsection{Motion}
 Pose of object is actually pose of centre of mass of object.
 Each object modelled with S. from initial conditions, numerically integrate S,T,W. If constant velocity motion, faster to use waypoints like sensor.
-From pose of object at each time, compute pose of all points that make up object.
+From pose of object at each time, compute pose of all points that make up object: 3D array, each slice is set of points at time ii
 
-\textbf{rigid objects:}\\
+\subsubsection{Rigid Objects}
 Environment composed of rectangular prisms. These objects are modelled as an ordered set of 8 points in the inertial reference frame, and 12 triangles. Each triangle is a set of 3 integers, indicating the index of the three points that make up its vertexes.
 The position (in the inertial frame) of each of these points at each time is determined using the screw matrix and position in body frame (side lengths of the object \& default cube points).
 
@@ -350,7 +347,7 @@ See figure~\ref{fig:cubeproblem}
 	
 \subsection{Observer implementation}
 	\subsubsection{Estimate: internal model}
-		The state of the cube is estimated at each time $t \in \mathbf{t}$ using the numerical integration method described in section \ref{integration}.
+		The state of the cube at each time step is estimated using the numerical integration method described in section \ref{integration}.
 	
 	\subsubsection{Identifying object/background}
 		The variable \textit{observingObject} indicates whether the range measurement is of the target object or the background. It is assumed that initially the sensor will be observing background, so $\textit{observingObject}_0 = FALSE$
@@ -399,7 +396,7 @@ See figure~\ref{fig:cubeproblem}
 		
 	\subsubsection{Update}
 		\textbf{Input ranges:}\\
-		use time ii, ii-1, ii-nSteps, ii-1-nSteps
+		use time ii, ii-1, ii-nSteps, ii-1-nSteps: gives quadrilateral of points
 	
 		\textbf{Orientation update:}\\
 			at least 3 points, find planes and normal, rotate about cross of normals\\
