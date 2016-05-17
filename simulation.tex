@@ -32,37 +32,37 @@ Observer simulation: each time step, update estimate based on estimated state (k
 	\SetKwFunction{identifyobject}{identifyobject}	
 	\KwData{\\
 	%CHANGE THESE TO LETTERS
-	$simulationLength$ - no. steps in simulation\\
-	$sensorState$ - pose and scan direction\\
-	$environmentState$ - points for cube and background, triangles\\
-	$stateEstimate$ - estimate of pose and size of cube\\
-	$observingObject$ - true/false, current range measurement of cube\\
-	$rangesTrue$ - geometric range\\
-	$incidenceAngles$ - angle of incidence for each measurement\\
-	$triangleIndexes$ - index of triangle measured\\
-	$rangesMeasured$ - ground truth + noise\\
-	$rangesPredicted$ - expected range from state estimate\\
-	$scanAngles$ - scan angle in sensor frame\\
-	$fieldOfView$ - set of scan angles that give range measurement\\
+	$n_{steps}$ - no. steps in simulation\\
+	$\mathbf{X}_s$ - pose and scan direction\\
+	$\mathbf{X}_e$ - points for cube and background, triangles\\
+	$\hat{\mathbf{X}}_c$ - estimate of pose and size of cube\\
+	$c$ - true/false, current range measurement of cube\\
+	$\mathbf{r}$ - ground truth range\\
+	$\tilde{\mathbf{r}}$ - measured range - ground truth + noise\\
+	$\hat{\mathbf{r}}$ - predicted range from state estimate\\
+	$\bm{\alpha}$ - angle of incidence for each measurement\\
+	$\mathbf{m}$ - index of triangle measured\\
+	$\bm{\theta}$ - scan angle in sensor frame\\
+	$\bm{\Theta}$ - set of scan angles that return range measurement\\
 	}
 	\Begin{
 		$settings \leftarrow $\loadsettings\\
-		$sensorState \leftarrow \initialisesensor(settings)$\\
-		$environmentState  \leftarrow \initialiseenvironment(settings)$\\
+		$\mathbf{X}_s \leftarrow \initialisesensor(settings)$\\
+		$\mathbf{X}_e  \leftarrow \initialiseenvironment(settings)$\\
 		\initialiseobserver\\
-		\For{$ii \leftarrow 1$ \KwTo $simulationLength$}{
-			\If{$scanAngles[ii] \in fieldOfView$}{
-				$[rangesTrue[ii],incidenceAngles[ii],triangleIndexes[ii]] \leftarrow \computerange(sensorState[ii],environmentState[ii])$
+		\For{$ii \leftarrow 1$ \KwTo $n_{steps}$}{
+			\If{$\bm{\theta}[ii] \in \bm{\Theta}$}{
+				$[\mathbf{r}[ii],\bm{\alpha}[ii],\mathbf{m}[ii]] \leftarrow \computerange(\mathbf{X}_s[ii],\mathbf{X}_e[ii])$
 			}
 		}
-		$rangesMeasured = \addnoise(rangesTrue,incidenceAngles,triangleIndexes,settings)$\\
-		\For{$ii \leftarrow 1$ \KwTo $simulationLength$}{
-			$stateEstimate[ii+1] \leftarrow \estimatestate(stateEstimate[ii])$\\
-			\If{$scanAngles[ii] \in fieldOfView$}{
-				$rangesPredicted[ii] \leftarrow \computerange(sensorState[ii],stateEstimate[ii])$
-				$observingObject \leftarrow \identifyobject(observingObject,rangesMeasured)$\\
-				\If{$observingObject$}{
-					$stateEstimate[ii+1] \leftarrow \updatestate(stateEstimate[ii+1])$
+		$\tilde{\mathbf{r}} = \addnoise(\mathbf{r},\bm{\alpha},\mathbf{m},settings)$\\
+		\For{$ii \leftarrow 1$ \KwTo $n_{steps}$}{
+			$\hat{\mathbf{X}}_c[ii+1] \leftarrow \estimatestate(\hat{\mathbf{X}}_c[ii])$\\
+			\If{$\bm{\theta}[ii] \in \bm{\Theta}$}{
+				$\hat{\mathbf{r}}[ii] \leftarrow \computerange(\mathbf{X}_s[ii],\hat{\mathbf{X}}_c[ii])$
+				$c \leftarrow \identifyobject(c,\tilde{\mathbf{r}})$\\
+				\If{$c$}{
+					$\hat{\mathbf{X}}_c[ii+1] \leftarrow \updatestate(\hat{\mathbf{X}}_c[ii+1])$
 				}
 			}
 		}
@@ -172,7 +172,7 @@ The state of the sensor $\mathbf{X}_{s}(t)$ consists of terms corresponding to i
 \subsubsection{Motion}
 Since motion restricted, state of sensor actually implemented as 
 \begin{equation}
-	\mathbf{X}_{s}(t) = \{\mathbf{p}_s(t),\mathbf{q}_s(t),{^{A}\mathbf{n}(t)}\}
+	\mathbf{X}_{s}(t) = \{\mathbf{p}_s(t),\mathbf{q}_s(t),{^{A}\mathbf{s}(t)}\}
 \end{equation}
 
 Stationary position:
@@ -215,12 +215,12 @@ The scanning behaviour of the sensor is modelled with the vector ${^{A}\mathbf{n
 To simulate a 2D scanning sensor the following parameters are used:
 \begin{itemize}
 \item field of view $[-\theta,\theta]$: rotation about -z-axis of sensor frame ie anticlockwise about z-axis. in practice, this is represented by start angle, scan direction and field of view angle
-\item number of steps $n_{steps}$: number of steps in 1 rev. Gives angular resolution $d\theta = \dfrac{2\pi}{n_{steps}}$
-\item revolutions per second $\Omega$: This gives each time step as $d\tau = \dfrac{1}{n_{steps}\Omega}$
+\item number of scans $n_{scans}$: number of scan angles in 1 rev. Gives angular resolution $d\theta = \dfrac{2\pi}{n_{scans}}$
+\item revolutions per second $\Omega$: This gives each time step as $d\tau = \dfrac{1}{n_{scans}\Omega}$
 \end{itemize}
-From these parameters, create vector ${^{A}\mathbf{n}(t)}$. At each time $t$, ${^{A}\mathbf{n}(t)}$ is either a unit vector indicating the direction of measurement in the sensor frame, or has $\mathbf{0}$ magnitude the when sensor is not returning a measurement (outside FOV)
+From these parameters, create vector ${^{A}\mathbf{s}(t)}$. At each time $t$, ${^{A}\mathbf{s}(t)}$ is either a unit vector indicating the direction of measurement in the sensor frame, or has $\mathbf{0}$ magnitude the when sensor is not returning a measurement (outside FOV)
 
-scan direction: $^{A}\mathbf{n}(t)$
+scan direction: $^{A}\mathbf{s}(t)$
 \begin{equation}
 ^{A}\mathbf{n}(t) =
 	\begin{cases} 
@@ -241,7 +241,7 @@ t' = \mod(t,1/d\theta)\:d\theta
 
 Scan direction in inertial frame required for measurement simulation:
 \begin{equation}
-	{^{F}\mathbf{n'}(t)} = \mathbf{X}_s(t)\:{^{A}\mathbf{n'}(t)}
+	{^{F}\mathbf{s'}(t)} = \mathbf{X}_s(t)\:{^{A}\mathbf{s'}(t)}
 \end{equation}
 
 \subsection{Environment Modelling}
@@ -310,13 +310,13 @@ See figure~\ref{fig:cubeproblem}
 	\Output{$x$ - True/False - measurement corresponds to object\\
 			$r$ - distance to object in m\\
 			$\theta$ - incidence angle in rad\\
-			$t$ - index of triangle hit}
+			$m$ - index of triangle hit}
 	\Begin{
 		\tcc{initialise outputs}
 		$x \longleftarrow 0$\\
 		$r \longleftarrow NaN$\\
 		$\theta \longleftarrow NaN$\\
-		$t \longleftarrow NaN$\\
+		$m \longleftarrow NaN$\\
 		\tcc{triangle vertexes and edges}
 		$\mathbf{V}_1 \longleftarrow \mathbf{P}[\mathbf{T}[:,1]]$\\
 		$\mathbf{V}_2 \longleftarrow \mathbf{P}[\mathbf{T}[:,2]]$\\
@@ -345,7 +345,7 @@ See figure~\ref{fig:cubeproblem}
 			$\mathbf{x}[\textbf{not }\mathbf{x}] \longleftarrow \mathbf{NaN}$\\
 			$\mathbf{r} = \mathbf{s} \circ \mathbf{x}$\\
 			$r = \min(\mathbf{r})$\\
-			$t = \find(\mathbf{r} = r,1)$\\
+			$m = \find(\mathbf{r} = r,1)$\\
 			$\mathbf{e}_1 \longleftarrow \mathbf{E}_1[t,:]$\\ 
 			$\mathbf{e}_2 \longleftarrow \mathbf{E}_2[t,:]$\\ 
 			$\mathbf{n} = \mathbf{e}_1 \times \mathbf{e}_2$\\
@@ -425,12 +425,12 @@ See figure~\ref{fig:cubeproblem}
 		\textbf{Input ranges:}\\
 			Use ranges according to ordered sequence of indexes $a$. ie if all present - quadrilateral with points at corners:
 			\begin{equation}
-				a = \{ii,(ii-1),(ii-n_{steps}),(ii-1-n_{steps})\}
+				a = \{ii,(ii-1),(ii-n_{scans}),(ii-1-n_{scans})\}
 			\end{equation}
 		
 		\textbf{Orientation update:}\\
 			Require at least 3 ranges in prediction and measurement. ie
-			$|a_{predicted}| \geq 3$ \and $|a_{measured}| \geq 3$
+			$|\hat{a}| \geq 3$ and $|\tilde{a}| \geq 3$
 	
 			From range and direction, compute coordinates of intersection\\
 			\begin{equation}
@@ -441,7 +441,7 @@ See figure~\ref{fig:cubeproblem}
 			\end{equation}
 			Rotation axis from cross product of predicted and measured normals:\\
 			\begin{equation}
-				\mathbf{r} = \mathbf{n}_{predicted} \times \mathbf{n}_{measured}
+				\mathbf{r}_{update} = \hat{\mathbf{n}} \times \tilde{\mathbf{n}}
 			\end{equation}
 			Rotation angle determined in settings. Table REF shows settings	
 			
@@ -450,14 +450,14 @@ See figure~\ref{fig:cubeproblem}
 			
 		\textbf{Position update:}\\
 			Require at least 1 range in prediction and measurement:\\
-			$|a_{predicted}| \geq 1$ \and $|a_{measured}| \geq 1$\\
+			$|\hat{a}| \geq 1$ \and $|\tilde{a}| \geq 1$\\
 			Average to get $\bar{\mathbf{p}}_{predicted}$ and $\bar{\mathbf{p}}_{measured}$\\
 			Scale translation vector - taking into account geometry of intersection points and sensor position.
-			Get mean of all predicted and measured ranges = $\bar{r}$. Need valid scan direction ie within FOV for $ii,ii-1,ii-1-n_{steps}$
+			Get mean of all predicted and measured ranges = $\mu_{r}$. Need valid scan direction ie within FOV for $ii,ii-1,ii-1-n_{scans}$
 			$\mathbf{p}_0 = \mathbf{p}_s(t) = {^{F}_{F}\mathbf{p}^{}_{A}(t)}$\\
-			$\mathbf{p}_1 = \bar{r}{^{A}\mathbf{n}(ii)}$\\	
-			$\mathbf{p}_2 = \bar{r}{^{A}\mathbf{n}(ii-1)}$\\
-			$\mathbf{p}_3 = \bar{r}{^{A}\mathbf{n}(ii-1-n_{steps})}$\\
+			$\mathbf{p}_1 = \mu_{r}{^{A}\mathbf{s}(ii)}$\\	
+			$\mathbf{p}_2 = \mu_{r}{^{A}\mathbf{s}(ii-1)}$\\
+			$\mathbf{p}_3 = \mu_{r}{^{A}\mathbf{s}(ii-1-n_{scans})}$\\
 			\begin{equation}
 				\mathbf{p}_{update} = 
 				\begin{bmatrix}
