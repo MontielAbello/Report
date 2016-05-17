@@ -91,12 +91,12 @@ $\mathbf{t} =
 \begin{bmatrix}
 	t_1 & t_2 & t_3 & \dots & t_k
 \end{bmatrix}$,
-is computed by interpolating from $\{\mathbf{p}_i,\mathbf{q}_i\}$ to $\{\mathbf{p}_f,\mathbf{q}_f\}$:
+is computed by interpolating from $\{\mathbf{p}_i,\mathbf{q}_i\}$ to $\{\mathbf{p}_f,\mathbf{q}_f\}$.
 
 The position vectors
 $\mathbf{P}= \begin{bmatrix}
 \mathbf{p}_1 & \mathbf{p}_2 & \mathbf{p}_3 & \dots & \mathbf{p}_k
-\end{bmatrix}$:
+\end{bmatrix}$
  are computed with:
 \begin{equation}
 	\mathbf{P} = 
@@ -116,10 +116,7 @@ where
 	\theta = \cos^{-1}(\mathbf{q}_1 \cdot \mathbf{q}_k)
 \end{equation}
 
-
-SCANNING:\\
-Require multiple views of target object,reverse trajectory, concatenate and replicate\\
-concatenate:\\
+This interpolation method is used to compute the trajectory of the sensor. To acquire multiple views of the  entire cube, the sensor must pan back and forth several times. This is achieved by first reversing the trajectory and concatenating with the original to produce the looped trajectories $\mathbf{P}_{loop}$ and $\mathbf{Q}_{loop}$:
 \begin{equation}
 	\mathbf{P}_{loop}= 
 	\begin{bmatrix}
@@ -134,14 +131,14 @@ concatenate:\\
 		\mathbf{q}_{k} & \mathbf{q}_{k-1} & \mathbf{q}_{k-2} & \dots & \mathbf{q}_1
 	\end{bmatrix}
 \end{equation}
-replicate:
+
+This looped trajectory is repeated $k$ times acquire multiple views:
 \begin{equation}
 	\mathbf{P} = {\mathbf{P}_{loop}}_{[1 \times k]}
 \end{equation}
 \begin{equation}
 	\mathbf{Q} = {\mathbf{Q}_{loop}}_{[1 \times k]}
 \end{equation}
-
 
 
 \subsubsection{Numerical Integration} \label{integration}
@@ -159,29 +156,26 @@ The time evolution of the screw, twist and wrench is computed iteratively from i
 	\mathbf{W}_X(t+\delta t) =\mathbf{W}_X(t)
 \end{equation}
 
-*More accurate integration method not essential - ground truth is ground truth, experimental data won't be nearly as smooth anyway.
+Though a higher order integration method, such as Runge-Kutta could be used to compute a trajectory that more accurately represents a constant acceleration, this is not strictly necessary. The observer performance is unlikely to be affected by how constant the acceleration is. Furthermore, it is likely that the experimentally collected data will have even larger variations in acceleration.
 
-In practice, compute orientation quaternion from screw matrix - pose still represented with quaternion and vector - same as interpolation case.
+To simplify the code, the position vector and orientation quaternion are computed from the screw matrix. This allows the same functions to be used in either the interpolation or numerical integration cases. Multiplying the points that make up the rigid objects can also be done more compactly with quaternions.
 
 \subsection{Sensor modelling}
-The state of the sensor $\mathbf{X}_{s}(t)$ consists of terms corresponding to its motion and scanning operation. 
-
 \subsubsection{Motion}
-Since motion restricted, state of sensor actually implemented as 
+The state of the sensor $\mathbf{X}_{s}(t)$ consists of terms corresponding to its motion and scanning operation. Since the motion of the sensor is restricted to zero acceleration, the state of sensor can be computed with the interpolation method and represented with position, orientation and scanning direction. 
 \begin{equation}
 	\mathbf{X}_{s}(t) = \{\mathbf{p}_s(t),\mathbf{q}_s(t),{^{A}\mathbf{d}(t)}\}
 \end{equation}
 
-Stationary position:
+Since it has a stationary position, the position of the sensor over time is fixed at the origin of the inertial frame $\{F\}$.
 \begin{equation}
 	\mathbf{p}_1 = \mathbf{p}_2 = \mathbf{p}_3 = \dots =  \mathbf{p}_k = 
 	\begin{bmatrix}
 		0 \\ 0 \\ 0
    	\end{bmatrix}
 \end{equation}
-
-													
-Rotating from $-\phi$ to $\phi$ about $y$-axis of inertial frame ie interpolate between $\mathbf{q}_1$ and $\mathbf{q}_k$ with equation \ref{slerp}.
+										
+The sensor rotates between $-\phi$ and $\phi$ about the $y$-axis of inertial frame $\{F\}$. Thus, its orientation is computed by interpolating between $\mathbf{q}_1$ and $\mathbf{q}_k$ with equation \ref{slerp}.
 	
 \begin{equation}
 	\mathbf{q}_1 = \begin{bmatrix}
@@ -208,18 +202,18 @@ Rotating from $-\phi$ to $\phi$ about $y$-axis of inertial frame ie interpolate 
 \end{equation}
 
 \subsubsection{Scanning}
-The scanning behaviour of the sensor is modelled with the vector ${^{A}\mathbf{n}(t)}$.
+The scanning behaviour of the sensor is modelled with the vector ${^{A}\mathbf{d}(t)}$.
 To simulate a 2D scanning sensor the following parameters are used:
 \begin{itemize}
-\item field of view $[-\theta,\theta]$: rotation about -z-axis of sensor frame ie anticlockwise about z-axis. in practice, this is represented by start angle, scan direction and field of view angle
-\item number of scans $n_{scans}$: number of scan angles in 1 rev. Gives angular resolution $d\theta = \dfrac{2\pi}{n_{scans}}$
-\item revolutions per second $\Omega$: This gives each time step as $d\tau = \dfrac{1}{n_{scans}\Omega}$
+\item field of view $\mathbf{\Theta}$: The vector ${^{A}\mathbf{d}(t)}$ rotates anti-clockwise about the $z$ axis of the sensor frame $\{A\}$. Measurements are only taken when the scan angle about is between $-\theta$ and $\theta$ about the $-z$-axis of the sensor frame $\{A\}$.
+\item number of scans $n_{scans}$: This represents the number of scan angles in a single revolution. Since measurements are limited by the field of view of the sensor, the actual number of measurements per second is $\frac{2\theta}{2\pi}n_{scans}$. The angular resolution is $d\theta = \dfrac{2\pi}{n_{scans}}$.
+\item revolutions per second $\Omega$: This is measured in Hz and gives the length of each time step $d\tau = \dfrac{1}{n_{scans}\Omega}$
+\item $n_{loops}$: The number of back and forth repeats of the sensor trajectory.
 \end{itemize}
-From these parameters, create vector ${^{A}\mathbf{s}(t)}$. At each time $t$, ${^{A}\mathbf{s}(t)}$ is either a unit vector indicating the direction of measurement in the sensor frame, or has $\mathbf{0}$ magnitude the when sensor is not returning a measurement (outside FOV)
+From these parameters the scanning direction ${^{A}\mathbf{d}(t)}$ is created. At each time $t$, ${^{A}\mathbf{s}(t)}$ is either a unit vector indicating the direction of measurement in the sensor frame, or has $\mathbf{0}$ magnitude, corresponding to when ${^{A}\mathbf{d}(t)}$ is outside the field of view and the sensor is not returning a measurement.
 
-scan direction: $^{A}\mathbf{s}(t)$
 \begin{equation}
-^{A}\mathbf{n}(t) =
+^{A}\mathbf{d}(t) =
 	\begin{cases} 
 	      \hfill \begin{bmatrix}
 	      		\cos(-\theta + 2\pi t') \\
@@ -234,11 +228,12 @@ where
 t' = \mod(t,1/d\theta)\:d\theta
 \end{equation}
 
-*$\theta_0$ is start of FOV, $t'=X$ at end of FOV
+*THIS IS NOT VERY CLEAR. DIAGRAM HERE
 
-Scan direction in inertial frame required for measurement simulation:
+To simulate range measurements, the scan direction is required in the inertial frame $\{F\}$. This is computed by multiplying with the screw matrix of the sensor.
 \begin{equation}
-	{^{F}\mathbf{d'}(t)} = \mathbf{X}_s(t)\:{^{A}\mathbf{d'}(t)}
+		{^{F}\mathbf{d'}(t)} = \mathbf{S}_s(t)\:{^{A}\mathbf{d'}(t)}\\
+							 = {^{F}_{F}\mathbf{S}^{}_{A}(t)}\:{^{A}\mathbf{d'}(t)}\\
 \end{equation}
 
 \subsection{Environment Modelling}
