@@ -9,17 +9,8 @@ A simulation toolbox was implemented in Matlab to model scanning laser range-fin
 \item observer implementation.
 \end{itemize}
 
-A high level description of the simulation is provided in Algorithm \ref{main}.\\
-Load settings - saved data can be loaded here\\
-Initialise sensor, computes pose of sensor, scan directions over time + creates sensor class instance with sensor settings for noise generation\\
-Initialise environment, creates environment class instance - points in body frame, triangles, computes position of points over time\\
-Initialise observer - creates observer class instance\\
-For each time step, get state of sensor and environment \& compute range - this is done with a parallel for loop\\
-Add noise to ranges\\
-Observer simulation: each time step, update estimate based on estimated state (kinematics - numerical integration), predict range measurement, check if observing object, if yes update estimate  based on measured and predicted range.
-
 \IncMargin{2em}	
-	\begin{algorithm}[H]
+	\begin{algorithm}
 	\DontPrintSemicolon
 	\SetKwFunction{loadsettings}{loadsettings}
 	\SetKwFunction{initialisesensor}{initialisesensor}
@@ -36,7 +27,7 @@ Observer simulation: each time step, update estimate based on estimated state (k
 	$\mathbf{X}_s$ - pose and scan direction\\
 	$\mathbf{X}_e$ - points for cube and background, triangles\\
 	$\hat{\mathbf{X}}_c$ - estimate of pose and size of cube\\
-	$c$ - true/false, current range measurement of cube\\
+	$c$ - true/false, current range measurement is of cube\\
 	$\mathbf{r}$ - ground truth range\\
 	$\tilde{\mathbf{r}}$ - measured range - ground truth + noise\\
 	$\hat{\mathbf{r}}$ - predicted range from state estimate\\
@@ -50,25 +41,36 @@ Observer simulation: each time step, update estimate based on estimated state (k
 		$\mathbf{X}_s \leftarrow \initialisesensor(settings)$\\
 		$\mathbf{X}_e  \leftarrow \initialiseenvironment(settings)$\\
 		\initialiseobserver\\
-		\For{$ii \leftarrow 1$ \KwTo $n_{steps}$}{
-			\If{$\bm{\theta}[ii] \in \bm{\Theta}$}{
+		\For{$ii \leftarrow 1$ \KwTo $n_{steps}$}{ \label{rangesloop}
+			\If{$\bm{\theta}[ii] \in \bm{\Theta}$}{ \label{FOV}
 				$[\mathbf{r}[ii],\bm{\alpha}[ii],\mathbf{m}[ii]] \leftarrow \computerange(\mathbf{X}_s[ii],\mathbf{X}_e[ii])$
 			}
 		}
-		$\tilde{\mathbf{r}} = \addnoise(\mathbf{r},\bm{\alpha},\mathbf{m},settings)$\\
-		\For{$ii \leftarrow 1$ \KwTo $n_{steps}$}{
+		$\tilde{\mathbf{r}} = \addnoise(\mathbf{r},\bm{\alpha},\mathbf{m},settings)$ \label{addnoise}\\
+		\For{$ii \leftarrow 1$ \KwTo $n_{steps}$}{ \label{observerloop}
 			$\hat{\mathbf{X}}_c[ii+1] \leftarrow \estimatestate(\hat{\mathbf{X}}_c[ii])$\\
 			\If{$\bm{\theta}[ii] \in \bm{\Theta}$}{
-				$\hat{\mathbf{r}}[ii] \leftarrow \computerange(\mathbf{X}_s[ii],\hat{\mathbf{X}}_c[ii])$
-				$c \leftarrow \identifyobject(c,\tilde{\mathbf{r}})$\\
+				$\hat{\mathbf{r}}[ii] \leftarrow \computerange(\mathbf{X}_s[ii],\hat{\mathbf{X}}_c[ii])$\\
+				$c \leftarrow \identifyobject(c,\tilde{\mathbf{r}})$ \label{object}\\
 				\If{$c$}{
-					$\hat{\mathbf{X}}_c[ii+1] \leftarrow \updatestate(\hat{\mathbf{X}}_c[ii+1])$
+					$\hat{\mathbf{X}}_c[ii+1] \leftarrow \updatestate(\hat{\mathbf{X}}_c[ii+1],\mathbf{X}_s[ii],\hat{\mathbf{r}},\tilde{\mathbf{r}})$
 				}
 			}
 		}
 	}
 	\caption{Scanning range-finder and state observer simulation} \label{main}
 	\end{algorithm}
+	
+A high level description of the simulation is provided in Algorithm \ref{main}.	
+First, a settings file is loaded. The most important settings determined here are the trajectories of the sensor and environment objects, the scanning behaviour of the sensor and the observer update function.
+Next, the sensor class instance is initialised with \texttt{initialisesensor}. This requires computation of the pose and scanning directions of the sensor over time. Similarly, initialisation of the environment through \texttt{initialiseenvironment} requires computation of the pose of each rigid body comprising it. The surfaces of the bodies are then represented with a set of points and corresponding triangles. The position of each point with respect to the inertial frame $\{F\}$ is computed at each time step. The settings file provides the initial conditions with which the observer is initialised in \texttt{initialiseobserver}. 
+Beginning on line \ref{rangesloop}, the state of the sensor and environment are used to compute the ground truth range measurements $\mathbf{r}$ at each time step. The incidence angle of the between the scan direction and object, as well as the index of the triangle hit are also stored as they will be required for sensor noise modelling. This is performed with a parallel \texttt{for} loop to speed up computation. Line \ref{FOV} ensures ranges are only computed when the current scan direction is within the sensor's field of view.
+In line \ref{addnoise}, noise is simulated and added to the ground truth ranges to produce the measured ranges $\tilde{\mathbf{r}}$.
+The \texttt{for} loop beginning on line \ref{observerloop} begins the observer simulation. 
+At each time step, \texttt{estimatestate} estimates the state of the cube $\hat{\mathbf{X}}_c$ from the previous state with the kinematics model in \ref{kinematics}.
+From the sensor state $\mathbf{X}_s$ and the estimated state of the cube $\hat{\mathbf{X}}_c$, \texttt{computerange} is used to determined the predicted range measurement $\hat{\mathbf{r}}$.
+The variable $c$ indicates whether the current range measurement corresponds to the cube or the background. On line \ref{object} the measured ranges and previous value of $c$ are used to determine whether the current measurement corresponds to the cube. If it does, the cube state estimate $\hat{\mathbf{X}}_c$ is updated using the previous state estimate, current sensor state, and the predicted and measured ranges.
+
 
 \subsection{Rigid Body Motion}
 To simulate range measurements the pose of the sensor and the objects comprising the environment must be computed at each time step. The computations required to do so can be reduced by taking into account the kinds of motion that must be simulated.
@@ -84,31 +86,28 @@ The environment is modelled with two rigid bodies: a cube to be observed as the 
 For case 1. the wrench and screw are constant so only the initial value is required. It is more efficient to represent the pose of a rigid body with just position and orientation in this case. The pose can be quickly computed by interpolating between an initial and final pose. For case 2. the screw, twist and wrench must be integrated numerically.
 
 \subsubsection{Interpolation}
-To compute a trajectory of $k$ poses beginning at $\{\mathbf{p}_i,\mathbf{q}_i\}$ and ending at $\{\mathbf{p}_f,\mathbf{q}_f\}$:
+For the case of zero wrench, the pose of the body can be represented with a position vector and orientation quaternion. A trajectory of $k$ poses at times 
+$\mathbf{t} =
+\begin{bmatrix}
+	t_1 & t_2 & t_3 & \dots & t_k
+\end{bmatrix}$,
+is computed by interpolating from $\{\mathbf{p}_i,\mathbf{q}_i\}$ to $\{\mathbf{p}_f,\mathbf{q}_f\}$:
 
-Poses for each time $\mathbf{t} =
-					\begin{bmatrix}
-						t_1 & t_2 & t_3 & \dots & t_k
-					\end{bmatrix}$
-
-Linear interpolation for position $\mathbf{P}= \begin{bmatrix}
-													\mathbf{p}_1 & \mathbf{p}_2 & \mathbf{p}_3 & \dots & \mathbf{p}_k
-											   \end{bmatrix}$:
+The position vectors
+$\mathbf{P}= \begin{bmatrix}
+\mathbf{p}_1 & \mathbf{p}_2 & \mathbf{p}_3 & \dots & \mathbf{p}_k
+\end{bmatrix}$:
+ are computed with:
 \begin{equation}
 	\mathbf{P} = 
 	{\mathbf{p}_1}_{[1 \times k]} + (\mathbf{p}_k - \mathbf{p}_1)\frac{\mathbf{t}-{\mathbf{t}_1}_{[1 \times k]}}{t_k - t_1}
 \end{equation}
-OR?
-\begin{equation}
-	\mathbf{P} = 
-	{\mathbf{P}_1}_{[1 \times k]} + (\mathbf{p}_k - \mathbf{p}_1)\frac{\mathbf{t}-{\mathbf{t}_1}_{[1 \times k]}}{t_k - t_1}
-\end{equation}
 
-
-Spherical linear interpolation for orientation quaternion $\mathbf{q}= \begin{bmatrix}
-													\mathbf{q}_1 & \mathbf{q}_2 & \mathbf{q}_3 & \dots & \mathbf{q}_k
-												\end{bmatrix}$:
-
+Spherical linear interpolation is used to compute the orientation
+$\mathbf{Q}= \begin{bmatrix}
+	\mathbf{q}_1 & \mathbf{q}_2 & \mathbf{q}_3 & \dots & \mathbf{q}_k
+\end{bmatrix}$
+at each time:
 \begin{equation} \label{slerp}
 	\mathbf{Q} = \frac{\mathbf{q}_1\sin((\mathbf{1}_{[1 \times k]}-\mathbf{t})\theta) + \mathbf{q}_k\sin(\mathbf{t}\theta)}{\sin(\theta)}
 \end{equation}
@@ -117,7 +116,6 @@ where
 	\theta = \cos^{-1}(\mathbf{q}_1 \cdot \mathbf{q}_k)
 \end{equation}
 
-*MAKE THESE CLEARER
 
 SCANNING:\\
 Require multiple views of target object,reverse trajectory, concatenate and replicate\\
@@ -147,7 +145,7 @@ replicate:
 
 
 \subsubsection{Numerical Integration} \label{integration}
-The time evolution of the screw, twist and wrench is computed iteratively from initial conditions by numerically integrating the ODEs in section \ref{kinematics}. For a rigid body with an associated reference frame $\{X\}$:
+The time evolution of the screw, twist and wrench is computed iteratively from initial conditions by numerically integrating the ODEs in section \ref{kinematics}. For a rigid body with an associated reference frame $\{X\}$, moving with constant acceleration:
 
 \begin{equation}
 	\mathbf{S}_X(t+\delta t) = \mathbf{S}_X(t)\exp({\delta t {\mathbf{T}_X(t)}})
@@ -157,7 +155,6 @@ The time evolution of the screw, twist and wrench is computed iteratively from i
 	\mathbf{T}_X(t+\delta t) = \mathbf{T}_X(t) + \delta t \mathbf{W}_X(t)
 \end{equation}
 
-Assuming constant acceleration
 \begin{equation}
 	\mathbf{W}_X(t+\delta t) =\mathbf{W}_X(t)
 \end{equation}
@@ -172,7 +169,7 @@ The state of the sensor $\mathbf{X}_{s}(t)$ consists of terms corresponding to i
 \subsubsection{Motion}
 Since motion restricted, state of sensor actually implemented as 
 \begin{equation}
-	\mathbf{X}_{s}(t) = \{\mathbf{p}_s(t),\mathbf{q}_s(t),{^{A}\mathbf{s}(t)}\}
+	\mathbf{X}_{s}(t) = \{\mathbf{p}_s(t),\mathbf{q}_s(t),{^{A}\mathbf{d}(t)}\}
 \end{equation}
 
 Stationary position:

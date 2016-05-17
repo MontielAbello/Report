@@ -80,7 +80,8 @@
 					\Phi(m,\Phi(n,o)) = \Phi(mn,o)
 				\end{equation}
 			\end{itemize}
-			
+		
+		\begin{comment}	
 		\textbf{Adjoint map}\\		
 		EXPLANATION???\\
 		For $A \in \mathbf{G}$ and $B \in ?$ define a function $\Psi$, known as the adjoint map of $\mathbf{G}$:
@@ -98,7 +99,7 @@
 			\textbf{Adj}_A: \mathfrak{g} \rightarrow \mathfrak{g} \textnormal{, }
 			\textbf{Adj}_A(V) \stackrel{\Delta}{=} AVA^{-1}
 		\end{equation}
-	
+		\end{comment}
 		
 	\subsubsection{\textbf{SO}(3)}	
 		A rotation represents the motion of a point about the origin of a Euclidean space. In $\mathbb{R}^3$ this is a proper isometry: a transformation that preserves distances between any pair of points and has a determinant of +1. The set of all rotations about the origin of $\mathbb{R}^3$ is known as the \textit{special orthogonal group} $\textbf{SO}(3)$.
@@ -130,6 +131,7 @@
 			\Phi: \mathbf{SO}(3) \times \mathbf{R}^3 \mapsto \mathbf{R}^3
 		\end{equation}
 		
+		\begin{comment}
 		\textbf{Adjoint map}\\
 		EXPLANATION???? Hard to explain practical application without discussing reference frames: ie if position defined in body fixed frame but some other transformation defined in inertial frame. First undo rotation to get pose in inertial frame, apply transformation, then re-apply rotation.
 		\begin{equation}
@@ -146,6 +148,7 @@
 			\textbf{Adj}_R: \mathfrak{so}(3) \rightarrow \mathfrak{so}(3) \textnormal{, }
 			\textbf{Adj}_R(B) \stackrel{\Delta}{=} RBR^{-1}
 		\end{equation}
+		\end{comment}
 		
 		\textbf{Rotation representations}\\		
 		There are many conventions by which elements of $\mathbf{SO}(3)$ can be represented. The representations that will be used in this report are described below.
@@ -358,7 +361,8 @@
 				1	
 			\end{bmatrix}
 		\end{equation}
-				
+		
+		\begin{comment}		
 		\textbf{Adjoint Map}\\
 		EXPLANATION\\
 		The adjoint map of $\mathbf{SE}(3)$ is
@@ -376,6 +380,7 @@
 			\textbf{Adj}_S: \mathfrak{se}(3) \rightarrow \mathfrak{se}(3) \textnormal{, }
 			\textbf{Adj}_S(B) \stackrel{\Delta}{=} SBS^{-1}
 		\end{equation}
+		\end{comment}
 		
 	\subsubsection{Reference Frames}
 		A reference frame is a system of coordinates that is used to uniquely identify points on a manifold. This report will deal with reference frames on $\mathbb{R}^3$, that are used both to define the position of a point and the pose of a rigid body in 3D space.
