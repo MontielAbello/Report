@@ -281,8 +281,11 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 \subsection{Measurement Modelling}
 	\subsubsection{Range Computation}
 	Given the screw matrix (in the inertial frame) and scan direction (in the body fixed frame) of the sensor, the position and scan direction in the inertial frame are determined.
-	The distance to the nearest environment object from this point, along the scan direction is determined with the M{\"o}ller-Trumbore ray-triangle intersection algorithm.
-	Difficult to visualise from code, include diagram for case of ray \& single triangle?
+	The distance to the nearest environment object from this point, along the scan direction is determined with the M{\"o}ller-Trumbore ray-triangle intersection algorithm, shown in Algorithm \ref{intersection}.
+	
+	EXPLANATION OF ALGORITHM \ref{intersection}
+	
+	*DIFFICULT TO VISUALISE. INCLUDE DIAGRAM SHOWING INTERSECTION OF RAY AND A SINGLE TRIANGLE
 
 	\IncMargin{2em}
 	\begin{algorithm}
@@ -344,7 +347,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			$\theta = \min(\theta,\pi-\theta)$
 		}
 	}
-	\caption{M{\"o}ller-Trumbore ray-triangle intersection\label{MTalg}}
+	\caption{M{\"o}ller-Trumbore ray-triangle intersection \label{intersection}}
 	\end{algorithm}
 	
 	\subsubsection{Object Surface}
@@ -368,21 +371,9 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 		The state of the cube at each time step is estimated using the numerical integration method described in section \ref{integration}.
 	
 	\subsubsection{Identifying object/background}
-		The variable \textit{observingObject} indicates whether the range measurement is of the target object or the background. It is assumed that initially the sensor will be observing background, so $\textit{observingObject}_0 = FALSE$
+		The variable $c$ indicates whether the range measurement is of the target object or the background. It is assumed that initially the sensor will be observing background, so $c_0 = FALSE$
 
-		\textbf{Range assumption:}
-		Assuming that the object is within X, background outside
-		PSEUDOCODE
-		if range $\leq$ X
-			c = 1
-		else
-			c = 0
-		end
-		
-		\textbf{Difference assumption:}
-		if $abs(range_{i+1}-range_i) > X$
-			c = mod(c+1,2)
-		end
+		EXPLANATION OF ALGORITHM \ref{object}
 		
 		\IncMargin{2em}
 		\begin{algorithm}
@@ -409,7 +400,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 				}
 			}
 		}
-		\caption{Target/background object separation}
+		\caption{Target/background object separation} \label{object}
 		\end{algorithm}
 		
 	\subsubsection{Update}
