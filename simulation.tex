@@ -383,14 +383,14 @@ See figure~\ref{fig:cubeproblem}
 		Assuming that the object is within X, background outside
 		PSEUDOCODE
 		if range $\leq$ X
-			observingObject = 1
+			c = 1
 		else
-			observingObject = 0
+			c = 0
 		end
 		
-		\textbf{Continuity assumption:}
+		\textbf{Difference assumption:}
 		if $abs(range_{i+1}-range_i) > X$
-			observingObject = mod(observingObject+1,2)
+			c = mod(c+1,2)
 		end
 		
 		\IncMargin{2em}
@@ -399,22 +399,22 @@ See figure~\ref{fig:cubeproblem}
 		\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 	
 		\Input{$rangeAssumption$ - true/false\\
-			   $continuityAssumption$ - true/false\\
-			   $rangeLimit$\\
-			   $continuityLimit$\\
-			   $observingObject$ - true/false\\
-			   $range_{i+1}$ - distance to object at $t = i+1$\\
-			   $range_{i}$ - distance to object at $t = i$}
-		\Output{$observingObject$ - true/false}
+			   $differenceAssumption$ - true/false\\
+			   $r_{max}$ - max range for cube\\
+			   $\Delta_{max}$ - max diff between measurements of same object\\
+			   $c$ - true/false - current measurement is of cube\\
+			   $\mathbf{r}_{i+1}$ - distance to object at $t = i+1$\\
+			   $\mathbf{r}_{i}$ - distance to object at $t = i$}
+		\Output{$c$ - true/false}
 		\Begin{				
-			\If{$continuityAssumption$}{
-				\If{$|range_{i+1}-range_{i}| > continuityLimit$}{
-					$observingObject = \mod(observingObject + 1,2)$
+			\If{$differenceAssumption$}{
+				\If{$|\mathbf{r}_{i+1}-\mathbf{r}_{i}| > \Delta_{max}$}{
+					$c = \mod(c + 1,2)$
 				}
 			}
 			\If{$rangeAssumption$}{
-				\If{$range_{i+1} > rangeLimit$}{
-					$observingObject = 0$
+				\If{$\mathbf{r}_{i+1} > r_{max}$}{
+					$c = 0$
 				}
 			}
 		}
