@@ -72,7 +72,7 @@ From the sensor state $\mathbf{X}_s$ and the estimated state of the cube $\hat{\
 The variable $c$ indicates whether the current range measurement corresponds to the cube or the background. On line \ref{object} the measured ranges and previous value of $c$ are used to determine whether the current measurement corresponds to the cube. If it does, the cube state estimate $\hat{\mathbf{X}}_c$ is updated using the previous state estimate, current sensor state, and the predicted and measured ranges.
 
 
-\subsection{Rigid Body Motion}
+\subsection{Rigid Body Motion} \label{motion}
 To simulate range measurements the pose of the sensor and the objects comprising the environment must be computed at each time step. The computations required to do so can be reduced by taking into account the kinds of motion that must be simulated.
 
 The observer actually computes the \textit{relative} position between the sensor and cube and simply uses knowledge of the sensor pose to determine the pose of the cube in the inertial frame. There is no need to simulate complex sensor motions because the motion of the cube can be adjusted to achieve the same result. The only requirement of the sensor motion is that a large field of view is acquired so that the entire target object can be viewed. The scanning behaviour of the sensor is to rotate back and forth about the $z$-axis of the body fixed frame $\{A\}$. To provide a rectangular field of view, the motion of the sensor is therefore limited to constant velocity rotation about $y$-axis of inertial frame $\{F\}$.
@@ -232,32 +232,31 @@ t' = \mod(t,1/d\theta)\:d\theta
 
 To simulate range measurements, the scan direction is required in the inertial frame $\{F\}$. This is computed by multiplying with the screw matrix of the sensor.
 \begin{equation}
-		{^{F}\mathbf{d'}(t)} = \mathbf{S}_s(t)\:{^{A}\mathbf{d'}(t)}\\
-							 = {^{F}_{F}\mathbf{S}^{}_{A}(t)}\:{^{A}\mathbf{d'}(t)}\\
+	\begin{array}{lcl}
+	{^{F}\mathbf{d'}(t)} & = & \mathbf{S}_s(t)\:{^{A}\mathbf{d'}(t)} \\
+	& = & {^{F}_{F}\mathbf{S}^{}_{A}(t)}\:{^{A}\mathbf{d'}(t)}
+	\end{array}
 \end{equation}
 
 \subsection{Environment Modelling}
 \subsubsection{Motion}
-Pose of object is actually pose of centre of mass of object.
-Each object modelled with S. from initial conditions, numerically integrate S,T,W. If constant velocity motion, faster to use waypoints like sensor.
-From pose of object at each time, compute pose of all points that make up object: 3D array, each slice is set of points at time ii
+The pose of each object represents the pose of its centre of mass. As described in section \ref{motion} the pose is computed with interpolation for the case of zero wrench, and numerical integration in the case of non-zero wrench.
 
 \subsubsection{Rigid Objects}
-Environment composed of rectangular prisms. These objects are modelled as an ordered set of 8 points in the inertial reference frame, and 12 triangles. Each triangle is a set of 3 integers, indicating the index of the three points that make up its vertexes.
-The position (in the inertial frame) of each of these points at each time is determined using the screw matrix and position in body frame (side lengths of the object \& default cube points).
+The environment is represented with two rectangular prisms; the cube and a larger rectangular prism enclosing both the sensor and cube, to represent the background. These objects are modelled as an ordered set of 8 points in the inertial reference frame and an ordered set of 12 triangles formed by these points. Each triangle is represented by a set of 3 integers, indicating the index of the three points that make up its vertices.
 
-cube points in body frame:
-initialPoints = s*0.5*[];
+The cube points in body frame $\{B\}$ are represented with the matrix ${^{B}\mathbf{P}}$.
 \begin{equation}
-	\mathbf{P}_c = \frac{1}{2}s
+	{^{B}\mathbf{P}} = \frac{1}{2}s
 	\begin{bmatrix*}[r]
 		-1  &  -1  &  -1  &  -1  &   1  &   1  &   1  &  1 \\
 		-1  &  -1  &   1  &   1  &  -1  &  -1  &   1  &  1 \\
 		-1  &   1  &  -1  &   1  &  -1  &   1  &  -1  &  1 
 	\end{bmatrix*}
 \end{equation}
-Shift each according to pose of sensor to get cube points in inertial frame. In sim, rotated with quaternions.
-triangles:
+To represent these points in the inertial frame $\{F\}$, ${^{F}\mathbf{P}}$ is computed by rotating each point with the orientation quaternion of frame $\{B\}$ using equation \ref{quatrot} before adding the vector representing the translation of $\{B\}$ from $\{F\}$.
+
+The triangles are represented with the matrix $\mathbf{T}$. Each triangle is represented by a row. The elements of these rows are the three vertices of the triangle and the index corresponds a point in ${^{F}\mathbf{P}}$.
 \begin{equation}
 	\mathbf{T} = 
 	\begin{bmatrix}
@@ -276,7 +275,7 @@ triangles:
 	\end{bmatrix}
 \end{equation}
 
-See figure~\ref{fig:cubeproblem}
+The points and triangles are shown in Figure \ref{fig:triangles}.
 \input{Figures/fig_triangles}
 
 \subsection{Measurement Modelling}
