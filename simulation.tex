@@ -161,9 +161,9 @@ Assuming constant acceleration
 	\mathbf{W}_X(t+\delta t) =\mathbf{W}_X(t)
 \end{equation}
 
-*will add runge-kutta method to simulation. allow choice of numerical method in config.\\
-*add equations for RK4 
-*not essential - ground truth is ground truth, experimental data won't be nearly as smooth anyway
+*More accurate integration method not essential - ground truth is ground truth, experimental data won't be nearly as smooth anyway.
+
+In practice, compute orientation quaternion from screw matrix - pose still represented with quaternion and vector - same as interpolation case.
 
 \subsection{Sensor modelling}
 The state of the sensor $\mathbf{X}_{s}(t)$ consists of terms corresponding to its motion and scanning operation. 
@@ -253,19 +253,20 @@ From pose of object at each time, compute pose of all points that make up object
 Environment composed of rectangular prisms. These objects are modelled as an ordered set of 8 points in the inertial reference frame, and 12 triangles. Each triangle is a set of 3 integers, indicating the index of the three points that make up its vertexes.
 The position (in the inertial frame) of each of these points at each time is determined using the screw matrix and position in body frame (side lengths of the object \& default cube points).
 
-points in body frame:
+cube points in body frame:
 initialPoints = s*0.5*[];
 \begin{equation}
-	Pts = \frac{1}{2}s
+	\mathbf{P}_c = \frac{1}{2}s
 	\begin{bmatrix*}[r]
 		-1  &  -1  &  -1  &  -1  &   1  &   1  &   1  &  1 \\
 		-1  &  -1  &   1  &   1  &  -1  &  -1  &   1  &  1 \\
 		-1  &   1  &  -1  &   1  &  -1  &   1  &  -1  &  1 
 	\end{bmatrix*}
 \end{equation}
+Shift each according to pose of sensor to get cube points in inertial frame. In sim, rotated with quaternions.
 triangles:
 \begin{equation}
-	Tri = 
+	\mathbf{T} = 
 	\begin{bmatrix}
 	1 & 2 & 3 \\
 	2 & 4 & 3 \\
@@ -289,42 +290,69 @@ See figure~\ref{fig:cubeproblem}
 	\subsubsection{Range Computation}
 	Given the screw matrix (in the inertial frame) and scan direction (in the body fixed frame) of the sensor, the position and scan direction in the inertial frame are determined.
 	The distance to the nearest environment object from this point, along the scan direction is determined with the M{\"o}ller-Trumbore ray-triangle intersection algorithm.
+	Difficult to visualise from code, include diagram for case of ray \& single triangle?
 
 	\IncMargin{2em}
 	\begin{algorithm}
 	\DontPrintSemicolon
 	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-
-	\Input{$o$ - ray origin\\
-		   $d$ - ray direction vector\\
-		   $Pts$ - points\\
-		   $Tri$ - triangle matrix}
-	\Output{$intersect$ - True/False - whether object measured\\
-			$range$ - distance to object in m\\
-			$angle$ - incidence angle in rad\\
-			$closest$ - index of triangle hit}
+	\SetKwFunction{size}{size}
+	\SetKwFunction{any}{any}
+	\SetKwFunction{min}{min}
+	\SetKwFunction{find}{find}
+	\SetKwFunction{atan}{atan}
+	
+	\Input{$\mathbf{o}$ - ray origin\\
+		   $\mathbf{d}$ - ray direction vector\\
+		   $\mathbf{P}$ - cube in inertial frame \\
+		   $\mathbf{T}$ - triangle matrix}
+	\Output{$x$ - True/False - whether object measured\\
+			$r$ - distance to object in m\\
+			$\theta$ - incidence angle in rad\\
+			$t$ - index of triangle hit}
 	\Begin{
 		\tcc{initialise outputs}
-		$intersect \longleftarrow 0$\\
-		$range \longleftarrow NaN$\\
-		$angle \longleftarrow NaN$\\
-		$closest \longleftarrow NaN$\\
-		\tcc{initialise other variables???}
+		$x \longleftarrow 0$\\
+		$r \longleftarrow NaN$\\
+		$\theta \longleftarrow NaN$\\
+		$t \longleftarrow NaN$\\
 		\tcc{triangle vertexes and edges}
-		$\mathbf{v}_1 \longleftarrow Pts[Tri[:,1]]$\\
-		$\mathbf{v}_2 \longleftarrow Pts[Tri[:,2]]$\\
-		$\mathbf{v}_3 \longleftarrow Pts[Tri[:,3]]$\\
-		$e1 \longleftarrow e2 - e1$\\
-		$e2 \longleftarrow e3 - e1$\\
+		$\mathbf{V}_1 \longleftarrow \mathbf{P}[\mathbf{T}[:,1]]$\\
+		$\mathbf{V}_2 \longleftarrow \mathbf{P}[\mathbf{T}[:,2]]$\\
+		$\mathbf{V}_3 \longleftarrow \mathbf{P}[\mathbf{T}[:,3]]$\\
+		$\mathbf{E}_1 \longleftarrow \mathbf{V}_2 - \mathbf{V}_1$\\
+		$\mathbf{E}_2 \longleftarrow \mathbf{V}_3 - \mathbf{V}_1$\\
+		$n = \size(\mathbf{V}_1,1)$\\
+		$\mathbf{A} \longleftarrow \mathbf{o}_{[n \times 1]} - \mathbf{P}$\\
 		\tcc{determinant}
-		$T \longleftarrow $\\
+		$\mathbf{B} \longleftarrow \mathbf{d}_{[n \times 1]} \times \mathbf{E}_2$ *(along dim 2)\\
+		$\bm{\delta} \longleftarrow \mathbf{E}_1 \cdot \mathbf{B}$ *(along dim 2)\\		
+		$\mathbf{y} \longleftarrow |\bm{\delta}|\leq\mathbf{0}$
+		$\bm{\delta}[\mathbf{y}] \longleftarrow \mathbf{NaN}$\\
 		\tcc{barycentric coordinates}
-		\tcc{intersection vector}			
-		\If{any intersection}{
-			min range, angle, triangle ID
+		$\mathbf{u} \longleftarrow (\mathbf{A} \cdot \mathbf{B})/\bm{\delta}$ *(along dim 2)\\
+		$\mathbf{Q} \longleftarrow \mathbf{A} \times \mathbf{E}_1$ *(along dim 2)\\
+		$\mathbf{v} \longleftarrow (\mathbf{d}_{[n \times 1]} \cdot \mathbf{Q})/\bm{\delta}$ *(along dim 2)\\
+		$\mathbf{s} \longleftarrow (\mathbf{E}_2 \cdot \mathbf{Q})/\bm{\delta}$\\
+		\tcc{intersection vector}	
+		$\mathbf{z} \longleftarrow \mathbf{y} \textbf{ and } (\mathbf{u} \geq \mathbf{0}) 
+		\textbf{ and } (\mathbf{v} \geq \mathbf{0}) \textbf{ and } (\mathbf{u}+\mathbf{v} \leq 
+		\mathbf{0})$\\
+		$\mathbf{x} \longleftarrow \mathbf{z} \textbf{ and } (\mathbf{s} \geq \mathbf{0})$\\
+		\If{$\any(\mathbf{x})$}{
+			$x \longleftarrow 1$\\
+			$\mathbf{x}[\textbf{not }\mathbf{x}] \longleftarrow \mathbf{NaN}$\\
+			$\mathbf{r} = \mathbf{s} \circ \mathbf{x}$\\
+			$r = \min(\mathbf{r})$\\
+			$t = \find(\mathbf{r} = r,1)$\\
+			$\mathbf{e}_1 \longleftarrow \mathbf{E}_1[t,:]$\\ 
+			$\mathbf{e}_2 \longleftarrow \mathbf{E}_2[t,:]$\\ 
+			$\mathbf{n} = \mathbf{e}_1 \times \mathbf{e}_2$\\
+			$\theta = \atan(|\mathbf{d}\times\mathbf{n}|,\mathbf{d}\cdot\mathbf{n})$ *atan2\\
+			$\theta = \min(\theta,\pi-\theta)$
 		}
 	}
-	\caption{M{\"o}ller-Trumbore ray-triangle intersection algorithm\label{MTalg}}
+	\caption{M{\"o}ller-Trumbore ray-triangle intersection\label{MTalg}}
 	\end{algorithm}
 	
 	\subsubsection{Object Surface}
