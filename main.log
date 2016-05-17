@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  16 MAY 2016 20:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  17 MAY 2016 16:44
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -653,7 +653,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--89
 x"
 Chapter 2.
 
-Overfull \hbox (12.4412pt too wide) in paragraph at lines 71--71
+Overfull \hbox (12.4412pt too wide) in paragraph at lines 69--69
 []|[]$\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 rangesTrue\OT1/cmr/m/n/10.95 [\OM
 L/cmm/m/it/10.95 ii\OT1/cmr/m/n/10.95 ]\OML/cmm/m/it/10.95 ; incidenceAngles\OT
 1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 ii\OT1/cmr/m/n/10.95 ]\OML/cmm/m/it/10.95 
@@ -662,28 +662,37 @@ L/cmm/m/it/10.95 ii\OT1/cmr/m/n/10.95 ]\OML/cmm/m/it/10.95 ; incidenceAngles\OT
  []
 
 
-Overfull \hbox (21.11269pt too wide) in paragraph at lines 71--71
+Overfull \hbox (21.11269pt too wide) in paragraph at lines 69--69
 $[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 rangesTrue; incidenceAngles; triangl
 eIndexes; settings\OT1/cmr/m/n/10.95 )$  
+ []
+
+
+Overfull \hbox (30.0pt too wide) in paragraph at lines 22--70
+$[]$ 
  []
 
 [19
 
 
 
-] [20] [21]
-Overfull \hbox (67.27264pt too wide) in paragraph at lines 109--112
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
+[21]
+Overfull \hbox (67.27264pt too wide) in paragraph at lines 107--110
 []\OT1/cmr/m/n/10.95 Spherical lin-ear in-ter-po-la-tion for ori-en-ta-tion qua
 ter-nion $\OT1/cmr/bx/n/10.95 q \OT1/cmr/m/n/10.95 = []$: 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--126
+Underfull \hbox (badness 10000) in paragraph at lines 121--124
 
  []
 
 
-Overfull \hbox (2.23257pt too wide) in paragraph at lines 151--152
+Overfull \hbox (2.23257pt too wide) in paragraph at lines 149--150
 \OT1/cmr/m/n/10.95 from ini-tial con-di-tions by nu-mer-i-cally in-te-grat-ing 
 the ODEs in sec-tion 1.2.1.6[].
  []
@@ -694,56 +703,85 @@ s.tex") [25]
 Underfull \vbox (badness 2103) has occurred while \output is active []
 
  [26]
+[27] [28]
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--414
+
+ []
+
+
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_orientat
-ionupdate.tex" [27] [28])
+ionupdate.tex")
+Underfull \hbox (badness 10000) in paragraph at lines 422--432
+
+ []
+
+
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_position
 update.tex")
+Underfull \hbox (badness 10000) in paragraph at lines 445--448
+
+ []
+
+
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
 te1.tex"
 
-LaTeX Warning: Float too large for page by 14.07349pt on input line 84.
+LaTeX Warning: Float too large for page by 24.61307pt on input line 86.
 
 )
+Underfull \hbox (badness 10000) in paragraph at lines 454--457
+
+ []
+
+[29] [30] [31] [32]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
 te2.tex"
-Overfull \hbox (4.85919pt too wide) in paragraph at lines 81--82
+Overfull \hbox (4.85919pt too wide) in paragraph at lines 83--84
 [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 9.00426pt on input line 84.
+LaTeX Warning: Float too large for page by 24.61307pt on input line 86.
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 428--432
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
 
  []
 
-[29] [30] [31] [32] [33]) [34
+
+("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Tables/tab_updatewei
+ghts.tex") [33] [34]) [35
 
 ]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.tex"
+[36
+
+
+
+]
 Chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2--8
 
  []
 
-) [35
-
-
-
-] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.tex" [3
-6
+) [37] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.te
+x" [38
 
 
 
 ]
 Chapter 4.
-) [37] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.bbl"
-[38
+) [39] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.bbl"
+[40
 
 
-]) [39] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux" ("
+]) [41] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux" ("
 C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\literature.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\background.aux")
@@ -756,10 +794,10 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15168 strings out of 493921
- 297998 string characters out of 3147261
- 372414 words of memory out of 3000000
- 18100 multiletter control sequences out of 15000+200000
+ 15177 strings out of 493921
+ 298323 string characters out of 3147261
+ 363482 words of memory out of 3000000
+ 18104 multiletter control sequences out of 15000+200000
  20048 words of font info for 74 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,23n,58p,776b,11485s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -773,17 +811,18 @@ am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files
 public/amsfonts/cmextra/cmmib8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-r17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (39 pages, 315130 bytes).
+r17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/euler/eufm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/s
+ymbols/msbm10.pfb>
+Output written on main.pdf (41 pages, 327552 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
+ 218 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

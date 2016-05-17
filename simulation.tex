@@ -9,7 +9,7 @@ A simulation toolbox was implemented in Matlab to model scanning laser range-fin
 \item observer implementation.
 \end{itemize}
 
-Algorithm \ref{main} provides a high level description of the simulation.\\
+A high level description of the simulation is provided in Algorithm \ref{main}.\\
 Load settings - saved data can be loaded here\\
 Initialise sensor, computes pose of sensor, scan directions over time + creates sensor class instance with sensor settings for noise generation\\
 Initialise environment, creates environment class instance - points in body frame, triangles, computes position of points over time\\
@@ -19,9 +19,8 @@ Add noise to ranges\\
 Observer simulation: each time step, update estimate based on estimated state (kinematics - numerical integration), predict range measurement, check if observing object, if yes update estimate  based on measured and predicted range.
 
 \IncMargin{2em}	
-	\begin{algorithm}
+	\begin{algorithm}[H]
 	\DontPrintSemicolon
-	%\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 	\SetKwFunction{loadsettings}{loadsettings}
 	\SetKwFunction{initialisesensor}{initialisesensor}
 	\SetKwFunction{initialiseenvironment}{initialiseenvironment}
@@ -31,8 +30,7 @@ Observer simulation: each time step, update estimate based on estimated state (k
 	\SetKwFunction{estimatestate}{estimatestate}
 	\SetKwFunction{updatestate}{updatestate}
 	\SetKwFunction{identifyobject}{identifyobject}	
-	%\Input{?}
-	%\Output{?}
+	\KwData{\\
 	$simulationLength$ - no. steps in simulation\\
 	$sensorState$ - pose and scan direction\\
 	$environmentState$ - points for cube and background, triangles\\
@@ -45,8 +43,9 @@ Observer simulation: each time step, update estimate based on estimated state (k
 	$rangesPredicted$ - expected range from state estimate\\
 	$scanAngles$ - scan angle in sensor frame\\
 	$fieldOfView$ - set of scan angles that give range measurement\\
+	}
 	\Begin{
-		$settings = $\loadsettings\\
+		$settings \leftarrow $\loadsettings\\
 		$sensorState \leftarrow \initialisesensor(settings)$\\
 		$environmentState  \leftarrow \initialiseenvironment(settings)$\\
 		\initialiseobserver\\
@@ -56,9 +55,8 @@ Observer simulation: each time step, update estimate based on estimated state (k
 			}
 		}
 		$rangesMeasured = \addnoise(rangesTrue,incidenceAngles,triangleIndexes,settings)$\\
-
 		\For{$ii \leftarrow 1$ \KwTo $simulationLength$}{
-			$stateEstimate[ii+1] \leftarrow \estimatestate(stateEstimate[ii])$
+			$stateEstimate[ii+1] \leftarrow \estimatestate(stateEstimate[ii])$\\
 			\If{$scanAngles[ii] \in fieldOfView$}{
 				$rangesPredicted[ii] \leftarrow \computerange(sensorState[ii],stateEstimate[ii])$
 				$observingObject \leftarrow \identifyobject(observingObject,rangesMeasured)$\\
@@ -341,7 +339,7 @@ See figure~\ref{fig:cubeproblem}
 	
 	For Hokuyo UBG-04LX-F01 used, noise model was measured experimentally:
 	\begin{equation}
-		f_{UBG} = 
+		f_{UBG}(r,\theta,\phi) = 
 	\end{equation}
 	
 	
@@ -396,40 +394,83 @@ See figure~\ref{fig:cubeproblem}
 		
 	\subsubsection{Update}
 		\textbf{Input ranges:}\\
-		use time ii, ii-1, ii-nSteps, ii-1-nSteps: gives quadrilateral of points
-	
+			Use ranges according to ordered sequence of indexes $a$. ie if all present - quadrilateral with points at corners:
+			\begin{equation}
+				a = \{ii,(ii-1),(ii-n_{steps}),(ii-1-n_{steps})\}
+			\end{equation}
+		
 		\textbf{Orientation update:}\\
-			at least 3 points, find planes and normal, rotate about cross of normals\\
-			$\rightarrow$ gives rotation axis\\
-			EQUATIONS\\
-			DIAGRAM\\
+			Require at least 3 ranges in prediction and measurement. ie
+			$|a_{predicted}| \geq 3$ \and $|a_{measured}| \geq 3$
+	
+			From range and direction, compute coordinates of intersection\\
+			\begin{equation}
+				\mathbf{P}(a_k) = \mathbf{R}(a_k){^{F}\mathbf{N}(a_k)}
+			\end{equation}
+			\begin{equation}
+				\mathbf{n} = [\mathbf{P}(a_2) - \mathbf{P}(a_1)] \times [\mathbf{p}(a_3) - \mathbf{p}(a_1)]
+			\end{equation}
+			Rotation axis from cross product of predicted and measured normals:\\
+			\begin{equation}
+				\mathbf{r} = \mathbf{n}_{predicted} \times \mathbf{n}_{measured}
+			\end{equation}
+			Rotation angle determined in settings. Table REF shows settings	
+			
 			figure~\ref{fig:orientation}
 			\input{Figures/fig_orientationupdate}
 			
 		\textbf{Position update:}\\
-			find mean of intersection points of predicted, measured, vector subtraction
-			$\rightarrow$ translation vector\\
-			EQUATIONS\\
-			DIAGRAM\\
+			Require at least 1 range in prediction and measurement:\\
+			$|a_{predicted}| \geq 1$ \and $|a_{measured}| \geq 1$\\
+			Average to get $\bar{\mathbf{p}}_{predicted}$ and $\bar{\mathbf{p}}_{measured}$\\
+			Scale translation vector - taking into account geometry of intersection points and sensor position.
+			Get mean of all predicted and measured ranges = $\bar{r}$. Need valid scan direction ie within FOV for $ii,ii-1,ii-1-n_{steps}$
+			$\mathbf{p}_0 = \mathbf{p}_s(t) = {^{F}_{F}\mathbf{p}^{}_{A}(t)}$\\
+			$\mathbf{p}_1 = \bar{r}{^{A}\mathbf{n}(ii)}$\\	
+			$\mathbf{p}_2 = \bar{r}{^{A}\mathbf{n}(ii-1)}$\\
+			$\mathbf{p}_3 = \bar{r}{^{A}\mathbf{n}(ii-1-n_{steps})}$\\
+			\begin{equation}
+				\mathbf{p}_{update} = 
+				\begin{bmatrix}
+					\frac{1}{|\mathbf{p}_1-\mathbf{p}_0|} & 0 & 0\\
+					0 & \frac{1}{|\mathbf{p}_2-\mathbf{p}_1|} & 0\\
+					0 & 0 & \frac{1}{|\mathbf{p}_3-\mathbf{p}_2|}
+				\end{bmatrix}
+				(\bar{\mathbf{p}}_{measured}-\bar{\mathbf{p}}_{predicted})
+			\end{equation}
+			
 			figure~\ref{fig:position}
 			\input{Figures/fig_positionupdate}
 			
 		\textbf{Size update:}\\
-			if different pattern, delta s = dot(translation vector, scan direction)\\
-			if same pattern, delta s = vector(mean measured points - mean predicted points)\\
-			EQUATIONS\\
-			DIAGRAM\\
+			If different pattern $\{a_{predicted}\} \neq \{a_{measured}\}$\\
+			At least 1 of each: $|a_{predicted}| \geq 1$ \and $|a_{measured}| \geq 1$\\
+			\begin{equation}
+				s_{update} = \mathbf{p}_{update} \cdot {^{A}\mathbf{n}(ii)}
+			\end{equation}
 			figure~\ref{fig:size1}
 			\input{Figures/fig_sizeupdate1}
 			
+			If same pattern $\{a_{predicted}\} = \{a_{measured}\}$\\
+			At least 1 of each: $|a_{predicted}| \geq 1$ \and $|a_{measured}| \geq 1$\\
+			delta s = vector(mean measured points - mean predicted points)\\
+			\begin{equation}
+				s_{update} = mean(r_{predicted}-r_{measured})
+			\end{equation}	
+				
 			figure~\ref{fig:size2}
 			\input{Figures/fig_sizeupdate2}
 			
 		\textbf{Update scheme:}\\
+					
 			Can update S,T,W of state (or perhaps some combination)\\
 			Scale rotation axis, translation vector, delta s depending on if update is via S,T,W\\
-			EQUATIONS\\
-			
+			S: r to R, rotate orientation. Shift origin position with translation vector.\\
+			T: add r to angular velocity. Add v to linear velocity.\\
+			W: add r to angular acceleration. Add v to linear acceleration.
+
+			TABLE - weights from config.
+			\input{Tables/tab_updateweights}
 			
 \section{Results}
 plots for different initial conditions \& kinds of motion
