@@ -31,6 +31,7 @@ Observer simulation: each time step, update estimate based on estimated state (k
 	\SetKwFunction{updatestate}{updatestate}
 	\SetKwFunction{identifyobject}{identifyobject}	
 	\KwData{\\
+	%CHANGE THESE TO LETTERS
 	$simulationLength$ - no. steps in simulation\\
 	$sensorState$ - pose and scan direction\\
 	$environmentState$ - points for cube and background, triangles\\
@@ -306,7 +307,7 @@ See figure~\ref{fig:cubeproblem}
 		   $\mathbf{d}$ - ray direction vector\\
 		   $\mathbf{P}$ - cube in inertial frame \\
 		   $\mathbf{T}$ - triangle matrix}
-	\Output{$x$ - True/False - whether object measured\\
+	\Output{$x$ - True/False - measurement corresponds to object\\
 			$r$ - distance to object in m\\
 			$\theta$ - incidence angle in rad\\
 			$t$ - index of triangle hit}
@@ -322,12 +323,12 @@ See figure~\ref{fig:cubeproblem}
 		$\mathbf{V}_3 \longleftarrow \mathbf{P}[\mathbf{T}[:,3]]$\\
 		$\mathbf{E}_1 \longleftarrow \mathbf{V}_2 - \mathbf{V}_1$\\
 		$\mathbf{E}_2 \longleftarrow \mathbf{V}_3 - \mathbf{V}_1$\\
-		$n = \size(\mathbf{V}_1,1)$\\
-		$\mathbf{A} \longleftarrow \mathbf{o}_{[n \times 1]} - \mathbf{P}$\\
+		$m = \size(\mathbf{V}_1,1)$\\
+		$\mathbf{A} \longleftarrow \mathbf{o}_{[m \times 1]} - \mathbf{P}$\\
 		\tcc{determinant}
-		$\mathbf{B} \longleftarrow \mathbf{d}_{[n \times 1]} \times \mathbf{E}_2$ *(along dim 2)\\
+		$\mathbf{B} \longleftarrow \mathbf{d}_{[m \times 1]} \times \mathbf{E}_2$ *(along dim 2)\\
 		$\bm{\delta} \longleftarrow \mathbf{E}_1 \cdot \mathbf{B}$ *(along dim 2)\\		
-		$\mathbf{y} \longleftarrow |\bm{\delta}|\leq\mathbf{0}$
+		$\mathbf{y} \longleftarrow |\bm{\delta}|\leq\mathbf{0}$\\
 		$\bm{\delta}[\mathbf{y}] \longleftarrow \mathbf{NaN}$\\
 		\tcc{barycentric coordinates}
 		$\mathbf{u} \longleftarrow (\mathbf{A} \cdot \mathbf{B})/\bm{\delta}$ *(along dim 2)\\
