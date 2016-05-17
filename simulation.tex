@@ -241,7 +241,7 @@ t' = \mod(t,1/d\theta)\:d\theta
 
 Scan direction in inertial frame required for measurement simulation:
 \begin{equation}
-	{^{F}\mathbf{s'}(t)} = \mathbf{X}_s(t)\:{^{A}\mathbf{s'}(t)}
+	{^{F}\mathbf{d'}(t)} = \mathbf{X}_s(t)\:{^{A}\mathbf{d'}(t)}
 \end{equation}
 
 \subsection{Environment Modelling}
@@ -451,13 +451,13 @@ See figure~\ref{fig:cubeproblem}
 		\textbf{Position update:}\\
 			Require at least 1 range in prediction and measurement:\\
 			$|\hat{a}| \geq 1$ \and $|\tilde{a}| \geq 1$\\
-			Average to get $\bar{\mathbf{p}}_{predicted}$ and $\bar{\mathbf{p}}_{measured}$\\
+			Average to get $\hat{\bm{\mu}}_\mathbf{p}$ and $\tilde{\bm{\mu}}_\mathbf{p}$\\
 			Scale translation vector - taking into account geometry of intersection points and sensor position.
 			Get mean of all predicted and measured ranges = $\mu_{r}$. Need valid scan direction ie within FOV for $ii,ii-1,ii-1-n_{scans}$
 			$\mathbf{p}_0 = \mathbf{p}_s(t) = {^{F}_{F}\mathbf{p}^{}_{A}(t)}$\\
-			$\mathbf{p}_1 = \mu_{r}{^{A}\mathbf{s}(ii)}$\\	
-			$\mathbf{p}_2 = \mu_{r}{^{A}\mathbf{s}(ii-1)}$\\
-			$\mathbf{p}_3 = \mu_{r}{^{A}\mathbf{s}(ii-1-n_{scans})}$\\
+			$\mathbf{p}_1 = \mu_{r}{^{F}\mathbf{s}(ii)}$\\	
+			$\mathbf{p}_2 = \mu_{r}{^{F}\mathbf{s}(ii-1)}$\\
+			$\mathbf{p}_3 = \mu_{r}{^{F}\mathbf{s}(ii-1-n_{scans})}$\\
 			\begin{equation}
 				\mathbf{p}_{update} = 
 				\begin{bmatrix}
@@ -465,26 +465,26 @@ See figure~\ref{fig:cubeproblem}
 					0 & \frac{1}{|\mathbf{p}_2-\mathbf{p}_1|} & 0\\
 					0 & 0 & \frac{1}{|\mathbf{p}_3-\mathbf{p}_2|}
 				\end{bmatrix}
-				(\bar{\mathbf{p}}_{measured}-\bar{\mathbf{p}}_{predicted})
+				(\tilde{\bm{\mu}}_\mathbf{p}-\hat{\bm{\mu}}_\mathbf{p})
 			\end{equation}
 			
 			figure~\ref{fig:position}
 			\input{Figures/fig_positionupdate}
 			
 		\textbf{Size update:}\\
-			If different pattern $\{a_{predicted}\} \neq \{a_{measured}\}$\\
-			At least 1 of each: $|a_{predicted}| \geq 1$ \and $|a_{measured}| \geq 1$\\
+			If different pattern $\hat{a} \neq \tilde{a}$\\
+			At least 1 of each: $|\hat{a}| \geq 1$ \and $|\tilde{a}| \geq 1$\\
 			\begin{equation}
-				s_{update} = \mathbf{p}_{update} \cdot {^{A}\mathbf{n}(ii)}
+				s_{update} = \mathbf{p}_{update} \cdot {^{F}\mathbf{d}(ii)}
 			\end{equation}
 			figure~\ref{fig:size1}
 			\input{Figures/fig_sizeupdate1}
 			
-			If same pattern $\{a_{predicted}\} = \{a_{measured}\}$\\
-			At least 1 of each: $|a_{predicted}| \geq 1$ \and $|a_{measured}| \geq 1$\\
-			delta s = vector(mean measured points - mean predicted points)\\
+			If same pattern $\hat{a} = \tilde{a}$\\
+			At least 1 of each: $|\hat{a}| \geq 1$ \and $|\tilde{a}| \geq 1$\\
+			delta s = mean measured ranges - mean predicted ranges\\
 			\begin{equation}
-				s_{update} = mean(r_{predicted}-r_{measured})
+				s_{update} = \tilde{\mu}_r - \hat{\mu}_r
 			\end{equation}	
 				
 			figure~\ref{fig:size2}

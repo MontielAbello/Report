@@ -497,12 +497,12 @@
 		
 	\subsubsection{Scanning Laser Rangefinder Dynamic Model}
 		A scanning laser rangefinder fixed to a moving rigid body. State is same as moving rigid body defined above (S,T,W)\\+\\
-		Unit vector defined in the body fixed frame  - ${^{A}\mathbf{s}(t)} \in T\mathbb{R}^3$.\\+\\
-		Range $r(t) \in \mathbb{R}^{0+}$, defining range from $^{F}_{F}\mathbf{p}^{}_{A}(t)$ to nearest object in environment in direction ${^{F}\mathbf{n}(t)} = {^{F}_{F}\mathbf{R}^{}_{A}(t)}\:{^{A}\mathbf{s}(t)}$
+		Unit vector defined in the body fixed frame  - ${^{A}\mathbf{d}(t)} \in T\mathbb{R}^3$.\\+\\
+		Range $r(t) \in \mathbb{R}^{0+}$, defining range from $^{F}_{F}\mathbf{p}^{}_{A}(t)$ to nearest object in environment in direction ${^{F}\mathbf{d}(t)} = {^{F}_{F}\mathbf{R}^{}_{A}(t)}\:{^{A}\mathbf{d}(t)}$
 		
 		Scan direction in sensor frame is vector rotating at constant speed about $z$-axis, with unit size inside sensor's field-of-view and zero size outside it. Measurements returned at regular, discrete times - when $t$ is an integer multiple of $\delta\tau$:
 		\begin{equation}
-		^{A}\mathbf{s}(t) =
+		^{A}\mathbf{d}(t) =
 			\begin{cases} 
 			      \hfill \begin{bmatrix}
 			      		\cos(-\theta + 2\pi t') \\
