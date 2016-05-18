@@ -459,7 +459,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			$|\hat{a}| \geq 3$ and $|\tilde{a}| \geq 3$. If all four indexes are present, the ranges from the last time step $(ii-1-n_{scans})$ is ignored.
 	
 			For both the measurement and prediction, the points of intersection $^{F}\mathbf{P}(a)$ between the scanning directions ${^{F}\mathbf{D}(a)}$ and the cube are computed using the range measurements $\mathbf{r}(a)$.
-			\begin{equation}
+			\begin{equation} \label{eq:points}
 				^{F}\mathbf{P}(a) = {^{F}\mathbf{D}(a)}\mathbf{r}(a)
 			\end{equation}
 			The normal to the plane formed by the three points is then computed.
@@ -472,30 +472,36 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			\end{equation}
 			To update the screw matrix $\hat{\mathbf{S}}_c$, $\mathbf{r}_{update}$ is converted to a rotation matrix $\mathbf{R}_{update}$ with Rodrigues' rotation formula (equation \ref{eq:rodrigues}). The correction is then applied as:
 			\begin{equation}
-				\hat{\mathbf{R}}_{c}(k+1) = r_{scale}\mathbf{R}_{update}\hat{\mathbf{R}}_{c}(k)
+				\hat{\mathbf{R}}_{c}(k+1) = R_{scale}\mathbf{R}_{update}\hat{\mathbf{R}}_{c}(k)
 			\end{equation}
-			To update via the screw or wrench, $\mathbf{r}_{update}^{\wedge}$ is scaled and then added to $\hat{\mathbf{T}}_c$ or $\hat{\mathbf{W}}_c$ respectively.
+			To update via the screw or wrench, $\mathbf{r}_{update}^{\wedge}$ is scaled and then added to the angular velocity or angular acceleration respectively.
 			\begin{equation}
-				\hat{\mathbf{T}}_{c}(k+1) = \hat{\mathbf{T}}_{c}(k) + r_{scale}\mathbf{r}_{update}^{\wedge}
+				\hat{\bm{\omega}}_{c}^{\wedge}(k+1) = \hat{\bm{\omega}}_{c}^{\wedge}(k) + \omega_{scale}\mathbf{r}_{update}^{\wedge}
 			\end{equation}
 			\begin{equation}
-				\hat{\mathbf{W}}_{c}(k+1) = \hat{\mathbf{W}}_{c}(k) + r_{scale}\mathbf{r}_{update}^{\wedge}
+				\hat{\bm{\alpha}}_{c}^{\wedge}(k+1) = \hat{\bm{\alpha}}_{c}^{\wedge}(k) + 	\alpha_{scale}\mathbf{r}_{update}^{\wedge}
 			\end{equation}
 			
-			The scale factor of $r_{scale}$ depends angle depends on whether $\mathbf{r}_{update}$ is applied via $\hat{\mathbf{S}}_c$, $\hat{\mathbf{T}}_c$ or $\hat{\mathbf{W}}_c$.
-			
-			
-			
+			The scale factor depends angle depends on whether $\mathbf{r}_{update}$ is applied via $\hat{\mathbf{S}}_c$, $\hat{\mathbf{T}}_c$ or $\hat{\mathbf{W}}_c$.
+				
 		\textbf{Position update:}\\
-			Require at least 1 range in prediction and measurement:\\
-			$|\hat{a}| \geq 1$ \and $|\tilde{a}| \geq 1$\\
-			Average to get $\hat{\bm{\mu}}_\mathbf{p}$ and $\tilde{\bm{\mu}}_\mathbf{p}$\\
-			Scale translation vector - taking into account geometry of intersection points and sensor position.
-			Get mean of all predicted and measured ranges = $\mu_{r}$. Need valid scan direction ie within FOV for $ii,ii-1,ii-1-n_{scans}$
-			$\mathbf{p}_0 = \mathbf{p}_s(t) = {^{F}_{F}\mathbf{p}^{}_{A}(t)}$\\
-			$\mathbf{p}_1 = \mu_{r}{^{F}\mathbf{s}(ii)}$\\	
-			$\mathbf{p}_2 = \mu_{r}{^{F}\mathbf{s}(ii-1)}$\\
-			$\mathbf{p}_3 = \mu_{r}{^{F}\mathbf{s}(ii-1-n_{scans})}$\\
+			The method used to correct the position of $\hat{\mathbf{X}}_c$ is shown in Figure~\ref{fig:position}. \input{Figures/fig_positionupdate}
+			In order to estimate the position of the cube, at least 1 range measurement is required from both the prediction and measurement: $|\hat{a}| \geq 1$ \and $|\tilde{a}| \geq 1$. Additionally, scan directions at time steps $ii,ii-1$ and $ii-1-n_{scans}$ are required. The scan direction ${^{F}\mathbf{d}(t)}$ must be within the sensor's field of view at these time steps.
+			
+			The points of intersection are calculated using equation \ref{eq:points}. The average of these points is taken to computed to give the mean estimated position $\hat{\bm{\mu}}_\mathbf{p}$ and the mean measured position $\tilde{\bm{\mu}}_\mathbf{p}$.
+			
+			The $x,y$ and $z$ components of the scan directions ${^{F}\mathbf{D}(a)}$ may very significantly in size due to the scanning behaviour of the sensor. It is necessary to scale the position update vector according to these components.
+			The mean of all predicted and measured ranges $\mu_{r}$ is computed. Four points $\mathbf{p}_0, \mathbf{p}_1,\mathbf{p}_2$ and $\mathbf{p}_3$ are computed:			
+			\begin{equation}
+				\begin{array}{lcl}
+					\mathbf{p}_0 & = & \mathbf{p}_s(t) = {^{F}_{F}\mathbf{p}^{}_{A}(t)}\\
+					\mathbf{p}_1 & = & \mu_{r}{^{F}\mathbf{d}(ii)}\\
+					\mathbf{p}_2 & = & \mu_{r}{^{F}\mathbf{d}(ii-1)}\\
+					\mathbf{p}_3 & = & \mu_{r}{^{F}\mathbf{d}(ii-1-n_{scans})}\\
+				\end{array}
+			\end{equation}
+			
+			The update vector is computed by scaling the mean intersection points with these four points:
 			\begin{equation}
 				\mathbf{p}_{update} = 
 				\begin{bmatrix}
@@ -504,11 +510,19 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 					0 & 0 & \frac{1}{|\mathbf{p}_3-\mathbf{p}_2|}
 				\end{bmatrix}
 				(\tilde{\bm{\mu}}_\mathbf{p}-\hat{\bm{\mu}}_\mathbf{p})
+			\end{equation}			
+			
+			The screw, twist and wrench are corrected using $\mathbf{p}_{update}$. The scaling factor used depends on whether the update is performed via the screw, twist or wrench.
+			\begin{equation}
+				\hat{\mathbf{p}}_{c}(k+1) = \hat{\mathbf{p}}_{c}(k) + p_{scale}\mathbf{p}_{update}
 			\end{equation}
-			
-			figure~\ref{fig:position}
-			\input{Figures/fig_positionupdate}
-			
+			\begin{equation}
+				\hat{\mathbf{v}}_{c}(k+1) = \hat{\mathbf{v}}_{c}(k) + v_{scale}\mathbf{p}_{update}
+			\end{equation}
+			\begin{equation}
+				\hat{\mathbf{a}}_{c}(k+1) = \hat{\mathbf{a}}_{c}(k) + a_{scale}\mathbf{p}_{update}
+			\end{equation}
+						
 		\textbf{Size update:}\\
 			If different pattern $\hat{a} \neq \tilde{a}$\\
 			At least 1 of each: $|\hat{a}| \geq 1$ \and $|\tilde{a}| \geq 1$\\
