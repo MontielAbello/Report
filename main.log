@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  18 MAY 2016 23:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  18 MAY 2016 23:20
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -706,7 +706,11 @@ gle.tex")
 
 LaTeX Warning: Float too large for page by 86.66238pt on input line 354.
 
-[28] [29]
+
+Underfull \vbox (badness 3492) has occurred while \output is active []
+
+ [28]
+[29]
 Underfull \hbox (badness 10000) in paragraph at lines 420--421
 
  []
@@ -862,10 +866,10 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15352 strings out of 493921
- 302699 string characters out of 3147261
+ 15358 strings out of 493921
+ 302817 string characters out of 3147261
  382971 words of memory out of 3000000
- 18264 multiletter control sequences out of 15000+200000
+ 18270 multiletter control sequences out of 15000+200000
  20048 words of font info for 74 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,23n,58p,776b,11488s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -890,7 +894,7 @@ nts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on main.pdf (47 pages, 724130 bytes).
+Output written on main.pdf (47 pages, 724451 bytes).
 PDF statistics:
  257 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
