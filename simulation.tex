@@ -390,7 +390,6 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 		f_{UBG}(r,\theta,\phi) = 
 	\end{equation}
 	
-	
 \subsection{Observer Implementation}
 	\subsubsection{Estimate: internal model}
 		The state of the cube at each time step is estimated using the numerical integration method described in section \ref{integration}.
@@ -432,32 +431,60 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 		\caption{Target/background object separation} \label{alg:object}
 		\end{algorithm}
 		
-	\subsubsection{Update}
+	\subsubsection{Update} 
+		The cube state estimate $\hat{\mathbf{X}}_c$ is updated using the previous cube state estimate, current sensor state, range measurements and predicted range measurements. 
+		\begin{equation}
+			\hat{\mathbf{X}}_{c}(k+1) = f(\mathbf{X}_{s}(t),\hat{\mathbf{X}}_{c}(k),r(t),\hat{r}(t))
+		\end{equation}	
+		The pose of $\hat{\mathbf{X}}_c$ is corrected by adjusting $\hat{\mathbf{S}}_c$, $\hat{\mathbf{T}}_c$ or $\hat{\mathbf{W}}_c$, or some combination of the three.
+		The orientation is adjusted by rotating  about an axis $\mathbf{r}_{update}$. The position is adjusted by translating in the direction of $\mathbf{p}_{update}$
+		$\mathbf{r}_{update}$ and $\mathbf{p}_{update}$ are scaled differently, depending on whether they are applied to $\hat{\mathbf{S}}_c$, $\hat{\mathbf{T}}_c$ or $\hat{\mathbf{W}}_c$.
+		The size update $s_{update}$ is independent of the pose update scheme used.
+
+		EXAMPLE - will put tables like this in the results
+		\input{Tables/tab_updateweights}
+		
 		\textbf{Input ranges:}\\
-			Use ranges according to ordered sequence of indexes $a$. ie if all present - quadrilateral with points at corners:
+			A set of four range measurements forming a quadrilateral are used in the state update. The four ranges are chosen with an ordered sequence of indexes $a$. At a time $ii$, the set of time steps used is
 			\begin{equation}
 				a = \{ii,(ii-1),(ii-n_{scans}),(ii-1-n_{scans})\}
 			\end{equation}
-		
+			At a time step $ii$, it is possible that the measured or predicted ranges do not exist for some time steps in $a$, as the range may have corresponded to the background rather than the cube.
+			Thus, the measured indexes $\tilde{a}$ and predicted indexes $\hat{a}$ will be subsets of $a$, but not necessarily congruent to $a$.
+			
 		\textbf{Orientation update:}\\
-			Require at least 3 ranges in prediction and measurement. ie
-			$|\hat{a}| \geq 3$ and $|\tilde{a}| \geq 3$
+			The method used to correct the orientation of the cube state estimate $\hat{\mathbf{X}}_c$ is shown in Figure~\ref{fig:orientation}. \input{Figures/fig_orientationupdate}
+						
+			In order to estimate the orientation of the cube, at least 3 ranges are required from both the prediction and measurement:
+			$|\hat{a}| \geq 3$ and $|\tilde{a}| \geq 3$. If all four indexes are present, the ranges from the last time step $(ii-1-n_{scans})$ is ignored.
 	
-			From range and direction, compute coordinates of intersection\\
+			For both the measurement and prediction, the points of intersection $^{F}\mathbf{P}(a)$ between the scanning directions ${^{F}\mathbf{D}(a)}$ and the cube are computed using the range measurements $\mathbf{r}(a)$.
 			\begin{equation}
-				\mathbf{P}(a_k) = \mathbf{R}(a_k){^{F}\mathbf{N}(a_k)}
+				^{F}\mathbf{P}(a) = {^{F}\mathbf{D}(a)}\mathbf{r}(a)
 			\end{equation}
+			The normal to the plane formed by the three points is then computed.
 			\begin{equation}
-				\mathbf{n} = [\mathbf{P}(a_2) - \mathbf{P}(a_1)] \times [\mathbf{p}(a_3) - \mathbf{p}(a_1)]
+				\mathbf{n} = [{^{F}\mathbf{P}}(a_2) - {^{F}\mathbf{P}}(a_1)] \times [{^{F}\mathbf{P}}(a_3) - {^{F}\mathbf{P}}(a_1)]
 			\end{equation}
-			Rotation axis from cross product of predicted and measured normals:\\
+			The axis $\mathbf{r}_{update}$ that the estimated cube orientation $\hat{\mathbf{R}}_c$ will be rotated by is computed by taking the cross product of the predicted and measured normals:\\
 			\begin{equation}
 				\mathbf{r}_{update} = \hat{\mathbf{n}} \times \tilde{\mathbf{n}}
 			\end{equation}
-			Rotation angle determined in settings. Table REF shows settings	
+			To update the screw matrix $\hat{\mathbf{S}}_c$, $\mathbf{r}_{update}$ is converted to a rotation matrix $\mathbf{R}_{update}$ with Rodrigues' rotation formula (equation \ref{eq:rodrigues}). The correction is then applied as:
+			\begin{equation}
+				\hat{\mathbf{R}}_{c}(k+1) = r_{scale}\mathbf{R}_{update}\hat{\mathbf{R}}_{c}(k)
+			\end{equation}
+			To update via the screw or wrench, $\mathbf{r}_{update}^{\wedge}$ is scaled and then added to $\hat{\mathbf{T}}_c$ or $\hat{\mathbf{W}}_c$ respectively.
+			\begin{equation}
+				\hat{\mathbf{T}}_{c}(k+1) = \hat{\mathbf{T}}_{c}(k) + r_{scale}\mathbf{r}_{update}^{\wedge}
+			\end{equation}
+			\begin{equation}
+				\hat{\mathbf{W}}_{c}(k+1) = \hat{\mathbf{W}}_{c}(k) + r_{scale}\mathbf{r}_{update}^{\wedge}
+			\end{equation}
 			
-			figure~\ref{fig:orientation}
-			\input{Figures/fig_orientationupdate}
+			The scale factor of $r_{scale}$ depends angle depends on whether $\mathbf{r}_{update}$ is applied via $\hat{\mathbf{S}}_c$, $\hat{\mathbf{T}}_c$ or $\hat{\mathbf{W}}_c$.
+			
+			
 			
 		\textbf{Position update:}\\
 			Require at least 1 range in prediction and measurement:\\
@@ -500,17 +527,6 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 				
 			figure~\ref{fig:size2}
 			\input{Figures/fig_sizeupdate2}
-			
-		\textbf{Update scheme:}\\
-					
-			Can update S,T,W of state (or perhaps some combination)\\
-			Scale rotation axis, translation vector, delta s depending on if update is via S,T,W\\
-			S: r to R, rotate orientation. Shift origin position with translation vector.\\
-			T: add r to angular velocity. Add v to linear velocity.\\
-			W: add r to angular acceleration. Add v to linear acceleration.
-
-			TABLE - weights from config.
-			\input{Tables/tab_updateweights}
 			
 \section{Results}
 plots for different initial conditions \& kinds of motion
