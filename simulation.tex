@@ -284,7 +284,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	Given the screw matrix (in the inertial frame) and scan direction (in the body fixed frame) of the sensor, the position and scan direction in the inertial frame are determined.
 	The distance to the nearest environment object from this point, along the scan direction is determined with the M{\"o}ller-Trumbore ray-triangle intersection algorithm, shown in Algorithm \ref{intersectionalgorithm}.
 	
-	Figure \ref{fig:raytriangle} shows a simplified scenario involving the intersection of a ray with a single triangle. In practice, the algorithm is vectorised to compute the intersections with a set of triangles.
+	Figure \ref{fig:raytriangle} shows a simplified scenario involving the intersection of a ray with a single triangle. In practice, the algorithm is vectorised to compute the intersections with a \textit{set} of triangles.
 	\input{Figures/fig_raytriangle} 
 	
 	
@@ -375,7 +375,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	\end{equation}
 	
 	
-\subsection{Observer implementation}
+\subsection{Observer Implementation}
 	\subsubsection{Estimate: internal model}
 		The state of the cube at each time step is estimated using the numerical integration method described in section \ref{integration}.
 	
