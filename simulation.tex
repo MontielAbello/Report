@@ -205,12 +205,12 @@ The sensor rotates between $-\phi$ and $\phi$ about the $y$-axis of inertial fra
 The scanning behaviour of the sensor is modelled with the vector ${^{A}\mathbf{d}(t)}$.
 To simulate a 2D scanning sensor the following parameters are used:
 \begin{itemize}
-\item field of view $\mathbf{\Theta}$: The vector ${^{A}\mathbf{d}(t)}$ rotates anti-clockwise about the $z$ axis of the sensor frame $\{A\}$. Measurements are only taken when the scan angle about is between $-\theta$ and $\theta$ about the $-z$-axis of the sensor frame $\{A\}$.
-\item number of scans $n_{scans}$: This represents the number of scan angles in a single revolution. Since measurements are limited by the field of view of the sensor, the actual number of measurements per second is $\frac{2\theta}{2\pi}n_{scans}$. The angular resolution is $d\theta = \dfrac{2\pi}{n_{scans}}$.
+\item field of view $\mathbf{\Theta}$: The vector ${^{A}\mathbf{d}(t)}$ rotates anti-clockwise about the $z$ axis of the sensor frame $\{A\}$. Measurements are only taken when the scan angle about is between $-\theta$ and $\theta$ about the $-z$-axis of the sensor frame $\{A\}$. In practice, the field of view is implemented as the start angle $-\theta$, direction of rotation and angular range $2\theta$.
+\item number of scans $n_{scans}$: This represents the number of scan angles in a single revolution. Since measurements are limited by the field of view of the sensor, the actual number of measurements per second is $n_{ranges} = \frac{2\theta}{2\pi}n_{scans}$. The angular resolution is $d\theta = \dfrac{2\pi}{n_{scans}}$.
 \item revolutions per second $\Omega$: This is measured in Hz and gives the length of each time step $d\tau = \dfrac{1}{n_{scans}\Omega}$
 \item $n_{loops}$: The number of back and forth repeats of the sensor trajectory.
 \end{itemize}
-From these parameters the scanning direction ${^{A}\mathbf{d}(t)}$ is created. At each time $t$, ${^{A}\mathbf{s}(t)}$ is either a unit vector indicating the direction of measurement in the sensor frame, or has $\mathbf{0}$ magnitude, corresponding to when ${^{A}\mathbf{d}(t)}$ is outside the field of view and the sensor is not returning a measurement.
+From these parameters the scanning direction ${^{A}\mathbf{d}(t)}$ is created. At each time $t$, ${^{A}\mathbf{d}(t)}$ is either a unit vector indicating the direction of measurement in the sensor frame, or has $\mathbf{0}$ magnitude, corresponding to when ${^{A}\mathbf{d}(t)}$ is outside the field of view and the sensor is not returning a measurement.
 
 \begin{equation}
 ^{A}\mathbf{d}(t) =
@@ -228,7 +228,8 @@ where
 t' = \mod(t,1/d\theta)\:d\theta
 \end{equation}
 
-*THIS IS NOT VERY CLEAR. DIAGRAM HERE
+Figure \ref{fig:scanningparameters} shows the frame $\{A\}$ fixed to the sensor and the scan direction ${^{A}\mathbf{d}(t)}$. At time $t' = 0$, the first scan direction ${^{A}\mathbf{d}_0}$ has an angular displacement of $-\theta$ about the $z$-axis from the forward facing $x$-direction. After each time step $d\tau$, the scan direction rotates by $d\theta$ about the $z$-axis. There are $n_{ranges}$ scan directions within the field of view of the sensor. The entire revolution is divided into $n_{scans}$ scan directions.
+\input{Figures/fig_scanning}
 
 To simulate range measurements, the scan direction is required in the inertial frame $\{F\}$. This is computed by multiplying with the screw matrix of the sensor.
 \begin{equation}
@@ -249,7 +250,7 @@ The cube points in body frame $\{B\}$ are represented with the matrix ${^{B}\mat
 \begin{equation}
 	{^{B}\mathbf{P}} = \frac{1}{2}s
 	\begin{bmatrix*}[r]
-		-1  &  -1  &  -1  &  -1  &   1  &   1  &   1  &  1 \\
+		-1  &  -1  &  -1  &  -1  &   1  &   1  &   1  &  \hspace{0.75em} 1 \\
 		-1  &  -1  &   1  &   1  &  -1  &  -1  &   1  &  1 \\
 		-1  &   1  &  -1  &   1  &  -1  &   1  &  -1  &  1 
 	\end{bmatrix*}

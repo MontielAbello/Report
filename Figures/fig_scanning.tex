@@ -1,0 +1,47 @@
+\begin{figure}
+	\tdplotsetmaincoords{60}{-130}
+	%\tdplotsetmaincoords{0}{0}
+	\begin{tikzpicture} [scale = 2,tdplot_main_coords] %fix main coords!!!
+
+		%field of view
+		\path [fill={rgb:black,1;white,3}] (2,1,0) arc (45:135:2.828) -- (0,0,0) -- (2,1,0);
+		\draw [dashed,->](0, 0, 0)--(-4, 2, 0);
+		\draw [dashed,->](0, 0, 0)--(4, 2, 0);
+		\draw [dashed,->](0, 0, 0)--(-3.8, 2.358, 0);
+		\draw [dashed,->](0, 0, 0)--(-3, 3.317, 0);
+		\draw [dashed,->](0, 0, 0)--(-4.18, 1.589, 0);
+		\draw [dashed,->](0, 0, 0)--(4.18, 1.589, 0);
+		\draw[dashed] (2,1,0) arc (45:135:2.828);
+		\draw[<->] (0.5,0.25,0) arc (45:90:0.707);
+		\draw[<->] (-0.5,0.25,0) arc (135:90:0.707);
+		\draw[<->] (-3.2,1.21,0) arc (165:145:1);
+		\draw[<->] (-3.05,1.53,0) arc (145:126:1);
+		\draw[<->] (3.2,1.21,0) arc (15:35:1);
+		
+		%Frame {A}
+		\draw [thick,->](0, 0, 0)--(-3, 0, 0) node[anchor=west]{$y$};
+		\draw [thick,->](0, 0, 0)--(0, 3, 0) node[anchor=north east]{$x$};
+		\draw [thick,->](0, 0, 0)--(0, 0, 1.5) node[anchor=south]{$z$};
+		
+		%labels
+		\node [black,anchor=north west] at (0.5,0.5,0) {$\theta$};
+		\node [black,anchor=north] at (-0.05,0.5,0) {$\theta$};
+		\node [black,anchor=south east] at (-3.2,1.21,0) {$d\theta$};
+		\node [black,anchor=south east] at (-3.05,1.53,0) {$d\theta$};
+		\node [black,anchor=east] at (3.2,1.21,0) {$d\theta$};
+		\node [black,anchor=west] at (0.1,-0.2,0) {$\{A\}$}; 
+		\node [black,anchor=west] at (-4.18, 1.59, 0) {$^{A}\mathbf{d}_{n_{scans}}$}; 
+		\node [black,anchor=north] at (-4.05,1.95,0) {$^{A}\mathbf{d}_{0}$}; 
+		\node [black,anchor=north] at (-3.8, 2.358, 0) {$^{A}\mathbf{d}_{1}$}; 
+		\node [black] at (-3.7, 3.1, 0) {$\bm{\cdots}$}; 
+		\node [black,anchor=north] at (-3, 3.317, 0) {$^{A}\mathbf{d}_{k}$}; 
+		\node [black,anchor=east] at (4,2,0) {$^{A}\mathbf{d}_{n_{ranges}}$};
+		\node [black,anchor=south east] at (4.18, 1.59, 0) {$^{A}\mathbf{d}_{n_{ranges}+1}$}; 
+		
+	\end{tikzpicture}
+	  \caption{Scanning parameters}
+	  \label{fig:scanningparameters}
+\end{figure}
+
+
+

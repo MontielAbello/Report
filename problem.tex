@@ -70,7 +70,7 @@ For simulated data, only the first assumption is necessary. For experimental dat
 
 The aim is to design an observer which estimates the state of the cube from the pose of the sensor, as well as $\mathbf{n}$ and $r$. ie observer function $f$ such that:
 \begin{equation}
-	\hat{\mathbf{X}}_{c} = f(\mathbf{X}_{s},r(t)-\hat{r}(t))
+	\hat{\mathbf{X}}_{c}(k+1) = f(\mathbf{X}_{s}(t),\hat{\mathbf{X}}_{c}(k),r(t),\hat{r}(t))
 \end{equation}
 
 *convergence - how to quantify performance?
