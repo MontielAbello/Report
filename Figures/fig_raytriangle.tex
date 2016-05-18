@@ -1,0 +1,28 @@
+\begin{figure}
+	\tdplotsetmaincoords{60}{-20}
+	\begin{tikzpicture} [scale = 2,tdplot_main_coords] %fix main coords!!!
+		
+		%triangle
+		\node[draw,circle,inner sep=1.5pt,fill] at ( 1,8,-1) {};
+		\node[draw,circle,inner sep=1.5pt,fill] at ( 0,8, 1) {};
+		\node[draw,circle,inner sep=1.5pt,fill] at (-1,8,-1) {};
+		\draw ( 1,8,-1)--( 0,8, 1); 
+		\draw ( 1,8,-1)--(-1,8,-1);
+		\draw ( 0,8, 1)--(-1,8,-1);
+		%ray
+		\draw [dashed,->](0, 0, 0)--(-1, 8, 1);
+		%computation stuff
+		
+		%Frame {A}
+		\draw [thick,->](0, 0, 0)--(-1, 0, 0) node[anchor=east]{$y$};
+		\draw [thick,->](0, 0, 0)--(0, 1, 0) node[anchor=south west]{$x$};
+		\draw [thick,->](0, 0, 0)--(0, 0, 1) node[anchor=south]{$z$};
+		\node [black,anchor=west] at (0,0,0) {$\{A\}$}; 
+		
+	\end{tikzpicture}
+	  \caption{Ray-triangle intersection}
+	  \label{fig:raytriangle}
+\end{figure}
+
+
+

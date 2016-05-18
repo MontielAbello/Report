@@ -284,9 +284,11 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	Given the screw matrix (in the inertial frame) and scan direction (in the body fixed frame) of the sensor, the position and scan direction in the inertial frame are determined.
 	The distance to the nearest environment object from this point, along the scan direction is determined with the M{\"o}ller-Trumbore ray-triangle intersection algorithm, shown in Algorithm \ref{intersection}.
 	
-	EXPLANATION OF ALGORITHM \ref{intersection}
+	EXPLANATION OF ALGORITHM \ref{intersectionalgorithm}
 	
 	*DIFFICULT TO VISUALISE. INCLUDE DIAGRAM SHOWING INTERSECTION OF RAY AND A SINGLE TRIANGLE
+	Figure \ref{fig:raytriangle}
+	\input{Figures/fig_raytriangle}
 
 	\IncMargin{2em}
 	\begin{algorithm}
@@ -348,7 +350,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			$\theta = \min(\theta,\pi-\theta)$
 		}
 	}
-	\caption{M{\"o}ller-Trumbore ray-triangle intersection \label{intersection}}
+	\caption{M{\"o}ller-Trumbore ray-triangle intersection} \label{intersectionalgorithm}
 	\end{algorithm}
 	
 	\subsubsection{Object Surface}
