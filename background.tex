@@ -126,27 +126,41 @@
 		Group elements of $\textbf{SO}(3)$ can be represented using a special subset of $3 \times 3$ invertible matrices and in this case, forms a matrix Lie group. Several rotation representations are described in REF, but the theory presented below only applies to matrix Lie groups which rely on the rotation matrix representation for group elements.
 		
 		\textbf{Lie algebra}\\
-		The Lie algebra $\mathfrak{so}(3)$ is a vector space whose elements correspond to an angular velocity. These elements can be represented with $3 \times 3$ skew-symmetric matrices $[\bm{\omega}]_{\times}$, where $\bm{\omega}$ is a 3-vector representing an angular velocity. For
+		%CROSS MATRIX VERSION
+		\begin{comment}
+			The Lie algebra $\mathfrak{so}(3)$ is a vector space whose elements correspond to an angular velocity. These elements can be represented with $3 \times 3$ skew-symmetric matrices $[\bm{\omega}]_{\times}$, where $\bm{\omega}$ is a 3-vector representing an angular velocity. For
+			$\bm{\omega} = 
+			\begin{bmatrix}
+				\omega_1 & \omega_2 & \omega_3
+			\end{bmatrix}^T$, the cross product matrix representation is defined as
+			\begin{equation}
+				[\bm{\omega}]_\times \stackrel{\Delta}{=} 
+				\begin{bmatrix}
+					0 			& -\omega_3 & \omega_2	\\
+					\omega_3 	& 0 		& -\omega_1	\\
+					-\omega_2 	& \omega_1 	& 0			\\
+				\end{bmatrix}
+			\end{equation}
+		\end{comment}
+		The Lie algebra $\mathfrak{so}(3)$ is a vector space whose elements correspond to an angular velocity. These elements can be represented with $3 \times 3$ skew-symmetric matrices $\bm{\omega}^{\wedge}$, where $\bm{\omega}$ is a 3-vector representing an angular velocity. For
 		$\bm{\omega} = 
 		\begin{bmatrix}
 			\omega_1 & \omega_2 & \omega_3
-		\end{bmatrix}^T$, the cross product matrix representation is defined as
-		\begin{equation}
-			[\bm{\omega}]_\times \stackrel{\Delta}{=} 
-			\begin{bmatrix}
-				0 			& -\omega_3 & \omega_2	\\
-				\omega_3 	& 0 		& -\omega_1	\\
-				-\omega_2 	& \omega_1 	& 0			\\
-			\end{bmatrix}
-		\end{equation}
-		
-		CAN ALSO WRITE WITH HAT OPERATOR
+		\end{bmatrix}^T$, the skew symmetric representation is given by taking the hat representation of $\bm{\omega}$
+			\begin{equation}
+				\bm{\omega}^{\wedge} =  
+				\begin{bmatrix}
+					0 			& -\omega_3 & \omega_2	\\
+					\omega_3 	& 0 		& -\omega_1	\\
+					-\omega_2 	& \omega_1 	& 0			\\
+				\end{bmatrix}
+			\end{equation}
 		
 		Elements of $\mathfrak{so}(3)$ are mapped to $\textbf{SO}(3)$ according to the exponential map:
 		\begin{equation}
 			\begin{split}
 				\exp: \mathfrak{so}(3) \rightarrow \mathbf{SO}(3)\\
-				[\bm{\omega}]_\times \rightarrow \mathbf{R}_{3x3}
+				\bm{\omega}^{\wedge} \rightarrow \mathbf{R}_{3x3}
 			\end{split}		
 		\end{equation}		
 		i.e. $\forall \omega \in \mathfrak{so}(3) \textnormal{, } \exp([\omega]_\times) \in  \mathbf{SO}(3)$
@@ -155,7 +169,7 @@
 		\begin{equation}
 			\begin{split}
 				\log: \mathbf{SO}(3) \rightarrow \mathfrak{so}(3)\\
-				 \mathbf{R}_{3x3} \rightarrow [\bm{\omega}]_\times
+				 \mathbf{R}_{3x3} \rightarrow \bm{\omega}^{\wedge}
 			\end{split}		
 		\end{equation}		
 		i.e. $\forall \mathbf{R} \in \mathbf{SO}(3)  \textnormal{, } \log(\mathbf{R}) \in  \mathfrak{so}(3)$
@@ -317,11 +331,11 @@
 		The Lie algebra $\mathfrak{se}(3)$ is a vector space whose elements are $4 \times 4$ matrices of the form
 		\begin{equation}
 			\begin{bmatrix}
-				  [\mathbf{\omega}]_\times	&  \mathbf{v}\\
+				  \bm{\omega}^{\wedge}	&  \mathbf{v}\\
 				  \textbf{0}_{1 \times 3} & 0						  
 			\end{bmatrix}
 		\end{equation}
-		where $\mathbf{\omega} =
+		where $\bm{\omega} =
 		\begin{bmatrix}
 			\omega_x & \omega_y & \omega_z				
 		\end{bmatrix}
@@ -337,7 +351,7 @@
 				\begin{split}
 					\exp: \mathfrak{se}(3) \rightarrow \mathbf{SE}(3)\\
 					\begin{bmatrix}
-						  [\mathbf{\omega}]_\times	&  \mathbf{v}\\
+						  \bm{\omega}^{\wedge}	&  \mathbf{v}\\
 						  \textbf{0}_{1 \times 3} & 0						  
 					\end{bmatrix}
 					\rightarrow 
@@ -359,7 +373,7 @@
 					\end{bmatrix}
 					\rightarrow 
 					\begin{bmatrix}
-					 	[\mathbf{\omega}]_\times	&  \mathbf{v}\\
+					 	\bm{\omega}^{\wedge}	&  \mathbf{v}\\
 					 	\textbf{0}_{1 \times 3} & 0			
 					\end{bmatrix}
 				\end{split}		
@@ -507,7 +521,7 @@
 		\begin{equation}
 				{^{A}_{F}\mathbf{T}^{}_{A}(t)} = 
 				\begin{bmatrix}
-		  {[^{A}_{F}\mathbf{\omega}^{}_{A}(t)]_\times} 	& 	^{A}_{F}\mathbf{v}^{}_{A}(t)\\
+		  {^{A}_{F}\bm{\omega}^{\wedge}_{A}}(t) 	& 	^{A}_{F}\mathbf{v}^{}_{A}(t)\\
 		  \textbf{0}_{1 \times 3} & 0						  
 				\end{bmatrix}
 		\end{equation}
@@ -517,7 +531,7 @@
 		\begin{equation}
 				{^{A}_{F}\mathbf{W}^{}_{A}(t)} = 
 				\begin{bmatrix}
-				  {[^{A}_{F}\mathbf{\alpha}^{}_{A}(t)]_\times} 	& 	^{A}_{F}\mathbf{a}^{}_{A}(t)\\
+				  {^{A}_{F}\bm{\alpha}^{\wedge}_{A}}(t) 	& 	^{A}_{F}\mathbf{a}^{}_{A}(t)\\
 				  \textbf{0}_{1 \times 3} & 0						  
 				\end{bmatrix}
 		\end{equation}
