@@ -287,14 +287,31 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	Figure \ref{fig:raytriangle} shows a simplified scenario involving the intersection of a ray with a single triangle. In practice, the algorithm is vectorised to compute the intersections with a \textit{set} of triangles.
 	\input{Figures/fig_raytriangle} 
 	
+	The output variables are first initialised to the case that there is no intersection with the scanning direction. $x$ is set to \texttt{false} and the range, angle and triangle index outputs are set to return \texttt{NaN}.
 	
+	On line \ref{line: vertex}, the set of points $\mathbf{P}$ are indexed using the columns of the triangle matrix $\mathbf{T}$ to extract the three vertices corresponding to each triangle.
+	The vectors representing the edges sharing vertex $\mathbf{V}_1$ are computed.
 	from triangles and points, extract vertices of each triangle.
-	get edges sharing v1
-	compute barycentric coordinates
-	get range to each triangle plane
-	use barycentric coords to eliminate plane intersections not inside triangle
-	get min range
-	compute angle	
+	The vector $\mathbf{A}$ computed on line \ref{line: origintov1} represents the translation from the ray origin $\mathbf{o}$ to $\mathbf{V}_1$.
+	
+	The vector $\mathbf{B}$ is computed on line \ref{line: det} by taking the cross product of the scan direction $\mathbf{d}$ and each edge $\mathbf{E}_2$. The determinant $\bm{\delta}$ of the matrix
+	\begin{equation}
+		\mathbf{M} = 
+			\begin{bmatrix} 
+				\mathbf{e}_1 \\
+				\mathbf{d}	 \\
+				\mathbf{e}_2
+			\end{bmatrix}
+	\end{equation}
+	is computed on line \ref{line: det}. This is first used to determine if the scan direction $\mathbf{d}$ lies in the plane of the triangle by checking if the determinant is close to zero. If so, no intersection can occur. The zero determinant values are then set to \texttt{NaN} to avoid a division by zero later.
+	
+	Beginning on line \ref{line: alpha}, determinant $\bm{\delta}$ is used to compute the barycentric coordinates $\bm{\alpha}$ and  $\bm{\beta}$, and the distance $\mathbf{s}$ from the origin to the triangle plane along the scan direction $\mathbf{d}$.
+	
+	The barycentric coordinates are used to determine if the intersection between the scan direction $\mathbf{d}$ and the plane of the triangle lies within the triangle itself. 
+	
+	The vector $\mathbf{x}$ on line \ref{line: intersectvec} now indicates which triangles intersected with the scan direction. $\mathbf{x}$ is used to mask the ranges to the triangles $\mathbf{s}$, to give $\mathbf{r}$; the range to each intersecting triangle. 
+	
+	The minimum range $r$ and triangle index $m$ are determined before computing the angle of incidence $\theta$ between $\mathbf{d}$ and the closest triangle.
 
 	\IncMargin{2em}
 	\begin{algorithm}
@@ -321,20 +338,20 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 		$\theta \longleftarrow NaN$\\
 		$m \longleftarrow NaN$\\
 		\tcc{triangle vertexes and edges}
-		$\mathbf{V}_1 \longleftarrow \mathbf{P}[\mathbf{T}[:,1]]$\\
+		$\mathbf{V}_1 \longleftarrow \mathbf{P}[\mathbf{T}[:,1]]$ \label{line: vertex}\\
 		$\mathbf{V}_2 \longleftarrow \mathbf{P}[\mathbf{T}[:,2]]$\\
 		$\mathbf{V}_3 \longleftarrow \mathbf{P}[\mathbf{T}[:,3]]$\\
 		$\mathbf{E}_1 \longleftarrow \mathbf{V}_2 - \mathbf{V}_1$\\
 		$\mathbf{E}_2 \longleftarrow \mathbf{V}_3 - \mathbf{V}_1$\\
 		$m = \size(\mathbf{V}_1,1)$\\
-		$\mathbf{A} \longleftarrow \mathbf{o}_{[m \times 1]} - \mathbf{P}$\\
+		$\mathbf{A} \longleftarrow \mathbf{o}_{[m \times 1]} - \mathbf{V}_1$ \label{line: origintov1}\\
 		\tcc{determinant}
-		$\mathbf{B} \longleftarrow \mathbf{d}_{[m \times 1]} \times \mathbf{E}_2$ *(along dim 2)\\
-		$\bm{\delta} \longleftarrow \mathbf{E}_1 \cdot \mathbf{B}$ *(along dim 2)\\		
+		$\mathbf{B} \longleftarrow \mathbf{d}_{[m \times 1]} \times \mathbf{E}_2$ \label{line: det}\\
+		$\bm{\delta} \longleftarrow \mathbf{E}_1 \cdot \mathbf{B}$\\		
 		$\mathbf{y} \longleftarrow |\bm{\delta}|\leq\mathbf{0}$\\
 		$\bm{\delta}[\mathbf{y}] \longleftarrow \mathbf{NaN}$\\
 		\tcc{barycentric coordinates}
-		$\bm{\alpha} \longleftarrow (\mathbf{A} \cdot \mathbf{B})/\bm{\delta}$ *(along dim 2)\\
+		$\bm{\alpha} \longleftarrow (\mathbf{A} \cdot \mathbf{B})/\bm{\delta}$ \label{line: alpha}\\
 		$\mathbf{Q} \longleftarrow \mathbf{A} \times \mathbf{E}_1$ *(along dim 2)\\
 		$\bm{\beta} \longleftarrow (\mathbf{d}_{[n \times 1]} \cdot \mathbf{Q})/\bm{\delta}$ *(along dim 2)\\
 		$\mathbf{s} \longleftarrow (\mathbf{E}_2 \cdot \mathbf{Q})/\bm{\delta}$\\
@@ -342,8 +359,8 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 		$\mathbf{z} \longleftarrow \mathbf{y} \textbf{ and } (\bm{\alpha} \geq \mathbf{0}) 
 		\textbf{ and } (\bm{\beta} \geq \mathbf{0}) \textbf{ and } (\bm{\alpha}+\bm{\beta} \leq 
 		\mathbf{1})$\\
-		$\mathbf{x} \longleftarrow \mathbf{z} \textbf{ and } (\mathbf{s} \geq \mathbf{0})$\\
-		\If{$\any(\mathbf{x})$}{
+		$\mathbf{x} \longleftarrow \mathbf{z} \textbf{ and } (\mathbf{s} \geq \mathbf{0})$ \label{line: intersectvec} \\
+		\If{$\any(\mathbf{x})$}{ 
 			$x \longleftarrow 1$\\
 			$\mathbf{x}[\textbf{not }\mathbf{x}] \longleftarrow \mathbf{NaN}$\\
 			$\mathbf{r} = \mathbf{s} \circ \mathbf{x}$\\

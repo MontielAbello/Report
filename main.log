@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  19 MAY 2016 00:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  19 MAY 2016 02:09
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -695,33 +695,33 @@ mm/m/it/10.95 B\OMS/cmsy/m/n/10.95 g$ \OT1/cmr/m/n/10.95 are rep-re-sented with
 
 
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_triangle
-s.tex") [26] [27]
+s.tex") [26]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_raytrian
-gle.tex")
+gle.tex") [27]
 
-LaTeX Warning: Float too large for page by 86.66238pt on input line 360.
+LaTeX Warning: Float too large for page by 86.66238pt on input line 377.
 
 [28] [29]
-Underfull \hbox (badness 10000) in paragraph at lines 426--427
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--434
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
 
  []
 
 [30] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 449--451
+
+ []
+
+
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_orientat
 ionupdate.tex")
-Underfull \hbox (badness 10000) in paragraph at lines 442--452
+Underfull \hbox (badness 10000) in paragraph at lines 459--469
 
  []
 
 
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_position
 update.tex")
-Underfull \hbox (badness 10000) in paragraph at lines 465--468
+Underfull \hbox (badness 10000) in paragraph at lines 482--485
 
  []
 
@@ -732,7 +732,7 @@ te1.tex"
 LaTeX Warning: Float too large for page by 24.61307pt on input line 86.
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 474--477
+Underfull \hbox (badness 10000) in paragraph at lines 491--494
 
  []
 
@@ -746,24 +746,24 @@ Overfull \hbox (4.85919pt too wide) in paragraph at lines 81--82
 
 LaTeX Warning: Float too large for page by 24.61307pt on input line 84.
 
-)
-Underfull \hbox (badness 10000) in paragraph at lines 484--485
+[32] [33] [34] [35])
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
 
  []
 
-[32] [33] [34] [35] [36]
+
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Tables/tab_updatewei
-ghts.tex") [37]
+ghts.tex") [36] [37]
 <./Figures/observer_error_stationary_orientation.jpg, id=144, 938.50626pt x 520
 .94624pt>
 File: ./Figures/observer_error_stationary_orientation.jpg Graphic file (type jp
 g)
  <use ./Figures/observer_error_stationary_orientation.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_orientation.jpg us
-ed on input line 499.
+ed on input line 516.
 (pdftex.def)             Requested size: 431.9989pt x 239.78922pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 499--500
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 516--517
 [][] 
  []
 
@@ -774,10 +774,10 @@ File: ./Figures/observer_error_stationary_orientation_size.jpg Graphic file (ty
 pe jpg)
  <use ./Figures/observer_error_stationary_orientation_size.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_orientation_size.j
-pg used on input line 504.
+pg used on input line 521.
 (pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 504--505
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 521--522
 [][] 
  []
 
@@ -786,10 +786,10 @@ File: ./Figures/observer_error_stationary_size.jpg Graphic file (type jpg)
 
 <use ./Figures/observer_error_stationary_size.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_size.jpg used on i
-nput line 509.
+nput line 526.
 (pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 509--510
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 526--527
 [][] 
  []
 
@@ -799,10 +799,10 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 509--510
 File: ./Figures/observer_error_stationary_position.jpg Graphic file (type jpg)
  <use ./Figures/observer_error_stationary_position.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_position.jpg used 
-on input line 514.
+on input line 531.
 (pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 514--515
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 531--532
 [][] 
  []
 
@@ -854,10 +854,10 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15367 strings out of 493921
- 302984 string characters out of 3147261
- 383933 words of memory out of 3000000
- 18279 multiletter control sequences out of 15000+200000
+ 15370 strings out of 493921
+ 303018 string characters out of 3147261
+ 384154 words of memory out of 3000000
+ 18282 multiletter control sequences out of 15000+200000
  20048 words of font info for 74 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,23n,58p,776b,11487s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -882,7 +882,7 @@ nts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on main.pdf (47 pages, 725396 bytes).
+Output written on main.pdf (47 pages, 727288 bytes).
 PDF statistics:
  257 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
