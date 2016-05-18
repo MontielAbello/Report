@@ -1,11 +1,11 @@
   \section{Theoretical Background}
 
 \subsection{Rigid Body Kinematics}
-	A rigid body is a model of a solid object whose deformation is assumed to be negligible. The distance between every pair of points on the body remains constant. Because such a body does not deform, knowledge of the orientation and position of a single point constitutes knowledge of the position and orientation of all points. The position of the rigid body is thus defined as the position of a single point in the body, most commonly its centre of mass. The orientation can be defined using a set of coordinate axes fixed to the body.
+	A rigid body is a model of a solid object whose deformation is assumed to be negligible. The distance between every pair of points on the body remains constant. Because such a body does not deform, knowledge of the orientation and position of a reference frame fixed to rigid body constitutes knowledge of the position of all points. The position of the rigid body is thus defined as the position of a single point in the body, most commonly its centre of mass. The orientation can be defined using a set of coordinate axes fixed to the body.
 	The theory of Lie groups will be used to describe the kinematics of rigid bodies on this report.
 			
 	\subsubsection{Lie Groups}		
-		A Lie group $\mathbf{G}$ is a group that is also a differentiable manifold.
+		A Lie group $\mathbf{G}$ is a group whose elements form a differentiable manifold and group operation and inverse operation are differentiable.
 		As a group, $\mathbf{G}$ is a set of elements and a group operation. This group operation is a binary operation that combines two elements and is denoted by multiplication: $AB$ for $A,B \in \mathbf{G}$. Because it is a group, $\mathbf{G}$ satisfies the 4 group axioms:
 		\begin{itemize}
 		\item \textbf{Closure:} 
@@ -23,8 +23,8 @@
 		Because the Lie group $\mathbf{G}$ is a differentiable manifold, it is locally Euclidean. This means that the neighbourhood around every element of $\mathbf{G}$ can be approximated with a tangent plane. This property allows calculus to be performed on elements of $\mathbf{G}$.
 		
 		\textbf{Matrix Lie groups}\\
-			A matrix Lie group $\mathbf{G} \in \mathbf{GL}(n)$ is made up of group elements which are $n \times n$ matrices.
-			This work will focus on matrix Lie groups because the exponential map and Lie bracket functions given below only apply to such Lie groups.
+			A matrix Lie group $\mathbf{G} \subset \mathbf{GL}(n)$ is made up of group elements which are $n \times n$ matrices.
+			This work will focus on matrix Lie groups because the form of the exponential map and Lie bracket functions given below only apply to such Lie groups. Generalised concepts for these functions exist, but a more detailed and relevant description can be provided by focusing on matrix Lie groups.
 		
 		\textbf{Lie algebra}\\
 			The tangent space at the identity element of a Lie group is called the Lie algebra $\mathfrak{g}$. It is called the Lie \textit{algebra} because it has a binary operation, known as the Lie bracket $[X,Y]$. For matrix Lie groups the Lie bracket is
@@ -33,33 +33,37 @@
 			\end{equation}
 			
 		\textbf{The exponential map and logarithm map}\\		
-			The mapping from the Lie algebra $\mathfrak{g}$ to the Lie group $\mathbf{G}$ is called the exponential map:
+			The canonical mapping from the Lie algebra $\mathfrak{g}$ to the Lie group $\mathbf{G}$ is called the exponential map:
 			\begin{equation}
 				\exp: \mathfrak{g} \rightarrow \mathbf{G}
 			\end{equation}			
-			Similarly, the logarithm map maps elements from $\mathbf{G}$ to $\mathfrak{g}$:
+			Similarly, the logarithm map maps elements from its domain $\mathbf{D} \subset \mathbf{G}$ to $\mathfrak{g}$
 			\begin{equation}
-				\log: \mathbf{G} \rightarrow \mathfrak{g}
+				\log: \mathbf{D} \rightarrow \mathfrak{g}
 			\end{equation}
-			For matrix Lie groups, the exponential map and logarithm map correspond to matrix exponential and matrix logarithm respectively.
+			such that for a group element $A$,
+			\begin{equation}
+				\exp(\log(A)) = A
+			\end{equation}
+			For matrix Lie groups, the exponential map and logarithm map correspond to the matrix exponential and matrix logarithm respectively.
 						
 		\textbf{Infinitesimal generators}\\
-			For an \textit{n}-dimensional matrix Lie group, the Lie algebra $\mathfrak{g}$ is a vector space isomorphic to $\mathbb{R}^n$. The hat operator $\hat{\:}$ maps vectors $x \in \mathbb{R}^3$ to elements of $\mathfrak{g}$.				
+			For an \textit{n}-dimensional matrix Lie group, the Lie algebra $\mathfrak{g}$ is a vector space isomorphic to $\mathbb{R}^n$. The hat operator $\hat{\:}$ maps vectors $x \in \mathbb{R}^n$ to elements of $\mathfrak{g}$.				
 			\begin{equation}
 				\hat{\:}: x \in \mathbb{R}^n \rightarrow \hat{x} \in \mathfrak{g}
 			\end{equation}		
-			For a matrix Lie group $\mathbf{G}$ whose elements are $\textit{n} \times \textit{n}$ matrices, the elements of $\mathfrak{g}$ will also be $\textit{n} \times \textit{n}$ matrices. The hat operator is defined
+			For a matrix Lie group $\mathbf{G}$ whose elements are $\textit{m} \times \textit{m}$ matrices, the elements of $\mathfrak{g}$ will also be $\textit{m} \times \textit{m}$ matrices. The hat operator is defined
 			\begin{equation}
 				\hat{x} = \sum\limits_{i=1}^n x_iG^i 
 			\end{equation}
-			where $G^i$ are $\textit{n} \times \textit{n}$ matrices known as the infinitesimal generators of $\mathbf{G}$.
+			where $G^i$ are $\textit{m} \times \textit{m}$ matrices known as the infinitesimal generators of $\mathbf{G}$.
 						
 		\textbf{Lie bracket and group operation}\\					
 			For Lie groups endowned with the commutative property ($\forall A,B \in \mathbf{G}, AB = BA$), vector addition in the Lie algebra maps to a group operation in the Lie group. For $C = A + B$ where $A,B,C \in \mathfrak{g}$,
 			\begin{equation}
 				e^C = e^{A+B} = e^Ae^B
 			\end{equation}
-			For non-commutative Lie groups, the relationship between the Lie bracket and group operation does not hold. Instead, for $C = \log{e^Ae^B}$, $C$ is calculated with the Baker-Campbell-Hausdorff formula:
+			For non-commutative Lie groups, this relationship between the Lie algebra and Lie group operations do not hold. Instead, for $C = \log{e^Ae^B}$, $C$ is calculated with the Baker-Campbell-Hausdorff formula:
 			\begin{equation}
 				C = A + B + \frac{1}{2}[A,B] + \frac{1}{12}[A-B,[A,B]] + \frac{1}{24}[B,[A,[A,B]]] + \dots
 			\end{equation}	
@@ -71,13 +75,13 @@
 			\end{equation}
 			where
 			\begin{itemize}
-			\item the identity element $I$ maps M onto itself *(is that the right wording?)
+			\item the identity element $I$ acts as the identity on $M$
 				\begin{equation}
-					\Phi(I,m) = m \textnormal{, } \forall m \in M
+					\Phi(I,m) = m \hspace{2em} \forall m \in M
 				\end{equation}
 			\item Group actions compose according to
 				\begin{equation}
-					\Phi(m,\Phi(n,o)) = \Phi(mn,o)
+					\Phi(m,\Phi(n,o)) = \Phi(mn,o) \hspace{2em} \forall m,n,o \in M
 				\end{equation}
 			\end{itemize}
 		
