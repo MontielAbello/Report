@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  18 MAY 2016 23:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  19 MAY 2016 00:16
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -695,42 +695,33 @@ mm/m/it/10.95 B\OMS/cmsy/m/n/10.95 g$ \OT1/cmr/m/n/10.95 are rep-re-sented with
 
 
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_triangle
-s.tex")
-
-LaTeX Warning: Reference `intersection' on page 26 undefined on input line 285.
-
-
-[26] [27]
+s.tex") [26] [27]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_raytrian
 gle.tex")
 
-LaTeX Warning: Float too large for page by 86.66238pt on input line 354.
+LaTeX Warning: Float too large for page by 86.66238pt on input line 360.
 
-
-Underfull \vbox (badness 3492) has occurred while \output is active []
-
- [28]
-[29]
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
+[28] [29]
+Underfull \hbox (badness 10000) in paragraph at lines 426--427
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 426--428
+Underfull \hbox (badness 10000) in paragraph at lines 432--434
 
  []
 
 [30] [31]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_orientat
 ionupdate.tex")
-Underfull \hbox (badness 10000) in paragraph at lines 436--446
+Underfull \hbox (badness 10000) in paragraph at lines 442--452
 
  []
 
 
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_position
 update.tex")
-Underfull \hbox (badness 10000) in paragraph at lines 459--462
+Underfull \hbox (badness 10000) in paragraph at lines 465--468
 
  []
 
@@ -741,7 +732,7 @@ te1.tex"
 LaTeX Warning: Float too large for page by 24.61307pt on input line 86.
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 468--471
+Underfull \hbox (badness 10000) in paragraph at lines 474--477
 
  []
 
@@ -756,7 +747,7 @@ Overfull \hbox (4.85919pt too wide) in paragraph at lines 81--82
 LaTeX Warning: Float too large for page by 24.61307pt on input line 84.
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 478--479
+Underfull \hbox (badness 10000) in paragraph at lines 484--485
 
  []
 
@@ -769,10 +760,10 @@ File: ./Figures/observer_error_stationary_orientation.jpg Graphic file (type jp
 g)
  <use ./Figures/observer_error_stationary_orientation.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_orientation.jpg us
-ed on input line 493.
+ed on input line 499.
 (pdftex.def)             Requested size: 431.9989pt x 239.78922pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 493--494
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 499--500
 [][] 
  []
 
@@ -783,10 +774,10 @@ File: ./Figures/observer_error_stationary_orientation_size.jpg Graphic file (ty
 pe jpg)
  <use ./Figures/observer_error_stationary_orientation_size.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_orientation_size.j
-pg used on input line 498.
+pg used on input line 504.
 (pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 498--499
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 504--505
 [][] 
  []
 
@@ -795,10 +786,10 @@ File: ./Figures/observer_error_stationary_size.jpg Graphic file (type jpg)
 
 <use ./Figures/observer_error_stationary_size.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_size.jpg used on i
-nput line 503.
+nput line 509.
 (pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 503--504
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 509--510
 [][] 
  []
 
@@ -808,10 +799,10 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 503--504
 File: ./Figures/observer_error_stationary_position.jpg Graphic file (type jpg)
  <use ./Figures/observer_error_stationary_position.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_position.jpg used 
-on input line 508.
+on input line 514.
 (pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 508--509
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 514--515
 [][] 
  []
 
@@ -855,9 +846,6 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.aux"))
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
  )
@@ -866,13 +854,13 @@ LaTeX Warning: There were multiply-defined labels.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15358 strings out of 493921
- 302817 string characters out of 3147261
- 382971 words of memory out of 3000000
- 18270 multiletter control sequences out of 15000+200000
+ 15364 strings out of 493921
+ 302931 string characters out of 3147261
+ 383933 words of memory out of 3000000
+ 18276 multiletter control sequences out of 15000+200000
  20048 words of font info for 74 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 55i,23n,58p,776b,11488s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,23n,58p,776b,11487s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
 sy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pro
@@ -894,7 +882,7 @@ nts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on main.pdf (47 pages, 724451 bytes).
+Output written on main.pdf (47 pages, 725321 bytes).
 PDF statistics:
  257 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

@@ -282,13 +282,19 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 \subsection{Measurement Modelling}
 	\subsubsection{Range Computation}
 	Given the screw matrix (in the inertial frame) and scan direction (in the body fixed frame) of the sensor, the position and scan direction in the inertial frame are determined.
-	The distance to the nearest environment object from this point, along the scan direction is determined with the M{\"o}ller-Trumbore ray-triangle intersection algorithm, shown in Algorithm \ref{intersection}.
+	The distance to the nearest environment object from this point, along the scan direction is determined with the M{\"o}ller-Trumbore ray-triangle intersection algorithm, shown in Algorithm \ref{intersectionalgorithm}.
 	
-	EXPLANATION OF ALGORITHM \ref{intersectionalgorithm}
+	Figure \ref{fig:raytriangle} shows a simplified scenario involving the intersection of a ray with a single triangle. In practice, the algorithm is vectorised to compute the intersections with a set of triangles.
+	\input{Figures/fig_raytriangle} 
 	
-	*DIFFICULT TO VISUALISE. INCLUDE DIAGRAM SHOWING INTERSECTION OF RAY AND A SINGLE TRIANGLE
-	Figure \ref{fig:raytriangle}
-	\input{Figures/fig_raytriangle}
+	
+	from triangles and points, extract vertices of each triangle.
+	get edges sharing v1
+	compute barycentric coordinates
+	get range to each triangle plane
+	use barycentric coords to eliminate plane intersections not inside triangle
+	get min range
+	compute angle	
 
 	\IncMargin{2em}
 	\begin{algorithm}
@@ -328,14 +334,14 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 		$\mathbf{y} \longleftarrow |\bm{\delta}|\leq\mathbf{0}$\\
 		$\bm{\delta}[\mathbf{y}] \longleftarrow \mathbf{NaN}$\\
 		\tcc{barycentric coordinates}
-		$\mathbf{u} \longleftarrow (\mathbf{A} \cdot \mathbf{B})/\bm{\delta}$ *(along dim 2)\\
+		$\bm{\alpha} \longleftarrow (\mathbf{A} \cdot \mathbf{B})/\bm{\delta}$ *(along dim 2)\\
 		$\mathbf{Q} \longleftarrow \mathbf{A} \times \mathbf{E}_1$ *(along dim 2)\\
-		$\mathbf{v} \longleftarrow (\mathbf{d}_{[n \times 1]} \cdot \mathbf{Q})/\bm{\delta}$ *(along dim 2)\\
+		$\bm{\beta} \longleftarrow (\mathbf{d}_{[n \times 1]} \cdot \mathbf{Q})/\bm{\delta}$ *(along dim 2)\\
 		$\mathbf{s} \longleftarrow (\mathbf{E}_2 \cdot \mathbf{Q})/\bm{\delta}$\\
 		\tcc{intersection vector}	
-		$\mathbf{z} \longleftarrow \mathbf{y} \textbf{ and } (\mathbf{u} \geq \mathbf{0}) 
-		\textbf{ and } (\mathbf{v} \geq \mathbf{0}) \textbf{ and } (\mathbf{u}+\mathbf{v} \leq 
-		\mathbf{0})$\\
+		$\mathbf{z} \longleftarrow \mathbf{y} \textbf{ and } (\bm{\alpha} \geq \mathbf{0}) 
+		\textbf{ and } (\bm{\beta} \geq \mathbf{0}) \textbf{ and } (\bm{\alpha}+\bm{\beta} \leq 
+		\mathbf{1})$\\
 		$\mathbf{x} \longleftarrow \mathbf{z} \textbf{ and } (\mathbf{s} \geq \mathbf{0})$\\
 		\If{$\any(\mathbf{x})$}{
 			$x \longleftarrow 1$\\
