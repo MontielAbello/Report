@@ -48,16 +48,32 @@
 			For matrix Lie groups, the exponential map and logarithm map correspond to the matrix exponential and matrix logarithm respectively.
 						
 		\textbf{Infinitesimal generators}\\
-			For an \textit{n}-dimensional matrix Lie group, the Lie algebra $\mathfrak{g}$ is a vector space isomorphic to $\mathbb{R}^n$. The hat operator $\hat{\:}$ maps vectors $x \in \mathbb{R}^n$ to elements of $\mathfrak{g}$.				
+			The \textit{hat} operator $(\cdot)^{\wedge}$ can be used to map an $n$-vector to an $m \times m$ matrix representation, when $\mathbb{R}^{m \times m}$ is isomorphic to $\mathbb{R}^n$. (*NOTE - haven't actually used hat since it is used to denote prediction. wedge is a better counterpart to vee anyway. is this okay???)
 			\begin{equation}
-				\hat{\:}: x \in \mathbb{R}^n \rightarrow \hat{x} \in \mathfrak{g}
-			\end{equation}		
-			For a matrix Lie group $\mathbf{G}$ whose elements are $\textit{m} \times \textit{m}$ matrices, the elements of $\mathfrak{g}$ will also be $\textit{m} \times \textit{m}$ matrices. The hat operator is defined
-			\begin{equation}
-				\hat{x} = \sum\limits_{i=1}^n x_iG^i 
+				\begin{split}
+					(\cdot)^{\wedge}: \mathbb{R}^n \rightarrow \mathbb{R}^{m \times m}\\
+					x \mapsto x^{\wedge} = \sum\limits_{i=1}^n x_iG_i
+				\end{split}
 			\end{equation}
-			where $G^i$ are $\textit{m} \times \textit{m}$ matrices known as the infinitesimal generators of $\mathbf{G}$.
-						
+			where the set of elements $G_i$ form a basis for $\mathbb{R}^{m \times m}$.
+			
+			Conversely, the \textit{vee} operator $(\cdot)^{\vee}$ maps matrices in $\mathbb{R}^{m \times m}$ to vectors in $\mathbb{R}^n$ such that ${(x^{\wedge})}^{\vee} = x$
+			\begin{equation}
+				\begin{split}
+					(\cdot)^{\vee}: \mathbb{R}^{m \times m} \rightarrow \mathbb{R}^n\\
+					x^{\wedge} \mapsto x
+				\end{split}
+			\end{equation}
+		
+			For an \textit{n}-dimensional matrix Lie group, the Lie algebra $\mathfrak{g}$ is a vector space isomorphic to $\mathbb{R}^n$. The hat operator maps vectors $x \in \mathbb{R}^n$ to elements of $\mathfrak{g}$.	For a matrix Lie group $\mathbf{G}$ whose elements are $\textit{m} \times \textit{m}$ matrices, the elements of $\mathfrak{g}$ will also be $\textit{m} \times \textit{m}$ matrices.		
+			\begin{equation}
+				\begin{split}
+					(\cdot)^{\wedge}:\mathbb{R}^n \rightarrow \mathfrak{g}\\
+					x \mapsto x^{\wedge} = \sum\limits_{i=1}^n x_iG_i 
+				\end{split}
+			\end{equation}
+			The basis elements $G_i$ are $\textit{m} \times \textit{m}$ matrices known as the infinitesimal generators of $\mathbf{G}$.
+									
 		\textbf{Lie bracket and group operation}\\					
 			For Lie groups endowned with the commutative property ($\forall A,B \in \mathbf{G}, AB = BA$), vector addition in the Lie algebra maps to a group operation in the Lie group. For $C = A + B$ where $A,B,C \in \mathfrak{g}$,
 			\begin{equation}
@@ -110,7 +126,22 @@
 		Group elements of $\textbf{SO}(3)$ can be represented using a special subset of $3 \times 3$ invertible matrices and in this case, forms a matrix Lie group. Several rotation representations are described in REF, but the theory presented below only applies to matrix Lie groups which rely on the rotation matrix representation for group elements.
 		
 		\textbf{Lie algebra}\\
-		The Lie algebra $\mathfrak{so}(3)$ is vector space whose elements correspond to an angular velocity. These elements can be represented with $3 \times 3$ skew-symmetric matrices $[\bm{\omega}]_{\times}$, where $\bm{\omega}$ is a 3-vector representing an angular velocity.
+		The Lie algebra $\mathfrak{so}(3)$ is a vector space whose elements correspond to an angular velocity. These elements can be represented with $3 \times 3$ skew-symmetric matrices $[\bm{\omega}]_{\times}$, where $\bm{\omega}$ is a 3-vector representing an angular velocity. For
+		$\bm{\omega} = 
+		\begin{bmatrix}
+			\omega_1 & \omega_2 & \omega_3
+		\end{bmatrix}^T$, the cross product matrix representation is defined as
+		\begin{equation}
+			[\bm{\omega}]_\times \stackrel{\Delta}{=} 
+			\begin{bmatrix}
+				0 			& -\omega_3 & \omega_2	\\
+				\omega_3 	& 0 		& -\omega_1	\\
+				-\omega_2 	& \omega_1 	& 0			\\
+			\end{bmatrix}
+		\end{equation}
+		
+		CAN ALSO WRITE WITH HAT OPERATOR
+		
 		Elements of $\mathfrak{so}(3)$ are mapped to $\textbf{SO}(3)$ according to the exponential map:
 		\begin{equation}
 			\begin{split}
@@ -130,9 +161,12 @@
 		i.e. $\forall \mathbf{R} \in \mathbf{SO}(3)  \textnormal{, } \log(\mathbf{R}) \in  \mathfrak{so}(3)$
 				
 		\textbf{Actions}\\
-		By the group action, elements of $\mathbf{SO}(3)$ rotate points in $\mathbb{R}^3$ about the origin. 
+		By the group action, elements of $\mathbf{SO}(3)$ rotate points $\mathbf{p} \in \mathbb{R}^3$ about the origin. 
 		\begin{equation}
-			\Phi: \mathbf{SO}(3) \times \mathbf{R}^3 \mapsto \mathbf{R}^3
+			\begin{split}
+				\Phi: \mathbf{SO}(3) \times \mathbf{R}^3 \rightarrow \mathbf{R}^3\\
+				(\mathbf{R},\mathbf{p}) \mapsto \mathbf{Rp}
+			\end{split}	
 		\end{equation}
 		
 		\begin{comment}
