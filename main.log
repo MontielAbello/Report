@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  19 MAY 2016 04:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  19 MAY 2016 04:49
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -710,22 +710,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 468--470
 
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_position
 update.tex") [34] [35]
-Underfull \hbox (badness 10000) in paragraph at lines 527--530
-
- []
-
-
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
 te1.tex"
 
 LaTeX Warning: Float too large for page by 24.61307pt on input line 86.
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 536--539
-
- []
-
-
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
 te2.tex"
 Overfull \hbox (4.85919pt too wide) in paragraph at lines 81--82
@@ -742,10 +732,10 @@ File: ./Figures/observer_error_stationary_orientation.jpg Graphic file (type jp
 g)
  <use ./Figures/observer_error_stationary_orientation.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_orientation.jpg us
-ed on input line 550.
+ed on input line 551.
 (pdftex.def)             Requested size: 431.9989pt x 239.78922pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 550--551
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 551--552
 [][] 
  []
 
@@ -756,10 +746,10 @@ File: ./Figures/observer_error_stationary_orientation_size.jpg Graphic file (ty
 pe jpg)
  <use ./Figures/observer_error_stationary_orientation_size.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_orientation_size.j
-pg used on input line 555.
+pg used on input line 556.
 (pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 555--556
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 556--557
 [][] 
  []
 
@@ -768,10 +758,10 @@ File: ./Figures/observer_error_stationary_size.jpg Graphic file (type jpg)
 
 <use ./Figures/observer_error_stationary_size.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_size.jpg used on i
-nput line 560.
+nput line 561.
 (pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 560--561
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 561--562
 [][] 
  []
 
@@ -781,10 +771,10 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 560--561
 File: ./Figures/observer_error_stationary_position.jpg Graphic file (type jpg)
  <use ./Figures/observer_error_stationary_position.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_position.jpg used 
-on input line 565.
+on input line 566.
 (pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 565--566
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 566--567
 [][] 
  []
 
@@ -833,7 +823,7 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 Here is how much of TeX's memory you used:
  15371 strings out of 493921
  303046 string characters out of 3147261
- 353438 words of memory out of 3000000
+ 354712 words of memory out of 3000000
  18283 multiletter control sequences out of 15000+200000
  20048 words of font info for 74 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -859,7 +849,7 @@ nts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on main.pdf (47 pages, 732260 bytes).
+Output written on main.pdf (47 pages, 732842 bytes).
 PDF statistics:
  257 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

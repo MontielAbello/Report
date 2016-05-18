@@ -524,24 +524,26 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			\end{equation}
 						
 		\textbf{Size update:}\\
-			If different pattern $\hat{a} \neq \tilde{a}$\\
-			At least 1 of each: $|\hat{a}| \geq 1$ \and $|\tilde{a}| \geq 1$\\
+			In order to correct the size of the cube, at least 1 range measurement is required from both the prediction and measurement: $|\hat{a}| \geq 1$ \and $|\tilde{a}| \geq 1$.
+			The size update scheme also differs based on the sets predicted and measured ranges.
+			
+			For the case where a different pattern of ranges is observed($\hat{a} \neq \tilde{a}$), the update method is shown in Figure \ref{fig:size1}. \input{Figures/fig_sizeupdate1}
+			The dot product from the vector $\mathbf{p}_{update}$ computed for the position update and the current scan direction is taken:
 			\begin{equation}
 				s_{update} = \mathbf{p}_{update} \cdot {^{F}\mathbf{d}(ii)}
-			\end{equation}
-			figure~\ref{fig:size1}
-			\input{Figures/fig_sizeupdate1}
+			\end{equation}			
 			
-			If same pattern $\hat{a} = \tilde{a}$\\
-			At least 1 of each: $|\hat{a}| \geq 1$ \and $|\tilde{a}| \geq 1$\\
-			delta s = mean measured ranges - mean predicted ranges\\
+			For the case where the same pattern of ranges is observer ($\hat{a} = \tilde{a}$), the update method is shown in Figure \ref{fig:size2}. \input{Figures/fig_sizeupdate2}
+			The size update is taken as the difference in the means of the measured and predicted ranges:
 			\begin{equation}
 				s_{update} = \tilde{\mu}_r - \hat{\mu}_r
 			\end{equation}	
-				
-			figure~\ref{fig:size2}
-			\input{Figures/fig_sizeupdate2}
-			
+	
+			In both cases, the cube size estimate is updated by scaling $s_{update}$ and adding this to the previous estimate:
+			\begin{equation}
+				s(k+1) = s(k) + s_{scale}s_{update}
+			\end{equation}
+		
 \section{Results}
 plots for different initial conditions \& kinds of motion
 
