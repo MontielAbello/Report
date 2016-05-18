@@ -321,7 +321,6 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	\SetKwFunction{any}{any}
 	\SetKwFunction{min}{min}
 	\SetKwFunction{find}{find}
-	\SetKwFunction{atan}{atan}
 	
 	\Input{$\mathbf{o}$ - ray origin\\
 		   $\mathbf{d}$ - ray direction vector\\
@@ -369,7 +368,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			$\mathbf{e}_1 \longleftarrow \mathbf{E}_1[t,:]$\\ 
 			$\mathbf{e}_2 \longleftarrow \mathbf{E}_2[t,:]$\\ 
 			$\mathbf{n} = \mathbf{e}_1 \times \mathbf{e}_2$\\
-			$\theta = \atan(|\mathbf{d}\times\mathbf{n}|,\mathbf{d}\cdot\mathbf{n})$ *atan2\\
+			$\theta = \texttt{atan2}(|\mathbf{d}\times\mathbf{n}|,\mathbf{d}\cdot\mathbf{n})$\\
 			$\theta = \min(\theta,\pi-\theta)$
 		}
 	}
@@ -397,19 +396,23 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 		The state of the cube at each time step is estimated using the numerical integration method described in section \ref{integration}.
 	
 	\subsubsection{Identifying object/background}
-		The variable $c$ indicates whether the range measurement is of the target object or the background. It is assumed that initially the sensor will be observing background, so $c_0 = FALSE$
+		The binary variable $c$ indicates whether the current range measurement corresponds to cube ($c=\texttt{true}$) or the background ($c=\texttt{false}$). It is assumed that initially the sensor will be observing the background, so $c_0=\texttt{false}$.
 
-		EXPLANATION OF ALGORITHM \ref{object}
+		The scheme used to identify range measurements corresponding to the cube is shown in Algorithm \ref{alg:object}. There are two assumptions that may be used.
+		
+		The \textit{difference assumption} relies on the assumption that the cube and background objects are continuous. Differences in consecutive range measurements larger than $\Delta_{max}$ indicate a discontinuity, implying that a new object is being measured. When this occurs, the value of $c$ changes.
+		
+		The \textit{range assumption} is used when the maximum distance to the cube and minimum distance to the background are restricted. Range measurements within $r_{max}$ correspond to the cube while larger ranges correspond to the background.
 		
 		\IncMargin{2em}
 		\begin{algorithm}
 		\DontPrintSemicolon
 		\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
 	
-		\Input{$rangeAssumption$ - true/false\\
-			   $differenceAssumption$ - true/false\\
-			   $r_{max}$ - max range for cube\\
+		\Input{ $differenceAssumption$ - true/false\\
+			   $rangeAssumption$ - true/false\\
 			   $\Delta_{max}$ - max diff between measurements of same object\\
+			   $r_{max}$ - max range for cube\\
 			   $c$ - true/false - current measurement is of cube\\
 			   $\mathbf{r}_{i+1}$ - distance to object at $t = i+1$\\
 			   $\mathbf{r}_{i}$ - distance to object at $t = i$}
@@ -426,7 +429,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 				}
 			}
 		}
-		\caption{Target/background object separation} \label{object}
+		\caption{Target/background object separation} \label{alg:object}
 		\end{algorithm}
 		
 	\subsubsection{Update}
