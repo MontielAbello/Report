@@ -4,22 +4,22 @@
 		\draw [->](0,0,0)--(1,0,0) node[anchor=west]{$x$};
 		\draw [->](0,0,0)--(0,1,0) node[anchor=south]{$y$};
 		\draw [->](0,0,0)--(0,0,1) node[anchor=north east]{$z$};
-		\node at (0.5,0.5,0) {\{A\}};
+		\node at (0.5,0.5,0) {$\{F\}$};
 		%Frame {B}
 		\draw [->](8,2,0)--(9,2,1) node[anchor=west]{$x$};
 		\draw [->](8,2,0)--(8,3,1) node[anchor=south]{$y$};
 		\draw [->](8,2,0)--(8,2,2) node[anchor=north east]{$z$};
-		\node at (8.75,2.125,0) {\{B\}};
+		\node at (8.75,2.125,0) {$\{A\}$};
 		%Frame {C}
 		\draw [->](2,4,0)--(3,3.5,0) node[anchor=west]{$x$};
 		\draw [->](2,4,0)--(2.25,5,0) node[anchor=south]{$y$};
 		\draw [->](2,4,0)--(2,4,1.5) node[anchor=north east]{$z$};
-		\node at (1.5,4.5,0) {\{C\}};
+		\node at (1.5,4.5,0) {$\{B\}$};
 		%arrows
 		\draw [blue,dashed,->] (0,0,0) to [out=-50, in=-65] (8,2,0);
-		\node at (5,-1.5,0) {$^{A}_{A}\mathbf{X}^{}_{B}$};
+		\node at (5,-1.5,0) {$^{F}_{F}\mathbf{X}^{}_{A}$};
 		\draw [blue,dashed,->] (8,2,0) to [out=50, in=35] (2,4,0);
-		\node at (5,5,0) {$^{A}_{B}\mathbf{X}^{}_{C}$};
+		\node at (5,5,0) {$^{F}_{A}\mathbf{X}^{}_{B}$};
 	\end{tikzpicture}
 	  \caption{what frame should transformations be defined in?}
 	  \label{fig:frames}

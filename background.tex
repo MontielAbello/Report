@@ -125,24 +125,10 @@
 		A rotation represents the motion of a point about the origin of a Euclidean space. In $\mathbb{R}^3$ this is a proper isometry: a transformation that preserves distances between any pair of points and has a determinant of +1. The set of all rotations about the origin of $\mathbb{R}^3$ is known as the \textit{special orthogonal group} $\textbf{SO}(3)$.
 		Group elements of $\textbf{SO}(3)$ can be represented using a special subset of $3 \times 3$ invertible matrices and in this case, forms a matrix Lie group. Several rotation representations are described in REF, but the theory presented below only applies to matrix Lie groups which rely on the rotation matrix representation for group elements.
 		
+		A rotation matrix $\mathbf{R}$ is a $3 \times 3$ matrix that performs a rotation operation when it acts on an element of $\mathbb{R}^3$. The properties of $\mathbf{R}$ are described in more detail below.
+		
 		\textbf{Lie algebra}\\
-		%CROSS MATRIX VERSION
-		\begin{comment}
-			The Lie algebra $\mathfrak{so}(3)$ is a vector space whose elements correspond to an angular velocity. These elements can be represented with $3 \times 3$ skew-symmetric matrices $[\bm{\omega}]_{\times}$, where $\bm{\omega}$ is a 3-vector representing an angular velocity. For
-			$\bm{\omega} = 
-			\begin{bmatrix}
-				\omega_1 & \omega_2 & \omega_3
-			\end{bmatrix}^T$, the cross product matrix representation is defined as
-			\begin{equation}
-				[\bm{\omega}]_\times \stackrel{\Delta}{=} 
-				\begin{bmatrix}
-					0 			& -\omega_3 & \omega_2	\\
-					\omega_3 	& 0 		& -\omega_1	\\
-					-\omega_2 	& \omega_1 	& 0			\\
-				\end{bmatrix}
-			\end{equation}
-		\end{comment}
-		The Lie algebra $\mathfrak{so}(3)$ is a vector space whose elements correspond to an angular velocity. These elements can be represented with $3 \times 3$ skew-symmetric matrices $\bm{\omega}^{\wedge}$, where $\bm{\omega}$ is a 3-vector representing an angular velocity. For
+		The Lie algebra $\mathfrak{so}(3)$ is a vector space whose elements correspond to an angular velocity. These elements can be represented with $3 \times 3$ skew-symmetric matrices $\bm{\omega}^{\wedge}$, where $\bm{\omega} \in \mathbb{R}^3$ is a 3-vector representing an angular velocity. For
 		$\bm{\omega} = 
 		\begin{bmatrix}
 			\omega_1 & \omega_2 & \omega_3
@@ -160,25 +146,25 @@
 		\begin{equation}
 			\begin{split}
 				\exp: \mathfrak{so}(3) \rightarrow \mathbf{SO}(3)\\
-				\bm{\omega}^{\wedge} \rightarrow \mathbf{R}_{3x3}
+				\bm{\omega}^{\wedge} \mapsto \exp(\bm{\omega}^{\wedge})
 			\end{split}		
 		\end{equation}		
-		i.e. $\forall \omega \in \mathfrak{so}(3) \textnormal{, } \exp([\omega]_\times) \in  \mathbf{SO}(3)$
+		where the matrix $\exp(\bm{\omega}^{\wedge}) \in  \mathbf{SO}(3)$ is a rotation matrix $\mathbf{R}$.
 		
 		Conversely, the logarithm map maps $3 \times 3$ rotation matrices of $\mathbf{SO}(3)$ to elements of $\mathfrak{so}(3)$:
 		\begin{equation}
 			\begin{split}
 				\log: \mathbf{SO}(3) \rightarrow \mathfrak{so}(3)\\
-				 \mathbf{R}_{3x3} \rightarrow \bm{\omega}^{\wedge}
+				 \exp(\bm{\omega}^{\wedge}) \mapsto \bm{\omega}^{\wedge}
 			\end{split}		
 		\end{equation}		
-		i.e. $\forall \mathbf{R} \in \mathbf{SO}(3)  \textnormal{, } \log(\mathbf{R}) \in  \mathfrak{so}(3)$
-				
+		This means that for a rotation matrix $\mathbf{R}$, $\log(\mathbf{R}) \in \mathfrak{so}(3)$ and represents an angular velocity.
+		
 		\textbf{Actions}\\
 		By the group action, elements of $\mathbf{SO}(3)$ rotate points $\mathbf{p} \in \mathbb{R}^3$ about the origin. 
 		\begin{equation}
 			\begin{split}
-				\Phi: \mathbf{SO}(3) \times \mathbf{R}^3 \rightarrow \mathbf{R}^3\\
+				\Phi: \mathbf{SO}(3) \times \mathbb{R}^3 \rightarrow \mathbb{R}^3\\
 				(\mathbf{R},\mathbf{p}) \mapsto \mathbf{Rp}
 			\end{split}	
 		\end{equation}
@@ -225,7 +211,7 @@
 			\mathbf{R}_{\bm{\theta}} = \mathbf{I} + [\mathbf{r}]_{\times}\sin{\theta} + ([\mathbf{r}]_{\times})^2(1-\cos{\theta})
 		\end{equation}
 					
-		Elements of $\mathfrak{so}(3)$ are typically represented with a scaled-axis vector $\bm{\omega}$ where the magnitude $|\bm{\omega}|$ corresponds to the angular velocity about the axis $\bm{\omega}/|\bm{\omega}|$.
+		Elements of $\mathfrak{so}(3)$ are typically represented with the hat representation $\bm{\omega}^{\wedge}$ of a scaled-axis vector $\bm{\omega}$, where the magnitude $|\bm{\omega}|$ corresponds to the angular velocity about the axis $\bm{\omega}/|\bm{\omega}|$.
 					
 		\textbf{Rotation quaternions}\\
 		Quaternions are an extension of complex numbers. The set of unit quaternions can be used to represent $\mathbf{SO}(3)$, and will be referred to as rotation quaternions. 
@@ -354,7 +340,7 @@
 						  \bm{\omega}^{\wedge}	&  \mathbf{v}\\
 						  \textbf{0}_{1 \times 3} & 0						  
 					\end{bmatrix}
-					\rightarrow 
+					\mapsto 
 					\begin{bmatrix}
 						  \mathbf{R}	&	\mathbf{p} \\
 						  \textbf{0}_{1 \times 3}		& 	1 
@@ -371,7 +357,7 @@
 						\mathbf{R}	&	\mathbf{p} \\
 						\textbf{0}_{1 \times 3}		& 	1 					 				  
 					\end{bmatrix}
-					\rightarrow 
+					\mapsto
 					\begin{bmatrix}
 					 	\bm{\omega}^{\wedge}	&  \mathbf{v}\\
 					 	\textbf{0}_{1 \times 3} & 0			
@@ -438,15 +424,13 @@
 		A reference frame is a system of coordinates that is used to uniquely identify points on a manifold. This report will deal with reference frames on $\mathbb{R}^3$, that are used both to define the position of a point and the pose of a rigid body in 3D space.
 		Such a reference frame is represented by an element of \textbf{SE}(3).
 		
-		Consider three different reference frames, denoted \{A\},\{B\} and \{C\}.
-		The notation $^{A}_{B}\mathbf{X}^{}_{C}$ defines the transformation in $\mathbf{X}$ of the reference frame \{C\} with respect to the frame \{B\}, defined in the frame \{A\}.
+		The notion of an inertial reference frame is introduced here. This will be defined as a reference frame that is stationary for the purpose of the problem being described. The convention used will be to denote the inertial reference frame as $\{F\}$.
 		
-		For example, $^{A}_{B}\mathbf{R}^{}_{C}$ defines the rotation of \{C\} with respect to \{B\}, defined in \{A\}.
-		
-		The notion of an inertial reference frame is introduced here. This will be defined as a reference frame that is stationary for the purpose of the problem being described. 
-		
-		Figure \ref{fig:frames} shows...
+		Consider the three reference frames shown in Figure \ref{fig:frames}, denoted $\{F\}$ (the inertial frame),$\{A\}$ and $\{B\}$.
+		The notation $^{F}_{A}\mathbf{X}^{}_{B}$ defines the transformation in $\mathbf{X}$ of the reference frame $\{B\}$ with respect to the frame $\{A\}$, defined in the frame $\{F\}$.
 		\input{Figures/fig_referenceframes}
+		
+		For example, $^{F}_{A}\mathbf{R}^{}_{B}$ defines the rotation of $\{B\}$ with respect to $\{A\}$, defined in the inertial frame $\{F\}$.		
 		
 		\textbf{Pose:}\\
 		The pose of a rigid body in a given reference frame is defined by its relative position and orientation with respect to the given reference frame and is represented by an element of \textbf{SE}(3). If a rigid body has orientation aligned with a reference frame \{C\} and position at the origin of \{C\}, then the pose of the rigid body with respect to \{B\} and defined in \{A\} is:
