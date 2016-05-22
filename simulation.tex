@@ -385,10 +385,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	\end{equation}
 	where $\theta(t)$ is incidence angle of measurement, $\phi$ is surface properties of object $k$ that was measured, $f$ is some function for noise model of particular sensor.
 	
-	For Hokuyo UBG-04LX-F01 used, noise model was measured experimentally:
-	\begin{equation}
-		f_{UBG}(r,\theta,\phi) = 
-	\end{equation}
+	For Hokuyo UBG-04LX-F01 used, noise model was measured experimentally, see section \ref{sensor_noise}.
 	
 \subsection{Observer Implementation}
 	\subsubsection{Estimate: internal model}
@@ -545,6 +542,8 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			\end{equation}
 		
 \section{Results}
+
+\subsection{Ground truth range measurements}
 plots for different initial conditions \& kinds of motion
 
 \begin{figure}
@@ -566,5 +565,8 @@ plots for different initial conditions \& kinds of motion
   \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/observer_error_stationary_position.jpg}
   \caption{Position correction}
 \end{figure}
+
+\subsection{Noisy measurements}
+works for orientation \& size correction (together and separately)- still need to check others
 
 	

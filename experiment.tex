@@ -11,7 +11,7 @@ $0.1 \times 0.1$ m MDF cube, spray painted matte white
 1. Collected measurements to model sensor noise for simulation\\
 2. Collected measurements of moving cube + measured ground truth cube state - for testing observer with real world conditions
 
-\section{Sensor Noise Characterisation}
+\section{Sensor Noise Characterisation} \label{sensor_noise}
 	\subsection{Setup}
 		physical setup\\
 		measurement configurations 
@@ -54,7 +54,7 @@ $0.1 \times 0.1$ m MDF cube, spray painted matte white
 	  		\label{fig:stddev_range_error}
 		\end{figure}
 		
-		Fitted 4th degree (in $x$ and $y$) polynomials to data points - Figure \ref{fig:surface_range_error}
+		Fitted 4th degree (in $x$ and $y$) polynomials to data points - Figure \ref{fig:surface_range_error}. INCLUDE FIT DATA
 		\begin{figure}
 	  		\centering
 	  		\subfigure[\label{fig:surface_mean_range}]{
@@ -73,17 +73,53 @@ $0.1 \times 0.1$ m MDF cube, spray painted matte white
 			r_{error} = r + \mathcal{N}(\mu,\sigma)
 		\end{equation}	
 		noise model
-		\begin{equation}	
-			 	\mu = a_{00} + a_{10}r + a_{01}\theta + a_{20}r^2 + a_{11}r\theta + a_{02}\theta^2
-			 	      + a_{30}r^3 + a_{21}r^2\theta + a_{12}r\theta^2 + a_{03}\theta^3 + a_{40}r^4 + a_{31}r^3\theta + {22}r^2\theta^2 + a_{13}r\theta^3 + a_{04}\theta^4 	
+		\begin{equation}
+			\begin{aligned}
+				\mu = & a_{00} + a_{10}r + a_{01}\theta + a_{20}r^2 + a_{11}r\theta + a_{02}\theta^2\\
+				      & + a_{30}r^3 + a_{21}r^2\theta + a_{12}r\theta^2 + a_{03}\theta^3 + a_{40}r^4 \\ 
+				      & + a_{31}r^3\theta + a_{22}r^2\theta^2 + a_{13}r\theta^3 + a_{04}\theta^4
+			\end{aligned}		
 		\end{equation}
 		\begin{equation}
-			\sigma = 
+			\begin{aligned}
+				\sigma = & b_{00} + b_{10}r + b_{01}\theta + b_{20}r^2 + b_{11}r\theta + b_{02}\theta^2\\
+			         	 & + b_{30}r^3 + b_{21}r^2\theta + b_{12}r\theta^2 + b_{03}\theta^3 + a_{40}r^4 \\ 
+			         	 & + b_{31}r^3\theta + b_{22}r^2\theta^2 + b_{13}r\theta^3 + b_{04}\theta^4
+			\end{aligned}
 		\end{equation}
 		
-		*random walk surface noise model here too?\\
-		surface properties (or sensor processing) error on mean range across surface, looks sinusoidal, peaks = 5mm deep \& 50mm wide approximately - seems to be independent of range and angle\\
-		random walk model
+		*outliers ignored in model. if angle $>$ 75 deg and range $>$ 0.8m, range measurement = NaN. EXPLANATION: as angle increases, measured range becomes less than ground truth - due to beam width. part of beam hits part of object that is closer due to angle. However, as angle increases further, not enough light returns to make measurements. At high ranges and angles, measurement is not of object, but due to reflections that take much longer. Measurement ends up being near maximum range or even INF. Instead, will set as NaN - no value returned.
+		
+		Coefficients in tables \ref{tab:noise_a} and \ref{tab:noise_b}
+		\input{Tables/tab_noise_coefficients_a}
+		\input{Tables/tab_noise_coefficients_b}
+
+		random walk model\\
+		have observed error mostly independent of range and angle - seems to be some compensation performed by sensor to get straight lines - range across smooth surfaces that should be appear as straight lines varies regularly.
+		Could be surface properties of objects, though error is larger than expected in this case.
+		Profile of error sinusoidal (regular-ish peaks and valleys), peaks = 5mm deep \& 50mm wide approximately
+		
+		add random walk to each scan
+		\begin{equation}
+			error = a\sum_{n = 1}^{n_{Steps}}-1 + 2\:\left \lfloor{\mathcal{R}}\right \rfloor 
+		\end{equation} 
+		where $\mathcal{R}$ is a random variable following a uniform distribution on [0,1]
+		Doesn't work too well over long surfaces (~1m) - can get too large sometimes, but fits measured data for small objects like cube
+		
+		Figure \ref{fig:surface_noise}: COMPARISON OF MEASURED AND GENERATED SURFACE NOISE:
+		\begin{figure}
+	  		\centering
+	  		\subfigure[\label{fig:measured_surface_noise}]{
+	  		\begin{minipage}[b]{0.45\columnwidth}
+    			\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/measured_surface_noise}\vspace*{0ex}
+	  		\end{minipage}}
+	  		\subfigure[\label{fig:simulated_surface_noise}]{
+	  		\begin{minipage}[b]{0.45\columnwidth}
+    			\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/simulated_surface_noise}\vspace*{0ex}
+ 			\end{minipage}}
+	  		\caption{Comparision of (a) measured and (b) simulated surface noise}
+	  		\label{fig:surface_noise}
+		\end{figure}
 
 \section{Testing Data Collection}
 	\subsection{Setup}
