@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  22 MAY 2016 19:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  22 MAY 2016 22:13
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -797,19 +797,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--4
 
 
 
-] [44
+] <./Figures/range_error_histograms.jpg, id=175, 7170.79pt x 5690.25874pt>
+File: ./Figures/range_error_histograms.jpg Graphic file (type jpg)
 
-]) [45
+<use ./Figures/range_error_histograms.jpg>
+Package pdftex.def Info: ./Figures/range_error_histograms.jpg used on input lin
+e 22.
+(pdftex.def)             Requested size: 450.0pt x 357.02953pt.
+
+Overfull \hbox (90.0pt too wide) in paragraph at lines 22--23
+[][] 
+ []
+
+[44
+
+ <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/range_error_
+histograms.jpg>] [45]) [46
 
 ]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.tex"
-[46
-
-
-
-]
 Chapter 4.
-) [47] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.bbl"
+) [47
+
+
+
+] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.bbl"
 [48
 
 
@@ -826,10 +838,10 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15371 strings out of 493921
- 303046 string characters out of 3147261
+ 15376 strings out of 493921
+ 303235 string characters out of 3147261
  354713 words of memory out of 3000000
- 18283 multiletter control sequences out of 15000+200000
+ 18287 multiletter control sequences out of 15000+200000
  20048 words of font info for 74 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,23n,58p,776b,11487s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -854,9 +866,9 @@ nts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on main.pdf (49 pages, 734537 bytes).
+Output written on main.pdf (49 pages, 3113262 bytes).
 PDF statistics:
- 264 PDF objects out of 1000 (max. 8388607)
+ 267 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 68 words of extra memory for PDF output out of 10000 (max. 10000000)
 
