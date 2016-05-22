@@ -1,8 +1,31 @@
 \chapter{Experiment}
-intro: high level description of what was done, experimental setup\\
-components: arm, cube, sensor\\
-cube motion: different motions used\\
-sensor calibration:\\
-sensor motion:\\
-experimental results: observer performance\\
+Sensor:\\
+Hokuyo UBG 04-LX - 2D scanning laser rangefinder. Measures range\\
+
+Robot arm: \\
+Kinova Jaco - can program to move with and record pose
+
+Target object: \\
+$0.1 \times 0.1$ m MDF cube, spray painted matte white
+
+1. Collected measurements to model sensor noise for simulation\\
+2. Collected measurements of moving cube + measured ground truth cube state - for testing observer with real world conditions
+
+\section{Sensor Noise Characterisation}
+	\subsection{Setup}
+		physical setup\\
+		measurement configurations 
+	\subsection{Results}
+		data\\
+		noise model
+
+\section{Testing Data Collection}
+	\subsection{Setup}
+		physical setup\\
+		configurations/motions\\
+		arm forward kinematics $\rightarrow$ cube pose\\
+		estimate sensor angle with horizontal with wall calibration data		
+		
+	\subsection{Results}
+		observer performance
 

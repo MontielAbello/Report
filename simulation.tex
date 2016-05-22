@@ -490,8 +490,8 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			
 			The points of intersection are calculated using equation \ref{eq:points}. The average of these points is taken to computed to give the mean estimated position $\hat{\bm{\mu}}_\mathbf{p}$ and the mean measured position $\tilde{\bm{\mu}}_\mathbf{p}$.
 			
-			The $x,y$ and $z$ components of the scan directions ${^{F}\mathbf{D}(a)}$ may very significantly in size due to the scanning behaviour of the sensor. It is necessary to scale the position update vector according to these components.
-			The mean of all predicted and measured ranges $\mu_{r}$ is computed. Four points $\mathbf{p}_0, \mathbf{p}_1,\mathbf{p}_2$ and $\mathbf{p}_3$ are computed:			
+			The $x,y$ and $z$ components of the update vector may very significantly in size due to the scanning behaviour of the sensor. It is necessary to scale the position update vector according to these components.
+			The mean of all predicted and measured ranges $\mu_{r}$ is computed. Four points $\mathbf{p}_0, \mathbf{p}_1,\mathbf{p}_2$ and $\mathbf{p}_3$ are computed to be used in scaling:			
 			\begin{equation}
 				\begin{array}{lcl}
 					\mathbf{p}_0 & = & \mathbf{p}_s(t) = {^{F}_{F}\mathbf{p}^{}_{A}(t)}\\
