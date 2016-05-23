@@ -61,6 +61,7 @@ A simulation toolbox was implemented in Matlab to model scanning laser range-fin
 	\caption{Scanning range-finder and state observer simulation} \label{main}
 	\end{algorithm}
 	
+\textbf{NOTE: PUT THIS BIT IN INTRODUCTION???}
 The notation employed here and throughout the rest of the report represents variables according to:
 \begin{itemize}
 \item \textit{plain text}: single values;
@@ -299,8 +300,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	Given the screw matrix (in the inertial frame) and scan direction (in the body fixed frame) of the sensor, the position and scan direction in the inertial frame are determined.
 	The distance to the nearest environment object from this point, along the scan direction is determined with the M{\"o}ller-Trumbore ray-triangle intersection algorithm, shown in Algorithm \ref{intersectionalgorithm}.
 	
-	Figure \ref{fig:raytriangle} shows a simplified scenario involving the intersection of a ray with a single triangle. In practice, the algorithm is vectorised to compute the intersections with a \textit{set} of triangles.
-	\input{Figures/fig_raytriangle} 
+	Figure \ref{fig:raytriangle} shows a simplified scenario involving the intersection of a ray with a single triangle. In practice, the algorithm is vectorised to compute the intersections with a \textit{set} of triangles. In this vectorised implementation, many variables represent a matrix whose columns are each vectors. These variables will still be described as vectors to emphasise the operation of the M{\"o}ller-Trumbore algorithm, rather than the specific implementation details.	\input{Figures/fig_raytriangle}
 	
 	The output variables are first initialised to the case that there is no intersection with the scanning direction. $x$ is set to \texttt{false} and the range, angle and triangle index outputs are set to return \texttt{NaN}.
 	
@@ -309,7 +309,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	from triangles and points, extract vertices of each triangle.
 	The vector $\mathbf{A}$ computed on line \ref{line: origintov1} represents the translation from the ray origin $\mathbf{o}$ to $\mathbf{V}_1$.
 	
-	The vector $\mathbf{B}$ is computed on line \ref{line: det} by taking the cross product of the scan direction $\mathbf{d}$ and each edge $\mathbf{E}_2$. The determinant $\bm{\delta}$ of the matrix
+	The collection of vectors $\mathbf{B}$ is computed on line \ref{line: det} by taking the cross product of the scan direction $\mathbf{d}$ and each edge $\mathbf{E}_2$. The determinant $\bm{\delta}$ of the matrix
 	\begin{equation}
 		\mathbf{M} = 
 			\begin{bmatrix} 
@@ -391,26 +391,29 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	\end{algorithm}
 		
 	\subsubsection{Sensor Noise: \texttt{addnoise}}
-	Noise model depends on sensor used.
+	In Algorithm \ref{main}, the function \texttt{addnoise} takes the ground truth range measurements and produces the noisy range measurements that the observer will actually receive.
+	The noise function $f_s$ is
 	\begin{equation}
 		\hat{r}(t) = f_s(r(t),\theta(t),\phi(k))
 	\end{equation}
-	where $\theta(t)$ is incidence angle of measurement, $\phi$ is surface properties of object $k$ that was measured, $f$ is some function for noise model of particular sensor.
+	where $\theta(t)$ is the incidence angle of the measurement, $\phi$ represents the surface properties of the object $k$ that was measured.
 	
-	For the Hokuyo UBG-04LX-F01 sensor used, the noise model was measured experimentally and is provided in section \ref{sensor_noise}.
+	For the Hokuyo UBG-04LX-F01 sensor used, range measurements taken at various distances and incidence angles were used to estimate the noise model $f_{UBG}$ which is provided in section \ref{sensor_noise}.
 	
 \subsection{Observer Implementation}
-	\subsubsection{Estimate: internal model}
-		The state of the cube at each time step is estimated using the numerical integration method described in section \ref{integration}.
+	\subsubsection{Estimate: \texttt{estimatestate}}
+		The state of the cube at each time step is estimated using the numerical integration method described in section \ref{integration}. This state estimation is implemented in the function \texttt{estimatestate} in Algorithm \ref{main}.
 	
-	\subsubsection{Identifying object/background}
+	\subsubsection{Object/background sepraration: \texttt{identifyobject}}
+		The observer update function will use range measurements to estimate the state of the cube $\mathbf{X}_c$. In order to perform accurately, the observer must only use range measurements that correspond to the cube. The function \texttt{identifyobject} in Algorithm \ref{main} uses range measurements and knowledge of the configuration of the environment to separate measurements of the cube and background.
+		
 		The binary variable $c$ indicates whether the current range measurement corresponds to cube ($c=\texttt{true}$) or the background ($c=\texttt{false}$). It is assumed that initially the sensor will be observing the background, so $c_0=\texttt{false}$.
 
 		The scheme used to identify range measurements corresponding to the cube is shown in Algorithm \ref{alg:object}. There are two assumptions that may be used.
-		
-		The \textit{difference assumption} relies on the assumption that the cube and background objects are continuous. Differences in consecutive range measurements larger than $\Delta_{max}$ indicate a discontinuity, implying that a new object is being measured. When this occurs, the value of $c$ changes.
-		
-		The \textit{range assumption} is used when the maximum distance to the cube and minimum distance to the background are restricted. Range measurements within $r_{max}$ correspond to the cube while larger ranges correspond to the background.
+		\begin{enumerate}
+		\item The \textit{difference assumption} relies on the assumption that the cube and background objects are continuous. Differences in consecutive range measurements larger than $\Delta_{max}$ indicate a discontinuity, implying that a new object is being measured. When this occurs, the value of $c$ changes.
+		\item The \textit{range assumption} is used when the maximum distance to the cube and minimum distance to the background are restricted. Range measurements within $r_{max}$ correspond to the cube while larger ranges correspond to the background.
+		\end{enumerate}
 		
 		\IncMargin{2em}
 		\begin{algorithm}
@@ -440,46 +443,59 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 		\caption{Target/background object separation} \label{alg:object}
 		\end{algorithm}
 		
-	\subsubsection{Update} 
-		The cube state estimate $\hat{\mathbf{X}}_c$ is updated using the previous cube state estimate, current sensor state, range measurements and predicted range measurements. 
+	\subsubsection{Update: \texttt{updatestate}} 
+		If the \texttt{identifyobject} function identifies a range measurement as corresponding to the cube, the \texttt{updatestate} function is used to update the state estimate of the cube $\hat{\mathbf{X}}_c$. $\hat{\mathbf{X}}_c$ is updated using the previous cube state estimate, current sensor state, and sets of measured and predicted range measurements chosen according to a set of indexes $\mathbf{a}(t)$. 
 		\begin{equation}
-			\hat{\mathbf{X}}_{c}(k+1) = f(\mathbf{X}_{s}(t),\hat{\mathbf{X}}_{c}(k),r(t),\hat{r}(t))
+			\hat{\mathbf{X}}_{c}(k+1) = f(\mathbf{X}_{s}(t),\hat{\mathbf{X}}_{c}(k),\mathbf{r}(\mathbf{a}(t)),\hat{\mathbf{r}}(\mathbf{a}(t)))
 		\end{equation}	
 		The pose of $\hat{\mathbf{X}}_c$ is corrected by adjusting $\hat{\mathbf{S}}_c$, $\hat{\mathbf{T}}_c$ or $\hat{\mathbf{W}}_c$, or some combination of the three.
 		The orientation is adjusted by rotating  about an axis $\mathbf{r}_{update}$. The position is adjusted by translating in the direction of $\mathbf{p}_{update}$
 		$\mathbf{r}_{update}$ and $\mathbf{p}_{update}$ are scaled differently, depending on whether they are applied to $\hat{\mathbf{S}}_c$, $\hat{\mathbf{T}}_c$ or $\hat{\mathbf{W}}_c$.
 		The size update $s_{update}$ is independent of the pose update scheme used.
-
-		EXAMPLE - will put tables like this in the results
-		\input{Tables/tab_updateweights}
 		
 		\textbf{Input ranges:}\\
-			A set of four range measurements forming a quadrilateral are used in the state update. The four ranges are chosen with an ordered sequence of indexes $a$. At a time $ii$, the set of time steps used is
+			A set of four range measurements forming a quadrilateral are used in the state update. The four ranges are chosen with an ordered sequence of indexes $u(t)$. At a time step $ii$, the set of time steps used is in the update function is
 			\begin{equation}
-				a = \{ii,(ii-1),(ii-n_{scans}),(ii-1-n_{scans})\}
+				\mathbf{u}(ii) = \{ii,(ii-1),(ii-n_{scans}),(ii-1-n_{scans})\}
 			\end{equation}
-			At a time step $ii$, it is possible that the measured or predicted ranges do not exist for some time steps in $a$, as the range may have corresponded to the background rather than the cube.
-			Thus, the measured indexes $\tilde{a}$ and predicted indexes $\hat{a}$ will be subsets of $a$, but not necessarily congruent to $a$.
+			It is possible that the measured or predicted ranges do not exist for some time steps in $\mathbf{u}(ii)$, as the range may have corresponded to the background rather than the cube.
+			Thus, the measurement indexes $\tilde{\mathbf{u}}(ii)$ and estimation indexes $\hat{\mathbf{u}}(ii)$ will be subsets of, but not necessarily congruent to $\mathbf{u}(ii)$.
 			
 		\textbf{Orientation update:}\\
+
 			The method used to correct the orientation of the cube state estimate $\hat{\mathbf{X}}_c$ is shown in Figure~\ref{fig:orientation}. \input{Figures/fig_orientationupdate}
 						
 			In order to estimate the orientation of the cube, at least 3 ranges are required from both the prediction and measurement:
-			$|\hat{a}| \geq 3$ and $|\tilde{a}| \geq 3$. If all four indexes are present, the ranges from the last time step $(ii-1-n_{scans})$ is ignored.
+			$|\hat{\mathbf{u}}| \geq 3$ and $|\tilde{\mathbf{u}}| \geq 3$. If all four indexes are present, the ranges from the last time step $(ii-1-n_{scans})$ is ignored.
 	
-			For both the measurement and prediction, the points of intersection $^{F}\mathbf{P}(a)$ between the scanning directions ${^{F}\mathbf{D}(a)}$ and the cube are computed using the range measurements $\mathbf{r}(a)$.
+			For both the measurement and prediction, the points of intersection $^{F}\mathbf{P}(\mathbf{u})$ between the set of scanning directions ${^{F}\mathbf{D}(\mathbf{u})}$ and the cube are computed using the set of range measurements $\mathbf{r}(\mathbf{u})$.
 			\begin{equation} \label{eq:points}
-				^{F}\mathbf{P}(a) = {^{F}\mathbf{D}(a)}\mathbf{r}(a)
+				^{F}\mathbf{P}(\mathbf{u}) = {^{F}\mathbf{D}(\mathbf{u})}\mathbf{r}(\mathbf{u})
 			\end{equation}
 			The normal to the plane formed by the three points is then computed.
 			\begin{equation}
-				\mathbf{n} = [{^{F}\mathbf{P}}(a_2) - {^{F}\mathbf{P}}(a_1)] \times [{^{F}\mathbf{P}}(a_3) - {^{F}\mathbf{P}}(a_1)]
+				\mathbf{n} = [{^{F}\mathbf{P}}(u_2) - {^{F}\mathbf{P}}(u_1)] \times [{^{F}\mathbf{P}}(u_3) - {^{F}\mathbf{P}}(u_1)]
 			\end{equation}
-			The axis $\mathbf{r}_{update}$ that the estimated cube orientation $\hat{\mathbf{R}}_c$ will be rotated by is computed by taking the cross product of the predicted and measured normals:\\
+			Because a cube has 24 regular isometries, it is not necessary to effectively align the reference frames of the estimated and true cubes. Any face of the estimated cube can be aligned with any face of the true cube, and the maximum rotation correction will be $\pi/4$ radians.
+
+			The angle between the two normals $\psi$ is computed as
 			\begin{equation}
-				\mathbf{r}_{update} = (\hat{\mathbf{n}} \times \tilde{\mathbf{n}})
+				\psi = \texttt{atan2}(|\hat{\mathbf{n}}\times\tilde{\mathbf{n}}|,\hat{\mathbf{n}}\cdot\tilde{\mathbf{n}})
 			\end{equation}
-			*\textbf{EDIT: if angle between normals $> \pi/4$, rotate other direction}
+			
+			The axis $\mathbf{r}_{update}$ that the estimated cube orientation $\hat{\mathbf{R}}_c$ will be rotated by is computed by taking the cross product of the predicted and measured normals. The direction of rotation is changed if the angle $\psi$ between the two normals is greater than $\pi/4$ radians.
+			\begin{equation}
+				\mathbf{r}_{update} = \texttt{sign}\left(\frac{\pi}{4}-\psi \right)(\hat{\mathbf{n}} \times \tilde{\mathbf{n}}) 
+			\end{equation}
+			where
+			\begin{equation}
+			\texttt{sign}(x) = 
+				\begin{cases} 
+				      \hspace{0.75em} 1    \hfill & \text{ if $x \geq 0$} \\
+				      \hfill -1 \hfill & \text{ if $x < 0$} \\
+				\end{cases} 
+			\end{equation}
+		
 			To update the screw matrix $\hat{\mathbf{S}}_c$, $\mathbf{r}_{update}$ is converted to a rotation matrix $\mathbf{R}_{update}$ with Rodrigues' rotation formula (equation \ref{eq:rodrigues}). The correction is then applied as:
 			\begin{equation}
 				\hat{\mathbf{R}}_{c}(k+1) = R_{scale}\mathbf{R}_{update}\hat{\mathbf{R}}_{c}(k)
@@ -496,9 +512,9 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 				
 		\textbf{Position update:}\\
 			The method used to correct the position of $\hat{\mathbf{X}}_c$ is shown in Figure~\ref{fig:position}. \input{Figures/fig_positionupdate}
-			In order to estimate the position of the cube, at least 1 range measurement is required from both the prediction and measurement: $|\hat{a}| \geq 1$ \and $|\tilde{a}| \geq 1$. Additionally, scan directions at time steps $ii,ii-1$ and $ii-1-n_{scans}$ are required. The scan direction ${^{F}\mathbf{d}(t)}$ must be within the sensor's field of view at these time steps.
+			In order to estimate the position of the cube, at least 1 range measurement is required from both the prediction and measurement: $|\hat{\mathbf{u}}| \geq 1$ \and $|\tilde{\mathbf{u}}| \geq 1$. Additionally, scan directions at time steps $ii,(ii-1)$ and $(ii-1-n_{scans})$ are required. The scan direction ${^{F}\mathbf{d}(t)}$ must be within the sensor's field of view at these time steps.
 			
-			The points of intersection are calculated using equation \ref{eq:points}. The average of these points is taken to computed to give the mean estimated position $\hat{\bm{\mu}}_\mathbf{p}$ and the mean measured position $\tilde{\bm{\mu}}_\mathbf{p}$.
+			The points of intersection are calculated using equation \ref{eq:points}. The average of these points is computed to give the mean estimated position $\hat{\bm{\mu}}_\mathbf{p}$ and the mean measured position $\tilde{\bm{\mu}}_\mathbf{p}$.
 			
 			The $x,y$ and $z$ components of the update vector may very significantly in size due to the scanning behaviour of the sensor. It is necessary to scale the position update vector according to these components.
 			The mean of all predicted and measured ranges $\mu_{r}$ is computed. Four points $\mathbf{p}_0, \mathbf{p}_1,\mathbf{p}_2$ and $\mathbf{p}_3$ are computed to be used in scaling:			
@@ -534,10 +550,10 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			\end{equation}
 						
 		\textbf{Size update:}\\
-			In order to correct the size of the cube, at least 1 range measurement is required from both the prediction and measurement: $|\hat{a}| \geq 1$ \and $|\tilde{a}| \geq 1$.
+			In order to correct the size of the cube, at least 1 range measurement is required from both the prediction and measurement: $|\hat{\mathbf{u}}| \geq 1$ \and $|\tilde{\mathbf{u}}| \geq 1$.
 			The size update scheme also differs based on the sets predicted and measured ranges.
 			
-			For the case where a different pattern of ranges is observed($\hat{a} \neq \tilde{a}$), the update method is shown in Figure \ref{fig:size1}. \input{Figures/fig_sizeupdate1}
+			For the case where a different pattern of ranges is observed($\hat{\mathbf{u}} \neq \tilde{\mathbf{u}}$), the update method is shown in Figure \ref{fig:size1}. \input{Figures/fig_sizeupdate1}
 			The dot product from the vector $\mathbf{p}_{update}$ computed for the position update and the current scan direction is taken:
 			\begin{equation}
 				s_{update} = \mathbf{p}_{update} \cdot {^{F}\mathbf{d}(ii)}
@@ -558,7 +574,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 
 \subsection{Ground truth range measurements}
 plots for different initial conditions \& kinds of motion
-
+Tables showing settings here too: \input{Tables/tab_updateweights}
 \begin{figure}
   \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/observer_error_stationary_orientation.jpg}
   \caption{Orientation correction}
