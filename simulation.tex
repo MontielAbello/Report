@@ -1,4 +1,4 @@
-\chapter{Simulation}
+\chapter{Simulation} \label{chap:simulation}
 \section{Implementation}
 A simulation toolbox was implemented in Matlab to model scanning laser range-finder measurements and test observer schemes. The main components of the simulation are:
 \begin{itemize}
@@ -24,14 +24,14 @@ A simulation toolbox was implemented in Matlab to model scanning laser range-fin
 	\KwData{\\
 	%CHANGE THESE TO LETTERS
 	$n_{steps}$ - no. steps in simulation\\
-	$\mathbf{X}_s$ - pose and scan direction\\
-	$\mathbf{X}_e$ - points for cube and background, triangles\\
-	$\hat{\mathbf{X}}_c$ - estimate of pose and size of cube\\
-	$c$ - true/false, current range measurement is of cube\\
+	$\mathbf{X}_s$ - sensor pose and scan direction\\
+	$\mathbf{X}_e$ - cube and background pose, points and triangles\\
+	$\hat{\mathbf{X}}_c$ - estimate of the pose and size of the cube\\
+	$c$ - (\texttt{true}/\texttt{false}) current range measurement is of cube or not\\
 	$\mathbf{r}$ - ground truth range\\
-	$\tilde{\mathbf{r}}$ - measured range - ground truth + noise\\
+	$\tilde{\mathbf{r}}$ - measured range\\
 	$\hat{\mathbf{r}}$ - predicted range from state estimate\\
-	$\bm{\alpha}$ - angle of incidence for each measurement\\
+	$\bm{\alpha}$ - angle of incidence for each range measurement\\
 	$\mathbf{m}$ - index of triangle measured\\
 	$\bm{\theta}$ - scan angle in sensor frame\\
 	$\bm{\Theta}$ - set of scan angles that return range measurement\\
@@ -61,10 +61,20 @@ A simulation toolbox was implemented in Matlab to model scanning laser range-fin
 	\caption{Scanning range-finder and state observer simulation} \label{main}
 	\end{algorithm}
 	
-A high level description of the simulation is provided in Algorithm \ref{main}.	
+The notation employed here and throughout the rest of the report represents variables according to:
+\begin{itemize}
+\item \textit{plain text}: single values;
+\item \textit{bold lowercase}: vectors;
+\item \textit{bold uppercase}: matrices
+\end{itemize}
+Additionally, an array formed by replicating a variable $\mathbf{a}$ in an $n \times m$ block array is denoted $\mathbf{a}_{n \times m}$.
+
+In many cases, a variable such as the sensor position $\mathbf{p}_s(t)$ represents a set of elements, each corresponding to the value at a certain time $t$. These will be referred to by the form of the value at a single time. For example, a matrix where each column represents a different position vector is used to represent $\mathbf{p}_s(t)$, but it will be described as a vector as this is the form of a single position.
+
+A high level description of the simulation is provided in Algorithm \ref{main}.
 First, a settings file is loaded. The most important settings determined here are the trajectories of the sensor and environment objects, the scanning behaviour of the sensor and the observer update function.
 Next, the sensor class instance is initialised with \texttt{initialisesensor}. This requires computation of the pose and scanning directions of the sensor over time. Similarly, initialisation of the environment through \texttt{initialiseenvironment} requires computation of the pose of each rigid body comprising it. The surfaces of the bodies are then represented with a set of points and corresponding triangles. The position of each point with respect to the inertial frame $\{F\}$ is computed at each time step. The settings file provides the initial conditions with which the observer is initialised in \texttt{initialiseobserver}. 
-Beginning on line \ref{rangesloop}, the state of the sensor and environment are used to compute the ground truth range measurements $\mathbf{r}$ at each time step. The incidence angle of the between the scan direction and object, as well as the index of the triangle hit are also stored as they will be required for sensor noise modelling. This is performed with a parallel \texttt{for} loop to speed up computation. Line \ref{FOV} ensures ranges are only computed when the current scan direction is within the sensor's field of view.
+Beginning on line \ref{rangesloop}, the state of the sensor and environment are used to compute the ground truth range measurements $\mathbf{r}$ at each time step. The incidence angle between the scan direction and object, as well as the index of the triangle hit are also stored as they will be required for sensor noise modelling. This is performed with a parallel \texttt{for} loop to speed up computation. Line \ref{FOV} ensures ranges are only computed when the current scan direction is within the sensor's field of view.
 In line \ref{addnoise}, noise is simulated and added to the ground truth ranges to produce the measured ranges $\tilde{\mathbf{r}}$.
 The \texttt{for} loop beginning on line \ref{observerloop} begins the observer simulation. 
 At each time step, \texttt{estimatestate} estimates the state of the cube $\hat{\mathbf{X}}_c$ from the previous state with the kinematics model in \ref{kinematics}.
@@ -73,9 +83,9 @@ The variable $c$ indicates whether the current range measurement corresponds to 
 
 
 \subsection{Rigid Body Motion} \label{motion}
-To simulate range measurements the pose of the sensor and the objects comprising the environment must be computed at each time step. The computations required to do so can be reduced by taking into account the kinds of motion that must be simulated.
+To simulate range measurements the pose of the sensor and the objects comprising the environment must be computed at each time step. The computations required to do so can be reduced by taking into account the kinds of motion that must be simulated. This section details how the pose of the sensor and objects is represented and computed, which is used in the functions \texttt{initialisesensor}, \texttt{initialiseenvironment} and \texttt{estimatestate} referenced in Algorithm \ref{main}.
 
-The observer actually computes the \textit{relative} position between the sensor and cube and simply uses knowledge of the sensor pose to determine the pose of the cube in the inertial frame. There is no need to simulate complex sensor motions because the motion of the cube can be adjusted to achieve the same result. The only requirement of the sensor motion is that a large field of view is acquired so that the entire target object can be viewed. The scanning behaviour of the sensor is to rotate back and forth about the $z$-axis of the body fixed frame $\{A\}$. To provide a rectangular field of view, the motion of the sensor is therefore limited to constant velocity rotation about $y$-axis of inertial frame $\{F\}$.
+The observer actually computes the \textit{relative} position between the sensor and cube and simply uses knowledge of the sensor pose to determine the pose of the cube in the inertial frame. There is no need to simulate complex sensor motions because the motion of the cube can be adjusted to achieve the same result. The only requirement of the sensor motion is that measurements of a large range of the environment are acquired to ensure that the entire target object can be viewed. The scanning behaviour of the sensor is to rotate back and forth about the $z$-axis of the body fixed frame $\{A\}$. To provide a rectangular field of view, the motion of the sensor is therefore limited to constant velocity rotation about $y$-axis of inertial frame $\{F\}$.
 
 The environment is modelled with two rigid bodies: a cube to be observed as the target object, and a stationary rectangular prism enclosing the sensor and cube acting as the background. The various cube motions that will be simulated to test the observer's performance can be classed in terms of the wrench matrix of the cube as either
 \begin{enumerate}
@@ -86,28 +96,28 @@ The environment is modelled with two rigid bodies: a cube to be observed as the 
 For case 1. the wrench and screw are constant so only the initial value is required. It is more efficient to represent the pose of a rigid body with just position and orientation in this case. The pose can be quickly computed by interpolating between an initial and final pose. For case 2. the screw, twist and wrench must be integrated numerically.
 
 \subsubsection{Interpolation}
-For the case of zero wrench, the pose of the body can be represented with a position vector and orientation quaternion. A trajectory of $k$ poses at times 
+For the case of zero wrench, the pose of the body can be represented with a position vector $\mathbf{p}_i$ and an orientation quaternion $\mathbf{q}_i$. A trajectory of $k$ poses at times 
 $\mathbf{t} =
 \begin{bmatrix}
 	t_1 & t_2 & t_3 & \dots & t_k
 \end{bmatrix}$,
-is computed by interpolating from $\{\mathbf{p}_i,\mathbf{q}_i\}$ to $\{\mathbf{p}_f,\mathbf{q}_f\}$.
+is computed by interpolating from an initial pose $\{\mathbf{p}_0,\mathbf{q}_0\}$ to a final pose $\{\mathbf{p}_k,\mathbf{q}_k\}$.
 
-The position vectors
+The array of position vectors
 $\mathbf{P}= \begin{bmatrix}
 \mathbf{p}_1 & \mathbf{p}_2 & \mathbf{p}_3 & \dots & \mathbf{p}_k
 \end{bmatrix}$
  are computed with:
 \begin{equation}
 	\mathbf{P} = 
-	{\mathbf{p}_1}_{[1 \times k]} + (\mathbf{p}_k - \mathbf{p}_1)\frac{\mathbf{t}-{\mathbf{t}_1}_{[1 \times k]}}{t_k - t_1}
+	(\mathbf{1}_{3 \times k}){\mathbf{p}_1} + (\mathbf{p}_k - \mathbf{p}_1)\frac{\mathbf{t}-{t_1}(\mathbf{1}_{1 \times k})}{t_k - t_1}
 \end{equation}
 
-Spherical linear interpolation is used to compute the orientation
+Spherical linear interpolation is used to compute the array of orientation quaternions
 $\mathbf{Q}= \begin{bmatrix}
 	\mathbf{q}_1 & \mathbf{q}_2 & \mathbf{q}_3 & \dots & \mathbf{q}_k
 \end{bmatrix}$
-at each time:
+at each time step:
 \begin{equation} \label{slerp}
 	\mathbf{Q} = \frac{\mathbf{q}_1\sin((\mathbf{1}_{[1 \times k]}-\mathbf{t})\theta) + \mathbf{q}_k\sin(\mathbf{t}\theta)}{\sin(\theta)}
 \end{equation}
@@ -132,12 +142,12 @@ This interpolation method is used to compute the trajectory of the sensor. To ac
 	\end{bmatrix}
 \end{equation}
 
-This looped trajectory is repeated $k$ times acquire multiple views:
+This looped trajectory is repeated $k$ times to produce multiple back and forth scans:
 \begin{equation}
-	\mathbf{P} = {\mathbf{P}_{loop}}_{[1 \times k]}
+	\mathbf{P} = ({\mathbf{P}_{loop}})_{1 \times k}
 \end{equation}
 \begin{equation}
-	\mathbf{Q} = {\mathbf{Q}_{loop}}_{[1 \times k]}
+	\mathbf{Q} = ({\mathbf{Q}_{loop}})_{1 \times k}
 \end{equation}
 
 
@@ -160,7 +170,8 @@ Though a higher order integration method, such as Runge-Kutta could be used to c
 
 To simplify the code, the position vector and orientation quaternion are computed from the screw matrix. This allows the same functions to be used in either the interpolation or numerical integration cases. Multiplying the points that make up the rigid objects can also be done more compactly with quaternions.
 
-\subsection{Sensor modelling}
+\subsection{Sensor modelling: \texttt{initialisesensor}}
+The motion model below is used to compute the pose of the sensor. The scanning model is used to compute the set of scanning directions. These actions are performed in the $\texttt{initialisesensor}$ function in Algorithm \ref{main}
 \subsubsection{Motion}
 The state of the sensor $\mathbf{X}_{s}(t)$ consists of terms corresponding to its motion and scanning operation. Since the motion of the sensor is restricted to zero acceleration, the state of sensor can be computed with the interpolation method and represented with position, orientation and scanning direction. 
 \begin{equation}
@@ -202,8 +213,10 @@ The sensor rotates between $-\phi$ and $\phi$ about the $y$-axis of inertial fra
 \end{equation}
 
 \subsubsection{Scanning}
-The scanning behaviour of the sensor is modelled with the vector ${^{A}\mathbf{d}(t)}$.
-To simulate a 2D scanning sensor the following parameters are used:
+The scanning behaviour of the sensor depends on the particular model used. The \textit{Hokuyo UBG 04-LX} scanning laser range-finder will be modelled as it was the sensor used to conduct experiments in this project. This sensor produces a 785nm laser beam, projected at a precise direction. It measures the characteristics of the reflected beam to determine the position to the nearest object in the direction of the beam. The direction of the laser beam is varied by reflecting it off a rotating mirror. The rotation means that the beam direction effectively rotates with a constant velocity in a single plane. A portion of the field of view of the laser beam is obscured, so measurements will not be returned in a certain region of each revolution.
+
+The vector ${^{A}\mathbf{d}(t)}$ will be used to model this scanning behaviour.
+To accurately model this, the following parameters are used:
 \begin{itemize}
 \item field of view $\mathbf{\Theta}$: The vector ${^{A}\mathbf{d}(t)}$ rotates anti-clockwise about the $z$ axis of the sensor frame $\{A\}$. Measurements are only taken when the scan angle about is between $-\theta$ and $\theta$ about the $-z$-axis of the sensor frame $\{A\}$. In practice, the field of view is implemented as the start angle $-\theta$, direction of rotation and angular range $2\theta$.
 \item number of scans $n_{scans}$: This represents the number of scan angles in a single revolution. Since measurements are limited by the field of view of the sensor, the actual number of measurements per second is $n_{ranges} = \frac{2\theta}{2\pi}n_{scans}$. The angular resolution is $d\theta = \dfrac{2\pi}{n_{scans}}$.
@@ -219,8 +232,8 @@ From these parameters the scanning direction ${^{A}\mathbf{d}(t)}$ is created. A
 	      		\cos(-\theta + 2\pi t') \\
 	      		-\sin(-\theta + 2\pi t') \\
 	      		0
-	      	\end{bmatrix}    \hfill & \text{ if $t' \leq \theta/pi$, $t' = k\delta\tau$ where $k \in \mathbb{N}$} \\
-	      \hfill \mathbf{0} \hfill & \text{ if $t' > \theta/pi$, $t' \neq k\delta\tau$ where $k \in \mathbb{N}$} \\
+	      	\end{bmatrix}    \hfill & \text{ if $t' \leq \theta/\pi$, $t' = k\delta\tau$ where $k \in \mathbb{N}$} \\
+	      \hfill \mathbf{0}_{3 \times 1} \hfill & \text{ if $t' > \theta/\pi$, $t' \neq k\delta\tau$ where $k \in \mathbb{N}$} \\
 	\end{cases} 
 \end{equation}
 where
@@ -239,9 +252,9 @@ To simulate range measurements, the scan direction is required in the inertial f
 	\end{array}
 \end{equation}
 
-\subsection{Environment Modelling}
+\subsection{Environment Modelling: \texttt{initialiseenvironment}}
 \subsubsection{Motion}
-The pose of each object represents the pose of its centre of mass. As described in section \ref{motion} the pose is computed with interpolation for the case of zero wrench, and numerical integration in the case of non-zero wrench.
+The pose of each object represents the pose of its centre of mass. As described in section \ref{motion} the pose is computed with interpolation for the case of zero wrench, and numerical integration in the case of non-zero wrench. The pose of the objects making up the environment is computed with the function $\texttt{initialiseenvironment}$ in Algorithm \ref{main}. This function also creates the points and triangles that model the surface of the objects which is described below.
 
 \subsubsection{Rigid Objects}
 The environment is represented with two rectangular prisms; the cube and a larger rectangular prism enclosing both the sensor and cube, to represent the background. These objects are modelled as an ordered set of 8 points in the inertial reference frame and an ordered set of 12 triangles formed by these points. Each triangle is represented by a set of 3 integers, indicating the index of the three points that make up its vertices.
@@ -280,7 +293,9 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 \input{Figures/fig_triangles}
 
 \subsection{Measurement Modelling}
-	\subsubsection{Range Computation}
+	\subsubsection{Range Computation: \texttt{computerange}}
+	This section describes the implementation used in the $\texttt{computerange}$ function in Algorithm \ref{main}.
+	
 	Given the screw matrix (in the inertial frame) and scan direction (in the body fixed frame) of the sensor, the position and scan direction in the inertial frame are determined.
 	The distance to the nearest environment object from this point, along the scan direction is determined with the M{\"o}ller-Trumbore ray-triangle intersection algorithm, shown in Algorithm \ref{intersectionalgorithm}.
 	
@@ -374,18 +389,15 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	}
 	\caption{M{\"o}ller-Trumbore ray-triangle intersection} \label{intersectionalgorithm}
 	\end{algorithm}
-	
-	\subsubsection{Object Surface}
-	random walk
-	
-	\subsubsection{Sensor Noise}
+		
+	\subsubsection{Sensor Noise: \texttt{addnoise}}
 	Noise model depends on sensor used.
 	\begin{equation}
 		\hat{r}(t) = f_s(r(t),\theta(t),\phi(k))
 	\end{equation}
 	where $\theta(t)$ is incidence angle of measurement, $\phi$ is surface properties of object $k$ that was measured, $f$ is some function for noise model of particular sensor.
 	
-	For Hokuyo UBG-04LX-F01 used, noise model was measured experimentally, see section \ref{sensor_noise}.
+	For the Hokuyo UBG-04LX-F01 sensor used, the noise model was measured experimentally and is provided in section \ref{sensor_noise}.
 	
 \subsection{Observer Implementation}
 	\subsubsection{Estimate: internal model}

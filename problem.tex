@@ -21,14 +21,14 @@ This project aims to develop some of this theory. The approach taken will be to 
 \textbf{estimation problem - cube pose \& size:}\\
 \input{Figures/fig_cubeproblem}
 A situation in which an infinite dimensional observer would be useful is in the estimation of the pose of an object of size moving in an environment of unknown state.
-For example, consider an autonomous robot deployed in an agricultural survey, which must determine the position and size of a certain crop.
+For example, consider an autonomous robot deployed in an agricultural survey, which must determine the position and size of a certain crop. Using a geometric model for the general shape of the crop, an aerial vehicle that could routinely detect and characterise the position and size of specimens would be useful in monitoring growth and during harvesting.
 
 The problem to be investigated is shown in Figure~\ref{fig:cubeproblem}. A 2D scanning range sensor moves through an environment consisting of a target object of known shape, in this case a rigid cube, and an unknown background which may consist of one or more rigid bodies. The state of the sensor is known, but the states of the cube and background environment are unknown. The goal is to use the state of the sensor and the range measurements it provides to estimate the state of the cube.
 
 The frames used to describe the motion of the rigid bodies in this problem are:
 \begin{itemize}
 \item $\{F\}$ - the inertial (fixed) frame. For the purposes of this problem, the inertial frame is a frame whose motion is negligible. For the practical experiment this frame will be fixed to the ground.
-\item $\{A\}$ - the frame fixed to the sensor. The origin of this frame is the centre of rotation of the sensor's scan direction. The axes of $\{A\}$ are fixed to the sensor according to figure \textbf{TODO: FIGURE}. The transformation from $\{F\}$ to $\{A\}$ at time $t$ is defined by the screw matrix of the sensor $\mathbf{S}_{s}(t)$.
+\item $\{A\}$ - the frame fixed to the sensor. The origin of this frame is the centre of rotation of the sensor's scan direction. The axes of $\{A\}$ are fixed to the sensor according to Figure \ref{fig:scanningparameters} in chapter \ref{chap:simulation}. The transformation from $\{F\}$ to $\{A\}$ at time $t$ is defined by the screw matrix of the sensor $\mathbf{S}_{s}(t)$.
 \item $\{B\}$ - the frame fixed to the cube. The origin of $\{B\}$ coincides with the centre of the cube and is aligned so that each axis intersects with the centre of a face of the cube. The transformation from $\{F\}$ to $\{B\}$ at time $t$ is defined by the screw matrix of the cube $\mathbf{S}_{c}(t)$.
 \end{itemize} 
 
