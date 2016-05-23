@@ -13,10 +13,13 @@ $0.1 \times 0.1$ m MDF cube, spray painted matte white
 
 \section{Sensor Noise Characterisation} \label{sensor_noise}
 	\subsection{Setup}
-		physical setup\\
-		measurement configurations 
+		\textbf{physical setup:}\\
+		\textbf{measurement configurations:}\\
+			-5cm increments from 0.25-1.75m\\
+			-vary incidence angle: 0,20,40,60,80 degrees
+		 
 	\subsection{Results}
-		data\\
+		\textbf{Error distribution:}
 		Histograms (Figure \ref{fig:mean_hist}) - range error approximately normally distributed:
 		\begin{figure}
 		  \includegraphics[width=1.25\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/range_error_histograms.jpg}
@@ -24,7 +27,7 @@ $0.1 \times 0.1$ m MDF cube, spray painted matte white
 		  \label{fig:mean_hist}
 		\end{figure}
 		
-		Mean range error - Figure \ref{fig:mean_range_error}
+		Mean range error as function of (range,incidence angle) - Figure \ref{fig:mean_range_error}
 		\begin{figure}
 	  		\centering
 	  		\subfigure[\label{fig:mean_range_error_outliers}]{
@@ -39,7 +42,7 @@ $0.1 \times 0.1$ m MDF cube, spray painted matte white
 	  		\label{fig:mean_range_error}
 		\end{figure}
 		
-		Std dev range error - Figure \ref{fig:stddev_range_error}		
+		Std dev range error as function of (range,incidence angle) - Figure \ref{fig:stddev_range_error}		
 		\begin{figure}
 	  		\centering
 	  		\subfigure[\label{fig:stddev_range_error_outliers}]{
@@ -69,10 +72,11 @@ $0.1 \times 0.1$ m MDF cube, spray painted matte white
 	  		\label{fig:surface_range_error}
 		\end{figure}
 		
+		Noise Model:\\
 		\begin{equation}
 			r_{error} = r + \mathcal{N}(\mu,\sigma)
 		\end{equation}	
-		noise model
+		
 		\begin{equation}
 			\begin{aligned}
 				\mu = & a_{00} + a_{10}r + a_{01}\theta + a_{20}r^2 + a_{11}r\theta + a_{02}\theta^2\\
@@ -94,6 +98,7 @@ $0.1 \times 0.1$ m MDF cube, spray painted matte white
 		\input{Tables/tab_noise_coefficients_a}
 		\input{Tables/tab_noise_coefficients_b}
 
+		\textbf{Surface noise:}
 		random walk model\\
 		have observed error mostly independent of range and angle - seems to be some compensation performed by sensor to get straight lines - range across smooth surfaces that should be appear as straight lines varies regularly.
 		Could be surface properties of objects, though error is larger than expected in this case.
@@ -106,7 +111,7 @@ $0.1 \times 0.1$ m MDF cube, spray painted matte white
 		where $\mathcal{R}$ is a random variable following a uniform distribution on [0,1]
 		Doesn't work too well over long surfaces (~1m) - can get too large sometimes, but fits measured data for small objects like cube
 		
-		Figure \ref{fig:surface_noise}: COMPARISON OF MEASURED AND GENERATED SURFACE NOISE:
+		Figure \ref{fig:surface_noise}: comparison of simulated \& measured surface noise:
 		\begin{figure}
 	  		\centering
 	  		\subfigure[\label{fig:measured_surface_noise}]{
@@ -124,7 +129,12 @@ $0.1 \times 0.1$ m MDF cube, spray painted matte white
 \section{Testing Data Collection}
 	\subsection{Setup}
 		physical setup\\
-		configurations/motions\\
+		configurations/motions: \\
+			-stationary\\
+			-rotating\\
+			-translating\\
+			(all above with 1,2,3 faces visible to sensor)
+					
 		arm forward kinematics $\rightarrow$ cube pose\\
 		estimate sensor angle with horizontal with wall calibration data		
 		

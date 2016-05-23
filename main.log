@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  23 MAY 2016 04:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  23 MAY 2016 22:26
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -752,10 +752,10 @@ File: ./Figures/observer_error_stationary_orientation.jpg Graphic file (type jp
 g)
  <use ./Figures/observer_error_stationary_orientation.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_orientation.jpg us
-ed on input line 550.
+ed on input line 551.
 (pdftex.def)             Requested size: 431.9989pt x 239.78922pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 550--551
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 551--552
 [][] 
  []
 
@@ -766,10 +766,10 @@ File: ./Figures/observer_error_stationary_orientation_size.jpg Graphic file (ty
 pe jpg)
  <use ./Figures/observer_error_stationary_orientation_size.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_orientation_size.j
-pg used on input line 555.
+pg used on input line 556.
 (pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 555--556
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 556--557
 [][] 
  []
 
@@ -778,10 +778,10 @@ File: ./Figures/observer_error_stationary_size.jpg Graphic file (type jpg)
 
 <use ./Figures/observer_error_stationary_size.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_size.jpg used on i
-nput line 560.
+nput line 561.
 (pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 560--561
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 561--562
 [][] 
  []
 
@@ -791,10 +791,10 @@ Overfull \hbox (71.9989pt too wide) in paragraph at lines 560--561
 File: ./Figures/observer_error_stationary_position.jpg Graphic file (type jpg)
  <use ./Figures/observer_error_stationary_position.jpg>
 Package pdftex.def Info: ./Figures/observer_error_stationary_position.jpg used 
-on input line 565.
+on input line 566.
 (pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 565--566
+Overfull \hbox (71.9989pt too wide) in paragraph at lines 566--567
 [][] 
  []
 
@@ -822,10 +822,10 @@ File: ./Figures/range_error_histograms.jpg Graphic file (type jpg)
 
 <use ./Figures/range_error_histograms.jpg>
 Package pdftex.def Info: ./Figures/range_error_histograms.jpg used on input lin
-e 22.
+e 25.
 (pdftex.def)             Requested size: 450.0pt x 357.02953pt.
 
-Overfull \hbox (90.0pt too wide) in paragraph at lines 22--23
+Overfull \hbox (90.0pt too wide) in paragraph at lines 25--26
 [][] 
  []
 
@@ -834,7 +834,7 @@ File: ./Figures/noise_mean_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/noise_mean_range_error.jpg>
 Package pdftex.def Info: ./Figures/noise_mean_range_error.jpg used on input lin
-e 33.
+e 36.
 (pdftex.def)             Requested size: 161.9989pt x 100.72958pt.
 
 <./Figures/noise_mean_range_error_removed_outliers.jpg, id=179, 5576.835pt x 34
@@ -843,62 +843,76 @@ File: ./Figures/noise_mean_range_error_removed_outliers.jpg Graphic file (type
 jpg)
  <use ./Figures/noise_mean_range_error_removed_outliers.jpg>
 Package pdftex.def Info: ./Figures/noise_mean_range_error_removed_outliers.jpg 
-used on input line 37.
+used on input line 40.
 (pdftex.def)             Requested size: 161.9989pt x 100.72958pt.
- [44
 
- <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/range_error_
-histograms.jpg>]
-<./Figures/noise_stddev_range_error.jpg, id=185, 5576.835pt x 3468.96pt>
+<./Figures/noise_stddev_range_error.jpg, id=181, 5576.835pt x 3468.96pt>
 File: ./Figures/noise_stddev_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/noise_stddev_range_error.jpg>
 Package pdftex.def Info: ./Figures/noise_stddev_range_error.jpg used on input l
-ine 48.
+ine 51.
 (pdftex.def)             Requested size: 161.9989pt x 100.72958pt.
 
-<./Figures/noise_stddev_range_error_removed_outliers.jpg, id=187, 5576.835pt x 
+<./Figures/noise_stddev_range_error_removed_outliers.jpg, id=183, 5576.835pt x 
 3468.96pt>
 File: ./Figures/noise_stddev_range_error_removed_outliers.jpg Graphic file (typ
 e jpg)
  <use ./Figures/noise_stddev_range_error_removed_outliers.jpg>
 Package pdftex.def Info: ./Figures/noise_stddev_range_error_removed_outliers.jp
-g used on input line 52.
+g used on input line 55.
 (pdftex.def)             Requested size: 161.9989pt x 100.72958pt.
 
-<./Figures/surface_mean_range_error.jpg, id=189, 5576.835pt x 3468.96pt>
+<./Figures/surface_mean_range_error.jpg, id=185, 5576.835pt x 3468.96pt>
 File: ./Figures/surface_mean_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/surface_mean_range_error.jpg>
 Package pdftex.def Info: ./Figures/surface_mean_range_error.jpg used on input l
-ine 63.
+ine 66.
 (pdftex.def)             Requested size: 161.9989pt x 100.72958pt.
 
-<./Figures/surface_stddev_range_error.jpg, id=191, 5576.835pt x 3468.96pt>
+<./Figures/surface_stddev_range_error.jpg, id=187, 5576.835pt x 3468.96pt>
 File: ./Figures/surface_stddev_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/surface_stddev_range_error.jpg>
 Package pdftex.def Info: ./Figures/surface_stddev_range_error.jpg used on input
- line 67.
+ line 70.
 (pdftex.def)             Requested size: 161.9989pt x 100.72958pt.
- [45 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/noise_me
-an_range_error.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/F
-igures/noise_mean_range_error_removed_outliers.jpg> <C:/Users/Monty Abello/Docu
-ments/Uni/2016/ENGN4718/Report/Figures/noise_stddev_range_error.jpg> <C:/Users/
-Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/noise_stddev_range_erro
-r_removed_outliers.jpg>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Tables/tab_noise_coe
-fficients_a.tex")
+fficients_a.tex"
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+)
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Tables/tab_noise_coe
-fficients_b.tex") [46 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report
-/Figures/surface_mean_range_error.jpg> <C:/Users/Monty Abello/Documents/Uni/201
-6/ENGN4718/Report/Figures/surface_stddev_range_error.jpg>]
+fficients_b.tex"
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) [44
+
+] [45 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/range_e
+rror_histograms.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/
+Figures/noise_mean_range_error.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/E
+NGN4718/Report/Figures/noise_mean_range_error_removed_outliers.jpg>]
+[46 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/noise_std
+dev_range_error.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/
+Figures/noise_stddev_range_error_removed_outliers.jpg> <C:/Users/Monty Abello/D
+ocuments/Uni/2016/ENGN4718/Report/Figures/surface_mean_range_error.jpg> <C:/Use
+rs/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/surface_stddev_range
+_error.jpg>]
 <./Figures/measured_surface_noise.jpg, id=206, 4353.26375pt x 3356.54pt>
 File: ./Figures/measured_surface_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/measured_surface_noise.jpg>
 Package pdftex.def Info: ./Figures/measured_surface_noise.jpg used on input lin
-e 115.
+e 120.
 (pdftex.def)             Requested size: 161.9989pt x 124.86609pt.
 
 <./Figures/simulated_surface_noise.jpg, id=208, 4353.26375pt x 3356.54pt>
@@ -906,23 +920,25 @@ File: ./Figures/simulated_surface_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/simulated_surface_noise.jpg>
 Package pdftex.def Info: ./Figures/simulated_surface_noise.jpg used on input li
-ne 119.
+ne 124.
 (pdftex.def)             Requested size: 161.9989pt x 124.86609pt.
- [47 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/measured
-_surface_noise.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/F
-igures/simulated_surface_noise.jpg>]) [48
+ [47] [48 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/mea
+sured_surface_noise.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Rep
+ort/Figures/simulated_surface_noise.jpg>]) [49
 
-] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.tex"
-Chapter 4.
-) [49
-
-
-
-] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.bbl"
+]
+("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.tex"
 [50
 
 
-]) [51] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux" ("
+
+]
+Chapter 4.
+) [51] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.bbl"
+[52
+
+
+]) [53] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux" ("
 C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\literature.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\background.aux")
@@ -937,11 +953,11 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 Here is how much of TeX's memory you used:
  15597 strings out of 493921
  308218 string characters out of 3147261
- 356848 words of memory out of 3000000
+ 356849 words of memory out of 3000000
  18485 multiletter control sequences out of 15000+200000
  20347 words of font info for 75 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 55i,23n,58p,776b,11664s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,23n,58p,776b,11662s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
 sy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pro
@@ -963,9 +979,9 @@ ts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmt
 i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (51 pages, 10621739 bytes).
+Output written on main.pdf (53 pages, 10623900 bytes).
 PDF statistics:
- 301 PDF objects out of 1000 (max. 8388607)
+ 307 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

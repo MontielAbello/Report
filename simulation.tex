@@ -465,8 +465,9 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			\end{equation}
 			The axis $\mathbf{r}_{update}$ that the estimated cube orientation $\hat{\mathbf{R}}_c$ will be rotated by is computed by taking the cross product of the predicted and measured normals:\\
 			\begin{equation}
-				\mathbf{r}_{update} = \hat{\mathbf{n}} \times \tilde{\mathbf{n}}
+				\mathbf{r}_{update} = (\hat{\mathbf{n}} \times \tilde{\mathbf{n}})
 			\end{equation}
+			*\textbf{EDIT: if angle between normals $> \pi/4$, rotate other direction}
 			To update the screw matrix $\hat{\mathbf{S}}_c$, $\mathbf{r}_{update}$ is converted to a rotation matrix $\mathbf{R}_{update}$ with Rodrigues' rotation formula (equation \ref{eq:rodrigues}). The correction is then applied as:
 			\begin{equation}
 				\hat{\mathbf{R}}_{c}(k+1) = R_{scale}\mathbf{R}_{update}\hat{\mathbf{R}}_{c}(k)
