@@ -571,36 +571,117 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			\end{equation}
 		
 \section{Results}
+\subsection{testing scheme? think of a title...}
+tested stationary, rotating, translating, rotating \& translating for cases where 1,2,3 faces visible to sensor. tested with and without noise.\\
+Would take too long to perform exhaustive analysis of solution space, testing all the parameters. Instead, will present key results...
 
-\subsection{Ground truth range measurements}
-plots for different initial conditions \& kinds of motion
-Tables showing settings here too: \input{Tables/tab_updateweights}
+\subsection{Orientation correction}
+stationary - converges for no noise Figure \ref{fig:error_orientation}.\\
+Doesn't converge to 0 due to noise, but still stable. Figure \ref{fig:error_orientation_noise}.\\
+
+Figure \ref{fig:error_R_orientation_screw} - rotating. Updated orientation via screw. Very 'jagged'. Lags slightly, catches up.
+Figure \ref{fig:error_R_orientation_twist} - rotating. Updated orientation via twist. over/undershoots much more than screw.
+
+Figure \ref{fig:error_R_orientation_noise_screw} - noisy, rotating. Updated orientation via screw, kind of keeps up with rotation but error caused by noise.
+Figure \ref{fig:error_R_orientation_noise_twist} - noisy, rotating. Updated orientation via twist, overshoot error. 
+
 \begin{figure}
-  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/observer_error_stationary_orientation.jpg}
-  \caption{Orientation correction}
+  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_xx_3F_orientation.jpg}
+  \caption{Orientation correction - no noise} \label{fig:error_orientation}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/observer_error_stationary_orientation_size.jpg}
-  \caption{Orientation \& size correction}
+  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_xx_3F_orientation_noisy.jpg}
+  \caption{Orientation correction - noise} \label{fig:error_orientation_noise}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/observer_error_stationary_size.jpg}
-  \caption{Size correction}
+  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_Rx_3F_orientation_screw.jpg}
+  \caption{rotating - Orientation correction via screw - no noise} \label{fig:error_R_orientation_screw}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/observer_error_stationary_position.jpg}
-  \caption{Position correction}
+  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_Rx_3F_orientation_twist.jpg}
+  \caption{rotating - Orientation correction via twist - no noise} \label{fig:error_R_orientation_twist}
 \end{figure}
 
-\subsection{Noisy measurements}
-works for orientation \& size correction (together and separately)- still need to check others
+\begin{figure}
+  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_Rx_3F_orientation_noise_screw.jpg}
+  \caption{rotating - Orientation correction via screw - noise} \label{fig:error_R_orientation_noise_screw}
+\end{figure}
 
-\subsection{something interesting}	
-Observer does not rely on cube shape. Replaced cube with tetrahedron, still works. Figure \ref{fig:tetrahedron}
+\begin{figure}
+  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_Rx_3F_orientation_noise_twist.jpg}
+  \caption{rotating - Orientation correction via twist - noise} \label{fig:error_R_orientation_noise_twist}
+\end{figure}
+
+\subsection{Position correction}
+stationary - works for only 1 face visible. Without noise - Figure \ref{fig:error_1F_position}. With noise - \ref{fig:error_1F_position_noise}. 
+
+doesnt work for 2/3 faces (results 20). Figure \ref{fig:error_2F_position}.
+Requires perpendicular - multiple faces and edges mean update position vector points in wrong direction.\\
+
+\begin{figure}
+  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_1F_position.jpg}
+  \caption{stationary, 1 face visible - position correction} \label{fig:error_1F_position}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_1F_position_noise.jpg}
+  \caption{stationary with noise, 1 face visible - position correction} \label{fig:error_1F_position_noise}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_2F_position.jpg}
+  \caption{stationary with noise, 2 faces visible - position correction doesn't work} \label{fig:error_2F_position}
+\end{figure}
+
+\subsection{Size correction}
+works for stationary and moving, noise and no noise, 1,2,3 faces\\
+Figure \ref{fig:error_stationary_size_noise}  - noise, stationary, 3F visible - size correction\\
+Figure \ref{fig:error_RT_size_noise}  - noise, rotating + translating - size correction\\
+
+\begin{figure}
+  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_xx_size_noise.jpg}
+  \caption{stationary with noise, 3 faces visible - size correction} \label{fig:error_stationary_size_noise}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_RT_size_noise.jpg}
+  \caption{rotating + translating with noise, 3 faces visible - size correction} \label{fig:error_RT_size_noise}
+\end{figure}
+
+\subsection{Orientation and size}
+works in same cases orientation alone works\\
+Figure \ref{fig:error_xx_3F_OxS_noise}:stationary, noisy, orientation \& size works (results 9).\\
+Figure \ref{fig:error_Rx_3F_OxS_screw} - rotating, no noise, orientation updated via screw, size updated as normal. \\ 
+Figure \ref{fig:error_Rx_3F_OxS_twist} - rotating, no noise, orientation updated via twist, size updated as normal.
+
+\begin{figure}
+  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_xx_3F_OxS_noise.jpg}
+  \caption{stationary with noise, 3 faces visible - orientation and size correction} \label{fig:error_xx_3F_OxS_noise}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_Rx_3F_OxS_screw.jpg}
+  \caption{rotating with no noise, 3 faces visible - orientation (via screw) and size correction} \label{fig:error_Rx_3F_OxS_screw}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_Rx_3F_OxS_twist.jpg}
+  \caption{rotating with no noise, 3 faces visible - orientation (via twist) and size correction} \label{fig:error_Rx_3F_OxS_twist}
+\end{figure}
+
+\subsection{effect of initial conditions}
+stationary orientation and size, with noise. plot time to within 5\% for range of initial angle and size error. see what happens
+
+\subsection{discussion}
+Size most robust, then orientation, then position. When combining, performance limited by less robust update.
+
+Observer does not rely on cube shape. Replaced cube with tetrahedron, still works. Figure \ref{fig:tetrahedron}.
 \begin{figure}
   \includegraphics[width=1.2\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/tetrahedron_observer.jpg}
   \caption{Tetrahedron: orientation \& size correction} \label{fig:tetrahedron}
 \end{figure}
+
+Seems to be a good approach. To improve, need to fix position. Also, overshoot when adjusting via twist matrix. Twist needs very fine tuning. Instead, do some combination of screw and twist to maximise speed, minimise overshoot.
