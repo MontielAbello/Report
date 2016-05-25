@@ -12,6 +12,8 @@ $0.1 \times 0.1$ m MDF cube, spray painted matte white
 2. Collected measurements of moving cube + measured ground truth cube state - for testing observer with real world conditions
 
 \section{Sensor Noise Characterisation} \label{sensor_noise}
+motivation - accurate noise model for simulation. In \cite{park2010characterization}, noise characterised but no unified model for range and angle. Furthermore, significant effect from surface colour, texture. Better to develop model for specific case - more accurate practical testing in the future.
+
 	\subsection{Setup}
 		\textbf{physical setup:}\\
 		\textbf{measurement configurations:}\\
@@ -19,6 +21,7 @@ $0.1 \times 0.1$ m MDF cube, spray painted matte white
 			-vary incidence angle: 0,20,40,60,80 degrees
 		 
 	\subsection{Results}
+	Similar results to \cite{park2010characterization}. Difficult to get sensible readings at high angles, Gaussian distributed noise.
 		\textbf{Error distribution:}
 		Histograms (Figure \ref{fig:mean_hist}) - range error approximately normally distributed:
 		\begin{figure}
@@ -75,7 +78,7 @@ $0.1 \times 0.1$ m MDF cube, spray painted matte white
 		
 		Noise Model:\\
 		\begin{equation}
-			r_{error} = r + \mathcal{N}(\mu,\sigma)
+			\hat{r} = f_s(r,\theta,\phi(k)) = r + \mathcal{N}(\mu,\sigma)
 		\end{equation}	
 		
 		\begin{equation}

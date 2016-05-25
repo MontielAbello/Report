@@ -34,14 +34,14 @@ Investigation into observers for systems on Lie groups:
 \subsection{symmetry preserving observers}
 The idea behind symmetry preserving observers is to take advantage of invariances of the system. Design an observer around an equilibrium point in such a way that it can be extended to a wider set of points.
 
-\subsubsection{early work}
+\subsubsection{Early work}
 Observer design taking geometry into account not a new idea. Early investigation by Marcus \cite{marcus1984algebraic} into algebraic and geometric methods for nonlinear filter design showed idea had promise.
 An important work by Salcudean - eventually exponential, globally converging observer - rigid bodies, attitude.
 Work that has led to research today is by Aghannon \& Rouchon \cite{aghannan2002invariant} - invariant observer construction based on Cartan's moving frame method. Proved convergence for specific problem, but general case still open problem.
 Usefulness show by Maithripala \cite{maithripala2005intrinsic} who used Aghannon's method in an intrinsic observer based controller - meaning performance independent of coordinates of configuration space.
 
 
-\subsubsection{Current research}
+\subsubsection{Active research}
 Currently, there are two active research groups. Both have begun to apply symmetry methods to infinite dimensional observers too.
 
 First group, Bonnabel, Auroux, Rouchon, Martin
@@ -59,12 +59,11 @@ including Trumpf, Mahony, Hamel, Lageman
 2013 \cite{mahony2013observers} - design methodology for 2 classes of systems- lift kinematic system onto symmetry group. design observer for the lifted system. - lyapunov method for innovation term. Basically, less general than Bonnabel group, stronger global convergence characteristics
 
 Additional work:
-Zarrouati \cite{zarrouati2013augmented} - PhD thesis - observer from rotation invariant equations for light and depth - camera and depth sensor - dense sensors give infinite dimensional measurement, though finite dimensional state estimated\\
+Zarrouati \cite{zarrouati2013augmented} - PhD thesis - observer from rotation invariant equations for light and depth - camera and depth sensor - dense sensors give infinite dimensional measurement, though finite dimensional state estimated
 
-juan's work \cite{adarvefiltering} - in detail\\
-dense optical flow, infinite dimensional state. Work that informs that in this report.
+Most recent work by Adarve \cite{adarvefiltering} is similar exploration into dense sensing for estimation of infinite dimensional state. Will take a close look at this work as it is inspiration for this project, similar in spirit.
 
-Adarve et al. design an update-propagation filter to iteratively compute dense optical flow. Rather than computing the optical flow independently at each frame, a two-stage process is used to build it incrementally. The propagation stage uses a non-linear PDE to model the transport of the optical flow in the next time step. The update stage corrects this prediction using the current image.
+Adarve et al. design an update-propagation filter to iteratively compute dense optical flow from CCD camera measurements. Rather than computing the optical flow independently at each frame, a two-stage process is used to build it incrementally. The propagation stage uses a non-linear PDE to model the transport of the optical flow in the next time step. The update stage corrects this prediction using the current image.
 
 This paper is relevant to the project because:
 \begin{itemize}
@@ -72,33 +71,13 @@ This paper is relevant to the project because:
 \item The use of a dense sensor allows for the image to be treated as continuous in time and space;
 \item The state that is being observed is infinite dimensional;
 \item The relationship between the state to observe $ \Phi $ and the measurement of the environment $ Y $ is given by a transport PDE;
-\item the algorithm is computationally inexpensive and can be implemented in real-time on an FPGA.
 \end{itemize}
 
 The iterative filter used in this approach is an observer that estimates the state of the continuous spatio-temporal flow field. By using a dense sensor, the measured image stream can be treated as a continuous, infinite dimensional state. This is in contrast to sparse optical flow computation where the image is modelled as a set of discrete pixel values. However, the flow field is computed in support regions around a discrete set of control points. Here, this approach differs from a general infinite dimensional invariant observer might look like. The state is treated as a discrete set of locally continuous states which does not allow for symmetry considerations. \textit{Why? - the pde relations in the local regions are invariant to 2D rotation + translation, but what about the interaction between regions? - still need to do more reading on how invariance can be used to improve observer design.}
 
-The quantities in this work can be related to those in the range sensor problem.
-The measured image $Y$ corresponds to the depth measurement $d$. The estimated flow field $\Phi$ corresponds to the relative velocity between the object in the environment $w$ and the robot velocity $u$.
+$\Phi$ and $Y$ are discretized spatially at the beginning of the algorithm design. Discretizing later would allow for symmetry to be taken advantage of.
 
-Differences:
-\begin{itemize}
-\item Using a CCD camera (which often use a global shutter), $Y$ is a measurement of the intensity 'in parallel' (same time for each pixel), whereas the range sensor scan $d$ is 'in series' (different times for each point). The modelling of $d$, or how a continuous approximation is made from the discrete measurements will be different from how $Y$ is approximated in this paper. If a camera with a rolling shutter is used, it would be a bit more similar to the range sensor. 
-\item $\Phi$ and $Y$ are discretized spatially at the beginning of the algorithm design. Discretizing later would allow for symmetry to be taken advantage of.
-\item Splitting the computation into update and propagation stages - this not as general as the observer of the form in equation~\eqref{obs}.
-\end{itemize}
- 
 Also, in order to derive the transport identity in the state propagation stage it was assumed the $\Phi$ was locally continuous. This assumption is invalid in the case of multiple objects, and will lead to an incorrect solution at the boundaries of objects. This is dealt with by computing the partial derivatives in the Jacobian matrix with data from direction of the source of the flow. This is done by choosing either the forward or backward partial derivative kernel in the $x$ and $y$ directions. Lesson: sometimes assumptions that are not completely valid must be made for simplicities sake - the implementation can be designed to minimise the resulting errors.
 
-Outcomes:
-\begin{itemize}
-\item Have seen how assumptions/constraints particular to the problem (local continuity assumption, constant brightness assumption) can be used to derive a PDE relating a measurement to the unknown state;
-\item Have seen how such a PDE can be used to derive a computationally simple algorithm to estimate the unknown state
-\item Have identified differences in the approach used, and what a general infinite dimensional invariant observer might look like. These are good places to start investigating.
-\end{itemize}
 
-Next:
-\begin{itemize}
-\item Research infinite dimensional, symmetry preserving observers. How can symmetries be used in observer design?
-\item Research numerical solution methods for PDEs. What does a numerical solution algorithm need to do??? Will look at dense optical flow for concrete examples.
-\end{itemize}
 
