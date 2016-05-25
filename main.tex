@@ -1,28 +1,28 @@
 %--------------------------------------------------------------
 %Preamble
 %\documentclass[a4paper, twoside, 11pt]{book}
-\documentclass[twoside, 11pt]{book}
+\documentclass[twoside,openany,11pt]{book}
 \usepackage[%
   papersize={210mm,297mm},%
-  layoutsize={210mm,297mm},%
-  layoutoffset=0mm,%
+  layoutsize={200mm,294mm},%
+  layoutoffset=5mm,%
   twoside,%
   nomarginpar,%
-  inner=25mm,%
-  outer=25mm,%
+  inner=20mm,%
+  outer=20mm,%
   vmargin=25mm,%
-  voffset=5mm,
+  voffset=0mm,
   head=20mm,%
-  headsep=15mm,%
+  headsep=10mm,%
+  includefoot,
+  foot=0mm,%
   %includefoot,
-  foot=20mm,%
-  footskip=10mm, %
   %showcrop,%
   %showframe,%
 ]{geometry}
 \setlength{\parindent}{0mm}
 \setlength{\parskip}{1mm plus 0.5mm minus 0.5mm}
-\setlength{\topskip}{0mm}
+\setlength{\topskip}{5mm}
 \setlength{\textfloatsep}{4mm}
 
 \usepackage[pdftex, final]{graphicx}
@@ -82,6 +82,12 @@
 %\date{\vspace{-5ex}}
 \date{}  % Toggle commenting to test
 \maketitle
+
+\include{acknowledgements}
+\include{abstract}
+\markboth{Contents}{Contents}
+\tableofcontents
+\listoffigures
 
 \include{introduction}
 \include{literature}
