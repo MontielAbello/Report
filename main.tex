@@ -1,9 +1,31 @@
 %--------------------------------------------------------------
 %Preamble
-\documentclass[a4paper, twoside, 11pt]{book}
+%\documentclass[a4paper, twoside, 11pt]{book}
+\documentclass[twoside, 11pt]{book}
+\usepackage[%
+  papersize={210mm,297mm},%
+  layoutsize={210mm,297mm},%
+  layoutoffset=0mm,%
+  twoside,%
+  nomarginpar,%
+  inner=25mm,%
+  outer=25mm,%
+  vmargin=25mm,%
+  head=10mm,%
+  headsep=25mm,%
+  foot=7mm,%
+  %showcrop,%
+  %showframe,%
+]{geometry}
+\setlength{\parindent}{0mm}
+\setlength{\parskip}{1mm plus 0.5mm minus 0.5mm}
+\setlength{\topskip}{0mm}
+\setlength{\textfloatsep}{4mm}
+
 \usepackage[pdftex, final]{graphicx}
 \graphicspath{{./pics/}}
 \usepackage[parfill]{parskip}
+\usepackage{microtype}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{mathtools}

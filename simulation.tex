@@ -401,6 +401,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	For the Hokuyo UBG-04LX-F01 sensor used, range measurements taken at various distances and incidence angles were used to estimate the noise model $f_{UBG}$ which is provided in section \ref{sensor_noise}.
 	
 \subsection{Observer Implementation}
+	\textbf{FIGURES ARE USED TO EXPLAIN FUNCTIONS. FIGURES THEMSELVES NEED SOME EXPLAINING - IE TRIANGLES ON SURFACE, NOT INSIDE CUBE FOR ORIENTATION}
 	\subsubsection{Estimate: \texttt{estimatestate}}
 		The state of the cube at each time step is estimated using the numerical integration method described in section \ref{integration}. This state estimation is implemented in the function \texttt{estimatestate} in Algorithm \ref{main}.
 	
@@ -577,10 +578,10 @@ Would take too long to perform exhaustive analysis of solution space, testing al
 
 \subsection{Orientation correction}
 stationary - converges for no noise Figure \ref{fig:error_orientation}.\\
-Doesn't converge to 0 due to noise, but still stable. Figure \ref{fig:error_orientation_noise}.\\
+Doesn't converge to 0 due to noise, but still stable. \textbf{THIS DUE TO NOISE FLOOR - INVESTIGATE IF THERE IS TIME - REDUCE NOISE AND SEE IF IT GETS CLOSER} Figure \ref{fig:error_orientation_noise}.\\
 
 Figure \ref{fig:error_R_orientation_screw} - rotating. Updated orientation via screw. Very 'jagged'. Lags slightly, catches up.
-Figure \ref{fig:error_R_orientation_twist} - rotating. Updated orientation via twist. over/undershoots much more than screw.
+Figure \ref{fig:error_R_orientation_twist} - rotating. Updated orientation via twist. over/undershoots much more than screw. \textbf{MENTION: control theory solution - feed forward control. anticipate overshoot, correct before it occurs. FUTURE WORK - DEVELOP OBSERVER THEORY ANALOGUE}
 
 Figure \ref{fig:error_R_orientation_noise_screw} - noisy, rotating. Updated orientation via screw, kind of keeps up with rotation but error caused by noise.
 Figure \ref{fig:error_R_orientation_noise_twist} - noisy, rotating. Updated orientation via twist, overshoot error. 

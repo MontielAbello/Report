@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  25 MAY 2016 08:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  25 MAY 2016 15:49
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -31,13 +31,41 @@ File: bk11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks14
 )
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
+\Gm@bindingoffset=\dimen103
+\Gm@wd@mp=\dimen104
+\Gm@odd@mp=\dimen105
+\Gm@even@mp=\dimen106
+\Gm@layoutwidth=\dimen107
+\Gm@layoutheight=\dimen108
+\Gm@layouthoffset=\dimen109
+\Gm@layoutvoffset=\dimen110
+\Gm@dimlist=\toks15
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
@@ -58,20 +86,41 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count88
+\Gread@gobject=\count91
 ))
-\Gin@req@height=\dimen103
-\Gin@req@width=\dimen104
+\Gin@req@height=\dimen111
+\Gin@req@width=\dimen112
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\ltxmisc\parskip.sty"
 Package: parskip 2001/04/09 non-zero parskip adjustments
 )
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\microtype.sty"
+Package: microtype 2016/05/14 v2.6a Micro-typographical refinements (RS)
+\MT@toks=\toks16
+\MT@count=\count92
+LaTeX Info: Redefining \textls on input line 774.
+\MT@outer@kern=\dimen113
+LaTeX Info: Redefining \textmicrotypecontext on input line 1310.
+\MT@listname@count=\count93
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\microtype-pdftex.def"
+File: microtype-pdftex.def 2016/05/14 v2.6a Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 916.
+LaTeX Info: Redefining \lslig on input line 916.
+\MT@outer@space=\skip43
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\microtype.cfg"
+File: microtype.cfg 2016/05/14 v2.6a microtype main configuration file (RS)
+))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks15
+\@emptytoks=\toks17
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
@@ -79,7 +128,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
-\@mathmargin=\skip43
+\@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
@@ -87,51 +136,51 @@ Package: amstext 2000/06/29 v2.01
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks16
-\ex@=\dimen105
+\@emptytoks=\toks18
+\ex@=\dimen114
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen106
+\pmbraise@=\dimen115
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count89
+\inf@bad=\count94
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count90
-\leftroot@=\count91
+\uproot@=\count95
+\leftroot@=\count96
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count92
-\DOTSCASE@=\count93
+\classnum@=\count97
+\DOTSCASE@=\count98
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
-\big@size=\dimen107
+\big@size=\dimen116
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count94
-\c@MaxMatrixCols=\count95
+\macc@depth=\count99
+\c@MaxMatrixCols=\count100
 \dotsspace@=\muskip10
-\c@parentequation=\count96
-\dspbrk@lvl=\count97
-\tag@help=\toks17
-\row@=\count98
-\column@=\count99
-\maxfields@=\count100
-\andhelp@=\toks18
-\eqnshift@=\dimen108
-\alignsep@=\dimen109
-\tagshift@=\dimen110
-\tagwidth@=\dimen111
-\totwidth@=\dimen112
-\lineht@=\dimen113
-\@envbody=\toks19
-\multlinegap=\skip44
-\multlinetaggap=\skip45
-\mathdisplay@stack=\toks20
+\c@parentequation=\count101
+\dspbrk@lvl=\count102
+\tag@help=\toks19
+\row@=\count103
+\column@=\count104
+\maxfields@=\count105
+\andhelp@=\toks20
+\eqnshift@=\dimen117
+\alignsep@=\dimen118
+\tagshift@=\dimen119
+\tagwidth@=\dimen120
+\totwidth@=\dimen121
+\lineht@=\dimen122
+\@envbody=\toks21
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
@@ -140,31 +189,31 @@ Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count101
-\calc@Bcount=\count102
-\calc@Adimen=\dimen114
-\calc@Bdimen=\dimen115
-\calc@Askip=\skip46
-\calc@Bskip=\skip47
+\calc@Acount=\count106
+\calc@Bcount=\count107
+\calc@Adimen=\dimen123
+\calc@Bdimen=\dimen124
+\calc@Askip=\skip47
+\calc@Bskip=\skip48
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count103
-\calc@Cskip=\skip48
+\calc@Ccount=\count108
+\calc@Cskip=\skip49
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\mathtools\mhsetup.sty"
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count104
-\l_MT_multwidth_dim=\dimen116
-\origjot=\skip49
-\l_MT_shortvdotswithinadjustabove_dim=\dimen117
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen118
-\l_MT_above_intertext_sep=\dimen119
-\l_MT_below_intertext_sep=\dimen120
-\l_MT_above_shortintertext_sep=\dimen121
-\l_MT_below_shortintertext_sep=\dimen122
+\g_MT_multlinerow_int=\count109
+\l_MT_multwidth_dim=\dimen125
+\origjot=\skip50
+\l_MT_shortvdotswithinadjustabove_dim=\dimen126
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen127
+\l_MT_above_intertext_sep=\dimen128
+\l_MT_below_intertext_sep=\dimen129
+\l_MT_above_shortintertext_sep=\dimen130
+\l_MT_below_shortintertext_sep=\dimen131
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\bm.sty"
 Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
@@ -176,32 +225,32 @@ LaTeX Info: Redefining \bm on input line 204.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tensor\tensor.sty"
 Package: tensor 2004/12/20 v2.1 tensor indices package (PGR)
-\tnsr@Sps=\toks21
-\tnsr@Sbs=\toks22
-\tnsr@Spe=\toks23
-\tnsr@Sbe=\toks24
-\ncld@Mno=\toks25
+\tnsr@Sps=\toks23
+\tnsr@Sbs=\toks24
+\tnsr@Spe=\toks25
+\tnsr@Sbe=\toks26
+\ncld@Mno=\toks27
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\titlesec\titlesec.sty"
 Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \ttl@box=\box28
-\beforetitleunit=\skip50
-\aftertitleunit=\skip51
-\ttl@plus=\dimen123
-\ttl@minus=\dimen124
-\ttl@toksa=\toks26
-\titlewidth=\dimen125
-\titlewidthlast=\dimen126
-\titlewidthfirst=\dimen127
+\beforetitleunit=\skip51
+\aftertitleunit=\skip52
+\ttl@plus=\dimen132
+\ttl@minus=\dimen133
+\ttl@toksa=\toks28
+\titlewidth=\dimen134
+\titlewidthlast=\dimen135
+\titlewidthfirst=\dimen136
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\algorithm2e\algorithm2e.sty"
 Package: algorithm2e 2013/01/06 v5.00 algorithms environments
-\c@AlgoLine=\count105
+\c@AlgoLine=\count110
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\algocf@hangindent=\skip52
+\algocf@hangindent=\skip53
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\xspace.sty"
 Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
@@ -216,67 +265,67 @@ Package `algorithm2e' Release 5.1 -- october 19 2015 --
 subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 - Author: Christophe Fiorio (christophe.fiorio@umontpellier.fr)
 ********************************************************
-\skiptotal=\skip53
-\skiplinenumber=\skip54
-\skiprule=\skip55
-\skiphlne=\skip56
-\skiptext=\skip57
-\skiplength=\skip58
-\algomargin=\skip59
-\skipalgocfslide=\skip60
-\algowidth=\dimen128
-\inoutsize=\dimen129
-\inoutindent=\dimen130
-\interspacetitleruled=\dimen131
-\interspacealgoruled=\dimen132
-\interspacetitleboxruled=\dimen133
-\algocf@ruledwidth=\skip61
+\skiptotal=\skip54
+\skiplinenumber=\skip55
+\skiprule=\skip56
+\skiphlne=\skip57
+\skiptext=\skip58
+\skiplength=\skip59
+\algomargin=\skip60
+\skipalgocfslide=\skip61
+\algowidth=\dimen137
+\inoutsize=\dimen138
+\inoutindent=\dimen139
+\interspacetitleruled=\dimen140
+\interspacealgoruled=\dimen141
+\interspacetitleboxruled=\dimen142
+\algocf@ruledwidth=\skip62
 \algocf@inoutbox=\box29
 \algocf@inputbox=\box30
-\AlCapSkip=\skip62
-\AlCapHSkip=\skip63
-\algoskipindent=\skip64
+\AlCapSkip=\skip63
+\AlCapHSkip=\skip64
+\algoskipindent=\skip65
 \algocf@nlbox=\box31
 \algocf@hangingbox=\box32
 \algocf@untilbox=\box33
-\algocf@skipuntil=\skip65
+\algocf@skipuntil=\skip66
 \algocf@capbox=\box34
-\algoheightruledefault=\skip66
-\algoheightrule=\skip67
-\algotitleheightruledefault=\skip68
-\algotitleheightrule=\skip69
-\c@algocfline=\count106
-\c@algocfproc=\count107
-\c@algocf=\count108
+\algoheightruledefault=\skip67
+\algoheightrule=\skip68
+\algotitleheightruledefault=\skip69
+\algotitleheightrule=\skip70
+\c@algocfline=\count111
+\c@algocfproc=\count112
+\c@algocf=\count113
 \algocf@algoframe=\box35
 \algocf@algobox=\box36
 ) ("C:\Program Files\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
-\subfigtopskip=\skip70
-\subfigcapskip=\skip71
-\subfigcaptopadj=\dimen134
-\subfigbottomskip=\skip72
-\subfigcapmargin=\dimen135
-\subfiglabelskip=\skip73
-\c@subfigure=\count109
-\c@lofdepth=\count110
-\c@subtable=\count111
-\c@lotdepth=\count112
+\subfigtopskip=\skip71
+\subfigcapskip=\skip72
+\subfigcaptopadj=\dimen143
+\subfigbottomskip=\skip73
+\subfigcapmargin=\dimen144
+\subfiglabelskip=\skip74
+\c@subfigure=\count114
+\c@lofdepth=\count115
+\c@subtable=\count116
+\c@lotdepth=\count117
 
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
 ("C:\Program Files\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
-\subfig@top=\skip74
-\subfig@bottom=\skip75
+\subfig@top=\skip75
+\subfig@bottom=\skip76
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\frontendlayer\tikz.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgfrcs.sty"
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common.tex"
-\pgfutil@everybye=\toks27
-\pgfutil@tempdima=\dimen136
-\pgfutil@tempdimb=\dimen137
+\pgfutil@everybye=\toks29
+\pgfutil@tempdima=\dimen145
+\pgfutil@tempdimb=\dimen146
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common-lists.te
 x")) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-latex.def"
@@ -295,30 +344,30 @@ Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
 Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"
-\pgfkeys@pathtoks=\toks28
-\pgfkeys@temptoks=\toks29
+\pgfkeys@pathtoks=\toks30
+\pgfkeys@temptoks=\toks31
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeysfiltered.code.te
 x"
-\pgfkeys@tmptoks=\toks30
+\pgfkeys@tmptoks=\toks32
 ))
-\pgf@x=\dimen138
-\pgf@y=\dimen139
-\pgf@xa=\dimen140
-\pgf@ya=\dimen141
-\pgf@xb=\dimen142
-\pgf@yb=\dimen143
-\pgf@xc=\dimen144
-\pgf@yc=\dimen145
+\pgf@x=\dimen147
+\pgf@y=\dimen148
+\pgf@xa=\dimen149
+\pgf@ya=\dimen150
+\pgf@xb=\dimen151
+\pgf@yb=\dimen152
+\pgf@xc=\dimen153
+\pgf@yc=\dimen154
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
-\c@pgf@counta=\count113
-\c@pgf@countb=\count114
-\c@pgf@countc=\count115
-\c@pgf@countd=\count116
-\t@pgf@toka=\toks31
-\t@pgf@tokb=\toks32
-\t@pgf@tokc=\toks33
+\c@pgf@counta=\count118
+\c@pgf@countb=\count119
+\c@pgf@countc=\count120
+\c@pgf@countd=\count121
+\t@pgf@toka=\toks33
+\t@pgf@tokb=\toks34
+\t@pgf@tokc=\toks35
  ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgf.cfg"
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
@@ -334,8 +383,8 @@ File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.t
 ex"
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count117
-\pgfsyssoftpath@bigbuffer@items=\count118
+\pgfsyssoftpath@smallbuffer@items=\count122
+\pgfsyssoftpath@bigbuffer@items=\count123
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsysprotocol.code.t
 ex"
@@ -364,12 +413,12 @@ Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathcalc.code.tex"
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathutil.code.tex")
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathparser.code.tex"
-\pgfmath@dimen=\dimen146
-\pgfmath@count=\count119
+\pgfmath@dimen=\dimen155
+\pgfmath@count=\count124
 \pgfmath@box=\box38
-\pgfmath@toks=\toks34
-\pgfmath@stack@operand=\toks35
-\pgfmath@stack@operation=\toks36
+\pgfmath@toks=\toks36
+\pgfmath@stack@operand=\toks37
+\pgfmath@stack@operation=\toks38
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.code.tex"
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.basic.code.
@@ -389,37 +438,37 @@ ex")
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.integerarit
 hmetics.code.tex")))
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfloat.code.tex"
-\c@pgfmathroundto@lastzeros=\count120
+\c@pgfmathroundto@lastzeros=\count125
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
 "
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen147
-\pgf@picmaxx=\dimen148
-\pgf@picminy=\dimen149
-\pgf@picmaxy=\dimen150
-\pgf@pathminx=\dimen151
-\pgf@pathmaxx=\dimen152
-\pgf@pathminy=\dimen153
-\pgf@pathmaxy=\dimen154
-\pgf@xx=\dimen155
-\pgf@xy=\dimen156
-\pgf@yx=\dimen157
-\pgf@yy=\dimen158
-\pgf@zx=\dimen159
-\pgf@zy=\dimen160
+\pgf@picminx=\dimen156
+\pgf@picmaxx=\dimen157
+\pgf@picminy=\dimen158
+\pgf@picmaxy=\dimen159
+\pgf@pathminx=\dimen160
+\pgf@pathmaxx=\dimen161
+\pgf@pathminy=\dimen162
+\pgf@pathmaxy=\dimen163
+\pgf@xx=\dimen164
+\pgf@xy=\dimen165
+\pgf@yx=\dimen166
+\pgf@yy=\dimen167
+\pgf@zx=\dimen168
+\pgf@zy=\dimen169
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathconstruct.c
 ode.tex"
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen161
-\pgf@path@lasty=\dimen162
+\pgf@path@lastx=\dimen170
+\pgf@path@lasty=\dimen171
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathusage.code.
 tex"
 File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
-\pgf@shorten@end@additional=\dimen163
-\pgf@shorten@start@additional=\dimen164
+\pgf@shorten@end@additional=\dimen172
+\pgf@shorten@start@additional=\dimen173
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
 "
@@ -427,19 +476,19 @@ File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
 \pgfpic=\box39
 \pgf@hbox=\box40
 \pgf@layerbox@main=\box41
-\pgf@picture@serial@count=\count121
+\pgf@picture@serial@count=\count126
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoregraphicstate.co
 de.tex"
 File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
-\pgflinewidth=\dimen165
+\pgflinewidth=\dimen174
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransformations
 .code.tex"
 File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
-\pgf@pt@x=\dimen166
-\pgf@pt@y=\dimen167
-\pgf@pt@temp=\dimen168
+\pgf@pt@x=\dimen175
+\pgf@pt@y=\dimen176
+\pgf@pt@temp=\dimen177
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorequick.code.tex"
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
@@ -455,12 +504,12 @@ File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
 "
 File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
-\pgfarrowsep=\dimen169
+\pgfarrowsep=\dimen178
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex"
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen170
-\pgf@sys@shading@range@num=\count122
+\pgf@max=\dimen179
+\pgf@sys@shading@range@num=\count127
 ) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreimage.code.te
 x"
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
@@ -491,8 +540,8 @@ File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-0-65.
 sty"
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen171
-\pgf@nodesepend=\dimen172
+\pgf@nodesepstart=\dimen180
+\pgf@nodesepend=\dimen181
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-1-18.
 sty"
@@ -506,10 +555,10 @@ Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
 Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex")
-\pgffor@iter=\dimen173
-\pgffor@skip=\dimen174
-\pgffor@stack=\toks37
-\pgffor@toks=\toks38
+\pgffor@iter=\dimen182
+\pgffor@skip=\dimen183
+\pgffor@stack=\toks39
+\pgffor@toks=\toks40
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex"
 Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
@@ -517,31 +566,31 @@ Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryplothandlers.
 code.tex"
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
-\pgf@plot@mark@count=\count123
-\pgfplotmarksize=\dimen175
+\pgf@plot@mark@count=\count128
+\pgfplotmarksize=\dimen184
 )
-\tikz@lastx=\dimen176
-\tikz@lasty=\dimen177
-\tikz@lastxsaved=\dimen178
-\tikz@lastysaved=\dimen179
-\tikzleveldistance=\dimen180
-\tikzsiblingdistance=\dimen181
+\tikz@lastx=\dimen185
+\tikz@lasty=\dimen186
+\tikz@lastxsaved=\dimen187
+\tikz@lastysaved=\dimen188
+\tikzleveldistance=\dimen189
+\tikzsiblingdistance=\dimen190
 \tikz@figbox=\box44
 \tikz@figbox@bg=\box45
 \tikz@tempbox=\box46
 \tikz@tempbox@bg=\box47
-\tikztreelevel=\count124
-\tikznumberofchildren=\count125
-\tikznumberofcurrentchild=\count126
-\tikz@fig@count=\count127
+\tikztreelevel=\count129
+\tikznumberofchildren=\count130
+\tikznumberofcurrentchild=\count131
+\tikz@fig@count=\count132
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmodulematrix.code.tex"
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count128
-\pgfmatrixcurrentcolumn=\count129
-\pgf@matrix@numberofcolumns=\count130
+\pgfmatrixcurrentrow=\count133
+\pgfmatrixcurrentcolumn=\count134
+\pgf@matrix@numberofcolumns=\count135
 )
-\tikz@expandcount=\count131
+\tikz@expandcount=\count136
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
 librarytopaths.code.tex"
@@ -563,11 +612,11 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.0 (rcs-revision 1.1)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryarrows.code.t
 ex"
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.0 (rcs-revision 1.16)
-\arrowsize=\dimen182
+\arrowsize=\dimen191
 ))) ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks39
-\verbatim@line=\toks40
+\every@verbatim=\toks41
+\verbatim@line=\toks42
 \verbatim@in@stream=\read2
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
@@ -582,42 +631,98 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.aux"))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: custom
+* layout: <custom>
+* layout(width,height): (597.50787pt,845.04684pt)
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-100.72273pt
+* \headheight=28.45274pt
+* \headsep=71.13188pt
+* \topskip=0.0pt
+* \footskip=19.91692pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count132
-\scratchdimen=\dimen183
+\scratchcounter=\count137
+\scratchdimen=\dimen192
 \scratchbox=\box48
-\nofMPsegments=\count133
-\nofMParguments=\count134
-\everyMPshowfont=\toks41
-\MPscratchCnt=\count135
-\MPscratchDim=\dimen184
-\MPnumerator=\count136
-\makeMPintoPDFobject=\count137
-\everyMPtoPDFconversion=\toks42
-) ABD: EveryShipout initializing macros
-LaTeX Font Info:    Try loading font information for U+msa on input line 59.
+\nofMPsegments=\count138
+\nofMParguments=\count139
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count140
+\MPscratchDim=\dimen193
+\MPnumerator=\count141
+\makeMPintoPDFobject=\count142
+\everyMPtoPDFconversion=\toks44
+)
+LaTeX Info: Redefining \microtypecontext on input line 76.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-cmr.cfg"
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+ABD: EveryShipout initializing macros
+LaTeX Font Info:    Try loading font information for U+msa on input line 82.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 59.
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg"
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 82.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg"
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
 
@@ -642,404 +747,372 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
- [5
-
-
-
-]
 LaTeX Font Info:    Try loading font information for U+euf on input line 30.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueuf.fd"
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [6] [7]
-Overfull \hbox (15.69615pt too wide) in paragraph at lines 145--146
-[]\OT1/cmr/m/n/10.95 Elements of $[](3)$ are mapped to $[](3)$ ac-cord-ing to t
-he ex-po-nen-tial map: 
- []
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-euf.cfg"
+File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
-[8] [9] [10]
-Overfull \hbox (13.54283pt too wide) in paragraph at lines 335--336
-[]\OT1/cmr/m/n/10.95 Elements of $[](3)$ are mapped to $[](3)$ ac-cord-ing to t
-he ex-po-nen-tial map: 
- []
+) [5
 
-[11]
+
+
+] [6] [7]
+[8] [9]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_referenc
-eframes.tex") [12] [13] [14]) [15]
+eframes.tex") [10] [11]) [12] [13]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\problem.tex"
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_cubeprob
-lem.tex") [16
+lem.tex") [14
 
 
 
-] [17]
+]
 Underfull \hbox (badness 10000) in paragraph at lines 86--89
 
  []
 
-) [18] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.te
-x"
+) [15] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.te
+x" [16
+
+
+
+]
 Chapter 2.
-[19
-
-
-
-] [20] [21] [22]
-Overfull \hbox (2.23257pt too wide) in paragraph at lines 156--157
-\OT1/cmr/m/n/10.95 from ini-tial con-di-tions by nu-mer-i-cally in-te-grat-ing 
-the ODEs in sec-tion 1.3.1.6[].
- []
-
+Package microtype Info: Loading generic settings for font family
+(microtype)             `cmtt' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+[17] [18] [19]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 174.
-[23] [24]
+ [20] [21]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_scanning
-.tex"
-Overfull \hbox (54.40173pt too wide) in paragraph at lines 41--42
-[][] 
- []
-
-) [25]
-Underfull \vbox (badness 1460) has occurred while \output is active []
-
- [26]
-Overfull \hbox (6.2052pt too wide) in paragraph at lines 263--264
-[]\OT1/cmr/m/n/10.95 The cube points in body frame $\OMS/cmsy/m/n/10.95 f\OML/c
-mm/m/it/10.95 B\OMS/cmsy/m/n/10.95 g$ \OT1/cmr/m/n/10.95 are rep-re-sented with
- the ma-trix $[]$. 
- []
-
-
+.tex") [22]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_triangle
 s.tex")
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 297.
- [27]
+ [23]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_raytrian
-gle.tex") [28]
-
-LaTeX Warning: Float too large for page by 86.66238pt on input line 391.
-
-[29] [30] [31] [32]
-Underfull \hbox (badness 10000) in paragraph at lines 464--465
+gle.tex") [24] [25] [26] [27]
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
 
  []
 
 
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_orientat
-ionupdate.tex") [33] [34]
+ionupdate.tex") [28] [29]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_position
-update.tex") [35] [36]
-("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
-te1.tex"
-
-LaTeX Warning: Float too large for page by 24.61307pt on input line 86.
-
-)
-("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
-te2.tex"
-Overfull \hbox (4.85919pt too wide) in paragraph at lines 81--82
-[][] 
+update.tex")
+Overfull \hbox (0.51366pt too wide) in paragraph at lines 531--532
+[]\OT1/cmr/m/n/10.95 (-20) The up-date vec-tor is com-puted by scal-ing the mea
+n in-ter-sec-tion points with these four points: 
  []
 
 
-LaTeX Warning: Float too large for page by 24.61307pt on input line 84.
-
-) [37] [38] [39]
-Underfull \hbox (badness 10000) in paragraph at lines 579--581
+("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
+te1.tex")
+("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
+te2.tex" [30] [31] [32]) [33] [34]
+Underfull \hbox (badness 10000) in paragraph at lines 580--582
 
  []
 
-<./Figures/error_xx_3F_orientation.jpg, id=151, 1204.5pt x 903.375pt>
+<./Figures/error_xx_3F_orientation.jpg, id=135, 1204.5pt x 903.375pt>
 File: ./Figures/error_xx_3F_orientation.jpg Graphic file (type jpg)
 
 <use ./Figures/error_xx_3F_orientation.jpg>
 Package pdftex.def Info: ./Figures/error_xx_3F_orientation.jpg used on input li
-ne 589.
-(pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
+ne 590.
+(pdftex.def)             Requested size: 546.29153pt x 409.72676pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 589--590
+Overfull \hbox (91.04742pt too wide) in paragraph at lines 590--591
 [][] 
  []
 
-<./Figures/error_xx_3F_orientation_noisy.jpg, id=153, 1204.5pt x 903.375pt>
+<./Figures/error_xx_3F_orientation_noisy.jpg, id=137, 1204.5pt x 903.375pt>
 File: ./Figures/error_xx_3F_orientation_noisy.jpg Graphic file (type jpg)
 
 <use ./Figures/error_xx_3F_orientation_noisy.jpg>
 Package pdftex.def Info: ./Figures/error_xx_3F_orientation_noisy.jpg used on in
-put line 594.
-(pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
+put line 595.
+(pdftex.def)             Requested size: 546.29153pt x 409.72676pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 594--595
+Overfull \hbox (91.04742pt too wide) in paragraph at lines 595--596
 [][] 
  []
 
-<./Figures/error_Rx_3F_orientation_screw.jpg, id=155, 1204.5pt x 903.375pt>
+<./Figures/error_Rx_3F_orientation_screw.jpg, id=139, 1204.5pt x 903.375pt>
 File: ./Figures/error_Rx_3F_orientation_screw.jpg Graphic file (type jpg)
 
 <use ./Figures/error_Rx_3F_orientation_screw.jpg>
 Package pdftex.def Info: ./Figures/error_Rx_3F_orientation_screw.jpg used on in
-put line 599.
-(pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
+put line 600.
+(pdftex.def)             Requested size: 546.29153pt x 409.72676pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 599--600
+Overfull \hbox (91.04742pt too wide) in paragraph at lines 600--601
 [][] 
  []
 
-<./Figures/error_Rx_3F_orientation_twist.jpg, id=157, 1204.5pt x 903.375pt>
+<./Figures/error_Rx_3F_orientation_twist.jpg, id=141, 1204.5pt x 903.375pt>
 File: ./Figures/error_Rx_3F_orientation_twist.jpg Graphic file (type jpg)
 
 <use ./Figures/error_Rx_3F_orientation_twist.jpg>
 Package pdftex.def Info: ./Figures/error_Rx_3F_orientation_twist.jpg used on in
-put line 604.
-(pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
+put line 605.
+(pdftex.def)             Requested size: 546.29153pt x 409.72676pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 604--605
+Overfull \hbox (91.04742pt too wide) in paragraph at lines 605--606
 [][] 
  []
 
 
-<./Figures/error_Rx_3F_orientation_noise_screw.jpg, id=159, 1204.5pt x 903.375p
+<./Figures/error_Rx_3F_orientation_noise_screw.jpg, id=143, 1204.5pt x 903.375p
 t>
 File: ./Figures/error_Rx_3F_orientation_noise_screw.jpg Graphic file (type jpg)
 
  <use ./Figures/error_Rx_3F_orientation_noise_screw.jpg>
 Package pdftex.def Info: ./Figures/error_Rx_3F_orientation_noise_screw.jpg used
- on input line 609.
-(pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
+ on input line 610.
+(pdftex.def)             Requested size: 546.29153pt x 409.72676pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 609--610
+Overfull \hbox (91.04742pt too wide) in paragraph at lines 610--611
 [][] 
  []
 
 
-<./Figures/error_Rx_3F_orientation_noise_twist.jpg, id=161, 1204.5pt x 903.375p
+<./Figures/error_Rx_3F_orientation_noise_twist.jpg, id=145, 1204.5pt x 903.375p
 t>
 File: ./Figures/error_Rx_3F_orientation_noise_twist.jpg Graphic file (type jpg)
 
  <use ./Figures/error_Rx_3F_orientation_noise_twist.jpg>
 Package pdftex.def Info: ./Figures/error_Rx_3F_orientation_noise_twist.jpg used
- on input line 614.
-(pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
+ on input line 615.
+(pdftex.def)             Requested size: 546.29153pt x 409.72676pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 614--615
+Overfull \hbox (91.04742pt too wide) in paragraph at lines 615--616
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 621--623
+Underfull \hbox (badness 10000) in paragraph at lines 622--624
 
  []
 
-<./Figures/error_1F_position.jpg, id=163, 1204.5pt x 903.375pt>
+<./Figures/error_1F_position.jpg, id=147, 1204.5pt x 903.375pt>
 File: ./Figures/error_1F_position.jpg Graphic file (type jpg)
 
 <use ./Figures/error_1F_position.jpg>
-Package pdftex.def Info: ./Figures/error_1F_position.jpg used on input line 625
+Package pdftex.def Info: ./Figures/error_1F_position.jpg used on input line 626
 .
-(pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
+(pdftex.def)             Requested size: 546.29153pt x 409.72676pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 625--626
+Overfull \hbox (91.04742pt too wide) in paragraph at lines 626--627
 [][] 
  []
 
-<./Figures/error_1F_position_noise.jpg, id=165, 1204.5pt x 903.375pt>
+<./Figures/error_1F_position_noise.jpg, id=149, 1204.5pt x 903.375pt>
 File: ./Figures/error_1F_position_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/error_1F_position_noise.jpg>
 Package pdftex.def Info: ./Figures/error_1F_position_noise.jpg used on input li
-ne 630.
-(pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
+ne 631.
+(pdftex.def)             Requested size: 546.29153pt x 409.72676pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 630--631
+Overfull \hbox (91.04742pt too wide) in paragraph at lines 631--632
 [][] 
  []
 
-<./Figures/error_2F_position.jpg, id=167, 1204.5pt x 903.375pt>
+<./Figures/error_2F_position.jpg, id=151, 1204.5pt x 903.375pt>
 File: ./Figures/error_2F_position.jpg Graphic file (type jpg)
 
 <use ./Figures/error_2F_position.jpg>
-Package pdftex.def Info: ./Figures/error_2F_position.jpg used on input line 635
+Package pdftex.def Info: ./Figures/error_2F_position.jpg used on input line 636
 .
-(pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
+(pdftex.def)             Requested size: 546.29153pt x 409.72676pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 635--636
+Overfull \hbox (91.04742pt too wide) in paragraph at lines 636--637
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 640--643
+Underfull \hbox (badness 10000) in paragraph at lines 641--644
 
  []
 
-<./Figures/error_xx_size_noise.jpg, id=169, 1204.5pt x 903.375pt>
+<./Figures/error_xx_size_noise.jpg, id=153, 1204.5pt x 903.375pt>
 File: ./Figures/error_xx_size_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/error_xx_size_noise.jpg>
 Package pdftex.def Info: ./Figures/error_xx_size_noise.jpg used on input line 6
-45.
-(pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
+46.
+(pdftex.def)             Requested size: 546.29153pt x 409.72676pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 645--646
+Overfull \hbox (91.04742pt too wide) in paragraph at lines 646--647
 [][] 
  []
 
-<./Figures/error_RT_size_noise.jpg, id=171, 1204.5pt x 903.375pt>
+<./Figures/error_RT_size_noise.jpg, id=155, 1204.5pt x 903.375pt>
 File: ./Figures/error_RT_size_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/error_RT_size_noise.jpg>
 Package pdftex.def Info: ./Figures/error_RT_size_noise.jpg used on input line 6
-50.
-(pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
+51.
+(pdftex.def)             Requested size: 546.29153pt x 409.72676pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 650--651
+Overfull \hbox (91.04742pt too wide) in paragraph at lines 651--652
 [][] 
  []
 
-[40
-
-] [41 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_x
-x_3F_orientation.jpg>] [42 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/R
-eport/Figures/error_xx_3F_orientation_noisy.jpg>] [43 <C:/Users/Monty Abello/Do
-cuments/Uni/2016/ENGN4718/Report/Figures/error_Rx_3F_orientation_screw.jpg>] [4
-4 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_Rx_3F
-_orientation_twist.jpg>] [45 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718
-/Report/Figures/error_Rx_3F_orientation_noise_screw.jpg>] [46 <C:/Users/Monty A
-bello/Documents/Uni/2016/ENGN4718/Report/Figures/error_Rx_3F_orientation_noise_
-twist.jpg>] [47 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figur
-es/error_1F_position.jpg>] [48 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN47
-18/Report/Figures/error_1F_position_noise.jpg>] [49 <C:/Users/Monty Abello/Docu
-ments/Uni/2016/ENGN4718/Report/Figures/error_2F_position.jpg>] [50 <C:/Users/Mo
-nty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_xx_size_noise.jpg>]
- [51 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_RT
-_size_noise.jpg>]
-<./Figures/error_xx_3F_OxS_noise.jpg, id=222, 1204.5pt x 903.375pt>
+<./Figures/error_xx_3F_OxS_noise.jpg, id=157, 1204.5pt x 903.375pt>
 File: ./Figures/error_xx_3F_OxS_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/error_xx_3F_OxS_noise.jpg>
 Package pdftex.def Info: ./Figures/error_xx_3F_OxS_noise.jpg used on input line
- 661.
-(pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
+ 662.
+(pdftex.def)             Requested size: 546.29153pt x 409.72676pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 661--662
+Overfull \hbox (91.04742pt too wide) in paragraph at lines 662--663
 [][] 
  []
 
-<./Figures/error_Rx_3F_OxS_screw.jpg, id=224, 1204.5pt x 903.375pt>
+<./Figures/error_Rx_3F_OxS_screw.jpg, id=159, 1204.5pt x 903.375pt>
 File: ./Figures/error_Rx_3F_OxS_screw.jpg Graphic file (type jpg)
 
 <use ./Figures/error_Rx_3F_OxS_screw.jpg>
 Package pdftex.def Info: ./Figures/error_Rx_3F_OxS_screw.jpg used on input line
- 666.
-(pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
+ 667.
+(pdftex.def)             Requested size: 546.29153pt x 409.72676pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 666--667
+Overfull \hbox (91.04742pt too wide) in paragraph at lines 667--668
 [][] 
  []
 
-<./Figures/error_Rx_3F_OxS_twist.jpg, id=226, 1204.5pt x 903.375pt>
+<./Figures/error_Rx_3F_OxS_twist.jpg, id=161, 1204.5pt x 903.375pt>
 File: ./Figures/error_Rx_3F_OxS_twist.jpg Graphic file (type jpg)
 
 <use ./Figures/error_Rx_3F_OxS_twist.jpg>
 Package pdftex.def Info: ./Figures/error_Rx_3F_OxS_twist.jpg used on input line
- 671.
-(pdftex.def)             Requested size: 431.9989pt x 324.00172pt.
+ 672.
+(pdftex.def)             Requested size: 546.29153pt x 409.72676pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 671--672
+Overfull \hbox (91.04742pt too wide) in paragraph at lines 672--673
 [][] 
  []
 
-[52 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_xx_
-3F_OxS_noise.jpg>] [53 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Repor
-t/Figures/error_Rx_3F_OxS_screw.jpg>] [54 <C:/Users/Monty Abello/Documents/Uni/
-2016/ENGN4718/Report/Figures/error_Rx_3F_OxS_twist.jpg>]
-<./Figures/tetrahedron_observer.jpg, id=240, 5395.15625pt x 3431.82124pt>
+[35
+
+] [36 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_x
+x_3F_orientation.jpg>] [37 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/R
+eport/Figures/error_xx_3F_orientation_noisy.jpg>] [38 <C:/Users/Monty Abello/Do
+cuments/Uni/2016/ENGN4718/Report/Figures/error_Rx_3F_orientation_screw.jpg>] [3
+9 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_Rx_3F
+_orientation_twist.jpg>] [40 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718
+/Report/Figures/error_Rx_3F_orientation_noise_screw.jpg>] [41 <C:/Users/Monty A
+bello/Documents/Uni/2016/ENGN4718/Report/Figures/error_Rx_3F_orientation_noise_
+twist.jpg>] [42 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figur
+es/error_1F_position.jpg>] [43 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN47
+18/Report/Figures/error_1F_position_noise.jpg>] [44 <C:/Users/Monty Abello/Docu
+ments/Uni/2016/ENGN4718/Report/Figures/error_2F_position.jpg>] [45 <C:/Users/Mo
+nty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_xx_size_noise.jpg>]
+ [46 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_RT
+_size_noise.jpg>] [47 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report
+/Figures/error_xx_3F_OxS_noise.jpg>] [48 <C:/Users/Monty Abello/Documents/Uni/2
+016/ENGN4718/Report/Figures/error_Rx_3F_OxS_screw.jpg>] [49 <C:/Users/Monty Abe
+llo/Documents/Uni/2016/ENGN4718/Report/Figures/error_Rx_3F_OxS_twist.jpg>]
+<./Figures/tetrahedron_observer.jpg, id=225, 5395.15625pt x 3431.82124pt>
 File: ./Figures/tetrahedron_observer.jpg Graphic file (type jpg)
 
 <use ./Figures/tetrahedron_observer.jpg>
 Package pdftex.def Info: ./Figures/tetrahedron_observer.jpg used on input line 
-683.
-(pdftex.def)             Requested size: 431.9989pt x 274.76077pt.
+684.
+(pdftex.def)             Requested size: 546.29153pt x 347.44382pt.
 
-Overfull \hbox (71.9989pt too wide) in paragraph at lines 683--684
+Overfull \hbox (91.04742pt too wide) in paragraph at lines 684--685
 [][] 
  []
 
-) [55 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/tetrahe
+) [50 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/tetrahe
 dron_observer.jpg>]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.tex"
-[56
-
-
-
-]
 Chapter 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 2--4
 
  []
 
-[57] <./Figures/range_error_histograms.jpg, id=253, 7170.79pt x 5690.25874pt>
+[51
+
+
+
+] <./Figures/range_error_histograms.jpg, id=234, 7170.79pt x 5690.25874pt>
 File: ./Figures/range_error_histograms.jpg Graphic file (type jpg)
 
 <use ./Figures/range_error_histograms.jpg>
 Package pdftex.def Info: ./Figures/range_error_histograms.jpg used on input lin
 e 25.
-(pdftex.def)             Requested size: 450.0pt x 357.02953pt.
+(pdftex.def)             Requested size: 569.05513pt x 451.49648pt.
 
-Overfull \hbox (90.0pt too wide) in paragraph at lines 25--26
+Overfull \hbox (113.81102pt too wide) in paragraph at lines 25--26
 [][] 
  []
 
-<./Figures/noise_mean_range_error.jpg, id=255, 5576.835pt x 3468.96pt>
+<./Figures/noise_mean_range_error.jpg, id=236, 5576.835pt x 3468.96pt>
 File: ./Figures/noise_mean_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/noise_mean_range_error.jpg>
 Package pdftex.def Info: ./Figures/noise_mean_range_error.jpg used on input lin
 e 36.
-(pdftex.def)             Requested size: 161.9989pt x 100.72958pt.
+(pdftex.def)             Requested size: 204.85846pt x 127.40732pt.
 
-<./Figures/noise_mean_range_error_removed_outliers.jpg, id=257, 5576.835pt x 34
+<./Figures/noise_mean_range_error_removed_outliers.jpg, id=238, 5576.835pt x 34
 68.96pt>
 File: ./Figures/noise_mean_range_error_removed_outliers.jpg Graphic file (type 
 jpg)
  <use ./Figures/noise_mean_range_error_removed_outliers.jpg>
 Package pdftex.def Info: ./Figures/noise_mean_range_error_removed_outliers.jpg 
 used on input line 40.
-(pdftex.def)             Requested size: 161.9989pt x 100.72958pt.
+(pdftex.def)             Requested size: 204.85846pt x 127.40732pt.
 
-<./Figures/noise_stddev_range_error.jpg, id=259, 5576.835pt x 3468.96pt>
+<./Figures/noise_stddev_range_error.jpg, id=240, 5576.835pt x 3468.96pt>
 File: ./Figures/noise_stddev_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/noise_stddev_range_error.jpg>
 Package pdftex.def Info: ./Figures/noise_stddev_range_error.jpg used on input l
 ine 51.
-(pdftex.def)             Requested size: 161.9989pt x 100.72958pt.
+(pdftex.def)             Requested size: 204.85846pt x 127.40732pt.
 
-<./Figures/noise_stddev_range_error_removed_outliers.jpg, id=261, 5576.835pt x 
+<./Figures/noise_stddev_range_error_removed_outliers.jpg, id=242, 5576.835pt x 
 3468.96pt>
 File: ./Figures/noise_stddev_range_error_removed_outliers.jpg Graphic file (typ
 e jpg)
  <use ./Figures/noise_stddev_range_error_removed_outliers.jpg>
 Package pdftex.def Info: ./Figures/noise_stddev_range_error_removed_outliers.jp
 g used on input line 55.
-(pdftex.def)             Requested size: 161.9989pt x 100.72958pt.
+(pdftex.def)             Requested size: 204.85846pt x 127.40732pt.
 
-<./Figures/surface_mean_range_error.jpg, id=263, 5576.835pt x 3468.96pt>
+[52
+
+ <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/range_error_
+histograms.jpg>]
+<./Figures/surface_mean_range_error.jpg, id=248, 5576.835pt x 3468.96pt>
 File: ./Figures/surface_mean_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/surface_mean_range_error.jpg>
 Package pdftex.def Info: ./Figures/surface_mean_range_error.jpg used on input l
 ine 66.
-(pdftex.def)             Requested size: 161.9989pt x 100.72958pt.
+(pdftex.def)             Requested size: 204.85846pt x 127.40732pt.
 
-<./Figures/surface_stddev_range_error.jpg, id=265, 5576.835pt x 3468.96pt>
+<./Figures/surface_stddev_range_error.jpg, id=250, 5576.835pt x 3468.96pt>
 File: ./Figures/surface_stddev_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/surface_stddev_range_error.jpg>
 Package pdftex.def Info: ./Figures/surface_stddev_range_error.jpg used on input
  line 70.
-(pdftex.def)             Requested size: 161.9989pt x 100.72958pt.
+(pdftex.def)             Requested size: 204.85846pt x 127.40732pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
@@ -1057,50 +1130,46 @@ fficients_b.tex"
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [58
-
-] [59 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/range_e
-rror_histograms.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/
-Figures/noise_mean_range_error.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/E
-NGN4718/Report/Figures/noise_mean_range_error_removed_outliers.jpg>]
-[60 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/noise_std
-dev_range_error.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/
-Figures/noise_stddev_range_error_removed_outliers.jpg> <C:/Users/Monty Abello/D
-ocuments/Uni/2016/ENGN4718/Report/Figures/surface_mean_range_error.jpg> <C:/Use
-rs/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/surface_stddev_range
-_error.jpg>]
-<./Figures/measured_surface_noise.jpg, id=284, 4353.26375pt x 3356.54pt>
+) [53 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/noise_m
+ean_range_error.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/
+Figures/noise_mean_range_error_removed_outliers.jpg> <C:/Users/Monty Abello/Doc
+uments/Uni/2016/ENGN4718/Report/Figures/noise_stddev_range_error.jpg> <C:/Users
+/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/noise_stddev_range_err
+or_removed_outliers.jpg>]
+<./Figures/measured_surface_noise.jpg, id=260, 4353.26375pt x 3356.54pt>
 File: ./Figures/measured_surface_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/measured_surface_noise.jpg>
 Package pdftex.def Info: ./Figures/measured_surface_noise.jpg used on input lin
 e 120.
-(pdftex.def)             Requested size: 161.9989pt x 124.86609pt.
+(pdftex.def)             Requested size: 204.85846pt x 157.95203pt.
 
-<./Figures/simulated_surface_noise.jpg, id=286, 4353.26375pt x 3356.54pt>
+<./Figures/simulated_surface_noise.jpg, id=262, 4353.26375pt x 3356.54pt>
 File: ./Figures/simulated_surface_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/simulated_surface_noise.jpg>
 Package pdftex.def Info: ./Figures/simulated_surface_noise.jpg used on input li
 ne 124.
-(pdftex.def)             Requested size: 161.9989pt x 124.86609pt.
- [61] [62 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/mea
-sured_surface_noise.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Rep
-ort/Figures/simulated_surface_noise.jpg>]) [63
+(pdftex.def)             Requested size: 204.85846pt x 157.95203pt.
+ [54 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/surface_
+mean_range_error.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report
+/Figures/surface_stddev_range_error.jpg>] [55 <C:/Users/Monty Abello/Documents/
+Uni/2016/ENGN4718/Report/Figures/measured_surface_noise.jpg> <C:/Users/Monty Ab
+ello/Documents/Uni/2016/ENGN4718/Report/Figures/simulated_surface_noise.jpg>]) 
+[56
 
 ]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.tex"
-[64
-
-
-
-]
 Chapter 4.
-) [65] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.bbl"
-[66
+) [57
 
 
-]) [67] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux" ("
+
+] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.bbl"
+[58
+
+
+]) [59] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux" ("
 C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\literature.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\background.aux")
@@ -1113,13 +1182,13 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 15669 strings out of 493921
- 310467 string characters out of 3147261
- 357093 words of memory out of 3000000
- 18548 multiletter control sequences out of 15000+200000
- 20516 words of font info for 76 fonts, out of 3000000 for 9000
+ 17871 strings out of 493921
+ 347308 string characters out of 3147261
+ 456920 words of memory out of 3000000
+ 20603 multiletter control sequences out of 15000+200000
+ 23834 words of font info for 129 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 55i,23n,58p,811b,11660s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,23n,58p,820b,11740s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
 sy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pro
@@ -1142,9 +1211,9 @@ i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (67 pages, 12567572 bytes).
+Output written on main.pdf (59 pages, 12565317 bytes).
 PDF statistics:
- 389 PDF objects out of 1000 (max. 8388607)
+ 363 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 277 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21269 words of extra memory for PDF output out of 24883 (max. 10000000)
 
