@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  25 MAY 2016 23:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  26 MAY 2016 00:04
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -780,7 +780,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 
 ]
-Overfull \hbox (11.16292pt too wide) in paragraph at lines 36--36
+Overfull \hbox (11.16292pt too wide) in paragraph at lines 38--38
  [][] []\OT1/cmr/m/n/10.95 (-20) Defining a pose in terms of an-other ref-er-en
 ce frame - CHANGE 
  []
@@ -818,7 +818,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--7
 
 ] [2
 
-])) [3] [4]
+] [3])) [4]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\background.tex"
 Chapter 2.
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 11.
@@ -1147,7 +1147,7 @@ File: ./Figures/measured_surface_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/measured_surface_noise.jpg>
 Package pdftex.def Info: ./Figures/measured_surface_noise.jpg used on input lin
-e 121.
+e 122.
 (pdftex.def)             Requested size: 192.0548pt x 148.06721pt.
 
 <./Figures/simulated_surface_noise.jpg, id=334, 4353.26375pt x 3356.54pt>
@@ -1155,7 +1155,7 @@ File: ./Figures/simulated_surface_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/simulated_surface_noise.jpg>
 Package pdftex.def Info: ./Figures/simulated_surface_noise.jpg used on input li
-ne 125.
+ne 126.
 (pdftex.def)             Requested size: 192.0548pt x 148.06721pt.
  [66 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/measured
 _surface_noise.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/F
@@ -1185,13 +1185,13 @@ C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\acknowledgements.aux")
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 17939 strings out of 493921
- 349180 string characters out of 3147261
- 435463 words of memory out of 3000000
- 20645 multiletter control sequences out of 15000+200000
- 23993 words of font info for 131 fonts, out of 3000000 for 9000
+ 17947 strings out of 493921
+ 349279 string characters out of 3147261
+ 435468 words of memory out of 3000000
+ 20647 multiletter control sequences out of 15000+200000
+ 24317 words of font info for 134 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 55i,23n,58p,820b,11844s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,23n,58p,820b,11848s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
 sy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pro
@@ -1214,7 +1214,7 @@ i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (80 pages, 12596332 bytes).
+Output written on main.pdf (80 pages, 12597366 bytes).
 PDF statistics:
  431 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

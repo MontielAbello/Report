@@ -109,10 +109,11 @@ $0.1 \times 0.1$ m MDF cube, spray painted matte white
 		\begin{equation}
 			error = a\sum_{n = 1}^{n_{Steps}}-1 + 2\:\left \lfloor{\mathcal{R}}\right \rfloor 
 		\end{equation} 
-		where $\mathcal{R}$ is a random variable following a uniform distribution on [0,1]
+		where $\mathcal{R}$ is a random variable following a uniform distribution on [0,1]. Chose step size of $a = 0.0005m$
 		Doesn't work too well over long surfaces (~1m) - can get too large sometimes, but fits measured data for small objects like cube
 		
 		Figure \ref{fig:surface_noise}: comparison of simulated \& measured surface noise:
+		\textbf{ERROR BARS INSTEAD OF DOTS}. MENTION THAT IT IS FLIPPED, COULD BE OTHER WAY. DUE TO RANDOM WALK.
 		\begin{figure}
 	  		\centering
 	  		\subfigure[\label{fig:measured_surface_noise}]{

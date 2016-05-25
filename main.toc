@@ -3,11 +3,13 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Literature Review}{2}
 \contentsline {subsection}{\numberline {1.1.1}infinite-dimensional observers}{2}
-\contentsline {subsection}{\numberline {1.1.2}symmetry preserving observers}{3}
-\contentsline {subsubsection}{\numberline {1.1.2.1}early work}{4}
-\contentsline {subsubsection}{\numberline {1.1.2.2}bonnabel et al}{4}
-\contentsline {subsubsection}{\numberline {1.1.2.3}trumpf, mahony et al}{4}
-\contentsline {subsection}{\numberline {1.1.3}infinite dimensional symmetry preserving observers}{4}
+\contentsline {subsection}{\numberline {1.1.2}linear}{2}
+\contentsline {subsection}{\numberline {1.1.3}nonlinear}{3}
+\contentsline {subsection}{\numberline {1.1.4}symmetry preserving observers}{3}
+\contentsline {subsubsection}{\numberline {1.1.4.1}early work}{4}
+\contentsline {subsubsection}{\numberline {1.1.4.2}bonnabel et al}{4}
+\contentsline {subsubsection}{\numberline {1.1.4.3}trumpf, mahony et al}{4}
+\contentsline {subsection}{\numberline {1.1.5}infinite dimensional symmetry preserving observers}{4}
 \contentsline {chapter}{\numberline {2}Theoretical Background}{5}
 \contentsline {section}{\numberline {2.1}Rigid Body Kinematics}{5}
 \contentsline {subsection}{\numberline {2.1.1}Lie Groups}{5}

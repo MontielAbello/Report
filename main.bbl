@@ -77,6 +77,17 @@ S.~I. Marcus, ``Algebraic and geometric methods in nonlinear filtering,''
   \emph{SIAM Journal on Control and Optimization}, vol.~22, no.~6, pp.
   817--844, 1984.
 
+\bibitem{aghannan2002invariant}
+N.~Aghannan and P.~Rouchon, ``On invariant asymptotic observers,'' in
+  \emph{Decision and Control, 2002, Proceedings of the 41st IEEE Conference
+  on}, vol.~2.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2002, pp.
+  1479--1484.
+
+\bibitem{maithripala2005intrinsic}
+D.~S. Maithripala, W.~P. Dayawansa, and J.~M. Berg, ``Intrinsic observer-based
+  stabilization for simple mechanical systems on lie groups,'' \emph{SIAM
+  journal on control and optimization}, vol.~44, no.~5, pp. 1691--1711, 2005.
+
 \bibitem{auroux2011symmetry}
 D.~Auroux and S.~Bonnabel, ``Symmetry-based observers for some water-tank
   problems,'' \emph{Automatic Control, IEEE Transactions on}, vol.~56, no.~5,
