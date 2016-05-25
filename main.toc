@@ -40,37 +40,37 @@
 \contentsline {subsection}{\numberline {2.1.7}Scanning Laser Rangefinder Dynamic Model}{20}
 \contentsline {section}{\numberline {2.2}State Observers}{22}
 \contentsline {chapter}{\numberline {3}Problem Statement}{23}
-\contentsline {chapter}{\numberline {4}Simulation}{26}
-\contentsline {section}{\numberline {4.1}Implementation}{26}
-\contentsline {subsection}{\numberline {4.1.1}Rigid Body Motion}{28}
-\contentsline {subsubsection}{\numberline {4.1.1.1}Interpolation}{29}
-\contentsline {subsubsection}{\numberline {4.1.1.2}Numerical Integration}{30}
-\contentsline {subsection}{\numberline {4.1.2}Sensor modelling: \texttt {initialisesensor}}{31}
-\contentsline {subsubsection}{\numberline {4.1.2.1}Motion}{31}
-\contentsline {subsubsection}{\numberline {4.1.2.2}Scanning}{32}
-\contentsline {subsection}{\numberline {4.1.3}Environment Modelling: \texttt {initialiseenvironment}}{34}
-\contentsline {subsubsection}{\numberline {4.1.3.1}Motion}{34}
-\contentsline {subsubsection}{\numberline {4.1.3.2}Rigid Objects}{34}
-\contentsline {subsection}{\numberline {4.1.4}Measurement Modelling}{36}
-\contentsline {subsubsection}{\numberline {4.1.4.1}Range Computation: \texttt {computerange}}{36}
-\contentsline {subsubsection}{\numberline {4.1.4.2}Sensor Noise: \texttt {addnoise}}{38}
-\contentsline {subsection}{\numberline {4.1.5}Observer Implementation}{38}
-\contentsline {subsubsection}{\numberline {4.1.5.1}Estimate: \texttt {estimatestate}}{38}
-\contentsline {subsubsection}{\numberline {4.1.5.2}Object/background sepraration: \texttt {identifyobject}}{40}
-\contentsline {subsubsection}{\numberline {4.1.5.3}Update: \texttt {updatestate}}{40}
-\contentsline {section}{\numberline {4.2}Results}{49}
-\contentsline {subsection}{\numberline {4.2.1}testing scheme? think of a title...}{49}
-\contentsline {subsection}{\numberline {4.2.2}Orientation correction}{49}
-\contentsline {subsection}{\numberline {4.2.3}Position correction}{49}
-\contentsline {subsection}{\numberline {4.2.4}Size correction}{59}
-\contentsline {subsection}{\numberline {4.2.5}Orientation and size}{59}
-\contentsline {subsection}{\numberline {4.2.6}effect of initial conditions}{64}
-\contentsline {subsection}{\numberline {4.2.7}discussion}{64}
-\contentsline {chapter}{\numberline {5}Experiment}{65}
-\contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{66}
-\contentsline {subsection}{\numberline {5.1.1}Setup}{66}
-\contentsline {subsection}{\numberline {5.1.2}Results}{66}
-\contentsline {section}{\numberline {5.2}Testing Data Collection}{70}
-\contentsline {subsection}{\numberline {5.2.1}Setup}{70}
-\contentsline {subsection}{\numberline {5.2.2}Results}{70}
-\contentsline {chapter}{\numberline {6}Conclusion}{71}
+\contentsline {chapter}{\numberline {4}Simulation}{27}
+\contentsline {section}{\numberline {4.1}Implementation}{27}
+\contentsline {subsection}{\numberline {4.1.1}Rigid Body Motion}{29}
+\contentsline {subsubsection}{\numberline {4.1.1.1}Interpolation}{30}
+\contentsline {subsubsection}{\numberline {4.1.1.2}Numerical Integration}{31}
+\contentsline {subsection}{\numberline {4.1.2}Sensor modelling: \texttt {initialisesensor}}{32}
+\contentsline {subsubsection}{\numberline {4.1.2.1}Motion}{32}
+\contentsline {subsubsection}{\numberline {4.1.2.2}Scanning}{33}
+\contentsline {subsection}{\numberline {4.1.3}Environment Modelling: \texttt {initialiseenvironment}}{35}
+\contentsline {subsubsection}{\numberline {4.1.3.1}Motion}{35}
+\contentsline {subsubsection}{\numberline {4.1.3.2}Rigid Objects}{35}
+\contentsline {subsection}{\numberline {4.1.4}Measurement Modelling}{37}
+\contentsline {subsubsection}{\numberline {4.1.4.1}Range Computation: \texttt {computerange}}{37}
+\contentsline {subsubsection}{\numberline {4.1.4.2}Sensor Noise: \texttt {addnoise}}{39}
+\contentsline {subsection}{\numberline {4.1.5}Observer Implementation}{39}
+\contentsline {subsubsection}{\numberline {4.1.5.1}Estimate: \texttt {estimatestate}}{39}
+\contentsline {subsubsection}{\numberline {4.1.5.2}Object/background sepraration: \texttt {identifyobject}}{41}
+\contentsline {subsubsection}{\numberline {4.1.5.3}Update: \texttt {updatestate}}{41}
+\contentsline {section}{\numberline {4.2}Results}{50}
+\contentsline {subsection}{\numberline {4.2.1}testing scheme? think of a title...}{50}
+\contentsline {subsection}{\numberline {4.2.2}Orientation correction}{50}
+\contentsline {subsection}{\numberline {4.2.3}Position correction}{50}
+\contentsline {subsection}{\numberline {4.2.4}Size correction}{60}
+\contentsline {subsection}{\numberline {4.2.5}Orientation and size}{60}
+\contentsline {subsection}{\numberline {4.2.6}effect of initial conditions}{65}
+\contentsline {subsection}{\numberline {4.2.7}discussion}{65}
+\contentsline {chapter}{\numberline {5}Experiment}{66}
+\contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{67}
+\contentsline {subsection}{\numberline {5.1.1}Setup}{67}
+\contentsline {subsection}{\numberline {5.1.2}Results}{67}
+\contentsline {section}{\numberline {5.2}Testing Data Collection}{71}
+\contentsline {subsection}{\numberline {5.2.1}Setup}{71}
+\contentsline {subsection}{\numberline {5.2.2}Results}{71}
+\contentsline {chapter}{\numberline {6}Conclusion}{72}

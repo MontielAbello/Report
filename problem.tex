@@ -79,6 +79,8 @@ The aim is to design an observer which estimates the state of the cube from the 
 -measurement: range, also relates to state of sensor
 can also think of this as state to estimate is relative state between sensor, cube
 *convergence - how to quantify performance?
+-innovation based on prediction and measured ranges SEPARATELY - this is because only trying to observe cube, ignoring environment. infinite dimensional observer would attempt to estimate infinite dimensional depth field, which is a function on sphere which returns depth - continuous. Instead uses knowledge of environment to filter it out. thus, necessary to have separate measurements, or would only be able to apply innovations when both visible - no solution in this case - couldn't correct size\\
+
 
 
 
