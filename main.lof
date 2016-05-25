@@ -5,10 +5,10 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces caption}}{22}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Scanning parameters}}{34}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Cube modelled with ordered set of points and corresponding triangles}}{36}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Ray-triangle intersection}}{37}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Cube modelled with ordered set of points and corresponding triangles}}{35}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Ray-triangle intersection}}{36}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Orientation update}}{42}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Position update}}{45}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Position update}}{44}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Size update - case 1}}{47}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Size update - case 2}}{48}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Orientation correction - no noise}}{50}

@@ -2,7 +2,7 @@
 
 \section{Rigid Body Kinematics}
 	A rigid body is a model of a solid object whose deformation is assumed to be negligible. The distance between every pair of points on the body remains constant. Because such a body does not deform, knowledge of the orientation and position of a reference frame fixed to rigid body constitutes knowledge of the position of all points. The position of the rigid body is thus defined as the position of a single point in the body, most commonly its centre of mass. The orientation can be defined using a set of coordinate axes fixed to the body.
-	The theory of Lie groups will be used to describe the kinematics of rigid bodies on this report.
+	The theory of Lie groups will be used to describe the kinematics of rigid bodies in this report.
 			
 	\subsection{Lie Groups}		
 		A Lie group $\mathbf{G}$ is a group whose elements form a differentiable manifold and group operation and inverse operation are differentiable.
@@ -268,6 +268,7 @@
 			 	w_1 \\
 			 	\mathbf{v}_1
 			\end{bmatrix} 
+			\cdot
 			\begin{bmatrix}
 			 	w_2 \\
 			 	\mathbf{v}_2
@@ -433,7 +434,7 @@
 		For example, $^{F}_{A}\mathbf{R}^{}_{B}$ defines the rotation of $\{B\}$ with respect to $\{A\}$, defined in the inertial frame $\{F\}$.		
 		
 		\subsubsection{Pose}
-		The pose of a rigid body in a given reference frame is defined by its relative position and orientation with respect to the given reference frame and is represented by an element of \textbf{SE}(3). If a rigid body has orientation aligned with a reference frame $\{B\}$ and position at the origin of $\{B\}$, then the pose of the rigid body with respect to $\{A\}$ and defined in $\{F\}$ is:
+		A pose defines an orientation and position in space. The pose of a rigid body in a given reference frame is defined by its relative position and orientation with respect to the given reference frame and is represented by an element of \textbf{SE}(3). If a rigid body has orientation aligned with a reference frame $\{B\}$ and position at the origin of $\{B\}$, then the pose of the rigid body with respect to $\{A\}$ and defined in $\{F\}$ is:
 		\begin{equation}
 			{^{F}_{A}\mathbf{S}^{}_{B}} = 
 			\begin{bmatrix}

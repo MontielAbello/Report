@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  26 MAY 2016 05:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  26 MAY 2016 06:08
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -871,37 +871,37 @@ Chapter 4.
 
 ] [27] [28] [29] [30]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 176.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 172.
  [31] [32]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_scanning
 .tex") [33] [34]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_triangle
 s.tex")
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 299.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 295.
  [35]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_raytrian
-gle.tex") [36] [37]
-Overfull \hbox (9.96562pt too wide) in paragraph at lines 408--409
+gle.tex") [36] [37] [38]
+Overfull \hbox (9.96562pt too wide) in paragraph at lines 404--405
 \OT1/cmr/bx/n/10.95 FIGURES ARE USED TO EX-PLAIN FUNC-TIONS. FIG-URES THEM-SELV
 ES
  []
 
-[38] [39] [40]
-Underfull \hbox (badness 10000) in paragraph at lines 469--470
+[39] [40]
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
 
  []
 
 
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_orientat
-ionupdate.tex") [41] [42] [43]
+ionupdate.tex") [41] [42]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_position
-update.tex") [44] [45]
+update.tex") [43] [44]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
-te1.tex")
+te1.tex" [45])
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
 te2.tex") [46] [47] [48]
-Underfull \hbox (badness 10000) in paragraph at lines 584--586
+Underfull \hbox (badness 10000) in paragraph at lines 580--582
 
  []
 
@@ -910,7 +910,7 @@ File: ./Figures/error_xx_3F_orientation.jpg Graphic file (type jpg)
 
 <use ./Figures/error_xx_3F_orientation.jpg>
 Package pdftex.def Info: ./Figures/error_xx_3F_orientation.jpg used on input li
-ne 595.
+ne 591.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
 <./Figures/error_xx_3F_orientation_noisy.jpg, id=210, 1204.5pt x 903.375pt>
@@ -918,7 +918,7 @@ File: ./Figures/error_xx_3F_orientation_noisy.jpg Graphic file (type jpg)
 
 <use ./Figures/error_xx_3F_orientation_noisy.jpg>
 Package pdftex.def Info: ./Figures/error_xx_3F_orientation_noisy.jpg used on in
-put line 601.
+put line 597.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
 <./Figures/error_Rx_3F_orientation_screw.jpg, id=212, 1204.5pt x 903.375pt>
@@ -926,7 +926,7 @@ File: ./Figures/error_Rx_3F_orientation_screw.jpg Graphic file (type jpg)
 
 <use ./Figures/error_Rx_3F_orientation_screw.jpg>
 Package pdftex.def Info: ./Figures/error_Rx_3F_orientation_screw.jpg used on in
-put line 607.
+put line 603.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
 <./Figures/error_Rx_3F_orientation_twist.jpg, id=214, 1204.5pt x 903.375pt>
@@ -934,7 +934,7 @@ File: ./Figures/error_Rx_3F_orientation_twist.jpg Graphic file (type jpg)
 
 <use ./Figures/error_Rx_3F_orientation_twist.jpg>
 Package pdftex.def Info: ./Figures/error_Rx_3F_orientation_twist.jpg used on in
-put line 613.
+put line 609.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
 <./Figures/error_Rx_3F_orientation_noise_screw.jpg, id=216, 1204.5pt x 903.375p
@@ -943,7 +943,7 @@ File: ./Figures/error_Rx_3F_orientation_noise_screw.jpg Graphic file (type jpg)
 
  <use ./Figures/error_Rx_3F_orientation_noise_screw.jpg>
 Package pdftex.def Info: ./Figures/error_Rx_3F_orientation_noise_screw.jpg used
- on input line 619.
+ on input line 615.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
 <./Figures/error_Rx_3F_orientation_noise_twist.jpg, id=218, 1204.5pt x 903.375p
@@ -952,10 +952,10 @@ File: ./Figures/error_Rx_3F_orientation_noise_twist.jpg Graphic file (type jpg)
 
  <use ./Figures/error_Rx_3F_orientation_noise_twist.jpg>
 Package pdftex.def Info: ./Figures/error_Rx_3F_orientation_noise_twist.jpg used
- on input line 625.
+ on input line 621.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--634
+Underfull \hbox (badness 10000) in paragraph at lines 628--630
 
  []
 
@@ -963,7 +963,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 632--634
 File: ./Figures/error_1F_position.jpg Graphic file (type jpg)
 
 <use ./Figures/error_1F_position.jpg>
-Package pdftex.def Info: ./Figures/error_1F_position.jpg used on input line 639
+Package pdftex.def Info: ./Figures/error_1F_position.jpg used on input line 635
 .
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
@@ -972,18 +972,18 @@ File: ./Figures/error_1F_position_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/error_1F_position_noise.jpg>
 Package pdftex.def Info: ./Figures/error_1F_position_noise.jpg used on input li
-ne 645.
+ne 641.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
 <./Figures/error_2F_position.jpg, id=224, 1204.5pt x 903.375pt>
 File: ./Figures/error_2F_position.jpg Graphic file (type jpg)
 
 <use ./Figures/error_2F_position.jpg>
-Package pdftex.def Info: ./Figures/error_2F_position.jpg used on input line 651
+Package pdftex.def Info: ./Figures/error_2F_position.jpg used on input line 647
 .
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 656--659
+Underfull \hbox (badness 10000) in paragraph at lines 652--655
 
  []
 
@@ -1006,7 +1006,7 @@ File: ./Figures/error_xx_size_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/error_xx_size_noise.jpg>
 Package pdftex.def Info: ./Figures/error_xx_size_noise.jpg used on input line 6
-62.
+58.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
 <./Figures/error_RT_size_noise.jpg, id=269, 1204.5pt x 903.375pt>
@@ -1014,7 +1014,7 @@ File: ./Figures/error_RT_size_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/error_RT_size_noise.jpg>
 Package pdftex.def Info: ./Figures/error_RT_size_noise.jpg used on input line 6
-68.
+64.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
 <./Figures/error_xx_3F_OxS_noise.jpg, id=271, 1204.5pt x 903.375pt>
@@ -1022,7 +1022,7 @@ File: ./Figures/error_xx_3F_OxS_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/error_xx_3F_OxS_noise.jpg>
 Package pdftex.def Info: ./Figures/error_xx_3F_OxS_noise.jpg used on input line
- 680.
+ 676.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
 <./Figures/error_Rx_3F_OxS_screw.jpg, id=273, 1204.5pt x 903.375pt>
@@ -1030,7 +1030,7 @@ File: ./Figures/error_Rx_3F_OxS_screw.jpg Graphic file (type jpg)
 
 <use ./Figures/error_Rx_3F_OxS_screw.jpg>
 Package pdftex.def Info: ./Figures/error_Rx_3F_OxS_screw.jpg used on input line
- 686.
+ 682.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
 <./Figures/error_Rx_3F_OxS_twist.jpg, id=275, 1204.5pt x 903.375pt>
@@ -1038,7 +1038,7 @@ File: ./Figures/error_Rx_3F_OxS_twist.jpg Graphic file (type jpg)
 
 <use ./Figures/error_Rx_3F_OxS_twist.jpg>
 Package pdftex.def Info: ./Figures/error_Rx_3F_OxS_twist.jpg used on input line
- 692.
+ 688.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
  [59 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_xx
 _size_noise.jpg>] [60 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report
@@ -1052,7 +1052,7 @@ File: ./Figures/tetrahedron_observer.jpg Graphic file (type jpg)
 
 <use ./Figures/tetrahedron_observer.jpg>
 Package pdftex.def Info: ./Figures/tetrahedron_observer.jpg used on input line 
-705.
+701.
 (pdftex.def)             Requested size: 426.79135pt x 271.46176pt.
 ) [64 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/tetrahe
 dron_observer.jpg>]
@@ -1196,7 +1196,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 Here is how much of TeX's memory you used:
  17962 strings out of 493921
  349403 string characters out of 3147261
- 435513 words of memory out of 3000000
+ 434077 words of memory out of 3000000
  20656 multiletter control sequences out of 15000+200000
  24692 words of font info for 138 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -1223,7 +1223,7 @@ i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (84 pages, 12612365 bytes).
+Output written on main.pdf (84 pages, 12612641 bytes).
 PDF statistics:
  443 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

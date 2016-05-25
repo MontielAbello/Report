@@ -1,15 +1,13 @@
 \chapter{Simulation} \label{chap:simulation}
 \section{Implementation}
 A simulation toolbox was implemented in Matlab to model scanning laser range-finder measurements and test observer schemes. The main components of the simulation are:
-\begin{itemize}
+\begin{itemize} \setlength\itemsep{-3mm}
 \item rigid body trajectory computation;
 \item solid object modelling;
 \item range measurement simulation;
 \item noise modelling;
 \item observer implementation.
 \end{itemize}
-
-
 
 \IncMargin{2em}	
 	\begin{algorithm}
@@ -63,16 +61,14 @@ A simulation toolbox was implemented in Matlab to model scanning laser range-fin
 	\caption{Scanning range-finder and state observer simulation} \label{main}
 	\end{algorithm}
 	
-\textbf{NOTE: PUT THIS BIT IN INTRODUCTION???}
-The notation employed here and throughout the rest of the report represents variables according to:
-\begin{itemize}
-\item \textit{plain text}: single values;
-\item \textit{bold lowercase}: vectors;
-\item \textit{bold uppercase}: matrices
+The notation employed here and throughout the rest of the report uses the following conventions:
+\begin{itemize} \setlength\itemsep{-3mm}
+\item \textit{plain text} variables: single values;
+\item \textit{bold lowercase} variables: vectors;
+\item \textit{bold uppercase} variables: matrices
+\item An array formed by replicating a variable $\mathbf{a}$ in an $n \times m$ block array is denoted $\mathbf{a}_{n \times m}$.
+\item In many cases, a variable such as the sensor position $\mathbf{p}_s(t)$ represents a set of elements, each corresponding to the value at a certain time $t$. These will be referred to by the form of the value at a single time. For example, a matrix where each column represents a different position vector is used to represent $\mathbf{p}_s(t)$, but it will be described as a vector as this is the form of a single position.
 \end{itemize}
-Additionally, an array formed by replicating a variable $\mathbf{a}$ in an $n \times m$ block array is denoted $\mathbf{a}_{n \times m}$.
-
-In many cases, a variable such as the sensor position $\mathbf{p}_s(t)$ represents a set of elements, each corresponding to the value at a certain time $t$. These will be referred to by the form of the value at a single time. For example, a matrix where each column represents a different position vector is used to represent $\mathbf{p}_s(t)$, but it will be described as a vector as this is the form of a single position.
 
 A high level description of the simulation is provided in Algorithm \ref{main}.
 First, a settings file is loaded. The most important settings determined here are the trajectories of the sensor and environment objects, the scanning behaviour of the sensor and the observer update function.
