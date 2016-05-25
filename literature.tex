@@ -49,32 +49,28 @@ Developments were made to the theory and presented in \cite{bonnabel2009non}. Fo
 
 Most recently \cite{auroux2011symmetry},these invariant design methods were applied to an infinite dimensional system. An observer estimating the state of fluid in a water tank where height varies with continuous dependent variables position and time was developed. It was shown to converge more quickly and robustly than previous attempts at infinite dimensional observer designed with Extended Kalman Filter (EKF) methods.
 
-Second group: ANU, Trumpf, Mahony\\
-including Trumpf, Mahony, Hamel, Lageman
-2008 \cite{mahony2009nonlinear} - nonlinear filters - special orthogonal group - attitude estimation - 3 observers with almost globally stable observer error
-2012 \cite{trumpf2012analysis} - attitude observer - almost globally asymptotic, locally exponential
-2013 \cite{mahony2013observers} - design methodology for 2 classes of systems- lift kinematic system onto symmetry group. design observer for the lifted system. - lyapunov method for innovation term. Basically, less general than Bonnabel group, stronger global convergence characteristics
+The work of Trumpf, Mahony, Hamel, Lageman et al. differs in scope. The methods of Bonnabel et al. are generalised and can be applied to a wide range of systems. In contrast, the work of Trumpf et al. is limited to two specific classes of systems, but achieves stronger convergence properties.
+In \cite{mahony2009nonlinear} nonlinear filters on the Special Orthogonal Group $\mathbf{SO}(3)$ are used in attitude estimation and the resulting nonlinear observers achieved almost globally stable observer error.
+Another attitude observer \cite{trumpf2012analysis} achieved almost globally asymptotic and locally exponential convergence.
+In \cite{mahony2013observers}, the design methodology for 2 classes of systems is presented. The approach taken is to lift the kinematic system onto its symmetry group and design an observer for the lifted system. The Lyapunov method is used to design the observer innovation term. This methodology simplifies nonlinear observer design and produces observers with strong convergence properties. This group has also begun research  on symmetry-preserving infinite-dimensional observers.
 
-Additional work:
-Zarrouati \cite{zarrouati2013augmented} - PhD thesis - observer from rotation invariant equations for light and depth - camera and depth sensor - dense sensors give infinite dimensional measurement, though finite dimensional state estimated
+The motivation behind the development of infinite-dimensional observers is to allow dense sensors to be fully utilised. In this vein, research presented in a PhD thesis by Zarrouati \cite{zarrouati2013augmented} utilised dense measurements from a camera and depth sensor. An observer was developed from rotation invariant equations for light and depth. Though the sensors took measurements of an infinite dimensional state, a finite dimensional approximation of this state is what was estimated by the observer.
 
-Most recent work by Adarve \cite{adarvefiltering} is similar exploration into dense sensing for estimation of infinite dimensional state. Will take a close look at this work as it is inspiration for this project, similar in spirit.
+Another recent work by Adarve et al.\cite{adarvefiltering} also uses dense sensing in the estimation of an infinite dimensional state. This result will be examined closely as it is similar in direction to this research.
 
-Adarve et al. design an update-propagation filter to iteratively compute dense optical flow from CCD camera measurements. Rather than computing the optical flow independently at each frame, a two-stage process is used to build it incrementally. The propagation stage uses a non-linear PDE to model the transport of the optical flow in the next time step. The update stage corrects this prediction using the current image.
+Adarve et al. design an update-propagation filter to iteratively compute dense optical flow $\Phi$ from CCD camera measurements $Y$. This optical flow is an infinite dimensional state. Rather than computing the optical flow independently at each frame, a two-stage process is used to build it incrementally. The propagation stage uses a non-linear PDE to model the transport of the optical flow in the next time step. The update stage corrects this prediction using the current image.
 
-This paper is relevant to the project because:
-\begin{itemize}
-%\setlength{\itemsep}{1pt}
-\item The use of a dense sensor allows for the image to be treated as continuous in time and space;
-\item The state that is being observed is infinite dimensional;
-\item The relationship between the state to observe $ \Phi $ and the measurement of the environment $ Y $ is given by a transport PDE;
-\end{itemize}
+The iterative filter used in this approach is an observer that estimates the state of the continuous spatio-temporal flow field. By using a dense sensor, the measured image stream can be treated as a continuous, infinite dimensional state. This is in contrast to sparse optical flow computation where the image is modelled as a set of discrete pixel values. However, the flow fields $\Phi$ discretised and computed in $r$ in independent regions $\Omega$ around a discrete set of control points $\xi$ as shown in Figure \ref{fig:flow}. Here, this approach differs from that of general infinite dimensional invariant observer. The state is treated as a discrete set of locally continuous states which does not allow for symmetry considerations. This is because the PDE relations in the local regions are invariant to 2D rotation and translation, but the interactions between regions themselves are not. 
 
-The iterative filter used in this approach is an observer that estimates the state of the continuous spatio-temporal flow field. By using a dense sensor, the measured image stream can be treated as a continuous, infinite dimensional state. This is in contrast to sparse optical flow computation where the image is modelled as a set of discrete pixel values. However, the flow field is computed in support regions around a discrete set of control points. Here, this approach differs from a general infinite dimensional invariant observer might look like. The state is treated as a discrete set of locally continuous states which does not allow for symmetry considerations. \textit{Why? - the pde relations in the local regions are invariant to 2D rotation + translation, but what about the interaction between regions? - still need to do more reading on how invariance can be used to improve observer design.}
+\begin{figure}
+\centering
+  \includegraphics[width=0.8\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/flow_regions.jpg}
+  \caption{Infinite dimensional optical flow discretised and computed in separate, independent regions} \label{fig:flow_regions}
+\end{figure} \label{fig:flow}
 
-$\Phi$ and $Y$ are discretized spatially at the beginning of the algorithm design. Discretizing later would allow for symmetry to be taken advantage of.
+Discretising $\Phi$ and $Y$ at the beginning of the algorithm design means this is an early lumping design approach. Employing a late lumping approach by discretising an infinite dimensional observer would allow the for the rotation and translation invariance of the flow field to be taken advantage of to improve convergence properties.
 
-Also, in order to derive the transport identity in the state propagation stage it was assumed the $\Phi$ was locally continuous. This assumption is invalid in the case of multiple objects, and will lead to an incorrect solution at the boundaries of objects. This is dealt with by computing the partial derivatives in the Jacobian matrix with data from direction of the source of the flow. This is done by choosing either the forward or backward partial derivative kernel in the $x$ and $y$ directions. Lesson: sometimes assumptions that are not completely valid must be made for simplicities sake - the implementation can be designed to minimise the resulting errors.
+The lesson to take from this analysis is that discretisation methods must be carefully chosen in order to preserve the invariance of the system.
 
 
 
