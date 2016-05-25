@@ -27,18 +27,18 @@ There has been some progress in infinite-dimensional observer design for special
 
 Despite these small advances in special case nonlinear design, the most common design methods for nonlinear infinite-dimensional systems rely on linearisation techniques. These techniques rely on the fact that differentiable functions can be approximated by a first-order Taylor expansion around a point. Luenberger and Kalman methods can be applied to linear approximations of system infinite-dimensional systems around an equilibrium point. This simplification relies on the dynamics of system at the point of linearisation being representative of the entire space. In general, this is not necessarily true, and is the biggest limitation in this design technique. The result is that these linearised observers only converge if the initial state estimate is within a local neighbourhood of the true state. Global converge is not guaranteed which severely limits robustness.
 
-Global convergence can be achieved by taking account the symmetries inherent to the system during observer design. A powerful tool for dealing with symmetries is the theory of \textit{Lie groups}. Investigation into \textit{symmetry-preserving} observer design for systems on Lie groups is an active area of research, promising to produce theoretically validated design principles for nonlinear infinite-dimensional observers.
+Global convergence can be achieved by taking account the symmetries inherent to the system during observer design. A powerful tool for dealing with symmetries is the theory of \textit{Lie groups}. Investigation into \textit{symmetry-preserving} observer design for systems on Lie groups is an active area of research. It promises to produce theoretically validated design principles for nonlinear infinite-dimensional observers, though the majority of research so far has been limited to finite-dimensional observers.
 
 \subsection{Symmetry-Preserving Observers}
 The motivation behind symmetry-preserving observers is to take advantage of invariances in the dynamics of the system. The goal is to design an observer around an equilibrium point in such a way that it can be extended converge around a wider set of points.
 
 \subsubsection{Early work}
 Geometry conscious observer design is not a new idea. Early investigation by Marcus \cite{marcus1984algebraic} into algebraic and geometric methods for nonlinear filter design showed promise.
-A seminal work by Salcudean \cite{salcudean1991globally} was the design of an eventually exponential, globally converging observer for the attitude of rigid bodies. This design HOW DID IT WORK?
-Another important result that is a precursor to the active research of today is by Aghannon \& Rouchon \cite{aghannan2002invariant} - invariant observer construction based on Cartan's moving frame method. Proved convergence for specific problem, but general case still open problem.
-Usefulness show by Maithripala \cite{maithripala2005intrinsic} who used Aghannon's method in an intrinsic observer based controller - meaning performance independent of coordinates of configuration space.
+A seminal work by Salcudean \cite{salcudean1991globally} was the design of an eventually exponential, globally converging observer for the attitude of rigid bodies from orientation and torque measurements. This observer design takes advantage of the simplicity of the quaternion rotation representation and dynamics of rigid body motion.
 
-\subsubsection{Active research}
+Another important result that is a precursor to the active research of today is a design method developed by Aghannon \& Rouchon \cite{aghannan2002invariant}. Their invariant observer construction was based on Cartan's moving frame method. Though convergence was proven for a specific problem, the observer convergence for a general case was left an open problem. Maithripala \cite{maithripala2005intrinsic} demonstrated the effectiveness of Aghannon \& Rouchons' method by incorporating it into the design of an intrinsic observer based controller. Performance was shown to be independent of the coordinate system used to represent the configuration space.
+
+\subsubsection{Active Research}
 Currently, there are two active research groups. Both have begun to apply symmetry methods to infinite dimensional observers too.
 
 First group, Bonnabel, Auroux, Rouchon, Martin

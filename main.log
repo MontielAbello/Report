@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  26 MAY 2016 05:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  26 MAY 2016 05:46
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -816,14 +816,14 @@ Overfull \hbox (1.67165pt too wide) in paragraph at lines 23--25
 rver de-sign for non-lin-ear infinite-dimensional
  []
 
-[3] [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 69.
+[3] [4] [5]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 68.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 69.
- [5])) [6]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 68.
+)) [6]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\background.tex"
 Chapter 2.
 [7
@@ -1194,10 +1194,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 17961 strings out of 493921
- 349380 string characters out of 3147261
- 435509 words of memory out of 3000000
- 20655 multiletter control sequences out of 15000+200000
+ 17962 strings out of 493921
+ 349403 string characters out of 3147261
+ 435513 words of memory out of 3000000
+ 20656 multiletter control sequences out of 15000+200000
  24692 words of font info for 138 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,23n,58p,989b,11844s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1223,7 +1223,7 @@ i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (84 pages, 12611625 bytes).
+Output written on main.pdf (84 pages, 12612365 bytes).
 PDF statistics:
  443 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

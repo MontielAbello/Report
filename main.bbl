@@ -77,6 +77,11 @@ S.~I. Marcus, ``Algebraic and geometric methods in nonlinear filtering,''
   \emph{SIAM Journal on Control and Optimization}, vol.~22, no.~6, pp.
   817--844, 1984.
 
+\bibitem{salcudean1991globally}
+S.~Salcudean, ``A globally convergent angular velocity observer for rigid body
+  motion,'' \emph{Automatic Control, IEEE Transactions on}, vol.~36, no.~12,
+  pp. 1493--1497, 1991.
+
 \bibitem{aghannan2002invariant}
 N.~Aghannan and P.~Rouchon, ``On invariant asymptotic observers,'' in
   \emph{Decision and Control, 2002, Proceedings of the 41st IEEE Conference

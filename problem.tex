@@ -66,9 +66,9 @@ The range measurements do not indicate whether the object detected is the cube o
 \end{itemize}
 For simulated data, only the first assumption is necessary. For experimental data sets the environment is more complex so the second assumption is required to identify range measurements corresponding to the cube. 
 
-The aim is to design an observer which estimates the state of the cube from the pose of the sensor, as well as $\mathbf{n}$ and $r$. ie observer function $f$ such that:
+The aim is to design an observer which estimates the state of the cube from the pose of the sensor, as well as scan direction $\mathbf{s}$ and range $r$. Ground truth range unavailable to observer - Will use range measurements $\tilde{r}$ and measurement prediction $\hat{r}$. Observer function $f$ such that:
 \begin{equation}
-	\hat{\mathbf{X}}_{c}(k+1) = f(\mathbf{X}_{s}(t),\hat{\mathbf{X}}_{c}(k),r(t),\hat{r}(t))
+	\hat{\mathbf{X}}_{c}(k+1) = f(\mathbf{X}_{s}(t),\hat{\mathbf{X}}_{c}(k),\tilde{r}(t),\hat{r}(t))
 \end{equation}
 
 \textbf{*RELATE THIS TO BACKGROUND ON OBSERVERS:}\\
