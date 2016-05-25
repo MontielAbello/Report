@@ -1,21 +1,21 @@
 %--------------------------------------------------------------
 %Preamble
 %\documentclass[a4paper, twoside, 11pt]{book}
-\documentclass[twoside,openany,11pt]{book}
+\documentclass[oneside,openany,11pt]{book}
 \usepackage[%
   papersize={210mm,297mm},%
-  layoutsize={200mm,294mm},%
+  layoutsize={200mm,290mm},%
   layoutoffset=5mm,%
-  twoside,%
+  %twoside,%
   nomarginpar,%
-  inner=20mm,%
+  inner=30mm,%
   outer=20mm,%
   vmargin=25mm,%
   voffset=0mm,
   head=20mm,%
   headsep=10mm,%
-  includefoot,
-  foot=0mm,%
+  %includefoot,
+  foot=5mm,%
   %includefoot,
   %showcrop,%
   %showframe,%
@@ -24,7 +24,7 @@
 \setlength{\parskip}{1mm plus 0.5mm minus 0.5mm}
 \setlength{\topskip}{5mm}
 \setlength{\textfloatsep}{4mm}
-
+\usepackage{setspace}
 \usepackage[pdftex, final]{graphicx}
 \graphicspath{{./pics/}}
 \usepackage[parfill]{parskip}
@@ -74,30 +74,44 @@
            shorten >=2pt,}
 }
 
+\linespread{1.5}
+
 %--------------------------------------------------------------
 \begin{document}
 
+%TITLE PAGE
+\newgeometry{margin=20mm}
+\begin{titlepage}
+\thispagestyle{empty}
 \title{Title}
 \author{Montiel Abello}
-%\date{\vspace{-5ex}}
-\date{}  % Toggle commenting to test
+\date{}
 \maketitle
+\end{titlepage}
+\restoregeometry
 
+%\pagestyle{}
+%FRONTMATTER
+\frontmatter
 \include{acknowledgements}
 \include{abstract}
 \markboth{Contents}{Contents}
 \tableofcontents
+\input{glossary}
 \listoffigures
+\input{contributions}
 
+%CHAPTERS
+\mainmatter
 \include{introduction}
-\include{literature}
+%\include{literature}
 \include{background}
 \include{problem}
-%\include{theory}
 \include{simulation}
 \include{experiment}
 \include{conclusion} 
 
+%REFERENCES
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,references}
 

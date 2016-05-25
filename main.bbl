@@ -21,31 +21,43 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{harkort2011finite}
-C.~Harkort and J.~Deutscher, ``Finite-dimensional observer-based control of
-  linear distributed parameter systems using cascaded output observers,''
-  \emph{International Journal of Control}, vol.~84, no.~1, pp. 107--122, 2011.
+\bibitem{stavroulakis1973design}
+P.~Stavroulakis and P.~Sarachik, ``Design of optimal controllers for
+  distributed systems using finite dimensional state observers,'' in
+  \emph{Decision and Control including the 12th Symposium on Adaptive
+  Processes, 1973 IEEE Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax
+  IEEE, 1973, pp. 105--109.
 
 \bibitem{meirovitch1983problem}
 L.~Meirovitch and H.~Baruh, ``On the problem of observation spillover in
   self-adjoint distributed-parameter systems,'' \emph{Journal of Optimization
   Theory and Applications}, vol.~39, no.~2, pp. 269--291, 1983.
 
-\bibitem{haine2014recovering}
-G.~Haine, ``Recovering the observable part of the initial data of an
-  infinite-dimensional linear system with skew-adjoint generator,''
-  \emph{Mathematics of Control, Signals, and Systems}, vol.~26, no.~3, pp.
-  435--462, 2014.
+\bibitem{harkort2011finite}
+C.~Harkort and J.~Deutscher, ``Finite-dimensional observer-based control of
+  linear distributed parameter systems using cascaded output observers,''
+  \emph{International Journal of Control}, vol.~84, no.~1, pp. 107--122, 2011.
 
-\bibitem{helton1976systems}
-J.~W. Helton, ``Systems with infinite-dimensional state space: the hilbert
-  space approach,'' \emph{Proceedings of the IEEE}, vol.~64, no.~1, pp.
-  145--160, 1976.
+\bibitem{gressang1975observers}
+R.~V. Gressang and G.~B. Lamont, ``Observers for systems characterized by
+  semigroups,'' \emph{Automatic Control, IEEE Transactions on}, vol.~20, no.~4,
+  pp. 523--528, 1975.
+
+\bibitem{smyshlyaev2005backstepping}
+A.~Smyshlyaev and M.~Krstic, ``Backstepping observers for a class of parabolic
+  pdes,'' \emph{Systems \& Control Letters}, vol.~54, no.~7, pp. 613--625,
+  2005.
 
 \bibitem{ramdani2010recovering}
 K.~Ramdani, M.~Tucsnak, and G.~Weiss, ``Recovering the initial state of an
   infinite-dimensional system using observers,'' \emph{Automatica}, vol.~46,
   no.~10, pp. 1616--1625, 2010.
+
+\bibitem{haine2014recovering}
+G.~Haine, ``Recovering the observable part of the initial data of an
+  infinite-dimensional linear system with skew-adjoint generator,''
+  \emph{Mathematics of Control, Signals, and Systems}, vol.~26, no.~3, pp.
+  435--462, 2014.
 
 \bibitem{xu1995observer}
 C.-Z. Xu, P.~Ligarius, and J.-P. Gauthier, ``An observer for

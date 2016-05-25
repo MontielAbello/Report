@@ -1,15 +1,33 @@
 \section{Literature Review}
+\textbf{should this be a chapter???}
+
+Use dense sensors to estimate infinite dimensional state of environment can be achieved through an infinite dimensional observer. Richer theory can be gained by taking advantage of symmetries of the system. Will review progress in infinite dimensional, symmetry preserving observers.
 
 \subsection{infinite-dimensional observers}
+In many real world systems the dependent variables are functions of one or more spatial variables. These spatial variables form a continuum of ??? which means an infinite number of parameters are required to describe the state. Such systems are termed infinite dimensional systems, or distributed parameter systems. Their dynamics are modelled by a partial differential equation (PDE). When a state estimate is required but direct measurement of the state with sensors is difficult or impossible, a state observer is employed. A state observer estimates the state of a system using the difference between measured and predicted outputs of the system.
+
 \textbf{linear:}\\
--observer theory for linear infinite-dimensional systems widely studied\\
--techniques used typically extensions of luenberger observers used for finite-dimensional systems.\\
--simplified approach: use spatial discretisation such as finite different/finite element to reduce infinite-dimensional to finite-dimensional observer. \cite{harkort2011finite,meirovitch1983problem}
--better to design infinite-dimensional observer and only discretise for numerical implementation. \cite{haine2014recovering,helton1976systems,ramdani2010recovering} \textbf{TODO:} \textit{describe these design methods.}\\
-\textbf{nonlinear:}\\ 
+Observer theory for infinite dimensional \textit{linear} systems has been widely studied. The techniques used are typically extensions of Luenberger observers and Kalman filter methods used to observe finite dimensional systems.
+
+A simplified approach is to use a spatial discretisation method such as finite difference or finite element to reduce the infinite dimensional system to a finite dimensional one. From here, finite dimensional observer design techniques can be used. This is known as the early lumping method, and was employed by Stavroulakis \cite{stavroulakis1973design} who implemented a finite dimensional observer as part of a control system for an infinite dimensional systems.
+
+The early lumping approach suffers from \textit{spillover}, a phenomenon where performance is affected by the neglected dynamics \cite{meirovitch1983problem}. Harkort \cite{harkort2011finite} recently developed an observer based control scheme that reduced this effect by using modelled outputs rather than true measurements to reduce the effect of the neglected dynamics.
+
+More accurate observers can be designed with the late lumping approach which uses the infinite dimensional model of the system in the observer design itself. The result is what is an actual infinite dimensional observer that is discretised later for practical implementation. These methods are typically extensions of Kalman or Luenberger observers. 
+Gressang \cite{gressang1975observers} extended the Luenberger observer to infinite dimensional systems whose state space was an abstract Banach space - dynamics defined by infinitesimal generator - sort of like basis ? of semigroup.
+
+Smyshlyaev \cite{smyshlyaev2005backstepping} developed an exponentially converging backstepping observer for systems governed by parabolic PDEs.
+
+Ramdani introduced forward and backward observers \cite{ramdani2010recovering}.
+
+Haine \cite{haine2014recovering} applied Ramdani's method, studied convergence properties.
+
+\textbf{nonlinear}
+
 -no universal approach for observer design for infinite-dimensional nonlinear systems\\
 -some methods for special case - infinite dimensional bilinear systems. \cite{xu1995observer,bounit1997observers}
 -for finite-dimensional nonlinear systems, common design methods are: linearisation (ie EKF), lyapunov method, sliding mode, high gain
+
 \subsection{symmetry preserving observers}
 \subsubsection{early work}
 \subsubsection{bonnabel et al}

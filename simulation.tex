@@ -9,6 +9,8 @@ A simulation toolbox was implemented in Matlab to model scanning laser range-fin
 \item observer implementation.
 \end{itemize}
 
+
+
 \IncMargin{2em}	
 	\begin{algorithm}
 	\DontPrintSemicolon
@@ -327,7 +329,8 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	The vector $\mathbf{x}$ on line \ref{line: intersectvec} now indicates which triangles intersected with the scan direction. $\mathbf{x}$ is used to mask the ranges to the triangles $\mathbf{s}$, to give $\mathbf{r}$; the range to each intersecting triangle. 
 	
 	The minimum range $r$ and triangle index $m$ are determined before computing the angle of incidence $\theta$ between $\mathbf{d}$ and the closest triangle.
-
+	
+	\begin{singlespace}
 	\IncMargin{2em}
 	\begin{algorithm}
 	\DontPrintSemicolon
@@ -389,6 +392,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	}
 	\caption{M{\"o}ller-Trumbore ray-triangle intersection} \label{intersectionalgorithm}
 	\end{algorithm}
+	\end{singlespace}
 		
 	\subsubsection{Sensor Noise: \texttt{addnoise}}
 	In Algorithm \ref{main}, the function \texttt{addnoise} takes the ground truth range measurements and produces the noisy range measurements that the observer will actually receive.
