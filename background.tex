@@ -201,7 +201,7 @@
 		The left action of a rotation matrix $\mathbf{R}$ on a point $\mathbf{p} \in \mathbb{R}^3$ is a left matrix multiplication that rotates $\mathbf{p}$ about the origin.
 		
 		\subsubsection{Scaled-axis representation}
-		An orientation in $\mathbf{R}^3$ can also be represented by a 3-vector $\bm{\theta}$ whose direction $\mathbf{r}$ represents the axis of rotation and magnitude $\theta$ represents the angle of rotation.
+		An orientation in $\mathbb{R}^3$ can also be represented by a 3-vector $\bm{\theta}$ whose direction $\mathbf{r}$ represents the axis of rotation and magnitude $\theta$ represents the angle of rotation.
 		\begin{equation}
 			\bm{\theta} = \theta\mathbf{r}
 		\end{equation}
@@ -298,7 +298,7 @@
 	\subsection{\textbf{SE}(3)}	
 		The special Euclidean group $\textbf{SE}(3)$ represents rigid transformation in $\mathbb{R}^3$. This is a matrix Lie group whose elements are the set of all rigid transformations in $\mathbb{R}^3$ and can be represented with $4 \times 4$ matrices of the form
 		\begin{equation}
-			\textbf{X} = 
+			\textbf{S} = 
 			\begin{bmatrix}
 				  \mathbf{R}	&	\mathbf{p} \\
 				  \textbf{0}_{1 \times 3}		& 	1 
@@ -561,7 +561,7 @@
 		
 		*$\theta_0$ is start of FOV, $t'=X$ at end of FOV
 
-\section{State Observers}
+\section{State Observers} \label{sec:observerequations}
 -observer equations for nonlinear system\\
 PLANT - real system. often infinite dimensional.\\
 MODEL - simplified model of real system.\\

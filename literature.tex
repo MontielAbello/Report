@@ -1,45 +1,42 @@
 \section{Literature Review}
 \textbf{should this be a chapter???}
 
-Use dense sensors to estimate infinite dimensional state of environment can be achieved through an infinite dimensional observer. Richer theory can be gained by taking advantage of symmetries of the system. Will review progress in infinite dimensional, symmetry preserving observers.
+The use of dense sensors allows for a more accurate estimation of the state of an infinite-dimensional system such as a complex, real-world environment. The theory of infinite-dimensional observers is required to fully utilise this information. This section will review the current state of design methodologies and implementations for infinite-dimensional observers. Particular focus will be paid to an emerging avenue of research; symmetry-preserving observer design. Recent theory developments in this area have allowed limitations in the global convergence properties of infinite-dimensional observers to be overcome.
 
-\subsection{infinite-dimensional observers}
-In many real world systems the dependent variables are functions of one or more spatial variables. These spatial variables form a continuum of ??? which means an infinite number of parameters are required to describe the state. Such systems are termed infinite dimensional systems, or distributed parameter systems. Their dynamics are modelled by a partial differential equation (PDE). When a state estimate is required but direct measurement of the state with sensors is difficult or impossible, a state observer is employed. A state observer is a filter that provides an estimate of the state of a system using the difference between measured and predicted outputs of the system.
+\subsection{Infinite-Dimensional Observers}
+In many real world systems the dependent variables are functions of one or more spatial variables. An example would be the dynamics of waves in a body of water. The height of the surface varies continuously along the $x$ and $y$ directions. These spatial variables vary continuously, meaning an infinite number of parameters is required to describe the state of the system. Such systems are termed \textit{infinite-dimensional systems}, or \textit{distributed parameter systems}. Their dynamics are modelled by a partial differential equation (PDE). 
 
-\subsubsection{linear}
-Observer theory for infinite dimensional \textit{linear} systems has been widely studied. The techniques used are typically extensions of Luenberger observers and Kalman filter methods used to observe finite dimensional systems.
+When a state estimate is required but direct measurement of the state with sensors is difficult or impossible, a \textit{state observer} is employed. A state observer is a filter that provides an estimate of the state of a system using the difference between its measured and predicted outputs. A more detailed description of an observer is provided in section \ref{sec:observerequations}. An observer for an infinite-dimensional system is called an \textit{infinite-dimensional observer}.
 
-A simplified approach is to use a spatial discretisation method such as finite difference or finite element to reduce the infinite dimensional system to a finite dimensional one. From here, finite dimensional observer design techniques can be used. This is known as the early lumping method, and was employed by Stavroulakis \cite{stavroulakis1973design} who implemented a finite dimensional observer as part of a control system for an infinite dimensional systems.
+\subsubsection{Linear Systems}
+Observer theory for \textit{linear} infinite-dimensional systems has been widely studied. The techniques used are typically extensions of Luenberger observers and Kalman filter methods used to observe finite dimensional systems.
 
-The early lumping approach suffers from \textit{spillover}, a phenomenon where performance is affected by the neglected dynamics \cite{meirovitch1983problem}. Harkort \cite{harkort2011finite} recently developed an observer based control scheme that reduced this effect by using modelled outputs rather than true measurements to reduce the effect of the neglected dynamics.
+A simplified approach is to use a spatial discretisation method such as finite difference or finite element to reduce the infinite-dimensional system to a finite-dimensional one. From here, finite-dimensional observer design techniques can be used. This is known as the \textit{early lumping} method, and was employed by Stavroulakis \cite{stavroulakis1973design} who implemented a finite-dimensional observer as part of a control system for an infinite dimensional systems.
 
-More accurate observers can be designed with the late lumping approach which uses the infinite dimensional model of the system in the observer design itself. The result is what is an actual infinite dimensional observer that is discretised later for practical implementation. These methods are typically extensions of Kalman or Luenberger observers. 
-Gressang \cite{gressang1975observers} extended the Luenberger observer to infinite dimensional systems whose state space was an abstract Banach space - dynamics defined by infinitesimal generator - sort of like basis ? of semigroup.
+The early lumping approach suffers from \textit{spillover}, a phenomenon where performance is affected by the neglected dynamics of the system\cite{meirovitch1983problem}. Harkort \cite{harkort2011finite} recently developed an observer based control scheme that reduced this effect by using modelled outputs rather than true measurements to reduce the effect of the neglected dynamics.
 
-Smyshlyaev \cite{smyshlyaev2005backstepping} developed an exponentially converging backstepping observer for systems governed by parabolic PDEs.
+More accurate observers can be designed with the \textit{late lumping} approach which uses the infinite-dimensional model of the system in the observer design. The result is an infinite-dimensional observer that is discretised later for practical implementation. These methods are typically extensions of Kalman or Luenberger methods to infinite dimensions. 
 
-Ramdani introduced forward and backward observers \cite{ramdani2010recovering}.
+Early work by Gressang \cite{gressang1975observers} extended the Luenberger observer to infinite-dimensional systems whose state space was an abstract Banach space whose dynamics were defined by an infinitesimal generator of a semigroup. More recently, Smyshlyaev \cite{smyshlyaev2005backstepping} developed an exponentially converging backstepping observer for systems governed by parabolic PDEs. Ramdani introduced forward and backward observers \cite{ramdani2010recovering} whose convergence properties were investigated by Haine \cite{haine2014recovering}.
 
-Haine \cite{haine2014recovering} applied Ramdani's method, studied convergence properties.
+\subsubsection{Nonlinear Systems}
+There is currently no universal approach for observer design for nonlinear infinite-dimensional systems.
+The most common approach has been to linearise the system, then apply a linear infinite-dimensional observer design. Common linearisation methods are Lyapunov methods, extended linearisation and the Lie-algebraic approach \cite{primbs1996survey}.
 
-\subsubsection{nonlinear}
-There is no universal approach for observer design for infinite-dimensional nonlinear systems\\
-One approach is to linearise the system, then apply a method for infinite dimensional linear observer design. Common linearisation methods are Lyapunov methods, extended linearisation and the Lie-algebraic approach \cite{primbs1996survey}.
-For the special case of bilinear systems, Xu \cite{xu1995observer} designed an infinite dimensional observer that converged given certain inputs. some methods for special case - infinite dimensional bilinear systems. Bounit \cite{bounit1997observers} designed Kalman and Luenberger type observers for infinite dimensional bilinear systems. 
+There has been some progress in infinite-dimensional observer design for special cases of nonlinear systems. For bilinear systems, Xu \cite{xu1995observer} designed an infinite-dimensional observer that converged for certain inputs. Bounit \cite{bounit1997observers} designed Kalman and Luenberger type observers for infinite-dimensional bilinear systems. 
 
-Trend - many design methods for infinite dimensional nonlinear systems rely on linearisation techniques. Differentiable function can be approximated by first order taylor expansion around a point. Linear approximation of system around an equilibrium point. Theory of Kalman filters, Luenberger observers can be applied. This simplification relies on dynamics of system at the point -  behaviour not the same throughout. Result is that observer only converges if the initial state estimate is within a local neighbourhood of the true state. Global converge is not guaranteed. 
-To achieve this, direction into geometry, symmetry of system. Particularly powerful when dealing with symmetries is theory of Lie groups.
-Investigation into observers for systems on Lie groups:
+Despite these small advances in special case nonlinear design, the most common design methods for nonlinear infinite-dimensional systems rely on linearisation techniques. These techniques rely on the fact that differentiable functions can be approximated by a first-order Taylor expansion around a point. Luenberger and Kalman methods can be applied to linear approximations of system infinite-dimensional systems around an equilibrium point. This simplification relies on the dynamics of system at the point of linearisation being representative of the entire space. In general, this is not necessarily true, and is the biggest limitation in this design technique. The result is that these linearised observers only converge if the initial state estimate is within a local neighbourhood of the true state. Global converge is not guaranteed which severely limits robustness.
 
-\subsection{symmetry preserving observers}
-The idea behind symmetry preserving observers is to take advantage of invariances of the system. Design an observer around an equilibrium point in such a way that it can be extended to a wider set of points.
+Global convergence can be achieved by taking account the symmetries inherent to the system during observer design. A powerful tool for dealing with symmetries is the theory of \textit{Lie groups}. Investigation into \textit{symmetry-preserving} observer design for systems on Lie groups is an active area of research, promising to produce theoretically validated design principles for nonlinear infinite-dimensional observers.
+
+\subsection{Symmetry-Preserving Observers}
+The motivation behind symmetry-preserving observers is to take advantage of invariances in the dynamics of the system. The goal is to design an observer around an equilibrium point in such a way that it can be extended converge around a wider set of points.
 
 \subsubsection{Early work}
-Observer design taking geometry into account not a new idea. Early investigation by Marcus \cite{marcus1984algebraic} into algebraic and geometric methods for nonlinear filter design showed idea had promise.
-An important work by Salcudean - eventually exponential, globally converging observer - rigid bodies, attitude.
-Work that has led to research today is by Aghannon \& Rouchon \cite{aghannan2002invariant} - invariant observer construction based on Cartan's moving frame method. Proved convergence for specific problem, but general case still open problem.
+Geometry conscious observer design is not a new idea. Early investigation by Marcus \cite{marcus1984algebraic} into algebraic and geometric methods for nonlinear filter design showed promise.
+A seminal work by Salcudean \cite{salcudean1991globally} was the design of an eventually exponential, globally converging observer for the attitude of rigid bodies. This design HOW DID IT WORK?
+Another important result that is a precursor to the active research of today is by Aghannon \& Rouchon \cite{aghannan2002invariant} - invariant observer construction based on Cartan's moving frame method. Proved convergence for specific problem, but general case still open problem.
 Usefulness show by Maithripala \cite{maithripala2005intrinsic} who used Aghannon's method in an intrinsic observer based controller - meaning performance independent of coordinates of configuration space.
-
 
 \subsubsection{Active research}
 Currently, there are two active research groups. Both have begun to apply symmetry methods to infinite dimensional observers too.
