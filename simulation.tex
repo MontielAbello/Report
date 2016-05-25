@@ -211,7 +211,7 @@ The sensor rotates between $-\phi$ and $\phi$ about the $y$-axis of inertial fra
 				   \end{bmatrix}
 \end{equation}
 
-\subsubsection{Scanning}
+\subsubsection{Scanning} \label{sec:scanmodel}
 The scanning behaviour of the sensor depends on the particular model used. The \textit{Hokuyo UBG 04-LX} scanning laser range-finder will be modelled as it was the sensor used to conduct experiments in this project. This sensor produces a 785nm laser beam, projected at a precise direction. It measures the characteristics of the reflected beam to determine the position to the nearest object in the direction of the beam. The direction of the laser beam is varied by reflecting it off a rotating mirror. The rotation means that the beam direction effectively rotates with a constant velocity in a single plane. A portion of the field of view of the laser beam is obscured, so measurements will not be returned in a certain region of each revolution.
 
 The vector ${^{A}\mathbf{d}(t)}$ will be used to model this scanning behaviour.
