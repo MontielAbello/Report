@@ -8,69 +8,69 @@
 \contentsline {subsection}{\numberline {1.1.2}Symmetry-Preserving Observers}{4}
 \contentsline {subsubsection}{\numberline {1.1.2.1}Early work}{4}
 \contentsline {subsubsection}{\numberline {1.1.2.2}Active Research}{5}
-\contentsline {chapter}{\numberline {2}Theoretical Background}{7}
-\contentsline {section}{\numberline {2.1}Rigid Body Kinematics}{7}
-\contentsline {subsection}{\numberline {2.1.1}Lie Groups}{7}
-\contentsline {subsubsection}{\numberline {2.1.1.1}Matrix Lie groups}{8}
-\contentsline {subsubsection}{\numberline {2.1.1.2}Lie algebra}{8}
-\contentsline {subsubsection}{\numberline {2.1.1.3}The exponential map and logarithm map}{8}
-\contentsline {subsubsection}{\numberline {2.1.1.4}Infinitesimal generators}{9}
-\contentsline {subsubsection}{\numberline {2.1.1.5}Lie bracket and group operation}{10}
-\contentsline {subsubsection}{\numberline {2.1.1.6}Actions}{10}
-\contentsline {subsection}{\numberline {2.1.2}\textbf {SO}(3)}{10}
-\contentsline {subsubsection}{\numberline {2.1.2.1}Lie algebra}{11}
-\contentsline {subsubsection}{\numberline {2.1.2.2}Actions}{12}
-\contentsline {subsubsection}{\numberline {2.1.2.3}Rotation representations}{12}
-\contentsline {subsubsection}{\numberline {2.1.2.4}Rotation matrices}{12}
-\contentsline {subsubsection}{\numberline {2.1.2.5}Scaled-axis representation}{12}
-\contentsline {subsubsection}{\numberline {2.1.2.6}Rotation quaternions}{13}
-\contentsline {subsection}{\numberline {2.1.3}\textbf {SE}(3)}{14}
-\contentsline {subsubsection}{\numberline {2.1.3.1}Lie algebra}{14}
-\contentsline {subsubsection}{\numberline {2.1.3.2}Actions}{15}
-\contentsline {subsection}{\numberline {2.1.4}Reference Frames}{16}
-\contentsline {subsubsection}{\numberline {2.1.4.1}Pose}{16}
-\contentsline {subsubsection}{\numberline {2.1.4.2}Point}{17}
-\contentsline {subsubsection}{\numberline {2.1.4.3}Homogeneous coordinates}{17}
-\contentsline {subsubsection}{\numberline {2.1.4.4}Defining a point in terms of another reference frame - CHANGE TIS HEADING}{17}
-\contentsline {subsubsection}{\numberline {2.1.4.5}Concatenating poses}{17}
-\contentsline {subsubsection}{\numberline {2.1.4.6}Defining a pose in terms of another reference frame - CHANGE THIS HEADING}{18}
-\contentsline {subsubsection}{\numberline {2.1.4.7}Inverse}{18}
-\contentsline {subsection}{\numberline {2.1.5}Rigid Body State Representation}{18}
-\contentsline {subsection}{\numberline {2.1.6}Rigid Body Kinematics}{19}
-\contentsline {subsection}{\numberline {2.1.7}Scanning Laser Rangefinder Dynamic Model}{19}
-\contentsline {section}{\numberline {2.2}State Observers}{21}
-\contentsline {chapter}{\numberline {3}Problem Statement}{22}
-\contentsline {chapter}{\numberline {4}Simulation}{26}
-\contentsline {section}{\numberline {4.1}Implementation}{26}
-\contentsline {subsection}{\numberline {4.1.1}Rigid Body Motion}{28}
-\contentsline {subsubsection}{\numberline {4.1.1.1}Interpolation}{29}
-\contentsline {subsubsection}{\numberline {4.1.1.2}Numerical Integration}{30}
-\contentsline {subsection}{\numberline {4.1.2}Sensor modelling: \texttt {initialisesensor}}{31}
-\contentsline {subsubsection}{\numberline {4.1.2.1}Motion}{31}
-\contentsline {subsubsection}{\numberline {4.1.2.2}Scanning}{32}
-\contentsline {subsection}{\numberline {4.1.3}Environment Modelling: \texttt {initialiseenvironment}}{33}
-\contentsline {subsubsection}{\numberline {4.1.3.1}Motion}{33}
-\contentsline {subsubsection}{\numberline {4.1.3.2}Rigid Objects}{34}
-\contentsline {subsection}{\numberline {4.1.4}Measurement Modelling}{36}
-\contentsline {subsubsection}{\numberline {4.1.4.1}Range Computation: \texttt {computerange}}{36}
-\contentsline {subsubsection}{\numberline {4.1.4.2}Sensor Noise: \texttt {addnoise}}{37}
-\contentsline {subsection}{\numberline {4.1.5}Observer Implementation}{39}
-\contentsline {subsubsection}{\numberline {4.1.5.1}Estimate: \texttt {estimatestate}}{39}
-\contentsline {subsubsection}{\numberline {4.1.5.2}Object/background sepraration: \texttt {identifyobject}}{39}
-\contentsline {subsubsection}{\numberline {4.1.5.3}Update: \texttt {updatestate}}{40}
-\contentsline {section}{\numberline {4.2}Results}{49}
-\contentsline {subsection}{\numberline {4.2.1}testing scheme? think of a title...}{49}
-\contentsline {subsection}{\numberline {4.2.2}Orientation correction}{49}
-\contentsline {subsection}{\numberline {4.2.3}Position correction}{49}
-\contentsline {subsection}{\numberline {4.2.4}Size correction}{59}
-\contentsline {subsection}{\numberline {4.2.5}Orientation and size}{59}
-\contentsline {subsection}{\numberline {4.2.6}effect of initial conditions}{64}
-\contentsline {subsection}{\numberline {4.2.7}discussion}{64}
-\contentsline {chapter}{\numberline {5}Experiment}{65}
-\contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{66}
-\contentsline {subsection}{\numberline {5.1.1}Setup}{66}
-\contentsline {subsection}{\numberline {5.1.2}Results}{66}
-\contentsline {section}{\numberline {5.2}Testing Data Collection}{71}
-\contentsline {subsection}{\numberline {5.2.1}Setup}{71}
-\contentsline {subsection}{\numberline {5.2.2}Results}{71}
-\contentsline {chapter}{\numberline {6}Conclusion}{72}
+\contentsline {chapter}{\numberline {2}Theoretical Background}{8}
+\contentsline {section}{\numberline {2.1}Rigid Body Kinematics}{8}
+\contentsline {subsection}{\numberline {2.1.1}Lie Groups}{8}
+\contentsline {subsubsection}{\numberline {2.1.1.1}Matrix Lie groups}{9}
+\contentsline {subsubsection}{\numberline {2.1.1.2}Lie algebra}{9}
+\contentsline {subsubsection}{\numberline {2.1.1.3}The exponential map and logarithm map}{9}
+\contentsline {subsubsection}{\numberline {2.1.1.4}Infinitesimal generators}{10}
+\contentsline {subsubsection}{\numberline {2.1.1.5}Lie bracket and group operation}{11}
+\contentsline {subsubsection}{\numberline {2.1.1.6}Actions}{11}
+\contentsline {subsection}{\numberline {2.1.2}\textbf {SO}(3)}{11}
+\contentsline {subsubsection}{\numberline {2.1.2.1}Lie algebra}{12}
+\contentsline {subsubsection}{\numberline {2.1.2.2}Actions}{13}
+\contentsline {subsubsection}{\numberline {2.1.2.3}Rotation representations}{13}
+\contentsline {subsubsection}{\numberline {2.1.2.4}Rotation matrices}{13}
+\contentsline {subsubsection}{\numberline {2.1.2.5}Scaled-axis representation}{13}
+\contentsline {subsubsection}{\numberline {2.1.2.6}Rotation quaternions}{14}
+\contentsline {subsection}{\numberline {2.1.3}\textbf {SE}(3)}{15}
+\contentsline {subsubsection}{\numberline {2.1.3.1}Lie algebra}{15}
+\contentsline {subsubsection}{\numberline {2.1.3.2}Actions}{16}
+\contentsline {subsection}{\numberline {2.1.4}Reference Frames}{17}
+\contentsline {subsubsection}{\numberline {2.1.4.1}Pose}{17}
+\contentsline {subsubsection}{\numberline {2.1.4.2}Point}{18}
+\contentsline {subsubsection}{\numberline {2.1.4.3}Homogeneous coordinates}{18}
+\contentsline {subsubsection}{\numberline {2.1.4.4}Defining a point in terms of another reference frame - CHANGE TIS HEADING}{18}
+\contentsline {subsubsection}{\numberline {2.1.4.5}Concatenating poses}{18}
+\contentsline {subsubsection}{\numberline {2.1.4.6}Defining a pose in terms of another reference frame - CHANGE THIS HEADING}{19}
+\contentsline {subsubsection}{\numberline {2.1.4.7}Inverse}{19}
+\contentsline {subsection}{\numberline {2.1.5}Rigid Body State Representation}{19}
+\contentsline {subsection}{\numberline {2.1.6}Rigid Body Kinematics}{20}
+\contentsline {subsection}{\numberline {2.1.7}Scanning Laser Rangefinder Dynamic Model}{20}
+\contentsline {section}{\numberline {2.2}State Observers}{22}
+\contentsline {chapter}{\numberline {3}Problem Statement}{23}
+\contentsline {chapter}{\numberline {4}Simulation}{27}
+\contentsline {section}{\numberline {4.1}Implementation}{27}
+\contentsline {subsection}{\numberline {4.1.1}Rigid Body Motion}{29}
+\contentsline {subsubsection}{\numberline {4.1.1.1}Interpolation}{30}
+\contentsline {subsubsection}{\numberline {4.1.1.2}Numerical Integration}{31}
+\contentsline {subsection}{\numberline {4.1.2}Sensor modelling: \texttt {initialisesensor}}{32}
+\contentsline {subsubsection}{\numberline {4.1.2.1}Motion}{32}
+\contentsline {subsubsection}{\numberline {4.1.2.2}Scanning}{33}
+\contentsline {subsection}{\numberline {4.1.3}Environment Modelling: \texttt {initialiseenvironment}}{34}
+\contentsline {subsubsection}{\numberline {4.1.3.1}Motion}{34}
+\contentsline {subsubsection}{\numberline {4.1.3.2}Rigid Objects}{35}
+\contentsline {subsection}{\numberline {4.1.4}Measurement Modelling}{37}
+\contentsline {subsubsection}{\numberline {4.1.4.1}Range Computation: \texttt {computerange}}{37}
+\contentsline {subsubsection}{\numberline {4.1.4.2}Sensor Noise: \texttt {addnoise}}{38}
+\contentsline {subsection}{\numberline {4.1.5}Observer Implementation}{40}
+\contentsline {subsubsection}{\numberline {4.1.5.1}Estimate: \texttt {estimatestate}}{40}
+\contentsline {subsubsection}{\numberline {4.1.5.2}Object/background sepraration: \texttt {identifyobject}}{40}
+\contentsline {subsubsection}{\numberline {4.1.5.3}Update: \texttt {updatestate}}{41}
+\contentsline {section}{\numberline {4.2}Results}{50}
+\contentsline {subsection}{\numberline {4.2.1}testing scheme? think of a title...}{50}
+\contentsline {subsection}{\numberline {4.2.2}Orientation correction}{50}
+\contentsline {subsection}{\numberline {4.2.3}Position correction}{50}
+\contentsline {subsection}{\numberline {4.2.4}Size correction}{60}
+\contentsline {subsection}{\numberline {4.2.5}Orientation and size}{60}
+\contentsline {subsection}{\numberline {4.2.6}effect of initial conditions}{65}
+\contentsline {subsection}{\numberline {4.2.7}discussion}{65}
+\contentsline {chapter}{\numberline {5}Experiment}{66}
+\contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{67}
+\contentsline {subsection}{\numberline {5.1.1}Setup}{67}
+\contentsline {subsection}{\numberline {5.1.2}Results}{67}
+\contentsline {section}{\numberline {5.2}Testing Data Collection}{72}
+\contentsline {subsection}{\numberline {5.2.1}Setup}{72}
+\contentsline {subsection}{\numberline {5.2.2}Results}{72}
+\contentsline {chapter}{\numberline {6}Conclusion}{73}

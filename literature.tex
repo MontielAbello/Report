@@ -41,13 +41,13 @@ Another important result that is a precursor to the active research of today is 
 \subsubsection{Active Research}
 There are currently two groups actively researching symmetry-preserving observer design.  Both have begun to apply symmetry-preserving methods to infinite-dimensional observers.
 
-The work of Bonnabel, Auroux, Rouchon, Martin et al. is a progression of the early results from Aghannon \& Rouchon. 
-Design observer around equilibrium point - extend to nonlinear - behaves well around continuum of equilibrium points. 
-invariant observer - luenberger observer where invariant frame used to construct invariant output error.
-2005 \cite{bonnabel2005invariant} Design procedure based on Aghannon's work. Achieved asymptotic stability - though this was done with design procedure not general, tailored to specific nonlinearities of the system.
-2008 \cite{bonnabel2008symmetry} invariant error equation simplified convergence analysis. Global behaviour better, region of attraction larger in comparison to naively linearised observers.
-2009 \cite{bonnabel2009non} For particular class of invariant systems, converge locally around any trajectory, global behaviour independent of trajectory.
-2011 \cite{auroux2011symmetry} Infinite dimensional system - fluid in a water tank where height varies with position, time - continous variables - faster, more robust than previous attempts at infinite dimensional observer design with EKF.
+The work of Bonnabel, Auroux, Rouchon, Martin et al. is a progression of the early results from Aghannon \& Rouchon. Their general approach is to first design a Luenberger type observer around an equilibrium point. An invariant frame is used to construct an invariant output error. The observer innovation term respects the symmetries of the system and thus the nonlinear observer is well beahved around a continuum of equilibrium points. 
+
+In \cite{bonnabel2005invariant}, a design procedure was developed, based on Aghannon \& Rouchons' work. Asymptotic stability was achieved, though this required a design procedure tailored to specific nonlinearities of the system and did not apply in a general case.
+It was shown in \cite{bonnabel2008symmetry} that the invariant error equation simplified convergence analysis. The observer's global behaviour improved, having a larger region of attraction in comparison to naively linearised observers.
+Developments were made to the theory and presented in \cite{bonnabel2009non}. For a particular class of invariant system it was shown that the observer converged locally around any trajectory, and global convergence behaviour was independent of trajectory.
+
+Most recently \cite{auroux2011symmetry},these invariant design methods were applied to an infinite dimensional system. An observer estimating the state of fluid in a water tank where height varies with continuous dependent variables position and time was developed. It was shown to converge more quickly and robustly than previous attempts at infinite dimensional observer designed with Extended Kalman Filter (EKF) methods.
 
 Second group: ANU, Trumpf, Mahony\\
 including Trumpf, Mahony, Hamel, Lageman
