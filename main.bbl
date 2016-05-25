@@ -88,10 +88,43 @@ D.~S. Maithripala, W.~P. Dayawansa, and J.~M. Berg, ``Intrinsic observer-based
   stabilization for simple mechanical systems on lie groups,'' \emph{SIAM
   journal on control and optimization}, vol.~44, no.~5, pp. 1691--1711, 2005.
 
+\bibitem{bonnabel2005invariant}
+S.~Bonnabel and P.~Rouchon, ``On invariant observers,'' in \emph{Control and
+  observer design for nonlinear finite and infinite dimensional systems}.\hskip
+  1em plus 0.5em minus 0.4em\relax Springer, 2005, pp. 53--65.
+
+\bibitem{bonnabel2008symmetry}
+S.~Bonnabel, P.~Martin, and P.~Rouchon, ``Symmetry-preserving observers,''
+  \emph{Automatic Control, IEEE Transactions on}, vol.~53, no.~11, pp.
+  2514--2526, 2008.
+
+\bibitem{bonnabel2009non}
+------, ``Non-linear symmetry-preserving observers on lie groups,''
+  \emph{Automatic Control, IEEE Transactions on}, vol.~54, no.~7, pp.
+  1709--1713, 2009.
+
 \bibitem{auroux2011symmetry}
 D.~Auroux and S.~Bonnabel, ``Symmetry-based observers for some water-tank
   problems,'' \emph{Automatic Control, IEEE Transactions on}, vol.~56, no.~5,
   pp. 1046--1058, 2011.
+
+\bibitem{mahony2009nonlinear}
+R.~Mahony, T.~Hamel, J.~Trumpf, and C.~Lageman, ``Nonlinear attitude observers
+  on so (3) for complementary and compatible measurements: A theoretical
+  study,'' in \emph{Decision and Control, 2009 held jointly with the 2009 28th
+  Chinese Control Conference. CDC/CCC 2009. Proceedings of the 48th IEEE
+  Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2009, pp.
+  6407--6412.
+
+\bibitem{trumpf2012analysis}
+J.~Trumpf, R.~Mahony, T.~Hamel, and C.~Lageman, ``Analysis of non-linear
+  attitude observers for time-varying reference measurements,'' \emph{Automatic
+  Control, IEEE Transactions on}, vol.~57, no.~11, pp. 2789--2800, 2012.
+
+\bibitem{mahony2013observers}
+R.~Mahony, J.~Trumpf, and T.~Hamel, ``Observers for kinematic systems with
+  symmetry,'' in \emph{Proceedings of the 9th IFAC symposium on nonlinear
+  control systems}, vol.~9, 2013, pp. 617--633.
 
 \bibitem{zarrouati2013augmented}
 N.~Zarrouati-Vissi{\`e}re, ``Augmented reality: the fusion of vision and
