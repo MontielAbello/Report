@@ -23,13 +23,21 @@ Ramdani introduced forward and backward observers \cite{ramdani2010recovering}.
 Haine \cite{haine2014recovering} applied Ramdani's method, studied convergence properties.
 
 \textbf{nonlinear}
-
--no universal approach for observer design for infinite-dimensional nonlinear systems\\
--some methods for special case - infinite dimensional bilinear systems. \cite{xu1995observer,bounit1997observers}
--for finite-dimensional nonlinear systems, common design methods are: linearisation (ie EKF), lyapunov method, sliding mode, high gain
+There is no universal approach for observer design for infinite-dimensional nonlinear systems\\
+One approach is to linearise the system, then apply a method for infinite dimensional linear observer design. Common linearisation methods are Lyapunov methods, extended linearisation and the Lie-algebraic approach \cite{primbs1996survey}.
+For the special case of bilinear systems, Xu \cite{xu1995observer} designed an infinite dimensional observer that converged given certain inputs. some methods for special case - infinite dimensional bilinear systems. Bounit \cite{bounit1997observers} designed Kalman and Luenberger type observers for infinite dimensional bilinear systems. 
 
 \subsection{symmetry preserving observers}
+INTRO, WHY SYMMETRY? - look at bonnabels introduction. Very hard to get infinite dimensoinal observer for nonlinear. Most require linearisation. Many of these linearisation techniques give local something. Ie linearisation at identity. The methods above don't guarantee global convergence. To achieve this, direction into geometry, symmetry. Particularly powerful is theory of Lie groups.
+Investigation into observers for systems on Lie groups:
+Marcus \cite{marcus1984algebraic} - algebraic and geometric methods.
+Salcudean - eventually exponential, globally converging observer - rigid bodies, attitude.
+
 \subsubsection{early work}
 \subsubsection{bonnabel et al}
 \subsubsection{trumpf, mahony et al}
-\subsubsection{juan's work - in detail}
+
+\subsection{infinite dimensional symmetry preserving observers}
+Very little\\
+Auroux \& Bonnabel \cite{auroux2011symmetry}, Zarrouati \cite{zarrouati2013augmented} \\
+juan's work \cite{adarvefiltering} - in detail

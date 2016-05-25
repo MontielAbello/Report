@@ -1,100 +1,100 @@
 \relax 
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Simulation}{22}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Simulation}{23}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{chap:simulation}{{4}{22}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Implementation}{22}}
-\newlabel{rangesloop}{{6}{23}}
-\newlabel{FOV}{{7}{23}}
-\newlabel{addnoise}{{11}{23}}
-\newlabel{observerloop}{{12}{23}}
-\newlabel{object}{{16}{23}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Scanning range-finder and state observer simulation}}{23}}
-\newlabel{main}{{1}{23}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Rigid Body Motion}{24}}
-\newlabel{motion}{{4.1.1}{24}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1.1}Interpolation}{25}}
-\newlabel{slerp}{{4.2}{26}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1.2}Numerical Integration}{26}}
-\newlabel{integration}{{4.1.1.2}{26}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Sensor modelling: \texttt  {initialisesensor}}{27}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2.1}Motion}{27}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2.2}Scanning}{28}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Scanning parameters}}{30}}
-\newlabel{fig:scanningparameters}{{4.1}{30}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Environment Modelling: \texttt  {initialiseenvironment}}{30}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3.1}Motion}{30}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3.2}Rigid Objects}{30}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Cube modelled with ordered set of points and corresponding triangles}}{32}}
-\newlabel{fig:triangles}{{4.2}{32}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}Measurement Modelling}{32}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4.1}Range Computation: \texttt  {computerange}}{32}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Ray-triangle intersection}}{33}}
-\newlabel{fig:raytriangle}{{4.3}{33}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4.2}Sensor Noise: \texttt  {addnoise}}{34}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.5}Observer Implementation}{34}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.5.1}Estimate: \texttt  {estimatestate}}{34}}
-\newlabel{line: vertex}{{8}{35}}
-\newlabel{line: origintov1}{{14}{35}}
-\newlabel{line: det}{{16}{35}}
-\newlabel{line: alpha}{{21}{35}}
-\newlabel{line: intersectvec}{{27}{35}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces M{\"o}ller-Trumbore ray-triangle intersection}}{35}}
-\newlabel{intersectionalgorithm}{{2}{35}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.5.2}Object/background sepraration: \texttt  {identifyobject}}{36}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.5.3}Update: \texttt  {updatestate}}{36}}
-\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Target/background object separation}}{37}}
-\newlabel{alg:object}{{3}{37}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Orientation update}}{38}}
-\newlabel{fig:orientation}{{4.4}{38}}
-\newlabel{eq:points}{{4.24}{39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Position update}}{41}}
-\newlabel{fig:position}{{4.5}{41}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Size update - case 1}}{43}}
-\newlabel{fig:size1}{{4.6}{43}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Size update - case 2}}{44}}
-\newlabel{fig:size2}{{4.7}{44}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Results}{45}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}testing scheme? think of a title...}{45}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Orientation correction}{45}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Position correction}{45}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Orientation correction - no noise}}{46}}
-\newlabel{fig:error_orientation}{{4.8}{46}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Orientation correction - noise}}{47}}
-\newlabel{fig:error_orientation_noise}{{4.9}{47}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces rotating - Orientation correction via screw - no noise}}{48}}
-\newlabel{fig:error_R_orientation_screw}{{4.10}{48}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces rotating - Orientation correction via twist - no noise}}{49}}
-\newlabel{fig:error_R_orientation_twist}{{4.11}{49}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces rotating - Orientation correction via screw - noise}}{50}}
-\newlabel{fig:error_R_orientation_noise_screw}{{4.12}{50}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces rotating - Orientation correction via twist - noise}}{51}}
-\newlabel{fig:error_R_orientation_noise_twist}{{4.13}{51}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces stationary, 1 face visible - position correction}}{52}}
-\newlabel{fig:error_1F_position}{{4.14}{52}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces stationary with noise, 1 face visible - position correction}}{53}}
-\newlabel{fig:error_1F_position_noise}{{4.15}{53}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces stationary with noise, 2 faces visible - position correction doesn't work}}{54}}
-\newlabel{fig:error_2F_position}{{4.16}{54}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces stationary with noise, 3 faces visible - size correction}}{55}}
-\newlabel{fig:error_stationary_size_noise}{{4.17}{55}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Size correction}{55}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.5}Orientation and size}{55}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.18}{\ignorespaces rotating + translating with noise, 3 faces visible - size correction}}{56}}
-\newlabel{fig:error_RT_size_noise}{{4.18}{56}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.19}{\ignorespaces stationary with noise, 3 faces visible - orientation and size correction}}{57}}
-\newlabel{fig:error_xx_3F_OxS_noise}{{4.19}{57}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.20}{\ignorespaces rotating with no noise, 3 faces visible - orientation (via screw) and size correction}}{58}}
-\newlabel{fig:error_Rx_3F_OxS_screw}{{4.20}{58}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.21}{\ignorespaces rotating with no noise, 3 faces visible - orientation (via twist) and size correction}}{59}}
-\newlabel{fig:error_Rx_3F_OxS_twist}{{4.21}{59}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.22}{\ignorespaces Tetrahedron: orientation \& size correction}}{60}}
-\newlabel{fig:tetrahedron}{{4.22}{60}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.6}effect of initial conditions}{60}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.7}discussion}{60}}
+\newlabel{chap:simulation}{{4}{23}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Implementation}{23}}
+\newlabel{rangesloop}{{6}{24}}
+\newlabel{FOV}{{7}{24}}
+\newlabel{addnoise}{{11}{24}}
+\newlabel{observerloop}{{12}{24}}
+\newlabel{object}{{16}{24}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces Scanning range-finder and state observer simulation}}{24}}
+\newlabel{main}{{1}{24}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Rigid Body Motion}{25}}
+\newlabel{motion}{{4.1.1}{25}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1.1}Interpolation}{26}}
+\newlabel{slerp}{{4.2}{27}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1.2}Numerical Integration}{27}}
+\newlabel{integration}{{4.1.1.2}{27}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Sensor modelling: \texttt  {initialisesensor}}{28}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2.1}Motion}{28}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2.2}Scanning}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Scanning parameters}}{31}}
+\newlabel{fig:scanningparameters}{{4.1}{31}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Environment Modelling: \texttt  {initialiseenvironment}}{31}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3.1}Motion}{31}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.3.2}Rigid Objects}{31}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Cube modelled with ordered set of points and corresponding triangles}}{33}}
+\newlabel{fig:triangles}{{4.2}{33}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}Measurement Modelling}{33}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4.1}Range Computation: \texttt  {computerange}}{33}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Ray-triangle intersection}}{34}}
+\newlabel{fig:raytriangle}{{4.3}{34}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.4.2}Sensor Noise: \texttt  {addnoise}}{35}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.5}Observer Implementation}{35}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.5.1}Estimate: \texttt  {estimatestate}}{35}}
+\newlabel{line: vertex}{{8}{36}}
+\newlabel{line: origintov1}{{14}{36}}
+\newlabel{line: det}{{16}{36}}
+\newlabel{line: alpha}{{21}{36}}
+\newlabel{line: intersectvec}{{27}{36}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {2}{\ignorespaces M{\"o}ller-Trumbore ray-triangle intersection}}{36}}
+\newlabel{intersectionalgorithm}{{2}{36}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.5.2}Object/background sepraration: \texttt  {identifyobject}}{37}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.5.3}Update: \texttt  {updatestate}}{37}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {3}{\ignorespaces Target/background object separation}}{38}}
+\newlabel{alg:object}{{3}{38}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Orientation update}}{39}}
+\newlabel{fig:orientation}{{4.4}{39}}
+\newlabel{eq:points}{{4.24}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Position update}}{42}}
+\newlabel{fig:position}{{4.5}{42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Size update - case 1}}{44}}
+\newlabel{fig:size1}{{4.6}{44}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Size update - case 2}}{45}}
+\newlabel{fig:size2}{{4.7}{45}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Results}{46}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}testing scheme? think of a title...}{46}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Orientation correction}{46}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Position correction}{46}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces Orientation correction - no noise}}{47}}
+\newlabel{fig:error_orientation}{{4.8}{47}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Orientation correction - noise}}{48}}
+\newlabel{fig:error_orientation_noise}{{4.9}{48}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces rotating - Orientation correction via screw - no noise}}{49}}
+\newlabel{fig:error_R_orientation_screw}{{4.10}{49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces rotating - Orientation correction via twist - no noise}}{50}}
+\newlabel{fig:error_R_orientation_twist}{{4.11}{50}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces rotating - Orientation correction via screw - noise}}{51}}
+\newlabel{fig:error_R_orientation_noise_screw}{{4.12}{51}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces rotating - Orientation correction via twist - noise}}{52}}
+\newlabel{fig:error_R_orientation_noise_twist}{{4.13}{52}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces stationary, 1 face visible - position correction}}{53}}
+\newlabel{fig:error_1F_position}{{4.14}{53}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces stationary with noise, 1 face visible - position correction}}{54}}
+\newlabel{fig:error_1F_position_noise}{{4.15}{54}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces stationary with noise, 2 faces visible - position correction doesn't work}}{55}}
+\newlabel{fig:error_2F_position}{{4.16}{55}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.17}{\ignorespaces stationary with noise, 3 faces visible - size correction}}{56}}
+\newlabel{fig:error_stationary_size_noise}{{4.17}{56}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Size correction}{56}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.5}Orientation and size}{56}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.18}{\ignorespaces rotating + translating with noise, 3 faces visible - size correction}}{57}}
+\newlabel{fig:error_RT_size_noise}{{4.18}{57}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.19}{\ignorespaces stationary with noise, 3 faces visible - orientation and size correction}}{58}}
+\newlabel{fig:error_xx_3F_OxS_noise}{{4.19}{58}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.20}{\ignorespaces rotating with no noise, 3 faces visible - orientation (via screw) and size correction}}{59}}
+\newlabel{fig:error_Rx_3F_OxS_screw}{{4.20}{59}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.21}{\ignorespaces rotating with no noise, 3 faces visible - orientation (via twist) and size correction}}{60}}
+\newlabel{fig:error_Rx_3F_OxS_twist}{{4.21}{60}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.22}{\ignorespaces Tetrahedron: orientation \& size correction}}{61}}
+\newlabel{fig:tetrahedron}{{4.22}{61}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.6}effect of initial conditions}{61}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.7}discussion}{61}}
 \@setckpt{simulation}{
-\setcounter{page}{61}
+\setcounter{page}{62}
 \setcounter{equation}{39}
 \setcounter{enumi}{2}
 \setcounter{enumii}{0}
