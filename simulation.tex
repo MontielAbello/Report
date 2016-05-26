@@ -677,11 +677,10 @@ In Figure \ref{fig:size_RT_noise}, noisy measurements were taken of a cube rotat
 \end{figure}
 
 \subsection{Orientation and size correction}      
+Figure \ref{fig:orientation_size_stationary} shows that angle error and size error ratio converge to the noise floor for noisy measurements of stationary where 3 faces are visible to the sensor.
+For noiseless measurements of a rotating cube, Figures \ref{fig:OxS_2_rotating_angle} and \ref{fig:OxS_2_rotating_size} show that the observer is able to track the orientation of the cube when updating via the screw, and the size error ratio converges to the noise floor.
+Though the size error ratio in Figure \ref{fig:OxS_3_rotating_twist_size} converges to the noise floor, Figure \ref{fig:OxS_3_rotating_twist_angle} shows that updating orientation via the twist results in overshoot.
 Because the convergence of the size error ratio is so rapid, the performance of the observer when correcting both orientation and size is limited only by the effectiveness of the orientation update.
-Figure \ref{fig:orientation_size_stationary},:stationary, noisy, orientation \& size works (results 9).\\
-Figure \ref{fig:orientation_size_rotating}
-Figure \ref{fig:OxS_2_rotating_angle},\ref{fig:OxS_2_rotating_size} - rotating, no noise, orientation updated via screw, size updated as normal. \\ 
-Figure \ref{fig:OxS_3_rotating_twist_angle},\ref{fig:OxS_3_rotating_twist_size} - rotating, no noise, orientation updated via twist, size updated as normal.
 
 \begin{figure}
 \centering
@@ -693,7 +692,7 @@ Figure \ref{fig:OxS_3_rotating_twist_angle},\ref{fig:OxS_3_rotating_twist_size} 
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/OxS_1_stationary_size}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{For noisy measurements of stationary cube with 3 faces visible to sensor, angle error (a) and size error ratio (b) both converge to noise floor.}
+ 	\caption{For noisy measurements of stationary cube with 3 faces visible to sensor, the angle error (a) and size error ratio (b) both converge to the noise floor.}
  	\label{fig:orientation_size_stationary}
 \end{figure} 	
  
@@ -719,7 +718,7 @@ Figure \ref{fig:OxS_3_rotating_twist_angle},\ref{fig:OxS_3_rotating_twist_size} 
  	\label{fig:orientation_size_rotating}
 \end{figure}
 
-\subsection{discussion}
+\subsection{Discussion}
 Size most robust, then orientation, then position. When combining, performance limited by less robust update.
 
 \textbf{MENTION: control theory solution - feed forward control. anticipate overshoot, correct before it occurs. FUTURE WORK - DEVELOP OBSERVER THEORY ANALOGUE}
