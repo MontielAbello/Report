@@ -66,8 +66,8 @@
 \contentsline {subsection}{\numberline {4.2.1}Orientation correction}{53}
 \contentsline {subsection}{\numberline {4.2.2}Position correction}{55}
 \contentsline {subsection}{\numberline {4.2.3}Size correction}{56}
-\contentsline {subsection}{\numberline {4.2.4}Orientation and size}{56}
-\contentsline {subsection}{\numberline {4.2.5}discussion}{58}
+\contentsline {subsection}{\numberline {4.2.4}Orientation and size}{57}
+\contentsline {subsection}{\numberline {4.2.5}discussion}{57}
 \contentsline {chapter}{\numberline {5}Experiment}{59}
 \contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{60}
 \contentsline {subsection}{\numberline {5.1.1}Setup}{60}
