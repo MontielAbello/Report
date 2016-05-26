@@ -77,3 +77,5 @@
 \contentsline {subsection}{\numberline {5.2.1}Setup}{64}
 \contentsline {subsection}{\numberline {5.2.2}Results}{64}
 \contentsline {chapter}{\numberline {6}Conclusion}{65}
+\contentsline {chapter}{Appendices}{69}
+\contentsline {chapter}{\numberline {A}Experimental setups}{69}

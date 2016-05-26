@@ -35,6 +35,7 @@
 \usepackage{bm}
 \usepackage{tensor}
 \usepackage{titlesec}
+\usepackage[toc]{appendix}
 \newcommand{\sectionbreak}{\clearpage}
 \usepackage[linesnumbered,lined,boxed,commentsnumbered,ruled]{algorithm2e}
 \setcounter{tocdepth}{6}
@@ -42,7 +43,7 @@
 %\setcounter{chapter}{1}
 %\usepackage{enumitem}
 %\setlist{nosep} % or \setlist{noitemsep} to leave space around whole list
-
+\usepackage{graphicx}
 \usepackage{subfigure}
 %filepath for figures
 \graphicspath{{./figures/}}
@@ -118,4 +119,6 @@
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,references}
 
+%APPENDICES
+\include{appendix}
 \end{document}     
