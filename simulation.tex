@@ -1,4 +1,4 @@
-\chapter{Simulation} \label{chap:simulation}
+\chapter{Observer Simulation} \label{chap:simulation}
 \section{Implementation}
 A simulation toolbox was implemented in Matlab to model scanning laser range-finder measurements and test observer schemes. The main components of the simulation are:
 \begin{itemize} \setlength\itemsep{-2mm}
@@ -736,6 +736,8 @@ Another strength of the observer design is that it does not actually rely on the
  	\caption{Angle error (a) and size error ratio (b) for noiseless measurements of tetrahedron of side length $s = 0.5$m}
  	\label{fig:tetrahedron}
 \end{figure}
+
+These results show that the sparse measurements of a scanning sensor can be used to densely measure an infinite dimensional state. 
 
 Though updating the orientation via the twist gives a smoother estimation in comparison to the screw update, this results in overshoot. Initially, the angle error grows so the angular velocity increases to correct this. However, there is a delay in the response of the orientation correction that causes the angular velocity to grow too large. The overcompensation then occurs in the other direction and the error diverges. In control theory, this problem is solved with \textit{feed-forward control} which anticipates overshoot and corrects for it before it can occur. A topic of future research would be to investigate fs an observer analogue to feed-forward control exists. A possible starting points could be to investigate applying combinations of screw and twist updates that combine the responsiveness of the screw update and the smoothness of the twist update. 
 

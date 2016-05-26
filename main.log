@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  27 MAY 2016 06:09
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  27 MAY 2016 06:31
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -831,7 +831,7 @@ Chapter 1.
 ] [2
 
 ]
-Overfull \hbox (1.67165pt too wide) in paragraph at lines 23--25
+Overfull \hbox (1.67165pt too wide) in paragraph at lines 21--23
 \OT1/cmr/m/n/10.95 (-20) There is cur-rently no uni-ver-sal ap-proach for ob-se
 rver de-sign for non-lin-ear infinite-dimensional
  []
@@ -840,7 +840,7 @@ rver de-sign for non-lin-ear infinite-dimensional
 File: ./Figures/flow_regions.jpg Graphic file (type jpg)
 
 <use ./Figures/flow_regions.jpg>
-Package pdftex.def Info: ./Figures/flow_regions.jpg used on input line 67.
+Package pdftex.def Info: ./Figures/flow_regions.jpg used on input line 65.
 (pdftex.def)             Requested size: 341.43437pt x 229.34932pt.
  [6])) [7 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/flo
 w_regions.jpg>]
@@ -1099,11 +1099,6 @@ ron_angle_error.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/
 Figures/tetrahedron_size_error_ratio.jpg>]) [60]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.tex"
 Chapter 5.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2--7
-
- []
-
 [61
 
 
@@ -1113,7 +1108,7 @@ File: ./Figures/range_error_histograms.jpg Graphic file (type jpg)
 
 <use ./Figures/range_error_histograms.jpg>
 Package pdftex.def Info: ./Figures/range_error_histograms.jpg used on input lin
-e 33.
+e 29.
 (pdftex.def)             Requested size: 426.79135pt x 338.62236pt.
 
 <./Figures/noise_mean_range_error.jpg, id=315, 5576.835pt x 3468.96pt>
@@ -1121,7 +1116,7 @@ File: ./Figures/noise_mean_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/noise_mean_range_error.jpg>
 Package pdftex.def Info: ./Figures/noise_mean_range_error.jpg used on input lin
-e 44.
+e 40.
 (pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
 
 <./Figures/noise_mean_range_error_removed_outliers.jpg, id=317, 5576.835pt x 34
@@ -1130,7 +1125,7 @@ File: ./Figures/noise_mean_range_error_removed_outliers.jpg Graphic file (type
 jpg)
  <use ./Figures/noise_mean_range_error_removed_outliers.jpg>
 Package pdftex.def Info: ./Figures/noise_mean_range_error_removed_outliers.jpg 
-used on input line 48.
+used on input line 44.
 (pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
 
 <./Figures/noise_stddev_range_error.jpg, id=319, 5576.835pt x 3468.96pt>
@@ -1138,7 +1133,7 @@ File: ./Figures/noise_stddev_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/noise_stddev_range_error.jpg>
 Package pdftex.def Info: ./Figures/noise_stddev_range_error.jpg used on input l
-ine 59.
+ine 55.
 (pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
 
 <./Figures/noise_stddev_range_error_removed_outliers.jpg, id=321, 5576.835pt x 
@@ -1147,7 +1142,7 @@ File: ./Figures/noise_stddev_range_error_removed_outliers.jpg Graphic file (typ
 e jpg)
  <use ./Figures/noise_stddev_range_error_removed_outliers.jpg>
 Package pdftex.def Info: ./Figures/noise_stddev_range_error_removed_outliers.jp
-g used on input line 63.
+g used on input line 59.
 (pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
 
 <./Figures/surface_mean_range_error.jpg, id=323, 5576.835pt x 3468.96pt>
@@ -1155,7 +1150,7 @@ File: ./Figures/surface_mean_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/surface_mean_range_error.jpg>
 Package pdftex.def Info: ./Figures/surface_mean_range_error.jpg used on input l
-ine 74.
+ine 70.
 (pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
 
 <./Figures/surface_stddev_range_error.jpg, id=325, 5576.835pt x 3468.96pt>
@@ -1163,10 +1158,10 @@ File: ./Figures/surface_stddev_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/surface_stddev_range_error.jpg>
 Package pdftex.def Info: ./Figures/surface_stddev_range_error.jpg used on input
- line 78.
+ line 74.
 (pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
+Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
  []
 
@@ -1191,7 +1186,7 @@ File: ./Figures/measured_surface_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/measured_surface_noise.jpg>
 Package pdftex.def Info: ./Figures/measured_surface_noise.jpg used on input lin
-e 129.
+e 125.
 (pdftex.def)             Requested size: 192.0548pt x 148.06721pt.
 
 <./Figures/simulated_surface_noise.jpg, id=349, 4353.26375pt x 3356.54pt>
@@ -1199,17 +1194,17 @@ File: ./Figures/simulated_surface_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/simulated_surface_noise.jpg>
 Package pdftex.def Info: ./Figures/simulated_surface_noise.jpg used on input li
-ne 133.
+ne 129.
 (pdftex.def)             Requested size: 192.0548pt x 148.06721pt.
  [66 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/measured
 _surface_noise.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/F
 igures/simulated_surface_noise.jpg>]
 
 LaTeX Warning: Reference `experimental_data' on page 67 undefined on input line
- 140.
+ 136.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
+Underfull \hbox (badness 10000) in paragraph at lines 136--140
 
  []
 
@@ -1273,10 +1268,10 @@ LaTeX Warning: There were undefined references.
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 19170 strings out of 493921
- 372821 string characters out of 3147261
- 446395 words of memory out of 3000000
- 21837 multiletter control sequences out of 15000+200000
+ 19171 strings out of 493921
+ 372834 string characters out of 3147261
+ 446406 words of memory out of 3000000
+ 21838 multiletter control sequences out of 15000+200000
  24908 words of font info for 140 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,23n,58p,964b,11948s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1302,7 +1297,7 @@ i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (82 pages, 21439071 bytes).
+Output written on main.pdf (82 pages, 21440341 bytes).
 PDF statistics:
  461 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
