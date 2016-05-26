@@ -20,7 +20,7 @@ An accurate range sensor simulation must include a model for the error distribut
 	For this research, the cube is likely to be placed within 1.5m from the sensor and at any orientation. The range error distribution for these conditions should be measured. The distance from the sensor to the measurement surface was thus varied in 50mm increments between 250mm and 1750mm, to an accuracy of $\pm$1mm. At each of these ranges the incidence angles was varied in 20$^\circ$ increments from 0$^\circ$ to 80$^\circ$ to an accuracy of $\pm$0.5$^\circ$. The physical setup is shown in Figure \ref{fig:noise_setup}.
 		 
 	\subsection{Results}
-		The difference between the measured ranges and ground truth was computed. The distributions of this error for varying ranges and angles is shown in Figure \ref{fig:mean_hist}. The range error is approximately normally distributed.
+		The range error $r_{error} = r_{ground truth} - r_{measured}$ was computed. The distributions of this error for varying ranges and angles is shown in Figure \ref{fig:mean_hist}. The range error is approximately normally distributed.
 		\begin{figure}
 		\centering
 		  \includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/range_error_histograms.jpg}
@@ -28,8 +28,7 @@ An accurate range sensor simulation must include a model for the error distribut
 		  \label{fig:mean_hist}
 		\end{figure}
 		
-		The mean range error as function of $r$ and $\theta$ is shown in Figure \ref{fig:mean_range_error}. Std dev range error as function of (range,incidence angle) - Figure \ref{fig:stddev_range_error}
-				
+		The mean range error as function of $r$ and $\theta$ is shown in Figure \ref{fig:mean_range_error}. The standard deviation of the range errors as function of $r$ and $\theta$ is shown in Figure \ref{fig:stddev_range_error}.
 		\begin{figure}
 	  		\centering
 	  		\subfigure[\label{fig:mean_range_error_outliers}]{
@@ -40,7 +39,7 @@ An accurate range sensor simulation must include a model for the error distribut
 	  		\begin{minipage}[b]{0.45\columnwidth}
     			\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/noise_mean_range_error_removed_outliers}\vspace*{0ex}
 		 \end{minipage}}
-	  		\caption{mean range error vs $(r,\theta)$. (a) large error at high angles and range, (b) overall shape}
+	  		\caption{mean range error ($r_{error} = r_{ground truth} - r_{measured}$) vs $(r,\theta)$ showing (a) large error at high angles and range, (b) overall shape}
 	  		\label{fig:mean_range_error}
 		\end{figure}
 		
@@ -54,15 +53,15 @@ An accurate range sensor simulation must include a model for the error distribut
 	  		\begin{minipage}[b]{0.45\columnwidth}
     			\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/noise_stddev_range_error_removed_outliers}\vspace*{0ex}
 	 		 \end{minipage}}
-	  		\caption{range error $\sigma$ vs $(r,\theta)$. (a) outliers/large std dev at high angles and range, (b) overall shape}
+	  		\caption{range error $\sigma$ vs $(r,\theta)$ showing (a) outliers/large std dev at high angles and range, (b) overall shape}
 	  		\label{fig:stddev_range_error}
 		\end{figure}
 		
-		*outliers ignored in model. if angle $>$ 75 deg and range $>$ 0.8m, range measurement = NaN. EXPLANATION: as angle increases, measured range becomes less than ground truth - due to beam width. part of beam hits part of object that is closer due to angle. However, as angle increases further, not enough light returns to make measurements. At high ranges and angles, measurement is not of object, but due to reflections that take much longer. Measurement ends up being near maximum range or even INF. Instead, will set as NaN - no value returned.
+		Figures \ref{fig:mean_range_error_outliers} and \ref{fig:stddev_range_error_outliers} show that the mean error and error standard deviation increase significantly when $\theta > 75^\circ$ and $r > 0.8$m. This can be explained by considering what happens to the laser beam under these conditions. Though it has been idealised as a ray in the simulation, the laser has a nonzero beam width. Thus, as $\theta$ increases, one side of the beam will encounter the surface before the centre of the beam. A portion of the light will reach the sensor earlier, though the total amount of light will be reduced as the angle increases. This earlier reflected light will result in a shorter range measurement, but less reflected light will cause a longer range measurement. For angles greater than 75$^\circ$ and ranges greater than 0.8m, the reflected light is insufficient to allow a range measurement. The sensor returns the maximum possible range measurement of 4095mm. In modelling the noise, range measurements for $\theta > 75^\circ$ and $r > 0.8$m are discarded.
 		
-		Similar results to \cite{park2010characterization}. Difficult to get sensible readings at high angles, Gaussian distributed noise.
+		These results are corroborated by \cite{park2010characterization} who reported difficulty in acquiring measurements for high angles and modelled the noise distribution as Gaussian.
 		
-		Fitted 4th degree (in $x$ and $y$) polynomials to data points - Figure \ref{fig:surface_range_error}. INCLUDE FIT DATA
+		4th degree polynomial surfaces in equations \ref{eq:mean} and \ref{eq:std} were fitted to the adjusted set of data points using Matlab's curve fitting tool. The surfaces and the goodness of fit are shown in Figure \ref{fig:surface_range_error}. 
 		\begin{figure}
 	  		\centering
 	  		\subfigure[\label{fig:surface_mean_range}]{
@@ -73,23 +72,29 @@ An accurate range sensor simulation must include a model for the error distribut
 	  		\begin{minipage}[b]{0.45\columnwidth}
     			\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/surface_stddev_range_error}\vspace*{0ex}
 		 \end{minipage}}
-	  		\caption{polynomials fitted to range error mean \& standard deviation data points to model noise}
+	  		\caption{polynomials fitted to range error mean \& standard deviation data points to model noise. (a) SSE: 0.003234, R-square: 0.8447, Adjusted R-square: 0.8278, RMSE: 0.005027(b) SSE: 7.592e-06, R-square: 0.9196, Adjusted R-square: 0.9103, RMSE: 0.0002515}
 	  		\label{fig:surface_range_error}
 		\end{figure}
 		
-		Noise Model:\\
+		\subsubsection{Gaussian noise model}
 		\begin{equation}
-			\hat{r} = f_s(r,\theta,\phi(k)) = r + \mathcal{N}(\mu,\sigma)
+			\tilde{r}(r,\theta) = 
+				\begin{cases}
+					\hfill
+					f_s(r,\theta,\phi(k)) = r + \mathcal{N}(\mu,\sigma)
+						\hfill & \text{$\theta \leq 75^\circ$ or $r \leq 0.8$}\\
+					NaN \hfill & \text{$\theta > 75^\circ$ and $r > 0.8$}
+				\end{cases} 
 		\end{equation}	
-		
-		\begin{equation}
+		where
+		\begin{equation} \label{eq:mean}
 			\begin{aligned}
 				\mu = & a_{00} + a_{10}r + a_{01}\theta + a_{20}r^2 + a_{11}r\theta + a_{02}\theta^2\\
 				      & + a_{30}r^3 + a_{21}r^2\theta + a_{12}r\theta^2 + a_{03}\theta^3 + a_{40}r^4 \\ 
 				      & + a_{31}r^3\theta + a_{22}r^2\theta^2 + a_{13}r\theta^3 + a_{04}\theta^4
 			\end{aligned}		
 		\end{equation}
-		\begin{equation}
+		\begin{equation} \label{eq:std}
 			\begin{aligned}
 				\sigma = & b_{00} + b_{10}r + b_{01}\theta + b_{20}r^2 + b_{11}r\theta + b_{02}\theta^2\\
 			         	 & + b_{30}r^3 + b_{21}r^2\theta + b_{12}r\theta^2 + b_{03}\theta^3 + a_{40}r^4 \\ 
@@ -97,25 +102,19 @@ An accurate range sensor simulation must include a model for the error distribut
 			\end{aligned}
 		\end{equation}
 		
-		Coefficients in tables \ref{tab:noise_a} and \ref{tab:noise_b}
+		and coefficients $a_{ij}$ and $b_{ij}$ are provided in tables \ref{tab:noise_a} and \ref{tab:noise_b} respectively.
 				\input{Tables/tab_noise_coefficients_a}
 				\input{Tables/tab_noise_coefficients_b}	
 
-		\textbf{Surface noise:}
-		random walk model\\
-		have observed error mostly independent of range and angle - seems to be some compensation performed by sensor to get straight lines - range across smooth surfaces that should be appear as straight lines varies regularly.
-		Could be surface properties of objects, though error is larger than expected in this case.
-		Profile of error sinusoidal (regular-ish peaks and valleys), peaks = 5mm deep \& 50mm wide approximately
+		\subsubsection{Surface noise}
+		An additional source of error was observed and found to be mostly independent of $r$ and $\theta$. This may be caused by surface properties of the environment, though the error is larger than expected in this case. A possible explanation is compensation performed by sensor to produce globally straight lines. While flat surfaces do appear flat from a distance, locally there are regular variations in depth as shown in Figure \ref{fig:measured_surface_noise}. 
 		
-		add random walk to each scan
+		This surface noise was modelled with a random walk function
 		\begin{equation}
-			error = a\sum_{n = 1}^{n_{Steps}}-1 + 2\:\left \lfloor{\mathcal{R}}\right \rfloor 
+			e_{surface} = a\sum_{n = 1}^{n_{Steps}}-1 + 2\:\left \lfloor{\mathcal{R}}\right \rfloor 
 		\end{equation} 
-		where $\mathcal{R}$ is a random variable following a uniform distribution on [0,1]. Chose step size of $a = 0.0005m$
-		Doesn't work too well over long surfaces (~1m) - can get too large sometimes, but fits measured data for small objects like cube
-		
-		Figure \ref{fig:surface_noise}: comparison of simulated \& measured surface noise:
-		\textbf{ERROR BARS INSTEAD OF DOTS}. MENTION THAT IT IS FLIPPED, COULD BE OTHER WAY. DUE TO RANDOM WALK.
+		where $\mathcal{R}$ is a random variable following a uniform distribution on [0,1]. A step size $a = 0.0005m$ was used. Figure \ref{fig:surface_noise} shows that this model accurately models the measured surface variations. It should be noted that the measured variation appears concave while the simulated noise appears convex. This is due to the nature of the random walk noise. Over a large sample, both concave and convex surface noise is observed in real-world measurements and the simulate random walk simulation.
+
 		\begin{figure}
 	  		\centering
 	  		\subfigure[\label{fig:measured_surface_noise}]{

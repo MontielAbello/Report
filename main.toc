@@ -43,38 +43,40 @@
 \contentsline {subsection}{\numberline {2.2.2}Symmetry-preserving observers}{23}
 \contentsline {chapter}{\numberline {3}Problem Statement}{24}
 \contentsline {section}{\numberline {3.1}Estimating the pose and size of a cube from sparse range measurements}{25}
-\contentsline {section}{\numberline {3.2}Deliverables}{29}
-\contentsline {chapter}{\numberline {4}Observer Simulation}{30}
-\contentsline {section}{\numberline {4.1}Implementation}{30}
-\contentsline {subsection}{\numberline {4.1.1}Rigid Body Motion}{32}
-\contentsline {subsubsection}{\numberline {4.1.1.1}Interpolation}{33}
-\contentsline {subsubsection}{\numberline {4.1.1.2}Numerical Integration}{34}
-\contentsline {subsection}{\numberline {4.1.2}Sensor modelling: \texttt {initialisesensor}}{35}
-\contentsline {subsubsection}{\numberline {4.1.2.1}Motion}{35}
-\contentsline {subsubsection}{\numberline {4.1.2.2}Scanning}{36}
-\contentsline {subsection}{\numberline {4.1.3}Environment Modelling: \texttt {initialiseenvironment}}{37}
-\contentsline {subsubsection}{\numberline {4.1.3.1}Motion}{38}
-\contentsline {subsubsection}{\numberline {4.1.3.2}Rigid Objects}{38}
-\contentsline {subsection}{\numberline {4.1.4}Measurement Modelling}{39}
-\contentsline {subsubsection}{\numberline {4.1.4.1}Range Computation: \texttt {computerange}}{39}
-\contentsline {subsubsection}{\numberline {4.1.4.2}Sensor Noise: \texttt {addnoise}}{42}
-\contentsline {subsection}{\numberline {4.1.5}Observer Implementation}{42}
-\contentsline {subsubsection}{\numberline {4.1.5.1}Estimate: \texttt {estimatestate}}{42}
-\contentsline {subsubsection}{\numberline {4.1.5.2}Object/background sepraration: \texttt {identifyobject}}{42}
-\contentsline {subsubsection}{\numberline {4.1.5.3}Update: \texttt {updatestate}}{44}
-\contentsline {section}{\numberline {4.2}Results}{53}
-\contentsline {subsection}{\numberline {4.2.1}Orientation correction}{53}
-\contentsline {subsection}{\numberline {4.2.2}Position correction}{55}
-\contentsline {subsection}{\numberline {4.2.3}Size correction}{55}
-\contentsline {subsection}{\numberline {4.2.4}Orientation and size correction}{57}
-\contentsline {subsection}{\numberline {4.2.5}Discussion}{57}
-\contentsline {chapter}{\numberline {5}Experimental Data}{61}
-\contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{62}
-\contentsline {subsection}{\numberline {5.1.1}Measurement Setup}{62}
-\contentsline {subsection}{\numberline {5.1.2}Results}{62}
-\contentsline {section}{\numberline {5.2}Testing Data Collection}{67}
-\contentsline {subsection}{\numberline {5.2.1}Setup}{67}
-\contentsline {subsection}{\numberline {5.2.2}Results}{67}
-\contentsline {chapter}{\numberline {6}Conclusion}{68}
-\contentsline {chapter}{Appendices}{72}
-\contentsline {chapter}{\numberline {A}Experimental setups}{72}
+\contentsline {section}{\numberline {3.2}Deliverables}{28}
+\contentsline {chapter}{\numberline {4}Observer Simulation}{29}
+\contentsline {section}{\numberline {4.1}Implementation}{29}
+\contentsline {subsection}{\numberline {4.1.1}Rigid Body Motion}{31}
+\contentsline {subsubsection}{\numberline {4.1.1.1}Interpolation}{32}
+\contentsline {subsubsection}{\numberline {4.1.1.2}Numerical Integration}{33}
+\contentsline {subsection}{\numberline {4.1.2}Sensor modelling: \texttt {initialisesensor}}{34}
+\contentsline {subsubsection}{\numberline {4.1.2.1}Motion}{34}
+\contentsline {subsubsection}{\numberline {4.1.2.2}Scanning}{35}
+\contentsline {subsection}{\numberline {4.1.3}Environment Modelling: \texttt {initialiseenvironment}}{36}
+\contentsline {subsubsection}{\numberline {4.1.3.1}Motion}{37}
+\contentsline {subsubsection}{\numberline {4.1.3.2}Rigid Objects}{37}
+\contentsline {subsection}{\numberline {4.1.4}Measurement Modelling}{38}
+\contentsline {subsubsection}{\numberline {4.1.4.1}Range Computation: \texttt {computerange}}{38}
+\contentsline {subsubsection}{\numberline {4.1.4.2}Sensor Noise: \texttt {addnoise}}{41}
+\contentsline {subsection}{\numberline {4.1.5}Observer Implementation}{41}
+\contentsline {subsubsection}{\numberline {4.1.5.1}Estimate: \texttt {estimatestate}}{41}
+\contentsline {subsubsection}{\numberline {4.1.5.2}Object/background sepraration: \texttt {identifyobject}}{41}
+\contentsline {subsubsection}{\numberline {4.1.5.3}Update: \texttt {updatestate}}{43}
+\contentsline {section}{\numberline {4.2}Results}{52}
+\contentsline {subsection}{\numberline {4.2.1}Orientation correction}{52}
+\contentsline {subsection}{\numberline {4.2.2}Position correction}{54}
+\contentsline {subsection}{\numberline {4.2.3}Size correction}{54}
+\contentsline {subsection}{\numberline {4.2.4}Orientation and size correction}{56}
+\contentsline {subsection}{\numberline {4.2.5}Discussion}{56}
+\contentsline {chapter}{\numberline {5}Experimental Data}{60}
+\contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{61}
+\contentsline {subsection}{\numberline {5.1.1}Measurement Setup}{61}
+\contentsline {subsection}{\numberline {5.1.2}Results}{61}
+\contentsline {subsubsection}{\numberline {5.1.2.1}Gaussian noise model}{64}
+\contentsline {subsubsection}{\numberline {5.1.2.2}Surface noise}{64}
+\contentsline {section}{\numberline {5.2}Testing Data Collection}{66}
+\contentsline {subsection}{\numberline {5.2.1}Setup}{66}
+\contentsline {subsection}{\numberline {5.2.2}Results}{66}
+\contentsline {chapter}{\numberline {6}Conclusion}{67}
+\contentsline {chapter}{Appendices}{71}
+\contentsline {chapter}{\numberline {A}Experimental setups}{71}
