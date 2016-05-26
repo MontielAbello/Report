@@ -409,7 +409,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	\subsubsection{Estimate: \texttt{estimatestate}}
 		The state of the cube at each time step is estimated using the numerical integration method described in section \ref{integration}. This state estimation is implemented in the function \texttt{estimatestate} in Algorithm \ref{main}.
 	
-	\subsubsection{Object/background sepraration: \texttt{identifyobject}}
+	\subsubsection{Object/background separation: \texttt{identifyobject}} \label{separation}
 		The observer update function will use range measurements to estimate the state of the cube $\mathbf{X}_c$. In order to perform accurately, the observer must only use range measurements that correspond to the cube. The function \texttt{identifyobject} in Algorithm \ref{main} uses range measurements and knowledge of the configuration of the environment to separate measurements of the cube and background.
 		
 		The binary variable $c$ indicates whether the current range measurement corresponds to cube ($c=\texttt{true}$) or the background ($c=\texttt{false}$). It is assumed that initially the sensor will be observing the background, so $c_0=\texttt{false}$.

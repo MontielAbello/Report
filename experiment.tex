@@ -18,6 +18,12 @@ An accurate range sensor simulation must include a model for the error distribut
 	1200 samples of the measured distance to the surface were taken.
 	
 	For this research, the cube is likely to be placed within 1.5m from the sensor and at any orientation. The range error distribution for these conditions should be measured. The distance from the sensor to the measurement surface was thus varied in 50mm increments between 250mm and 1750mm, to an accuracy of $\pm$1mm. At each of these ranges the incidence angles was varied in 20$^\circ$ increments from 0$^\circ$ to 80$^\circ$ to an accuracy of $\pm$0.5$^\circ$. The physical setup is shown in Figure \ref{fig:noise_setup}.
+	
+	\begin{figure}
+	\centering
+	 	\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip=true]{./Figures/noise_setup}\vspace*{0ex}
+	  	\caption{setup to measure noise at a different ranges and angle (lights turned off during measurement to eliminate error from variation in lighting conditions)} \label{fig:noise_setup}
+	\end{figure}
 		 
 	\subsection{Results}
 		The range error $r_{error} = r_{ground truth} - r_{measured}$ was computed. The distributions of this error for varying ranges and angles is shown in Figure \ref{fig:mean_hist}. The range error is approximately normally distributed.
@@ -125,33 +131,29 @@ An accurate range sensor simulation must include a model for the error distribut
 	  		\begin{minipage}[b]{0.45\columnwidth}
     			\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/simulated_surface_noise}\vspace*{0ex}
  			\end{minipage}}
-	  		\caption{Comparision of (a) measured and (b) simulated surface noise}
+	  		\caption{Comparision of (a) measured and (b) simulated surface noise. Point distribution along radial lines is shown as quintiles of error.}
 	  		\label{fig:surface_noise}
 		\end{figure}
 
-\section{Testing Data Collection} \label{testingdata}
+\section{Observer Performance Testing Data} \label{testingdata}
+	Data collected to assess the performance of the observer under real-world, less-than-ideal conditions.
 	\subsection{Setup}
-		physical setup - \ref{experimental_data} PICS IN APPENDIX\\
-		Real world, less than ideal conditions.
-		Sensor:\\
-		Hokuyo UBG-04LX-F01 - 2D scanning laser range-finder. Measures range\\
+		The experimental setup is shown in Figure \ref{fig:experimental_data}.
+		\begin{figure}
+		\centering
+			 	\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip=true]{./Figures/experimental_data}\vspace*{0ex}
+			  	\caption{setup to collect experimental data} \label{fig:experimental_data}
+		\end{figure}
+
+		The Hokuyo UBG-04LX-F01 sensor was mounted to a tripod. The sensor was panned up and down manually while the range and time recorded. This panning along with its own scanning behaviour allows the sensor to densely measure the infinite-dimensional environment depth field. To compute the elevation angle of the sensor, the range measurements to a portion of the blank wall were used. The range to this wall was measured at elevations increasing from  $-25^\circ$ to $25^\circ$ in $5^\circ$ increments for calibration purposes.
 		
-		Robot arm: \\
-		Kinova Jaco - can program to move with and record pose
+		The target object was a cube of 100mm side length cube made from medium-density fibreboard. The cube was spray painted matte white - the same surface as used in the sensor noise modelling in Section \ref{sensor_noise}.
 		
-		Target object: \\
-		$0.1 \times 0.1$ m MDF cube, spray painted matte white
-		
-		configurations/motions: \\
-			-stationary\\
-			-rotating\\
-			-translating\\					
-		arm forward kinematics $\rightarrow$ cube pose\\
-		estimate sensor angle with horizontal with wall calibration data		
+		The cube was placed in the gripper of a Kinova Jaco robotic arm. The arm was manually manipulated to produce stationary, rotating, translating and combined motions. The joint angles of the sensor over time were recorded. From this data, the forward kinematic model for the arm was used to compute the ground truth pose of the cube over time.		
 		
 	\subsection{Results}
-		still need to calibrate data.
-		However, prediction is observer wont work. First, neither range or continuity assumptions will hold - gripper hold cube will mess with things. Lots of noise.
-		Likely will need an infinite dimensional observer, estimate entire depth field. Need symmetry to get robust convergence.
-		Still, data is available for future research.
+		Calibration of the data to determine the elevation angle of the sensor is yet to be completed. However, it is unlikely that the current implementation of the observer will be able to estimate the cube state from this data. Because the cube is held by the gripper of the arm, neither the range or continuity assumptions in Section \ref{separation} hold.  
+		
+		An infinite-dimensional observer measuring the entire depth field would give a better estimate of the state of the cube. A symmetry-preserving observer would likely be more robust to the significant levels of noise in the data set.
+
 
