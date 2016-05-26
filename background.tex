@@ -545,6 +545,7 @@
 		
 
 \section{State Observers} \label{sec:observerequations}
+\subsection{Luenberger observers}
 An observer is a filter that is used to estimate the state of a dynamic system. The state $x$ can be chosen as some set of variables governed by the system. In real-world conditions, the system is often infinite-dimensional.
 
 The real system, known as the \textit{plant} is represented with a \textit{model}. In most cases, some simplification of the plant must be performed to produce the model.
@@ -557,25 +558,23 @@ The state output $y$ can also be conceptualised as a measurement of the state $x
 \begin{equation}
 	y(t) = g(x(t),u(t))
 \end{equation}
-state estimate $\hat{x}$
-structure for nonlinear observer - something about Luenberger?
-This form of observer was developed by Luenberger \cite{luenberger1966observers}, and is often referred to as a \textit{Luenberger observer}.
+An observer employs an innovation function $L: \mathbb{R}^m \rightarrow \mathbb{R}^n$ to update a state estimate $\hat{x}$ using the difference between the measurement $y(t)$ and the predicted measurement $\hat{y}$.
 \begin{equation}
 	\dot{\hat{x}} = f(\hat{x},u(t)) + L(y(t)-\hat{y}(t))
 \end{equation}
 \begin{equation}
 	\hat{y}(t) = g(\hat{x}(t),u(t)) 
 \end{equation}
+This form of observer was developed by Luenberger \cite{luenberger1966observers}, and is often referred to as a \textit{Luenberger observer}. Combining the observer equation with the measurement prediction function $g$ gives the state observer as
 \begin{equation}
 	\dot{\hat{x}} = f(\hat{x},u(t)) + L(y(t)-g(\hat{x}(t),u(t)))
 \end{equation}
-L maps $\mathbb{R}^m$ to $\mathbb{R}^n$
+The goal is to choose an innovation function $L$ that reduces the observer error $e(t) = x(t) - \hat{x}(t)$ to 0.
 
--mention observability?
--mention symmetric preserving, infinite dimensional observers briefly
-dynamics invariant to some action of a Lie group $\mathbf{G}$, invariant observer has form
+\subsection{Symmetry-preserving observers}
+If the function $f$ governing the dynamics of the state is invariant to the action of a Lie group $\mathbf{G}$, invariant observer has the form
 \begin{equation}
 	\dot{\hat{x}} = h(\hat{x},u(t),y(t)-\hat{y}(t))
 \end{equation}
-where function $h$ is also invariant to actions of $\mathbf{G}$.
+where the function $h$ is also invariant to actions of $\mathbf{G}$. For nonlinear systems, the result is often improved global convergence properties in comparison to a traditional Luenberger observer.
 
