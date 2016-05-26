@@ -67,13 +67,13 @@
 \contentsline {subsection}{\numberline {4.2.2}Orientation correction}{53}
 \contentsline {subsection}{\numberline {4.2.3}Position correction}{54}
 \contentsline {subsection}{\numberline {4.2.4}Size correction}{54}
-\contentsline {subsection}{\numberline {4.2.5}Orientation and size}{57}
+\contentsline {subsection}{\numberline {4.2.5}Orientation and size}{56}
 \contentsline {subsection}{\numberline {4.2.6}discussion}{57}
-\contentsline {chapter}{\numberline {5}Experiment}{61}
-\contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{62}
-\contentsline {subsection}{\numberline {5.1.1}Setup}{62}
-\contentsline {subsection}{\numberline {5.1.2}Results}{62}
-\contentsline {section}{\numberline {5.2}Testing Data Collection}{67}
-\contentsline {subsection}{\numberline {5.2.1}Setup}{67}
-\contentsline {subsection}{\numberline {5.2.2}Results}{67}
-\contentsline {chapter}{\numberline {6}Conclusion}{68}
+\contentsline {chapter}{\numberline {5}Experiment}{58}
+\contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{59}
+\contentsline {subsection}{\numberline {5.1.1}Setup}{59}
+\contentsline {subsection}{\numberline {5.1.2}Results}{59}
+\contentsline {section}{\numberline {5.2}Testing Data Collection}{64}
+\contentsline {subsection}{\numberline {5.2.1}Setup}{64}
+\contentsline {subsection}{\numberline {5.2.2}Results}{64}
+\contentsline {chapter}{\numberline {6}Conclusion}{65}
