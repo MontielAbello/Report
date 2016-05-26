@@ -1,22 +1,15 @@
 \chapter{Problem Statement}
-\textbf{context etc here...}
-\begin{comment}
-\textbf{context:}
-Advances in hardware and manufacturing have made autonomous and semi-autonomous robots more available. Use in industry and even general public has increased. Full autonomous robots are still limited to structured environments and tasks such as in factories and warehouses.
-Before robots can operate autonomously in unstructured environments, new sensor models are required to more effectively observe and represent complex environment states. \textbf{TODO:} \textit{Why are new sensor models required? Check if this is covered in literature review. If not, need to expand on this.}
+Context - research into infinite dimensional, symmetry preserving observers.
 
-\textbf{problem/lacking:}
-One method of estimating the state of the environment is to use a state observer. The majority of observer implementations do not take into account the natural symmetries of the dynamics of the state. Doing so has shown to be beneficial in both the design of observers, and improved convergence properties.
-However, these invariant observer methods are still limited to finite dimensional systems. In many implementations involving infinite-dimensional systems, the system is discretised to a finite dimensional one prior to observer design.  \textbf{TODO:} \textit{How does this influence performance?}
+Goals:
+	are to explore aspects of this research. 
+	Dense sensor. See if sparse sensor can be used as dense sensor.
+	see where this research can improve
 
-What is needed is a theory of infinite dimensional, symmetry preserving observers, + design principles.
-
-\textbf{what will this theory provide?:}
-This theory will simplify invariant observer design for infinite dimensional systems. Only discretising after observer design will maximise the potential of dense sensors. This will allow for more accurate and fast estimation of complex environments,
-
-\textbf{approach:}
-This project aims to develop some of this theory. The approach taken will be to design an invariant observer for a specific infinite dimensional system, before generalising the results.
-\end{comment}
+Approach: 
+	solve simplified, problem
+	early lumping - represent infinite dimensional system as finite dimensional
+	still taking infinite dimensional measurements - similar to Adarve \cite{adarvefiltering}.
 
 \textbf{estimation problem - cube pose \& size:}\\
 \input{Figures/fig_cubeproblem}
@@ -79,16 +72,9 @@ can also think of this as state to estimate is relative state between sensor, cu
 *convergence - how to quantify performance?
 -innovation based on prediction and measured ranges SEPARATELY - this is because only trying to observe cube, ignoring environment. infinite dimensional observer would attempt to estimate infinite dimensional depth field, which is a function on sphere which returns depth - continuous. Instead uses knowledge of environment to filter it out. thus, necessary to have separate measurements, or would only be able to apply innovations when both visible - no solution in this case - couldn't correct size\\
 
-
-
-
-
-
-
-
-
-
 \textbf{deliverables:} \\
-%The primary deliverable of this project is the observer design and simulation. Will later try to develop some general theory from this specific case. Will validate simulation with experiment using Hokuyo UBG 04-LX sensor, ??? robot arms and cubes of various sizes and materials.
-%\textbf{TODO:} \textit{More detail, + be careful about what you promise}
+sensor/body simulation
+observer design
+observer implementation
+experimental validation
 

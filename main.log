@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  26 MAY 2016 15:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  26 MAY 2016 15:11
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -854,12 +854,12 @@ lem.tex") [24
 
 
 ] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 74--81
+Underfull \hbox (badness 10000) in paragraph at lines 67--74
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 91--94
+Underfull \hbox (badness 10000) in paragraph at lines 75--78
 
  []
 
@@ -1224,7 +1224,7 @@ i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (86 pages, 12647271 bytes).
+Output written on main.pdf (86 pages, 12647692 bytes).
 PDF statistics:
  453 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
