@@ -1,7 +1,7 @@
 \chapter{Simulation} \label{chap:simulation}
 \section{Implementation}
 A simulation toolbox was implemented in Matlab to model scanning laser range-finder measurements and test observer schemes. The main components of the simulation are:
-\begin{itemize} \setlength\itemsep{-3mm}
+\begin{itemize} \setlength\itemsep{-2mm}
 \item rigid body trajectory computation;
 \item solid object modelling;
 \item range measurement simulation;
@@ -62,7 +62,7 @@ A simulation toolbox was implemented in Matlab to model scanning laser range-fin
 	\end{algorithm}
 	
 The notation employed here and throughout the rest of the report uses the following conventions:
-\begin{itemize} \setlength\itemsep{-3mm}
+\begin{itemize} \setlength\itemsep{-2mm}
 \item \textit{plain text} variables: single values;
 \item \textit{bold lowercase} variables: vectors;
 \item \textit{bold uppercase} variables: matrices
@@ -252,6 +252,10 @@ To simulate range measurements, the scan direction is required in the inertial f
 \end{equation}
 
 \subsection{Environment Modelling: \texttt{initialiseenvironment}}
+Object + background make up infinite dimensional system. State of cube to be estimated is finite-dimensional.
+Environment should be infinite dimensional - will only model a single background object.
+still taking measurements of an infinite dimensional system- though represented discretely for computational load. Does not make a difference to observer. Observer doesn't know background is a single rigid body. Could be anything.
+
 \subsubsection{Motion}
 The pose of each object represents the pose of its centre of mass. As described in section \ref{motion} the pose is computed with interpolation for the case of zero wrench, and numerical integration in the case of non-zero wrench. The pose of the objects making up the environment is computed with the function $\texttt{initialiseenvironment}$ in Algorithm \ref{main}. This function also creates the points and triangles that model the surface of the objects which is described below.
 

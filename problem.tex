@@ -1,24 +1,23 @@
 \chapter{Problem Statement}
-Context - research into infinite dimensional, symmetry preserving observers.
+This project is part of a larger research direction at the ANU Research School of Engineering that will develop a theory of infinite-dimensional, symmetry preserving observers.
+As an initial exploration of this open problem, the central goals of this project are to:
+\begin{itemize}
+\item gain an understanding of how dense sensors can be used to take measurements of the state of infinite-dimensional systems;
+\item gain an insight into how symmetry-preserving observers can be used to better observe nonlinear infinite-dimensional systems
+\item uncover pertinent directions for future research in this area; where a theory of infinite-dimensional, symmetry preserving observers would be useful
+\item investigate if a sparse sensor can be used in a manner that approximates the capabilities of a dense sensor in the measurement of an infinite-dimensional state.
+\end{itemize}
 
-Goals:
-	are to explore aspects of this research. 
-	Dense sensors useful. See if sparse sensor can be used as dense sensor.
-	see where this research can improve
+The approach taken to achieve these goals will be to design and implement an observer for a simplified system that still captures some components of the overall research goals.
+The state variable to  be estimated will be finite-dimensional, and this the observer will be finite-dimensional. However, the sensor will still take provide of an infinite dimensional system. In this way, the problem is similar to the dense optical flow estimation by Adarve et al. \cite{adarvefiltering}.
+Initially, the observer innovation function will not designed to be invariant. As a first step, this research will investigate correction schemes that converge locally. A future work package will be do adjust the update function to respect the symmetries of the system and achieve more global convergence properties. 
 
-Approach: 
-	solve simplified, problem
-	simplification - state variable to be estimated is finite dimensional.
-	observer is a finite dimensional observer.
-	innovation term not necessarily invariant - will leave that to future work. First see what kind of innovation terms work
-	still taking measurements of an infinite dimensional system - similar to Adarve - though represented discretely for computational load. However, does not make a difference to observer. Observer doesn't know background is a single rigid body. Could be anything. \cite{adarvefiltering}.
-
-\textbf{estimation problem - cube pose \& size:}\\
+\section{Estimating the pose and size of a cube from sparse range measurements}
 \input{Figures/fig_cubeproblem}
-A situation in which an infinite dimensional observer would be useful is in the estimation of the pose of an object of size moving in an environment of unknown state.
+A situation in which an infinite dimensional observer would be useful is in the estimation of the pose of an object of unknown size moving in an environment of unknown state.
 For example, consider an autonomous robot deployed in an agricultural survey, which must determine the position and size of a certain crop. Using a geometric model for the general shape of the crop, an aerial vehicle that could routinely detect and characterise the position and size of specimens would be useful in monitoring growth and during harvesting.
 
-The problem to be investigated is shown in Figure~\ref{fig:cubeproblem}. A 2D scanning range sensor moves through an environment consisting of a target object of known shape, in this case a rigid cube, and an unknown background which may consist of one or more rigid bodies. The state of the sensor is known, but the states of the cube and background environment are unknown. The goal is to use the state of the sensor and the range measurements it provides to estimate the state of the cube.
+The problem to be investigated is shown in Figure~\ref{fig:cubeproblem}. A 2D scanning range sensor moves through an environment consisting of a target object of known shape, in this case a rigid cube, and an unknown background which may be an infinite dimensional dynamic system. The state of the sensor is known, but the states of the cube and background environment are unknown. The goal is to use the state of the sensor and the range measurements it provides to estimate the state of the cube.
 
 The frames used to describe the motion of the rigid bodies in this problem are:
 \begin{itemize}
@@ -41,7 +40,7 @@ For simplicity, this will be denoted
 	\{\mathbf{S}_{s}(t),\mathbf{T}_{s}(t),\mathbf{W}_{s}(t),{^{A}\mathbf{d}(t)}\}
 \end{equation}
 
-The direction of measurement ${^{A}\mathbf{d}(t)}$ varies as a rotation about the z-axis of $\{A\}$. This 2D scanning motion depends on the model of the sensor used and is described in more detail in ADD REFERENCE. For simplification, the motion of the sensor itself with respect to $\{F\}$ will be limited to rotation about the $y$-axis of $\{F\}$.
+The direction of measurement ${^{A}\mathbf{d}(t)}$ varies as a rotation about the z-axis of $\{A\}$. This 2D scanning motion depends on the model of the sensor used and is described in more detail in section \ref{sec:scanmodel}. For simplification, the motion of the sensor itself with respect to $\{F\}$ will be limited to rotation about the $y$-axis of $\{F\}$.
 
 The state of cube $\mathbf{X}_{c}(t)$ is defined as 
 \begin{equation}
@@ -54,24 +53,28 @@ For simplicity, this will be denoted
 	\mathbf{X}_{c}(t) = 
 	\{\mathbf{S}_{c}(t),\mathbf{T}_{c}(t),\mathbf{W}_{c}(t),s\}
 \end{equation}
-The range measurements do not indicate whether the object detected is the cube or a background object. Though the pose of the cube and environment remain unknown, for simplification, it is assumed that either:
+The range measurements do not indicate whether the object detected is the cube or the background. Though the state of the cube and environment remain unknown, for simplification, it is assumed that either:
 \begin{itemize}
-\item the cube is within a distance $r_{max}$ from the sensor and background objects are at least a distance $r_{max}$ away
-\item these target and background objects do not touch or overlap and their surfaces are continuous functions on $\mathbb{R}^3$
+\item the cube is within a distance $r_{max}$ from the sensor and the background is at least a distance $r_{max}$ away
+\item these target object and background do not touch or overlap and their surfaces are continuous functions on $\mathbb{R}^3$
 \end{itemize}
-For simulated data, only the first assumption is necessary. For experimental data sets the environment is more complex so the second assumption is required to identify range measurements corresponding to the cube. 
+These assumptions will be used to separate range measurements corresponding to the cube from those corresponding to the background. Only range measurements corresponding to the cube will be used in the observer innovation step. For simulated data, only the first assumption is necessary. For experimental data sets the environment is more complex so the second assumption is required to identify range measurements corresponding to the cube. 
 
-The aim is to design an observer which estimates the state of the cube from the pose of the sensor, as well as scan direction $\mathbf{s}$ and range $r$. Ground truth range unavailable to observer - Will use range measurements $\tilde{r}$ and measurement prediction $\hat{r}$. Observer function $f$ such that:
+The aim is to design a nonlinear observer function $f$ which estimates the state of the cube from the pose of the sensor, scan direction $\mathbf{s}$ and range measurement $\tilde{r}$ and measurement prediction $\hat{r}$.
 \begin{equation}
 	\hat{\mathbf{X}}_{c}(k+1) = f(\mathbf{X}_{s}(t),\hat{\mathbf{X}}_{c}(k),\tilde{r}(t),\hat{r}(t))
 \end{equation}
+
+This observer formulation differs from that provided in equation \ref{eq:observerfunction} in that $\tilde{r}$ and $\hat{r}$ are provided as separate inputs. Though a true Luenberger observer is driven by the output difference $\tilde{r} - \hat{r}$, such a scheme is not possible due to the way the problem has been simplified. 
+
 
 \textbf{*RELATE THIS TO BACKGROUND ON OBSERVERS:}\\
 -no input, nonlinear system
 -state to estimate: state of cube
 -measurement: range, also relates to state of sensor
 can also think of this as state to estimate is relative state between sensor, cube
-*convergence - how to quantify performance?
+Successful IF converges in local neighbourhood - since not invariant, don't expect global convergence.
+TO IMPLEMENT - WILL DESIGN SIMULATION + DO EXPERIMENTAL VALIDATION
 -innovation based on prediction and measured ranges SEPARATELY - this is because only trying to observe cube, ignoring environment. infinite dimensional observer would attempt to estimate infinite dimensional depth field, which is a function on sphere which returns depth - continuous. Instead uses knowledge of environment to filter it out. thus, necessary to have separate measurements, or would only be able to apply innovations when both visible - no solution in this case - couldn't correct size\\
 
 \textbf{deliverables:} \\

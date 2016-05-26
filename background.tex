@@ -535,7 +535,7 @@
 			{\frac{\textnormal{d}}{\textnormal{d}t}} \mathbf{W}(t)=\mathbf{f}(t)			
 		\end{equation}
 		where the function $\mathbf{f}(t)$ is known.
-		
+	
 	\subsection{Scanning Laser Rangefinder Dynamic Model}
 		A scanning laser rangefinder is a sensor that measures the distance to the nearest object in a certain direction. Consider such a sensor fixed to a moving rigid body. The pose of the sensor $s$ is defined by $\mathbf{S}_s$, $\mathbf{T}_s$ and $\mathbf{W}_s$. The scanning direction of the sensor is a unit vector ${^{A}\mathbf{d}(t)} \in S^2$ defined in the body fixed frame $\{A\}$.	
 		
@@ -543,7 +543,6 @@
 		
 		The function ${^{A}\mathbf{d}(t)}$ determines the scanning behaviour of the sensor and depends on the specific model used. The scanning model for the Hokuyo UBG-04LX-FO1 used in this research is provided in section \ref{sec:scanmodel}.
 		
-
 \section{State Observers} \label{sec:observerequations}
 \subsection{Luenberger observers}
 An observer is a filter that is used to estimate the state of a dynamic system. The state $x$ can be chosen as some set of variables governed by the system. In real-world conditions, the system is often infinite-dimensional.
@@ -559,7 +558,7 @@ The state output $y$ can also be conceptualised as a measurement of the state $x
 	y(t) = g(x(t),u(t))
 \end{equation}
 An observer employs an innovation function $L: \mathbb{R}^m \rightarrow \mathbb{R}^n$ to update a state estimate $\hat{x}$ using the difference between the measurement $y(t)$ and the predicted measurement $\hat{y}$.
-\begin{equation}
+\begin{equation} \label{eq:observerfunction}
 	\dot{\hat{x}} = f(\hat{x},u(t)) + L(y(t)-\hat{y}(t))
 \end{equation}
 \begin{equation}
