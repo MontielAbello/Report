@@ -23,14 +23,14 @@ A simulation toolbox was implemented in Matlab to model scanning laser range-fin
 	\SetKwFunction{identifyobject}{identifyobject}	
 	\KwData{\\
 	%CHANGE THESE TO LETTERS
-	$n_{steps}$ - no. steps in simulation\\
+	$n_{steps}$ - number of time steps in simulation\\
 	$\mathbf{X}_s$ - sensor pose and scan direction\\
 	$\mathbf{X}_e$ - cube and background pose, points and triangles\\
 	$\hat{\mathbf{X}}_c$ - estimate of the pose and size of the cube\\
 	$c$ - (\texttt{true}/\texttt{false}) current range measurement is of cube or not\\
 	$\mathbf{r}$ - ground truth range\\
 	$\tilde{\mathbf{r}}$ - measured range\\
-	$\hat{\mathbf{r}}$ - predicted range from state estimate\\
+	$\hat{\mathbf{r}}$ - range predicted from state estimate\\
 	$\bm{\alpha}$ - angle of incidence for each range measurement\\
 	$\mathbf{m}$ - index of triangle measured\\
 	$\bm{\theta}$ - scan angle in sensor frame\\
@@ -63,9 +63,9 @@ A simulation toolbox was implemented in Matlab to model scanning laser range-fin
 	
 The notation employed here and throughout the rest of the report uses the following conventions:
 \begin{itemize} \setlength\itemsep{-2mm}
-\item \textit{plain text} variables: single values;
-\item \textit{bold lowercase} variables: vectors;
-\item \textit{bold uppercase} variables: matrices
+\item Single values are denoted by plain text;
+\item Vectors are denoted in bold lowercase;
+\item Matrices are denoted in bold uppercase;
 \item An array formed by replicating a variable $\mathbf{a}$ in an $n \times m$ block array is denoted $\mathbf{a}_{n \times m}$.
 \item In many cases, a variable such as the sensor position $\mathbf{p}_s(t)$ represents a set of elements, each corresponding to the value at a certain time $t$. These will be referred to by the form of the value at a single time. For example, a matrix where each column represents a different position vector is used to represent $\mathbf{p}_s(t)$, but it will be described as a vector as this is the form of a single position.
 \end{itemize}
@@ -84,7 +84,7 @@ The variable $c$ indicates whether the current range measurement corresponds to 
 \subsection{Rigid Body Motion} \label{motion}
 To simulate range measurements the pose of the sensor and the objects comprising the environment must be computed at each time step. The computations required to do so can be reduced by taking into account the kinds of motion that must be simulated. This section details how the pose of the sensor and objects is represented and computed, which is used in the functions \texttt{initialisesensor}, \texttt{initialiseenvironment} and \texttt{estimatestate} referenced in Algorithm \ref{main}.
 
-The observer actually computes the \textit{relative} position between the sensor and cube and simply uses knowledge of the sensor pose to determine the pose of the cube in the inertial frame. There is no need to simulate complex sensor motions because the motion of the cube can be adjusted to achieve the same result. The only requirement of the sensor motion is that measurements of a large range of the environment are acquired to ensure that the entire target object can be viewed. The scanning behaviour of the sensor is to rotate back and forth about the $z$-axis of the body fixed frame $\{A\}$. To provide a rectangular field of view, the motion of the sensor is therefore limited to constant velocity rotation about $y$-axis of inertial frame $\{F\}$.
+The observer actually computes the \textit{relative} position between the sensor and cube and simply uses knowledge of the sensor pose to determine the pose of the cube in the inertial frame. There is no need to simulate complex sensor motions because the motion of the cube can be adjusted to achieve the same result. The only requirement of the sensor motion is that measurements of a large range of the environment are acquired to ensure that the entire target object can be viewed. The scanning behaviour of the sensor is to rotate about the $z$-axis of the body fixed frame $\{A\}$. To provide a rectangular field of view, the motion of the sensor is therefore limited to constant velocity rotation about $y$-axis of inertial frame $\{F\}$.
 
 The environment is modelled with two rigid bodies: a cube to be observed as the target object, and a stationary rectangular prism enclosing the sensor and cube acting as the background. The various cube motions that will be simulated to test the observer's performance can be classed in terms of the wrench matrix of the cube as either
 \begin{enumerate}
@@ -167,7 +167,7 @@ The time evolution of the screw, twist and wrench is computed iteratively from i
 
 Though a higher order integration method, such as Runge-Kutta could be used to compute a trajectory that more accurately represents a constant acceleration, this is not strictly necessary. The observer performance is unlikely to be affected by how constant the acceleration is. Furthermore, it is likely that the experimentally collected data will have even larger variations in acceleration.
 
-To simplify the code, the position vector and orientation quaternion are computed from the screw matrix. This allows the same functions to be used in either the interpolation or numerical integration cases. Multiplying the points that make up the rigid objects can also be done more compactly with quaternions.
+To simplify the code, the position vector and orientation quaternion are computed from the screw matrix. This allows the same functions to be used in either the interpolation or numerical integration cases. Rotating the points that make up the rigid objects can also be done more compactly with quaternions.
 
 \subsection{Sensor modelling: \texttt{initialisesensor}}
 The motion model below is used to compute the pose of the sensor. The scanning model is used to compute the set of scanning directions. These actions are performed in the $\texttt{initialisesensor}$ function in Algorithm \ref{main}
@@ -212,7 +212,7 @@ The sensor rotates between $-\phi$ and $\phi$ about the $y$-axis of inertial fra
 \end{equation}
 
 \subsubsection{Scanning} \label{sec:scanmodel}
-The scanning behaviour of the sensor depends on the particular model used. The \textit{Hokuyo UBG 04-LX} scanning laser range-finder will be modelled as it was the sensor used to conduct experiments in this project. This sensor produces a 785nm laser beam, projected at a precise direction. It measures the characteristics of the reflected beam to determine the position to the nearest object in the direction of the beam. The direction of the laser beam is varied by reflecting it off a rotating mirror. The rotation means that the beam direction effectively rotates with a constant velocity in a single plane. A portion of the field of view of the laser beam is obscured, so measurements will not be returned in a certain region of each revolution.
+The scanning behaviour of the sensor depends on the particular model used. The \textit{Hokuyo UBG-04LX-F01} scanning laser range-finder will be modelled as it was the sensor used to conduct experiments in this project. This sensor produces a 785nm laser beam, projected at a precise direction. It measures the characteristics of the reflected beam to determine the position to the nearest object in the direction of the beam. The direction of the laser beam is varied by reflecting it off a rotating mirror. The rotation means that the beam direction effectively rotates with a constant velocity in a single plane. A portion of the field of view of the laser beam is obscured, so measurements will not be returned in a certain region of each revolution.
 
 The vector ${^{A}\mathbf{d}(t)}$ will be used to model this scanning behaviour.
 To accurately model this, the following parameters are used:
@@ -252,9 +252,9 @@ To simulate range measurements, the scan direction is required in the inertial f
 \end{equation}
 
 \subsection{Environment Modelling: \texttt{initialiseenvironment}}
-Object + background make up infinite dimensional system. State of cube to be estimated is finite-dimensional.
-Environment should be infinite dimensional - will only model a single background object.
-still taking measurements of an infinite dimensional system- though represented discretely for computational load. Does not make a difference to observer. Observer doesn't know background is a single rigid body. Could be anything.
+The environment described in the problem formulation stated in Chapter \ref{chap:problem} was an infinite dimensional system. Since the state variable to be estimated consists of just the cube pose and size and range measurements corresponding to the background are filtered out, the state of the background has no effect on the performance of the observer. 
+To reduce computational load, the background will thus be modelled as a single object; a rigid rectangular prism enclosing both the sensor and cube. 
+The entire state - cube and background - is now modelled as a finite dimensional state. However, the sensor is still taking measurements of a dense depth field on $S^2$.
 
 \subsubsection{Motion}
 The pose of each object represents the pose of its centre of mass. As described in section \ref{motion} the pose is computed with interpolation for the case of zero wrench, and numerical integration in the case of non-zero wrench. The pose of the objects making up the environment is computed with the function $\texttt{initialiseenvironment}$ in Algorithm \ref{main}. This function also creates the points and triangles that model the surface of the objects which is described below.
@@ -273,7 +273,7 @@ The cube points in body frame $\{B\}$ are represented with the matrix ${^{B}\mat
 \end{equation}
 To represent these points in the inertial frame $\{F\}$, ${^{F}\mathbf{P}}$ is computed by rotating each point with the orientation quaternion of frame $\{B\}$ using equation \ref{quatrot} before adding the vector representing the translation of $\{B\}$ from $\{F\}$.
 
-The triangles are represented with the matrix $\mathbf{T}$. Each triangle is represented by a row. The elements of these rows are the three vertices of the triangle and the index corresponds a point in ${^{F}\mathbf{P}}$.
+The triangles are represented with the matrix $\mathbf{T}$. Each triangle is represented by a row. The elements of these rows are the indexes of the points in ${^{F}\mathbf{P}}$ that form the three vertices of the triangle.
 \begin{equation}
 	\mathbf{T} = 
 	\begin{bmatrix}
@@ -299,8 +299,8 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	\subsubsection{Range Computation: \texttt{computerange}}
 	This section describes the implementation used in the $\texttt{computerange}$ function in Algorithm \ref{main}.
 	
-	Given the screw matrix (in the inertial frame) and scan direction (in the body fixed frame) of the sensor, the position and scan direction in the inertial frame are determined.
-	The distance to the nearest environment object from this point, along the scan direction is determined with the M{\"o}ller-Trumbore ray-triangle intersection algorithm, shown in Algorithm \ref{intersectionalgorithm}.
+	Given its screw matrix and scan direction (in the body fixed frame), the position of the sensor and its scan direction in the inertial frame are determined.
+	The distance to the nearest environment object from the sensor along the scan direction is determined with the M{\"o}ller-Trumbore ray-triangle intersection algorithm, shown in Algorithm \ref{intersectionalgorithm}.
 	
 	Figure \ref{fig:raytriangle} shows a simplified scenario involving the intersection of a ray with a single triangle. In practice, the algorithm is vectorised to compute the intersections with a \textit{set} of triangles. In this vectorised implementation, many variables represent a matrix whose columns are each vectors. These variables will still be described as vectors to emphasise the operation of the M{\"o}ller-Trumbore algorithm, rather than the specific implementation details.	\input{Figures/fig_raytriangle}
 	
@@ -395,17 +395,17 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	\end{singlespace}
 		
 	\subsubsection{Sensor Noise: \texttt{addnoise}}
-	In Algorithm \ref{main}, the function \texttt{addnoise} takes the ground truth range measurements and produces the noisy range measurements that the observer will actually receive.
+	In Algorithm \ref{main}, the function \texttt{addnoise} takes the ground truth range measurements $r(t)$ and produces the noisy range measurements $\hat{r}(t)$ that the observer will actually receive.
 	The noise function $f_s$ is
 	\begin{equation}
 		\hat{r}(t) = f_s(r(t),\theta(t),\phi(k))
 	\end{equation}
-	where $\theta(t)$ is the incidence angle of the measurement, $\phi$ represents the surface properties of the object $k$ that was measured.
+	where $\theta(t)$ is the incidence angle of the measurement at time $t$, $\phi$ represents the surface properties of the object $k$ that was measured.
 	
-	For the Hokuyo UBG-04LX-F01 sensor used, range measurements taken at various distances and incidence angles were used to estimate the noise model $f_{UBG}$ which is provided in section \ref{sensor_noise}.
+	For the Hokuyo UBG-04LX-F01 sensor used, range measurements taken at various distances and incidence angles were used to estimate the noise model $f_{UBG}$ which is provided in Section \ref{sensor_noise}.
 	
 \subsection{Observer Implementation}
-	\textbf{FIGURES ARE USED TO EXPLAIN FUNCTIONS. FIGURES THEMSELVES NEED SOME EXPLAINING - IE TRIANGLES ON SURFACE, NOT INSIDE CUBE FOR ORIENTATION}
+
 	\subsubsection{Estimate: \texttt{estimatestate}}
 		The state of the cube at each time step is estimated using the numerical integration method described in section \ref{integration}. This state estimation is implemented in the function \texttt{estimatestate} in Algorithm \ref{main}.
 	
@@ -453,7 +453,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 		\begin{equation}
 			\hat{\mathbf{X}}_{c}(k+1) = f(\mathbf{X}_{s}(t),\hat{\mathbf{X}}_{c}(k),\mathbf{r}(\mathbf{a}(t)),\hat{\mathbf{r}}(\mathbf{a}(t)))
 		\end{equation}	
-		The pose of $\hat{\mathbf{X}}_c$ is corrected by adjusting $\hat{\mathbf{S}}_c$, $\hat{\mathbf{T}}_c$ or $\hat{\mathbf{W}}_c$, or some combination of the three.
+		The pose of $\hat{\mathbf{X}}_c$ is corrected by adjusting $\hat{\mathbf{S}}_c$, $\hat{\mathbf{T}}_c$ or $\hat{\mathbf{W}}_c$.
 		The orientation is adjusted by rotating  about an axis $\mathbf{r}_{update}$. The position is adjusted by translating in the direction of $\mathbf{p}_{update}$
 		$\mathbf{r}_{update}$ and $\mathbf{p}_{update}$ are scaled differently, depending on whether they are applied to $\hat{\mathbf{S}}_c$, $\hat{\mathbf{T}}_c$ or $\hat{\mathbf{W}}_c$.
 		The size update $s_{update}$ is independent of the pose update scheme used.
@@ -467,7 +467,6 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			Thus, the measurement indexes $\tilde{\mathbf{u}}(ii)$ and estimation indexes $\hat{\mathbf{u}}(ii)$ will be subsets of, but not necessarily congruent to $\mathbf{u}(ii)$.
 			
 		\textbf{Orientation update:}\\
-
 			The method used to correct the orientation of the cube state estimate $\hat{\mathbf{X}}_c$ is shown in Figure~\ref{fig:orientation}. \input{Figures/fig_orientationupdate}
 						
 			In order to estimate the orientation of the cube, at least 3 ranges are required from both the prediction and measurement:
@@ -513,13 +512,13 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 				\hat{\bm{\alpha}}_{c}^{\wedge}(k+1) = \hat{\bm{\alpha}}_{c}^{\wedge}(k) + 	\alpha_{scale}\mathbf{r}_{update}^{\wedge}
 			\end{equation}
 			
-			The scale factor depends angle depends on whether $\mathbf{r}_{update}$ is applied via $\hat{\mathbf{S}}_c$, $\hat{\mathbf{T}}_c$ or $\hat{\mathbf{W}}_c$.
+			The chosen scale factor depends on whether $\mathbf{r}_{update}$ is applied via $\hat{\mathbf{S}}_c$, $\hat{\mathbf{T}}_c$ or $\hat{\mathbf{W}}_c$.
 				
 		\textbf{Position update:}\\
 			The method used to correct the position of $\hat{\mathbf{X}}_c$ is shown in Figure~\ref{fig:position}. \input{Figures/fig_positionupdate}
 			In order to estimate the position of the cube, at least 1 range measurement is required from both the prediction and measurement: $|\hat{\mathbf{u}}| \geq 1$ \and $|\tilde{\mathbf{u}}| \geq 1$. Additionally, scan directions at time steps $ii,(ii-1)$ and $(ii-1-n_{scans})$ are required. The scan direction ${^{F}\mathbf{d}(t)}$ must be within the sensor's field of view at these time steps.
 			
-			The points of intersection are calculated using equation \ref{eq:points}. The average of these points is computed to give the mean estimated position $\hat{\bm{\mu}}_\mathbf{p}$ and the mean measured position $\tilde{\bm{\mu}}_\mathbf{p}$.
+			The points of intersection are calculated using equation \ref{eq:points}. In Figure~\ref{fig:position} all four scan directions intersect with the predicted cube state, but only one intersects with the measured cube. The average of these points is computed to give the mean estimated position $\hat{\bm{\mu}}_\mathbf{p}$ and the mean measured position $\tilde{\bm{\mu}}_\mathbf{p}$.
 			
 			The $x,y$ and $z$ components of the update vector may very significantly in size due to the scanning behaviour of the sensor. It is necessary to scale the position update vector according to these components.
 			The mean of all predicted and measured ranges $\mu_{r}$ is computed. Four points $\mathbf{p}_0, \mathbf{p}_1,\mathbf{p}_2$ and $\mathbf{p}_3$ are computed to be used in scaling:			

@@ -5,13 +5,13 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Range measurements of a cube from a depth sensor}}{25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Scanning parameters}}{38}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Cube modelled with ordered set of points and corresponding triangles}}{40}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Scanning behaviour of the UBG-04LX-F01 and parameters used to model it}}{38}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Cube modelled with an ordered set of points and corresponding triangles}}{40}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Ray-triangle intersection}}{41}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Orientation update}}{46}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Orientation update scheme: intersection of the scan directions with the surfaces of the measured and predicted cubes are used to determine the surface normals. }}{46}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Position update}}{48}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Size update - case 1}}{50}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Size update - case 2}}{51}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Size update - case 2}}{52}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Angle error for stationary cube, 3F, no noise}}{53}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{53}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{53}
@@ -56,5 +56,5 @@
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{63}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces setup to measure noise}}{70}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces setup to measure noise}}{70}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces setup to measure noise - lights off during measurement to eliminate error from variation in ambient light}}{70}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces setup to collect experimental data}}{70}

@@ -37,7 +37,7 @@
 \contentsline {subsubsection}{\numberline {2.1.4.7}Inverse}{19}
 \contentsline {subsection}{\numberline {2.1.5}Rigid Body State Representation}{19}
 \contentsline {subsection}{\numberline {2.1.6}Rigid Body Kinematics}{20}
-\contentsline {subsection}{\numberline {2.1.7}Scanning Laser Rangefinder Dynamic Model}{20}
+\contentsline {subsection}{\numberline {2.1.7}Scanning Laser Range-finder Dynamic Model}{20}
 \contentsline {section}{\numberline {2.2}State Observers}{22}
 \contentsline {subsection}{\numberline {2.2.1}Luenberger observers}{22}
 \contentsline {subsection}{\numberline {2.2.2}Symmetry-preserving observers}{23}
