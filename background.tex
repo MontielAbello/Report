@@ -1,12 +1,12 @@
 \chapter{Theoretical Background}
 
 \section{Rigid Body Kinematics}
-	A rigid body is a model of a solid object whose deformation is assumed to be negligible. The distance between every pair of points on the body remains constant. Because such a body does not deform, knowledge of the orientation and position of a reference frame fixed to rigid body constitutes knowledge of the position of all points. The position of the rigid body is thus defined as the position of a single point in the body, most commonly its centre of mass. The orientation can be defined using a set of coordinate axes fixed to the body.
+	A rigid body is a model of a solid object whose deformation is assumed to be negligible. The distance between every pair of points on the body remains constant. Because such a body does not deform, knowledge of the orientation and position of a reference frame fixed to a rigid body constitutes knowledge of the position of all points. The position of the rigid body is thus defined by the position of a particular point in the body, most commonly its centre of mass. The orientation can be defined using a set of coordinate axes fixed to the body such that its origin coincides with the position point.
 	The theory of Lie groups will be used to describe the kinematics of rigid bodies in this report.
 			
 	\subsection{Lie Groups}		
-		A Lie group $\mathbf{G}$ is a group whose elements form a differentiable manifold and group operation and inverse operation are differentiable.
-		As a group, $\mathbf{G}$ is a set of elements and a group operation. This group operation is a binary operation that combines two elements and is denoted by multiplication: $AB$ for $A,B \in \mathbf{G}$. Because it is a group, $\mathbf{G}$ satisfies the 4 group axioms:
+		A Lie group $\mathbf{G}$ is a group whose elements form a differentiable manifold and whose group operation and inverse operation are differentiable.
+		As a group, $\mathbf{G}$ is a set of elements and a group operation. This group operation is a binary operation that combines two elements and is denoted by multiplication: $AB$ or $A \cdot B$ for $A,B \in \mathbf{G}$. Because it is a group, $\mathbf{G}$ satisfies the 4 group axioms:
 		\begin{itemize}
 		\item \textbf{Closure:} 
 			The group operation
@@ -24,7 +24,7 @@
 		
 		\subsubsection{Matrix Lie groups}
 			A matrix Lie group $\mathbf{G} \subset \mathbf{GL}(n)$ is made up of group elements which are $n \times n$ matrices.
-			This work will focus on matrix Lie groups because the form of the exponential map and Lie bracket functions given below only apply to such Lie groups. Generalised concepts for these functions exist, but a more detailed and relevant description can be provided by focusing on matrix Lie groups.
+			This work will focus on matrix Lie groups because the form of the exponential map and Lie bracket functions provided below only apply to such Lie groups. Generalised concepts for these functions exist, but a more detailed and relevant description can be given by focusing on matrix Lie groups.
 		
 		\subsubsection{Lie algebra}
 			The tangent space at the identity element of a Lie group is called the Lie algebra $\mathfrak{g}$. It is called the Lie \textit{algebra} because it has a binary operation, known as the Lie bracket $[X,Y]$. For matrix Lie groups the Lie bracket is
@@ -48,7 +48,7 @@
 			For matrix Lie groups, the exponential map and logarithm map correspond to the matrix exponential and matrix logarithm respectively.
 						
 		\subsubsection{Infinitesimal generators}
-			The \textit{hat} operator $(\cdot)^{\wedge}$ can be used to map an $n$-vector to an $m \times m$ matrix representation, when $\mathbb{R}^{m \times m}$ is isomorphic to $\mathbb{R}^n$. (*NOTE - haven't actually used hat since it is used to denote prediction. wedge is a better counterpart to vee anyway. is this okay???)
+			The \textit{hat} operator $(\cdot)^{\wedge}$ can be used to map an $n$-vector to an $m \times m$ matrix representation, when $\mathbb{R}^{m \times m}$ is isomorphic to $\mathbb{R}^n$.
 			\begin{equation}
 				\begin{split}
 					(\cdot)^{\wedge}: \mathbb{R}^n \rightarrow \mathbb{R}^{m \times m}\\
@@ -79,9 +79,9 @@
 			\begin{equation}
 				e^C = e^{A+B} = e^Ae^B
 			\end{equation}
-			For non-commutative Lie groups, this relationship between the Lie algebra and Lie group operations do not hold. Instead, for $C = \log{e^Ae^B}$, $C$ is calculated with the Baker-Campbell-Hausdorff formula:
+			For non-commutative Lie groups, this relationship between the Lie algebra and Lie group operations do not hold. Instead, for $C = \log{\left(e^Ae^B\right)} $, $C$ is calculated with the Baker-Campbell-Hausdorff formula:
 			\begin{equation}
-				C = A + B + \frac{1}{2}[A,B] + \frac{1}{12}[A-B,[A,B]] + \frac{1}{24}[B,[A,[A,B]]] + \dots
+				C = A + B + \frac{1}{2}[A,B] + \frac{1}{12}[A-B,[A,B]]  \frac{1}{24}[B,[A,[A,B]]] + \dots
 			\end{equation}	
 		
 		\subsubsection{Actions}
@@ -214,8 +214,8 @@
 		Elements of $\mathfrak{so}(3)$ are typically represented with the hat representation $\bm{\omega}^{\wedge}$ of a scaled-axis vector $\bm{\omega}$, where the magnitude $|\bm{\omega}|$ corresponds to the angular velocity about the axis $\bm{\omega}/|\bm{\omega}|$.
 					
 		\subsubsection{Rotation quaternions}
-		Quaternions are an extension of complex numbers. The set of unit quaternions can be used to represent $\mathbf{SO}(3)$, and will be referred to as rotation quaternions. 
-		A rotation quaternion $\mathbf{q}$ is a 4-tuple of real numbers that encode the same information as axis angle. $\mathbf{q}$ is often described in terms of its first element $w$ - the scalar part, and the remaining elements $x,y$ and $z$ - the vector part. Given an axis of rotation $\mathbf{r}$ and an angle of rotation $\theta$:
+		Quaternions are an extension of complex numbers. The set of unit quaternions can be used to represent $\mathbf{SO}(3)$, and will be referred to as the set of rotation quaternions. 
+		A rotation quaternion $\mathbf{q}$ is a 4-tuple of real numbers that encode the same information as the scaled-axis representation. $\mathbf{q}$ is often described in terms of its first element $w$ - the scalar part, and the remaining elements $x,y$ and $z$ - the vector part. Given an axis of rotation $\mathbf{r}$ and an angle of rotation $\theta$:
 		\begin{equation}
 			\mathbf{q} = 
 			\begin{bmatrix}
@@ -281,23 +281,22 @@
 		\end{equation} 
 		As with rotation matrices, quaternion multiplication is associative but not commutative.
 		
-		The group action rotates a point $\mathbf{p} \in \mathbb{R}^3$  to $\mathbf{p}'$ by embedding it as the vector part of a quaternion and using a conjugation operation with $\mathbf{q}$:
-		formula for rotating vector:
+		The group action rotates a point $\mathbf{p}_0 \in \mathbb{R}^3$  to $\mathbf{p}_1 \in \mathbb{R}^3$ by embedding it as the vector component of a quaternion and applying a conjugation operation with $\mathbf{q}$. The rotated vector $\mathbf{p}_13$ can be extracted as the vector component of the resulting quaternion.
 		\begin{equation} \label{quatrot}
 			\begin{bmatrix}
 			 	0\\
-			 	\mathbf{p'}
+			 	\mathbf{p}_1
 			\end{bmatrix}
 			= \mathbf{q}
 			\begin{bmatrix}
 			 	0\\
-			 	\mathbf{p}
+			 	\mathbf{p}_0
 			\end{bmatrix}
 			\mathbf{q}^{-1}
 		\end{equation}
 		
 	\subsection{\textbf{SE}(3)}	
-		The special Euclidean group $\textbf{SE}(3)$ represents rigid transformation in $\mathbb{R}^3$. This is a matrix Lie group whose elements are the set of all rigid transformations in $\mathbb{R}^3$ and can be represented with $4 \times 4$ matrices of the form
+		The special Euclidean group $\textbf{SE}(3)$ represents rigid transformation in $\mathbb{R}^3$. This is a matrix Lie group whose elements comprise the set of all rigid transformations in $\mathbb{R}^3$ and can be represented with $4 \times 4$ matrices of the form
 		\begin{equation}
 			\textbf{S} = 
 			\begin{bmatrix}
@@ -331,7 +330,7 @@
 		\begin{bmatrix}
 			v_x & v_y & v_z				
 		\end{bmatrix}
-		^\top \in T_{\mathbf{p}}\mathbb{R}^3$, representing a linear velocity vector.
+		^\top \in T\mathbb{R}^3 \equiv \mathbb{R}^3$, representing a linear velocity vector.
 		
 		Elements of $\mathfrak{se}(3)$ are mapped to $\textbf{SE}(3)$ according to the exponential map:
 			\begin{equation}
@@ -369,7 +368,7 @@
 		
 		\subsubsection{Actions}
 		$\mathbf{SE}(3)$ group elements acts to perform a rigid transformation on points in $\mathbb{R}^3$. This corresponds to a rotation about the origin and a translation.
-		To apply a transformation using the $4 \times 4$ matrix elements of $\mathbf{SE}(3)$ to a point $\textbf{p} = (x,y,z) $ in $\mathbb{R}^3$, the point must be represented with homogeneous coordinates: (is $p'$ okay for homogeneous points? $\hat{\:}$ is already used for skew-symmetric matrix)
+		To apply a transformation using the $4 \times 4$ matrix elements of $\mathbf{SE}(3)$ to a point $\textbf{p} = (x,y,z) $ in $\mathbb{R}^3$, the point must be represented with homogeneous coordinates as $\mathbf{p'}$
 		\begin{equation}
 			\mathbf{p'} = 
 			\begin{bmatrix}
@@ -434,7 +433,7 @@
 		For example, $^{F}_{A}\mathbf{R}^{}_{B}$ defines the rotation of $\{B\}$ with respect to $\{A\}$, defined in the inertial frame $\{F\}$.		
 		
 		\subsubsection{Pose}
-		A pose defines an orientation and position in space. The pose of a rigid body in a given reference frame is defined by its relative position and orientation with respect to the given reference frame and is represented by an element of \textbf{SE}(3). If a rigid body has orientation aligned with a reference frame $\{B\}$ and position at the origin of $\{B\}$, then the pose of the rigid body with respect to $\{A\}$ and defined in $\{F\}$ is:
+		A pose defines an orientation and position in space. The pose of a rigid body is represented by a reference frame fixed to a particular point within the body. The pose of the rigid body with respect to another reference frame is defined by the relative position and orientation of the two frames. This transformation can be defined with respect to either reference frame and is represented by an element of \textbf{SE}(3). If a rigid body has orientation aligned with a reference frame $\{B\}$ and position at the origin of $\{B\}$, then the pose of the rigid body with respect to $\{A\}$ and defined in $\{F\}$ is:
 		\begin{equation}
 			{^{F}_{A}\mathbf{S}^{}_{B}} = 
 			\begin{bmatrix}
@@ -455,7 +454,7 @@
 		\end{equation}
 		
 		\subsubsection{Homogeneous coordinates}
-		To be acted on by an element of $\mathbf{SE}(3)$, a point must be expressed in homogeneous coordinates:
+		To be acted on by an element of $\mathbf{SE}(3)$, a point must be expressed in homogeneous coordinates.
 		\begin{equation}
 			^{F}\mathbf{p'} = 
 			\begin{bmatrix}
@@ -464,7 +463,7 @@
 			\end{bmatrix}
 		\end{equation}
 		
-		\subsubsection{Defining a point in terms of another reference frame - CHANGE TIS HEADING}
+		\subsubsection{Redefining the reference frame of a point}
 		Consider a point in $\mathbb{R}^3$ defined as the position of the frame $\{A\}$ with respect to the frame $\{F\}$, defined in terms of the frame $\{A\}$. To redefine the point in terms of $\{F\}$, the left action of ${^{F}_{F}\mathbf{S}^{}_{A}} \in \mathbf{SE}(3)$ is used:
 		\begin{equation}
 			^{F}\mathbf{p'} = {^{F}_{F}\mathbf{S}^{}_{A}}\:^{A}\mathbf{p'}
@@ -476,8 +475,8 @@
 			{^{F}_{F}\mathbf{X}^{}_{B}} = {^{F}_{F}\mathbf{X}^{}_{A}}\:{^{A}_{A}\mathbf{X}^{}_{B}}
 		\end{equation}
 		
-		\subsubsection{Defining a pose in terms of another reference frame - CHANGE THIS HEADING}
-		To define a pose transformation matrix in terms of a different reference frame, a matrix conjugation is used:
+		\subsubsection{Redefining the reference frame of a pose}
+		To define a pose transformation matrix in terms of a different reference frame, a matrix conjugation is used.
 		\begin{equation}
 			{^{A}_{B}\mathbf{X}^{}_{C}} = ({^{A}_{A}\mathbf{X}^{}_{F}})\:{^{F}_{B}\mathbf{X}^{}_{C}}\:({^{A}_{A}\mathbf{X}^{}_{F}})^{-1}
 		\end{equation}
@@ -500,9 +499,9 @@
 						  \textbf{0}_{1 \times 3} & 1						  
 				\end{bmatrix}
 		\end{equation}
-		where $^{F}_{F}\mathbf{R}^{}_{A}(t) \in \mathbf{SO}(3)$ is a rotation matrix, and the position $^{F}_{F}\mathbf{p}^{}_{A}(t) \in \mathbb{R}^3$.
+		where $^{F}_{F}\mathbf{R}^{}_{A}(t) \in \mathbf{SO}(3)$ is a rotation matrix, and $^{F}_{F}\mathbf{p}^{}_{A}(t) \in \mathbb{R}^3$ represents the position of the body defined in $\{F\}$.
 		
-		The linear and angular velocity of the body at time $t$ with respect to the inertial frame, defined in the body-fixed frame, is represented by the \textbf{twist} matrix ${^{A}_{F}\mathbf{T}^{}_{A}(t)} \in \mathfrak{se}(3)$,
+		The linear and angular velocity of the body at time $t$ with respect to $\{F\}$, defined in the body-fixed frame $\{A\}$ is represented by the \textbf{twist} matrix ${^{A}_{F}\mathbf{T}^{}_{A}(t)} \in \mathfrak{se}(3)$,
 		\begin{equation}
 				{^{A}_{F}\mathbf{T}^{}_{A}(t)} = 
 				\begin{bmatrix}
@@ -512,7 +511,7 @@
 		\end{equation}
 		where $^{A}_{F}\bm{\omega}^{}_{A}(t) \in \mathfrak{so}(3)$ is an angular velocity in the scaled-axis representation, and the linear velocity is $^{A}_{F}\mathbf{v}^{}_{A}(t) \in T\mathbb{R}^3 \equiv \mathbb{R}^3$.
 				
-		The linear and angular acceleration of the body at time $t$ with respect to the inertial frame, defined in the body-fixed frame, is represented by the \textbf{wrench} matrix ${^{A}_{F}\mathbf{W}^{}_{A}(t)} \in T\mathfrak{se}(3) \equiv \mathfrak{se}(3)$,
+		The linear and angular acceleration of the body at time $t$ with respect to $\{F\}$, defined in the body-fixed frame $\{A\}$, is represented by the \textbf{wrench} matrix ${^{A}_{F}\mathbf{W}^{}_{A}(t)} \in T\mathfrak{se}(3) \equiv \mathfrak{se}(3)$,
 		\begin{equation}
 				{^{A}_{F}\mathbf{W}^{}_{A}(t)} = 
 				\begin{bmatrix}
@@ -525,7 +524,7 @@
 		From this point on, frames will dropped in the notation. For a body labelled \textit{x} fixed to a frame $\{A\}$, ${^{F}_{F}\mathbf{S}^{}_{A}}$, ${^{A}_{F}\mathbf{T}^{}_{A}}$ and ${^{A}_{F}\mathbf{W}^{}_{A}}$ will be denoted $\mathbf{S}_x$, $\mathbf{T}_x$ and $\mathbf{W}_x$.
 						
 	\subsection{Rigid Body Kinematics} \label{kinematics}
-		The dynamics of the screw, twist and wrench matrices as they are defined in \ref{state rep} is governed by the following ordinary differential equations (ODEs),
+		The dynamics of the screw, twist and wrench matrices as they are defined in section \ref{state rep} are governed by the following ordinary differential equations (ODEs),
 		\begin{equation}
 			{\frac{\textnormal{d}}{\textnormal{d}t}} \mathbf{S}(t) =\mathbf{S}(t)\mathbf{T}(t)
 		\end{equation}		
@@ -538,11 +537,12 @@
 		where the function $\mathbf{f}(t)$ is known.
 		
 	\subsection{Scanning Laser Rangefinder Dynamic Model}
-		A scanning laser rangefinder fixed to a moving rigid body. Pose defined as moving rigid body defined above (S,T,W). State comprised of pose and scanning direction - Unit vector defined in the body fixed frame  - ${^{A}\mathbf{d}(t)} \in S^2$.
+		A scanning laser rangefinder is a sensor that measures the distance to the nearest object in a certain direction. Consider such a sensor fixed to a moving rigid body. The pose of the sensor $s$ is defined by $\mathbf{S}_s$, $\mathbf{T}_s$ and $\mathbf{W}_s$. The scanning direction of the sensor is a unit vector ${^{A}\mathbf{d}(t)} \in S^2$ defined in the body fixed frame $\{A\}$.	
 		
-		Provides measurement of range $r(t) \in \mathbb{R}^{0+}$, defining range from $^{F}_{F}\mathbf{p}^{}_{A}(t)$ to nearest object in environment in direction ${^{F}\mathbf{d}(t)} = {^{F}_{F}\mathbf{R}^{}_{A}(t)}\:{^{A}\mathbf{d}(t)}$
+		The sensor provides measurement of the range $r(t) \in \mathbb{R}^{0+}$ from $^{F}_{F}\mathbf{p}^{}_{A}(t)$ to the nearest object in the environment in the direction ${^{F}\mathbf{d}(t)} = {^{F}_{F}\mathbf{R}^{}_{A}(t)}\:{^{A}\mathbf{d}(t)}$.
 		
-		Scan direction in sensor frame depends on model of sensor, for Hokuyo UBG 04 LX-FO1 used in this research, model is shown in section \ref{sec:scanmodel}.
+		The function ${^{A}\mathbf{d}(t)}$ determines the scanning behaviour of the sensor and depends on the specific model used. The scanning model for the Hokuyo UBG-04LX-FO1 used in this research is provided in section \ref{sec:scanmodel}.
+		
 
 \section{State Observers} \label{sec:observerequations}
 -observer equations for nonlinear system\\
