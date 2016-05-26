@@ -140,6 +140,10 @@ N.~Zarrouati-Vissi{\`e}re, ``Augmented reality: the fusion of vision and
 J.~D. Adarve, D.~J. Austin, and R.~Mahony, ``A filtering approach for
   computation of real-time dense optical-flow for robotic applications.''
 
+\bibitem{luenberger1966observers}
+D.~G. Luenberger, ``Observers for multivariable systems,'' \emph{Automatic
+  Control, IEEE Transactions on}, vol.~11, no.~2, pp. 190--197, 1966.
+
 \bibitem{park2010characterization}
 C.-S. Park, D.~Kim, B.-J. You, and S.-R. Oh, ``Characterization of the hokuyo
   ubg-04lx-f01 2d laser rangefinder,'' in \emph{RO-MAN, 2010 IEEE}.\hskip 1em

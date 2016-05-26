@@ -545,27 +545,21 @@
 		
 
 \section{State Observers} \label{sec:observerequations}
-Consider a system ...
-Given known something, unknown something, an state observer is. 
--observer equations for nonlinear system\\
-PLANT - real system. often infinite dimensional.\\
-MODEL - simplified model of real system.\\
-OBSERVER - estimates state of MODEL\\
-plant/state x, output/measurement y, some systems can have input u\\
-nonlinear system:
-state governed by ODE
+An observer is a filter that is used to estimate the state of a dynamic system. The state $x$ can be chosen as some set of variables governed by the system. In real-world conditions, the system is often infinite-dimensional.
+
+The real system, known as the \textit{plant} is represented with a \textit{model}. In most cases, some simplification of the plant must be performed to produce the model.
+
+An observer provides an estimate $\hat{x}$ of the state $x \in \mathbb{R}^n$ of the model, given an output $y \in \mathbb{R}^m$ and a system input $u \in \mathbb{R}^p$. The dynamics of a nonlinear system are modelled with a nonlinear function $f$ of dimension $n$.
 \begin{equation}
 	\dot{x}(t) = f(x(t),u(t))
 \end{equation}
-measurement:
+The state output $y$ can also be conceptualised as a measurement of the state $x$, where the measurement function $g$ is of dimension m.
 \begin{equation}
 	y(t) = g(x(t),u(t))
 \end{equation}
-$$ x \in \mathbb{R}^n, y \in \mathbb{R}^m, u \in \mathbb{R}^p$$
-f,g nonlinear functions of dimension n,m respectively
-
 state estimate $\hat{x}$
 structure for nonlinear observer - something about Luenberger?
+This form of observer was developed by Luenberger \cite{luenberger1966observers}, and is often referred to as a \textit{Luenberger observer}.
 \begin{equation}
 	\dot{\hat{x}} = f(\hat{x},u(t)) + L(y(t)-\hat{y}(t))
 \end{equation}
@@ -581,7 +575,7 @@ L maps $\mathbb{R}^m$ to $\mathbb{R}^n$
 -mention symmetric preserving, infinite dimensional observers briefly
 dynamics invariant to some action of a Lie group $\mathbf{G}$, invariant observer has form
 \begin{equation}
-	\dot{\hat{x}} = f(\hat{x},u(t),y(t)-\hat{y}(t))
+	\dot{\hat{x}} = h(\hat{x},u(t),y(t)-\hat{y}(t))
 \end{equation}
-where function $f$ is also invariant to actions of $\mathbf{G}$.
+where function $h$ is also invariant to actions of $\mathbf{G}$.
 
