@@ -11,7 +11,7 @@ Section \ref{sensor_noise} details how measurements were taken to develop the no
 Section \ref{testingdata} describes how experimental range measurements were taken and how the ground truth cube state was determined. This work is still ongoing as the data must be calibrated before it can be used to assess the performance of the observer. 
 
 \section{Sensor Noise Characterisation} \label{sensor_noise}
-An accurate range sensor simulation must include a model for the error distribution of the measurements. A noise model for the Hokuyo UBG-04LX-F01 used in this research was developed in by Park et al. \cite{park2010characterization}. The effect of range and incidence angles on the error was measured, but a unified model combining both was not provided. Furthermore, this paper showed that the measurement error depends highly on the texture and colour of the surface measured. To accurately model the Hokuyo UBG-04LX-F01 for the usage case of this research, a wide range of measurements using a specific surface were taken to determine the effect of range and incidence angle on the error distribution.
+An accurate range sensor simulation must include a model for the error distribution of the measurements. A noise model for the Hokuyo UBG-04LX-F01 used in this research was developed in by Park et al. \cite{park2010characterization}. The effect of range and incidence angles on the error was measured, but a unified model combining both was not provided. Furthermore, \cite{park2010characterization} showed that the measurement error depends highly on the texture and colour of the surface measured. To accurately model the Hokuyo UBG-04LX-F01 for the usage case of this research, a wide range of measurements using a specific surface were taken to determine the effect of range and incidence angle on the error distribution.
 
 	\subsection{Measurement Setup}
 	A flat surface was painted matte white. The surface was placed perpendicular to the ground and at a known distance and angle with respect to the range sensor.
@@ -20,9 +20,7 @@ An accurate range sensor simulation must include a model for the error distribut
 	For this research, the cube is likely to be placed within 1.5m from the sensor and at any orientation. The range error distribution for these conditions should be measured. The distance from the sensor to the measurement surface was thus varied in 50mm increments between 250mm and 1750mm, to an accuracy of $\pm$1mm. At each of these ranges the incidence angles was varied in 20$^\circ$ increments from 0$^\circ$ to 80$^\circ$ to an accuracy of $\pm$0.5$^\circ$. The physical setup is shown in Figure \ref{fig:noise_setup}.
 		 
 	\subsection{Results}
-	Similar results to \cite{park2010characterization}. Difficult to get sensible readings at high angles, Gaussian distributed noise.
-		\textbf{Error distribution:}
-		Histograms (Figure \ref{fig:mean_hist}) - range error approximately normally distributed:
+		The difference between the measured ranges and ground truth was computed. The distributions of this error for varying ranges and angles is shown in Figure \ref{fig:mean_hist}. The range error is approximately normally distributed.
 		\begin{figure}
 		\centering
 		  \includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/range_error_histograms.jpg}
@@ -30,7 +28,8 @@ An accurate range sensor simulation must include a model for the error distribut
 		  \label{fig:mean_hist}
 		\end{figure}
 		
-		Mean range error as function of (range,incidence angle) - Figure \ref{fig:mean_range_error}
+		The mean range error as function of $r$ and $\theta$ is shown in Figure \ref{fig:mean_range_error}. Std dev range error as function of (range,incidence angle) - Figure \ref{fig:stddev_range_error}
+				
 		\begin{figure}
 	  		\centering
 	  		\subfigure[\label{fig:mean_range_error_outliers}]{
@@ -45,7 +44,6 @@ An accurate range sensor simulation must include a model for the error distribut
 	  		\label{fig:mean_range_error}
 		\end{figure}
 		
-		Std dev range error as function of (range,incidence angle) - Figure \ref{fig:stddev_range_error}		
 		\begin{figure}
 	  		\centering
 	  		\subfigure[\label{fig:stddev_range_error_outliers}]{
@@ -59,6 +57,10 @@ An accurate range sensor simulation must include a model for the error distribut
 	  		\caption{range error $\sigma$ vs $(r,\theta)$. (a) outliers/large std dev at high angles and range, (b) overall shape}
 	  		\label{fig:stddev_range_error}
 		\end{figure}
+		
+		*outliers ignored in model. if angle $>$ 75 deg and range $>$ 0.8m, range measurement = NaN. EXPLANATION: as angle increases, measured range becomes less than ground truth - due to beam width. part of beam hits part of object that is closer due to angle. However, as angle increases further, not enough light returns to make measurements. At high ranges and angles, measurement is not of object, but due to reflections that take much longer. Measurement ends up being near maximum range or even INF. Instead, will set as NaN - no value returned.
+		
+		Similar results to \cite{park2010characterization}. Difficult to get sensible readings at high angles, Gaussian distributed noise.
 		
 		Fitted 4th degree (in $x$ and $y$) polynomials to data points - Figure \ref{fig:surface_range_error}. INCLUDE FIT DATA
 		\begin{figure}
@@ -95,11 +97,9 @@ An accurate range sensor simulation must include a model for the error distribut
 			\end{aligned}
 		\end{equation}
 		
-		*outliers ignored in model. if angle $>$ 75 deg and range $>$ 0.8m, range measurement = NaN. EXPLANATION: as angle increases, measured range becomes less than ground truth - due to beam width. part of beam hits part of object that is closer due to angle. However, as angle increases further, not enough light returns to make measurements. At high ranges and angles, measurement is not of object, but due to reflections that take much longer. Measurement ends up being near maximum range or even INF. Instead, will set as NaN - no value returned.
-		
 		Coefficients in tables \ref{tab:noise_a} and \ref{tab:noise_b}
-		\input{Tables/tab_noise_coefficients_a}
-		\input{Tables/tab_noise_coefficients_b}
+				\input{Tables/tab_noise_coefficients_a}
+				\input{Tables/tab_noise_coefficients_b}	
 
 		\textbf{Surface noise:}
 		random walk model\\

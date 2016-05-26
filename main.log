@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  27 MAY 2016 07:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  27 MAY 2016 07:56
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -1108,7 +1108,7 @@ File: ./Figures/range_error_histograms.jpg Graphic file (type jpg)
 
 <use ./Figures/range_error_histograms.jpg>
 Package pdftex.def Info: ./Figures/range_error_histograms.jpg used on input lin
-e 28.
+e 26.
 (pdftex.def)             Requested size: 426.79135pt x 338.62236pt.
 
 <./Figures/noise_mean_range_error.jpg, id=315, 5576.835pt x 3468.96pt>
@@ -1116,7 +1116,7 @@ File: ./Figures/noise_mean_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/noise_mean_range_error.jpg>
 Package pdftex.def Info: ./Figures/noise_mean_range_error.jpg used on input lin
-e 39.
+e 38.
 (pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
 
 <./Figures/noise_mean_range_error_removed_outliers.jpg, id=317, 5576.835pt x 34
@@ -1125,7 +1125,7 @@ File: ./Figures/noise_mean_range_error_removed_outliers.jpg Graphic file (type
 jpg)
  <use ./Figures/noise_mean_range_error_removed_outliers.jpg>
 Package pdftex.def Info: ./Figures/noise_mean_range_error_removed_outliers.jpg 
-used on input line 43.
+used on input line 42.
 (pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
 
 <./Figures/noise_stddev_range_error.jpg, id=319, 5576.835pt x 3468.96pt>
@@ -1133,7 +1133,7 @@ File: ./Figures/noise_stddev_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/noise_stddev_range_error.jpg>
 Package pdftex.def Info: ./Figures/noise_stddev_range_error.jpg used on input l
-ine 54.
+ine 52.
 (pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
 
 <./Figures/noise_stddev_range_error_removed_outliers.jpg, id=321, 5576.835pt x 
@@ -1142,28 +1142,8 @@ File: ./Figures/noise_stddev_range_error_removed_outliers.jpg Graphic file (typ
 e jpg)
  <use ./Figures/noise_stddev_range_error_removed_outliers.jpg>
 Package pdftex.def Info: ./Figures/noise_stddev_range_error_removed_outliers.jp
-g used on input line 58.
+g used on input line 56.
 (pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
-
-<./Figures/surface_mean_range_error.jpg, id=323, 5576.835pt x 3468.96pt>
-File: ./Figures/surface_mean_range_error.jpg Graphic file (type jpg)
-
-<use ./Figures/surface_mean_range_error.jpg>
-Package pdftex.def Info: ./Figures/surface_mean_range_error.jpg used on input l
-ine 69.
-(pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
-
-<./Figures/surface_stddev_range_error.jpg, id=325, 5576.835pt x 3468.96pt>
-File: ./Figures/surface_stddev_range_error.jpg Graphic file (type jpg)
-
-<use ./Figures/surface_stddev_range_error.jpg>
-Package pdftex.def Info: ./Figures/surface_stddev_range_error.jpg used on input
- line 73.
-(pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
-
- []
 
 [62
 
@@ -1171,6 +1151,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--79
 rror_histograms.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/
 Figures/noise_mean_range_error.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/E
 NGN4718/Report/Figures/noise_mean_range_error_removed_outliers.jpg>]
+<./Figures/surface_mean_range_error.jpg, id=332, 5576.835pt x 3468.96pt>
+File: ./Figures/surface_mean_range_error.jpg Graphic file (type jpg)
+
+<use ./Figures/surface_mean_range_error.jpg>
+Package pdftex.def Info: ./Figures/surface_mean_range_error.jpg used on input l
+ine 71.
+(pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
+
+<./Figures/surface_stddev_range_error.jpg, id=334, 5576.835pt x 3468.96pt>
+File: ./Figures/surface_stddev_range_error.jpg Graphic file (type jpg)
+
+<use ./Figures/surface_stddev_range_error.jpg>
+Package pdftex.def Info: ./Figures/surface_stddev_range_error.jpg used on input
+ line 75.
+(pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
 [64 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/noise_std
 dev_range_error.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/
 Figures/noise_stddev_range_error_removed_outliers.jpg> <C:/Users/Monty Abello/D
@@ -1297,7 +1297,7 @@ i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (82 pages, 21441577 bytes).
+Output written on main.pdf (82 pages, 21441757 bytes).
 PDF statistics:
  461 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
