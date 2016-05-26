@@ -26,8 +26,7 @@ The frames used to describe the motion of the rigid bodies in this problem are:
 \item $\{B\}$ - the frame fixed to the cube. The origin of $\{B\}$ coincides with the centre of the cube and is aligned so that each axis intersects with the centre of a face of the cube. The transformation from $\{F\}$ to $\{B\}$ at time $t$ is defined by the screw matrix of the cube $\mathbf{S}_{c}(t)$.
 \end{itemize} 
 
-The sensor provides measurements of the range $r$ to the nearest object from the sensor (either the cube or the background) in the direction $\mathbf{d}(t)$. 
-The state of the sensor $\mathbf{X}_{s}(t)$ is defined as:
+The sensor provides measurements of the range $r$ to the nearest object from the sensor (either the cube or the background) in the direction $\mathbf{d}(t)$. These measurements can be considered sparse because the distance to just a single point is returned at each time step. The state of the sensor $\mathbf{X}_{s}(t)$ is defined as:
 \begin{equation}
 	\mathbf{X}_{s}(t) = 
 	\{{^{F}_{F}\mathbf{S}^{}_{A}(t)},{^{A}_{F}\mathbf{T}^{}_{A}(t)},{^{A}_{F}\mathbf{W}^{}_{A}(t)},
@@ -76,9 +75,9 @@ The observer implementation will be considered successful if it is able to conve
 \section{Deliverables}
 The project deliverables are:
 \begin{itemize}
-\item sensor/body simulation
-\item observer design
-\item observer software implementation
-\item experimental validation
-\item present research in report and presentation
+\item implement a toolbox to simulate range measurements of rigid bodies;
+\item design an observer to estimate cube state from sparse range measurements;
+\item produce and test a software implementation of the observer;
+\item validate the observer performance by collecting experimental data;
+\item present the research in a report and presentation.
 \end{itemize}
