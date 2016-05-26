@@ -3,13 +3,15 @@ Context - research into infinite dimensional, symmetry preserving observers.
 
 Goals:
 	are to explore aspects of this research. 
-	Dense sensor. See if sparse sensor can be used as dense sensor.
+	Dense sensors useful. See if sparse sensor can be used as dense sensor.
 	see where this research can improve
 
 Approach: 
 	solve simplified, problem
-	early lumping - represent infinite dimensional system as finite dimensional
-	still taking infinite dimensional measurements - similar to Adarve \cite{adarvefiltering}.
+	simplification - state variable to be estimated is finite dimensional.
+	observer is a finite dimensional observer.
+	innovation term not necessarily invariant - will leave that to future work. First see what kind of innovation terms work
+	still taking measurements of an infinite dimensional system - similar to Adarve - though represented discretely for computational load. However, does not make a difference to observer. Observer doesn't know background is a single rigid body. Could be anything. \cite{adarvefiltering}.
 
 \textbf{estimation problem - cube pose \& size:}\\
 \input{Figures/fig_cubeproblem}

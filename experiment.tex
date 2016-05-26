@@ -140,12 +140,13 @@ motivation - accurate noise model for simulation. In \cite{park2010characterizat
 		configurations/motions: \\
 			-stationary\\
 			-rotating\\
-			-translating\\
-			(all above with 1,2,3 faces visible to sensor)
-					
+			-translating\\					
 		arm forward kinematics $\rightarrow$ cube pose\\
 		estimate sensor angle with horizontal with wall calibration data		
 		
 	\subsection{Results}
-		observer performance
+		still need to calibrate data.
+		However, prediction is observer wont work. First, neither range or continuity assumptions will hold - gripper hold cube will mess with things. Lots of noise.
+		Likely will need an infinite dimensional observer, estimate entire depth field. Need symmetry to get robust convergence.
+		Still, data is available for future research.
 
