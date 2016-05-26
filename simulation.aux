@@ -74,7 +74,7 @@
 \newlabel{sub@fig:angle_error_1_rotating_screw_noise}{{(c)}{54}}
 \newlabel{fig:angle_error_1_rotating_twist_noise}{{4.9(d)}{54}}
 \newlabel{sub@fig:angle_error_1_rotating_twist_noise}{{(d)}{54}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Angle error for noiseless measurements of cube rotating with angular velocity of approximately $0.0327$ rad/s. Orientation update applied via (a) screw matrix and (b) twist matrix. Angle error for noisy measurements of cube rotating with angular velocity of approximately $0.0327$ rad/s. Orientation update applied via (c) screw matrix and (d) twist matrix}}{54}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Angle error when cube rotating with angular velocity of approximately $0.0327$ rad/s such that 3 faces visible to sensor. Noiseless measurements used to update orientation via (a) screw matrix and (b) twist matrix. Noisy measurements used to update orientation via (c) screw matrix and (d) twist matrix.}}{54}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{54}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{54}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{54}}
@@ -86,17 +86,17 @@
 \newlabel{sub@fig:position_error_2_stationary_1F_noise}{{(b)}{55}}
 \newlabel{fig:position_error_3_stationary_1F_noise}{{4.10(c)}{55}}
 \newlabel{sub@fig:position_error_3_stationary_1F_noise}{{(c)}{55}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces 1 face visible. stationary. Performance of position update depends . (a) no noise. For noise set gain same as (a) in (b) - innovation term too large and affected by noise. Unstable. Reduced scale factor (c) results in convergence to noise floor.}}{55}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces Position error for stationary cube with single face visible to sensor. Position error (a) converges quickly for noiseless measurements when $p_{scale}=0.01$. Position error (b) is unstable for noisy measurements if $p_{scale}=0.01$. Position error (c) convergences to noise floor for noisy measurements when $p_{scale}=0.001$.}}{55}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{55}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{55}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{55}}
 \newlabel{fig:position_update_1F}{{4.10}{55}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces  For 2 faces visible (d), corners cause problem with update direction. Does not converge. }}{55}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces Position error for stationary cube with 2 faces visible to sensor}}{55}}
 \newlabel{fig:position_error_4_stationary_2F}{{4.11}{55}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Position correction}{55}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces Ratio of size error to ground truth plotted. Converges to noise floor for stationary cube with noise, 3 faces visible (a).}}{56}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.12}{\ignorespaces For noisy measurements of stationary cube with 3 faces visible to sensor, size error ratio converges to noise floor}}{56}}
 \newlabel{fig:size_stationary}{{4.12}{56}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces  For cube rotating at $0.0327$ and translating at $0.0094$ m/s , estimate given correct trajectory, size estimate converges to noise floor.}}{56}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.13}{\ignorespaces For noisy measurements of cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces visible to sensor, size error ratio converges to noise floor.}}{56}}
 \newlabel{fig:size_RT_noise}{{4.13}{56}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}Size correction}{56}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Orientation and size}{56}}
@@ -104,7 +104,7 @@
 \newlabel{sub@fig:OxS_1_stationary_angle}{{(a)}{57}}
 \newlabel{fig:OxS_1_stationary_size}{{4.14(b)}{57}}
 \newlabel{sub@fig:OxS_1_stationary_size}{{(b)}{57}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces orientation and size correction - all 3 faces visible in all cases. (a),(b) stationary cube, estimate orientation and size. converges to noise floor.}}{57}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.14}{\ignorespaces For noisy measurements of stationary cube with 3 faces visible to sensor, angle error (a) and size error ratio (b) both converge to noise floor.}}{57}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{57}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{57}}
 \newlabel{fig:orientation_size_stationary}{{4.14}{57}}
@@ -116,7 +116,7 @@
 \newlabel{sub@fig:OxS_3_rotating_twist_angle}{{(c)}{57}}
 \newlabel{fig:OxS_3_rotating_twist_size}{{4.15(d)}{57}}
 \newlabel{sub@fig:OxS_3_rotating_twist_size}{{(d)}{57}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces (a),(b) - rotating and update via screw. tracks orientation reasonably well but jagged. Size easy. (c) and (d) update via twist. smoother but over shoots. }}{57}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.15}{\ignorespaces Noiseless measurements of cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces visible to sensor. Angle error (a) and size error ratio (b) when orientation updated via screw. Angle error (c) and size error ratio (d) when orientation updated via wrench.}}{57}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{57}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{57}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {}}}{57}}
@@ -126,7 +126,7 @@
 \newlabel{sub@fig:tetraherdron_angle}{{(a)}{58}}
 \newlabel{fig:tetrahedron_size}{{4.16(b)}{58}}
 \newlabel{sub@fig:tetrahedron_size}{{(b)}{58}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces tetrahedron angle and size}}{58}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.16}{\ignorespaces Angle error (a) and size error ratio (b) for noiseless measurements of tetrahedron of side length $s = 0.5$m}}{58}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {}}}{58}}
 \@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {}}}{58}}
 \newlabel{fig:tetrahedron}{{4.16}{58}}

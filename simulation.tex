@@ -620,7 +620,7 @@ Figure \ref{fig:angle_error_1_rotating_twist} - noisy, rotating. Updated orienta
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/angle_error_6_rotating_twist_noise}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{Angle error for noiseless measurements of cube rotating with angular velocity of approximately  $0.0327$ rad/s. Orientation update applied via (a) screw matrix and (b) twist matrix. Angle error for noisy measurements of cube rotating with angular velocity of approximately  $0.0327$ rad/s. Orientation update applied via (c) screw matrix and (d) twist matrix}
+ 	\caption{Angle error when cube rotating with angular velocity of approximately $0.0327$ rad/s such that 3 faces visible to sensor. Noiseless measurements used to update orientation via (a) screw matrix and (b) twist matrix. Noisy measurements used to update orientation via (c) screw matrix and (d) twist matrix.}
  	\label{fig:angle_error_rotating}
 \end{figure}
 
@@ -647,14 +647,14 @@ Requires perpendicular - multiple faces and edges mean update position vector po
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_3_stationary_1F_noise}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{1 face visible. stationary. Performance of position update depends . (a) no noise. For noise set gain same as (a) in (b) - innovation term too large and affected by noise. Unstable. Reduced scale factor (c) results in convergence to noise floor.}
+ 	\caption{Position error for stationary cube with single face visible to sensor. Position error (a) converges quickly for noiseless measurements when $p_{scale}=0.01$. Position error (b) is unstable for noisy measurements if $p_{scale}=0.01$. Position error (c) convergences to noise floor for noisy measurements when $p_{scale}=0.001$.}
  	\label{fig:position_update_1F}
 \end{figure}
 
 \begin{figure}
 \centering
 	\includegraphics[width=0.45\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_4_stationary_2F}\vspace*{0ex}
-	\caption{ For 2 faces visible (d), corners cause problem with update direction. Does not converge. }
+	\caption{Position error for stationary cube with 2 faces visible to sensor}
   	\label{fig:position_error_4_stationary_2F}
 \end{figure}
 
@@ -667,14 +667,14 @@ Figure \ref{fig:size_RT_noise}  - noise, rotating + translating - size correctio
 \begin{figure}
 	\centering
   	\includegraphics[width=0.45\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/size_error_ratio_1}\vspace*{0ex}
-	\caption{Ratio of size error to ground truth plotted. Converges to noise floor for stationary cube with noise, 3 faces visible (a).}
+	\caption{For noisy measurements of stationary cube with 3 faces visible to sensor, size error ratio converges to noise floor}
   	\label{fig:size_stationary}
 \end{figure}
 
 \begin{figure}
 	\centering
   	\includegraphics[width=0.45\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/size_error_ratio_2_RT_noise}\vspace*{0ex}
-	\caption{ For cube rotating at $0.0327$ and translating at $0.0094$ m/s , estimate given correct trajectory, size estimate converges to noise floor.}
+	\caption{For noisy measurements of cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces visible to sensor, size error ratio converges to noise floor.}
   	\label{fig:size_RT_noise}
 \end{figure}
 
@@ -695,7 +695,7 @@ Figure \ref{fig:OxS_3_rotating_twist_angle},\ref{fig:OxS_3_rotating_twist_size} 
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/OxS_1_stationary_size}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{orientation and size correction - all 3 faces visible in all cases. (a),(b) stationary cube, estimate orientation and size. converges to noise floor.}
+ 	\caption{For noisy measurements of stationary cube with 3 faces visible to sensor, angle error (a) and size error ratio (b) both converge to noise floor.}
  	\label{fig:orientation_size_stationary}
 \end{figure} 	
  
@@ -717,7 +717,7 @@ Figure \ref{fig:OxS_3_rotating_twist_angle},\ref{fig:OxS_3_rotating_twist_size} 
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/OxS_3_rotating_twist_size}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{(a),(b) - rotating and update via screw. tracks orientation reasonably well but jagged. Size easy. (c) and (d) update via twist. smoother but over shoots. }
+ 	\caption{Noiseless measurements of cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces visible to sensor. Angle error (a) and size error ratio (b) when orientation updated via screw. Angle error (c) and size error ratio (d) when orientation updated via wrench.}
  	\label{fig:orientation_size_rotating}
 \end{figure}
 
@@ -735,8 +735,12 @@ Observer does not rely on cube shape. Replaced cube with tetrahedron, still work
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/tetrahedron_size_error_ratio}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{tetrahedron angle and size}
+ 	\caption{Angle error (a) and size error ratio (b) for noiseless measurements of tetrahedron of side length $s = 0.5$m}
  	\label{fig:tetrahedron}
 \end{figure}
 
 Seems to be a good approach. To improve, need to fix position. Also, overshoot when adjusting via twist matrix. Twist needs very fine tuning. Instead, do some combination of screw and twist to maximise speed, minimise overshoot.
+
+To get position to work with more than 1 face, instead of using 4 points, compute some moving centre of mass of predicted, measured. update in that direction.
+
+To get position to work with orientation - symmetry preserving innovation term
