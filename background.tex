@@ -545,6 +545,8 @@
 		
 
 \section{State Observers} \label{sec:observerequations}
+Consider a system ...
+Given known something, unknown something, an state observer is. 
 -observer equations for nonlinear system\\
 PLANT - real system. often infinite dimensional.\\
 MODEL - simplified model of real system.\\
@@ -563,7 +565,7 @@ $$ x \in \mathbb{R}^n, y \in \mathbb{R}^m, u \in \mathbb{R}^p$$
 f,g nonlinear functions of dimension n,m respectively
 
 state estimate $\hat{x}$
-structure for nonlinear observer
+structure for nonlinear observer - something about Luenberger?
 \begin{equation}
 	\dot{\hat{x}} = f(\hat{x},u(t)) + L(y(t)-\hat{y}(t))
 \end{equation}
@@ -577,3 +579,9 @@ L maps $\mathbb{R}^m$ to $\mathbb{R}^n$
 
 -mention observability?
 -mention symmetric preserving, infinite dimensional observers briefly
+dynamics invariant to some action of a Lie group $\mathbf{G}$, invariant observer has form
+\begin{equation}
+	\dot{\hat{x}} = f(\hat{x},u(t),y(t)-\hat{y}(t))
+\end{equation}
+where function $f$ is also invariant to actions of $\mathbf{G}$.
+
