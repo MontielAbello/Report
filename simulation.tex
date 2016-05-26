@@ -662,7 +662,7 @@ However, case 1 will be required when there is nonzero position error, since a s
 Figure \ref{fig:size_stationary} shows the ratio of the size error and ground truth size (size error ratio) converges to 0 for noisy measurements of a stationary cube where 3 faces are visible to the sensor. 
 In Figure \ref{fig:size_RT_noise}, noisy measurements were taken of a cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces were visible to the sensor. The ground truth twist was given as the initial twist estimate to allow the predicted cube to match the motion of the ground truth cube. In this case, the size error ratio still converged to the noise floor.
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
   	\includegraphics[width=0.45\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/size_error_ratio_1}\vspace*{0ex}
 	\caption{For noisy measurements of a stationary cube with 3 faces visible to the sensor, the size error ratio converges to the noise floor}
@@ -719,11 +719,15 @@ Because the convergence of the size error ratio is so rapid, the performance of 
 \end{figure}
 
 \subsection{Discussion}
-Size most robust, then orientation, then position. When combining, performance limited by less robust update.
+Size converges globally always. Orientation converges globally for stationary cubes only. Position only works in special case. Size most robust, then orientation, then position. When combining, performance limited by less robust update function.
 
-\textbf{MENTION: control theory solution - feed forward control. anticipate overshoot, correct before it occurs. FUTURE WORK - DEVELOP OBSERVER THEORY ANALOGUE}
+Though updating via twist gives smoother estimation, results in overshoot. Error grows so twist increases to compensate, increases too far due to delay in result. In control theory, this is solved with feed forward control - anticipate overshoot, correct before it occurs. FUTURE WORK - DEVELOP OBSERVER THEORY ANALOGUE. A possible start would be to investigate combinations of screw and twist update - gain responsiveness of screw and smoothness of twist update. 
 
-Observer does not rely on cube shape. Replaced cube with tetrahedron, still works. Figure \ref{fig:tetrahedron}.
+The initial design showed that the size and orientation updates seem to be a good approach. To improve, need to fix position. To get position to work with more than 1 face, instead of using 4 points, compute some moving centre of mass of predicted, measured. update in that direction.
+
+Once position works alone, next step is to get position to work with orientation - symmetry preserving innovation term
+
+Interesting - Observer does not rely on cube shape. Replaced cube with tetrahedron, still works. Figure \ref{fig:tetrahedron}. 
 \begin{figure}
 \centering
  	\subfigure[\label{fig:tetraherdron_angle}]{
@@ -737,9 +741,3 @@ Observer does not rely on cube shape. Replaced cube with tetrahedron, still work
  	\caption{Angle error (a) and size error ratio (b) for noiseless measurements of tetrahedron of side length $s = 0.5$m}
  	\label{fig:tetrahedron}
 \end{figure}
-
-Seems to be a good approach. To improve, need to fix position. Also, overshoot when adjusting via twist matrix. Twist needs very fine tuning. Instead, do some combination of screw and twist to maximise speed, minimise overshoot.
-
-To get position to work with more than 1 face, instead of using 4 points, compute some moving centre of mass of predicted, measured. update in that direction.
-
-To get position to work with orientation - symmetry preserving innovation term

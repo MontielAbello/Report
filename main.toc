@@ -67,7 +67,7 @@
 \contentsline {subsection}{\numberline {4.2.2}Position correction}{55}
 \contentsline {subsection}{\numberline {4.2.3}Size correction}{56}
 \contentsline {subsection}{\numberline {4.2.4}Orientation and size correction}{57}
-\contentsline {subsection}{\numberline {4.2.5}discussion}{57}
+\contentsline {subsection}{\numberline {4.2.5}Discussion}{57}
 \contentsline {chapter}{\numberline {5}Experiment}{60}
 \contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{61}
 \contentsline {subsection}{\numberline {5.1.1}Setup}{61}
