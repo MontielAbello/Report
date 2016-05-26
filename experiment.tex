@@ -4,21 +4,20 @@ In order to validate the performance of the observer implementation, experimenta
 Measurements were taken to:
 \begin{itemize}
 \item build a model of the noise characteristics of the Hokuyo UBG-04LX-F01 in order to more accurately simulate the performance of the observer;
-\item observe the motion of a moving cube of known state to test the observer in real world conditions.
+\item observe the motion of a moving cube of known state to test the observer in real-world conditions.
 \end{itemize}
 
-Section \ref{sensor_noise} details how measurements were taken - noise model 
-Section \ref{testingdata} describes ongoing work. How data was collected, processed - how it can be used. 
+Section \ref{sensor_noise} details how measurements were taken to develop the noise model.
+Section \ref{testingdata} describes how experimental range measurements were taken and how the ground truth cube state was determined. This work is still ongoing as the data must be calibrated before it can be used to assess the performance of the observer. 
 
 \section{Sensor Noise Characterisation} \label{sensor_noise}
-motivation - accurate noise model for simulation. In \cite{park2010characterization}, noise characterised but no unified model for range and angle. Furthermore, significant effect from surface colour, texture. Better to develop model for specific case - more accurate practical testing in the future.
+An accurate range sensor simulation must include a model for the error distribution of the measurements. A noise model for the Hokuyo UBG-04LX-F01 used in this research was developed in by Park et al. \cite{park2010characterization}. The effect of range and incidence angles on the error was measured, but a unified model combining both was not provided. Furthermore, this paper showed that the measurement error depends highly on the texture and colour of the surface measured. To accurately model the Hokuyo UBG-04LX-F01 for the usage case of this research, a wide range of measurements using a specific surface were taken to determine the effect of range and incidence angle on the error distribution.
 
-	\subsection{Setup}
-		\textbf{physical setup:} see \ref{fig:noise_setup}\\
-		\textbf{error:} distance +/- 1mm, angle, +/- 0.5 degrees
-		\textbf{measurement configurations:}\\
-			-5cm increments from 0.25-1.75m\\
-			-vary incidence angle: 0,20,40,60,80 degrees
+	\subsection{Measurement Setup}
+	A flat surface was painted matte white. The surface was placed perpendicular to the ground and at a known distance and angle with respect to the range sensor.
+	1200 samples of the measured distance to the surface were taken.
+	
+	For this research, the cube is likely to be placed within 1.5m from the sensor and at any orientation. The range error distribution for these conditions should be measured. The distance from the sensor to the measurement surface was thus varied in 50mm increments between 250mm and 1750mm, to an accuracy of $\pm$1mm. At each of these ranges the incidence angles was varied in 20$^\circ$ increments from 0$^\circ$ to 80$^\circ$ to an accuracy of $\pm$0.5$^\circ$. The physical setup is shown in Figure \ref{fig:noise_setup}.
 		 
 	\subsection{Results}
 	Similar results to \cite{park2010characterization}. Difficult to get sensible readings at high angles, Gaussian distributed noise.
