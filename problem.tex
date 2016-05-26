@@ -65,21 +65,20 @@ The aim is to design a nonlinear observer function $f$ which estimates the state
 	\hat{\mathbf{X}}_{c}(k+1) = f(\mathbf{X}_{s}(t),\hat{\mathbf{X}}_{c}(k),\tilde{r}(t),\hat{r}(t))
 \end{equation}
 
-This observer formulation differs from that provided in equation \ref{eq:observerfunction} in that $\tilde{r}$ and $\hat{r}$ are provided as separate inputs. Though a true Luenberger observer is driven by the output difference $\tilde{r} - \hat{r}$, such a scheme is not possible due to the way the problem has been simplified. 
+This observer formulation differs from that provided in equation \ref{eq:observerfunction} in that no state input is present in the system and more importantly, $\tilde{r}$ and $\hat{r}$ are provided as separate terms. Though a true Luenberger observer is driven by the output difference $\tilde{r} - \hat{r}$, such a scheme is not possible due to the way the problem has been simplified. Since range measurements corresponding to the background are discarded, the term $\tilde{r} - \hat{r}$ is undefined unless both ranges correspond to the cube. Such a limitation would make correcting differences in position and size particularly difficult.
 
+A simulation toolbox will be implemented to simulate range measurements of rigid bodies using a scanning range sensor. The observer implementation will be implemented and its performance tested under a range of conditions. 
 
-\textbf{*RELATE THIS TO BACKGROUND ON OBSERVERS:}\\
--no input, nonlinear system
--state to estimate: state of cube
--measurement: range, also relates to state of sensor
-can also think of this as state to estimate is relative state between sensor, cube
-Successful IF converges in local neighbourhood - since not invariant, don't expect global convergence.
-TO IMPLEMENT - WILL DESIGN SIMULATION + DO EXPERIMENTAL VALIDATION
--innovation based on prediction and measured ranges SEPARATELY - this is because only trying to observe cube, ignoring environment. infinite dimensional observer would attempt to estimate infinite dimensional depth field, which is a function on sphere which returns depth - continuous. Instead uses knowledge of environment to filter it out. thus, necessary to have separate measurements, or would only be able to apply innovations when both visible - no solution in this case - couldn't correct size\\
+Experimental validation will be performed by taking range measurements of a known environment using the Hokuyo UBG-04LX-FO1 scanning laser rangefinder. These measurements will be used to quantify the performance of the observer under real-world conditions.
 
-\textbf{deliverables:} \\
-sensor/body simulation
-observer design
-observer implementation
-experimental validation
+The observer implementation will be considered successful if it is able to converges to the true cube state around a local neighbourhood. Since an invariant observer is not being implemented, global convergence is not expected.
 
+\section{Deliverables}
+The project deliverables are:
+\begin{itemize}
+\item sensor/body simulation
+\item observer design
+\item observer software implementation
+\item experimental validation
+\item present research in report and presentation
+\end{itemize}
