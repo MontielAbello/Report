@@ -657,27 +657,27 @@ This occurs when the observer attempts to align the cube state estimate with the
 \end{figure}
 
 \subsection{Size correction}
-\textbf{PUT 2 SIZE FIGURES IN SINGLE FIGURE}
-works for stationary and moving, noise and no noise, 1,2,3 faces\\
-Figure \ref{fig:size_stationary}  - noise, stationary, 3F visible - size correction\\
-Figure \ref{fig:size_RT_noise}  - noise, rotating + translating - size correction\\
+The size correction function is extremely robust, able to globally converge to 0. The speed of the convergence suggests that the correction is dominated by case 2 of the size update function. This update scheme uses the mean range difference effectively measure the size difference. On the other hand, case 1 relies on the rarer occurrence of misaligned edges between the prediction and ground truth being observed to determine.
+However, case 1 will be required when there is nonzero position error, since a situation may arise where a combination of position and size error means that the predicted and ground truth cube faces lie the same distance from the sensor.
+Figure \ref{fig:size_stationary} shows the ratio of the size error and ground truth size (size error ratio) converges to 0 for noisy measurements of a stationary cube where 3 faces are visible to the sensor. 
+In Figure \ref{fig:size_RT_noise}, noisy measurements were taken of a cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces were visible to the sensor. The ground truth twist was given as the initial twist estimate to allow the predicted cube to match the motion of the ground truth cube. In this case, the size error ratio still converged to the noise floor.
 
 \begin{figure}
 	\centering
   	\includegraphics[width=0.45\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/size_error_ratio_1}\vspace*{0ex}
-	\caption{For noisy measurements of stationary cube with 3 faces visible to sensor, size error ratio converges to noise floor}
+	\caption{For noisy measurements of a stationary cube with 3 faces visible to the sensor, the size error ratio converges to the noise floor}
   	\label{fig:size_stationary}
 \end{figure}
 
 \begin{figure}
 	\centering
   	\includegraphics[width=0.45\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/size_error_ratio_2_RT_noise}\vspace*{0ex}
-	\caption{For noisy measurements of cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces visible to sensor, size error ratio converges to noise floor.}
+	\caption{For noisy measurements of a cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces are visible to the sensor, the size error ratio converges to the noise floor}
   	\label{fig:size_RT_noise}
 \end{figure}
 
-\subsection{Orientation and size}      
-works in same cases orientation alone works\\
+\subsection{Orientation and size correction}      
+Because the convergence of the size error ratio is so rapid, the performance of the observer when correcting both orientation and size is limited only by the effectiveness of the orientation update.
 Figure \ref{fig:orientation_size_stationary},:stationary, noisy, orientation \& size works (results 9).\\
 Figure \ref{fig:orientation_size_rotating}
 Figure \ref{fig:OxS_2_rotating_angle},\ref{fig:OxS_2_rotating_size} - rotating, no noise, orientation updated via screw, size updated as normal. \\ 
@@ -715,7 +715,7 @@ Figure \ref{fig:OxS_3_rotating_twist_angle},\ref{fig:OxS_3_rotating_twist_size} 
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/OxS_3_rotating_twist_size}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{Noiseless measurements of cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces visible to sensor. Angle error (a) and size error ratio (b) when orientation updated via screw. Angle error (c) and size error ratio (d) when orientation updated via wrench.}
+ 	\caption{Noiseless measurements of cube rotating at $0.0327$ rad/s such that 3 faces visible to sensor. Angle error (a) and size error ratio (b) when orientation updated via screw. Angle error (c) and size error ratio (d) when orientation updated via wrench.}
  	\label{fig:orientation_size_rotating}
 \end{figure}
 
