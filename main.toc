@@ -66,15 +66,15 @@
 \contentsline {subsection}{\numberline {4.2.1}testing scheme? think of a title...}{53}
 \contentsline {subsection}{\numberline {4.2.2}Orientation correction}{53}
 \contentsline {subsection}{\numberline {4.2.3}Position correction}{53}
-\contentsline {subsection}{\numberline {4.2.4}Size correction}{63}
-\contentsline {subsection}{\numberline {4.2.5}Orientation and size}{63}
-\contentsline {subsection}{\numberline {4.2.6}effect of initial conditions}{68}
-\contentsline {subsection}{\numberline {4.2.7}discussion}{68}
-\contentsline {chapter}{\numberline {5}Experiment}{69}
-\contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{70}
-\contentsline {subsection}{\numberline {5.1.1}Setup}{70}
-\contentsline {subsection}{\numberline {5.1.2}Results}{70}
-\contentsline {section}{\numberline {5.2}Testing Data Collection}{75}
-\contentsline {subsection}{\numberline {5.2.1}Setup}{75}
-\contentsline {subsection}{\numberline {5.2.2}Results}{75}
-\contentsline {chapter}{\numberline {6}Conclusion}{76}
+\contentsline {subsection}{\numberline {4.2.4}Size correction}{60}
+\contentsline {subsection}{\numberline {4.2.5}Orientation and size}{60}
+\contentsline {subsection}{\numberline {4.2.6}effect of initial conditions}{65}
+\contentsline {subsection}{\numberline {4.2.7}discussion}{65}
+\contentsline {chapter}{\numberline {5}Experiment}{68}
+\contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{69}
+\contentsline {subsection}{\numberline {5.1.1}Setup}{69}
+\contentsline {subsection}{\numberline {5.1.2}Results}{69}
+\contentsline {section}{\numberline {5.2}Testing Data Collection}{74}
+\contentsline {subsection}{\numberline {5.2.1}Setup}{74}
+\contentsline {subsection}{\numberline {5.2.2}Results}{74}
+\contentsline {chapter}{\numberline {6}Conclusion}{75}

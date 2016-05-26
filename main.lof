@@ -9,9 +9,9 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Cube modelled with ordered set of points and corresponding triangles}}{40}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Ray-triangle intersection}}{41}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Orientation update}}{46}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Position update}}{49}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Size update - case 1}}{51}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Size update - case 2}}{52}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Position update}}{48}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Size update - case 1}}{50}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Size update - case 2}}{51}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Orientation correction - no noise}}{54}
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Orientation correction - noise}}{55}
 \contentsline {figure}{\numberline {4.10}{\ignorespaces rotating - Orientation correction via screw - no noise}}{56}
@@ -26,19 +26,19 @@
 \contentsline {figure}{\numberline {4.19}{\ignorespaces stationary with noise, 3 faces visible - orientation and size correction}}{65}
 \contentsline {figure}{\numberline {4.20}{\ignorespaces rotating with no noise, 3 faces visible - orientation (via screw) and size correction}}{66}
 \contentsline {figure}{\numberline {4.21}{\ignorespaces rotating with no noise, 3 faces visible - orientation (via twist) and size correction}}{67}
-\contentsline {figure}{\numberline {4.22}{\ignorespaces Tetrahedron: orientation \& size correction}}{68}
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Tetrahedron: orientation \& size correction}}{67}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces $r_{error}(r,\theta )$ approximately normally distributed}}{71}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces mean range error vs $(r,\theta )$. (a) large error at high angles and range, (b) overall shape}}{71}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces $r_{error}(r,\theta )$ approximately normally distributed}}{70}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces mean range error vs $(r,\theta )$. (a) large error at high angles and range, (b) overall shape}}{70}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{70}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{70}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces range error $\sigma $ vs $(r,\theta )$. (a) outliers/large std dev at high angles and range, (b) overall shape}}{71}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{71}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{71}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces range error $\sigma $ vs $(r,\theta )$. (a) outliers/large std dev at high angles and range, (b) overall shape}}{72}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{72}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{72}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces polynomials fitted to range error mean \& standard deviation data points to model noise}}{72}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{72}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{72}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparision of (a) measured and (b) simulated surface noise}}{74}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{74}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{74}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces polynomials fitted to range error mean \& standard deviation data points to model noise}}{71}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{71}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{71}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparision of (a) measured and (b) simulated surface noise}}{73}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{73}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{73}
 \addvspace {10\p@ }

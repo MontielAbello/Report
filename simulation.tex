@@ -581,6 +581,8 @@ tested stationary, rotating, translating, rotating \& translating for cases wher
 Would take too long to perform exhaustive analysis of solution space, testing all the parameters. Instead, will present key results...
 
 \subsection{Orientation correction}
+\textbf{PUT ALL 6 ANGLE ERROR PLOTS IN A SINGLE 3x2 BLOCK}
+
 stationary - converges for no noise Figure \ref{fig:error_orientation}.\\
 Doesn't converge to 0 due to noise, but still stable. \textbf{THIS DUE TO NOISE FLOOR - INVESTIGATE IF THERE IS TIME - REDUCE NOISE AND SEE IF IT GETS CLOSER} Figure \ref{fig:error_orientation_noise}.\\
 
@@ -627,6 +629,7 @@ Figure \ref{fig:error_R_orientation_noise_twist} - noisy, rotating. Updated orie
 \end{figure}
 
 \subsection{Position correction}
+\textbf{PUT 3 POSITION FIGURES IN SINGLE FIGURE}
 stationary - works for only 1 face visible. Without noise - Figure \ref{fig:error_1F_position}. With noise - \ref{fig:error_1F_position_noise}. 
 
 doesnt work for 2/3 faces (results 20). Figure \ref{fig:error_2F_position}.
@@ -653,6 +656,7 @@ Requires perpendicular - multiple faces and edges mean update position vector po
 \end{figure}
 
 \subsection{Size correction}
+\textbf{PUT 2 SIZE FIGURES IN SINGLE FIGURE}
 works for stationary and moving, noise and no noise, 1,2,3 faces\\
 Figure \ref{fig:error_stationary_size_noise}  - noise, stationary, 3F visible - size correction\\
 Figure \ref{fig:error_RT_size_noise}  - noise, rotating + translating - size correction\\
@@ -670,6 +674,7 @@ Figure \ref{fig:error_RT_size_noise}  - noise, rotating + translating - size cor
 \end{figure}
 
 \subsection{Orientation and size}
+\textbf{4 separate figures. remove position plots from them; 2x3 blocks - fit 2 per page}
 works in same cases orientation alone works\\
 Figure \ref{fig:error_xx_3F_OxS_noise}:stationary, noisy, orientation \& size works (results 9).\\
 Figure \ref{fig:error_Rx_3F_OxS_screw} - rotating, no noise, orientation updated via screw, size updated as normal. \\ 
