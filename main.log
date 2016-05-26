@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  26 MAY 2016 21:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  26 MAY 2016 22:15
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -896,160 +896,170 @@ update.tex") [47] [48]
 te1.tex")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Figures/fig_sizeupda
 te2.tex") [49] [50] [51] [52]
-Underfull \hbox (badness 10000) in paragraph at lines 586--588
 
- []
+LaTeX Warning: Reference `fig:angle_error_1_rotating_screw_nois' on page 53 und
+efined on input line 591.
 
-<./Figures/error_xx_3F_orientation.jpg, id=224, 1204.5pt x 903.375pt>
-File: ./Figures/error_xx_3F_orientation.jpg Graphic file (type jpg)
+<./Figures/angle_error_1_stationary.jpg, id=224, 3167.835pt x 1606.0pt>
+File: ./Figures/angle_error_1_stationary.jpg Graphic file (type jpg)
 
-<use ./Figures/error_xx_3F_orientation.jpg>
-Package pdftex.def Info: ./Figures/error_xx_3F_orientation.jpg used on input li
-ne 597.
-(pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
+<use ./Figures/angle_error_1_stationary.jpg>
+Package pdftex.def Info: ./Figures/angle_error_1_stationary.jpg used on input l
+ine 599.
+(pdftex.def)             Requested size: 192.0548pt x 97.36057pt.
 
-<./Figures/error_xx_3F_orientation_noisy.jpg, id=226, 1204.5pt x 903.375pt>
-File: ./Figures/error_xx_3F_orientation_noisy.jpg Graphic file (type jpg)
+<./Figures/angle_error_2_stationary_noise.jpg, id=226, 3167.835pt x 1606.0pt>
+File: ./Figures/angle_error_2_stationary_noise.jpg Graphic file (type jpg)
 
-<use ./Figures/error_xx_3F_orientation_noisy.jpg>
-Package pdftex.def Info: ./Figures/error_xx_3F_orientation_noisy.jpg used on in
-put line 603.
-(pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
+<use ./Figures/angle_error_2_stationary_noise.jpg>
+Package pdftex.def Info: ./Figures/angle_error_2_stationary_noise.jpg used on i
+nput line 603.
+(pdftex.def)             Requested size: 192.0548pt x 97.36057pt.
 
-<./Figures/error_Rx_3F_orientation_screw.jpg, id=228, 1204.5pt x 903.375pt>
-File: ./Figures/error_Rx_3F_orientation_screw.jpg Graphic file (type jpg)
+<./Figures/angle_error_3_rotating_screw.jpg, id=228, 3167.835pt x 1606.0pt>
+File: ./Figures/angle_error_3_rotating_screw.jpg Graphic file (type jpg)
 
-<use ./Figures/error_Rx_3F_orientation_screw.jpg>
-Package pdftex.def Info: ./Figures/error_Rx_3F_orientation_screw.jpg used on in
-put line 609.
-(pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
+<use ./Figures/angle_error_3_rotating_screw.jpg>
+Package pdftex.def Info: ./Figures/angle_error_3_rotating_screw.jpg used on inp
+ut line 613.
+(pdftex.def)             Requested size: 192.0548pt x 97.36057pt.
 
-<./Figures/error_Rx_3F_orientation_twist.jpg, id=230, 1204.5pt x 903.375pt>
-File: ./Figures/error_Rx_3F_orientation_twist.jpg Graphic file (type jpg)
+<./Figures/angle_error_4_rotating_twist.jpg, id=230, 3167.835pt x 1606.0pt>
+File: ./Figures/angle_error_4_rotating_twist.jpg Graphic file (type jpg)
 
-<use ./Figures/error_Rx_3F_orientation_twist.jpg>
-Package pdftex.def Info: ./Figures/error_Rx_3F_orientation_twist.jpg used on in
-put line 615.
-(pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
+<use ./Figures/angle_error_4_rotating_twist.jpg>
+Package pdftex.def Info: ./Figures/angle_error_4_rotating_twist.jpg used on inp
+ut line 617.
+(pdftex.def)             Requested size: 192.0548pt x 97.36057pt.
 
-<./Figures/error_Rx_3F_orientation_noise_screw.jpg, id=232, 1204.5pt x 903.375p
+<./Figures/angle_error_5_rotating_screw_noise.jpg, id=232, 3167.835pt x 1606.0p
 t>
-File: ./Figures/error_Rx_3F_orientation_noise_screw.jpg Graphic file (type jpg)
+File: ./Figures/angle_error_5_rotating_screw_noise.jpg Graphic file (type jpg)
+ <use ./Figures/angle_error_5_rotating_screw_noise.jpg>
+Package pdftex.def Info: ./Figures/angle_error_5_rotating_screw_noise.jpg used 
+on input line 627.
+(pdftex.def)             Requested size: 192.0548pt x 97.36057pt.
 
- <use ./Figures/error_Rx_3F_orientation_noise_screw.jpg>
-Package pdftex.def Info: ./Figures/error_Rx_3F_orientation_noise_screw.jpg used
- on input line 621.
-(pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
-
-<./Figures/error_Rx_3F_orientation_noise_twist.jpg, id=234, 1204.5pt x 903.375p
+<./Figures/angle_error_6_rotating_twist_noise.jpg, id=234, 3167.835pt x 1606.0p
 t>
-File: ./Figures/error_Rx_3F_orientation_noise_twist.jpg Graphic file (type jpg)
-
- <use ./Figures/error_Rx_3F_orientation_noise_twist.jpg>
-Package pdftex.def Info: ./Figures/error_Rx_3F_orientation_noise_twist.jpg used
- on input line 627.
-(pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 635--637
-
- []
-
-<./Figures/error_1F_position.jpg, id=236, 1204.5pt x 903.375pt>
-File: ./Figures/error_1F_position.jpg Graphic file (type jpg)
-
-<use ./Figures/error_1F_position.jpg>
-Package pdftex.def Info: ./Figures/error_1F_position.jpg used on input line 642
-.
-(pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
+File: ./Figures/angle_error_6_rotating_twist_noise.jpg Graphic file (type jpg)
+ <use ./Figures/angle_error_6_rotating_twist_noise.jpg>
+Package pdftex.def Info: ./Figures/angle_error_6_rotating_twist_noise.jpg used 
+on input line 631.
+(pdftex.def)             Requested size: 192.0548pt x 97.36057pt.
  [53
 
-] [54 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_x
-x_3F_orientation.jpg>] [55 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/R
-eport/Figures/error_xx_3F_orientation_noisy.jpg>] [56 <C:/Users/Monty Abello/Do
-cuments/Uni/2016/ENGN4718/Report/Figures/error_Rx_3F_orientation_screw.jpg>] [5
-7 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_Rx_3F
-_orientation_twist.jpg>] [58 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718
-/Report/Figures/error_Rx_3F_orientation_noise_screw.jpg>] [59 <C:/Users/Monty A
-bello/Documents/Uni/2016/ENGN4718/Report/Figures/error_Rx_3F_orientation_noise_
-twist.jpg>]
-<./Figures/error_1F_position_noise.jpg, id=266, 1204.5pt x 903.375pt>
-File: ./Figures/error_1F_position_noise.jpg Graphic file (type jpg)
-
-<use ./Figures/error_1F_position_noise.jpg>
-Package pdftex.def Info: ./Figures/error_1F_position_noise.jpg used on input li
-ne 648.
-(pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
-
-<./Figures/error_2F_position.jpg, id=268, 1204.5pt x 903.375pt>
-File: ./Figures/error_2F_position.jpg Graphic file (type jpg)
-
-<use ./Figures/error_2F_position.jpg>
-Package pdftex.def Info: ./Figures/error_2F_position.jpg used on input line 654
-.
-(pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 659--663
+ <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/angle_error_
+1_stationary.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Fig
+ures/angle_error_2_stationary_noise.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 642--644
 
  []
 
-<./Figures/error_xx_size_noise.jpg, id=270, 1204.5pt x 903.375pt>
+
+<./Figures/position_error_1_stationary_1F.jpg, id=242, 3343.49126pt x 1850.915p
+t>
+File: ./Figures/position_error_1_stationary_1F.jpg Graphic file (type jpg)
+ <use ./Figures/position_error_1_stationary_1F.jpg>
+Package pdftex.def Info: ./Figures/position_error_1_stationary_1F.jpg used on i
+nput line 650.
+(pdftex.def)             Requested size: 192.0548pt x 106.30534pt.
+
+<./Figures/position_error_2_stationary_1F_noise.jpg, id=244, 3343.49126pt x 185
+0.915pt>
+File: ./Figures/position_error_2_stationary_1F_noise.jpg Graphic file (type jpg
+)
+ <use ./Figures/position_error_2_stationary_1F_noise.jpg>
+Package pdftex.def Info: ./Figures/position_error_2_stationary_1F_noise.jpg use
+d on input line 654.
+(pdftex.def)             Requested size: 192.0548pt x 106.30534pt.
+
+<./Figures/position_error_3_stationary_1F_noise.jpg, id=246, 3343.49126pt x 185
+0.915pt>
+File: ./Figures/position_error_3_stationary_1F_noise.jpg Graphic file (type jpg
+)
+ <use ./Figures/position_error_3_stationary_1F_noise.jpg>
+Package pdftex.def Info: ./Figures/position_error_3_stationary_1F_noise.jpg use
+d on input line 658.
+(pdftex.def)             Requested size: 192.0548pt x 106.30534pt.
+
+<./Figures/position_error_4_stationary_2F.jpg, id=248, 3343.49126pt x 1850.915p
+t>
+File: ./Figures/position_error_4_stationary_2F.jpg Graphic file (type jpg)
+ <use ./Figures/position_error_4_stationary_2F.jpg>
+Package pdftex.def Info: ./Figures/position_error_4_stationary_2F.jpg used on i
+nput line 662.
+(pdftex.def)             Requested size: 192.0548pt x 106.30534pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--672
+
+ []
+
+<./Figures/error_xx_size_noise.jpg, id=250, 1204.5pt x 903.375pt>
 File: ./Figures/error_xx_size_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/error_xx_size_noise.jpg>
 Package pdftex.def Info: ./Figures/error_xx_size_noise.jpg used on input line 6
-66.
+75.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
-<./Figures/error_RT_size_noise.jpg, id=272, 1204.5pt x 903.375pt>
+<./Figures/error_RT_size_noise.jpg, id=252, 1204.5pt x 903.375pt>
 File: ./Figures/error_RT_size_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/error_RT_size_noise.jpg>
 Package pdftex.def Info: ./Figures/error_RT_size_noise.jpg used on input line 6
-72.
+81.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
-
-<./Figures/error_xx_3F_OxS_noise.jpg, id=274, 1204.5pt x 903.375pt>
+ [54 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/angle_er
+ror_3_rotating_screw.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Re
+port/Figures/angle_error_4_rotating_twist.jpg> <C:/Users/Monty Abello/Documents
+/Uni/2016/ENGN4718/Report/Figures/angle_error_5_rotating_screw_noise.jpg> <C:/U
+sers/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/angle_error_6_rota
+ting_twist_noise.jpg>] [55 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/R
+eport/Figures/position_error_1_stationary_1F.jpg> <C:/Users/Monty Abello/Docume
+nts/Uni/2016/ENGN4718/Report/Figures/position_error_2_stationary_1F_noise.jpg> 
+<C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/position_erro
+r_3_stationary_1F_noise.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718
+/Report/Figures/position_error_4_stationary_2F.jpg> <C:/Users/Monty Abello/Docu
+ments/Uni/2016/ENGN4718/Report/Figures/error_xx_size_noise.jpg>] [56 <C:/Users/
+Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_RT_size_noise.jpg
+>]
+<./Figures/error_xx_3F_OxS_noise.jpg, id=273, 1204.5pt x 903.375pt>
 File: ./Figures/error_xx_3F_OxS_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/error_xx_3F_OxS_noise.jpg>
 Package pdftex.def Info: ./Figures/error_xx_3F_OxS_noise.jpg used on input line
- 685.
+ 694.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
- [60 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_1F
-_position.jpg>] [61 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/F
-igures/error_1F_position_noise.jpg>]
-[62 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_2F_
-position.jpg>] [63 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Fi
-gures/error_xx_size_noise.jpg>] [64 <C:/Users/Monty Abello/Documents/Uni/2016/E
-NGN4718/Report/Figures/error_RT_size_noise.jpg>]
-<./Figures/error_Rx_3F_OxS_screw.jpg, id=297, 1204.5pt x 903.375pt>
+
+<./Figures/error_Rx_3F_OxS_screw.jpg, id=275, 1204.5pt x 903.375pt>
 File: ./Figures/error_Rx_3F_OxS_screw.jpg Graphic file (type jpg)
 
 <use ./Figures/error_Rx_3F_OxS_screw.jpg>
 Package pdftex.def Info: ./Figures/error_Rx_3F_OxS_screw.jpg used on input line
- 691.
+ 700.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
-<./Figures/error_Rx_3F_OxS_twist.jpg, id=299, 1204.5pt x 903.375pt>
+<./Figures/error_Rx_3F_OxS_twist.jpg, id=277, 1204.5pt x 903.375pt>
 File: ./Figures/error_Rx_3F_OxS_twist.jpg Graphic file (type jpg)
 
 <use ./Figures/error_Rx_3F_OxS_twist.jpg>
 Package pdftex.def Info: ./Figures/error_Rx_3F_OxS_twist.jpg used on input line
- 697.
+ 706.
 (pdftex.def)             Requested size: 426.79135pt x 320.10075pt.
 
-<./Figures/tetrahedron_observer.jpg, id=301, 5395.15625pt x 3431.82124pt>
+<./Figures/tetrahedron_observer.jpg, id=279, 5395.15625pt x 3431.82124pt>
 File: ./Figures/tetrahedron_observer.jpg Graphic file (type jpg)
 
 <use ./Figures/tetrahedron_observer.jpg>
 Package pdftex.def Info: ./Figures/tetrahedron_observer.jpg used on input line 
-710.
+716.
 (pdftex.def)             Requested size: 426.79135pt x 271.46176pt.
-) [65 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_x
-x_3F_OxS_noise.jpg>] [66 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Rep
-ort/Figures/error_Rx_3F_OxS_screw.jpg>] [67 <C:/Users/Monty Abello/Documents/Un
+) [57 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/error_x
+x_3F_OxS_noise.jpg>] [58 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Rep
+ort/Figures/error_Rx_3F_OxS_screw.jpg>] [59 <C:/Users/Monty Abello/Documents/Un
 i/2016/ENGN4718/Report/Figures/error_Rx_3F_OxS_twist.jpg> <C:/Users/Monty Abell
-o/Documents/Uni/2016/ENGN4718/Report/Figures/tetrahedron_observer.jpg>]
+o/Documents/Uni/2016/ENGN4718/Report/Figures/tetrahedron_observer.jpg>] [60]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.tex"
 Chapter 5.
 
@@ -1057,11 +1067,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--7
 
  []
 
-[68
+[61
 
 
 
-] <./Figures/range_error_histograms.jpg, id=319, 7170.79pt x 5690.25874pt>
+] <./Figures/range_error_histograms.jpg, id=301, 7170.79pt x 5690.25874pt>
 File: ./Figures/range_error_histograms.jpg Graphic file (type jpg)
 
 <use ./Figures/range_error_histograms.jpg>
@@ -1069,7 +1079,7 @@ Package pdftex.def Info: ./Figures/range_error_histograms.jpg used on input lin
 e 32.
 (pdftex.def)             Requested size: 426.79135pt x 338.62236pt.
 
-<./Figures/noise_mean_range_error.jpg, id=321, 5576.835pt x 3468.96pt>
+<./Figures/noise_mean_range_error.jpg, id=303, 5576.835pt x 3468.96pt>
 File: ./Figures/noise_mean_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/noise_mean_range_error.jpg>
@@ -1077,7 +1087,7 @@ Package pdftex.def Info: ./Figures/noise_mean_range_error.jpg used on input lin
 e 43.
 (pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
 
-<./Figures/noise_mean_range_error_removed_outliers.jpg, id=323, 5576.835pt x 34
+<./Figures/noise_mean_range_error_removed_outliers.jpg, id=305, 5576.835pt x 34
 68.96pt>
 File: ./Figures/noise_mean_range_error_removed_outliers.jpg Graphic file (type 
 jpg)
@@ -1086,7 +1096,7 @@ Package pdftex.def Info: ./Figures/noise_mean_range_error_removed_outliers.jpg
 used on input line 47.
 (pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
 
-<./Figures/noise_stddev_range_error.jpg, id=325, 5576.835pt x 3468.96pt>
+<./Figures/noise_stddev_range_error.jpg, id=307, 5576.835pt x 3468.96pt>
 File: ./Figures/noise_stddev_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/noise_stddev_range_error.jpg>
@@ -1094,7 +1104,7 @@ Package pdftex.def Info: ./Figures/noise_stddev_range_error.jpg used on input l
 ine 58.
 (pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
 
-<./Figures/noise_stddev_range_error_removed_outliers.jpg, id=327, 5576.835pt x 
+<./Figures/noise_stddev_range_error_removed_outliers.jpg, id=309, 5576.835pt x 
 3468.96pt>
 File: ./Figures/noise_stddev_range_error_removed_outliers.jpg Graphic file (typ
 e jpg)
@@ -1103,7 +1113,7 @@ Package pdftex.def Info: ./Figures/noise_stddev_range_error_removed_outliers.jp
 g used on input line 62.
 (pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
 
-<./Figures/surface_mean_range_error.jpg, id=329, 5576.835pt x 3468.96pt>
+<./Figures/surface_mean_range_error.jpg, id=311, 5576.835pt x 3468.96pt>
 File: ./Figures/surface_mean_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/surface_mean_range_error.jpg>
@@ -1111,7 +1121,7 @@ Package pdftex.def Info: ./Figures/surface_mean_range_error.jpg used on input l
 ine 73.
 (pdftex.def)             Requested size: 192.0548pt x 119.41458pt.
 
-<./Figures/surface_stddev_range_error.jpg, id=331, 5576.835pt x 3468.96pt>
+<./Figures/surface_stddev_range_error.jpg, id=313, 5576.835pt x 3468.96pt>
 File: ./Figures/surface_stddev_range_error.jpg Graphic file (type jpg)
 
 <use ./Figures/surface_stddev_range_error.jpg>
@@ -1123,13 +1133,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
-[69
+[62
 
-] [70 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/range_e
+] [63 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/range_e
 rror_histograms.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/
 Figures/noise_mean_range_error.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/E
 NGN4718/Report/Figures/noise_mean_range_error_removed_outliers.jpg>]
-[71 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/noise_std
+[64 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/noise_std
 dev_range_error.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/
 Figures/noise_stddev_range_error_removed_outliers.jpg> <C:/Users/Monty Abello/D
 ocuments/Uni/2016/ENGN4718/Report/Figures/surface_mean_range_error.jpg> <C:/Use
@@ -1138,8 +1148,8 @@ _error.jpg>]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Tables/tab_noise_coe
 fficients_a.tex")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\Tables/tab_noise_coe
-fficients_b.tex") [72]
-<./Figures/measured_surface_noise.jpg, id=354, 4353.26375pt x 3356.54pt>
+fficients_b.tex") [65]
+<./Figures/measured_surface_noise.jpg, id=335, 4353.26375pt x 3356.54pt>
 File: ./Figures/measured_surface_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/measured_surface_noise.jpg>
@@ -1147,16 +1157,16 @@ Package pdftex.def Info: ./Figures/measured_surface_noise.jpg used on input lin
 e 128.
 (pdftex.def)             Requested size: 192.0548pt x 148.06721pt.
 
-<./Figures/simulated_surface_noise.jpg, id=356, 4353.26375pt x 3356.54pt>
+<./Figures/simulated_surface_noise.jpg, id=337, 4353.26375pt x 3356.54pt>
 File: ./Figures/simulated_surface_noise.jpg Graphic file (type jpg)
 
 <use ./Figures/simulated_surface_noise.jpg>
 Package pdftex.def Info: ./Figures/simulated_surface_noise.jpg used on input li
 ne 132.
 (pdftex.def)             Requested size: 192.0548pt x 148.06721pt.
- [73 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/measured
+ [66 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/measured
 _surface_noise.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/F
-igures/simulated_surface_noise.jpg>]) [74
+igures/simulated_surface_noise.jpg>]) [67
 
 ] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.tex"
 Chapter 6.
@@ -1165,15 +1175,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-) [75
+) [68
 
 
 
 ] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.bbl"
-[76
+[69
 
 
-] [77]) [78]
+] [70]) [71]
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux"
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\acknowledgements.aux
 ") ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\abstract.aux")
@@ -1182,16 +1192,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\problem.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.aux")
-("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.aux")) )
+("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.aux"))
+
+LaTeX Warning: There were undefined references.
+
+ )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 17974 strings out of 493921
- 349647 string characters out of 3147261
- 438974 words of memory out of 3000000
- 20665 multiletter control sequences out of 15000+200000
+ 17995 strings out of 493921
+ 350764 string characters out of 3147261
+ 439170 words of memory out of 3000000
+ 20685 multiletter control sequences out of 15000+200000
  24800 words of font info for 139 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,23n,58p,964b,11852s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1217,9 +1231,9 @@ i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (87 pages, 12651237 bytes).
+Output written on main.pdf (80 pages, 13530678 bytes).
 PDF statistics:
- 456 PDF objects out of 1000 (max. 8388607)
+ 437 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21280 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 21291 words of extra memory for PDF output out of 24883 (max. 10000000)
 

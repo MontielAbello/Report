@@ -12,33 +12,38 @@
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Position update}}{48}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Size update - case 1}}{50}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Size update - case 2}}{51}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Orientation correction - no noise}}{54}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Orientation correction - noise}}{55}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces rotating - Orientation correction via screw - no noise}}{56}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces rotating - Orientation correction via twist - no noise}}{57}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces rotating - Orientation correction via screw - noise}}{58}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces rotating - Orientation correction via twist - noise}}{59}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces stationary, 1 face visible - position correction}}{60}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces stationary with noise, 1 face visible - position correction}}{61}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces stationary with noise, 2 faces visible - position correction doesn't work}}{62}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces stationary with noise, 3 faces visible - size correction}}{63}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces rotating + translating with noise, 3 faces visible - size correction}}{64}
-\contentsline {figure}{\numberline {4.19}{\ignorespaces stationary with noise, 3 faces visible - orientation and size correction}}{65}
-\contentsline {figure}{\numberline {4.20}{\ignorespaces rotating with no noise, 3 faces visible - orientation (via screw) and size correction}}{66}
-\contentsline {figure}{\numberline {4.21}{\ignorespaces rotating with no noise, 3 faces visible - orientation (via twist) and size correction}}{67}
-\contentsline {figure}{\numberline {4.22}{\ignorespaces Tetrahedron: orientation \& size correction}}{67}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Angle error for stationary cube, 3F, no noise}}{53}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{53}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{53}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Angle error for rotating cube pi/3 over 32s, via screw, 3F, no noise}}{54}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{54}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{54}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Angle error for rotating cube pi/3 over 32s, via twist, 3F, no noise}}{54}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{54}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{54}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces a - no noise, b - noise, gain too high, c - noise, gain reduced, d - 2F doesn't work}}{55}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{55}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{55}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{55}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{55}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces stationary with noise, 3 faces visible - size correction}}{55}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces rotating + translating with noise, 3 faces visible - size correction}}{56}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces stationary with noise, 3 faces visible - orientation and size correction}}{57}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces rotating with no noise, 3 faces visible - orientation (via screw) and size correction}}{58}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces rotating with no noise, 3 faces visible - orientation (via twist) and size correction}}{59}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Tetrahedron: orientation \& size correction}}{59}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces $r_{error}(r,\theta )$ approximately normally distributed}}{70}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces mean range error vs $(r,\theta )$. (a) large error at high angles and range, (b) overall shape}}{70}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{70}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{70}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces range error $\sigma $ vs $(r,\theta )$. (a) outliers/large std dev at high angles and range, (b) overall shape}}{71}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{71}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{71}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces polynomials fitted to range error mean \& standard deviation data points to model noise}}{71}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{71}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{71}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparision of (a) measured and (b) simulated surface noise}}{73}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{73}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{73}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces $r_{error}(r,\theta )$ approximately normally distributed}}{63}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces mean range error vs $(r,\theta )$. (a) large error at high angles and range, (b) overall shape}}{63}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{63}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{63}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces range error $\sigma $ vs $(r,\theta )$. (a) outliers/large std dev at high angles and range, (b) overall shape}}{64}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{64}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{64}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces polynomials fitted to range error mean \& standard deviation data points to model noise}}{64}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{64}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{64}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparision of (a) measured and (b) simulated surface noise}}{66}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{66}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{66}
 \addvspace {10\p@ }

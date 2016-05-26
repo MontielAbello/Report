@@ -581,78 +581,87 @@ tested stationary, rotating, translating, rotating \& translating for cases wher
 Would take too long to perform exhaustive analysis of solution space, testing all the parameters. Instead, will present key results...
 
 \subsection{Orientation correction}
-\textbf{PUT ALL 6 ANGLE ERROR PLOTS IN A SINGLE 3x2 BLOCK}
 
-stationary - converges for no noise Figure \ref{fig:error_orientation}.\\
-Doesn't converge to 0 due to noise, but still stable. \textbf{THIS DUE TO NOISE FLOOR - INVESTIGATE IF THERE IS TIME - REDUCE NOISE AND SEE IF IT GETS CLOSER} Figure \ref{fig:error_orientation_noise}.\\
+stationary - converges for no noise Figure \ref{fig:angle_error_1_stationary_no_noise}.\\
+Doesn't converge to 0 due to noise, but still stable - due to noise floor.  \ref{fig:angle_error_1_stationary_noise}. Figure \ref{fig:stddev_range_error}		
 
-Figure \ref{fig:error_R_orientation_screw} - rotating. Updated orientation via screw. Very 'jagged'. Lags slightly, catches up.
-Figure \ref{fig:error_R_orientation_twist} - rotating. Updated orientation via twist. over/undershoots much more than screw. \textbf{MENTION: control theory solution - feed forward control. anticipate overshoot, correct before it occurs. FUTURE WORK - DEVELOP OBSERVER THEORY ANALOGUE}
+Figure \ref{fig:angle_error_1_rotating_screw} - rotating. Updated orientation via screw. Very 'jagged'. Lags slightly, catches up.
+Figure \ref{fig:angle_error_1_rotating_twist} - rotating. Updated orientation via twist. over/undershoots much more than screw. \textbf{MENTION: control theory solution - feed forward control. anticipate overshoot, correct before it occurs. FUTURE WORK - DEVELOP OBSERVER THEORY ANALOGUE}
 
-Figure \ref{fig:error_R_orientation_noise_screw} - noisy, rotating. Updated orientation via screw, kind of keeps up with rotation but error caused by noise.
-Figure \ref{fig:error_R_orientation_noise_twist} - noisy, rotating. Updated orientation via twist, overshoot error. 
+Figure \ref{fig:angle_error_1_rotating_screw_nois} - noisy, rotating. Updated orientation via screw, kind of keeps up with rotation but error caused by noise.
+Figure \ref{fig:angle_error_1_rotating_twist} - noisy, rotating. Updated orientation via twist, overshoot error. 
 
 \begin{figure}
 \centering
-  \includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_xx_3F_orientation.jpg}
-  \caption{Orientation correction - no noise} \label{fig:error_orientation}
+ 	\subfigure[\label{fig:angle_error_1_stationary_no_noise}]{
+ 	\begin{minipage}[b]{0.45\columnwidth}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/angle_error_1_stationary}\vspace*{0ex}
+ 	\end{minipage}}
+ 	\subfigure[\label{fig:angle_error_1_stationary_noise}]{
+ 	\begin{minipage}[b]{0.45\columnwidth}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/angle_error_2_stationary_noise}\vspace*{0ex}
+ 	\end{minipage}}
+ 	\caption{Angle error for stationary cube, 3F, no noise}
+ 	\label{fig:angle_error_1_stationary}
 \end{figure}
 
 \begin{figure}
 \centering
-  \includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_xx_3F_orientation_noisy.jpg}
-  \caption{Orientation correction - noise} \label{fig:error_orientation_noise}
+ 	\subfigure[\label{fig:angle_error_1_rotating_screw}]{
+ 	\begin{minipage}[b]{0.45\columnwidth}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/angle_error_3_rotating_screw}\vspace*{0ex}
+ 	\end{minipage}}
+ 	\subfigure[\label{fig:angle_error_1_rotating_twist}]{
+ 	\begin{minipage}[b]{0.45\columnwidth}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/angle_error_4_rotating_twist}\vspace*{0ex}
+ 	\end{minipage}}
+ 	\caption{Angle error for rotating cube pi/3 over 32s, via screw, 3F, no noise}
+ 	\label{fig:angle_error_1_rotating}
 \end{figure}
 
 \begin{figure}
 \centering
-  \includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_Rx_3F_orientation_screw.jpg}
-  \caption{rotating - Orientation correction via screw - no noise} \label{fig:error_R_orientation_screw}
+ 	\subfigure[\label{fig:angle_error_1_rotating_screw_noise}]{
+ 	\begin{minipage}[b]{0.45\columnwidth}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/angle_error_5_rotating_screw_noise}\vspace*{0ex}
+ 	\end{minipage}}
+ 	\subfigure[\label{fig:angle_error_1_rotating_twist_noise}]{
+ 	\begin{minipage}[b]{0.45\columnwidth}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/angle_error_6_rotating_twist_noise}\vspace*{0ex}
+ 	\end{minipage}}
+ 	\caption{Angle error for rotating cube pi/3 over 32s, via twist, 3F, no noise}
+ 	\label{fig:angle_error_1_rotating_noise}
 \end{figure}
 
-\begin{figure}
-\centering
-  \includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_Rx_3F_orientation_twist.jpg}
-  \caption{rotating - Orientation correction via twist - no noise} \label{fig:error_R_orientation_twist}
-\end{figure}
-
-\begin{figure}
-\centering
-  \includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_Rx_3F_orientation_noise_screw.jpg}
-  \caption{rotating - Orientation correction via screw - noise} \label{fig:error_R_orientation_noise_screw}
-\end{figure}
-
-\begin{figure}
-\centering
-  \includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_Rx_3F_orientation_noise_twist.jpg}
-  \caption{rotating - Orientation correction via twist - noise} \label{fig:error_R_orientation_noise_twist}
-\end{figure}
 
 \subsection{Position correction}
 \textbf{PUT 3 POSITION FIGURES IN SINGLE FIGURE}
-stationary - works for only 1 face visible. Without noise - Figure \ref{fig:error_1F_position}. With noise - \ref{fig:error_1F_position_noise}. 
+stationary - works for only 1 face visible. Without noise - Figure \ref{fig:position_error_1_stationary_1F}. With noise - \ref{fig:position_error_2_stationary_1F_noise}, gain too high - diverges. 
+With noise, gain lowered,\ref{fig:position_error_3_stationary_1F_noise} - slows down
 
-doesnt work for 2/3 faces (results 20). Figure \ref{fig:error_2F_position}.
+doesnt work for 2/3 faces (results 20). Figure \ref{fig:position_error_4_stationary_2F}.
 Requires perpendicular - multiple faces and edges mean update position vector points in wrong direction.\\
 
-\textbf{IF THERE IS TIME, ADD TRANSLATION TRACKING}
-
 \begin{figure}
 \centering
-  \includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_1F_position.jpg}
-  \caption{stationary, 1 face visible - position correction} \label{fig:error_1F_position}
-\end{figure}
-
-\begin{figure}
-\centering
-  \includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_1F_position_noise.jpg}
-  \caption{stationary with noise, 1 face visible - position correction} \label{fig:error_1F_position_noise}
-\end{figure}
-
-\begin{figure}
-\centering
-  \includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/error_2F_position.jpg}
-  \caption{stationary with noise, 2 faces visible - position correction doesn't work} \label{fig:error_2F_position}
+ 	\subfigure[\label{fig:position_error_1_stationary_1F}]{
+ 	\begin{minipage}[b]{0.45\columnwidth}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_1_stationary_1F}\vspace*{0ex}
+ 	\end{minipage}}
+ 	\subfigure[\label{fig:position_error_2_stationary_1F_noise}]{
+ 	\begin{minipage}[b]{0.45\columnwidth}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_2_stationary_1F_noise}\vspace*{0ex}
+ 	\end{minipage}}
+ 	\subfigure[\label{fig:position_error_3_stationary_1F_noise}]{
+ 	\begin{minipage}[b]{0.45\columnwidth}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_3_stationary_1F_noise}\vspace*{0ex}
+ 	\end{minipage}}
+ 	\subfigure[\label{fig:position_error_4_stationary_2F}]{
+ 	\begin{minipage}[b]{0.45\columnwidth}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_4_stationary_2F}\vspace*{0ex}
+ 	\end{minipage}}
+ 	\caption{a - no noise, b - noise, gain too high, c - noise, gain reduced, d - 2F doesn't work}
+ 	\label{test1}
 \end{figure}
 
 \subsection{Size correction}
