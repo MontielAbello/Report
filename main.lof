@@ -1,58 +1,58 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Infinite dimensional optical flow discretised and computed in separate, independent regions}}{7}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Infinite dimensional optical flow discretised and computed in separate, independent regions\relax }}{7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Transformations between reference frames $\{F\}$, $\{A\}$ and $\{B\}$ defined with respect to $\{F\}$}}{17}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Transformations between reference frames $\{F\}$, $\{A\}$ and $\{B\}$ defined with respect to $\{F\}$\relax }}{17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Range measurements of a cube from a depth sensor}}{25}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Range measurements of a cube from a depth sensor\relax }}{25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Scanning behaviour of the UBG-04LX-F01 and parameters used to model it}}{38}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Cube modelled with an ordered set of points and corresponding triangles}}{40}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Ray-triangle intersection}}{41}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Orientation update scheme: intersection of the scan directions with the surfaces of the measured and predicted cubes are used to determine the surface normals. }}{46}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Position update}}{48}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Size update - case 1}}{50}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Size update - case 2}}{52}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Angle error for (a) noiseless and (b) noisy measurements of stationary cube with 3 faces visible to sensor}}{54}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Scanning behaviour of the UBG-04LX-F01 and parameters used to model it\relax }}{38}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Cube modelled with an ordered set of points and corresponding triangles\relax }}{40}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Ray-triangle intersection\relax }}{41}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Orientation update scheme: intersection of the scan directions with the surfaces of the measured and predicted cubes are used to determine the surface normals. \relax }}{46}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Position update\relax }}{48}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Size update - case 1\relax }}{50}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Size update - case 2\relax }}{52}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Angle error for (a) noiseless and (b) noisy measurements of stationary cube with 3 faces visible to sensor\relax }}{54}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{54}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{54}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Angle error when cube rotating with angular velocity of approximately $0.0327$ rad/s such that 3 faces visible to sensor. Noiseless measurements used to update orientation via (a) screw matrix and (b) twist matrix. Noisy measurements used to update orientation via (c) screw matrix and (d) twist matrix.}}{54}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Angle error when cube rotating with angular velocity of approximately $0.0327$ rad/s such that 3 faces visible to sensor. Noiseless measurements used to update orientation via (a) screw matrix and (b) twist matrix. Noisy measurements used to update orientation via (c) screw matrix and (d) twist matrix.\relax }}{54}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{54}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{54}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{54}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{54}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Position error for stationary cube with single face visible to sensor. Position error (a) converges quickly for noiseless measurements when $p_{scale}=0.01$. Position error (b) is unstable for noisy measurements if $p_{scale}=0.01$. Position error (c) convergences to noise floor for noisy measurements when $p_{scale}=0.001$.}}{55}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{55}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{55}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{55}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Position error for stationary cube with 2 faces visible to sensor}}{56}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces For noisy measurements of a stationary cube with 3 faces visible to the sensor, the size error ratio converges to the noise floor}}{56}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces For noisy measurements of a cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces are visible to the sensor, the size error ratio converges to the noise floor}}{57}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces For noisy measurements of stationary cube with 3 faces visible to sensor, the angle error (a) and size error ratio (b) both converge to the noise floor.}}{57}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{57}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{57}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Noiseless measurements of cube rotating at $0.0327$ rad/s such that 3 faces visible to sensor. Angle error (a) and size error ratio (b) when orientation updated via screw. Angle error (c) and size error ratio (d) when orientation updated via wrench.}}{58}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Position error for stationary cube with single face visible to sensor. Position error (a) converges quickly for noiseless measurements when $p_{scale}=0.01$. Position error (b) is unstable for noisy measurements if $p_{scale}=0.01$. Position error (c) convergences to noise floor for noisy measurements when $p_{scale}=0.001$.\relax }}{56}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{56}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{56}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{56}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Position error for stationary cube with 2 faces visible to sensor\relax }}{56}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces For noisy measurements of a stationary cube with 3 faces visible to the sensor, the size error ratio converges to the noise floor\relax }}{57}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces For noisy measurements of a cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces are visible to the sensor, the size error ratio converges to the noise floor\relax }}{57}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces For noisy measurements of stationary cube with 3 faces visible to sensor, the angle error (a) and size error ratio (b) both converge to the noise floor.\relax }}{58}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{58}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{58}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Noiseless measurements of cube rotating at $0.0327$ rad/s such that 3 faces visible to sensor. Angle error (a) and size error ratio (b) when orientation updated via screw. Angle error (c) and size error ratio (d) when orientation updated via wrench.\relax }}{58}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{58}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{58}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{58}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{58}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Angle error (a) and size error ratio (b) for noiseless measurements of tetrahedron of side length $s = 0.5$m}}{59}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Angle error (a) and size error ratio (b) for noiseless measurements of tetrahedron of side length $s = 0.5$m\relax }}{59}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{59}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{59}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces $r_{error}(r,\theta )$ approximately normally distributed}}{62}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces mean range error vs $(r,\theta )$. (a) large error at high angles and range, (b) overall shape}}{62}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{62}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{62}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces range error $\sigma $ vs $(r,\theta )$. (a) outliers/large std dev at high angles and range, (b) overall shape}}{63}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Sensor noise function $f_{UBG}(r,\theta )$ approximately normally distributed\relax }}{63}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces mean range error vs $(r,\theta )$. (a) large error at high angles and range, (b) overall shape\relax }}{63}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{63}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{63}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces polynomials fitted to range error mean \& standard deviation data points to model noise}}{63}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{63}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{63}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparision of (a) measured and (b) simulated surface noise}}{65}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{65}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{65}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces range error $\sigma $ vs $(r,\theta )$. (a) outliers/large std dev at high angles and range, (b) overall shape\relax }}{64}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{64}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{64}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces polynomials fitted to range error mean \& standard deviation data points to model noise\relax }}{64}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{64}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{64}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparision of (a) measured and (b) simulated surface noise\relax }}{66}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{66}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{66}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces setup to measure noise - lights off during measurement to eliminate error from variation in ambient light}}{72}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces setup to collect experimental data}}{72}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces setup to measure noise - lights off during measurement to eliminate error from variation in ambient light\relax }}{73}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces setup to collect experimental data\relax }}{73}

@@ -669,7 +669,7 @@ In Figure \ref{fig:size_RT_noise}, noisy measurements were taken of a cube rotat
   	\label{fig:size_stationary}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
   	\includegraphics[width=0.45\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/size_error_ratio_2_RT_noise}\vspace*{0ex}
 	\caption{For noisy measurements of a cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces are visible to the sensor, the size error ratio converges to the noise floor}
@@ -719,15 +719,10 @@ Because the convergence of the size error ratio is so rapid, the performance of 
 \end{figure}
 
 \subsection{Discussion}
-Size converges globally always. Orientation converges globally for stationary cubes only. Position only works in special case. Size most robust, then orientation, then position. When combining, performance limited by less robust update function.
+The simulation results show that the size update is extremely robust. Given the correct position and orientation estimates, the size update function is globally convergent.
+For the case of a stationary cube and correct size and position estimates, the orientation update function is also globally convergent though convergence is limited by the presence of noise. The symmetry of the cube means that the angle error is bounded to $\pi/4$ and the orientation correction converges quickly. The position update function was particularly unstable. Correction of the position error only converged for the special case where a single cube face was visible. 
 
-Though updating via twist gives smoother estimation, results in overshoot. Error grows so twist increases to compensate, increases too far due to delay in result. In control theory, this is solved with feed forward control - anticipate overshoot, correct before it occurs. FUTURE WORK - DEVELOP OBSERVER THEORY ANALOGUE. A possible start would be to investigate combinations of screw and twist update - gain responsiveness of screw and smoothness of twist update. 
-
-The initial design showed that the size and orientation updates seem to be a good approach. To improve, need to fix position. To get position to work with more than 1 face, instead of using 4 points, compute some moving centre of mass of predicted, measured. update in that direction.
-
-Once position works alone, next step is to get position to work with orientation - symmetry preserving innovation term
-
-Interesting - Observer does not rely on cube shape. Replaced cube with tetrahedron, still works. Figure \ref{fig:tetrahedron}. 
+Another strength of the observer design is that it does not actually rely on the target object being a cube. Figure \ref{fig:tetrahedron} shows that the orientation and size correction converges when the object to be estimated is a tetrahedron with side length $s = 0.5$m. The observer will likely give sensible results given that the target object is a platonic solid due to their symmetry. 
 \begin{figure}
 \centering
  	\subfigure[\label{fig:tetraherdron_angle}]{
@@ -741,3 +736,11 @@ Interesting - Observer does not rely on cube shape. Replaced cube with tetrahedr
  	\caption{Angle error (a) and size error ratio (b) for noiseless measurements of tetrahedron of side length $s = 0.5$m}
  	\label{fig:tetrahedron}
 \end{figure}
+
+Though updating the orientation via the twist gives a smoother estimation in comparison to the screw update, this results in overshoot. Initially, the angle error grows so the angular velocity increases to correct this. However, there is a delay in the response of the orientation correction that causes the angular velocity to grow too large. The overcompensation then occurs in the other direction and the error diverges. In control theory, this problem is solved with \textit{feed-forward control} which anticipates overshoot and corrects for it before it can occur. A topic of future research would be to investigate fs an observer analogue to feed-forward control exists. A possible starting points could be to investigate applying combinations of screw and twist updates that combine the responsiveness of the screw update and the smoothness of the twist update. 
+
+These simulated results showed that the size and orientation update functions in this initial observer implementation show promise. To improve performance, a more robust position update function must be designed. A possible approach would be to augment the cube state with a measure of the centre of mass of a history of measured points. over time, the difference in the estimate and measurement of this variable would produce a more accurate position update vector.
+
+Once a working position update function is implemented, the next step is to combine the position and orientation update functions. Such a function would act on the screw, twist or wrench, rather correcting only the linear or angular terms. Designing this innovation function to be invariant under actions of $\mathbf{SE}(3)$ will result in improved global convergence properties.
+
+A symmetry preserving observer would allow design methods for linear, infinite dimensional observers to be utilised. This would allow the environment to be represented as infinite dimensional state. The observer would not need to separate the target object and the background. Instead, an estimate of the entire depth field could be computed.
