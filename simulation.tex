@@ -575,19 +575,17 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			\end{equation}
 		
 \section{Results}
-\subsection{testing scheme? think of a title...}
-tested stationary, rotating, translating, rotating \& translating for cases where 1,2,3 faces visible to sensor. tested with and without noise.\\
-Would take too long to perform exhaustive analysis of solution space, testing all the parameters. Instead, will present key results...
+The ability of the observer to estimate the state of stationary, rotating, translating and simultaneously rotating and translating cubes was tested. For these classes of motion, the trajectory was tailored to assess the performance of the observer when 1,2 or 3 faces of the cube were visible to the sensor. Key results of this analysis are presented in this section.
 
 \subsection{Orientation correction}
+When testing the orientation update alone, the update position and size update functions were turned off and the initial size and position of the state estimate were assigned the ground truth values. To quantify performance, the rotation matrix required to map the orientation of the predicted cube to that of the ground truth cube was computed. This was converted to the scaled-axis represented. The magnitude of this vector was a represented of the angular error between the predicted and ground truth orientation.
 
-stationary - converges for no noise Figure \ref{fig:angle_error_1_stationary_no_noise}.\\
-Doesn't converge to 0 due to noise, but still stable - due to noise floor.  \ref{fig:angle_error_1_stationary_noise}. Figure \ref{fig:stddev_range_error}		
+The results presented in Figure \ref{fig:angle_error_stationary} are from trials where the cube was stationary and three faces where visible. When no noise is present, the angle error quickly converges to 0. In fact, for the case of orientation correction alone, the observer guarantees global convergence. When noise is present, the error converges to the noise floor and fluctuates due to the random distribution of the error. Despite this offset, the error trajectory is stable and remains close to this limit. 
 
+In Figure \ref{fig:angle_error_rotating} the ground truth cube rotated with an angular velocity of approximately $0.0327$ rad/s, 3 faces visible.
 Figure \ref{fig:angle_error_1_rotating_screw} - rotating. Updated orientation via screw. Very 'jagged'. Lags slightly, catches up.
 Figure \ref{fig:angle_error_1_rotating_twist} - rotating. Updated orientation via twist. over/undershoots much more than screw. \textbf{MENTION: control theory solution - feed forward control. anticipate overshoot, correct before it occurs. FUTURE WORK - DEVELOP OBSERVER THEORY ANALOGUE}
-
-Figure \ref{fig:angle_error_1_rotating_screw_nois} - noisy, rotating. Updated orientation via screw, kind of keeps up with rotation but error caused by noise.
+Figure \ref{fig:angle_error_1_rotating_screw_noise} - noisy, rotating. Updated orientation via screw, kind of keeps up with rotation but error caused by noise.
 Figure \ref{fig:angle_error_1_rotating_twist} - noisy, rotating. Updated orientation via twist, overshoot error. 
 
 \begin{figure}
@@ -600,8 +598,8 @@ Figure \ref{fig:angle_error_1_rotating_twist} - noisy, rotating. Updated orienta
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/angle_error_2_stationary_noise}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{Angle error for stationary cube, 3F, no noise}
- 	\label{fig:angle_error_1_stationary}
+ 	\caption{Angle error for (a) noiseless and (b) noisy measurements of stationary cube with 3 faces visible to sensor}
+ 	\label{fig:angle_error_stationary}
 \end{figure}
 
 \begin{figure}
@@ -614,12 +612,6 @@ Figure \ref{fig:angle_error_1_rotating_twist} - noisy, rotating. Updated orienta
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/angle_error_4_rotating_twist}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{Angle error for rotating cube pi/3 over 32s, via screw, 3F, no noise}
- 	\label{fig:angle_error_1_rotating}
-\end{figure}
-
-\begin{figure}
-\centering
  	\subfigure[\label{fig:angle_error_1_rotating_screw_noise}]{
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/angle_error_5_rotating_screw_noise}\vspace*{0ex}
@@ -628,12 +620,13 @@ Figure \ref{fig:angle_error_1_rotating_twist} - noisy, rotating. Updated orienta
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/angle_error_6_rotating_twist_noise}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{Angle error for rotating cube pi/3 over 32s, via twist, 3F, no noise}
- 	\label{fig:angle_error_1_rotating_noise}
+ 	\caption{Angle error for noiseless measurements of cube rotating with angular velocity of approximately  $0.0327$ rad/s. Orientation update applied via (a) screw matrix and (b) twist matrix. Angle error for noisy measurements of cube rotating with angular velocity of approximately  $0.0327$ rad/s. Orientation update applied via (c) screw matrix and (d) twist matrix}
+ 	\label{fig:angle_error_rotating}
 \end{figure}
 
 \subsection{Position correction}
 \textbf{PUT 3 POSITION FIGURES IN SINGLE FIGURE}
+Position update with 1 face visible, perpendicular \ref{fig:position_update_1F}.
 stationary - works for only 1 face visible. Without noise - Figure \ref{fig:position_error_1_stationary_1F}. With noise - \ref{fig:position_error_2_stationary_1F_noise}, gain too high - diverges. 
 With noise, gain lowered,\ref{fig:position_error_3_stationary_1F_noise} - slows down
 
@@ -654,12 +647,15 @@ Requires perpendicular - multiple faces and edges mean update position vector po
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_3_stationary_1F_noise}\vspace*{0ex}
  	\end{minipage}}
- 	\subfigure[\label{fig:position_error_4_stationary_2F}]{
- 	\begin{minipage}[b]{0.45\columnwidth}
-  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_4_stationary_2F}\vspace*{0ex}
- 	\end{minipage}}
- 	\caption{a - no noise, b - noise, gain too high, c - noise, gain reduced, d - 2F doesn't work}
- 	\label{fig:position_update}
+ 	\caption{1 face visible. stationary. Performance of position update depends . (a) no noise. For noise set gain same as (a) in (b) - innovation term too large and affected by noise. Unstable. Reduced scale factor (c) results in convergence to noise floor.}
+ 	\label{fig:position_update_1F}
+\end{figure}
+
+\begin{figure}
+\centering
+	\includegraphics[width=0.45\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_4_stationary_2F}\vspace*{0ex}
+	\caption{ For 2 faces visible (d), corners cause problem with update direction. Does not converge. }
+  	\label{fig:position_error_4_stationary_2F}
 \end{figure}
 
 \subsection{Size correction}
@@ -669,23 +665,23 @@ Figure \ref{fig:size_stationary}  - noise, stationary, 3F visible - size correct
 Figure \ref{fig:size_RT_noise}  - noise, rotating + translating - size correction\\
 
 \begin{figure}
-\centering
- 	\subfigure[\label{fig:size_stationary}]{
- 	\begin{minipage}[b]{0.45\columnwidth}
-  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/size_error_ratio_1}\vspace*{0ex}
- 	\end{minipage}}
- 	\subfigure[\label{fig:size_RT_noise}]{
- 	\begin{minipage}[b]{0.45\columnwidth}
-  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/size_error_ratio_2_RT_noise}\vspace*{0ex}
- 	\end{minipage}}
- 	\caption{a - stationary, b - rotating 0.0327 rad/s, 0.009375m/s and noisy}
- 	\label{fig:size_update}
+	\centering
+  	\includegraphics[width=0.45\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/size_error_ratio_1}\vspace*{0ex}
+	\caption{Ratio of size error to ground truth plotted. Converges to noise floor for stationary cube with noise, 3 faces visible (a).}
+  	\label{fig:size_stationary}
 \end{figure}
 
-\subsection{Orientation and size}
-\textbf{4 separate figures. remove position plots from them; 2x3 blocks - fit 2 per page}
+\begin{figure}
+	\centering
+  	\includegraphics[width=0.45\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/size_error_ratio_2_RT_noise}\vspace*{0ex}
+	\caption{ For cube rotating at $0.0327$ and translating at $0.0094$ m/s , estimate given correct trajectory, size estimate converges to noise floor.}
+  	\label{fig:size_RT_noise}
+\end{figure}
+
+\subsection{Orientation and size}      
 works in same cases orientation alone works\\
-Figure \ref{fig:OxS_1_stationary_angle}, \ref{fig:OxS_1_stationary_size}:stationary, noisy, orientation \& size works (results 9).\\
+Figure \ref{fig:orientation_size_stationary},:stationary, noisy, orientation \& size works (results 9).\\
+Figure \ref{fig:orientation_size_rotating}
 Figure \ref{fig:OxS_2_rotating_angle},\ref{fig:OxS_2_rotating_size} - rotating, no noise, orientation updated via screw, size updated as normal. \\ 
 Figure \ref{fig:OxS_3_rotating_twist_angle},\ref{fig:OxS_3_rotating_twist_size} - rotating, no noise, orientation updated via twist, size updated as normal.
 
@@ -693,31 +689,36 @@ Figure \ref{fig:OxS_3_rotating_twist_angle},\ref{fig:OxS_3_rotating_twist_size} 
 \centering
  	\subfigure[\label{fig:OxS_1_stationary_angle}]{
  	\begin{minipage}[b]{0.45\columnwidth}
-  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_1_stationary_1F}\vspace*{0ex}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/OxS_1_stationary_angle}\vspace*{0ex}
  	\end{minipage}}
  	\subfigure[\label{fig:OxS_1_stationary_size}]{
  	\begin{minipage}[b]{0.45\columnwidth}
-  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_2_stationary_1F_noise}\vspace*{0ex}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/OxS_1_stationary_size}\vspace*{0ex}
  	\end{minipage}}
+ 	\caption{orientation and size correction - all 3 faces visible in all cases. (a),(b) stationary cube, estimate orientation and size. converges to noise floor.}
+ 	\label{fig:orientation_size_stationary}
+\end{figure} 	
+ 
+ \begin{figure}
+ \centering	
  	\subfigure[\label{fig:OxS_2_rotating_angle}]{
  	\begin{minipage}[b]{0.45\columnwidth}
-  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_3_stationary_1F_noise}\vspace*{0ex}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/OxS_2_rotating_angle}\vspace*{0ex}
  	\end{minipage}}
  	\subfigure[\label{fig:OxS_2_rotating_size}]{
  	\begin{minipage}[b]{0.45\columnwidth}
-  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_4_stationary_2F}\vspace*{0ex}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/OxS_2_rotating_size}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{a - no noise, b - noise, gain too high, c - noise, gain reduced, d - 2F doesn't work}
  	\subfigure[\label{fig:OxS_3_rotating_twist_angle}]{
  	\begin{minipage}[b]{0.45\columnwidth}
-  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_1_stationary_1F}\vspace*{0ex}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/OxS_3_rotating_twist_angle}\vspace*{0ex}
  	\end{minipage}}
  	\subfigure[\label{fig:OxS_3_rotating_twist_size}]{
  	\begin{minipage}[b]{0.45\columnwidth}
-  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_2_stationary_1F_noise}\vspace*{0ex}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/OxS_3_rotating_twist_size}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{orientation and size}
- 	\label{fig:orientation_size_update}
+ 	\caption{(a),(b) - rotating and update via screw. tracks orientation reasonably well but jagged. Size easy. (c) and (d) update via twist. smoother but over shoots. }
+ 	\label{fig:orientation_size_rotating}
 \end{figure}
 
 \subsection{discussion}
