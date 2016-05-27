@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  25 MAY 2016 21:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  27 MAY 2016 10:02
 entering extended mode
 **title.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\title.tex"
@@ -26,6 +26,15 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
+! Undefined control sequence.
+l.2 \maketitle
+              
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 
 ! LaTeX Error: Missing \begin{document}.
 
@@ -33,20 +42,20 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.5 \center
+l.6 \center
             % Center everything on the page
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 5--5
+Overfull \hbox (20.0pt too wide) in paragraph at lines 6--6
 [] 
  []
 
 ! Undefined control sequence.
 <recently read> \LARGE 
                        
-l.7 \textsc{\LARGE Australian National University}
+l.8 \textsc{\LARGE Australian National University}
                                                   \\[1.5cm] % Name of your u...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -55,39 +64,39 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (57.04694pt too wide) in paragraph at lines 7--7
+Overfull \hbox (57.04694pt too wide) in paragraph at lines 8--8
  \OT1/cmr/m/sc/10 Australian 
  []
 
 
-Overfull \hbox (18.04987pt too wide) in paragraph at lines 7--7
+Overfull \hbox (18.04987pt too wide) in paragraph at lines 8--8
  \OT1/cmr/m/sc/10 Na- 
  []
 
 
-Overfull \hbox (32.68874pt too wide) in paragraph at lines 7--7
+Overfull \hbox (32.68874pt too wide) in paragraph at lines 8--8
  \OT1/cmr/m/sc/10 tional 
  []
 
 
-Overfull \hbox (21.07207pt too wide) in paragraph at lines 7--7
+Overfull \hbox (21.07207pt too wide) in paragraph at lines 8--8
  \OT1/cmr/m/sc/10 Uni- 
  []
 
 
-Overfull \hbox (21.511pt too wide) in paragraph at lines 7--7
+Overfull \hbox (21.511pt too wide) in paragraph at lines 8--8
  \OT1/cmr/m/sc/10 ver- 
  []
 
 
-Overfull \hbox (19.84433pt too wide) in paragraph at lines 7--7
+Overfull \hbox (19.84433pt too wide) in paragraph at lines 8--8
  \OT1/cmr/m/sc/10 sity 
  []
 
 ! Undefined control sequence.
 <recently read> \Large 
                        
-l.8 \textsc{\Large ENGN4718}
+l.9 \textsc{\Large ENGN4718}
                             \\[0.5cm] % Major heading such as course name
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -96,12 +105,12 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (54.31891pt too wide) in paragraph at lines 8--8
+Overfull \hbox (54.31891pt too wide) in paragraph at lines 9--9
  []\OT1/cmr/m/sc/10 ENGN4718 
  []
 
 ! Undefined control sequence.
-l.10 { \huge
+l.11 { \huge
              \bfseries Title}\\[0.4cm] % Title of your document
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -110,7 +119,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (24.13182pt too wide) in paragraph at lines 10--10
+Overfull \hbox (24.13182pt too wide) in paragraph at lines 11--11
  []\OT1/cmr/bx/n/10 Title 
  []
 
@@ -131,18 +140,16 @@ Missing character: There is no 2 in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 1 in font nullfont!
 Missing character: There is no 6 in font nullfont!
-Missing character: There is no S in font nullfont!
-Missing character: There is no u in font nullfont!
-Missing character: There is no p in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no v in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no s in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no d in font nullfont!
-Missing character: There is no b in font nullfont!
-Missing character: There is no y in font nullfont!
+
+Overfull \hbox (45.36078pt too wide) in paragraph at lines 17--17
+ []\OT1/cmr/m/it/10 Supervised 
+ []
+
+
+Overfull \hbox (10.3402pt too wide) in paragraph at lines 17--17
+ \OT1/cmr/m/it/10 by 
+ []
+
 Missing character: There is no D in font nullfont!
 Missing character: There is no r in font nullfont!
 Missing character: There is no J in font nullfont!
@@ -179,7 +186,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.23 \end{titlepage}
+l.25 \end{titlepage}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -193,11 +200,11 @@ or  <return>  to continue without it.
 
  
 Here is how much of TeX's memory you used:
- 16 strings out of 493921
- 326 string characters out of 3147261
+ 18 strings out of 493921
+ 347 string characters out of 3147261
  50031 words of memory out of 3000000
- 3408 multiletter control sequences out of 15000+200000
- 4249 words of font info for 16 fonts, out of 3000000 for 9000
+ 3409 multiletter control sequences out of 15000+200000
+ 4595 words of font info for 17 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 13i,1n,10p,135b,109s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 13i,1n,10p,135b,114s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  27 MAY 2016 09:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  27 MAY 2016 10:15
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -656,20 +656,19 @@ File: tikzlibrarypositioning.code.tex 2008/10/06 v3.0.0 (rcs-revision 1.7)
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\problem.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.aux")
-("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.aux")
-("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\appendix.aux"))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
+("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.aux"))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -723,7 +722,7 @@ LaTeX Font Info:    ... okay on input line 82.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 82.
+LaTeX Info: Redefining \microtypecontext on input line 85.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -770,7 +769,7 @@ ABD: EveryShipout initializing macros
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 91.
+LaTeX Font Info:    Try loading font information for U+msa on input line 93.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -778,7 +777,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 91.
+LaTeX Font Info:    Try loading font information for U+msb on input line 93.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -786,7 +785,6 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
-
 
 
 
@@ -1229,13 +1227,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
 
 ] [71]) [72]
-("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\appendix.tex"
-Appendix A.
-) [73
-
-
-
-] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux"
+("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.aux"
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\acknowledgements.aux
 ") ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\abstract.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\introduction.aux")
@@ -1243,17 +1235,16 @@ Appendix A.
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\problem.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\simulation.aux")
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.aux")
-("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.aux")
-("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\appendix.aux")) )
+("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\conclusion.aux")) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 19173 strings out of 493921
- 372844 string characters out of 3147261
- 446444 words of memory out of 3000000
- 21840 multiletter control sequences out of 15000+200000
+ 19166 strings out of 493921
+ 372419 string characters out of 3147261
+ 445982 words of memory out of 3000000
+ 21839 multiletter control sequences out of 15000+200000
  24908 words of font info for 140 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,23n,58p,1125b,11948s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1279,9 +1270,9 @@ i10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Prog
 ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10.pfb><C:/Program F
 iles/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (82 pages, 21444907 bytes).
+Output written on main.pdf (81 pages, 21443859 bytes).
 PDF statistics:
- 461 PDF objects out of 1000 (max. 8388607)
+ 458 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  21357 words of extra memory for PDF output out of 24883 (max. 10000000)
 
