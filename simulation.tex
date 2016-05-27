@@ -251,6 +251,14 @@ To simulate range measurements, the scan direction is required in the inertial f
 	\end{array}
 \end{equation}
 
+\subsubsection{Hokuyo UBG-04LX-F01 Model} 
+\textbf{EDIT THIS PART\\}
+\textbf{motion}\\
+-stationary, rotate between -pi/8 to pi/8 about y-axis. rotates at pi/4 rad/s
+\textbf{sensor parameters}
+fov = pi rad, from pi/2 to -pi/2 ie clockwise rotation ie rotates about -z axis.
+24 scans per sec, 512 measurements in scan, can think of this as having 1024 positions around revolution.
+
 \subsection{Environment Modelling: \texttt{initialiseenvironment}}
 The environment described in the problem formulation stated in Chapter \ref{chap:problem} was an infinite dimensional system. Since the state variable to be estimated consists of just the cube pose and size and range measurements corresponding to the background are filtered out, the state of the background has no effect on the performance of the observer. 
 To reduce computational load, the background will thus be modelled as a single object; a rigid rectangular prism enclosing both the sensor and cube. 

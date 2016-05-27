@@ -9,8 +9,8 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Cube modelled with an ordered set of points and corresponding triangles\relax }}{39}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Ray-triangle intersection\relax }}{40}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Orientation update scheme: intersection of the scan directions with the surfaces of the measured and predicted cubes are used to determine the surface normals. \relax }}{45}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Position update\relax }}{47}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Size update - case 1\relax }}{49}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Position update\relax }}{48}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Size update - case 1\relax }}{50}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Size update - case 2\relax }}{51}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Angle error for (a) noiseless and (b) noisy measurements of stationary cube with 3 faces visible to sensor\relax }}{53}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{53}
