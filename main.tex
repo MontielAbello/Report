@@ -48,7 +48,6 @@
 \usepackage{subfigure}
 %filepath for figures
 \graphicspath{{./figures/}}
-
 %tikz
 \usepackage{tikz,tikz-3dplot} 
 %\usetikzlibrary{calc}
@@ -81,20 +80,27 @@
 
 %--------------------------------------------------------------
 
-
 \begin{document}
 
-%TITLE PAGE
+%TITLEPAGE
 \newgeometry{margin=20mm}
-%\begin{titlepage}
-\author{Montiel Abello}
-\title{Title}
-\date{}
+\begin{titlepage}
+\title{
+	\normalsize
+		\textbf{The Australian National University}\\
+		\textbf{ENGN4718}\\
+	 	\textbf{Engineering Research and Development Project}\\[2cm]
+	\LARGE
+		\textbf{Rigid Body State Estimation From Sparse Range Measurements}\\[2cm]}
+\author{
+	\textbf{Montiel Abello}\\
+	\textbf{2016}}
+\date{
+	\textbf{Supervised by Dr Jochen Trumpf and Dr Viorela Ila}}
 \maketitle
-%\end{titlepage}
+\end{titlepage}
 \restoregeometry
 
-%\pagestyle{}
 %FRONTMATTER
 \frontmatter
 \include{acknowledgements}
