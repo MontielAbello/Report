@@ -719,6 +719,13 @@ Because the convergence of the size error ratio is so rapid, the performance of 
 \end{figure}
 
 \subsection{Discussion}
+
+\textbf{ORIENTATION \& SIZE GLOBALLY CONVERGENT}\\
+Add plot of convergence time for range of initial conditions. Equilibrium point - position error 0 - globally convergent. 
+See what happens if position update turned on when position correct. does it still work? see what basin of attraction is.
+To make it globally convergent/larger basin of attraction - update must be invariant to SO(3). Position update at the moment is not invariant to orientation.
+Orientation update seems to be invariant to position - explain this in detail.
+
 The simulation results show that the size update is extremely robust. Given the correct position and orientation estimates, the size update function is globally convergent.
 For the case of a stationary cube and correct size and position estimates, the orientation update function is also globally convergent though convergence is limited by the presence of noise. The symmetry of the cube means that the angle error is bounded to $\pi/4$ and the orientation correction converges quickly. The position update function was particularly unstable. Correction of the position error only converged for the special case where a single cube face was visible. 
 

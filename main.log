@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  28 MAY 2016 04:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  28 MAY 2016 05:20
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -1084,14 +1084,14 @@ File: ./Figures/tetrahedron_angle_error.jpg Graphic file (type jpg)
 
 <use ./Figures/tetrahedron_angle_error.jpg>
 Package pdftex.def Info: ./Figures/tetrahedron_angle_error.jpg used on input li
-ne 731.
+ne 738.
 (pdftex.def)             Requested size: 192.0548pt x 106.30534pt.
 
 <./Figures/tetrahedron_size_error_ratio.jpg, id=294, 3343.49126pt x 1850.915pt>
 File: ./Figures/tetrahedron_size_error_ratio.jpg Graphic file (type jpg)
 <use ./Figures/tetrahedron_size_error_ratio.jpg>
 Package pdftex.def Info: ./Figures/tetrahedron_size_error_ratio.jpg used on inp
-ut line 735.
+ut line 742.
 (pdftex.def)             Requested size: 192.0548pt x 106.30534pt.
  [58 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/tetrahed
 ron_angle_error.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/
@@ -1268,7 +1268,7 @@ nts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on main.pdf (81 pages, 21427385 bytes).
+Output written on main.pdf (81 pages, 21428799 bytes).
 PDF statistics:
  450 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
