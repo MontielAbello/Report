@@ -589,13 +589,30 @@ Initial conditions and the scaling factors of the orientation, position and size
 Key results of this analysis and an overall assessment of the observer's performance are presented in this section.
 
 \subsection{Orientation correction}
+\subsubsection{Stationary Cube}
+When testing the orientation update alone, the position and size update functions were effectively turned off by setting their scaling factors to 0. The initial size and position of the state estimate were assigned the ground truth values. The \textit{angle error} between the predicted and ground truth orientation was computed to quantify performance. To compute this, the rotation matrix required to map the orientation of the predicted cube to that of the ground truth cube was computed over time. This was converted to the scaled-axis representation. The angle error was defined as the magnitude of this scaled-axis vector, representing the angular error between the predicted and ground truth orientation.
 
-When testing the orientation update alone, the update position and size update functions were effectively turned off by setting their scaling factors to 0. The initial size and position of the state estimate were assigned the ground truth values. The \textit{angle error} between the predicted and ground truth orientation was computed to quantify performance. To compute this, the rotation matrix required to map the orientation of the predicted cube to that of the ground truth cube was computed. This was converted to the scaled-axis representation. The angle error was defined as the magnitude of this vector which represented the angular error between the predicted and ground truth orientation.
+The results presented in Figure \ref{fig:angle_error_stationary} are from trials where the cube was stationary and three faces where visible. Similar performance was achieved when two faces were visible. When no noise is present, the angle error quickly converges to 0. In fact, for the case of orientation correction alone, the observer guarantees global convergence. When noise is present, the error converges to the noise floor and exhibits a stable fluctuation about this limit. Given the mean and standard deviation of the Gaussian distributed range error, the angle error would be expected to cross 0 once the error converged to the noise floor. The reason this does not occur is due to small error in the orientation axis between the prediction and ground truth. 
 
-The results presented in Figure \ref{fig:angle_error_stationary} are from trials where the cube was stationary and three faces where visible. When no noise is present, the angle error quickly converges to 0. In fact, for the case of orientation correction alone, the observer guarantees global convergence. When noise is present, the error converges to the noise floor and fluctuates due to the random distribution of the error. Despite this offset, the error trajectory is stable and remains close to this limit. \textbf{ADDITION: given mean and standard deviation of Gaussian distribution for noise, would expect angle error to cross 0, reason it does not do so is that there is error in the orientation axis also.}
+A limitation of the orientation update scheme was revealed when only a single cube face was visible to the sensor. The normals estimated from the predicted and measured intersection points were used to define the angular error. However, this information is insufficient to correct for angular error about these normals themselves, as shown in Figure \ref{fig:orientation_1F}. 
 
-\textbf{ADDITION: 2 faces visible - same performance. 1 face visible, cannot distinguish orientation with normals along axis perpendicular to visible face. Solution was to apply rotation if visibility pattern indicted by set of indexes $\textbf{u}(t)$ not equal. Don't turn this on usually, causes problems with other updates - plus under noisy conditions, will cause rotation away from stable - difficult to get right rotation direction, }
+\begin{figure}
+\centering
+ 	\subfigure[\label{fig:orientation_1F_error}]{
+ 	\begin{minipage}[b]{0.45\columnwidth}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/orientation_1F_error}\vspace*{0ex}
+ 	\end{minipage}}
+ 	\subfigure[\label{fig:orientation_1F_final_state}]{
+ 	\begin{minipage}[b]{0.45\columnwidth}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/orientation_1F_final_state}\vspace*{0ex}
+ 	\end{minipage}}
+ 	\caption{Orientation update when single cube face visible leads to (a) angle error, depicted in final state estimate (b).}
+ 	\label{fig:orientation_1F}
+\end{figure}
 
+An approach considered to account for this was to apply a rotation to the predicted cube about its normal axis if the visibility pattern indicted by the set of indexes $\textbf{u}(t)$ was not congruent for the prediction and measurement. This would effectively rotate the predicted cube until the faces aligned. However, this scheme was not used as it would later interfere with the performance of orientation and size update, and was unstable under noisy conditions, causing rotation away from the correct orientation. The recommendation for future work is to estimate the actual orientation about this axis, for prediction and measurement, and apply necessary correction.
+
+\subsubsection{Moving Cube}
 In Figure \ref{fig:angle_error_rotating} the ground truth cube rotated with an angular velocity of approximately $0.0327$ rad/s such that 3 faces were visible to the sensor. The observer was given the ground truth initial orientation an an initial angular velocity of 0.
 Figure \ref{fig:angle_error_1_rotating_screw} shows that for noiseless measurements where orientation update is performed via the screw matrix, the observer is able to estimate the angular velocity of the cube and match its orientation. Again for noiseless measurements, Figure \ref{fig:angle_error_1_rotating_twist} shows that updating via the twist matrix initially provides a slower but smoother estimation of orientation. In trying to match the rotation of the cube, the angular velocity estimate overshoots the ground truth angular velocity and the angle error diverges. 
 For noisy measurements , update via the screw in Figure \ref{fig:angle_error_1_rotating_screw_noise} and twist \ref{fig:angle_error_1_rotating_twist} is unable to effectively track the rotation of the cube. Updating via the twist matrix again results in overshoot. 
