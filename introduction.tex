@@ -1,14 +1,15 @@
 \chapter{Introduction}
 
-CONTEXT\\
-	autonomous robots, unstructured environments. Advances in hardware - need improvements in software to fully utilise capabilities of dense sensors.
-	What is needed is observer design methodology.
+Advances in hardware have made mobile robots more accessible for research, industry and even to the general public. Dense sensors such as .... are becoming cheaper, smaller. Before robots can be deployed autonomously in complex, real-world environment, need improvements in software to fully utilise capabilities of dense sensors.
+
 MOTIVATION\\
-	Allow for improved convergence, global. 
-RESEARCH     GOALS\\
+	One method observe environment - infinite dimensional observer. 
+	Current theory for infinite dimensional observer design lacking. Typically extensions of luenberger type observers for finite dimensional systems which don't work well for nonlinear systems.
+	Developing a theory of symmetry preserving infinite dimensional observers would allow for improved/easier design with for improved convergence properties, global convergence. 
+RESEARCH GOALS\\
 	Exploratory, look into sparse sensor - dense measurements. Build an observer for an infinite dimensional system - in this case, simplified at first. Will explore if infinite dimensional, symmetry preserving implementation would improve performance
 WHAT IS IN REPORT\\
-	This report presents the implementation of an observer to solve a novel problem: estimating
+	This report presents the implementation of an observer to solve a novel problem: estimating cube state from sparse range measurements.
 	Simulation - to test performance, experimental validation
 	
 	implementation of an observer to solve novel problem - sparse sensor gives dense measurement.

@@ -2,84 +2,84 @@
 \contentsline {chapter}{Abstract}{ii}
 \contentsline {chapter}{Aims and Contributions}{ix}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {1.1}Literature Review}{2}
-\contentsline {subsection}{\numberline {1.1.1}Infinite-Dimensional Observers}{2}
-\contentsline {subsubsection}{\numberline {1.1.1.1}Linear Systems}{2}
-\contentsline {subsubsection}{\numberline {1.1.1.2}Nonlinear Systems}{3}
-\contentsline {subsection}{\numberline {1.1.2}Symmetry-Preserving Observers}{4}
-\contentsline {subsubsection}{\numberline {1.1.2.1}Early work}{4}
-\contentsline {subsubsection}{\numberline {1.1.2.2}Active Research}{5}
-\contentsline {chapter}{\numberline {2}Theoretical Background}{8}
-\contentsline {section}{\numberline {2.1}Rigid Body Kinematics}{8}
-\contentsline {subsection}{\numberline {2.1.1}Lie Groups}{8}
-\contentsline {subsubsection}{\numberline {2.1.1.1}Matrix Lie groups}{9}
-\contentsline {subsubsection}{\numberline {2.1.1.2}Lie algebra}{9}
-\contentsline {subsubsection}{\numberline {2.1.1.3}The exponential map and logarithm map}{9}
-\contentsline {subsubsection}{\numberline {2.1.1.4}Infinitesimal generators}{10}
-\contentsline {subsubsection}{\numberline {2.1.1.5}Lie bracket and group operation}{11}
-\contentsline {subsubsection}{\numberline {2.1.1.6}Actions}{11}
-\contentsline {subsection}{\numberline {2.1.2}\textbf {SO}(3)}{11}
-\contentsline {subsubsection}{\numberline {2.1.2.1}Lie algebra}{12}
-\contentsline {subsubsection}{\numberline {2.1.2.2}Actions}{13}
-\contentsline {subsubsection}{\numberline {2.1.2.3}Rotation representations}{13}
-\contentsline {subsubsection}{\numberline {2.1.2.4}Rotation matrices}{13}
-\contentsline {subsubsection}{\numberline {2.1.2.5}Scaled-axis representation}{13}
-\contentsline {subsubsection}{\numberline {2.1.2.6}Rotation quaternions}{14}
-\contentsline {subsection}{\numberline {2.1.3}\textbf {SE}(3)}{15}
-\contentsline {subsubsection}{\numberline {2.1.3.1}Lie algebra}{15}
-\contentsline {subsubsection}{\numberline {2.1.3.2}Actions}{16}
-\contentsline {subsection}{\numberline {2.1.4}Reference Frames}{17}
-\contentsline {subsubsection}{\numberline {2.1.4.1}Pose}{17}
-\contentsline {subsubsection}{\numberline {2.1.4.2}Point}{18}
-\contentsline {subsubsection}{\numberline {2.1.4.3}Homogeneous coordinates}{18}
-\contentsline {subsubsection}{\numberline {2.1.4.4}Redefining the reference frame of a point}{18}
-\contentsline {subsubsection}{\numberline {2.1.4.5}Concatenating poses}{19}
-\contentsline {subsubsection}{\numberline {2.1.4.6}Redefining the reference frame of a pose}{19}
-\contentsline {subsubsection}{\numberline {2.1.4.7}Inverse}{19}
-\contentsline {subsection}{\numberline {2.1.5}Rigid Body State Representation}{19}
-\contentsline {subsection}{\numberline {2.1.6}Rigid Body Kinematics}{20}
-\contentsline {subsection}{\numberline {2.1.7}Scanning Laser Range-finder Dynamic Model}{20}
-\contentsline {section}{\numberline {2.2}State Observers}{22}
-\contentsline {subsection}{\numberline {2.2.1}Luenberger observers}{22}
-\contentsline {subsection}{\numberline {2.2.2}Symmetry-preserving observers}{23}
-\contentsline {chapter}{\numberline {3}Problem Statement}{24}
-\contentsline {section}{\numberline {3.1}Estimating the pose and size of a cube from sparse range measurements}{25}
-\contentsline {section}{\numberline {3.2}Deliverables}{28}
-\contentsline {chapter}{\numberline {4}Observer Simulation}{29}
-\contentsline {section}{\numberline {4.1}Implementation}{29}
-\contentsline {subsection}{\numberline {4.1.1}Rigid Body Motion}{31}
-\contentsline {subsubsection}{\numberline {4.1.1.1}Interpolation}{32}
-\contentsline {subsubsection}{\numberline {4.1.1.2}Numerical Integration}{33}
-\contentsline {subsection}{\numberline {4.1.2}Sensor modelling: \texttt {initialisesensor}}{34}
-\contentsline {subsubsection}{\numberline {4.1.2.1}Motion}{34}
-\contentsline {subsubsection}{\numberline {4.1.2.2}Scanning}{35}
-\contentsline {subsubsection}{\numberline {4.1.2.3}Hokuyo UBG-04LX-F01 Model}{36}
-\contentsline {subsection}{\numberline {4.1.3}Environment Modelling: \texttt {initialiseenvironment}}{37}
-\contentsline {subsubsection}{\numberline {4.1.3.1}Motion}{37}
-\contentsline {subsubsection}{\numberline {4.1.3.2}Rigid Objects}{38}
-\contentsline {subsection}{\numberline {4.1.4}Measurement Modelling}{39}
-\contentsline {subsubsection}{\numberline {4.1.4.1}Range Computation: \texttt {computerange}}{39}
-\contentsline {subsubsection}{\numberline {4.1.4.2}Sensor Noise: \texttt {addnoise}}{41}
-\contentsline {subsection}{\numberline {4.1.5}Observer Implementation}{41}
-\contentsline {subsubsection}{\numberline {4.1.5.1}Estimate: \texttt {estimatestate}}{41}
-\contentsline {subsubsection}{\numberline {4.1.5.2}Object/background separation: \texttt {identifyobject}}{43}
-\contentsline {subsubsection}{\numberline {4.1.5.3}Update: \texttt {updatestate}}{43}
-\contentsline {section}{\numberline {4.2}Results}{52}
-\contentsline {subsection}{\numberline {4.2.1}Orientation correction}{52}
-\contentsline {subsubsection}{\numberline {4.2.1.1}Stationary Cube}{52}
-\contentsline {subsubsection}{\numberline {4.2.1.2}Moving Cube}{53}
-\contentsline {subsection}{\numberline {4.2.2}Position correction}{55}
-\contentsline {subsection}{\numberline {4.2.3}Size correction}{55}
-\contentsline {subsection}{\numberline {4.2.4}Orientation and size correction}{57}
-\contentsline {subsection}{\numberline {4.2.5}Discussion}{59}
-\contentsline {subsubsection}{\numberline {4.2.5.1}Performance Assessment}{59}
-\contentsline {subsubsection}{\numberline {4.2.5.2}Improvements and Future Work}{60}
-\contentsline {chapter}{\numberline {5}Experimental Data}{62}
-\contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{63}
-\contentsline {subsection}{\numberline {5.1.1}Measurement Setup}{63}
-\contentsline {subsection}{\numberline {5.1.2}Results}{64}
-\contentsline {subsubsection}{\numberline {5.1.2.1}Gaussian noise model}{66}
-\contentsline {subsubsection}{\numberline {5.1.2.2}Surface noise}{67}
-\contentsline {section}{\numberline {5.2}Observer Performance Testing Data}{69}
-\contentsline {subsection}{\numberline {5.2.1}Setup}{69}
-\contentsline {subsection}{\numberline {5.2.2}Results}{70}
+\contentsline {section}{\numberline {1.1}Literature Review}{3}
+\contentsline {subsection}{\numberline {1.1.1}Infinite-Dimensional Observers}{3}
+\contentsline {subsubsection}{\numberline {1.1.1.1}Linear Systems}{3}
+\contentsline {subsubsection}{\numberline {1.1.1.2}Nonlinear Systems}{4}
+\contentsline {subsection}{\numberline {1.1.2}Symmetry-Preserving Observers}{5}
+\contentsline {subsubsection}{\numberline {1.1.2.1}Early work}{5}
+\contentsline {subsubsection}{\numberline {1.1.2.2}Active Research}{6}
+\contentsline {chapter}{\numberline {2}Theoretical Background}{9}
+\contentsline {section}{\numberline {2.1}Rigid Body Kinematics}{9}
+\contentsline {subsection}{\numberline {2.1.1}Lie Groups}{9}
+\contentsline {subsubsection}{\numberline {2.1.1.1}Matrix Lie groups}{10}
+\contentsline {subsubsection}{\numberline {2.1.1.2}Lie algebra}{10}
+\contentsline {subsubsection}{\numberline {2.1.1.3}The exponential map and logarithm map}{10}
+\contentsline {subsubsection}{\numberline {2.1.1.4}Infinitesimal generators}{11}
+\contentsline {subsubsection}{\numberline {2.1.1.5}Lie bracket and group operation}{12}
+\contentsline {subsubsection}{\numberline {2.1.1.6}Actions}{12}
+\contentsline {subsection}{\numberline {2.1.2}\textbf {SO}(3)}{12}
+\contentsline {subsubsection}{\numberline {2.1.2.1}Lie algebra}{13}
+\contentsline {subsubsection}{\numberline {2.1.2.2}Actions}{14}
+\contentsline {subsubsection}{\numberline {2.1.2.3}Rotation representations}{14}
+\contentsline {subsubsection}{\numberline {2.1.2.4}Rotation matrices}{14}
+\contentsline {subsubsection}{\numberline {2.1.2.5}Scaled-axis representation}{14}
+\contentsline {subsubsection}{\numberline {2.1.2.6}Rotation quaternions}{15}
+\contentsline {subsection}{\numberline {2.1.3}\textbf {SE}(3)}{16}
+\contentsline {subsubsection}{\numberline {2.1.3.1}Lie algebra}{16}
+\contentsline {subsubsection}{\numberline {2.1.3.2}Actions}{17}
+\contentsline {subsection}{\numberline {2.1.4}Reference Frames}{18}
+\contentsline {subsubsection}{\numberline {2.1.4.1}Pose}{18}
+\contentsline {subsubsection}{\numberline {2.1.4.2}Point}{19}
+\contentsline {subsubsection}{\numberline {2.1.4.3}Homogeneous coordinates}{19}
+\contentsline {subsubsection}{\numberline {2.1.4.4}Redefining the reference frame of a point}{19}
+\contentsline {subsubsection}{\numberline {2.1.4.5}Concatenating poses}{20}
+\contentsline {subsubsection}{\numberline {2.1.4.6}Redefining the reference frame of a pose}{20}
+\contentsline {subsubsection}{\numberline {2.1.4.7}Inverse}{20}
+\contentsline {subsection}{\numberline {2.1.5}Rigid Body State Representation}{20}
+\contentsline {subsection}{\numberline {2.1.6}Rigid Body Kinematics}{21}
+\contentsline {subsection}{\numberline {2.1.7}Scanning Laser Range-finder Dynamic Model}{21}
+\contentsline {section}{\numberline {2.2}State Observers}{23}
+\contentsline {subsection}{\numberline {2.2.1}Luenberger observers}{23}
+\contentsline {subsection}{\numberline {2.2.2}Symmetry-preserving observers}{24}
+\contentsline {chapter}{\numberline {3}Problem Statement}{25}
+\contentsline {section}{\numberline {3.1}Estimating the pose and size of a cube from sparse range measurements}{26}
+\contentsline {section}{\numberline {3.2}Deliverables}{29}
+\contentsline {chapter}{\numberline {4}Observer Simulation}{30}
+\contentsline {section}{\numberline {4.1}Implementation}{30}
+\contentsline {subsection}{\numberline {4.1.1}Rigid Body Motion}{32}
+\contentsline {subsubsection}{\numberline {4.1.1.1}Interpolation}{33}
+\contentsline {subsubsection}{\numberline {4.1.1.2}Numerical Integration}{34}
+\contentsline {subsection}{\numberline {4.1.2}Sensor modelling: \texttt {initialisesensor}}{35}
+\contentsline {subsubsection}{\numberline {4.1.2.1}Motion}{35}
+\contentsline {subsubsection}{\numberline {4.1.2.2}Scanning}{36}
+\contentsline {subsubsection}{\numberline {4.1.2.3}Hokuyo UBG-04LX-F01 Model}{37}
+\contentsline {subsection}{\numberline {4.1.3}Environment Modelling: \texttt {initialiseenvironment}}{38}
+\contentsline {subsubsection}{\numberline {4.1.3.1}Motion}{38}
+\contentsline {subsubsection}{\numberline {4.1.3.2}Rigid Objects}{39}
+\contentsline {subsection}{\numberline {4.1.4}Measurement Modelling}{40}
+\contentsline {subsubsection}{\numberline {4.1.4.1}Range Computation: \texttt {computerange}}{40}
+\contentsline {subsubsection}{\numberline {4.1.4.2}Sensor Noise: \texttt {addnoise}}{42}
+\contentsline {subsection}{\numberline {4.1.5}Observer Implementation}{42}
+\contentsline {subsubsection}{\numberline {4.1.5.1}Estimate: \texttt {estimatestate}}{42}
+\contentsline {subsubsection}{\numberline {4.1.5.2}Object/background separation: \texttt {identifyobject}}{44}
+\contentsline {subsubsection}{\numberline {4.1.5.3}Update: \texttt {updatestate}}{44}
+\contentsline {section}{\numberline {4.2}Results}{53}
+\contentsline {subsection}{\numberline {4.2.1}Orientation correction}{53}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Stationary Cube}{53}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Moving Cube}{54}
+\contentsline {subsection}{\numberline {4.2.2}Position correction}{56}
+\contentsline {subsection}{\numberline {4.2.3}Size correction}{56}
+\contentsline {subsection}{\numberline {4.2.4}Orientation and size correction}{58}
+\contentsline {subsection}{\numberline {4.2.5}Discussion}{60}
+\contentsline {subsubsection}{\numberline {4.2.5.1}Performance Assessment}{60}
+\contentsline {subsubsection}{\numberline {4.2.5.2}Improvements and Future Work}{61}
+\contentsline {chapter}{\numberline {5}Experimental Data}{63}
+\contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{64}
+\contentsline {subsection}{\numberline {5.1.1}Measurement Setup}{64}
+\contentsline {subsection}{\numberline {5.1.2}Results}{65}
+\contentsline {subsubsection}{\numberline {5.1.2.1}Gaussian noise model}{67}
+\contentsline {subsubsection}{\numberline {5.1.2.2}Surface noise}{68}
+\contentsline {section}{\numberline {5.2}Observer Performance Testing Data}{70}
+\contentsline {subsection}{\numberline {5.2.1}Setup}{70}
+\contentsline {subsection}{\numberline {5.2.2}Results}{71}
