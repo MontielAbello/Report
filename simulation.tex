@@ -689,10 +689,11 @@ The position update function is only successful when a single cube face is visib
 \end{figure}
 
 \subsection{Size correction}
-The size correction function is extremely robust, able to globally converge to 0. The speed of the convergence suggests that the correction is dominated by case 2 of the size update function. This update scheme uses the mean range difference effectively measures the size difference. On the other hand, case 1 relies on the rarer occurrence of misaligned edges between the prediction and ground truth being observed to determine.
-However, case 1 will be required when there is nonzero position error, since a situation may arise where a combination of position and size error means that the predicted and ground truth cube faces lie the same distance from the sensor.
+The size correction function is extremely robust, able to globally converge to the noise floor regardless of the number of cube faces visible. 
 Figure \ref{fig:size_stationary} shows the ratio of the size error and ground truth size (size error ratio) converges to 0 for noisy measurements of a stationary cube where 3 faces are visible to the sensor. 
 In Figure \ref{fig:size_RT_noise}, noisy measurements were taken of a cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces were visible to the sensor. The ground truth twist was given as the initial twist estimate to allow the predicted cube to match the motion of the ground truth cube. In this case, the size error ratio still converged to the noise floor.
+The speed of the convergence suggests that the correction is dominated by case 2 of the size update function. This update scheme uses the mean range difference effectively measures the size difference. On the other hand, case 1 relies on the rarer occurrence of misaligned edges between the prediction and ground truth being observed to determine.
+However, case 1 will be required when there is non-zero position error, since a situation may arise where a combination of position and size error means that the predicted and ground truth cube faces lie the same distance from the sensor.
 
 \begin{figure}[h]
 	\centering
