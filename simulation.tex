@@ -690,7 +690,7 @@ The position update function is only successful when a single cube face is visib
 
 \subsection{Size correction}
 The size correction function is extremely robust, able to globally converge to the noise floor regardless of the number of cube faces visible. 
-Figure \ref{fig:size_stationary} shows the ratio of the size error and ground truth size (size error ratio) converges to 0 for noisy measurements of a stationary cube where 3 faces are visible to the sensor. 
+Figure \ref{fig:size_stationary} shows that the \textit{size error ratio} (the ratio between the size error and ground truth size) converges to 0 for noisy measurements of a stationary cube where 3 faces are visible to the sensor. 
 In Figure \ref{fig:size_RT_noise}, noisy measurements were taken of a cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces were visible to the sensor. The ground truth twist was given as the initial twist estimate to allow the predicted cube to match the motion of the ground truth cube. In this case, the size error ratio still converged to the noise floor.
 The speed of the convergence suggests that the correction is dominated by case 2 of the size update function. This update scheme uses the mean range difference effectively measures the size difference. On the other hand, case 1 relies on the rarer occurrence of misaligned edges between the prediction and ground truth being observed to determine.
 However, case 1 will be required when there is non-zero position error, since a situation may arise where a combination of position and size error means that the predicted and ground truth cube faces lie the same distance from the sensor.
@@ -709,11 +709,10 @@ However, case 1 will be required when there is non-zero position error, since a 
   	\label{fig:size_RT_noise}
 \end{figure}
 
-\subsection{Orientation and size correction}      
-Figure \ref{fig:orientation_size_stationary} shows that angle error and size error ratio converge to the noise floor for noisy measurements of stationary where 3 faces are visible to the sensor.
-For noiseless measurements of a rotating cube, Figures \ref{fig:OxS_2_rotating_angle} and \ref{fig:OxS_2_rotating_size} show that the observer is able to track the orientation of the cube when updating via the screw, and the size error ratio converges to the noise floor.
-Though the size error ratio in Figure \ref{fig:OxS_3_rotating_twist_size} converges to the noise floor, Figure \ref{fig:OxS_3_rotating_twist_angle} shows that updating orientation via the twist results in overshoot.
-Because the convergence of the size error ratio is so rapid, the performance of the observer when correcting both orientation and size is limited only by the effectiveness of the orientation update.
+\subsection{Orientation and size correction} 
+As the orientation and size update functions were effective individually, their ability to work simultaneously was tested.
+
+For stationary cubes, the observer was able convergent for noiseless and noisy results, regardless of the number of cube faces visible to the sensor. Figure \ref{fig:orientation_size_stationary} shows the angle error and size error ratio converging to the noise floor for noisy measurements of a stationary cube where 3 faces were visible to the sensor.
 
 \begin{figure}
 \centering
@@ -728,9 +727,29 @@ Because the convergence of the size error ratio is so rapid, the performance of 
  	\caption{For noisy measurements of stationary cube with 3 faces visible to sensor, the angle error (a) and size error ratio (b) both converge to the noise floor.}
  	\label{fig:orientation_size_stationary}
 \end{figure} 	
- 
- \begin{figure}
- \centering	
+
+A more systematic test was conducted with a wide range of initial conditions to verify this global convergence. Orientation and size correction were tested for initial angular error ranging from a minimum of 0 to a maximum of $\pi/4$ radians, and a minimum size error ratio of $-0.5$ to a maximum of 2. Noiseless range measurements were used.
+Figure \ref{fig:convergence} shows the time taken to converge to within $1\%$ error. Comparing Figures \ref{fig:convergence_orientation} and \ref{fig:convergence_size} shows that the size error ratio always converges before the angle error. The magnitude of the initial angle error has little effect on the speed of the size error ratio convergence. The size correction only has a significant impact on the speed of orientation correction when the initial size estimate is smaller than the ground truth.
+\begin{figure}
+\centering
+ 	\subfigure[\label{fig:convergence_orientation}]{
+ 	\begin{minipage}[b]{0.45\columnwidth}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/convergence_angle_error}\vspace*{0ex}
+ 	\end{minipage}}
+ 	\subfigure[\label{fig:convergence_size}]{
+ 	\begin{minipage}[b]{0.45\columnwidth}
+  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/convergence_size_error_ratio}\vspace*{0ex}
+ 	\end{minipage}}
+ 	\caption{Time taken to converge to (a) angle error $< \pi/400$ radians ($1\%$ of maximum $\pi/4$ angle error) and (b) size error ratio $< |0.01|$ for range of initial conditions}
+ 	\label{fig:convergence}
+\end{figure}
+     
+For noiseless measurements of a rotating cube, Figures \ref{fig:OxS_2_rotating_angle} and \ref{fig:OxS_2_rotating_size} show that the observer is able to track the orientation of the cube when updating via the screw, and the size error ratio converges to the noise floor.
+Though the size error ratio in Figure \ref{fig:OxS_3_rotating_twist_size} converges to the noise floor, Figure \ref{fig:OxS_3_rotating_twist_angle} shows that updating orientation via the twist results in overshoot. This also occurred when size correction was not being performed.
+Because the convergence of the size error ratio is so rapid, the performance of the observer when correcting both orientation and size is limited only by the effectiveness of the orientation update.
+
+\begin{figure}
+	\centering	
  	\subfigure[\label{fig:OxS_2_rotating_angle}]{
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/OxS_2_rotating_angle}\vspace*{0ex}
@@ -749,22 +768,6 @@ Because the convergence of the size error ratio is so rapid, the performance of 
  	\end{minipage}}
  	\caption{Noiseless measurements of cube rotating at $0.0327$ rad/s such that 3 faces visible to sensor. Angle error (a) and size error ratio (b) when orientation updated via screw. Angle error (c) and size error ratio (d) when orientation updated via wrench.}
  	\label{fig:orientation_size_rotating}
-\end{figure}
-
-\textbf{CONVERGENCE TIMES}\\
-See Figure \ref{fig:convergence_orientation} and \ref{fig:convergence_size}.
-\begin{figure}
-\centering
- 	\subfigure[\label{fig:convergence_orientation}]{
- 	\begin{minipage}[b]{0.45\columnwidth}
-  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/convergence_angle_error}\vspace*{0ex}
- 	\end{minipage}}
- 	\subfigure[\label{fig:convergence_size}]{
- 	\begin{minipage}[b]{0.45\columnwidth}
-  		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/convergence_size_error_ratio}\vspace*{0ex}
- 	\end{minipage}}
- 	\caption{Time taken to converge to (a) angle error $< \pi/400$ radians and (b) size error ratio $< |0.01|$ for range of initial conditions}
- 	\label{fig:convergence}
 \end{figure}
 
 \subsection{Discussion}

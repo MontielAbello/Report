@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  29 MAY 2016 23:54
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  30 MAY 2016 01:24
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -1050,7 +1050,7 @@ File: ./Figures/OxS_1_stationary_angle.jpg Graphic file (type jpg)
 
 <use ./Figures/OxS_1_stationary_angle.jpg>
 Package pdftex.def Info: ./Figures/OxS_1_stationary_angle.jpg used on input lin
-e 723.
+e 722.
 (pdftex.def)             Requested size: 192.0548pt x 106.50304pt.
 
 <./Figures/OxS_1_stationary_size.jpg, id=281, 3337.46875pt x 1850.915pt>
@@ -1058,86 +1058,85 @@ File: ./Figures/OxS_1_stationary_size.jpg Graphic file (type jpg)
 
 <use ./Figures/OxS_1_stationary_size.jpg>
 Package pdftex.def Info: ./Figures/OxS_1_stationary_size.jpg used on input line
- 727.
+ 726.
 (pdftex.def)             Requested size: 192.0548pt x 106.50304pt.
 
-<./Figures/OxS_2_rotating_angle.jpg, id=283, 3337.46875pt x 1850.915pt>
-File: ./Figures/OxS_2_rotating_angle.jpg Graphic file (type jpg)
-
-<use ./Figures/OxS_2_rotating_angle.jpg>
-Package pdftex.def Info: ./Figures/OxS_2_rotating_angle.jpg used on input line 
-737.
-(pdftex.def)             Requested size: 192.0548pt x 106.50304pt.
-
-<./Figures/OxS_2_rotating_size.jpg, id=285, 3337.46875pt x 1850.915pt>
-File: ./Figures/OxS_2_rotating_size.jpg Graphic file (type jpg)
-
-<use ./Figures/OxS_2_rotating_size.jpg>
-Package pdftex.def Info: ./Figures/OxS_2_rotating_size.jpg used on input line 7
-41.
-(pdftex.def)             Requested size: 192.0548pt x 106.50304pt.
-
-<./Figures/OxS_3_rotating_twist_angle.jpg, id=287, 3337.46875pt x 1850.915pt>
-File: ./Figures/OxS_3_rotating_twist_angle.jpg Graphic file (type jpg)
-
-<use ./Figures/OxS_3_rotating_twist_angle.jpg>
-Package pdftex.def Info: ./Figures/OxS_3_rotating_twist_angle.jpg used on input
- line 745.
-(pdftex.def)             Requested size: 192.0548pt x 106.50304pt.
-
-<./Figures/OxS_3_rotating_twist_size.jpg, id=289, 3337.46875pt x 1850.915pt>
-File: ./Figures/OxS_3_rotating_twist_size.jpg Graphic file (type jpg)
-
-<use ./Figures/OxS_3_rotating_twist_size.jpg>
-Package pdftex.def Info: ./Figures/OxS_3_rotating_twist_size.jpg used on input 
-line 749.
-(pdftex.def)             Requested size: 192.0548pt x 106.50304pt.
-
-<./Figures/convergence_angle_error.jpg, id=291, 4304.08pt x 2879.75874pt>
+<./Figures/convergence_angle_error.jpg, id=283, 4304.08pt x 2879.75874pt>
 File: ./Figures/convergence_angle_error.jpg Graphic file (type jpg)
 
 <use ./Figures/convergence_angle_error.jpg>
 Package pdftex.def Info: ./Figures/convergence_angle_error.jpg used on input li
-ne 761.
+ne 738.
 (pdftex.def)             Requested size: 192.0548pt x 128.48502pt.
 
-<./Figures/convergence_size_error_ratio.jpg, id=293, 4304.08pt x 2879.75874pt>
+<./Figures/convergence_size_error_ratio.jpg, id=285, 4304.08pt x 2879.75874pt>
 File: ./Figures/convergence_size_error_ratio.jpg Graphic file (type jpg)
 
 <use ./Figures/convergence_size_error_ratio.jpg>
 Package pdftex.def Info: ./Figures/convergence_size_error_ratio.jpg used on inp
-ut line 765.
+ut line 742.
 (pdftex.def)             Requested size: 192.0548pt x 128.48502pt.
  [57 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/size_err
 or_ratio_2_RT_noise.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Rep
 ort/Figures/OxS_1_stationary_angle.jpg> <C:/Users/Monty Abello/Documents/Uni/20
-16/ENGN4718/Report/Figures/OxS_1_stationary_size.jpg>] [58 <C:/Users/Monty Abel
-lo/Documents/Uni/2016/ENGN4718/Report/Figures/OxS_2_rotating_angle.jpg> <C:/Use
-rs/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/OxS_2_rotating_size.
-jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/OxS_3_ro
-tating_twist_angle.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Repo
-rt/Figures/OxS_3_rotating_twist_size.jpg> <C:/Users/Monty Abello/Documents/Uni/
-2016/ENGN4718/Report/Figures/convergence_angle_error.jpg> <C:/Users/Monty Abell
-o/Documents/Uni/2016/ENGN4718/Report/Figures/convergence_size_error_ratio.jpg>]
+16/ENGN4718/Report/Figures/OxS_1_stationary_size.jpg>]
+<./Figures/OxS_2_rotating_angle.jpg, id=294, 3337.46875pt x 1850.915pt>
+File: ./Figures/OxS_2_rotating_angle.jpg Graphic file (type jpg)
 
-<./Figures/tetrahedron_angle_error.jpg, id=311, 3343.49126pt x 1850.915pt>
+<use ./Figures/OxS_2_rotating_angle.jpg>
+Package pdftex.def Info: ./Figures/OxS_2_rotating_angle.jpg used on input line 
+756.
+(pdftex.def)             Requested size: 192.0548pt x 106.50304pt.
+
+<./Figures/OxS_2_rotating_size.jpg, id=296, 3337.46875pt x 1850.915pt>
+File: ./Figures/OxS_2_rotating_size.jpg Graphic file (type jpg)
+
+<use ./Figures/OxS_2_rotating_size.jpg>
+Package pdftex.def Info: ./Figures/OxS_2_rotating_size.jpg used on input line 7
+60.
+(pdftex.def)             Requested size: 192.0548pt x 106.50304pt.
+
+<./Figures/OxS_3_rotating_twist_angle.jpg, id=298, 3337.46875pt x 1850.915pt>
+File: ./Figures/OxS_3_rotating_twist_angle.jpg Graphic file (type jpg)
+
+<use ./Figures/OxS_3_rotating_twist_angle.jpg>
+Package pdftex.def Info: ./Figures/OxS_3_rotating_twist_angle.jpg used on input
+ line 764.
+(pdftex.def)             Requested size: 192.0548pt x 106.50304pt.
+
+<./Figures/OxS_3_rotating_twist_size.jpg, id=300, 3337.46875pt x 1850.915pt>
+File: ./Figures/OxS_3_rotating_twist_size.jpg Graphic file (type jpg)
+
+<use ./Figures/OxS_3_rotating_twist_size.jpg>
+Package pdftex.def Info: ./Figures/OxS_3_rotating_twist_size.jpg used on input 
+line 768.
+(pdftex.def)             Requested size: 192.0548pt x 106.50304pt.
+ [58 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/converge
+nce_angle_error.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/
+Figures/convergence_size_error_ratio.jpg>]
+<./Figures/tetrahedron_angle_error.jpg, id=307, 3343.49126pt x 1850.915pt>
 File: ./Figures/tetrahedron_angle_error.jpg Graphic file (type jpg)
 
 <use ./Figures/tetrahedron_angle_error.jpg>
 Package pdftex.def Info: ./Figures/tetrahedron_angle_error.jpg used on input li
-ne 787.
+ne 790.
 (pdftex.def)             Requested size: 192.0548pt x 106.30534pt.
 
-<./Figures/tetrahedron_size_error_ratio.jpg, id=313, 3343.49126pt x 1850.915pt>
+<./Figures/tetrahedron_size_error_ratio.jpg, id=309, 3343.49126pt x 1850.915pt>
 File: ./Figures/tetrahedron_size_error_ratio.jpg Graphic file (type jpg)
 <use ./Figures/tetrahedron_size_error_ratio.jpg>
 Package pdftex.def Info: ./Figures/tetrahedron_size_error_ratio.jpg used on inp
-ut line 791.
+ut line 794.
 (pdftex.def)             Requested size: 192.0548pt x 106.30534pt.
- [59 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/tetrahed
-ron_angle_error.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/
-Figures/tetrahedron_size_error_ratio.jpg>]) [60]
-("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.tex"
+ [59 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/OxS_2_ro
+tating_angle.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Fig
+ures/OxS_2_rotating_size.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN471
+8/Report/Figures/OxS_3_rotating_twist_angle.jpg> <C:/Users/Monty Abello/Documen
+ts/Uni/2016/ENGN4718/Report/Figures/OxS_3_rotating_twist_size.jpg>]) [60 <C:/Us
+ers/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/tetrahedron_angle_e
+rror.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/tet
+rahedron_size_error_ratio.jpg>] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN
+4718\Report\experiment.tex"
 Chapter 5.
 [61
 
@@ -1283,7 +1282,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 Here is how much of TeX's memory you used:
  19199 strings out of 493921
  373552 string characters out of 3147261
- 456102 words of memory out of 3000000
+ 456101 words of memory out of 3000000
  21868 multiletter control sequences out of 15000+200000
  25215 words of font info for 141 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -1309,7 +1308,7 @@ nts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on main.pdf (83 pages, 22821743 bytes).
+Output written on main.pdf (83 pages, 22823458 bytes).
 PDF statistics:
  468 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

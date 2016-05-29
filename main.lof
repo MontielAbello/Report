@@ -33,17 +33,17 @@
 \contentsline {figure}{\numberline {4.15}{\ignorespaces For noisy measurements of stationary cube with 3 faces visible to sensor, the angle error (a) and size error ratio (b) both converge to the noise floor.\relax }}{57}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{57}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{57}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Noiseless measurements of cube rotating at $0.0327$ rad/s such that 3 faces visible to sensor. Angle error (a) and size error ratio (b) when orientation updated via screw. Angle error (c) and size error ratio (d) when orientation updated via wrench.\relax }}{58}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Time taken to converge to (a) angle error $< \pi /400$ radians ($1\%$ of maximum $\pi /4$ angle error) and (b) size error ratio $< |0.01|$ for range of initial conditions\relax }}{58}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{58}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{58}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{58}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{58}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Time taken to converge to (a) angle error $< \pi /400$ radians and (b) size error ratio $< |0.01|$ for range of initial conditions\relax }}{58}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{58}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{58}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Angle error (a) and size error ratio (b) for noiseless measurements of tetrahedron of side length $s = 0.5$m\relax }}{59}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Noiseless measurements of cube rotating at $0.0327$ rad/s such that 3 faces visible to sensor. Angle error (a) and size error ratio (b) when orientation updated via screw. Angle error (c) and size error ratio (d) when orientation updated via wrench.\relax }}{59}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{59}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{59}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{59}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{59}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Angle error (a) and size error ratio (b) for noiseless measurements of tetrahedron of side length $s = 0.5$m\relax }}{60}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{60}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{60}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces setup to measure noise at a different ranges and angle (lights turned off during measurement to eliminate error from variation in lighting conditions)\relax }}{62}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Sensor noise function $f_{UBG}(r,\theta )$ approximately normally distributed\relax }}{63}
