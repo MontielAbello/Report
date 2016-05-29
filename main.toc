@@ -1,6 +1,6 @@
 \contentsline {chapter}{Acknowledgments}{i}
 \contentsline {chapter}{Abstract}{ii}
-\contentsline {chapter}{Aims and Contributions}{viii}
+\contentsline {chapter}{Aims and Contributions}{ix}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Literature Review}{2}
 \contentsline {subsection}{\numberline {1.1.1}Infinite-Dimensional Observers}{2}
@@ -67,15 +67,15 @@
 \contentsline {section}{\numberline {4.2}Results}{52}
 \contentsline {subsection}{\numberline {4.2.1}Orientation correction}{52}
 \contentsline {subsection}{\numberline {4.2.2}Position correction}{53}
-\contentsline {subsection}{\numberline {4.2.3}Size correction}{55}
+\contentsline {subsection}{\numberline {4.2.3}Size correction}{54}
 \contentsline {subsection}{\numberline {4.2.4}Orientation and size correction}{56}
-\contentsline {subsection}{\numberline {4.2.5}Discussion}{57}
-\contentsline {chapter}{\numberline {5}Experimental Data}{60}
-\contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{61}
-\contentsline {subsection}{\numberline {5.1.1}Measurement Setup}{61}
-\contentsline {subsection}{\numberline {5.1.2}Results}{62}
-\contentsline {subsubsection}{\numberline {5.1.2.1}Gaussian noise model}{64}
-\contentsline {subsubsection}{\numberline {5.1.2.2}Surface noise}{65}
-\contentsline {section}{\numberline {5.2}Observer Performance Testing Data}{67}
-\contentsline {subsection}{\numberline {5.2.1}Setup}{67}
-\contentsline {subsection}{\numberline {5.2.2}Results}{68}
+\contentsline {subsection}{\numberline {4.2.5}Discussion}{58}
+\contentsline {chapter}{\numberline {5}Experimental Data}{61}
+\contentsline {section}{\numberline {5.1}Sensor Noise Characterisation}{62}
+\contentsline {subsection}{\numberline {5.1.1}Measurement Setup}{62}
+\contentsline {subsection}{\numberline {5.1.2}Results}{63}
+\contentsline {subsubsection}{\numberline {5.1.2.1}Gaussian noise model}{65}
+\contentsline {subsubsection}{\numberline {5.1.2.2}Surface noise}{66}
+\contentsline {section}{\numberline {5.2}Observer Performance Testing Data}{68}
+\contentsline {subsection}{\numberline {5.2.1}Setup}{68}
+\contentsline {subsection}{\numberline {5.2.2}Results}{69}
