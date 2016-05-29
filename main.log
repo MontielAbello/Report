@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  30 MAY 2016 01:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  30 MAY 2016 02:08
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -1119,24 +1119,24 @@ File: ./Figures/tetrahedron_angle_error.jpg Graphic file (type jpg)
 
 <use ./Figures/tetrahedron_angle_error.jpg>
 Package pdftex.def Info: ./Figures/tetrahedron_angle_error.jpg used on input li
-ne 790.
+ne 785.
 (pdftex.def)             Requested size: 192.0548pt x 106.30534pt.
 
 <./Figures/tetrahedron_size_error_ratio.jpg, id=309, 3343.49126pt x 1850.915pt>
 File: ./Figures/tetrahedron_size_error_ratio.jpg Graphic file (type jpg)
 <use ./Figures/tetrahedron_size_error_ratio.jpg>
 Package pdftex.def Info: ./Figures/tetrahedron_size_error_ratio.jpg used on inp
-ut line 794.
+ut line 789.
 (pdftex.def)             Requested size: 192.0548pt x 106.30534pt.
  [59 <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/OxS_2_ro
 tating_angle.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Fig
 ures/OxS_2_rotating_size.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN471
 8/Report/Figures/OxS_3_rotating_twist_angle.jpg> <C:/Users/Monty Abello/Documen
-ts/Uni/2016/ENGN4718/Report/Figures/OxS_3_rotating_twist_size.jpg>]) [60 <C:/Us
-ers/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/tetrahedron_angle_e
-rror.jpg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/tet
-rahedron_size_error_ratio.jpg>] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN
-4718\Report\experiment.tex"
+ts/Uni/2016/ENGN4718/Report/Figures/OxS_3_rotating_twist_size.jpg> <C:/Users/Mo
+nty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/tetrahedron_angle_error.j
+pg> <C:/Users/Monty Abello/Documents/Uni/2016/ENGN4718/Report/Figures/tetrahedr
+on_size_error_ratio.jpg>])
+[60] ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\experiment.tex"
 Chapter 5.
 [61
 
@@ -1282,7 +1282,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 Here is how much of TeX's memory you used:
  19199 strings out of 493921
  373552 string characters out of 3147261
- 456101 words of memory out of 3000000
+ 455101 words of memory out of 3000000
  21868 multiletter control sequences out of 15000+200000
  25215 words of font info for 141 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -1308,7 +1308,7 @@ nts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on main.pdf (83 pages, 22823458 bytes).
+Output written on main.pdf (83 pages, 22822615 bytes).
 PDF statistics:
  468 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

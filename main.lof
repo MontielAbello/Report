@@ -41,9 +41,9 @@
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{59}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{59}
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{59}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Angle error (a) and size error ratio (b) for noiseless measurements of tetrahedron of side length $s = 0.5$m\relax }}{60}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{60}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{60}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Angle error (a) and size error ratio (b) for the observer using noiseless measurements to estimate the state of a tetrahedron of side length $s = 0.5$m\relax }}{59}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{59}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{59}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces setup to measure noise at a different ranges and angle (lights turned off during measurement to eliminate error from variation in lighting conditions)\relax }}{62}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Sensor noise function $f_{UBG}(r,\theta )$ approximately normally distributed\relax }}{63}

@@ -67,9 +67,9 @@ An accurate range sensor simulation must include a model for the error distribut
 		
 		These results are corroborated by \cite{park2010characterization} who reported difficulty in acquiring measurements for high angles and modelled the noise distribution as Gaussian.
 		
-		\textbf{DISCUSS:} does scan direction make a difference? future tests should see if $-\theta$ same as $\theta$
+		It was assumed that the noise distribution for an incidence angle $\theta$ would be identical to $-\theta$. However, the fact that the sensor's scan direction rotates in a single direction may mean this is not the case. Including the effect of incidence angles from $\pi/2$ to $\pi/2$ would provide a more accurate noise for future work.
 		
-		4th degree polynomial surfaces in equations \ref{eq:mean} and \ref{eq:std} were fitted to the adjusted set of data points using Matlab's curve fitting tool. The surfaces and the goodness of fit are shown in Figure \ref{fig:surface_range_error}. 
+		The 4th degree polynomial surfaces in equations \ref{eq:mean} and \ref{eq:std} were fitted to the adjusted set of data points using Matlab's curve fitting tool. The surfaces and the goodness of fit are shown in Figure \ref{fig:surface_range_error}. 
 		\begin{figure}
 	  		\centering
 	  		\subfigure[\label{fig:surface_mean_range}]{

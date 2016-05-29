@@ -771,17 +771,12 @@ Because the convergence of the size error ratio is so rapid, the performance of 
 \end{figure}
 
 \subsection{Discussion}
+\subsubsection{Performance Assessment}
+The analysis in Figure \ref{fig:convergence} shows that the observer is globally convergent when the position error is 0. This is only the case if the position update is turned off by setting $p_{scale} = 0$. Even with a correct initial position, attempting to correct orientation and size while the position update is active leads to divergence: the position update is unstable about the point $p_{error} = 0$. 
 
-\textbf{ORIENTATION \& SIZE GLOBALLY CONVERGENT}\\
-Add plot of convergence time for range of initial conditions. Equilibrium point - position error 0 - globally convergent. 
-See what happens if position update turned on when position correct. does it still work? see what basin of attraction is.
-To make it globally convergent/larger basin of attraction - update must be invariant to SO(3). Position update at the moment is not invariant to orientation.
-Orientation update seems to be invariant to position - explain this in detail.
+The achieve global convergence, or even a larger basin of attraction for the position update, the update function must be invariant to actions of $\mathbf{SE}(3)$. The current position update is not invariant to actions of $\mathbf{SO}(3)$, as demonstrated by its inability divergence when more than a single cube face was visible.
 
-The simulation results show that the size update is extremely robust. Given the correct position and orientation estimates, the size update function is globally convergent.
-For the case of a stationary cube and correct size and position estimates, the orientation update function is also globally convergent though convergence is limited by the presence of noise. The symmetry of the cube means that the angle error is bounded to $\pi/4$ and the orientation correction converges quickly. The position update function was particularly unstable. Correction of the position error only converged for the special case where a single cube face was visible. 
-
-Another strength of the observer design is that it does not actually rely on the target object being a cube. Figure \ref{fig:tetrahedron} shows that the orientation and size correction converges when the object to be estimated is a tetrahedron with side length $s = 0.5$m. The observer will likely give sensible results given that the target object is a platonic solid due to their symmetry. 
+Another strength of the observer design is that it does not actually rely specific geometry of the target object. Figure \ref{fig:tetrahedron} shows that the orientation and size correction converges when the object to be estimated is a tetrahedron with side length $s = 0.5$m. The observer will likely give sensible results given that the target object is a platonic solid due to their rotational symmetry. 
 \begin{figure}
 \centering
  	\subfigure[\label{fig:tetraherdron_angle}]{
@@ -792,12 +787,13 @@ Another strength of the observer design is that it does not actually rely on the
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/tetrahedron_size_error_ratio}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{Angle error (a) and size error ratio (b) for noiseless measurements of tetrahedron of side length $s = 0.5$m}
+ 	\caption{Angle error (a) and size error ratio (b) for the observer using noiseless measurements to estimate the state of a tetrahedron of side length $s = 0.5$m}
  	\label{fig:tetrahedron}
 \end{figure}
 
-These results show that the sparse measurements of a scanning sensor can be used to densely measure an infinite dimensional state. 
+These results show that sparse range measurements from a scanning sensor can be indeed used to densely measure an infinite dimensional state. The dynamics of the sensor are particularly important in ensuring that the sparse measurements are form an arrangement suitable for dense estimation.
 
+\subsubsection{Improvements and Future Work}
 Though updating the orientation via the twist gives a smoother estimation in comparison to the screw update, this results in overshoot. Initially, the angle error grows so the angular velocity increases to correct this. However, there is a delay in the response of the orientation correction that causes the angular velocity to grow too large. The overcompensation then occurs in the other direction and the error diverges. In control theory, this problem is solved with \textit{feed-forward control} which anticipates overshoot and corrects for it before it can occur. A topic of future research would be to investigate fs an observer analogue to feed-forward control exists. A possible starting points could be to investigate applying combinations of screw and twist updates that combine the responsiveness of the screw update and the smoothness of the twist update. 
 
 These simulated results showed that the size and orientation update functions in this initial observer implementation show promise. To improve performance, a more robust position update function must be designed. A possible approach would be to augment the cube state with a measure of the centre of mass of a history of measured points. over time, the difference in the estimate and measurement of this variable would produce a more accurate position update vector.
