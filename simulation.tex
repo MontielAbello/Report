@@ -654,13 +654,14 @@ For noisy measurements, update via the screw in Figure \ref{fig:angle_error_1_ro
 \end{figure}
 
 \subsection{Position correction}
-Figure \ref{fig:position_update_1F} shows position error for 3 cases where one face was visible to the sensor. Figure \ref{fig:position_error_1_stationary_1F} shows that for noiseless measurements, the position error converges to a region where it begins to oscillate. The size of the position update vector is too large and the estimate is unable to exactly align with the ground truth. Eventually, the estimate happens to align with the ground truth and the update vector drops to 0.
+Figure \ref{fig:position_update_1F} shows the effect of the scale $p_{scale}$ on the convergence behaviour of the position error. In these trials, one face of the cube was visible to the sensor. Figure \ref{fig:position_error_1_stationary_1F} shows that for noiseless measurements, the position error converges to a region where it begins to oscillate. Due to the dynamics of the scanning sensor, the size of the position update vector is too large and the estimate is unable to exactly align with the ground truth. Eventually, the estimate happens to align with the ground truth and the position error drops to 0.
 
 Figure \ref{fig:position_error_2_stationary_1F_noise} shows that for noisy measurements, the update gain $p_{scale} = 0.01$ used in (a) is too large. A large random disturbance causes the position error to diverge so far that there is no longer any overlap between the estimated and ground truth cubes. At this point, no update can be computed.
 By reducing the gain to $p_{scale} = 0.001$, the position error for noisy measurements is able to converge slowly towards the noise floor.
 
 In Figure \ref{fig:position_error_4_stationary_2F}, noiseless measurements are taken of a stationary cube with 2 faces visible to the sensor. Though the error shrinks slightly at first, the basin of attraction points away from the ground truth position. 
-This occurs when the observer attempts to align the cube state estimate with the wrong face of the ground truth cube. The computed update vector will point in a direction orthogonal to the desired direction.
+This occurs because the observer attempts to align the cube state estimate with the wrong face of the ground truth cube. The computed update vector will point in a direction orthogonal to the desired direction. 
+The position update function is only successful when a single cube face is visible to the sensor. Future improvements should focus on designing a position update that is invariant to orientation.
 
 \begin{figure}
 \centering
