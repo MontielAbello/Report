@@ -18,6 +18,7 @@ Sparse range measurements have been used to reconstruct a depth field by Szelisk
 \section{Estimating the pose and size of a cube from sparse range measurements}
 \input{Figures/fig_cubeproblem}
 A situation in which an infinite dimensional observer would be useful is in the estimation of the pose of an object of unknown size moving in an environment of unknown state.
+
 For example, consider an autonomous robot deployed in an agricultural survey, which must determine the position and size of a certain crop. Using a geometric model for the general shape of the crop, an aerial vehicle that could routinely detect and characterise the position and size of specimens would be useful in monitoring growth and during harvesting.
 
 The problem to be investigated is shown in Figure~\ref{fig:cubeproblem}. A 2D scanning range sensor moves through an environment consisting of a target object of known shape, in this case a rigid cube, and an unknown background which may be an infinite dimensional dynamic system. The state of the sensor is known, but the states of the cube and background environment are unknown. The goal is to use the state of the sensor and the range measurements it provides to estimate the state of the cube.
