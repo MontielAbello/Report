@@ -5,12 +5,15 @@ As an initial exploration of this open problem, the central goals of this projec
 \item gain an understanding of how dense sensors can be used to take measurements of the state of infinite-dimensional systems;
 \item gain an insight into how symmetry-preserving observers can be used to better observe nonlinear infinite-dimensional systems
 \item uncover pertinent directions for future research in this area; where a theory of infinite-dimensional, symmetry preserving observers would be useful
-\item investigate if a sparse sensor can be used in a manner that approximates the capabilities of a dense sensor in the measurement of an infinite-dimensional state.
+\item investigate if a sparse sensor can be used in a manner that approximates the capabilities of a dense sensor in the observation of an infinite-dimensional state.
 \end{itemize}
 
 The approach taken to achieve these goals will be to design and implement an observer for a simplified system that still captures some components of the overall research goals.
-The state variable to  be estimated will be finite-dimensional, and this the observer will be finite-dimensional. However, the sensor will still take provide of an infinite dimensional system. In this way, the problem is similar to the dense optical flow estimation by Adarve et al. \cite{adarvefiltering}.
+The state variable to  be estimated will be finite-dimensional, and thus the observer will be finite-dimensional. However, the sensor will still take measurements of an infinite dimensional state. In this way, the problem is similar to the dense optical flow estimation by Adarve et al. \cite{adarvefiltering}.
+
 Initially, the observer innovation function will not designed to be invariant. As a first step, this research will investigate correction schemes that converge locally. A future work package will be do adjust the update function to respect the symmetries of the system and achieve more global convergence properties. 
+
+Sparse range measurements have been used to reconstruct a depth field by Szeliski \cite{szeliski1988estimating}, who fitted a spline surface model to a cloud of points estimated from range data. The key difference in the approach used in this paper is that rather than using the range measurements to directly estimate the state, the difference in measured and predicted range will be used to drive the innovation term of a state observer. In this approach. the trajectory of the sensor will have a greater importance in ensuring that dense measurements can be made.
 
 \section{Estimating the pose and size of a cube from sparse range measurements}
 \input{Figures/fig_cubeproblem}
