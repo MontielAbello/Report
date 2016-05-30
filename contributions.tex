@@ -3,9 +3,9 @@
 
 The aims of this research were to:
 \begin{itemize}
-\item design an observer to estimate the state of a cube from range measurements;
-\item investigate whether sparse range measurements can be used to make dense measurements of an infinite dimensional state
-\item assess the performance of the observer through simulated and experimental testing 
+\item design an observer to estimate the state of a rigid cube from range measurements;
+\item investigate whether sparse range measurements can be used to make a dense estimation of an infinite dimensional state;
+\item assess the performance of the observer through simulated and experimental testing; 
 \item identify directions for future research in infinite-dimensional, symmetry-preserving observer design.
 \end{itemize}
 
@@ -14,10 +14,10 @@ The outcomes of this project include:
 \item demonstration that sparse range measurements can be used in a dense estimation problem by designing an appropriate sensor trajectory;
 \item developing a noise model for the Hokuyo UBG-04LX-F01 scanning laser range-finder that is more complete under the conditions tested than those provided in existing literature;
 \item developing a Matlab toolbox to simulate scanning laser range-finder measurements of rigid bodies and test observer implementations;
-\item the design of an observer that estimates the state of a cube from sparse range measurements. Performance assessment including an experimentally determined noise model showed that the observer is globally convergent when correcting the orientation and size of a stationary cube. Positive results have also been made with tracking rotating cubes and correcting position error in special cases. The observer does not rely on the cube's geometry and could potentially estimate the states of a wider class of rigid bodies;
-\item the collection of real-world range measurements of a rigid body moving with known trajectory for use in future observer performance testing
+\item the design of an observer that estimates the state of a cube from sparse range measurements. Performance assessment showed that the observer is globally convergent when correcting the orientation and size of a stationary cube. Positive results have also been made with tracking rotating cubes and correcting position error in special cases. The observer does not rely on the cube's geometry and could potentially be used to estimate the states of a wider class of rigid bodies;
+\item the collection of real-world range measurements of a rigid body moving with known trajectory for use in future observer performance testing;
 \item identifying the adaptation of the current observer update to an $\mathbf{SE}(3)$ invariant function as a logical step in developing a theory of symmetry-preserving, infinite-dimensional observers.
 \end{itemize}
 
-Functions used to compute conversions between rotation representations provided by my supervisor Dr Viorela Ila, as well as functions in the Matlab Aerospace Toolbox were used in the observer simulation. Matlab's Curve Fitting Toolbox was used to fit surfaces to simulated and experimental data.
+Functions used to compute conversions between rotation representations provided by my supervisor Dr Viorela Ila, as well as functions from the Matlab Aerospace Toolbox were used in the observer simulation. Matlab's Curve Fitting Toolbox was used to fit surfaces to simulated and experimental data.
 All other contributions to the outcomes described above were my own.
