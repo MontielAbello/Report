@@ -581,16 +581,15 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 		
 \pagebreak		
 \section{Results}
-
-The ability of the observer to estimate the state a cube undergoing stationary, rotating, and translating motion was tested. For these classes of motion, the trajectory was further defined to assess the performance of the observer when 1,2 or 3 faces of the cube were visible to the sensor. 
+The ability of the observer to estimate the state of a cube undergoing stationary, rotating, and translating motions was tested. For these classes of motion, the trajectory was further defined to assess the performance of the observer when one, two or three faces of the cube were visible to the sensor. 
 Initial conditions and the scaling factors of the orientation, position and size update functions were defined to assess the individual and combined performance of these update functions. 
 Key results of this analysis and an overall assessment of the observer's performance are presented in this section.
 
 \subsection{Orientation correction}
-\subsubsection{Stationary Cube}
-When testing the orientation update alone, the position and size update functions were turned off by setting their scaling factors to 0. The initial size and position of the state estimate were assigned the ground truth values. The \textit{angle error} between the predicted and ground truth orientation was computed to quantify performance. To compute this, the rotation matrix required to map the orientation of the predicted cube to that of the ground truth cube was computed over time. This was converted to the scaled-axis representation. The angle error was defined as the magnitude of this scaled-axis vector, representing the angular error between the predicted and ground truth orientation.
+\subsubsection{Stationary Cube}\label{sec:orientation_stationary}
+When testing the orientation update alone, the position and size update functions were turned off by setting their scaling factors to zero. The initial size and position of the state estimate were assigned the ground truth values. The \textit{angle error} between the predicted and ground truth orientation was computed to quantify performance. To compute this, the rotation matrix required to map the orientation of the predicted cube to that of the ground truth cube was computed over time. This was converted to the scaled-axis representation. The angle error was defined as the magnitude of this scaled-axis vector, representing the angular error between the predicted and ground truth orientation.
 
-The results presented in Figure \ref{fig:angle_error_stationary} are from trials where the cube was stationary and three faces were visible. Similar performance was achieved when two faces were visible. When no noise was present, the angle error quickly converged to 0. In fact, for the case of orientation correction alone, the observer guarantees global convergence. When noise was present, the error converged to the noise floor and exhibited a stable fluctuation about this limit. Given the mean and standard deviation of the Gaussian distributed range error, the angle error would be expected to cross 0 once the error converged to the noise floor. The reason this does not occur is due to small error in the orientation axis between the prediction and ground truth. 
+The results presented in Figure \ref{fig:angle_error_stationary} are from trials where the cube was stationary and three faces were visible. Similar performance was achieved when two faces were visible. When no noise was present, the angle error quickly converged to zero. In fact, for the case of orientation correction alone, the observer guarantees global convergence. When noise was present, the error converged to the noise floor and exhibited a stable fluctuation about this limit. Given the mean and standard deviation of the Gaussian distributed range error, the angle error would be expected to cross zero once the error converged to the noise floor. The reason this does not occur is due to small error in the orientation axis between the prediction and ground truth. 
 
 A limitation of the orientation update scheme was revealed when only a single cube face was visible to the sensor. The normals ($\hat{\mathbf{n}} $ and $\tilde{\mathbf{n}}$ in Figure \ref{fig:orientation}) estimated from the predicted and measured intersection points were used to determine the rotation correction axis. However, this information is insufficient to correct for angular error about these normals themselves, as shown in Figure \ref{fig:orientation_1F}. 
 
@@ -604,14 +603,14 @@ A limitation of the orientation update scheme was revealed when only a single cu
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/orientation_1F_final_state}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{Orientation update when single cube face visible leads to (a) angle error, depicted in final state estimate (b).}
+ 	\caption{Orientation update when a single cube face visible leads to (a) angle error, depicted in final the state estimate (b).}
  	\label{fig:orientation_1F}
 \end{figure}
 
 An approach considered to account for this was to apply a rotation to the predicted cube about the normal axis if the visibility pattern indicted by the set of indexes $\textbf{u}(t)$ was not congruent for the prediction and measurement. This would effectively rotate the predicted cube until the faces aligned. However, this scheme was not used as it would later interfere with the performance of the orientation and size updates. Furthermore, it was unstable under noisy conditions and caused rotation away from the correct orientation. The recommendation for future work is to use the visibility pattern to estimate the actual rotation of the predicted and measured cubes about this normal axis before applying the necessary correction.
 
 \subsubsection{Moving Cube}
-Figure \ref{fig:angle_error_rotating} shows the angular error for a trial where the ground truth cube rotated with an angular velocity of approximately $0.0327$ rad/s such that 3 faces were visible to the sensor. The observer was given the ground truth initial orientation but an incorrect initial angular velocity of 0.
+Figure \ref{fig:angle_error_rotating} shows the angular error for a trial where the ground truth cube rotated with an angular velocity of approximately $0.0327$ rad/s such that 3 faces were visible to the sensor. The observer was given the ground truth initial orientation but an incorrect initial angular velocity of zero.
 Figure \ref{fig:angle_error_1_rotating_screw} shows that for noiseless measurements where orientation update is performed via the screw matrix, the observer is able to estimate the angular velocity of the cube and match its orientation. Again for noiseless measurements, Figure \ref{fig:angle_error_1_rotating_twist} shows that updating via the twist matrix initially provides a slower but smoother estimation of orientation. In trying to match the rotation of the cube, the angular velocity estimate overshoots the ground truth angular velocity. Initially, the angle error grows so the angular velocity increases to correct this. However, there is a delay in the response of the orientation correction that causes the angular velocity to grow too large. The overcompensation then occurs in the other direction and the error diverges.
 For noisy measurements, update via the screw in Figure \ref{fig:angle_error_1_rotating_screw_noise} and twist in Figure \ref{fig:angle_error_1_rotating_twist} is unable to closely track the rotation of the cube. Updating via the twist matrix again results in overshoot. 
 
@@ -625,7 +624,7 @@ For noisy measurements, update via the screw in Figure \ref{fig:angle_error_1_ro
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/angle_error_2_stationary_noise}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{Angle error for (a) noiseless and (b) noisy measurements of stationary cube with 3 faces visible to sensor}
+ 	\caption{Angle error for (a) noiseless and (b) noisy measurements of a stationary cube with three faces visible to the sensor}
  	\label{fig:angle_error_stationary}
 \end{figure}
 
@@ -647,17 +646,17 @@ For noisy measurements, update via the screw in Figure \ref{fig:angle_error_1_ro
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/angle_error_6_rotating_twist_noise}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{Angle error when cube rotating with angular velocity of approximately $0.0327$ rad/s such that 3 faces visible to sensor. Noiseless measurements used to update orientation via (a) screw matrix and (b) twist matrix. Noisy measurements used to update orientation via (c) screw matrix and (d) twist matrix.}
+ 	\caption{Angle error when cube was rotating with angular velocity of approximately $0.0327$ rad/s such that three faces were visible to the sensor. Noiseless measurements were used to update the orientation via the (a) screw matrix and (b) twist matrix. Noisy measurements were used to update the orientation via the (c) screw matrix and (d) twist matrix.}
  	\label{fig:angle_error_rotating}
 \end{figure}
 
 \subsection{Position correction}
-Figure \ref{fig:position_update_1F} shows the effect of the scale $p_{scale}$ on the convergence behaviour of the position error. In these trials, one face of the cube was visible to the sensor. Figure \ref{fig:position_error_1_stationary_1F} shows that for noiseless measurements, the position error converges to a region where it begins to oscillate. Due to the dynamics of the scanning sensor, the size of the position update vector is too large and the estimate is unable to exactly align with the ground truth. Eventually, the estimate happens to align with the ground truth and the position error drops to 0.
+Figure \ref{fig:position_update_1F} shows the effect of the scale $p_{scale}$ on the convergence behaviour of the position error. In these trials, one face of the cube was visible to the sensor. Figure \ref{fig:position_error_1_stationary_1F} shows that for noiseless measurements, the position error converges to a region where it begins to oscillate. Due to the dynamics of the scanning sensor, the size of the position update vector is too large and the estimate is unable to exactly align with the ground truth. Eventually, the estimate happens to align with the ground truth and the position error drops to zero.
 
 Figure \ref{fig:position_error_2_stationary_1F_noise} shows that for noisy measurements, the update gain $p_{scale} = 0.01$ used in (a) is too large. A large random disturbance causes the position error to diverge so far that there is no longer any overlap between the estimated and ground truth cubes. At this point, no update can be computed.
 By reducing the gain to $p_{scale} = 0.001$, the position error for noisy measurements is able to converge slowly towards the noise floor.
 
-In Figure \ref{fig:position_error_4_stationary_2F}, noiseless measurements are taken of a stationary cube with 2 faces visible to the sensor. Though the error shrinks slightly at first, the basin of attraction points away from the ground truth position. 
+In Figure \ref{fig:position_error_4_stationary_2F}, noiseless measurements are taken of a stationary cube with two faces visible to the sensor. Though the error shrinks slightly at first, the basin of attraction points away from the ground truth position. 
 This occurs because the observer attempts to align the cube state estimate with the wrong face of the ground truth cube. The computed update vector will point in a direction orthogonal to the desired direction. 
 The position update function is only successful when a single cube face is visible to the sensor. Future improvements should focus on designing a position update that is invariant to orientation.
 
@@ -675,42 +674,42 @@ The position update function is only successful when a single cube face is visib
  	\begin{minipage}[b]{0.45\columnwidth}
   		\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_3_stationary_1F_noise}\vspace*{0ex}
  	\end{minipage}}
- 	\caption{Position error for stationary cube with single face visible to sensor. Position error (a) converges quickly for noiseless measurements when $p_{scale}=0.01$. Position error (b) is unstable for noisy measurements if $p_{scale}=0.01$. Position error (c) convergences to noise floor for noisy measurements when $p_{scale}=0.001$.}
+ 	\caption{Position error for stationary cube with a single face visible to the sensor. Position error (a) converges quickly for noiseless measurements when $p_{scale}=0.01$. Position error (b) is unstable for noisy measurements if $p_{scale}=0.01$. Position error (c) convergences to noise floor for noisy measurements when $p_{scale}=0.001$.}
  	\label{fig:position_update_1F}
 \end{figure}
 
 \begin{figure}
 \centering
 	\includegraphics[width=0.45\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/position_error_4_stationary_2F}\vspace*{0ex}
-	\caption{Position error for stationary cube with 2 faces visible to sensor}
+	\caption{Position error does not converge when observing stationary cube with two faces visible to the sensor.}
   	\label{fig:position_error_4_stationary_2F}
 \end{figure}
 
 \subsection{Size correction}
 The size correction function is extremely robust, able to globally converge to the noise floor regardless of the number of cube faces visible. 
-Figure \ref{fig:size_stationary} shows that the \textit{size error ratio} (the ratio between the size error and ground truth size) converges to 0 for noisy measurements of a stationary cube where 3 faces are visible to the sensor. 
-In Figure \ref{fig:size_RT_noise}, noisy measurements were taken of a cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces were visible to the sensor. The ground truth twist was given as the initial twist estimate to allow the predicted cube to match the motion of the ground truth cube. In this case, the size error ratio still converged to the noise floor.
+Figure \ref{fig:size_stationary} shows that the \textit{size error ratio} (the ratio between the size error and ground truth size) converges to zero for noisy measurements of a stationary cube where three faces are visible to the sensor. 
+In Figure \ref{fig:size_RT_noise}, noisy measurements were taken of a cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that three faces were visible to the sensor. The ground truth twist was given as the initial twist estimate to allow the predicted cube to match the motion of the ground truth cube. In this case, the size error ratio still converged to the noise floor.
 The speed of the convergence suggests that the correction is dominated by case 2 of the size update function. This update scheme uses the mean range difference effectively measures the size difference. On the other hand, case 1 relies on the rarer occurrence of misaligned edges between the prediction and ground truth being observed to determine.
 However, case 1 will be required when there is non-zero position error, since a situation may arise where a combination of position and size error means that the predicted and ground truth cube faces lie the same distance from the sensor.
 
 \begin{figure}[h]
 	\centering
   	\includegraphics[width=0.45\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/size_error_ratio_1}\vspace*{0ex}
-	\caption{For noisy measurements of a stationary cube with 3 faces visible to the sensor, the size error ratio converges to the noise floor}
+	\caption{For noisy measurements of a stationary cube with three faces visible to the sensor, the size error ratio converges to the noise floor}
   	\label{fig:size_stationary}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
   	\includegraphics[width=0.45\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/size_error_ratio_2_RT_noise}\vspace*{0ex}
-	\caption{For noisy measurements of a cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that 3 faces are visible to the sensor, the size error ratio converges to the noise floor}
+	\caption{For noisy measurements of a cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that three faces are visible to the sensor, the size error ratio converges to the noise floor.}
   	\label{fig:size_RT_noise}
 \end{figure}
 
 \subsection{Orientation and size correction} 
 As the orientation and size update functions were effective individually, their ability to work simultaneously was tested.
 
-For stationary cubes, the observer was able convergent for noiseless and noisy results, regardless of the number of cube faces visible to the sensor. Figure \ref{fig:orientation_size_stationary} shows the angle error and size error ratio converging to the noise floor for noisy measurements of a stationary cube where 3 faces were visible to the sensor.
+For stationary cubes, the observer was able convergent for noiseless and noisy results, regardless of the number of cube faces visible to the sensor. Figure \ref{fig:orientation_size_stationary} shows the angle error and size error ratio converging to the noise floor for noisy measurements of a stationary cube where three faces were visible to the sensor.
 
 \begin{figure}
 \centering
@@ -727,7 +726,7 @@ For stationary cubes, the observer was able convergent for noiseless and noisy r
 \end{figure} 	
 
 A more systematic test was conducted with a wide range of initial conditions to verify this global convergence. Orientation and size correction were tested for initial angular error ranging from a minimum of 0 to a maximum of $\pi/4$ radians, and a minimum size error ratio of $-0.5$ to a maximum of 2. Noiseless range measurements were used.
-Figure \ref{fig:convergence} shows the time taken to converge to within $1\%$ error. Comparing Figures \ref{fig:convergence_orientation} and \ref{fig:convergence_size} shows that the size error ratio always converges before the angle error. The magnitude of the initial angle error has little effect on the speed of the size error ratio convergence. The size correction only has a significant impact on the speed of orientation correction when the initial size estimate is smaller than the ground truth.
+Figure \ref{fig:convergence} shows the time taken to converge to within $1\%$ error. Comparing Figures \ref{fig:convergence_orientation} and \ref{fig:convergence_size} shows that the size error ratio always converges before the angle error. The magnitude of the initial angle error has little effect on the speed of the size error ratio convergence. The size correction only has a significant impact on the speed of orientation correction when the initial size estimate is smaller than the ground truth. This global convergence was also observed when estimating the state of a stationary cube with two faces visible, but not one - due to the limitation in the orientation update described in Section \ref{sec:orientation_stationary}.
 \begin{figure}
 \centering
  	\subfigure[\label{fig:convergence_orientation}]{
@@ -770,11 +769,11 @@ Because the convergence of the size error ratio is so rapid, the performance of 
 
 \subsection{Discussion}
 \subsubsection{Performance Assessment}
-The analysis in Figure \ref{fig:convergence} shows that the observer is globally convergent when the position error is 0. This is only the case if the position update is turned off by setting $p_{scale} = 0$. Even with a correct initial position, attempting to correct orientation and size while the position update is active leads to divergence: the position update is unstable about the point $p_{error} = 0$. 
+The analysis in Figure \ref{fig:convergence} shows that the observer is globally convergent when the position error is zero. This is only the case if the position update is turned off by setting $p_{scale} = 0$. Even with a correct initial position, attempting to correct orientation and size while the position update is active leads to divergence: the position update is unstable about the point $p_{error} = 0$. 
 
-The achieve global convergence, or even a larger basin of attraction for the position update, the update function must be invariant to actions of $\mathbf{SE}(3)$. The current position update is not invariant to actions of $\mathbf{SO}(3)$, as demonstrated by its inability divergence when more than a single cube face was visible.
+To achieve global convergence, or even a larger basin of attraction for the position update, the update function must be invariant to actions of $\mathbf{SE}(3)$. The current position update is not invariant to actions of $\mathbf{SO}(3)$, as demonstrated by its divergence when more than a single cube face was visible.
 
-Another strength of the observer design is that it does not actually rely specific geometry of the target object. Figure \ref{fig:tetrahedron} shows that the orientation and size correction converges when the object to be estimated is a tetrahedron with side length $s = 0.5$m. The observer will likely give sensible results given that the target object is a platonic solid due to their rotational symmetry. 
+Another strength of the observer design is that it does not actually rely on the specific geometry of the target object. Figure \ref{fig:tetrahedron} shows that the orientation and size correction converges when the object to be estimated is a tetrahedron with side length $s = 0.5$m. The observer will likely give sensible results if the target object is a platonic solid due to their rotational symmetry. 
 \begin{figure}
 \centering
  	\subfigure[\label{fig:tetraherdron_angle}]{
@@ -796,6 +795,6 @@ Though updating the orientation via the twist gives a smoother estimation in com
 
 These simulated results showed that the size and orientation update functions in this initial observer implementation show promise. To improve performance, a more robust position update function must be designed. A possible approach would be to augment the cube state with a measure of the centre of mass of a history of measured points. Over time, the difference in the estimate and measurement of this variable would produce a more accurate position update vector. This scheme would also be much more robust to noise.
 
-Once a working position update function is implemented, the next step is to combine the position and orientation update functions. Such a function would act on the screw, twist or wrench, rather correcting only the linear or angular terms. Designing this innovation function to be invariant under actions of $\mathbf{SE}(3)$ will result in improved global convergence properties.
+Once a working position update function is implemented, the next step is to combine the position and orientation update functions. Such a function would act on the screw, twist or wrench matrices as a whole, rather than correcting only the linear or angular terms. Designing this innovation function to be invariant under actions of $\mathbf{SE}(3)$ would result in improved global convergence properties.
 
-A symmetry preserving observer would allow design methods for linear, infinite dimensional observers to be utilised. This would allow the environment to be represented as infinite dimensional state. The observer would not need to separate the target object and the background. Instead, an estimate of the entire depth field could be computed.
+A symmetry preserving observer would allow design methods for linear, infinite-dimensional observers to be utilised in nonlinear systems. This would then allow the environment to be represented as infinite dimensional state. The observer would not need to separate the target object and the background. Instead, an estimate of the entire depth field could be computed.
