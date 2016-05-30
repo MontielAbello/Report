@@ -9,9 +9,9 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Cube modelled with an ordered set of points and corresponding triangles\relax }}{39}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Ray-triangle intersection\relax }}{40}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Orientation update scheme: intersection of the scan directions with the surfaces of the measured and predicted cubes are used to determine the surface normals. \relax }}{46}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Position update\relax }}{48}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Size update - case 1\relax }}{50}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Size update - case 2\relax }}{51}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Position update: centre of mass of predicted and measured intersection points used to determine update direction vector.\relax }}{48}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Size update - case 1: centre of mass of intersection points used to determine size update.\relax }}{50}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Size update - case 2: difference in mean ranges used to determine size update.\relax }}{52}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Orientation update when single cube face visible leads to (a) angle error, depicted in final state estimate (b).\relax }}{54}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{54}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{54}

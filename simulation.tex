@@ -412,10 +412,10 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 \subsection{Observer Implementation}
 
 	\subsubsection{Estimate: \texttt{estimatestate}}
-		The state of the cube at each time step is estimated using the numerical integration method described in section \ref{integration}. This state estimation is implemented in the function \texttt{estimatestate} in Algorithm \ref{main}.
+		The state of the cube at each time step is estimated using the numerical integration method described in Section \ref{integration}. This state estimation is implemented in the function \texttt{estimatestate} in Algorithm \ref{main}.
 	
 	\subsubsection{Object/background separation: \texttt{identifyobject}} \label{separation}
-		The observer update function will use range measurements to estimate the state of the cube $\mathbf{X}_c$. In order to perform accurately, the observer must only use range measurements that correspond to the cube. The function \texttt{identifyobject} in Algorithm \ref{main} uses range measurements and knowledge of the configuration of the environment to separate measurements of the cube and background.
+		The observer update function uses range measurements to estimate the state of the cube $\mathbf{X}_c$. In order to perform accurately, the observer must only use range measurements that correspond to the cube. The function \texttt{identifyobject} in Algorithm \ref{main} uses the range measurements and knowledge of the configuration of the environment to separate measurements of the cube and background.
 		
 		The binary variable $c$ indicates whether the current range measurement corresponds to cube ($c=\texttt{true}$) or the background ($c=\texttt{false}$). It is assumed that initially the sensor will be observing the background, so $c_0=\texttt{false}$.
 
@@ -454,9 +454,9 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 		\end{algorithm}
 		
 	\subsubsection{Update: \texttt{updatestate}} 
-		If the \texttt{identifyobject} function identifies a range measurement as corresponding to the cube, the \texttt{updatestate} function is used to update the state estimate of the cube $\hat{\mathbf{X}}_c$. $\hat{\mathbf{X}}_c$ is updated using the previous cube state estimate, current sensor state, and sets of measured and predicted range measurements chosen according to a set of indexes $\mathbf{a}(t)$. 
+		If the \texttt{identifyobject} function identifies a range measurement as corresponding to the cube, the \texttt{updatestate} function is used to update the state estimate of the cube $\hat{\mathbf{X}}_c$. $\hat{\mathbf{X}}_c$ is updated using the previous cube state estimate, current sensor state, and sets of measured and predicted range measurements chosen according to a set of indexes $\mathbf{u}(t)$. 
 		\begin{equation}
-			\hat{\mathbf{X}}_{c}(k+1) = f(\mathbf{X}_{s}(t),\hat{\mathbf{X}}_{c}(k),\mathbf{r}(\mathbf{a}(t)),\hat{\mathbf{r}}(\mathbf{a}(t)))
+			\hat{\mathbf{X}}_{c}(k+1) = f(\mathbf{X}_{s}(t),\hat{\mathbf{X}}_{c}(k),\mathbf{r}(\mathbf{u}(t)),\hat{\mathbf{r}}(\mathbf{u}(t)))
 		\end{equation}	
 		The pose of $\hat{\mathbf{X}}_c$ is corrected by adjusting $\hat{\mathbf{S}}_c$, $\hat{\mathbf{T}}_c$ or $\hat{\mathbf{W}}_c$.
 		The orientation is adjusted by rotating  about an axis $\mathbf{r}_{update}$. The position is adjusted by translating in the direction of $\mathbf{p}_{update}$
@@ -475,7 +475,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			The method used to correct the orientation of the cube state estimate $\hat{\mathbf{X}}_c$ is shown in Figure \ref{fig:orientation}. \input{Figures/fig_orientationupdate}
 						
 			In order to estimate the orientation of the cube, at least 3 ranges are required from both the prediction and measurement:
-			$|\hat{\mathbf{u}}| \geq 3$ and $|\tilde{\mathbf{u}}| \geq 3$. If all four indexes are present, the ranges from the last time step $(ii-1-n_{scans})$ is ignored.
+			$|\hat{\mathbf{u}}| \geq 3$ and $|\tilde{\mathbf{u}}| \geq 3$. If all four indexes are present, the range from the last time step $(ii-1-n_{scans})$ is ignored.
 	
 			For both the measurement and prediction, the points of intersection $^{F}\mathbf{P}(\mathbf{u})$ between the set of scanning directions ${^{F}\mathbf{D}(\mathbf{u})}$ and the cube are computed using the set of range measurements $\mathbf{r}(\mathbf{u})$.
 			\begin{equation} \label{eq:points}
@@ -485,7 +485,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			\begin{equation}
 				\mathbf{n} = [{^{F}\mathbf{P}}(u_2) - {^{F}\mathbf{P}}(u_1)] \times [{^{F}\mathbf{P}}(u_3) - {^{F}\mathbf{P}}(u_1)]
 			\end{equation}
-			Because a cube has 24 regular isometries, it is not necessary to effectively align the reference frames of the estimated and true cubes. Any face of the estimated cube can be aligned with any face of the true cube, and the maximum rotation correction will be $\pi/4$ radians.
+			Because a cube has 24 regular isometries, it is not necessary to exactly align the reference frames of the estimated and true cubes. Any face of the estimated cube can be aligned with any face of the true cube, and the maximum rotation correction required will be $\pi/4$ radians.
 
 			The angle between the two normals $\psi$ is computed as
 			\begin{equation}
@@ -523,7 +523,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			The method used to correct the position of $\hat{\mathbf{X}}_c$ is shown in Figure~\ref{fig:position}. \input{Figures/fig_positionupdate}
 			In order to estimate the position of the cube, at least 1 range measurement is required from both the prediction and measurement: $|\hat{\mathbf{u}}| \geq 1$ \and $|\tilde{\mathbf{u}}| \geq 1$. Additionally, scan directions at time steps $ii,(ii-1)$ and $(ii-1-n_{scans})$ are required. The scan direction ${^{F}\mathbf{d}(t)}$ must be within the sensor's field of view at these time steps.
 			
-			The points of intersection are calculated using equation \ref{eq:points}. In Figure~\ref{fig:position} all four scan directions intersect with the predicted cube state, but only one intersects with the measured cube. The average of these points is computed to give the mean estimated position $\hat{\bm{\mu}}_\mathbf{p}$ and the mean measured position $\tilde{\bm{\mu}}_\mathbf{p}$.
+			The points of intersection are calculated using Equation \ref{eq:points}. In Figure~\ref{fig:position} all four scan directions intersect with the predicted cube state, but only one intersects with the measured cube. The average of these points is computed to give the mean estimated position $\hat{\bm{\mu}}_\mathbf{p}$ and the mean measured position $\tilde{\bm{\mu}}_\mathbf{p}$.
 			
 			The $x,y$ and $z$ components of the update vector may very significantly in size due to the scanning behaviour of the sensor. It is necessary to scale the position update vector according to these components.
 			The mean of all predicted and measured ranges $\mu_{r}$ is computed. Four points $\mathbf{p}_0, \mathbf{p}_1,\mathbf{p}_2$ and $\mathbf{p}_3$ are computed to be used in scaling:			
@@ -562,13 +562,13 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 			In order to correct the size of the cube, at least 1 range measurement is required from both the prediction and measurement: $|\hat{\mathbf{u}}| \geq 1$ \and $|\tilde{\mathbf{u}}| \geq 1$.
 			The size update scheme also differs based on the sets predicted and measured ranges.
 			
-			For the case where a different pattern of ranges is observed($\hat{\mathbf{u}} \neq \tilde{\mathbf{u}}$), the update method is shown in Figure \ref{fig:size1}. \input{Figures/fig_sizeupdate1}
+			For the case where a different pattern of ranges is observed ($\hat{\mathbf{u}} \not\equiv \tilde{\mathbf{u}}$), the update method is shown in Figure \ref{fig:size1}. \input{Figures/fig_sizeupdate1}
 			The dot product from the vector $\mathbf{p}_{update}$ computed for the position update and the current scan direction is taken:
 			\begin{equation}
 				s_{update} = \mathbf{p}_{update} \cdot {^{F}\mathbf{d}(ii)}
 			\end{equation}			
 			
-			For the case where the same pattern of ranges is observer ($\hat{a} = \tilde{a}$), the update method is shown in Figure \ref{fig:size2}. \input{Figures/fig_sizeupdate2}
+			For the case where the same pattern of ranges is observer ($\hat{a} \equiv \tilde{a}$), the update method is shown in Figure \ref{fig:size2}. \input{Figures/fig_sizeupdate2}
 			The size update is taken as the difference in the means of the measured and predicted ranges:
 			\begin{equation}
 				s_{update} = \tilde{\mu}_r - \hat{\mu}_r
