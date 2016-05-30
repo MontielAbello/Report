@@ -11,52 +11,52 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Orientation update scheme: intersection of the scan directions with the surfaces of the measured and predicted cubes are used to determine the surface normals. \relax }}{46}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Position update: centre of mass of predicted and measured intersection points used to determine update direction vector.\relax }}{48}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Size update - case 1: centre of mass of intersection points used to determine size update.\relax }}{50}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Size update - case 2: difference in mean ranges used to determine size update.\relax }}{52}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Orientation update when a single cube face visible leads to (a) angle error, depicted in final the state estimate (b).\relax }}{54}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Size update - case 2: difference in mean ranges used to determine size update.\relax }}{51}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Orientation update when a single cube face visible leads to (a) angle error, depicted in final the state estimate (b).\relax }}{53}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{53}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{53}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Angle error for (a) noiseless and (b) noisy measurements of a stationary cube with three faces visible to the sensor\relax }}{54}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{54}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{54}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Angle error for (a) noiseless and (b) noisy measurements of a stationary cube with three faces visible to the sensor\relax }}{55}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{55}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{55}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Angle error when cube was rotating with angular velocity of approximately $0.0327$ rad/s such that three faces were visible to the sensor. Noiseless measurements were used to update the orientation via the (a) screw matrix and (b) twist matrix. Noisy measurements were used to update the orientation via the (c) screw matrix and (d) twist matrix.\relax }}{55}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{55}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{55}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{55}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{55}
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Position error for stationary cube with a single face visible to the sensor. Position error (a) converges quickly for noiseless measurements when $p_{scale}=0.01$. Position error (b) is unstable for noisy measurements if $p_{scale}=0.01$. Position error (c) convergences to noise floor for noisy measurements when $p_{scale}=0.001$.\relax }}{57}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{57}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{57}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{57}
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Position error does not converge when observing stationary cube with two faces visible to the sensor.\relax }}{57}
-\contentsline {figure}{\numberline {4.13}{\ignorespaces For noisy measurements of a stationary cube with three faces visible to the sensor, the size error ratio converges to the noise floor\relax }}{58}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces For noisy measurements of a cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that three faces are visible to the sensor, the size error ratio converges to the noise floor.\relax }}{58}
-\contentsline {figure}{\numberline {4.15}{\ignorespaces For noisy measurements of stationary cube with 3 faces visible to sensor, the angle error (a) and size error ratio (b) both converge to the noise floor.\relax }}{59}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Angle error when cube was rotating with angular velocity of approximately $0.0327$ rad/s such that three faces were visible to the sensor. Noiseless measurements were used to update the orientation via the (a) screw matrix and (b) twist matrix. Noisy measurements were used to update the orientation via the (c) screw matrix and (d) twist matrix.\relax }}{54}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{54}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{54}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{54}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{54}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Position error for stationary cube with a single face visible to the sensor. Position error (a) converges quickly for noiseless measurements when $p_{scale}=0.01$. Position error (b) is unstable for noisy measurements if $p_{scale}=0.01$. Position error (c) convergences to noise floor for noisy measurements when $p_{scale}=0.001$.\relax }}{56}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{56}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{56}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{56}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Position error does not converge when observing stationary cube with two faces visible to the sensor.\relax }}{56}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces For noisy measurements of a stationary cube with three faces visible to the sensor, the size error ratio converges to the noise floor\relax }}{57}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces For noisy measurements of a cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that three faces are visible to the sensor, the size error ratio converges to the noise floor.\relax }}{57}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces For noisy measurements of stationary cube with 3 faces visible to sensor, the angle error (a) and size error ratio (b) both converge to the noise floor.\relax }}{58}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{58}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{58}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Time taken to converge to (a) angle error $< \pi /400$ radians ($1\%$ of maximum $\pi /4$ angle error) and (b) size error ratio $< |0.01|$ for range of initial conditions\relax }}{58}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{58}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{58}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Noiseless measurements of cube rotating at $0.0327$ rad/s such that 3 faces visible to sensor. Angle error (a) and size error ratio (b) when orientation updated via screw. Angle error (c) and size error ratio (d) when orientation updated via wrench.\relax }}{59}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{59}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{59}
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Time taken to converge to (a) angle error $< \pi /400$ radians ($1\%$ of maximum $\pi /4$ angle error) and (b) size error ratio $< |0.01|$ for range of initial conditions\relax }}{59}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{59}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{59}
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Noiseless measurements of cube rotating at $0.0327$ rad/s such that 3 faces visible to sensor. Angle error (a) and size error ratio (b) when orientation updated via screw. Angle error (c) and size error ratio (d) when orientation updated via wrench.\relax }}{60}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{59}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{59}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Angle error (a) and size error ratio (b) for the observer using noiseless measurements to estimate the state of a tetrahedron of side length $s = 0.5$m\relax }}{60}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{60}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{60}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{60}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{60}
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Angle error (a) and size error ratio (b) for the observer using noiseless measurements to estimate the state of a tetrahedron of side length $s = 0.5$m\relax }}{61}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{61}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{61}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Experimental setup to measure noise at a different ranges and angle (lights turned off during measurement to eliminate error from variation in lighting conditions).\relax }}{64}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Sensor noise function $f_{UBG}(r,\theta )$ approximately normally distributed\relax }}{65}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Mean range error vs $(r,\theta )$ showing (a) large error at high angles and range, and (b) overall trend.\relax }}{66}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Experimental setup to measure noise at a different ranges and angle (lights turned off during measurement to eliminate error from variation in lighting conditions).\relax }}{63}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Sensor noise function $f_{UBG}(r,\theta )$ approximately normally distributed\relax }}{64}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Mean range error vs $(r,\theta )$ showing (a) large error at high angles and range, and (b) overall trend.\relax }}{64}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{64}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{64}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Range error standard deviation $\sigma $ vs $(r,\theta )$ showing (a) outliers/large $\sigma $ at high angles and range, and (b) overall trend.\relax }}{65}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{65}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{65}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces polynomials fitted to range error mean \& standard deviation data points to model noise. (a) SSE: 0.003234, R-square: 0.8447, Adjusted R-square: 0.8278, RMSE: 0.005027(b) SSE: 7.592e-06, R-square: 0.9196, Adjusted R-square: 0.9103, RMSE: 0.0002515\relax }}{66}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{66}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{66}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Range error standard deviation $\sigma $ vs $(r,\theta )$ showing (a) outliers/large $\sigma $ at high angles and range, and (b) overall trend.\relax }}{66}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{66}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{66}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces polynomials fitted to range error mean \& standard deviation data points to model noise. (a) SSE: 0.003234, R-square: 0.8447, Adjusted R-square: 0.8278, RMSE: 0.005027(b) SSE: 7.592e-06, R-square: 0.9196, Adjusted R-square: 0.9103, RMSE: 0.0002515\relax }}{67}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Comparision of (a) measured and (b) simulated surface noise. Point distribution along radial lines is shown as quintiles of error.\relax }}{67}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{67}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{67}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Comparision of (a) measured and (b) simulated surface noise. Point distribution along radial lines is shown as quintiles of error.\relax }}{69}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{69}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{69}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces setup to collect experimental data\relax }}{70}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces setup to collect experimental data\relax }}{68}

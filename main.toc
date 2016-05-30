@@ -16,7 +16,7 @@
 \contentsline {subsubsection}{\numberline {2.1.1.2}Lie algebra}{10}
 \contentsline {subsubsection}{\numberline {2.1.1.3}The exponential map and logarithm map}{10}
 \contentsline {subsubsection}{\numberline {2.1.1.4}Infinitesimal generators}{11}
-\contentsline {subsubsection}{\numberline {2.1.1.5}Lie bracket and group operation}{12}
+\contentsline {subsubsection}{\numberline {2.1.1.5}Lie bracket and group operation}{11}
 \contentsline {subsubsection}{\numberline {2.1.1.6}Actions}{12}
 \contentsline {subsection}{\numberline {2.1.2}\textbf {SO}(3)}{12}
 \contentsline {subsubsection}{\numberline {2.1.2.1}Lie algebra}{13}
@@ -33,7 +33,7 @@
 \contentsline {subsubsection}{\numberline {2.1.4.2}Point}{19}
 \contentsline {subsubsection}{\numberline {2.1.4.3}Homogeneous coordinates}{19}
 \contentsline {subsubsection}{\numberline {2.1.4.4}Redefining the reference frame of a point}{19}
-\contentsline {subsubsection}{\numberline {2.1.4.5}Concatenating poses}{20}
+\contentsline {subsubsection}{\numberline {2.1.4.5}Concatenating poses}{19}
 \contentsline {subsubsection}{\numberline {2.1.4.6}Redefining the reference frame of a pose}{20}
 \contentsline {subsubsection}{\numberline {2.1.4.7}Inverse}{20}
 \contentsline {subsection}{\numberline {2.1.5}Rigid body state representation}{20}
@@ -53,33 +53,33 @@
 \contentsline {subsection}{\numberline {4.1.2}Sensor modelling: \texttt {initialisesensor}}{34}
 \contentsline {subsubsection}{\numberline {4.1.2.1}Motion}{34}
 \contentsline {subsubsection}{\numberline {4.1.2.2}Scanning}{35}
-\contentsline {subsubsection}{\numberline {4.1.2.3}Hokuyo UBG-04LX-F01 model}{37}
+\contentsline {subsubsection}{\numberline {4.1.2.3}Hokuyo UBG-04LX-F01 model}{36}
 \contentsline {subsection}{\numberline {4.1.3}Environment modelling: \texttt {initialiseenvironment}}{37}
-\contentsline {subsubsection}{\numberline {4.1.3.1}Motion}{38}
+\contentsline {subsubsection}{\numberline {4.1.3.1}Motion}{37}
 \contentsline {subsubsection}{\numberline {4.1.3.2}Rigid objects}{38}
-\contentsline {subsection}{\numberline {4.1.4}Measurement modelling}{40}
-\contentsline {subsubsection}{\numberline {4.1.4.1}Range computation: \texttt {computerange}}{40}
+\contentsline {subsection}{\numberline {4.1.4}Measurement modelling}{39}
+\contentsline {subsubsection}{\numberline {4.1.4.1}Range computation: \texttt {computerange}}{39}
 \contentsline {subsubsection}{\numberline {4.1.4.2}Sensor noise: \texttt {addnoise}}{41}
 \contentsline {subsection}{\numberline {4.1.5}Observer implementation}{43}
 \contentsline {subsubsection}{\numberline {4.1.5.1}Estimate: \texttt {estimatestate}}{43}
 \contentsline {subsubsection}{\numberline {4.1.5.2}Object/background separation: \texttt {identifyobject}}{43}
-\contentsline {subsubsection}{\numberline {4.1.5.3}Update: \texttt {updatestate}}{44}
-\contentsline {section}{\numberline {4.2}Results}{53}
-\contentsline {subsection}{\numberline {4.2.1}Orientation correction}{53}
-\contentsline {subsubsection}{\numberline {4.2.1.1}Stationary cube}{53}
-\contentsline {subsubsection}{\numberline {4.2.1.2}Moving cube}{54}
-\contentsline {subsection}{\numberline {4.2.2}Position correction}{56}
-\contentsline {subsection}{\numberline {4.2.3}Size correction}{56}
-\contentsline {subsection}{\numberline {4.2.4}Orientation and size correction}{58}
-\contentsline {subsection}{\numberline {4.2.5}Discussion}{60}
-\contentsline {subsubsection}{\numberline {4.2.5.1}Performance assessment}{60}
-\contentsline {subsubsection}{\numberline {4.2.5.2}Improvements and future work}{61}
-\contentsline {chapter}{\numberline {5}Experimental data}{63}
-\contentsline {section}{\numberline {5.1}Sensor noise characterisation}{63}
-\contentsline {subsection}{\numberline {5.1.1}Measurement setup}{64}
-\contentsline {subsection}{\numberline {5.1.2}Results}{64}
-\contentsline {subsubsection}{\numberline {5.1.2.1}Gaussian noise model}{67}
-\contentsline {subsubsection}{\numberline {5.1.2.2}Surface noise}{68}
-\contentsline {section}{\numberline {5.2}Collection of observer performance testing data}{68}
-\contentsline {subsection}{\numberline {5.2.1}Setup}{69}
+\contentsline {subsubsection}{\numberline {4.1.5.3}Update: \texttt {updatestate}}{43}
+\contentsline {section}{\numberline {4.2}Results}{52}
+\contentsline {subsection}{\numberline {4.2.1}Orientation correction}{52}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Stationary cube}{52}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Moving cube}{53}
+\contentsline {subsection}{\numberline {4.2.2}Position correction}{54}
+\contentsline {subsection}{\numberline {4.2.3}Size correction}{55}
+\contentsline {subsection}{\numberline {4.2.4}Orientation and size correction}{57}
+\contentsline {subsection}{\numberline {4.2.5}Discussion}{59}
+\contentsline {subsubsection}{\numberline {4.2.5.1}Performance assessment}{59}
+\contentsline {subsubsection}{\numberline {4.2.5.2}Improvements and future work}{60}
+\contentsline {chapter}{\numberline {5}Experimental data}{62}
+\contentsline {section}{\numberline {5.1}Sensor noise characterisation}{62}
+\contentsline {subsection}{\numberline {5.1.1}Measurement setup}{63}
+\contentsline {subsection}{\numberline {5.1.2}Results}{63}
+\contentsline {subsubsection}{\numberline {5.1.2.1}Gaussian noise model}{65}
+\contentsline {subsubsection}{\numberline {5.1.2.2}Surface noise}{67}
+\contentsline {section}{\numberline {5.2}Collection of observer performance testing data}{67}
+\contentsline {subsection}{\numberline {5.2.1}Setup}{68}
 \contentsline {subsection}{\numberline {5.2.2}Results}{69}
