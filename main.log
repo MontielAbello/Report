@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  31 MAY 2016 05:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2014.4.16)  31 MAY 2016 05:16
 entering extended mode
 **main.tex
 ("C:\Users\Monty Abello\Documents\Uni\2016\ENGN4718\Report\main.tex"
@@ -769,7 +769,7 @@ ABD: EveryShipout initializing macros
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 99.
+LaTeX Font Info:    Try loading font information for U+msa on input line 103.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -777,7 +777,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 99.
+LaTeX Font Info:    Try loading font information for U+msb on input line 103.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1262,11 +1262,11 @@ ntal_data.jpg>]) [68]
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 19202 strings out of 493921
- 373610 string characters out of 3147261
- 456119 words of memory out of 3000000
- 21871 multiletter control sequences out of 15000+200000
- 25215 words of font info for 141 fonts, out of 3000000 for 9000
+ 19200 strings out of 493921
+ 373565 string characters out of 3147261
+ 455117 words of memory out of 3000000
+ 21869 multiletter control sequences out of 15000+200000
+ 24908 words of font info for 140 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  55i,23n,58p,1125b,11953s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
@@ -1290,9 +1290,9 @@ nts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mtt12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/euler/eufm10
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pf
 b>
-Output written on main.pdf (84 pages, 22829853 bytes).
+Output written on main.pdf (84 pages, 22830778 bytes).
 PDF statistics:
  471 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21913 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 21401 words of extra memory for PDF output out of 24883 (max. 10000000)
 
