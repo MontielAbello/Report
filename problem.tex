@@ -2,31 +2,31 @@
 This project is part of a larger research direction at the ANU Research School of Engineering that will develop a theory of infinite-dimensional, symmetry preserving observers.
 As an initial exploration of this open problem, the central goals of this project are to:
 \begin{itemize}
-\item gain an understanding of how dense sensors can be used to take measurements of the state of infinite-dimensional systems;
-\item gain an insight into how symmetry-preserving observers can be used to better observe nonlinear infinite-dimensional systems
-\item uncover pertinent directions for future research in this area; where a theory of infinite-dimensional, symmetry preserving observers would be useful
+\item gain an understanding of how dense sensors can be used to estimate the state of infinite-dimensional systems;
+\item gain an insight into how symmetry-preserving observers can be used to better observe nonlinear infinite-dimensional systems;
+\item uncover pertinent directions for future research in this area - where a theory of infinite-dimensional, symmetry preserving observers would be useful;
 \item investigate if a sparse sensor can be used in a manner that approximates the capabilities of a dense sensor in the observation of an infinite-dimensional state.
 \end{itemize}
 
 The approach taken to achieve these goals will be to design and implement an observer for a simplified system that still captures some components of the overall research goals.
 The state variable to  be estimated will be finite-dimensional, and thus the observer will be finite-dimensional. However, the sensor will still take measurements of an infinite dimensional state. In this way, the problem is similar to the dense optical flow estimation by Adarve et al. \cite{adarvefiltering}.
 
-Initially, the observer innovation function will not designed to be invariant. As a first step, this research will investigate correction schemes that converge locally. A future work package will be do adjust the update function to respect the symmetries of the system and achieve more global convergence properties. 
+Initially, the observer innovation function will not be designed to be invariant. As a first step, this research will investigate correction schemes that converge locally. A future work package will be do adjust the update function to respect the symmetries of the system and achieve more global convergence properties. 
 
-Sparse range measurements have been used to reconstruct a depth field by Szeliski \cite{szeliski1988estimating}, who fitted a spline surface model to a cloud of points estimated from range data. The key difference in the approach used in this paper is that rather than using the range measurements to directly estimate the state, the difference in measured and predicted range will be used to drive the innovation term of a state observer. In this approach. the trajectory of the sensor will have a greater importance in ensuring that dense measurements can be made.
+Sparse range measurements have previously been used to reconstruct a depth field by Szeliski \cite{szeliski1988estimating}, who fitted a spline surface model to a cloud of points estimated from range data. The key difference in the approach used in this research is that rather than using the range measurements to directly estimate the state, the difference in measured and predicted range will be used to drive the innovation term of a state observer. In this approach. the trajectory of the sensor will have a greater importance in ensuring that dense measurements can be made.
 
 \section{Estimating the pose and size of a cube from sparse range measurements}
 \input{Figures/fig_cubeproblem}
 A situation in which an infinite dimensional observer would be useful is in the estimation of the pose of an object of unknown size moving in an environment of unknown state.
 
-For example, consider an autonomous robot deployed in an agricultural survey, which must determine the position and size of a certain crop. Using a geometric model for the general shape of the crop, an aerial vehicle that could routinely detect and characterise the position and size of specimens would be useful in monitoring growth and during harvesting.
+For example, consider an autonomous robot deployed in an agricultural survey, which must determine the position and size of specimens of a certain crop. Using a geometric model for the general shape of the crop, an aerial vehicle that could routinely detect and characterise the position and size of specimens would be useful in monitoring growth and during harvesting.
 
 The problem to be investigated is shown in Figure~\ref{fig:cubeproblem}. A 2D scanning range sensor moves through an environment consisting of a target object of known shape, in this case a rigid cube, and an unknown background which may be an infinite dimensional dynamic system. The state of the sensor is known, but the states of the cube and background environment are unknown. The goal is to use the state of the sensor and the range measurements it provides to estimate the state of the cube.
 
 The frames used to describe the motion of the rigid bodies in this problem are:
 \begin{itemize}
 \item $\{F\}$ - the inertial (fixed) frame. For the purposes of this problem, the inertial frame is a frame whose motion is negligible. For the practical experiment this frame will be fixed to the ground.
-\item $\{A\}$ - the frame fixed to the sensor. The origin of this frame is the centre of rotation of the sensor's scan direction. The axes of $\{A\}$ are fixed to the sensor according to Figure \ref{fig:scanningparameters} in chapter \ref{chap:simulation}. The transformation from $\{F\}$ to $\{A\}$ at time $t$ is defined by the screw matrix of the sensor $\mathbf{S}_{s}(t)$.
+\item $\{A\}$ - the frame fixed to the sensor. The origin of this frame is the centre of rotation of the sensor's scan direction. The axes of $\{A\}$ are fixed to the sensor according to Figure \ref{fig:scanningparameters} in Chapter \ref{chap:simulation}. The transformation from $\{F\}$ to $\{A\}$ at time $t$ is defined by the screw matrix of the sensor $\mathbf{S}_{s}(t)$.
 \item $\{B\}$ - the frame fixed to the cube. The origin of $\{B\}$ coincides with the centre of the cube and is aligned so that each axis intersects with the centre of a face of the cube. The transformation from $\{F\}$ to $\{B\}$ at time $t$ is defined by the screw matrix of the cube $\mathbf{S}_{c}(t)$.
 \end{itemize} 
 
@@ -72,15 +72,15 @@ This observer formulation differs from that provided in equation \ref{eq:observe
 
 A simulation toolbox will be implemented to simulate range measurements of rigid bodies using a scanning range sensor. The observer implementation will be implemented and its performance tested under a range of conditions. 
 
-Experimental validation will be performed by taking measurements of a known environment using the Hokuyo UBG-04LX-FO1 scanning laser range-finder. These measurements will be used to quantify the performance of the observer under real-world conditions.
+Experimental validation will be performed by taking measurements of a known environment using the Hokuyo UBG-04LX-F01 scanning laser range-finder. These measurements will be used to quantify the performance of the observer under real-world conditions.
 
 The observer implementation will be considered successful if it is able to converge to the true cube state around a local neighbourhood. Since an invariant observer is not being implemented, global convergence is not expected.
 
 \section{Deliverables}
-The project deliverables are:
+The project deliverables are to:
 \begin{itemize}
 \item implement a toolbox to simulate range measurements of rigid bodies;
-\item design an observer to estimate cube state from sparse range measurements;
+\item design an observer to estimate the cube state from sparse range measurements;
 \item produce and test a software implementation of the observer;
 \item validate the observer performance by collecting experimental data;
 \item present the research in a report and presentation.
