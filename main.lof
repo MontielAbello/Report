@@ -45,18 +45,18 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{61}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{61}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces setup to measure noise at a different ranges and angle (lights turned off during measurement to eliminate error from variation in lighting conditions)\relax }}{64}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Experimental setup to measure noise at a different ranges and angle (lights turned off during measurement to eliminate error from variation in lighting conditions).\relax }}{64}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Sensor noise function $f_{UBG}(r,\theta )$ approximately normally distributed\relax }}{65}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces mean range error ($r_{error} = r_{ground truth} - r_{measured}$) vs $(r,\theta )$ showing (a) large error at high angles and range, (b) overall shape\relax }}{65}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{65}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{65}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces range error $\sigma $ vs $(r,\theta )$ showing (a) outliers/large std dev at high angles and range, (b) overall shape\relax }}{66}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Mean range error vs $(r,\theta )$ showing (a) large error at high angles and range, and (b) overall trend.\relax }}{66}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{66}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{66}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Range error standard deviation $\sigma $ vs $(r,\theta )$ showing (a) outliers/large $\sigma $ at high angles and range, and (b) overall trend.\relax }}{66}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{66}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{66}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces polynomials fitted to range error mean \& standard deviation data points to model noise. (a) SSE: 0.003234, R-square: 0.8447, Adjusted R-square: 0.8278, RMSE: 0.005027(b) SSE: 7.592e-06, R-square: 0.9196, Adjusted R-square: 0.9103, RMSE: 0.0002515\relax }}{67}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{67}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{67}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Comparision of (a) measured and (b) simulated surface noise. Point distribution along radial lines is shown as quintiles of error.\relax }}{68}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{68}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{68}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces setup to collect experimental data\relax }}{69}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Comparision of (a) measured and (b) simulated surface noise. Point distribution along radial lines is shown as quintiles of error.\relax }}{69}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{69}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{69}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces setup to collect experimental data\relax }}{70}

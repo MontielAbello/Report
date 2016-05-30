@@ -1,10 +1,10 @@
-\chapter{Theoretical Background}\label{chap:background}
+\chapter{Theoretical background}\label{chap:background}
 
-\section{Rigid Body Kinematics}
+\section{Rigid body kinematics}
 	A rigid body is a model of a solid object whose deformation is assumed to be negligible. The distance between every pair of points on the body remains constant. Because such a body does not deform, knowledge of the orientation and position of a reference frame fixed to a rigid body constitutes knowledge of the position of all points. The position of the rigid body is thus defined by the position of a particular point in the body, most commonly its centre of mass. The orientation can be defined using a set of coordinate axes fixed to the body such that its origin coincides with the representative position point.
 	The theory of Lie groups will be used to describe the kinematics of rigid bodies in this report.
 			
-	\subsection{Lie Groups}		
+	\subsection{Lie groups}		
 		A Lie group $\mathbf{G}$ is a group whose elements form a differentiable manifold and whose group operation and inverse operation are differentiable.
 		As a group, $\mathbf{G}$ is a set of elements and a group operation. This group operation is a binary operation that combines two elements and is denoted by multiplication: $AB$ or $A \cdot B$ for $A,B \in \mathbf{G}$. Because it is a group, $\mathbf{G}$ satisfies the 4 group axioms:
 		\begin{itemize}
@@ -420,7 +420,7 @@
 		\end{equation}
 		\end{comment}
 		
-	\subsection{Reference Frames}
+	\subsection{Reference frames}
 		A reference frame is a system of coordinates that is used to uniquely identify points on a manifold. This report will deal with reference frames on $\mathbb{R}^3$ that are used both to define the position of a point and the pose of a rigid body in 3D space.
 		Such a reference frame is represented by an element of \textbf{SE}(3).
 		
@@ -487,7 +487,7 @@
 			({^{F}_{A}\mathbf{X}^{}_{B}})^{-1} = {^{F}_{B}\mathbf{X}^{}_{A}}
 		\end{equation}
 	
-	\subsection{Rigid Body State Representation} \label{state rep}
+	\subsection{Rigid body state representation} \label{state rep}
 		The state of a rigid body moving through 3D space can be represented by its linear and angular position, velocity and acceleration. Higher derivatives could be taken but will be ignored for simplicity.
 		The inertial frame is denoted $\{F\}$ and a frame $\{A\}$ is fixed to the pose of the moving body.
 		
@@ -523,7 +523,7 @@
 						
 		From this point on, frames will dropped in the notation. For a body labelled \textit{x} fixed to a frame $\{A\}$, ${^{F}_{F}\mathbf{S}^{}_{A}}$, ${^{A}_{F}\mathbf{T}^{}_{A}}$ and ${^{A}_{F}\mathbf{W}^{}_{A}}$ will be denoted $\mathbf{S}_x$, $\mathbf{T}_x$ and $\mathbf{W}_x$.
 						
-	\subsection{Rigid Body Kinematics} \label{kinematics}
+	\subsection{Rigid body kinematics} \label{kinematics}
 		The dynamics of the screw, twist and wrench matrices as they are defined in section \ref{state rep} are governed by the following ordinary differential equations (ODEs),
 		\begin{equation}
 			{\frac{\textnormal{d}}{\textnormal{d}t}} \mathbf{S}(t) =\mathbf{S}(t)\mathbf{T}(t)
@@ -536,14 +536,14 @@
 		\end{equation}
 		where the function $\mathbf{f}(t)$ is known.
 	
-	\subsection{Scanning Laser Range-finder Dynamic Model}
+	\subsection{Scanning laser range-finder model}
 		A scanning laser range-finder is a sensor that measures the distance to the nearest object in a certain direction. Consider such a sensor fixed to a moving rigid body. The pose of the sensor labelled $s$ is defined by $\mathbf{S}_s$, $\mathbf{T}_s$ and $\mathbf{W}_s$. The scanning direction of the sensor defined in the body fixed frame $\{A\}$ is a unit vector ${^{A}\mathbf{d}(t)} \in S^2$.	
 		
 		The sensor provides measurement of the range $r(t) \in \mathbb{R}^{0+}$ from $^{F}_{F}\mathbf{p}^{}_{A}(t)$ to the nearest object in the environment in the direction ${^{F}\mathbf{d}(t)} = {^{F}_{F}\mathbf{R}^{}_{A}(t)}\:{^{A}\mathbf{d}(t)}$.
 		
 		The function ${^{A}\mathbf{d}(t)}$ determines the scanning behaviour of the sensor and depends on the specific model used. The scanning model for the Hokuyo UBG-04LX-FO1 used in this research is provided in section \ref{sec:scanmodel}.
 		
-\section{State Observers} \label{sec:observerequations}
+\section{State observers} \label{sec:observerequations}
 \subsection{Luenberger observers}
 An observer is a filter that is used to estimate the state of a dynamic system. The state $x$ can be chosen as some set of variables governed by the system. In real-world conditions, the system is often infinite-dimensional.
 

@@ -1,4 +1,4 @@
-\chapter{Experimental Data} \label{chap:experiment}
+\chapter{Experimental data} \label{chap:experiment}
 In order to validate the performance of the observer implementation, experimental data was collected with a Hokuyo UBG-04LX-F01 scanning laser range-finder.
 
 Measurements were taken to:
@@ -10,10 +10,10 @@ Measurements were taken to:
 Section \ref{sensor_noise} details how measurements were taken to develop the noise model.
 Section \ref{testingdata} describes how experimental range measurements were taken and how the ground truth cube state was determined. This work is still ongoing as the data must be calibrated before it can be used to assess the performance of the observer. 
 
-\section{Sensor Noise Characterisation} \label{sensor_noise}
-An accurate range sensor simulation must include a model for the error distribution of the measurements. A noise model for the Hokuyo UBG-04LX-F01 used in this research was developed in by Park et al. \cite{park2010characterization}. The effect of range and incidence angles on the error was measured, but a unified model combining both was not provided. Furthermore, \cite{park2010characterization} showed that the measurement error depends highly on the texture and colour of the surface measured. To accurately model the Hokuyo UBG-04LX-F01 for the usage case of this research, a wide range of measurements using a specific surface were taken to determine the effect of range and incidence angle on the error distribution.
+\section{Sensor noise characterisation} \label{sensor_noise}
+An accurate range sensor simulation must include a model for the error distribution of the measurements. A noise model for the Hokuyo UBG-04LX-F01 was developed by Park et al. \cite{park2010characterization}. The effect of range and incidence angles on the error was measured, but a unified model combining both was not provided. Furthermore, \cite{park2010characterization} showed that the measurement error depends highly on the texture and colour of the surface measured. To accurately model the Hokuyo UBG-04LX-F01 for the usage case of this research, a wide set of measurements using a specific surface were taken to determine the effect of range and incidence angle on the error distribution.
 
-	\subsection{Measurement Setup}
+	\subsection{Measurement setup}
 	A flat surface was painted matte white. The surface was placed perpendicular to the ground and at a known distance and angle with respect to the range sensor.
 	1200 samples of the measured distance to the surface were taken.
 	
@@ -22,11 +22,11 @@ An accurate range sensor simulation must include a model for the error distribut
 	\begin{figure}
 	\centering
 	 	\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip=true]{./Figures/noise_setup}\vspace*{0ex}
-	  	\caption{setup to measure noise at a different ranges and angle (lights turned off during measurement to eliminate error from variation in lighting conditions)} \label{fig:noise_setup}
+	  	\caption{Experimental setup to measure noise at a different ranges and angle (lights turned off during measurement to eliminate error from variation in lighting conditions).} \label{fig:noise_setup}
 	\end{figure}
 		 
 	\subsection{Results}
-		The range error $r_{error} = r_{ground truth} - r_{measured}$ was computed. The distributions of this error for varying ranges and angles is shown in Figure \ref{fig:mean_hist}. The range error is approximately normally distributed.
+		The range error $e_r = r - \tilde{r}$ was computed. The distributions of this error for varying ranges and angles is shown in Figure \ref{fig:mean_hist}. The range error is approximately normally distributed.
 		\begin{figure}
 		\centering
 		  \includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/range_error_histograms.jpg}
@@ -45,7 +45,7 @@ An accurate range sensor simulation must include a model for the error distribut
 	  		\begin{minipage}[b]{0.45\columnwidth}
     			\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/noise_mean_range_error_removed_outliers}\vspace*{0ex}
 		 \end{minipage}}
-	  		\caption{mean range error ($r_{error} = r_{ground truth} - r_{measured}$) vs $(r,\theta)$ showing (a) large error at high angles and range, (b) overall shape}
+	  		\caption{Mean range error vs $(r,\theta)$ showing (a) large error at high angles and range, and (b) overall trend.}
 	  		\label{fig:mean_range_error}
 		\end{figure}
 		
@@ -59,7 +59,7 @@ An accurate range sensor simulation must include a model for the error distribut
 	  		\begin{minipage}[b]{0.45\columnwidth}
     			\includegraphics[width=1\textwidth,trim = 0mm 0mm 0mm 0mm,clip]{./Figures/noise_stddev_range_error_removed_outliers}\vspace*{0ex}
 	 		 \end{minipage}}
-	  		\caption{range error $\sigma$ vs $(r,\theta)$ showing (a) outliers/large std dev at high angles and range, (b) overall shape}
+	  		\caption{Range error standard deviation $\sigma$ vs $(r,\theta)$ showing (a) outliers/large $\sigma$ at high angles and range, and (b) overall trend.}
 	  		\label{fig:stddev_range_error}
 		\end{figure}
 		
@@ -67,7 +67,7 @@ An accurate range sensor simulation must include a model for the error distribut
 		
 		These results are corroborated by \cite{park2010characterization} who reported difficulty in acquiring measurements for high angles and modelled the noise distribution as Gaussian.
 		
-		It was assumed that the noise distribution for an incidence angle $\theta$ would be identical to $-\theta$. However, the fact that the sensor's scan direction rotates in a single direction may mean this is not the case. Including the effect of incidence angles from $\pi/2$ to $\pi/2$ would provide a more accurate noise for future work.
+		It was assumed that the noise distribution for an incidence angle $\theta$ would be identical to $-\theta$. However, the fact that the sensor's scan direction rotates in a single direction may mean this is not the case. Including the effect of incidence angles from $\pi/2$ to $\pi/2$ would provide a more accurate noise model for future work.
 		
 		The 4th degree polynomial surfaces in equations \ref{eq:mean} and \ref{eq:std} were fitted to the adjusted set of data points using Matlab's curve fitting tool. The surfaces and the goodness of fit are shown in Figure \ref{fig:surface_range_error}. 
 		\begin{figure}
@@ -115,13 +115,13 @@ An accurate range sensor simulation must include a model for the error distribut
 				\input{Tables/tab_noise_coefficients_b}	
 
 		\subsubsection{Surface noise}
-		An additional source of error was observed and found to be mostly independent of $r$ and $\theta$. This may be caused by surface properties of the environment, though the error is larger than expected in this case. A possible explanation is compensation performed by sensor to produce globally straight lines. While flat surfaces do appear flat from a distance, locally there are regular variations in depth as shown in Figure \ref{fig:measured_surface_noise}. 
+		An additional source of range error was observed and found to be mostly independent of $r$ and $\theta$. This may be caused by surface properties of the environment, though the error is larger than expected in this case. A possible explanation is compensation performed by the sensor to produce globally straight lines. While flat surfaces do appear flat from a distance, locally there are regular variations in depth as shown in Figure \ref{fig:measured_surface_noise}. 
 		
 		This surface noise was modelled with a random walk function
 		\begin{equation}
-			e_{surface} = a\sum_{n = 1}^{n_{Steps}}-1 + 2\:\left \lfloor{\mathcal{R}}\right \rfloor 
+			e_{surface} = a \left(\sum_{n = 1}^{n_{Steps}}-1 + 2\:\left \lfloor{\mathcal{R}}\right \rfloor \right)
 		\end{equation} 
-		where $\mathcal{R}$ is a random variable following a uniform distribution on [0,1]. A step size $a = 0.0005m$ was used. Figure \ref{fig:surface_noise} shows that this model accurately models the measured surface variations. It should be noted that the measured variation appears concave while the simulated noise appears convex. This is due to the nature of the random walk noise. Over a large sample, both concave and convex surface noise is observed in real-world measurements and the simulate random walk simulation.
+		where $\mathcal{R}$ is a random variable following a uniform distribution on [0,1]. A step size $a = 0.0005m$ was used. Figure \ref{fig:surface_noise} shows that this model accurately models the measured surface variations. It should be noted that the measured variation appears concave while the simulated noise appears convex. This is due to the nature of the random walk noise. Over a large sample, both concave and convex surface noise is observed in real-world measurements and the simulated random walk.
 
 		\begin{figure}
 	  		\centering
@@ -137,8 +137,8 @@ An accurate range sensor simulation must include a model for the error distribut
 	  		\label{fig:surface_noise}
 		\end{figure}
 
-\section{Observer Performance Testing Data} \label{testingdata}
-	Data collected to assess the performance of the observer under real-world, less-than-ideal conditions.
+\section{Collection of observer performance testing data} \label{testingdata}
+	Experimental data was collected to assess the performance of the observer under real-world, less-than-ideal conditions.
 	\subsection{Setup}
 		The experimental setup is shown in Figure \ref{fig:experimental_data}.
 		\begin{figure}
@@ -147,9 +147,9 @@ An accurate range sensor simulation must include a model for the error distribut
 			  	\caption{setup to collect experimental data} \label{fig:experimental_data}
 		\end{figure}
 
-		The Hokuyo UBG-04LX-F01 sensor was mounted to a tripod. The sensor was panned up and down manually while the range and time recorded. This panning along with its own scanning behaviour allows the sensor to densely measure the infinite-dimensional environment depth field. To compute the elevation angle of the sensor, the range measurements to a portion of the blank wall were used. The range to this wall was measured at elevations increasing from  $-25^\circ$ to $25^\circ$ in $5^\circ$ increments for calibration purposes.
+		The Hokuyo UBG-04LX-F01 sensor was mounted to a tripod. The sensor was panned up and down manually while the measured range and time recorded. This panning along trajectory with the sensor's scanning behaviour is what allows it to densely estimate the infinite-dimensional environment depth field. To compute the elevation angle of the sensor, the range measurements of a portion of the blank wall at a known distance were used. The range to this wall was measured at elevations increasing from  $-25^\circ$ to $25^\circ$ in $5^\circ$ increments for calibration purposes.
 		
-		The target object was a cube of 100mm side length cube made from medium-density fibreboard. The cube was spray painted matte white - the same surface as used in the sensor noise modelling in Section \ref{sensor_noise}.
+		The target object was a cube of 100mm side length made from medium-density fibreboard. The cube was spray painted matte white - the same surface used for the measurements in the sensor noise modelling in Section \ref{sensor_noise}.
 		
 		The cube was placed in the gripper of a Kinova Jaco robotic arm. The arm was manually manipulated to produce stationary, rotating, translating and combined motions. The joint angles of the sensor over time were recorded. From this data, the forward kinematic model for the arm was used to compute the ground truth pose of the cube over time.		
 		

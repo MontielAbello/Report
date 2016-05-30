@@ -1,12 +1,12 @@
-\section{Literature Review} \label{sec:literature}
+\section{Literature review} \label{sec:literature}
 The use of dense sensors allows for a more accurate estimation of the state of an infinite-dimensional system such as a complex, real-world environment. The theory of infinite-dimensional observers is required to fully utilise this information. This section will review the current state of design methodologies and implementations for infinite-dimensional observers. Particular focus will be paid to an emerging avenue of research; symmetry-preserving observer design. Recent theory developments in this area have allowed limitations in the global convergence properties of nonlinear observers to be overcome.
 
-\subsection{Infinite-Dimensional Observers}
+\subsection{Infinite-dimensional observers}
 In many real world systems the dependent variables are functions of one or more spatial variables. An example would be the dynamics of waves in a body of water. The height of the surface varies continuously along the $x$ and $y$ directions. These spatial variables vary continuously, meaning an infinite number of parameters is required to describe the state of the system. Such systems are termed \textit{infinite-dimensional systems}, or \textit{distributed parameter systems}. Their dynamics are modelled by a partial differential equation (PDE). 
 
 When a state estimate is required but direct measurement of the state with sensors is difficult or impossible, a \textit{state observer} is employed. A state observer is a filter that provides an estimate of the state of a system using the difference between its measured and predicted outputs. A more detailed description of the concept of a state observer is provided in Section \ref{sec:observerequations}. An observer for an infinite-dimensional system is called an \textit{infinite-dimensional observer}.
 
-\subsubsection{Linear Systems}
+\subsubsection{Linear systems}
 Observer theory for \textit{linear} infinite-dimensional systems has been widely studied. The techniques used are typically extensions of Luenberger observers and Kalman filter methods used to observe finite dimensional system.
 
 A simplified approach is to use a spatial discretisation method such as finite difference or finite element to reduce the infinite-dimensional system to a finite-dimensional one. From here, finite-dimensional observer design techniques can be used. This is known as the \textit{early lumping} method, and was employed by Stavroulakis \cite{stavroulakis1973design} who implemented a finite-dimensional observer as part of a control system for an infinite dimensional systems.
@@ -17,7 +17,7 @@ More accurate observers can be designed with the \textit{late lumping} approach 
 
 Early work by Gressang \cite{gressang1975observers} extended the Luenberger observer to infinite-dimensional systems whose state space was an abstract Banach space with dynamics defined by an infinitesimal generator of a semigroup. More recently, Smyshlyaev \cite{smyshlyaev2005backstepping} developed an exponentially converging backstepping observer for systems governed by parabolic PDEs. Ramdani introduced forward and backward observers \cite{ramdani2010recovering} whose convergence properties were investigated by Haine \cite{haine2014recovering}.
 
-\subsubsection{Nonlinear Systems}
+\subsubsection{Nonlinear systems}
 There is currently no universal approach for observer design for nonlinear infinite-dimensional systems.
 The most common approach has been to linearise the system, then apply a linear infinite-dimensional observer design. Common linearisation methods include Lyapunov methods, extended linearisation and the Lie-algebraic approach \cite{primbs1996survey}.
 
@@ -27,7 +27,7 @@ Despite these small advances in special cases of nonlinear design, the most comm
 
 Global convergence can be achieved by taking account the symmetries inherent to the system during observer design. A powerful tool for dealing with symmetries is the theory of \textit{Lie groups}. Investigation into \textit{symmetry-preserving} observer design for systems on Lie groups is an active area of research. It promises to produce theoretically validated design principles for nonlinear infinite-dimensional observers, though the majority of research so far has been limited to finite-dimensional observers.
 
-\subsection{Symmetry-Preserving Observers}
+\subsection{Symmetry-preserving observers}
 The motivation behind symmetry-preserving observers is to take advantage of invariances in the dynamics of the system. The goal is to design an observer around an equilibrium point in such a way that it can be extended to converge around a wider set of points.
 
 \subsubsection{Early work}
@@ -36,7 +36,7 @@ A seminal work by Salcudean \cite{salcudean1991globally} was the design of an ev
 
 Another important result that is a precursor to the active research of today is a design method developed by Aghannon \& Rouchon \cite{aghannan2002invariant}. Their invariant observer construction was based on Cartan's moving frame method. Though convergence was proven for a specific problem, the observer convergence for a general case was left an open problem. Maithripala \cite{maithripala2005intrinsic} demonstrated the effectiveness of Aghannon \& Rouchons' method by incorporating it into the design of an intrinsic observer based controller. Performance was shown to be independent of the coordinate system used to represent the configuration space.
 
-\subsubsection{Active Research}
+\subsubsection{Active research}
 There are currently two groups actively researching symmetry-preserving observer design.  Both have begun to apply symmetry-preserving methods to infinite-dimensional observers.
 
 The work of Bonnabel, Auroux, Rouchon, Martin et al. is a progression of the early results from Aghannon \& Rouchon. Their general approach is to first design a Luenberger type observer around an equilibrium point. An invariant frame is used to construct an invariant output error. The observer innovation term respects the symmetries of the system and thus the nonlinear observer is well behaved around a continuum of equilibrium points. 
