@@ -1,7 +1,7 @@
 \chapter{Theoretical Background}\label{chap:background}
 
 \section{Rigid Body Kinematics}
-	A rigid body is a model of a solid object whose deformation is assumed to be negligible. The distance between every pair of points on the body remains constant. Because such a body does not deform, knowledge of the orientation and position of a reference frame fixed to a rigid body constitutes knowledge of the position of all points. The position of the rigid body is thus defined by the position of a particular point in the body, most commonly its centre of mass. The orientation can be defined using a set of coordinate axes fixed to the body such that its origin coincides with the position point.
+	A rigid body is a model of a solid object whose deformation is assumed to be negligible. The distance between every pair of points on the body remains constant. Because such a body does not deform, knowledge of the orientation and position of a reference frame fixed to a rigid body constitutes knowledge of the position of all points. The position of the rigid body is thus defined by the position of a particular point in the body, most commonly its centre of mass. The orientation can be defined using a set of coordinate axes fixed to the body such that its origin coincides with the representative position point.
 	The theory of Lie groups will be used to describe the kinematics of rigid bodies in this report.
 			
 	\subsection{Lie Groups}		
@@ -33,7 +33,7 @@
 			\end{equation}
 			
 		\subsubsection{The exponential map and logarithm map}	
-			The canonical mapping from the Lie algebra $\mathfrak{g}$ to the Lie group $\mathbf{G}$ is called the exponential map:
+			The canonical mapping from the Lie algebra $\mathfrak{g}$ to the Lie group $\mathbf{G}$ is called the exponential map.
 			\begin{equation}
 				\exp: \mathfrak{g} \rightarrow \mathbf{G}
 			\end{equation}			
@@ -79,13 +79,13 @@
 			\begin{equation}
 				e^C = e^{A+B} = e^Ae^B
 			\end{equation}
-			For non-commutative Lie groups, this relationship between the Lie algebra and Lie group operations do not hold. Instead, for $C = \log{\left(e^Ae^B\right)} $, $C$ is calculated with the Baker-Campbell-Hausdorff formula:
+			For non-commutative Lie groups, this relationship between the Lie algebra and Lie group operations does not hold. Instead, for $C = \log{\left(e^Ae^B\right)} $, $C$ is calculated with the Baker-Campbell-Hausdorff formula:
 			\begin{equation}
 				C = A + B + \frac{1}{2}[A,B] + \frac{1}{12}[A-B,[A,B]]  \frac{1}{24}[B,[A,[A,B]]] + \dots
 			\end{equation}	
 		
 		\subsubsection{Actions}
-			When a group action for a Lie group $\mathbf{G}$ acting on a manifold $M$ is a differentiable map, this is known as a Lie group action. For example, 3D rotations act on 3D points so the Lie group $\mathbf{SO}(3)$ acts on $\mathbb{R}^3$. A left action of $\mathbf{G}$ on $M$ is defined as a differentiable map
+			When a group action for a Lie group $\mathbf{G}$ acting on a manifold $M$ is a differentiable map, this is known as a \textit{Lie group action}. For example, 3D rotations act on 3D points so the Lie group $\mathbf{SO}(3)$ acts on $\mathbb{R}^3$. A left action of $\mathbf{G}$ on $M$ is defined as a differentiable map
 			\begin{equation}
 				\Phi: \mathbf{G} \times M \mapsto M
 			\end{equation}
@@ -123,9 +123,9 @@
 		
 	\subsection{\textbf{SO}(3)}	
 		A rotation represents the motion of a point about the origin of a Euclidean space. In $\mathbb{R}^3$ this is a proper isometry: a transformation that preserves distances between any pair of points and has a determinant of +1. The set of all rotations about the origin of $\mathbb{R}^3$ is known as the \textit{special orthogonal group} $\textbf{SO}(3)$.
-		Group elements of $\textbf{SO}(3)$ can be represented using a special subset of $3 \times 3$ invertible matrices and in this case, forms a matrix Lie group. Several rotation representations are described later in this section, but the theory presented below only applies to matrix Lie groups which rely on the rotation matrix representation for group elements.
+		Group elements of $\textbf{SO}(3)$ can be represented using a special subset of $3 \times 3$ invertible matrices and in this case, form a matrix Lie group. Several rotation representations are described later in this section, but the theory presented below only applies to matrix Lie groups which rely on the rotation matrix representation for group elements.
 		
-		A rotation matrix $\mathbf{R}$ is a $3 \times 3$ matrix that performs a rotation operation when it acts on an element of $\mathbb{R}^3$. The properties of $\mathbf{R}$ are described in more detail below.
+		A rotation matrix $\mathbf{R}$ is a $3 \times 3$ matrix that performs a rotation operation when it acts on an element of $\mathbb{R}^3$. The properties of $\mathbf{R}$ are described in more detail in Section \ref{sec:rotationmatrix}.
 		
 		\subsubsection{Lie algebra}
 		The Lie algebra $\mathfrak{so}(3)$ is a vector space whose elements represent angular velocities. These elements can be represented with $3 \times 3$ skew-symmetric matrices $\bm{\omega}^{\wedge}$, where $\bm{\omega} \in \mathbb{R}^3$ is a 3-vector representing an angular velocity. For
@@ -191,7 +191,7 @@
 		\subsubsection{Rotation representations}	
 		There are many conventions by which elements of $\mathbf{SO}(3)$ can be represented. The representations that will be used in this report are described below.
 		
-		\subsubsection{Rotation matrices}
+		\subsubsection{Rotation matrices}\label{sec:rotationmatrix}
 		A 3D rotation matrix $\mathbf{R}$ is an orthogonal $3 \times 3$ matrix with a determinant of +1. Since $\mathbf{R}$ is orthogonal, its columns and rows are respectively sets of orthogonal unit vectors and
 		\begin{equation}
 			\mathbf{R}^{-1} = \mathbf{R}^{T}
@@ -211,10 +211,10 @@
 			\mathbf{R}_{\bm{\theta}} = \mathbf{I} + [\mathbf{r}]_{\times}\sin{\theta} + ([\mathbf{r}]_{\times})^2(1-\cos{\theta})
 		\end{equation}
 					
-		Elements of $\mathfrak{so}(3)$ are typically represented with the hat representation $\bm{\omega}^{\wedge}$ of a scaled-axis vector $\bm{\omega}$, where the magnitude $|\bm{\omega}|$ corresponds to the angular velocity about the axis $\bm{\omega}/|\bm{\omega}|$.
+		Elements of $\mathfrak{so}(3)$ are typically represented with the hat representation $\bm{\omega}^{\wedge}$ of a scaled-axis vector $\bm{\omega}$, where the magnitude $\omega$ corresponds to the angular velocity about the axis $\mathbf{r}$.
 					
 		\subsubsection{Rotation quaternions}
-		Quaternions are an extension of complex numbers. The set of unit quaternions can be used to represent $\mathbf{SO}(3)$, and will be referred to as the set of rotation quaternions. 
+		Quaternions are an extension of complex numbers. The set of unit quaternions can be used to represent $\mathbf{SO}(3)$, and will be referred to as the set of \textit{rotation quaternions} or \textit{orientation quaternions}. 
 		A rotation quaternion $\mathbf{q}$ is a 4-tuple of real numbers that encode the same information as the scaled-axis representation. $\mathbf{q}$ is often described in terms of its first element $w$ - the scalar part, and the remaining elements $x,y$ and $z$ - the vector part. Given an axis of rotation $\mathbf{r}$ and an angle of rotation $\theta$:
 		\begin{equation}
 			\mathbf{q} = 
@@ -281,7 +281,7 @@
 		\end{equation} 
 		As with rotation matrices, quaternion multiplication is associative but not commutative.
 		
-		The group action rotates a point $\mathbf{p}_0 \in \mathbb{R}^3$  to $\mathbf{p}_1 \in \mathbb{R}^3$ by embedding it as the vector component of a quaternion and applying a conjugation operation with $\mathbf{q}$. The rotated vector $\mathbf{p}_13$ can be extracted as the vector component of the resulting quaternion.
+		The group action rotates a point $\mathbf{p}_0 \in \mathbb{R}^3$  to $\mathbf{p}_1 \in \mathbb{R}^3$ by embedding it as the vector component of a quaternion and applying a conjugation operation with $\mathbf{q}$. The rotated vector $\mathbf{p}_1$ can be extracted as the vector component of the resulting quaternion.
 		\begin{equation} \label{quatrot}
 			\begin{bmatrix}
 			 	0\\
@@ -296,7 +296,7 @@
 		\end{equation}
 		
 	\subsection{\textbf{SE}(3)}	
-		The special Euclidean group $\textbf{SE}(3)$ represents rigid transformation in $\mathbb{R}^3$. This is a matrix Lie group whose elements comprise the set of all rigid transformations in $\mathbb{R}^3$ and can be represented with $4 \times 4$ matrices of the form
+		The \textit{special Euclidean group} $\textbf{SE}(3)$ represents rigid transformations in $\mathbb{R}^3$. This is a matrix Lie group whose elements comprise the set of all rigid transformations in $\mathbb{R}^3$ and can be represented with $4 \times 4$ matrices of the form
 		\begin{equation}
 			\textbf{S} = 
 			\begin{bmatrix}
@@ -347,7 +347,7 @@
 					\end{bmatrix}
 				\end{split}		
 			\end{equation}		
-			i.e. $\forall \mathbf{T} \in \mathfrak{se}(3) \textnormal{, } \exp(\mathbf{T}) \in  \mathbf{SE}(3)$
+			This means that $\forall \mathbf{T} \in \mathfrak{se}(3) \textnormal{, } \exp(\mathbf{T}) \in  \mathbf{SE}(3)$
 			
 			Conversely, the logarithm map maps elements of $\mathbf{SE}(3)$ to elements of $\mathfrak{se}(3)$:
 			\begin{equation}
@@ -364,10 +364,10 @@
 					\end{bmatrix}
 				\end{split}		
 			\end{equation}		
-			i.e. $\forall \mathbf{S} \in \mathbf{SE}(3)  \textnormal{, } \log(\mathbf{S}) \in  \mathfrak{se}(3)$
+			This means that $\forall \mathbf{S} \in \mathbf{SE}(3)  \textnormal{, } \log(\mathbf{S}) \in  \mathfrak{se}(3)$
 		
 		\subsubsection{Actions}
-		$\mathbf{SE}(3)$ group elements acts to perform a rigid transformation on points in $\mathbb{R}^3$. This corresponds to a rotation about the origin and a translation.
+		$\mathbf{SE}(3)$ group elements act to perform a rigid transformation on points in $\mathbb{R}^3$. This corresponds to a rotation about the origin and a translation.
 		To apply a transformation using the $4 \times 4$ matrix elements of $\mathbf{SE}(3)$ to a point $\textbf{p} = (x,y,z) $ in $\mathbb{R}^3$, the point must be represented with homogeneous coordinates as $\mathbf{p'}$
 		\begin{equation}
 			\mathbf{p'} = 
@@ -421,19 +421,19 @@
 		\end{comment}
 		
 	\subsection{Reference Frames}
-		A reference frame is a system of coordinates that is used to uniquely identify points on a manifold. This report will deal with reference frames on $\mathbb{R}^3$, that are used both to define the position of a point and the pose of a rigid body in 3D space.
+		A reference frame is a system of coordinates that is used to uniquely identify points on a manifold. This report will deal with reference frames on $\mathbb{R}^3$ that are used both to define the position of a point and the pose of a rigid body in 3D space.
 		Such a reference frame is represented by an element of \textbf{SE}(3).
 		
-		The notion of an inertial reference frame is introduced here. This will be defined as a reference frame that is stationary for the purpose of the problem being described. The convention used will be to denote the inertial reference frame as $\{F\}$.
+		The notion of an \textit{inertial reference frame} is introduced here. This will be defined as a reference frame that is stationary for the purpose of the problem being described. The convention used will be to denote the inertial reference frame as $\{F\}$.
 		
-		Consider the three reference frames shown in Figure \ref{fig:frames}, denoted $\{F\}$ (the inertial frame),$\{A\}$ and $\{B\}$.
+		Consider the three reference frames shown in Figure \ref{fig:frames}, denoted $\{F\}$ (the inertial frame), $\{A\}$ and $\{B\}$.
 		The notation $^{F}_{A}\mathbf{X}^{}_{B}$ defines the transformation in $\mathbf{X}$ of the reference frame $\{B\}$ with respect to the frame $\{A\}$, defined in the frame $\{F\}$.
 		\input{Figures/fig_referenceframes}
 		
 		For example, $^{F}_{A}\mathbf{R}^{}_{B}$ defines the rotation of $\{B\}$ with respect to $\{A\}$, defined in the inertial frame $\{F\}$.		
 		
 		\subsubsection{Pose}
-		A pose defines an orientation and position in space. The pose of a rigid body is represented by a reference frame fixed to a particular point within the body. The pose of the rigid body with respect to another reference frame is defined by the relative position and orientation of the two frames. This transformation can be defined with respect to either reference frame and is represented by an element of \textbf{SE}(3). If a rigid body has orientation aligned with a reference frame $\{B\}$ and position at the origin of $\{B\}$, then the pose of the rigid body with respect to $\{A\}$ and defined in $\{F\}$ is:
+		A pose defines an orientation and position in space. The pose of a rigid body is represented by a reference frame fixed to a particular point within the body. The pose of the rigid body with respect to another reference frame is defined by the relative position and orientation between the two frames. This transformation can be defined with respect to either reference frame and is represented by an element of \textbf{SE}(3). If a rigid body has orientation aligned with a reference frame $\{B\}$ and position at the origin of $\{B\}$, then the pose of the rigid body with respect to $\{A\}$ and defined in $\{F\}$ is:
 		\begin{equation}
 			{^{F}_{A}\mathbf{S}^{}_{B}} = 
 			\begin{bmatrix}
@@ -464,7 +464,7 @@
 		\end{equation}
 		
 		\subsubsection{Redefining the reference frame of a point}
-		Consider a point in $\mathbb{R}^3$ defined as the position of the frame $\{A\}$ with respect to the frame $\{F\}$, defined in terms of the frame $\{A\}$. To redefine the point in terms of $\{F\}$, the left action of ${^{F}_{F}\mathbf{S}^{}_{A}} \in \mathbf{SE}(3)$ is used:
+		Consider a point in $\mathbb{R}^3$ defined with in terms of the frame $\{A\}$. To redefine the point in terms of $\{F\}$, the left action of ${^{F}_{F}\mathbf{S}^{}_{A}} \in \mathbf{SE}(3)$ is used:
 		\begin{equation}
 			^{F}\mathbf{p'} = {^{F}_{F}\mathbf{S}^{}_{A}}\:^{A}\mathbf{p'}
 		\end{equation}
@@ -491,7 +491,7 @@
 		The state of a rigid body moving through 3D space can be represented by its linear and angular position, velocity and acceleration. Higher derivatives could be taken but will be ignored for simplicity.
 		The inertial frame is denoted $\{F\}$ and a frame $\{A\}$ is fixed to the pose of the moving body.
 		
-		The pose of the body with respect to the inertial frame at time $t$, defined in $\{F\}$ is represented by the \textbf{screw} matrix ${^{F}_{F}\mathbf{S}^{}_{A}(t)} \in \mathbf{SE}(3)$,
+		The pose of the body with respect to $\{F\}$ at time $t$, defined in $\{F\}$ is represented by the \textit{screw} matrix ${^{F}_{F}\mathbf{S}^{}_{A}(t)} \in \mathbf{SE}(3)$,
 		\begin{equation}
 				{^{F}_{F}\mathbf{S}^{}_{A}(t)} = 
 				\begin{bmatrix}
@@ -501,7 +501,7 @@
 		\end{equation}
 		where $^{F}_{F}\mathbf{R}^{}_{A}(t) \in \mathbf{SO}(3)$ is a rotation matrix, and $^{F}_{F}\mathbf{p}^{}_{A}(t) \in \mathbb{R}^3$ represents the position of the body defined in $\{F\}$.
 		
-		The linear and angular velocity of the body at time $t$ with respect to $\{F\}$, defined in the body-fixed frame $\{A\}$ is represented by the \textbf{twist} matrix ${^{A}_{F}\mathbf{T}^{}_{A}(t)} \in \mathfrak{se}(3)$,
+		The linear and angular velocity of the body with respect to $\{F\}$ at time $t$, defined in the body-fixed frame $\{A\}$ is represented by the \textit{twist} matrix ${^{A}_{F}\mathbf{T}^{}_{A}(t)} \in \mathfrak{se}(3)$,
 		\begin{equation}
 				{^{A}_{F}\mathbf{T}^{}_{A}(t)} = 
 				\begin{bmatrix}
@@ -511,7 +511,7 @@
 		\end{equation}
 		where $^{A}_{F}\bm{\omega}^{}_{A}(t) \in \mathfrak{so}(3)$ is an angular velocity in the scaled-axis representation, and the linear velocity is $^{A}_{F}\mathbf{v}^{}_{A}(t) \in T\mathbb{R}^3 \equiv \mathbb{R}^3$.
 				
-		The linear and angular acceleration of the body at time $t$ with respect to $\{F\}$, defined in the body-fixed frame $\{A\}$, is represented by the \textbf{wrench} matrix ${^{A}_{F}\mathbf{W}^{}_{A}(t)} \in T\mathfrak{se}(3) \equiv \mathfrak{se}(3)$,
+		The linear and angular acceleration of the body with respect to $\{F\}$ at time $t$, defined in the body-fixed frame $\{A\}$, is represented by the \textit{wrench} matrix ${^{A}_{F}\mathbf{W}^{}_{A}(t)} \in T\mathfrak{se}(3) \equiv \mathfrak{se}(3)$,
 		\begin{equation}
 				{^{A}_{F}\mathbf{W}^{}_{A}(t)} = 
 				\begin{bmatrix}
@@ -519,7 +519,7 @@
 				  \textbf{0}_{1 \times 3} & 0						  
 				\end{bmatrix}
 		\end{equation}
-		where $^{A}_{F}\bm{\alpha}^{}_{A}(t) \in  T\mathfrak{so}(3)$ is an angular acceleration in the scaled-axis representation, and the linear acceleration is $^{A}_{F}\mathbf{a}^{}_{A}(t) \in T^2\mathbb{R}^3 \equiv \mathbb{R}^3$.
+		where $^{A}_{F}\bm{\alpha}^{}_{A}(t) \in  T\mathfrak{so}(3) \equiv \mathfrak{so}(3)$ is an angular acceleration in the scaled-axis representation, and the linear acceleration is $^{A}_{F}\mathbf{a}^{}_{A}(t) \in T^2\mathbb{R}^3 \equiv \mathbb{R}^3$.
 						
 		From this point on, frames will dropped in the notation. For a body labelled \textit{x} fixed to a frame $\{A\}$, ${^{F}_{F}\mathbf{S}^{}_{A}}$, ${^{A}_{F}\mathbf{T}^{}_{A}}$ and ${^{A}_{F}\mathbf{W}^{}_{A}}$ will be denoted $\mathbf{S}_x$, $\mathbf{T}_x$ and $\mathbf{W}_x$.
 						
@@ -537,7 +537,7 @@
 		where the function $\mathbf{f}(t)$ is known.
 	
 	\subsection{Scanning Laser Range-finder Dynamic Model}
-		A scanning laser range-finder is a sensor that measures the distance to the nearest object in a certain direction. Consider such a sensor fixed to a moving rigid body. The pose of the sensor $s$ is defined by $\mathbf{S}_s$, $\mathbf{T}_s$ and $\mathbf{W}_s$. The scanning direction of the sensor is a unit vector ${^{A}\mathbf{d}(t)} \in S^2$ defined in the body fixed frame $\{A\}$.	
+		A scanning laser range-finder is a sensor that measures the distance to the nearest object in a certain direction. Consider such a sensor fixed to a moving rigid body. The pose of the sensor labelled $s$ is defined by $\mathbf{S}_s$, $\mathbf{T}_s$ and $\mathbf{W}_s$. The scanning direction of the sensor defined in the body fixed frame $\{A\}$ is a unit vector ${^{A}\mathbf{d}(t)} \in S^2$.	
 		
 		The sensor provides measurement of the range $r(t) \in \mathbb{R}^{0+}$ from $^{F}_{F}\mathbf{p}^{}_{A}(t)$ to the nearest object in the environment in the direction ${^{F}\mathbf{d}(t)} = {^{F}_{F}\mathbf{R}^{}_{A}(t)}\:{^{A}\mathbf{d}(t)}$.
 		
@@ -547,7 +547,7 @@
 \subsection{Luenberger observers}
 An observer is a filter that is used to estimate the state of a dynamic system. The state $x$ can be chosen as some set of variables governed by the system. In real-world conditions, the system is often infinite-dimensional.
 
-The real system, known as the \textit{plant} is represented with a \textit{model}. In most cases, some simplification of the plant must be performed to produce the model.
+The real system, known as the \textit{plant}, is represented with a \textit{model}. In most cases, some simplification of the plant must be performed to produce the model.
 
 An observer provides an estimate $\hat{x}$ of the state $x \in \mathbb{R}^n$ of the model, given an output $y \in \mathbb{R}^m$ and a system input $u \in \mathbb{R}^p$. The dynamics of a nonlinear system are modelled with a nonlinear function $f$ of dimension $n$.
 \begin{equation}
@@ -557,7 +557,7 @@ The state output $y$ can also be conceptualised as a measurement of the state $x
 \begin{equation}
 	y(t) = g(x(t),u(t))
 \end{equation}
-An observer employs an innovation function $L: \mathbb{R}^m \rightarrow \mathbb{R}^n$ to update a state estimate $\hat{x}$ using the difference between the measurement $y(t)$ and the predicted measurement $\hat{y}$.
+An observer employs an innovation function $L: \mathbb{R}^m \rightarrow \mathbb{R}^n$ to update a state estimate $\hat{x}$ using the difference between the measurement $y(t)$ and the predicted measurement $\hat{y}(t)$.
 \begin{equation} \label{eq:observerfunction}
 	\dot{\hat{x}} = f(\hat{x},u(t)) + L(y(t)-\hat{y}(t))
 \end{equation}
@@ -568,10 +568,10 @@ This form of observer was developed by Luenberger \cite{luenberger1966observers}
 \begin{equation}
 	\dot{\hat{x}} = f(\hat{x},u(t)) + L(y(t)-g(\hat{x}(t),u(t)))
 \end{equation}
-The goal is to choose an innovation function $L$ that reduces the observer error $e(t) = x(t) - \hat{x}(t)$ to 0.
+The goal is to choose design innovation function $L$ that reduces the observer error $e(t) = x(t) - \hat{x}(t)$ to zero.
 
 \subsection{Symmetry-preserving observers}
-If the function $f$ governing the dynamics of the state is invariant to the action of a Lie group $\mathbf{G}$, invariant observer has the form
+If the function $f$ governing the dynamics of the state is invariant to the action of a Lie group $\mathbf{G}$, an \textit{invariant} or \textit{symmetry-preserving} observer has the form
 \begin{equation}
 	\dot{\hat{x}} = h(\hat{x},u(t),y(t)-\hat{y}(t))
 \end{equation}
