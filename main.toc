@@ -3,7 +3,7 @@
 \contentsline {chapter}{Aims and Contributions}{ix}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
 \contentsline {section}{\numberline {1.1}Literature review}{2}
-\contentsline {subsection}{\numberline {1.1.1}Infinite-dimensional observers}{2}
+\contentsline {subsection}{\numberline {1.1.1}Infinite-dimensional observers}{3}
 \contentsline {subsubsection}{\numberline {1.1.1.1}Linear systems}{3}
 \contentsline {subsubsection}{\numberline {1.1.1.2}Nonlinear systems}{4}
 \contentsline {subsection}{\numberline {1.1.2}Symmetry-preserving observers}{5}
