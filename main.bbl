@@ -131,6 +131,22 @@ R.~Mahony, J.~Trumpf, and T.~Hamel, ``Observers for kinematic systems with
   symmetry,'' in \emph{Proceedings of the 9th IFAC symposium on nonlinear
   control systems}, vol.~9, 2013, pp. 617--633.
 
+\bibitem{bhat2000topological}
+S.~P. Bhat and D.~S. Bernstein, ``A topological obstruction to continuous
+  global stabilization of rotational motion and the unwinding phenomenon,''
+  \emph{Systems \& Control Letters}, vol.~39, no.~1, pp. 63--70, 2000.
+
+\bibitem{huang2000analysis}
+Y.~Huang and J.~Han, ``Analysis and design for the second order nonlinear
+  continuous extended states observer,'' \emph{Chinese science bulletin},
+  vol.~45, no.~21, pp. 1938--1944, 2000.
+
+\bibitem{talole2010extended}
+S.~E. Talole, J.~P. Kolhe, and S.~B. Phadke, ``Extended-state-observer-based
+  control of flexible-joint system with experimental validation,''
+  \emph{Industrial Electronics, IEEE Transactions on}, vol.~57, no.~4, pp.
+  1411--1419, 2010.
+
 \bibitem{zarrouati2013augmented}
 N.~Zarrouati-Vissi{\`e}re, ``Augmented reality: the fusion of vision and
   navigation,'' Ph.D. dissertation, Ecole Nationale Sup{\'e}rieure des Mines de

@@ -66,9 +66,9 @@ The iterative filter used in this approach is an observer that estimates the sta
   \caption{Infinite dimensional optical flow discretised and computed in separate, independent regions} \label{fig:flow_regions}
 \end{figure} \label{fig:flow}
 
-Discretising $\Phi$ and $Y$ at the beginning of the algorithm design makes this is an example of the early lumping design approach. Employing a late lumping approach by discretising an infinite dimensional observer would allow for the rotation and translation invariance of the flow field to be taken advantage of to improve convergence properties.
+Discretising $\Phi$ and $Y$ at the beginning of the algorithm design makes this is an example of the early lumping design approach. Employing a late lumping approach by discretising an infinite dimensional observer would allow for the rotation and translation invariance of the flow field to be taken advantage of to improve convergence properties. 
 
 The lesson to take from this analysis is that discretisation methods must be carefully chosen in order to preserve the invariance of the observer.
 
-
+Another reason to pay attention to geometric symmetries in observer design is due to limitations placed on convergence by the topology of the system. Bhat \& Bernstein \cite{bhat2000topological} show that global convergence cannot be achieved with a continuous observer on a state space that includes a vector bundle such as $\mathbf{SE}(3)$. Some advancements have been made with extended state-space observers \cite{huang2000analysis,talole2010extended}, that extend the state space. However, this scheme can produce state estimates that are incompatible with the physics of the system prior to convergence. A theory of symmetry-preserving observer design for infinite dimensional systems could simplify observer design and convergence analysis for such systems.
 
