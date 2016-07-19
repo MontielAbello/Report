@@ -33,7 +33,6 @@ An accurate range sensor simulation must include a model for the error distribut
 		  \caption{Sensor noise function $f_{UBG}(r,\theta)$ approximately normally distributed}
 		  \label{fig:mean_hist}
 		\end{figure}
-		
 		The mean range error as function of $r$ and $\theta$ is shown in Figure \ref{fig:mean_range_error}. The standard deviation of the range errors as function of $r$ and $\theta$ is shown in Figure \ref{fig:stddev_range_error}.
 		\begin{figure}
 	  		\centering
@@ -121,7 +120,7 @@ An accurate range sensor simulation must include a model for the error distribut
 		\begin{equation}
 			e_{surface} = a \left(\sum_{n = 1}^{n_{Steps}}-1 + 2\:\left \lfloor{\mathcal{R}}\right \rfloor \right)
 		\end{equation} 
-		where $\mathcal{R}$ is a random variable following a uniform distribution on [0,1]. A step size $a = 0.0005m$ was used. Figure \ref{fig:surface_noise} shows that this model accurately models the measured surface variations. It should be noted that the measured variation appears concave while the simulated noise appears convex. This is due to the nature of the random walk noise. Over a large sample, both concave and convex surface noise is observed in real-world measurements and the simulated random walk.
+		where $\mathcal{R}$ is a random variable following a uniform distribution on [0,1]. A step size $a = 0.0005m$ was used. Figure \ref{fig:surface_noise} shows that this function accurately models the measured surface variations. It should be noted that the measured variation appears concave while the simulated noise appears convex. This is due to the nature of the random walk noise. Over a large sample, both concave and convex surface noise is observed in real-world measurements and the simulated random walk.
 
 		\begin{figure}
 	  		\centering

@@ -21,7 +21,7 @@ A situation in which an infinite dimensional observer would be useful is in the 
 
 For example, consider an autonomous robot deployed in an agricultural survey, which must determine the position and size of specimens of a certain crop. Using a geometric model for the general shape of the crop, an aerial vehicle that could routinely detect and characterise the position and size of specimens would be useful in monitoring growth and during harvesting.
 
-The problem to be investigated is shown in Figure~\ref{fig:cubeproblem}. A 2D scanning range sensor moves through an environment consisting of a target object of known shape, in this case a rigid cube, and an unknown background which may be an infinite dimensional dynamic system. The state of the sensor is known, but the states of the cube and background environment are unknown. The goal is to use the state of the sensor and the range measurements it provides to estimate the state of the cube.
+The problem to be investigated is shown in Figure~\ref{fig:cubeproblem}. A 2D scanning range sensor moves through an environment consisting of a target object of known shape - in this case a rigid cube - and an unknown background which may be an infinite-dimensional dynamic system. The state of the sensor is known, but the states of the cube and background environment are unknown. The goal is to use the state of the sensor and the range measurements it provides to estimate the state of the cube.
 
 The frames used to describe the motion of the rigid bodies in this problem are:
 \begin{itemize}
@@ -43,7 +43,7 @@ For simplicity, this will be denoted
 	\{\mathbf{S}_{s}(t),\mathbf{T}_{s}(t),\mathbf{W}_{s}(t),{^{A}\mathbf{d}(t)}\}
 \end{equation}
 
-The direction of measurement ${^{A}\mathbf{d}(t)}$ varies as a rotation about the z-axis of $\{A\}$. This 2D scanning motion depends on the model of the sensor used and is described in more detail in section \ref{sec:scanmodel}. For simplification, the motion of the sensor itself with respect to $\{F\}$ will be limited to rotation about the $y$-axis of $\{F\}$.
+The direction of measurement ${^{A}\mathbf{d}(t)}$ varies as a rotation about the z-axis of $\{A\}$. This 2D scanning motion depends on the model of the sensor used and is described in more detail in Section \ref{sec:scanmodel}. For simplification, the motion of the sensor itself with respect to $\{F\}$ will be limited to rotation about the $y$-axis of $\{F\}$.
 
 The state of cube $\mathbf{X}_{c}(t)$ is defined as 
 \begin{equation}
@@ -63,14 +63,14 @@ The range measurements do not indicate whether the object detected is the cube o
 \end{itemize}
 These assumptions will be used to separate range measurements corresponding to the cube from those corresponding to the background. Only range measurements corresponding to the cube will be used in the observer innovation step. For simulated data, only the first assumption is necessary. For experimental data sets the environment is more complex so the second assumption is required to identify range measurements corresponding to the cube. 
 
-The aim is to design a nonlinear observer function $f$ which estimates the state of the cube from the pose of the sensor, scan direction $\mathbf{s}$ and range measurement $\tilde{r}$ and measurement prediction $\hat{r}$.
+The aim is to design a nonlinear observer function $f$ which estimates the state of the cube from the pose of the sensor, scan direction $\mathbf{d}$, range measurement $\tilde{r}$ and measurement prediction $\hat{r}$.
 \begin{equation}
 	\hat{\mathbf{X}}_{c}(k+1) = f(\mathbf{X}_{s}(t),\hat{\mathbf{X}}_{c}(k),\tilde{r}(t),\hat{r}(t))
 \end{equation}
 
-This observer formulation differs from that provided in equation \ref{eq:observerfunction} in that no state input is present in the system and more importantly, $\tilde{r}$ and $\hat{r}$ are provided as separate terms. Though a true Luenberger observer is driven by the output difference $\tilde{r} - \hat{r}$, such a scheme is not possible due to the way the problem has been simplified. Since range measurements corresponding to the background are discarded, the term $\tilde{r} - \hat{r}$ is undefined unless both ranges correspond to the cube. Such a limitation would make correcting differences in position and size particularly difficult.
+This observer formulation differs from that provided in Equation \ref{eq:observerfunction} in that no state input is present in the system and more importantly, $\tilde{r}$ and $\hat{r}$ are provided as separate terms. Though a true Luenberger observer is driven by the output difference $\tilde{r} - \hat{r}$, such a scheme is not possible due to the way the problem has been simplified. Since range measurements corresponding to the background are discarded, the term $\tilde{r} - \hat{r}$ is undefined unless both range measurements correspond to the cube. Such a limitation would make correcting differences in position and size particularly difficult.
 
-A simulation toolbox will be implemented to simulate range measurements of rigid bodies using a scanning range sensor. The observer implementation will be implemented and its performance tested under a range of conditions. 
+A simulation toolbox will be implemented to simulate range measurements of rigid bodies using a scanning range sensor. The observer design will be implemented and its performance tested under a range of conditions. 
 
 Experimental validation will be performed by taking measurements of a known environment using the Hokuyo UBG-04LX-F01 scanning laser range-finder. These measurements will be used to quantify the performance of the observer under real-world conditions.
 

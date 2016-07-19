@@ -172,7 +172,7 @@ To simplify the code, the position vector and orientation quaternion are compute
 \subsection{Sensor modelling: \texttt{initialisesensor}}
 The motion model below is used to compute the pose of the sensor. The scanning model is used to compute the set of scanning directions. These actions are performed in the $\texttt{initialisesensor}$ function in Algorithm \ref{main}
 \subsubsection{Motion}
-The state of the sensor $\mathbf{X}_{s}(t)$ consists of terms corresponding to its motion and scanning operation. Since the motion of the sensor is restricted to zero acceleration, the state of sensor can be computed with the interpolation method and represented with position, orientation and scanning direction. 
+The state of the sensor $\mathbf{X}_{s}(t)$ consists of terms corresponding to its motion and scanning operation. Since the motion of the sensor is restricted to zero acceleration, the state of sensor can be efficiently computed with the interpolation method and represented with position, orientation and scanning direction. 
 \begin{equation}
 	\mathbf{X}_{s}(t) = \{\mathbf{p}_s(t),\mathbf{q}_s(t),{^{A}\mathbf{d}(t)}\}
 \end{equation}
@@ -185,7 +185,7 @@ Since it has a stationary position, the position of the sensor over time is fixe
    	\end{bmatrix}
 \end{equation}
 										
-The sensor rotates between $-\phi$ and $\phi$ about the $y$-axis of inertial frame $\{F\}$. Thus, its orientation is computed by interpolating between $\mathbf{q}_1$ and $\mathbf{q}_k$ with equation \ref{slerp}.
+The sensor rotates between $-\phi$ and $\phi$ about the $y$-axis of the body frame $\{A\}$, which coincides with the $y$-axis of the inertial frame $\{F\}$ in this case. Thus, its orientation is computed by interpolating between $\mathbf{q}_1$ and $\mathbf{q}_k$ with Equation \ref{slerp}.
 	
 \begin{equation}
 	\mathbf{q}_1 = \begin{bmatrix}
@@ -252,10 +252,9 @@ To simulate range measurements, the scan direction is required in the inertial f
 \end{equation}
 
 \subsubsection{Hokuyo UBG-04LX-F01 model} 
-To achieve a panning motion, the sensor trajectory is defined as a rotation between $\pi/8$ and $\pi/8$ radians about the $y$-axis of the sensor frame $\{A\}$. The sensor rotates with a constant angular speed of $\pi/4$ radians/s.
+To achieve a panning motion, the sensor trajectory is defined as a rotation between $\pi/8$ and $\pi/8$ radians about the $y$-axis of the sensor frame $\{A\}$. The sensor rotates with a constant angular speed of $\pi/4$ radians/s. This trajectory was seen to produce the best performance when testing the observer.
 
-
-The sensor has a field of view of $\pi$ radians, providing range measurements when the scan direction is between $\pi/2$ and $-\pi/2$ radian about the $z$-axis of the sensor frame $\{A\}$. The laser beam rotates in an anti-clockwise direction about the $z$-axis of $\{A\}$.
+The sensor has a field of view of $\pi$ radians, providing range measurements when the scan direction is between $\pi/2$ and $-\pi/2$ radians about the $z$-axis of the sensor frame $\{A\}$. The laser beam rotates in an anti-clockwise direction about the $z$-axis of $\{A\}$.
 The beam rotates with an angular speed of $24$Hz, providing 24 scans per second. Measurements are returned at half of the time steps ineach revolution, so each scan contains 512 measurements at increments of $pi/512$ radians. 
 
 \subsection{Environment modelling: \texttt{initialiseenvironment}}
@@ -267,7 +266,7 @@ The entire state - cube and background - is now modelled as a finite dimensional
 The pose of each object represents the pose of its centre of mass. As described in Section \ref{motion} the pose is computed with interpolation for the case of zero wrench, and numerical integration for the case of non-zero wrench. The pose of the object making up the environment is computed with the function $\texttt{initialiseenvironment}$ in Algorithm \ref{main}. This function also creates the points and triangles that model the surface of the object which is described below.
 
 \subsubsection{Rigid objects}
-The environment is represented with two rectangular prisms; the cube and a larger rectangular prism enclosing both the sensor and cube, to represent the background. These objects are modelled as an ordered set of 8 points in the inertial reference frame and an ordered set of 12 triangles formed by these points. Each triangle is represented by a set of 3 integers, indicating the index of the three points that make up its vertices.
+The environment is represented with two rectangular prisms; the cube and a larger rectangular prism enclosing both the sensor and cube, to represent the background. These objects are modelled as an ordered set of 8 points in the inertial reference frame and an ordered set of twelve triangles formed by these points. Each triangle is represented by a set of three integers, indicating the index of the three points that make up its vertices.
 
 The cube points in body frame $\{B\}$ are represented with the matrix ${^{B}\mathbf{P}}$.
 \begin{equation}
@@ -315,7 +314,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	
 	On line \ref{line: vertex}, the set of points $\mathbf{P}$ are indexed using the columns of the triangle matrix $\mathbf{T}$ to extract the three vertices corresponding to each triangle.
 	The vectors representing the edges sharing vertex $\mathbf{V}_1$ are computed.
-	from triangles and points, extract vertices of each triangle.
+	From the triangles and points, the vertices of each triangle are extracted.
 	The vector $\mathbf{A}$ computed on line \ref{line: origintov1} represents the translation from the ray origin $\mathbf{o}$ to $\mathbf{V}_1$.
 	
 	The collection of vectors $\mathbf{B}$ is computed on line \ref{line: det} by taking the cross product of the scan direction $\mathbf{d}$ and each edge $\mathbf{E}_2$. The determinant $\bm{\delta}$ of the matrix
@@ -331,7 +330,7 @@ The points and triangles are shown in Figure \ref{fig:triangles}.
 	
 	The barycentric coordinates are used to determine if the intersection between the scan direction $\mathbf{d}$ and the plane of the triangle lies within the triangle itself. 
 	
-	The vector $\mathbf{x}$ on line \ref{line: intersectvec} now indicates which triangles intersected with the scan direction. $\mathbf{x}$ is used to mask the ranges to the triangles $\mathbf{s}$, to give $\mathbf{r}$; the range to each intersecting triangle. 
+	The vector $\mathbf{x}$ on line \ref{line: intersectvec} now indicates which triangles intersect with the scan direction. $\mathbf{x}$ is used to mask the ranges to the triangles $\mathbf{s}$, to give $\mathbf{r}$; the range to each intersecting triangle. 
 	
 	The minimum range $r$ and triangle index $m$ are determined before computing the angle of incidence $\theta$ between $\mathbf{d}$ and the closest triangle.
 	
@@ -591,7 +590,7 @@ When testing the orientation update alone, the position and size update function
 
 The results presented in Figure \ref{fig:angle_error_stationary} are from trials where the cube was stationary and three faces were visible. Similar performance was achieved when two faces were visible. When no noise was present, the angle error quickly converged to zero. In fact, for the case of orientation correction alone, the observer guarantees global convergence. When noise was present, the error converged to the noise floor and exhibited a stable fluctuation about this limit. Given the mean and standard deviation of the Gaussian distributed range error, the angle error would be expected to cross zero once the error converged to the noise floor. The reason this does not occur is due to small error in the orientation axis between the prediction and ground truth. 
 
-A limitation of the orientation update scheme was revealed when only a single cube face was visible to the sensor. The normals ($\hat{\mathbf{n}} $ and $\tilde{\mathbf{n}}$ in Figure \ref{fig:orientation}) estimated from the predicted and measured intersection points were used to determine the rotation correction axis. However, this information is insufficient to correct for angular error about these normals themselves, as shown in Figure \ref{fig:orientation_1F}. 
+A limitation of the orientation update scheme was revealed when only a single cube face was visible to the sensor. The normals ($\hat{\mathbf{n}} $ and $\tilde{\mathbf{n}}$ in Figure \ref{fig:orientation}) estimated from the predicted and measured intersection points were used to determine the rotation correction axis. However, this information was insufficient to correct for angular error about these normals themselves, as shown in Figure \ref{fig:orientation_1F}. 
 
 \begin{figure}
 \centering
@@ -610,7 +609,7 @@ A limitation of the orientation update scheme was revealed when only a single cu
 An approach considered to account for this was to apply a rotation to the predicted cube about the normal axis if the visibility pattern indicted by the set of indexes $\textbf{u}(t)$ was not congruent for the prediction and measurement. This would effectively rotate the predicted cube until the faces aligned. However, this scheme was not used as it would later interfere with the performance of the orientation and size updates. Furthermore, it was unstable under noisy conditions and caused rotation away from the correct orientation. The recommendation for future work is to use the visibility pattern to estimate the actual rotation of the predicted and measured cubes about this normal axis before applying the necessary correction.
 
 \subsubsection{Moving cube}
-Figure \ref{fig:angle_error_rotating} shows the angular error for a trial where the ground truth cube rotated with an angular velocity of approximately $0.0327$ rad/s such that 3 faces were visible to the sensor. The observer was given the ground truth initial orientation but an incorrect initial angular velocity of zero.
+Figure \ref{fig:angle_error_rotating} shows the angular error for a trial where the ground truth cube rotated with an angular velocity of approximately $0.0327$ rad/s such that three faces were visible to the sensor. The observer was given the ground truth initial orientation but an incorrect initial angular velocity of zero.
 Figure \ref{fig:angle_error_1_rotating_screw} shows that for noiseless measurements where orientation update is performed via the screw matrix, the observer is able to estimate the angular velocity of the cube and match its orientation. Again for noiseless measurements, Figure \ref{fig:angle_error_1_rotating_twist} shows that updating via the twist matrix initially provides a slower but smoother estimation of orientation. In trying to match the rotation of the cube, the angular velocity estimate overshoots the ground truth angular velocity. Initially, the angle error grows so the angular velocity increases to correct this. However, there is a delay in the response of the orientation correction that causes the angular velocity to grow too large. The overcompensation then occurs in the other direction and the error diverges.
 For noisy measurements, update via the screw in Figure \ref{fig:angle_error_1_rotating_screw_noise} and twist in Figure \ref{fig:angle_error_1_rotating_twist} is unable to closely track the rotation of the cube. Updating via the twist matrix again results in overshoot. 
 
@@ -686,7 +685,7 @@ The position update function is only successful when a single cube face is visib
 \end{figure}
 
 \subsection{Size correction}
-The size correction function is extremely robust, able to globally converge to the noise floor regardless of the number of cube faces visible. 
+The size correction function is extremely robust, seeming to globally converge to the noise floor regardless of the number of cube faces visible. 
 Figure \ref{fig:size_stationary} shows that the \textit{size error ratio} (the ratio between the size error and ground truth size) converges to zero for noisy measurements of a stationary cube where three faces are visible to the sensor. 
 In Figure \ref{fig:size_RT_noise}, noisy measurements were taken of a cube rotating at $0.0327$ rad/s and translating at $0.0094$ m/s such that three faces were visible to the sensor. The ground truth twist was given as the initial twist estimate to allow the predicted cube to match the motion of the ground truth cube. In this case, the size error ratio still converged to the noise floor.
 The speed of the convergence suggests that the correction is dominated by case 2 of the size update function. This update scheme uses the mean range difference effectively measures the size difference. On the other hand, case 1 relies on the rarer occurrence of misaligned edges between the prediction and ground truth being observed to determine.
@@ -709,7 +708,7 @@ However, case 1 will be required when there is non-zero position error, since a 
 \subsection{Orientation and size correction} 
 As the orientation and size update functions were effective individually, their ability to work simultaneously was tested.
 
-For stationary cubes, the observer was able convergent for noiseless and noisy results, regardless of the number of cube faces visible to the sensor. Figure \ref{fig:orientation_size_stationary} shows the angle error and size error ratio converging to the noise floor for noisy measurements of a stationary cube where three faces were visible to the sensor.
+For stationary cubes, the observer was able to converge for noiseless and noisy results, regardless of the number of cube faces visible to the sensor. Figure \ref{fig:orientation_size_stationary} shows the angle error and size error ratio converging to the noise floor for noisy measurements of a stationary cube where three faces were visible to the sensor.
 
 \begin{figure}
 \centering
@@ -726,7 +725,7 @@ For stationary cubes, the observer was able convergent for noiseless and noisy r
 \end{figure} 	
 
 A more systematic test was conducted with a wide range of initial conditions to verify this global convergence. Orientation and size correction were tested for initial angular error ranging from a minimum of 0 to a maximum of $\pi/4$ radians, and a minimum size error ratio of $-0.5$ to a maximum of 2. Noiseless range measurements were used.
-Figure \ref{fig:convergence} shows the time taken to converge to within $1\%$ error. Comparing Figures \ref{fig:convergence_orientation} and \ref{fig:convergence_size} shows that the size error ratio always converges before the angle error. The magnitude of the initial angle error has little effect on the speed of the size error ratio convergence. The size correction only has a significant impact on the speed of orientation correction when the initial size estimate is smaller than the ground truth. This global convergence was also observed when estimating the state of a stationary cube with two faces visible, but not one - due to the limitation in the orientation update described in Section \ref{sec:orientation_stationary}.
+Figure \ref{fig:convergence} shows the time taken to converge to within $1\%$ error. Comparing Figures \ref{fig:convergence_orientation} and \ref{fig:convergence_size} shows that the size error ratio always converges before the angle error. The magnitude of the initial angle error has little effect on the speed of the size error ratio convergence. The size correction only has a significant impact on the speed of orientation correction when the initial size estimate is smaller than the ground truth. This global convergence was also observed when estimating the state of a stationary cube with two faces visible, but not one. This is due to the limitation in the orientation update described in Section \ref{sec:orientation_stationary}.
 \begin{figure}
 \centering
  	\subfigure[\label{fig:convergence_orientation}]{
@@ -788,7 +787,7 @@ Another strength of the observer design is that it does not actually rely on the
  	\label{fig:tetrahedron}
 \end{figure}
 
-These results show that sparse range measurements from a scanning sensor can be indeed used to densely measure an infinite dimensional state. The dynamics of the sensor are particularly important in ensuring that the sparse measurements are form an arrangement suitable for dense estimation.
+These results show that sparse range measurements from a scanning sensor can be indeed used to densely measure an infinite-dimensional state. The dynamics of the sensor are particularly important in ensuring that the sparse measurements form an arrangement suitable for dense estimation.
 
 \subsubsection{Improvements and future work}
 Though updating the orientation via the twist gives a smoother estimation in comparison to the screw update, this results in overshoot. In control theory, this problem is solved with \textit{feed-forward control} which anticipates overshoot and corrects for it before it can occur. A topic of future research would be to investigate if an observer theory analogue to feed-forward control can be designed. A possible starting point could be to investigate applying combinations of screw and twist updates that combine the responsiveness of the screw update and the smoothness of the twist update. 
@@ -797,4 +796,4 @@ These simulated results showed that the size and orientation update functions in
 
 Once a working position update function is implemented, the next step is to combine the position and orientation update functions. Such a function would act on the screw, twist or wrench matrices as a whole, rather than correcting only the linear or angular terms. Designing this innovation function to be invariant under actions of $\mathbf{SE}(3)$ would result in improved global convergence properties.
 
-A symmetry preserving observer would allow design methods for linear, infinite-dimensional observers to be utilised in nonlinear systems. This would then allow the environment to be represented as infinite dimensional state. The observer would not need to separate the target object and the background. Instead, an estimate of the entire depth field could be computed.
+A symmetry preserving observer would allow design methods for linear, infinite-dimensional observers to be utilised in nonlinear systems. This would then allow the environment to be represented as infinite-dimensional state. The observer would not need to separate the target object and the background. Instead, an estimate of the entire depth field could be computed.

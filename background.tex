@@ -125,14 +125,14 @@
 		A rotation represents the motion of a point about the origin of a Euclidean space. In $\mathbb{R}^3$ this is a proper isometry: a transformation that preserves distances between any pair of points and has a determinant of +1. The set of all rotations about the origin of $\mathbb{R}^3$ is known as the \textit{special orthogonal group} $\textbf{SO}(3)$.
 		Group elements of $\textbf{SO}(3)$ can be represented using a special subset of $3 \times 3$ invertible matrices and in this case, form a matrix Lie group. Several rotation representations are described later in this section, but the theory presented below only applies to matrix Lie groups which rely on the rotation matrix representation for group elements.
 		
-		A rotation matrix $\mathbf{R}$ is a $3 \times 3$ matrix that performs a rotation operation when it acts on an element of $\mathbb{R}^3$. The properties of $\mathbf{R}$ are described in more detail in Section \ref{sec:rotationmatrix}.
+		A 3D rotation matrix $\mathbf{R}$ is a $3 \times 3$ matrix that performs a rotation operation when it acts on an element of $\mathbb{R}^3$. The properties of $\mathbf{R}$ are described in more detail in Section \ref{sec:rotationmatrix}.
 		
 		\subsubsection{Lie algebra}
 		The Lie algebra $\mathfrak{so}(3)$ is a vector space whose elements represent angular velocities. These elements can be represented with $3 \times 3$ skew-symmetric matrices $\bm{\omega}^{\wedge}$, where $\bm{\omega} \in \mathbb{R}^3$ is a 3-vector representing an angular velocity. For
 		$\bm{\omega} = 
 		\begin{bmatrix}
 			\omega_1 & \omega_2 & \omega_3
-		\end{bmatrix}^T$, the skew symmetric representation is given by taking the hat representation of $\bm{\omega}$
+		\end{bmatrix}^T$, the skew-symmetric representation is given by taking the hat representation of $\bm{\omega}$
 			\begin{equation}
 				\bm{\omega}^{\wedge} =  
 				\begin{bmatrix}
@@ -454,7 +454,7 @@
 		\end{equation}
 		
 		\subsubsection{Homogeneous coordinates}
-		To be acted on by an element of $\mathbf{SE}(3)$, a point must be expressed in homogeneous coordinates.
+		To be acted on by an element of $\mathbf{SE}(3)$, a point ${^{F}\mathbf{p}}$ must be expressed in homogeneous coordinates as ${^{F}\mathbf{p'}}$.
 		\begin{equation}
 			^{F}\mathbf{p'} = 
 			\begin{bmatrix}
@@ -464,7 +464,7 @@
 		\end{equation}
 		
 		\subsubsection{Redefining the reference frame of a point}
-		Consider a point in $\mathbb{R}^3$ defined with in terms of the frame $\{A\}$. To redefine the point in terms of $\{F\}$, the left action of ${^{F}_{F}\mathbf{S}^{}_{A}} \in \mathbf{SE}(3)$ is used:
+		Consider a point in $\mathbb{R}^3$ defined in terms of the frame $\{A\}$. To redefine the point in terms of $\{F\}$, the left action of ${^{F}_{F}\mathbf{S}^{}_{A}} \in \mathbf{SE}(3)$ is used:
 		\begin{equation}
 			^{F}\mathbf{p'} = {^{F}_{F}\mathbf{S}^{}_{A}}\:^{A}\mathbf{p'}
 		\end{equation}
@@ -521,10 +521,10 @@
 		\end{equation}
 		where $^{A}_{F}\bm{\alpha}^{}_{A}(t) \in  T\mathfrak{so}(3) \equiv \mathfrak{so}(3)$ is an angular acceleration in the scaled-axis representation, and the linear acceleration is $^{A}_{F}\mathbf{a}^{}_{A}(t) \in T^2\mathbb{R}^3 \equiv \mathbb{R}^3$.
 						
-		From this point on, frames will dropped in the notation. For a body labelled \textit{x} fixed to a frame $\{A\}$, ${^{F}_{F}\mathbf{S}^{}_{A}}$, ${^{A}_{F}\mathbf{T}^{}_{A}}$ and ${^{A}_{F}\mathbf{W}^{}_{A}}$ will be denoted $\mathbf{S}_x$, $\mathbf{T}_x$ and $\mathbf{W}_x$.
+		From this point on, frames will dropped in the notation. For a body labelled \textit{x} fixed to a frame $\{A\}$, ${^{F}_{F}\mathbf{S}^{}_{A}}$, ${^{A}_{F}\mathbf{T}^{}_{A}}$ and ${^{A}_{F}\mathbf{W}^{}_{A}}$ will be denoted $\mathbf{S}_x$, $\mathbf{T}_x$ and $\mathbf{W}_x$ respectively.
 						
 	\subsection{Rigid body kinematics} \label{kinematics}
-		The dynamics of the screw, twist and wrench matrices as they are defined in section \ref{state rep} are governed by the following ordinary differential equations (ODEs),
+		The dynamics of the screw, twist and wrench matrices as they are defined in Section \ref{state rep} are governed by the following ordinary differential equations (ODEs),
 		\begin{equation}
 			{\frac{\textnormal{d}}{\textnormal{d}t}} \mathbf{S}(t) =\mathbf{S}(t)\mathbf{T}(t)
 		\end{equation}		
@@ -541,13 +541,13 @@
 		
 		The sensor provides measurement of the range $r(t) \in \mathbb{R}^{0+}$ from $^{F}_{F}\mathbf{p}^{}_{A}(t)$ to the nearest object in the environment in the direction ${^{F}\mathbf{d}(t)} = {^{F}_{F}\mathbf{R}^{}_{A}(t)}\:{^{A}\mathbf{d}(t)}$.
 		
-		The function ${^{A}\mathbf{d}(t)}$ determines the scanning behaviour of the sensor and depends on the specific model used. The scanning model for the Hokuyo UBG-04LX-FO1 used in this research is provided in section \ref{sec:scanmodel}.
+		The function ${^{A}\mathbf{d}(t)}$ determines the scanning behaviour of the sensor and depends on the specific model used. The scanning model for the Hokuyo UBG-04LX-F01 used in this research is provided in Section \ref{sec:scanmodel}.
 		
 \section{State observers} \label{sec:observerequations}
 \subsection{Luenberger observers}
 An observer is a filter that is used to estimate the state of a dynamic system. The state $x$ can be chosen as some set of variables governed by the system. In real-world conditions, the system is often infinite-dimensional.
 
-The real system, known as the \textit{plant}, is represented with a \textit{model}. In most cases, some simplification of the plant must be performed to produce the model.
+The real-world system - known as the \textit{plant} - is represented with a \textit{model}. In most cases, some simplification of the plant must be performed to produce the model.
 
 An observer provides an estimate $\hat{x}$ of the state $x \in \mathbb{R}^n$ of the model, given an output $y \in \mathbb{R}^m$ and a system input $u \in \mathbb{R}^p$. The dynamics of a nonlinear system are modelled with a nonlinear function $f$ of dimension $n$.
 \begin{equation}
@@ -568,7 +568,7 @@ This form of observer was developed by Luenberger \cite{luenberger1966observers}
 \begin{equation}
 	\dot{\hat{x}} = f(\hat{x},u(t)) + L(y(t)-g(\hat{x}(t),u(t)))
 \end{equation}
-The goal is to choose design innovation function $L$ that reduces the observer error $e(t) = x(t) - \hat{x}(t)$ to zero.
+The goal is to design an innovation function $L$ that reduces the observer error $e(t) = x(t) - \hat{x}(t)$ to zero.
 
 \subsection{Symmetry-preserving observers}
 If the function $f$ governing the dynamics of the state is invariant to the action of a Lie group $\mathbf{G}$, an \textit{invariant} or \textit{symmetry-preserving} observer has the form
